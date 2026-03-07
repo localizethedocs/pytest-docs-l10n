@@ -1,0 +1,336 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/customize.rst:2
+msgid "Basic test configuration"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:5
+msgid "Command line options and configuration file settings"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:7
+msgid ""
+"You can get help on command line options and values in INI-style "
+"configurations files by using the general help option::"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:10
+msgid "py.test -h   # prints options _and_ config file settings"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:12
+msgid ""
+"This will display command line and configuration file settings which were "
+"registered by installed plugins."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:19
+msgid "initialization: determining rootdir and inifile"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:23
+msgid ""
+"pytest determines a \"rootdir\" for each test run which depends on the "
+"command line arguments (specified test files, paths) and on the existence of "
+"inifiles.  The determined rootdir and ini-file are printed as part of the "
+"pytest header.  The rootdir is used for constructing \"nodeids\" during "
+"collection and may also be used by plugins to store project/testrun-specific "
+"information."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:30
+msgid "Here is the algorithm which finds the rootdir from ``args``:"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:32
+msgid "determine the common ancestor directory for the specified ``args``."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:34
+msgid ""
+"look for ``pytest.ini``, ``tox.ini`` and ``setup.cfg`` files in the ancestor "
+"directory and upwards.  If one is matched, it becomes the ini-file and its "
+"directory becomes the rootdir.  An existing ``pytest.ini`` file will always "
+"be considered a match whereas ``tox.ini`` and ``setup.cfg`` will only match "
+"if they contain a ``[pytest]`` section."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:41
+msgid ""
+"if no ini-file was found, look for ``setup.py`` upwards from the common "
+"ancestor directory to determine the ``rootdir``."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:44
+msgid ""
+"if no ini-file and no ``setup.py`` was found, use the already determined "
+"common ancestor as root directory.  This allows to work with pytest in "
+"structures that are not part of a package and don't have any particular ini-"
+"file configuration."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:49
+msgid ""
+"Note that options from multiple ini-files candidates are never merged, the "
+"first one wins (``pytest.ini`` always wins even if it does not contain a "
+"``[pytest]`` section)."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:53
+msgid "The ``config`` object will subsequently carry these attributes:"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:55
+msgid "``config.rootdir``: the determined root directory, guaranteed to exist."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:57
+msgid "``config.inifile``: the determined ini-file, may be ``None``."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:59
+msgid ""
+"The rootdir is used a reference directory for constructing test addresses "
+"(\"nodeids\") and can be used also by plugins for storing per-testrun "
+"information."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:63
+msgid "Example::"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:65
+msgid "py.test path/to/testdir path/other/"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:67
+msgid ""
+"will determine the common ancestor as ``path`` and then check for ini-files "
+"as follows::"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:70
+msgid ""
+"# first look for pytest.ini files\n"
+"path/pytest.ini\n"
+"path/setup.cfg  # must also contain [pytest] section to match\n"
+"path/tox.ini    # must also contain [pytest] section to match\n"
+"pytest.ini\n"
+"... # all the way down to the root\n"
+"\n"
+"# now look for setup.py\n"
+"path/setup.py\n"
+"setup.py\n"
+"... # all the way down to the root"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:87
+msgid "How to change command line options defaults"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:89
+msgid ""
+"It can be tedious to type the same series of command line options every time "
+"you use ``pytest``.  For example, if you always want to see detailed info on "
+"skipped and xfailed tests, as well as have terser \"dot\" progress output, "
+"you can write it into a configuration file:"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:94
+msgid ""
+"# content of pytest.ini\n"
+"# (or tox.ini or setup.cfg)\n"
+"[pytest]\n"
+"addopts = -rsxX -q"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:101
+msgid ""
+"Alternatively, you can set a PYTEST_ADDOPTS environment variable to add "
+"command line options while the environment is in use::"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:104
+msgid "export PYTEST_ADDOPTS=\"-rsxX -q\""
+msgstr ""
+
+#: ../../../doc/en/customize.rst:106
+msgid "From now on, running ``pytest`` will add the specified options."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:111
+msgid "Builtin configuration file options"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:115
+msgid "Specifies a minimal pytest version required for running tests."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:117
+msgid "minversion = 2.1  # will fail if we run with pytest-2.0"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:121
+msgid ""
+"Add the specified ``OPTS`` to the set of command line arguments as if they "
+"had been specified by the user. Example: if you have this ini file content:"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:124
+msgid ""
+"[pytest]\n"
+"addopts = --maxfail=2 -rf  # exit after 2 failures, report fail info"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:129
+msgid "issuing ``py.test test_hello.py`` actually means::"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:131
+msgid "py.test --maxfail=2 -rf test_hello.py"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:133
+msgid "Default is to add no options."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:137
+msgid ""
+"Set the directory basename patterns to avoid when recursing for test "
+"discovery.  The individual (fnmatch-style) patterns are applied to the "
+"basename of a directory to decide if to recurse into it. Pattern matching "
+"characters::"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:142
+msgid ""
+"*       matches everything\n"
+"?       matches any single character\n"
+"[seq]   matches any character in seq\n"
+"[!seq]  matches any char not in seq"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:147
+msgid ""
+"Default patterns are ``'.*', 'CVS', '_darcs', '{arch}', '*.egg'``. Setting a "
+"``norecursedirs`` replaces the default.  Here is an example of how to avoid "
+"certain directories:"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:151
+msgid ""
+"# content of setup.cfg\n"
+"[pytest]\n"
+"norecursedirs = .svn _build tmp*"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:157
+msgid ""
+"This would tell ``pytest`` to not look into typical subversion or sphinx-"
+"build directories or into any ``tmp`` prefixed directory."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:164
+msgid ""
+"Sets list of directories that should be searched for tests when no specific "
+"directories, files or test ids are given in the command line when executing "
+"pytest from the :ref:`rootdir <rootdir>` directory. Useful when all project "
+"tests are in a known location to speed up test collection and to avoid "
+"picking up undesired tests by accident."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:170
+msgid ""
+"# content of pytest.ini\n"
+"[pytest]\n"
+"testpaths = testing doc"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:176
+msgid ""
+"This tells pytest to only look for tests in ``testing`` and ``doc`` "
+"directories when executing from the root directory."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:181
+msgid ""
+"One or more Glob-style file patterns determining which python files are "
+"considered as test modules."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:186
+msgid ""
+"One or more name prefixes or glob-style patterns determining which classes "
+"are considered for test collection. Here is an example of how to collect "
+"tests from classes that end in ``Suite``:"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:190
+msgid ""
+"# content of pytest.ini\n"
+"[pytest]\n"
+"python_classes = *Suite"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:196
+msgid ""
+"Note that ``unittest.TestCase`` derived classes are always collected "
+"regardless of this option, as ``unittest``'s own collection framework is "
+"used to collect those tests."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:202
+msgid ""
+"One or more name prefixes or glob-patterns determining which test functions "
+"and methods are considered tests. Here is an example of how to collect test "
+"functions and methods that end in ``_test``:"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:206
+msgid ""
+"# content of pytest.ini\n"
+"[pytest]\n"
+"python_functions = *_test"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:212
+msgid ""
+"Note that this has no effect on methods that live on a ``unittest ."
+"TestCase`` derived class, as ``unittest``'s own collection framework is used "
+"to collect those tests."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:216
+msgid "See :ref:`change naming conventions` for more detailed examples."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:220
+msgid ""
+"One or more doctest flag names from the standard ``doctest`` module. :doc:"
+"`See how py.test handles doctests <doctest>`."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:225
+msgid ""
+"Sets a directory where search upwards for ``conftest.py`` files stops. By "
+"default, pytest will stop searching for ``conftest.py`` files upwards from "
+"``pytest.ini``/``tox.ini``/``setup.cfg`` of the project if any, or up to the "
+"file-system root."
+msgstr ""

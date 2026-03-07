@@ -1,0 +1,1567 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/writing_plugins.rst:5
+msgid "Writing plugins"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:7
+msgid ""
+"It is easy to implement `local conftest plugins`_ for your own project or "
+"`pip-installable plugins`_ that can be used throughout many projects, "
+"including third party projects.  Please refer to :ref:`using plugins` if you "
+"only want to use but not write plugins."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:12
+msgid ""
+"A plugin contains one or multiple hook functions. :ref:`Writing hooks "
+"<writinghooks>` explains the basics and details of how you can write a hook "
+"function yourself. ``pytest`` implements all aspects of configuration, "
+"collection, running and reporting by calling `well specified hooks`_ of the "
+"following plugins:"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:17
+msgid ""
+":ref:`builtin plugins`: loaded from pytest's internal ``_pytest`` directory."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:19
+msgid ""
+":ref:`external plugins <extplugins>`: modules discovered through `setuptools "
+"entry points`_"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:22
+msgid "`conftest.py plugins`_: modules auto-discovered in test directories"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:24
+msgid ""
+"In principle, each hook call is a ``1:N`` Python function call where ``N`` "
+"is the number of registered implementation functions for a given "
+"specification. All specifications and implementations follow the ``pytest_`` "
+"prefix naming convention, making them easy to distinguish and find."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:32
+msgid "Plugin discovery order at tool startup"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:34
+msgid "``pytest`` loads plugin modules at tool startup in the following way:"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:36
+msgid "by loading all builtin plugins"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:38
+msgid "by loading all plugins registered through `setuptools entry points`_."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:40
+msgid ""
+"by pre-scanning the command line for the ``-p name`` option and loading the "
+"specified plugin before actual command line parsing."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:43
+msgid ""
+"by loading all :file:`conftest.py` files as inferred by the command line "
+"invocation:"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:46
+msgid "if no test paths are specified use current dir as a test path"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:47
+msgid ""
+"if exists, load ``conftest.py`` and ``test*/conftest.py`` relative to the "
+"directory part of the first test path."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:50
+msgid ""
+"Note that pytest does not find ``conftest.py`` files in deeper nested sub "
+"directories at tool startup.  It is usually a good idea to keep your "
+"conftest.py file in the top level test or project root directory."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:54
+msgid ""
+"by recursively loading all plugins specified by the ``pytest_plugins`` "
+"variable in ``conftest.py`` files"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:66
+msgid "conftest.py: local per-directory plugins"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:68
+msgid ""
+"Local ``conftest.py`` plugins contain directory-specific hook "
+"implementations.  Hook Session and test running activities will invoke all "
+"hooks defined in ``conftest.py`` files closer to the root of the "
+"filesystem.  Example of implementing the ``pytest_runtest_setup`` hook so "
+"that is called for tests in the ``a`` sub directory but not for other "
+"directories::"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:75
+msgid ""
+"a/conftest.py:\n"
+"    def pytest_runtest_setup(item):\n"
+"        # called for running each test in 'a' directory\n"
+"        print (\"setting up\", item)\n"
+"\n"
+"a/test_sub.py:\n"
+"    def test_sub():\n"
+"        pass\n"
+"\n"
+"test_flat.py:\n"
+"    def test_flat():\n"
+"        pass"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:88
+msgid "Here is how you might run it::"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:90
+msgid ""
+"py.test test_flat.py   # will not show \"setting up\"\n"
+"py.test a/test_sub.py  # will show \"setting up\""
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:94
+msgid ""
+"If you have ``conftest.py`` files which do not reside in a python package "
+"directory (i.e. one containing an ``__init__.py``) then \"import conftest\" "
+"can be ambiguous because there might be other ``conftest.py`` files as well "
+"on your PYTHONPATH or ``sys.path``. It is thus good practice for projects to "
+"either put ``conftest.py`` under a package scope or to never import anything "
+"from a conftest.py file."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:104
+msgid "Writing your own plugin"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:108
+msgid ""
+"If you want to write a plugin, there are many real-life examples you can "
+"copy from:"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:111
+msgid "a custom collection example plugin: :ref:`yaml plugin`"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:112
+msgid ""
+"around 20 :ref:`builtin plugins` which provide pytest's own functionality"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:113
+msgid ""
+"many `external plugins <http://plugincompat.herokuapp.com>`_ providing "
+"additional features"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:115
+msgid ""
+"All of these plugins implement the documented `well specified hooks`_ to "
+"extend and add functionality."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:119
+msgid ""
+"Make sure to check out the excellent `cookiecutter-pytest-plugin <https://"
+"github.com/pytest-dev/cookiecutter-pytest-plugin>`_ project, which is a "
+"`cookiecutter template <https://github.com/audreyr/cookiecutter>`_ for "
+"authoring plugins."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:124
+msgid ""
+"The template provides an excellent starting point with a working plugin, "
+"tests running with tox, comprehensive README and entry-pointy already pre-"
+"configured."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:128
+msgid ""
+"Also consider :ref:`contributing your plugin to pytest-dev<submitplugin>` "
+"once it has some happy users other than yourself."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:136
+msgid "Making your plugin installable by others"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:138
+msgid ""
+"If you want to make your plugin externally available, you may define a so-"
+"called entry point for your distribution so that ``pytest`` finds your "
+"plugin module.  Entry points are a feature that is provided by "
+"`setuptools`_. pytest looks up the ``pytest11`` entrypoint to discover its "
+"plugins and you can thus make your plugin available by defining it in your "
+"setuptools-invocation:"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:146
+msgid ""
+"# sample ./setup.py file\n"
+"from setuptools import setup\n"
+"\n"
+"setup(\n"
+"    name=\"myproject\",\n"
+"    packages = ['myproject']\n"
+"\n"
+"    # the following makes a plugin available to pytest\n"
+"    entry_points = {\n"
+"        'pytest11': [\n"
+"            'name_of_plugin = myproject.pluginmodule',\n"
+"        ]\n"
+"    },\n"
+"\n"
+"    # custom PyPI classifier for pytest plugins\n"
+"    classifiers=[\n"
+"        \"Framework :: Pytest\",\n"
+"    ],\n"
+")"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:168
+msgid ""
+"If a package is installed this way, ``pytest`` will load ``myproject."
+"pluginmodule`` as a plugin which can define `well specified hooks`_."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:174
+msgid ""
+"Make sure to include ``Framework :: Pytest`` in your list of `PyPI "
+"classifiers <https://python-packaging-user-guide.readthedocs.io/en/latest/"
+"distributing/#classifiers>`_ to make it easy for users to find your plugin."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:180
+msgid "Requiring/Loading plugins in a test module or conftest file"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:182
+msgid "You can require plugins in a test module or a conftest file like this::"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:184
+msgid "pytest_plugins = \"name1\", \"name2\","
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:186
+msgid ""
+"When the test module or conftest plugin is loaded the specified plugins will "
+"be loaded as well.  You can also use dotted path like this::"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:189
+msgid "pytest_plugins = \"myapp.testsupport.myplugin\""
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:191
+msgid "which will import the specified module as a ``pytest`` plugin."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:195
+msgid "Accessing another plugin by name"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:197
+msgid ""
+"If a plugin wants to collaborate with code from another plugin it can obtain "
+"a reference through the plugin manager like this:"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:201
+msgid "plugin = config.pluginmanager.getplugin(\"name_of_plugin\")"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:205
+msgid ""
+"If you want to look at the names of existing plugins, use the ``--trace-"
+"config`` option."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:209
+msgid "Testing plugins"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:211
+msgid ""
+"pytest comes with some facilities that you can enable for testing your "
+"plugin.  Given that you have an installed plugin you can enable the :py:"
+"class:`testdir <_pytest.pytester.Testdir>` fixture via specifying a command "
+"line option to include the pytester plugin (``-p pytester``) or by putting "
+"``pytest_plugins = \"pytester\"`` into your test or ``conftest.py`` file.  "
+"You then will have a ``testdir`` fixture which you can use like this::"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:219
+msgid ""
+"# content of test_myplugin.py\n"
+"\n"
+"pytest_plugins = \"pytester\"  # to get testdir fixture\n"
+"\n"
+"def test_myplugin(testdir):\n"
+"    testdir.makepyfile(\"\"\"\n"
+"        def test_example():\n"
+"            pass\n"
+"    \"\"\")\n"
+"    result = testdir.runpytest(\"--verbose\")\n"
+"    result.fnmatch_lines(\"\"\"\n"
+"        test_example*\n"
+"    \"\"\")"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:233
+msgid ""
+"Note that by default ``testdir.runpytest()`` will perform a pytest in-"
+"process.  You can pass the command line option ``--runpytest=subprocess`` to "
+"have it happen in a subprocess."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:237
+msgid ""
+"Also see the :py:class:`RunResult <_pytest.pytester.RunResult>` for more "
+"methods of the result object that you get from a call to ``runpytest``."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:243
+msgid "Writing hook functions"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:249
+msgid "hook function validation and execution"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:251
+msgid ""
+"pytest calls hook functions from registered plugins for any given hook "
+"specification.  Let's look at a typical hook function for the "
+"``pytest_collection_modifyitems(session, config, items)`` hook which pytest "
+"calls after collection of all test items is completed."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:257
+msgid ""
+"When we implement a ``pytest_collection_modifyitems`` function in our plugin "
+"pytest will during registration verify that you use argument names which "
+"match the specification and bail out if not."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:261
+msgid "Let's look at a possible implementation:"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:263
+msgid ""
+"def pytest_collection_modifyitems(config, items):\n"
+"    # called after collection is completed\n"
+"    # you can modify the ``items`` list"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:269
+msgid ""
+"Here, ``pytest`` will pass in ``config`` (the pytest config object) and "
+"``items`` (the list of collected test items) but will not pass in the "
+"``session`` argument because we didn't list it in the function signature.  "
+"This dynamic \"pruning\" of arguments allows ``pytest`` to be \"future-"
+"compatible\": we can introduce new hook named parameters without breaking "
+"the signatures of existing hook implementations.  It is one of the reasons "
+"for the general long-lived compatibility of pytest plugins."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:277
+msgid ""
+"Note that hook functions other than ``pytest_runtest_*`` are not allowed to "
+"raise exceptions.  Doing so will break the pytest run."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:283
+msgid "firstresult: stop at first non-None result"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:285
+msgid ""
+"Most calls to ``pytest`` hooks result in a **list of results** which "
+"contains all non-None results of the called hook functions."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:288
+msgid ""
+"Some hook specifications use the ``firstresult=True`` option so that the "
+"hook call only executes until the first of N registered functions returns a "
+"non-None result which is then taken as result of the overall hook call. The "
+"remaining hook functions will not be called in this case."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:295
+msgid "hookwrapper: executing around other hooks"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:301
+msgid ""
+"pytest plugins can implement hook wrappers which wrap the execution of other "
+"hook implementations.  A hook wrapper is a generator function which yields "
+"exactly once. When pytest invokes hooks it first executes hook wrappers and "
+"passes the same arguments as to the regular hooks."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:306
+msgid ""
+"At the yield point of the hook wrapper pytest will execute the next hook "
+"implementations and return their result to the yield point in the form of a :"
+"py:class:`CallOutcome` instance which encapsulates a result or exception "
+"info.  The yield point itself will thus typically not raise exceptions "
+"(unless there are bugs)."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:312
+msgid "Here is an example definition of a hook wrapper::"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:314
+msgid ""
+"import pytest\n"
+"\n"
+"@pytest.hookimpl(hookwrapper=True)\n"
+"def pytest_pyfunc_call(pyfuncitem):\n"
+"    # do whatever you want before the next hook executes\n"
+"\n"
+"    outcome = yield\n"
+"    # outcome.excinfo may be None or a (cls, val, tb) tuple\n"
+"\n"
+"    res = outcome.get_result()  # will raise if outcome was exception\n"
+"    # postprocess result"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:326
+msgid ""
+"Note that hook wrappers don't return results themselves, they merely perform "
+"tracing or other side effects around the actual hook implementations. If the "
+"result of the underlying hook is a mutable object, they may modify that "
+"result but it's probably better to avoid it."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:333
+msgid "Hook function ordering / call example"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:335
+msgid ""
+"For any given hook specification there may be more than one implementation "
+"and we thus generally view ``hook`` execution as a ``1:N`` function call "
+"where ``N`` is the number of registered functions. There are ways to "
+"influence if a hook implementation comes before or after others, i.e.  the "
+"position in the ``N``-sized list of functions:"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:341
+msgid ""
+"# Plugin 1\n"
+"@pytest.hookimpl(tryfirst=True)\n"
+"def pytest_collection_modifyitems(items):\n"
+"    # will execute as early as possible\n"
+"\n"
+"# Plugin 2\n"
+"@pytest.hookimpl(trylast=True)\n"
+"def pytest_collection_modifyitems(items):\n"
+"    # will execute as late as possible\n"
+"\n"
+"# Plugin 3\n"
+"@pytest.hookimpl(hookwrapper=True)\n"
+"def pytest_collection_modifyitems(items):\n"
+"    # will execute even before the tryfirst one above!\n"
+"    outcome = yield\n"
+"    # will execute after all non-hookwrappers executed"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:360
+msgid "Here is the order of execution:"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:362
+msgid ""
+"Plugin3's pytest_collection_modifyitems called until the yield point because "
+"it is a hook wrapper."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:365
+msgid ""
+"Plugin1's pytest_collection_modifyitems is called because it is marked with "
+"``tryfirst=True``."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:368
+msgid ""
+"Plugin2's pytest_collection_modifyitems is called because it is marked with "
+"``trylast=True`` (but even without this mark it would come after Plugin1)."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:372
+msgid ""
+"Plugin3's pytest_collection_modifyitems then executing the code after the "
+"yield point.  The yield receives a :py:class:`CallOutcome` instance which "
+"encapsulates the result from calling the non-wrappers.  Wrappers shall not "
+"modify the result."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:376
+msgid ""
+"It's possible to use ``tryfirst`` and ``trylast`` also in conjunction with "
+"``hookwrapper=True`` in which case it will influence the ordering of "
+"hookwrappers among each other."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:382
+msgid "Declaring new hooks"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:386
+msgid ""
+"Plugins and ``conftest.py`` files may declare new hooks that can then be "
+"implemented by other plugins in order to alter behaviour or interact with "
+"the new plugin:"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_addhooks:1
+msgid ""
+"called at plugin registration time to allow adding new hooks via a call to "
+"pluginmanager.add_hookspecs(module_or_class, prefix)."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:392
+msgid ""
+"Hooks are usually declared as do-nothing functions that contain only "
+"documentation describing when the hook will be called and what return values "
+"are expected."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:396
+msgid "For an example, see `newhooks.py`_ from :ref:`xdist`."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:402
+msgid "Optionally using hooks from 3rd party plugins"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:404
+msgid ""
+"Using new hooks from plugins as explained above might be a little tricky "
+"because of the standard :ref:`validation mechanism <validation>`: if you "
+"depend on a plugin that is not installed, validation will fail and the error "
+"message will not make much sense to your users."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:409
+msgid ""
+"One approach is to defer the hook implementation to a new plugin instead of "
+"declaring the hook functions directly in your plugin module, for example::"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:412
+msgid ""
+"# contents of myplugin.py\n"
+"\n"
+"class DeferPlugin(object):\n"
+"    \"\"\"Simple plugin to defer pytest-xdist hook functions.\"\"\"\n"
+"\n"
+"    def pytest_testnodedown(self, node, error):\n"
+"        \"\"\"standard xdist hook function.\n"
+"        \"\"\"\n"
+"\n"
+"def pytest_configure(config):\n"
+"    if config.pluginmanager.hasplugin('xdist'):\n"
+"        config.pluginmanager.register(DeferPlugin())"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:425
+msgid ""
+"This has the added benefit of allowing you to conditionally install hooks "
+"depending on which plugins are installed."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:433
+msgid "pytest hook reference"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:437
+msgid "Initialization, command line and configuration hooks"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_load_initial_conftests:1
+msgid ""
+"implements the loading of initial conftest files ahead of command line "
+"option parsing."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_cmdline_preparse:1
+msgid "(deprecated) modify command line arguments before option parsing."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_cmdline_parse:1
+msgid "return initialized config object, parsing the specified args."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_namespace:1
+msgid ""
+"return dict of name->object to be made globally available in the pytest "
+"namespace.  This hook is called at plugin registration time."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_addoption:1
+msgid ""
+"register argparse-style options and ini-style config values, called once at "
+"the beginning of a test run."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_addoption:6
+msgid ""
+"This function should be implemented only in plugins or ``conftest.py`` files "
+"situated at the tests root directory due to how py.test :ref:`discovers "
+"plugins during startup <pluginorder>`."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_addoption:0
+#: _pytest.hookspec.pytest_runtest_protocol:0
+#: _pytest.hookspec.pytest_runtest_teardown:0
+#: _pytest.hookspec.pytest_enter_pdb:0
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: _pytest.config.Config.getoption:0
+msgid "Parameters"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_addoption:10
+msgid ""
+"To add command line options, call :py:func:`parser.addoption(...) <_pytest."
+"config.Parser.addoption>`. To add ini-file values call :py:func:`parser."
+"addini(...) <_pytest.config.Parser.addini>`."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_addoption:15
+msgid ""
+"Options can later be accessed through the :py:class:`config <_pytest.config."
+"Config>` object, respectively:"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_addoption:18
+msgid ""
+":py:func:`config.getoption(name) <_pytest.config.Config.getoption>` to "
+"retrieve the value of a command line option."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_addoption:21
+msgid ""
+":py:func:`config.getini(name) <_pytest.config.Config.getini>` to retrieve a "
+"value read from an ini-style file."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_addoption:24
+msgid ""
+"The config object is passed around on many internal objects via the ``."
+"config`` attribute or can be retrieved as the ``pytestconfig`` fixture or "
+"accessed via (deprecated) ``pytest.config``."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_cmdline_main:1
+msgid ""
+"called for performing the main command line action. The default "
+"implementation will invoke the configure hooks and runtest_mainloop."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_configure:1
+msgid ""
+"called after command line options have been parsed and all plugins and "
+"initial conftest files been loaded. This hook is called for every plugin."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_unconfigure:1
+msgid "called before test process is exited."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:449
+msgid "Generic \"runtest\" hooks"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:451
+msgid "All runtest related hooks receive a :py:class:`pytest.Item` object."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_runtest_protocol:1
+msgid ""
+"implements the runtest_setup/call/teardown protocol for the given test item, "
+"including capturing exceptions and calling reporting hooks."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_runtest_protocol:5
+msgid "test item for which the runtest protocol is performed."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_runtest_protocol:7
+msgid ""
+"the scheduled-to-be-next test item (or None if this is the end my friend).  "
+"This argument is passed on to :py:func:`pytest_runtest_teardown`."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_runtest_protocol:0
+msgid "return boolean"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_runtest_protocol:11
+msgid "True if no further hook implementations should be invoked."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_runtest_setup:1
+msgid "called before ``pytest_runtest_call(item)``."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_runtest_call:1
+msgid "called to execute the test ``item``."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_runtest_teardown:1
+msgid "called after ``pytest_runtest_call``."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_runtest_teardown:3
+msgid ""
+"the scheduled-to-be-next test item (None if no further test item is "
+"scheduled).  This argument can be used to perform exact teardowns, i.e. "
+"calling just enough finalizers so that nextitem only needs to call setup-"
+"functions."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_runtest_makereport:1
+msgid ""
+"return a :py:class:`_pytest.runner.TestReport` object for the given :py:"
+"class:`pytest.Item` and :py:class:`_pytest.runner.CallInfo`."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:459
+msgid ""
+"For deeper understanding you may look at the default implementation of these "
+"hooks in :py:mod:`_pytest.runner` and maybe also in :py:mod:`_pytest.pdb` "
+"which interacts with :py:mod:`_pytest.capture` and its input/output "
+"capturing in order to immediately drop into interactive debugging when a "
+"test failure occurs."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:465
+msgid ""
+"The :py:mod:`_pytest.terminal` reported specifically uses the reporting hook "
+"to print information about a test run."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:469
+msgid "Collection hooks"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:471
+msgid ""
+"``pytest`` calls the following hooks for collecting files and directories:"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_ignore_collect:1
+msgid ""
+"return True to prevent considering this path for collection. This hook is "
+"consulted for all files and directories prior to calling more specific hooks."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_collect_directory:1
+msgid "called before traversing a directory for collection files."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_collect_file:1
+msgid ""
+"return collection Node or None for the given path. Any new node needs to "
+"have the specified ``parent`` as a parent."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:477
+msgid ""
+"For influencing the collection of objects in Python modules you can use the "
+"following hook:"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_pycollect_makeitem:1
+msgid "return custom item/collector for a python object in a module, or None."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_generate_tests:1
+msgid "generate (multiple) parametrized calls to a test function."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:483
+msgid ""
+"After collection is complete, you can modify the order of items, delete or "
+"otherwise amend the test items:"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_collection_modifyitems:1
+msgid ""
+"called after collection has been performed, may filter or re-order the items "
+"in-place."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:489
+msgid "Reporting hooks"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:491
+msgid "Session related reporting hooks:"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_collectstart:1
+msgid "collector starts collecting."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_itemcollected:1
+msgid "we just collected a test item."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_collectreport:1
+msgid "collector finished collecting."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_deselected:1
+msgid "called for test items deselected by keyword."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_report_header:1
+msgid "return a string to be displayed as header info for terminal reporting."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_report_teststatus:1
+msgid "return result-category, shortletter and verbose word for reporting."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_terminal_summary:1
+msgid "add additional section in terminal summary reporting."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:501
+msgid "And here is the central hook for reporting about test execution:"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_runtest_logreport:1
+msgid ""
+"process a test setup/call/teardown report relating to the respective phase "
+"of executing a test."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:506
+msgid ""
+"You can also use this hook to customize assertion representation for some "
+"types:"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_assertrepr_compare:1
+msgid "return explanation for comparisons in failing assert expressions."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_assertrepr_compare:3
+msgid ""
+"Return None for no custom explanation, otherwise return a list of strings.  "
+"The strings will be joined by newlines but any newlines *in* a string will "
+"be escaped.  Note that all but the first line will be indented sligthly, the "
+"intention is for the first line to be a summary."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:513
+msgid "Debugging/Interaction hooks"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:515
+msgid ""
+"There are few hooks which can be used for special reporting or interaction "
+"with exceptions:"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_internalerror:1
+msgid "called for internal errors."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_keyboard_interrupt:1
+msgid "called for keyboard interrupt."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_exception_interact:1
+msgid ""
+"called when an exception was raised which can potentially be interactively "
+"handled."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_exception_interact:4
+msgid ""
+"This hook is only called if an exception was raised that is not an internal "
+"exception like ``skip.Exception``."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_enter_pdb:1
+msgid ""
+"called upon pdb.set_trace(), can be used by plugins to take special action "
+"just before the python debugger enters in interactive mode."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_enter_pdb:4
+msgid "pytest config object"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:525
+msgid "Reference of objects involved in hooks"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.Config:1
+msgid "access to configuration values, pluginmanager and plugin hooks."
+msgstr ""
+
+#: ../../../doc/docstring of _pytest.config.Config.option:1
+msgid ""
+"access to command line option as attributes. (deprecated), use :py:func:"
+"`getoption() <_pytest.config.Config.getoption>` instead"
+msgstr ""
+
+#: ../../../doc/docstring of _pytest.config.Config.pluginmanager:1
+msgid "a pluginmanager instance"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.Config.add_cleanup:1
+msgid ""
+"Add a function to be called when the config object gets out of use (usually "
+"coninciding with pytest_unconfigure)."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.Config.warn:1
+msgid "generate a warning for this test session."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.Config.fromdictargs:1
+msgid "constructor useable for subprocesses."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.Config.addinivalue_line:1
+msgid ""
+"add a line to an ini-file option. The option must have been declared but "
+"might not yet be set in which case the line becomes the the first line in "
+"its value."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.Config.getini:1
+msgid ""
+"return configuration value from an :ref:`ini file <inifiles>`. If the "
+"specified name hasn't been registered through a prior :py:func:`parser."
+"addini <pytest.config.Parser.addini>` call (usually from a plugin), a "
+"ValueError is raised."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.Config.getoption:1
+msgid "return command line option value."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.Config.getoption:3
+msgid ""
+"name of the option.  You may also specify the literal ``--OPT`` option "
+"instead of the \"dest\" option name."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.Config.getoption:5
+msgid "default value if no option of that name exists."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.Config.getoption:6
+msgid ""
+"if True raise pytest.skip if option does not exists or has a None value."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.Config.getvalue:1
+msgid "(deprecated, use getoption())"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.Config.getvalueorskip:1
+msgid "(deprecated, use getoption(skip=True))"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.Parser:1
+msgid "Parser for command line arguments and ini-file values."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.Parser:0
+msgid "Variables"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.Parser:3
+msgid ""
+"dict of generic param -> value to display in case there's an error "
+"processing the command line arguments."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.Parser.getgroup:1
+msgid "get (or create) a named option Group."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.Parser.getgroup:0 _pytest.config.Parser.addini:0
+msgid "name"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.Parser.getgroup:3
+msgid "name of the option group."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.Parser.getgroup:0
+msgid "description"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.Parser.getgroup:4
+msgid "long description for --help output."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.Parser.getgroup:0
+msgid "after"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.Parser.getgroup:5
+msgid "name of other group, used for ordering --help output."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.Parser.getgroup:7
+msgid ""
+"The returned group object has an ``addoption`` method with the same "
+"signature as :py:func:`parser.addoption <_pytest.config.Parser.addoption>` "
+"but will be shown in the respective group in the output of ``pytest. --"
+"help``."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.Parser.addoption:1
+msgid "register a command line option."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.Parser.addoption:0
+msgid "opts"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.Parser.addoption:3
+msgid "option names, can be short or long options."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.Parser.addoption:0
+msgid "attrs"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.Parser.addoption:4
+msgid ""
+"same attributes which the ``add_option()`` function of the `argparse library "
+"<http://docs.python.org/2/library/argparse.html>`_ accepts."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.Parser.addoption:9
+msgid ""
+"After command line parsing options are available on the pytest config object "
+"via ``config.option.NAME`` where ``NAME`` is usually set by passing a "
+"``dest`` attribute, for example ``addoption(\"--long\", "
+"dest=\"NAME\", ...)``."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.Parser.parse_known_args:1
+msgid ""
+"parses and returns a namespace object with known arguments at this point."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.Parser.parse_known_and_unknown_args:1
+msgid ""
+"parses and returns a namespace object with known arguments, and the "
+"remaining arguments unknown at this point."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.Parser.addini:1
+msgid "register an ini-file option."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.Parser.addini:3
+msgid "name of the ini-variable"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.Parser.addini:0
+msgid "type"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.Parser.addini:4
+msgid ""
+"type of the variable, can be ``pathlist``, ``args``, ``linelist`` or "
+"``bool``."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.Parser.addini:0
+msgid "default"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.Parser.addini:6
+msgid "default value if no ini-file option exists but is queried."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.Parser.addini:8
+msgid ""
+"The value of ini-variables can be retrieved via a call to :py:func:`config."
+"getini(name) <_pytest.config.Config.getini>`."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/runner.py:docstring
+#: of _pytest.runner.CallInfo:1
+msgid "Result/Exception info a function invocation."
+msgstr ""
+
+#: ../../../doc/docstring of _pytest.runner.CallInfo.excinfo:1
+msgid "None or ExceptionInfo object."
+msgstr ""
+
+#: ../../../doc/docstring of _pytest.runner.CallInfo.when:1
+msgid ""
+"context of invocation: one of \"setup\", \"call\", \"teardown\", "
+"\"memocollect\""
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/runner.py:docstring
+#: of _pytest.runner.TestReport:1
+msgid ""
+"Basic test report object (also used for setup and teardown calls if they "
+"fail)."
+msgstr ""
+
+#: ../../../doc/docstring of _pytest.runner.TestReport.nodeid:1
+msgid "normalized collection node id"
+msgstr ""
+
+#: ../../../doc/docstring of _pytest.runner.TestReport.location:1
+msgid ""
+"a (filesystempath, lineno, domaininfo) tuple indicating the actual location "
+"of a test item - it might be different from the collected one e.g. if a "
+"method is inherited from a different module."
+msgstr ""
+
+#: ../../../doc/docstring of _pytest.runner.TestReport.keywords:1
+msgid ""
+"a name -> value dictionary containing all keywords and markers associated "
+"with a test invocation."
+msgstr ""
+
+#: ../../../doc/docstring of _pytest.runner.TestReport.outcome:1
+msgid "test outcome, always one of \"passed\", \"failed\", \"skipped\"."
+msgstr ""
+
+#: ../../../doc/docstring of _pytest.runner.TestReport.longrepr:1
+msgid "None or a failure representation."
+msgstr ""
+
+#: ../../../doc/docstring of _pytest.runner.TestReport.when:1
+msgid "one of 'setup', 'call', 'teardown' to indicate runtest phase."
+msgstr ""
+
+#: ../../../doc/docstring of _pytest.runner.TestReport.sections:1
+msgid "list of (secname, data) extra information which needs to marshallable"
+msgstr ""
+
+#: ../../../doc/docstring of _pytest.runner.TestReport.duration:1
+msgid "time it took to run just the test"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/vendored_packages/pluggy.py:docstring
+#: of _pytest.vendored_packages.pluggy._CallOutcome:1
+msgid ""
+"Outcome of a function call, either an exception or a proper result. Calling "
+"the ``get_result`` method will return the result or reraise the exception "
+"raised when the function was called."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.get_plugin_manager:1
+msgid ""
+"Obtain a new instance of the :py:class:`_pytest.config.PytestPluginManager`, "
+"with default plugins already loaded."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.get_plugin_manager:5
+msgid ""
+"This function can be used by integration with other tools, like hooking into "
+"pytest to run tests into an IDE."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.PytestPluginManager:1
+msgid "Bases: :class:`_pytest.vendored_packages.pluggy.PluginManager`"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.PytestPluginManager:1
+msgid ""
+"Overwrites :py:class:`pluggy.PluginManager` to add pytest-specific "
+"functionality:"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.PytestPluginManager:4
+msgid ""
+"loading plugins from the command line, ``PYTEST_PLUGIN`` env variable and "
+"``pytest_plugins`` global variables found in plugins being loaded;"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.PytestPluginManager:6
+msgid "``conftest.py`` loading during start-up;"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.PytestPluginManager.addhooks:3
+msgid "Use :py:meth:`pluggy.PluginManager.add_hookspecs` instead."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.PytestPluginManager.register:1
+msgid ""
+"Register a plugin and return its canonical name or None if the name is "
+"blocked from registering.  Raise a ValueError if the plugin is already "
+"registered."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.PytestPluginManager.hasplugin:1
+msgid "Return True if the plugin with the given name is registered."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.Testdir:1
+msgid "Temporary test directory with tools to test/run py.test itself."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.Testdir:3
+msgid ""
+"This is based on the ``tmpdir`` fixture but provides a number of methods "
+"which aid with testing py.test itself.  Unless :py:meth:`chdir` is used all "
+"methods will use :py:attr:`tmpdir` as current working directory."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.Testdir:8 _pytest.pytester.RunResult:3
+msgid "Attributes:"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.Testdir:0
+msgid "tmpdir"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.Testdir:10
+msgid "The :py:class:`py.path.local` instance of the temporary directory."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.Testdir:0
+msgid "plugins"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.Testdir:13
+msgid ""
+"A list of plugins to use with :py:meth:`parseconfig` and :py:meth:"
+"`runpytest`.  Initially this is an empty list but plugins can be added to "
+"the list.  The type of items to add to the list depend on the method which "
+"uses them so refer to them for details."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.Testdir.makeconftest:1
+msgid "Write a contest.py file with 'source' as contents."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.Testdir.makepyfile:1
+msgid "Shortcut for .makefile() with a .py extension."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.Testdir.runpytest_inprocess:1
+msgid ""
+"Return result of running pytest in-process, providing a similar interface to "
+"what self.runpytest() provides."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.Testdir.runpytest:1
+msgid ""
+"Run pytest inline or in a subprocess, depending on the command line option "
+"\"--runpytest\" and return a :py:class:`RunResult`."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.Testdir.runpytest_subprocess:1
+msgid "Run py.test as a subprocess with given arguments."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.Testdir.runpytest_subprocess:3
+msgid ""
+"Any plugins added to the :py:attr:`plugins` list will added using the ``-p`` "
+"command line option.  Addtionally ``--basetemp`` is used put any temporary "
+"files and directories in a numbered directory prefixed with \"runpytest-\" "
+"so they do not conflict with the normal numberd pytest location for "
+"temporary files and directories."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.Testdir.runpytest_subprocess:10
+msgid "Returns a :py:class:`RunResult`."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.RunResult:1
+msgid "The result of running a command."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.RunResult:0
+msgid "ret"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.RunResult:5
+msgid "The return value."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.RunResult:0
+msgid "outlines"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.RunResult:6
+msgid "List of lines captured from stdout."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.RunResult:0
+msgid "errlines"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.RunResult:7
+msgid "List of lines captures from stderr."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.RunResult:0
+msgid "stdout"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.RunResult:8
+msgid ""
+":py:class:`LineMatcher` of stdout, use ``stdout.str()`` to reconstruct "
+"stdout or the commonly used ``stdout.fnmatch_lines()`` method."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.RunResult:0
+msgid "stderrr"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.RunResult:11
+msgid ":py:class:`LineMatcher` of stderr."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.RunResult:0
+msgid "duration"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.RunResult:12
+msgid "Duration in seconds."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.RunResult.parseoutcomes:1
+msgid ""
+"Return a dictionary of outcomestring->num from parsing the terminal output "
+"that the test process produced."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.RunResult.assert_outcomes:1
+msgid ""
+"assert that the specified outcomes appear with the respective numbers (0 "
+"means it didn't occur) in the text output from a test run."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.LineMatcher:1
+msgid "Flexible matching of text."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.LineMatcher:3
+msgid ""
+"This is a convenience class to test large texts like the output of commands."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.LineMatcher:6
+msgid ""
+"The constructor takes a list of lines without their trailing newlines, i.e. "
+"``text.splitlines()``."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.LineMatcher.str:1
+msgid "Return the entire original text."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.LineMatcher.fnmatch_lines_random:1
+msgid "Check lines exist in the output."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.LineMatcher.fnmatch_lines_random:3
+msgid ""
+"The argument is a list of lines which have to occur in the output, in any "
+"order.  Each line can contain glob whildcards."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.LineMatcher.get_lines_after:1
+msgid "Return all lines following the given line in the text."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.LineMatcher.get_lines_after:3
+msgid "The given line can contain glob wildcards."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.LineMatcher.fnmatch_lines:1
+msgid "Search the text for matching lines."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
+#: of _pytest.pytester.LineMatcher.fnmatch_lines:3
+msgid ""
+"The argument is a list of lines which have to match and can use glob "
+"wildcards.  If they do not match an pytest.fail() is called.  The matches "
+"and non-matches are also printed on stdout."
+msgstr ""
