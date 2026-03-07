@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../doc/en/sponsor.rst:2
 msgid "Sponsor"
-msgstr ""
+msgstr "贊助者"
 
 #: ../../../doc/en/sponsor.rst:4
 msgid ""
@@ -28,6 +28,9 @@ msgid ""
 "it daily in our jobs, monetary compensation when possible is welcome to "
 "justify time away from friends, family and personal time."
 msgstr ""
+"pytest 是由來自世界各地的志願者團隊在他們的空閒時間維護的。雖然我們投入 "
+"pytest 的工作是因為我們熱愛這個專案，並且在日常工作中經常使用它，但當我們需要"
+"從與朋友、家人相處及個人時間中抽身時，可能的金錢補償是受歡迎的。"
 
 #: ../../../doc/en/sponsor.rst:8
 msgid ""
@@ -35,10 +38,12 @@ msgid ""
 "distribute in conferences for example) and every few years a large sprint "
 "involving all members."
 msgstr ""
+"資金亦用於資助當地的衝刺活動、商品製作（例如在會議上分發的貼紙），以及每隔幾"
+"年舉辦一次大型衝刺活動，匯集所有成員參加。"
 
 #: ../../../doc/en/sponsor.rst:12
 msgid "OpenCollective"
-msgstr ""
+msgstr "OpenCollective"
 
 #: ../../../doc/en/sponsor.rst:14
 msgid ""
