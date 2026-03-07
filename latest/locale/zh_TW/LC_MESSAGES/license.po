@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../doc/en/license.rst:4
 msgid "License"
-msgstr ""
+msgstr "授權條款"
 
 #: ../../../doc/en/license.rst:6
 msgid ""

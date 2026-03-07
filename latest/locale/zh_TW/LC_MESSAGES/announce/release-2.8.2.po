@@ -42,7 +42,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-2.8.2.rst:14
 msgid "pip install -U pytest"
-msgstr ""
+msgstr "pip install -U pytest"
 
 #: ../../../doc/en/announce/release-2.8.2.rst:16
 msgid "Thanks to all who contributed to this release, among them:"

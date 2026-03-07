@@ -33,11 +33,11 @@ msgstr ""
 
 #: ../../../doc/en/contents.rst:23
 msgid "How-to guides"
-msgstr ""
+msgstr "操作指南"
 
 #: ../../../doc/en/contents.rst:55
 msgid "Reference guides"
-msgstr ""
+msgstr "參考指南"
 
 #: ../../../doc/en/contents.rst:67
 msgid "Explanation"

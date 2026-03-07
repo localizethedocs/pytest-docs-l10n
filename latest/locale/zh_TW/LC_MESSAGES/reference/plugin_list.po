@@ -3890,7 +3890,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:98
 msgid "pytest>=7; python_version >= \"3.10\""
-msgstr ""
+msgstr "pytest>=7; python_version >= \"3.10\""
 
 #: ../../../doc/en/reference/plugin_list.rst:99
 #: ../../../doc/en/reference/plugin_list.rst:2348
@@ -7984,7 +7984,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:346
 msgid "pytest<8.4; python_version == \"3.8\""
-msgstr ""
+msgstr "pytest<8.4; python_version == \"3.8\""
 
 #: ../../../doc/en/reference/plugin_list.rst:347
 #: ../../../doc/en/reference/plugin_list.rst:4084

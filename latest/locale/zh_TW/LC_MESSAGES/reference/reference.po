@@ -31,7 +31,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:15
 msgid "pytest.__version__"
-msgstr ""
+msgstr "pytest.__version__"
 
 #: ../../../doc/en/reference/reference.rst:17
 msgid "The current pytest version, as a string::"
@@ -43,6 +43,9 @@ msgid ""
 ">>> pytest.__version__\n"
 "'9.0.2'"
 msgstr ""
+">>> import pytest\n"
+">>> pytest.__version__\n"
+"'9.0.2'"
 
 #: ../../../doc/en/reference/reference.rst:26
 msgid "pytest.HIDDEN_PARAM"
@@ -58,7 +61,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:37
 msgid "pytest.version_tuple"
-msgstr ""
+msgstr "pytest.version_tuple"
 
 #: ../../../doc/en/reference/reference.rst:41
 msgid "The current pytest version, as a tuple::"
@@ -70,6 +73,9 @@ msgid ""
 ">>> pytest.version_tuple\n"
 "(7, 0, 0)"
 msgstr ""
+">>> import pytest\n"
+">>> pytest.version_tuple\n"
+"(7, 0, 0)"
 
 #: ../../../doc/en/reference/reference.rst:47
 msgid ""
@@ -83,6 +89,9 @@ msgid ""
 ">>> pytest.version_tuple\n"
 "(7, 0, '0rc1')"
 msgstr ""
+">>> import pytest\n"
+">>> pytest.version_tuple\n"
+"(7, 0, '0rc1')"
 
 #: ../../../doc/en/reference/reference.rst:55
 msgid "Functions"
@@ -90,7 +99,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:58
 msgid "pytest.approx"
-msgstr ""
+msgstr "pytest.approx"
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python_api.py:docstring
 #: of _pytest.python_api.approx:1
@@ -112,6 +121,8 @@ msgid ""
 ">>> 0.1 + 0.2 == 0.3\n"
 "False"
 msgstr ""
+">>> 0.1 + 0.2 == 0.3\n"
+"False"
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python_api.py:docstring
 #: of _pytest.python_api.approx:10
@@ -128,6 +139,8 @@ msgid ""
 ">>> abs((0.1 + 0.2) - 0.3) < 1e-6\n"
 "True"
 msgstr ""
+">>> abs((0.1 + 0.2) - 0.3) < 1e-6\n"
+"True"
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python_api.py:docstring
 #: of _pytest.python_api.approx:18
@@ -155,6 +168,9 @@ msgid ""
 ">>> 0.1 + 0.2 == approx(0.3)\n"
 "True"
 msgstr ""
+">>> from pytest import approx\n"
+">>> 0.1 + 0.2 == approx(0.3)\n"
+"True"
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python_api.py:docstring
 #: of _pytest.python_api.approx:33
@@ -214,6 +230,8 @@ msgid ""
 ">>> {'a': 0.1 + 0.2, 'b': 0.2 + 0.4} == approx({'a': 0.3, 'b': 0.6})\n"
 "True"
 msgstr ""
+">>> {'a': 0.1 + 0.2, 'b': 0.2 + 0.4} == approx({'a': 0.3, 'b': 0.6})\n"
+"True"
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python_api.py:docstring
 #: of _pytest.python_api.approx:59
@@ -260,6 +278,12 @@ msgid ""
 ">>> 1.0001 == approx(1, abs=1e-3)\n"
 "True"
 msgstr ""
+">>> 1.0001 == approx(1)\n"
+"False\n"
+">>> 1.0001 == approx(1, rel=1e-3)\n"
+"True\n"
+">>> 1.0001 == approx(1, abs=1e-3)\n"
+"True"
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python_api.py:docstring
 #: of _pytest.python_api.approx:86
@@ -282,6 +306,12 @@ msgid ""
 ">>> 1 + 1e-8 == approx(1, rel=1e-6, abs=1e-12)\n"
 "True"
 msgstr ""
+">>> 1 + 1e-8 == approx(1)\n"
+"True\n"
+">>> 1 + 1e-8 == approx(1, abs=1e-12)\n"
+"False\n"
+">>> 1 + 1e-8 == approx(1, rel=1e-6, abs=1e-12)\n"
+"True"
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python_api.py:docstring
 #: of _pytest.python_api.approx:100
@@ -434,7 +464,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:63
 msgid "pytest.fail"
-msgstr ""
+msgstr "pytest.fail"
 
 #: ../../../doc/en/reference/reference.rst:65
 msgid "**Tutorial**: :ref:`skipping`"
@@ -1782,7 +1812,7 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/monkeypatch.py:docstring
 #: _pytest.monkeypatch.MonkeyPatch.context:4
 msgid "Example:"
-msgstr ""
+msgstr "範例："
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/capture.py:docstring
 #: of _pytest.capture.capfd:11
@@ -2567,6 +2597,9 @@ msgid ""
 "    if pytestconfig.get_verbosity() > 0:\n"
 "        ..."
 msgstr ""
+"def test_foo(pytestconfig):\n"
+"    if pytestconfig.get_verbosity() > 0:\n"
+"        ..."
 
 #: ../../../doc/en/reference/reference.rst:493
 msgid "pytester"
@@ -4218,6 +4251,7 @@ msgid ""
 ":ref:`About the tmpdir and tmpdir_factory fixtures<tmpdir and "
 "tmpdir_factory>`."
 msgstr ""
+":ref:`關於 tmpdir 和 tmpdir_factory 夾具 <tmpdir and tmpdir_factory>`。"
 
 #: ../../../doc/en/reference/reference.rst:643
 msgid "tmpdir_factory"
@@ -10697,6 +10731,8 @@ msgid ""
 "[pytest]\n"
 "usefixtures = [\"clean_db\"]"
 msgstr ""
+"[pytest]\n"
+"usefixtures = [\"clean_db\"]"
 
 #: ../../../doc/en/reference/reference.rst:2597
 msgid ""
@@ -10704,6 +10740,9 @@ msgid ""
 "usefixtures =\n"
 "    clean_db"
 msgstr ""
+"[pytest]\n"
+"usefixtures =\n"
+"    clean_db"
 
 #: ../../../doc/en/reference/reference.rst:2606
 msgid ""
@@ -11006,7 +11045,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:2851
 msgid "Show fixtures per test."
-msgstr ""
+msgstr "顯示每個測試的夾具。"
 
 #: ../../../doc/en/reference/reference.rst:2855
 msgid "Only setup fixtures, do not execute tests. See :ref:`how-to-fixtures`."
@@ -11395,7 +11434,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:3113
 msgid "Configuration"
-msgstr ""
+msgstr "組態"
 
 #: ../../../doc/en/reference/reference.rst:3117
 msgid ""

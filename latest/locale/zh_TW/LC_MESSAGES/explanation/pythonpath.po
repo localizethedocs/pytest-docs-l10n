@@ -213,7 +213,7 @@ msgstr ""
 
 #: ../../../doc/en/explanation/pythonpath.rst:109
 msgid "The :confval:`pythonpath` configuration variable."
-msgstr ""
+msgstr ":confval:`pythonpath` 組態變數。"
 
 #: ../../../doc/en/explanation/pythonpath.rst:111
 msgid "The :confval:`consider_namespace_packages` configuration variable."
@@ -256,6 +256,15 @@ msgid ""
 "         |- __init__.py\n"
 "         |- test_foo.py"
 msgstr ""
+"root/\n"
+"|- foo/\n"
+"   |- __init__.py\n"
+"   |- conftest.py\n"
+"   |- bar/\n"
+"      |- __init__.py\n"
+"      |- tests/\n"
+"         |- __init__.py\n"
+"         |- test_foo.py"
 
 #: ../../../doc/en/explanation/pythonpath.rst:139
 #: ../../../doc/en/explanation/pythonpath.rst:171
@@ -304,6 +313,12 @@ msgid ""
 "      |- tests/\n"
 "         |- test_foo.py"
 msgstr ""
+"root/\n"
+"|- foo/\n"
+"   |- conftest.py\n"
+"   |- bar/\n"
+"      |- tests/\n"
+"         |- test_foo.py"
 
 #: ../../../doc/en/explanation/pythonpath.rst:177
 msgid ""

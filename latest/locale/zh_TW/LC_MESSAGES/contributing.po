@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../CONTRIBUTING.rst:3
 msgid "Contributing"
-msgstr ""
+msgstr "參與貢獻"
 
 #: ../../../CONTRIBUTING.rst:5
 msgid ""
@@ -53,7 +53,7 @@ msgstr ""
 
 #: ../../../CONTRIBUTING.rst:26
 msgid "Report bugs"
-msgstr ""
+msgstr "回報臭蟲"
 
 #: ../../../CONTRIBUTING.rst:28
 msgid ""
@@ -89,7 +89,7 @@ msgstr ""
 
 #: ../../../CONTRIBUTING.rst:46
 msgid "Fix bugs"
-msgstr ""
+msgstr "修復臭蟲"
 
 #: ../../../CONTRIBUTING.rst:48
 msgid ""
@@ -130,7 +130,7 @@ msgstr ""
 
 #: ../../../CONTRIBUTING.rst:68
 msgid "Write documentation"
-msgstr ""
+msgstr "撰寫文件"
 
 #: ../../../CONTRIBUTING.rst:70
 msgid "Pytest could always use more documentation.  What exactly is needed?"
@@ -165,7 +165,7 @@ msgstr ""
 
 #: ../../../CONTRIBUTING.rst:83
 msgid "$ tox -e docs"
-msgstr ""
+msgstr "$ tox -e docs"
 
 #: ../../../CONTRIBUTING.rst:87
 msgid ""
@@ -207,6 +207,28 @@ msgid ""
 "    type-hinting is being used (as in this example).\n"
 "    \"\"\""
 msgstr ""
+"def my_function(arg: ArgType) -> Foo:\n"
+"    \"\"\"Do important stuff.\n"
+"\n"
+"    More detailed info here, in separate paragraphs from the subject line.\n"
+"    Use proper sentences -- start sentences with capital letters and end\n"
+"    with periods.\n"
+"\n"
+"    Can include annotated documentation:\n"
+"\n"
+"    :param short_arg: An argument which determines stuff.\n"
+"    :param long_arg:\n"
+"        A long explanation which spans multiple lines, overflows\n"
+"        like this.\n"
+"    :returns: The result.\n"
+"    :raises ValueError:\n"
+"        Detailed information when this can happen.\n"
+"\n"
+"    .. versionadded:: 6.0\n"
+"\n"
+"    Including types into the annotations above is not necessary when\n"
+"    type-hinting is being used (as in this example).\n"
+"    \"\"\""
 
 #: ../../../CONTRIBUTING.rst:125
 msgid "Submitting Plugins to pytest-dev"
@@ -439,7 +461,7 @@ msgstr ""
 
 #: ../../../CONTRIBUTING.rst:258
 msgid "Preparing Pull Requests"
-msgstr ""
+msgstr "準備拉取請求"
 
 #: ../../../CONTRIBUTING.rst:261
 msgid "Short version"
@@ -447,7 +469,7 @@ msgstr ""
 
 #: ../../../CONTRIBUTING.rst:263
 msgid "Fork the repository."
-msgstr ""
+msgstr "分叉儲存庫。"
 
 #: ../../../CONTRIBUTING.rst:264
 msgid ""
@@ -555,6 +577,8 @@ msgid ""
 "$ git remote add upstream https://github.com/pytest-dev/pytest\n"
 "$ git fetch upstream --tags"
 msgstr ""
+"$ git remote add upstream https://github.com/pytest-dev/pytest\n"
+"$ git fetch upstream --tags"
 
 #: ../../../CONTRIBUTING.rst:318
 msgid ""

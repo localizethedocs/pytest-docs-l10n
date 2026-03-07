@@ -31,7 +31,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-4.6.5.rst:8
 msgid "pip install --upgrade pytest"
-msgstr ""
+msgstr "pip install --upgrade pytest"
 
 #: ../../../doc/en/announce/release-4.6.5.rst:10
 msgid ""
@@ -45,19 +45,19 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-4.6.5.rst:14
 msgid "Anthony Sottile"
-msgstr ""
+msgstr "Anthony Sottile"
 
 #: ../../../doc/en/announce/release-4.6.5.rst:15
 msgid "Bruno Oliveira"
-msgstr ""
+msgstr "Bruno Oliveira"
 
 #: ../../../doc/en/announce/release-4.6.5.rst:16
 msgid "Daniel Hahler"
-msgstr ""
+msgstr "Daniel Hahler"
 
 #: ../../../doc/en/announce/release-4.6.5.rst:17
 msgid "Thomas Grainger"
-msgstr ""
+msgstr "Thomas Grainger"
 
 #: ../../../doc/en/announce/release-4.6.5.rst:20
 msgid "Happy testing, The pytest Development Team"

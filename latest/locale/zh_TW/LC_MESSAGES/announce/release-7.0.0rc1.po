@@ -180,7 +180,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-7.0.0rc1.rst:54
 msgid "Ronny Pfannschmidt"
-msgstr ""
+msgstr "Ronny Pfannschmidt"
 
 #: ../../../doc/en/announce/release-7.0.0rc1.rst:55
 msgid "Simon K"
@@ -204,11 +204,11 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-7.0.0rc1.rst:60
 msgid "Thomas Grainger"
-msgstr ""
+msgstr "Thomas Grainger"
 
 #: ../../../doc/en/announce/release-7.0.0rc1.rst:61
 msgid "Thomas Hisch"
-msgstr ""
+msgstr "Thomas Hisch"
 
 #: ../../../doc/en/announce/release-7.0.0rc1.rst:62
 msgid "William Jamir Silva"

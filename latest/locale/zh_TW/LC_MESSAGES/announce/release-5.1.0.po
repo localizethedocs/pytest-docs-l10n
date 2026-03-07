@@ -55,7 +55,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-5.1.0.rst:20
 msgid "pip install -U pytest"
-msgstr ""
+msgstr "pip install -U pytest"
 
 #: ../../../doc/en/announce/release-5.1.0.rst:22
 msgid "Thanks to all who contributed to this release, among them:"
@@ -63,7 +63,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-5.1.0.rst:24
 msgid "Albert Tugushev"
-msgstr ""
+msgstr "Albert Tugushev"
 
 #: ../../../doc/en/announce/release-5.1.0.rst:25
 msgid "Alexey Zankevich"
@@ -83,7 +83,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-5.1.0.rst:29
 msgid "David Röthlisberger"
-msgstr ""
+msgstr "David Röthlisberger"
 
 #: ../../../doc/en/announce/release-5.1.0.rst:30
 msgid "Freya Bruhin"
@@ -111,7 +111,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-5.1.0.rst:36
 msgid "Oliver Bestwalter"
-msgstr ""
+msgstr "Oliver Bestwalter"
 
 #: ../../../doc/en/announce/release-5.1.0.rst:37
 msgid "Ran Benita"
@@ -119,7 +119,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-5.1.0.rst:38
 msgid "Ronny Pfannschmidt"
-msgstr ""
+msgstr "Ronny Pfannschmidt"
 
 #: ../../../doc/en/announce/release-5.1.0.rst:39
 msgid "Samuel Searles-Bryant"
@@ -135,11 +135,11 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-5.1.0.rst:42
 msgid "Thomas Grainger"
-msgstr ""
+msgstr "Thomas Grainger"
 
 #: ../../../doc/en/announce/release-5.1.0.rst:43
 msgid "Tim Hoffmann"
-msgstr ""
+msgstr "Tim Hoffmann"
 
 #: ../../../doc/en/announce/release-5.1.0.rst:44
 msgid "William Woodall"

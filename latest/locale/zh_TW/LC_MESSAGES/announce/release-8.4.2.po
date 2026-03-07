@@ -45,39 +45,39 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-8.4.2.rst:13
 msgid "Aditi De"
-msgstr ""
+msgstr "Aditi De"
 
 #: ../../../doc/en/announce/release-8.4.2.rst:14
 msgid "Bruno Oliveira"
-msgstr ""
+msgstr "Bruno Oliveira"
 
 #: ../../../doc/en/announce/release-8.4.2.rst:15
 msgid "Freya Bruhin"
-msgstr ""
+msgstr "Freya Bruhin"
 
 #: ../../../doc/en/announce/release-8.4.2.rst:16
 msgid "John Litborn"
-msgstr ""
+msgstr "John Litborn"
 
 #: ../../../doc/en/announce/release-8.4.2.rst:17
 msgid "Liam DeVoe"
-msgstr ""
+msgstr "Liam DeVoe"
 
 #: ../../../doc/en/announce/release-8.4.2.rst:18
 msgid "Marc Mueller"
-msgstr ""
+msgstr "Marc Mueller"
 
 #: ../../../doc/en/announce/release-8.4.2.rst:19
 msgid "NayeemJohn"
-msgstr ""
+msgstr "NayeemJohn"
 
 #: ../../../doc/en/announce/release-8.4.2.rst:20
 msgid "Olivier Grisel"
-msgstr ""
+msgstr "Olivier Grisel"
 
 #: ../../../doc/en/announce/release-8.4.2.rst:21
 msgid "Ran Benita"
-msgstr ""
+msgstr "Ran Benita"
 
 #: ../../../doc/en/announce/release-8.4.2.rst:22
 msgid "bengartner"

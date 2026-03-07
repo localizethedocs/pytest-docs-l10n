@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/customize.rst:2
 msgid "Configuration"
-msgstr ""
+msgstr "組態"
 
 #: ../../../doc/en/reference/customize.rst:5
 msgid "Command line options and configuration file settings"
@@ -43,7 +43,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/customize.rst:19
 msgid "Configuration file formats"
-msgstr ""
+msgstr "組態檔格式"
 
 #: ../../../doc/en/reference/customize.rst:21
 msgid ""
@@ -57,7 +57,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/customize.rst:27
 msgid "pytest.toml"
-msgstr ""
+msgstr "pytest.toml"
 
 #: ../../../doc/en/reference/customize.rst:31
 msgid ""
@@ -107,7 +107,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/customize.rst:69
 msgid "pyproject.toml"
-msgstr ""
+msgstr "pyproject.toml"
 
 #: ../../../doc/en/reference/customize.rst:74
 msgid "``pyproject.toml`` files are supported for configuration."
@@ -393,11 +393,11 @@ msgstr ""
 
 #: ../../../doc/en/reference/customize.rst:248
 msgid "Example:"
-msgstr ""
+msgstr "範例："
 
 #: ../../../doc/en/reference/customize.rst:250
 msgid "pytest path/to/testdir path/other/"
-msgstr ""
+msgstr "pytest path/to/testdir path/other/"
 
 #: ../../../doc/en/reference/customize.rst:254
 msgid ""

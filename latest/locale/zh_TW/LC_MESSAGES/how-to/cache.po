@@ -264,7 +264,7 @@ msgstr ""
 
 #: ../../../doc/en/how-to/cache.rst:188
 msgid "Example:"
-msgstr ""
+msgstr "範例："
 
 #: ../../../doc/en/how-to/cache.rst:190
 msgid ""
