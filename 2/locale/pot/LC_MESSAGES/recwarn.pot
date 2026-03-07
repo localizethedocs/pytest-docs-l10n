@@ -1,0 +1,220 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/recwarn.rst:3
+msgid "Asserting Warnings"
+msgstr ""
+
+#: ../../../doc/en/recwarn.rst:8
+msgid "Asserting warnings with the warns function"
+msgstr ""
+
+#: ../../../doc/en/recwarn.rst:12
+msgid ""
+"You can check that code raises a particular warning using ``pytest.warns``, "
+"which works in a similar manner to :ref:`raises <assertraises>`::"
+msgstr ""
+
+#: ../../../doc/en/recwarn.rst:15
+msgid ""
+"import warnings\n"
+"import pytest\n"
+"\n"
+"def test_warning():\n"
+"    with pytest.warns(UserWarning):\n"
+"        warnings.warn(\"my warning\", UserWarning)"
+msgstr ""
+
+#: ../../../doc/en/recwarn.rst:22
+msgid "The test will fail if the warning in question is not raised."
+msgstr ""
+
+#: ../../../doc/en/recwarn.rst:24
+msgid "You can also call ``pytest.warns`` on a function or code string::"
+msgstr ""
+
+#: ../../../doc/en/recwarn.rst:26
+msgid ""
+"pytest.warns(expected_warning, func, *args, **kwargs)\n"
+"pytest.warns(expected_warning, \"func(*args, **kwargs)\")"
+msgstr ""
+
+#: ../../../doc/en/recwarn.rst:29
+msgid ""
+"The function also returns a list of all raised warnings (as ``warnings."
+"WarningMessage`` objects), which you can query for additional information::"
+msgstr ""
+
+#: ../../../doc/en/recwarn.rst:33
+msgid ""
+"with pytest.warns(RuntimeWarning) as record:\n"
+"    warnings.warn(\"another warning\", RuntimeWarning)\n"
+"\n"
+"# check that only one warning was raised\n"
+"assert len(record) == 1\n"
+"# check that the message matches\n"
+"assert record[0].message.args[0] == \"another warning\""
+msgstr ""
+
+#: ../../../doc/en/recwarn.rst:41
+msgid ""
+"Alternatively, you can examine raised warnings in detail using the :ref:"
+"`recwarn <recwarn>` fixture (see below)."
+msgstr ""
+
+#: ../../../doc/en/recwarn.rst:45 ../../../doc/en/recwarn.rst:95
+msgid ""
+"``DeprecationWarning`` and ``PendingDeprecationWarning`` are treated "
+"differently; see :ref:`ensuring_function_triggers`."
+msgstr ""
+
+#: ../../../doc/en/recwarn.rst:51
+msgid "Recording warnings"
+msgstr ""
+
+#: ../../../doc/en/recwarn.rst:53
+msgid ""
+"You can record raised warnings either using ``pytest.warns`` or with the "
+"``recwarn`` fixture."
+msgstr ""
+
+#: ../../../doc/en/recwarn.rst:56
+msgid ""
+"To record with ``pytest.warns`` without asserting anything about the "
+"warnings, pass ``None`` as the expected warning type::"
+msgstr ""
+
+#: ../../../doc/en/recwarn.rst:59
+msgid ""
+"with pytest.warns(None) as record:\n"
+"    warnings.warn(\"user\", UserWarning)\n"
+"    warnings.warn(\"runtime\", RuntimeWarning)\n"
+"\n"
+"assert len(record) == 2\n"
+"assert str(record[0].message) == \"user\"\n"
+"assert str(record[1].message) == \"runtime\""
+msgstr ""
+
+#: ../../../doc/en/recwarn.rst:67
+msgid "The ``recwarn`` fixture will record warnings for the whole function::"
+msgstr ""
+
+#: ../../../doc/en/recwarn.rst:69
+msgid ""
+"import warnings\n"
+"\n"
+"def test_hello(recwarn):\n"
+"    warnings.warn(\"hello\", UserWarning)\n"
+"    assert len(recwarn) == 1\n"
+"    w = recwarn.pop(UserWarning)\n"
+"    assert issubclass(w.category, UserWarning)\n"
+"    assert str(w.message) == \"hello\"\n"
+"    assert w.filename\n"
+"    assert w.lineno"
+msgstr ""
+
+#: ../../../doc/en/recwarn.rst:80
+msgid ""
+"Both ``recwarn`` and ``pytest.warns`` return the same interface for recorded "
+"warnings: a WarningsRecorder instance. To view the recorded warnings, you "
+"can iterate over this instance, call ``len`` on it to get the number of "
+"recorded warnings, or index into it to get a particular recorded warning. It "
+"also provides these methods:"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/recwarn.py:docstring
+#: of _pytest.recwarn.WarningsRecorder:1
+msgid "A context manager to record raised warnings."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/recwarn.py:docstring
+#: of _pytest.recwarn.WarningsRecorder:3
+msgid "Adapted from `warnings.catch_warnings`."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/recwarn.py:docstring
+#: of _pytest.recwarn.WarningsRecorder.list:1
+msgid "The list of recorded warnings."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/recwarn.py:docstring
+#: of _pytest.recwarn.WarningsRecorder.pop:1
+msgid "Pop the first recorded warning, raise exception if not exists."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/recwarn.py:docstring
+#: of _pytest.recwarn.WarningsRecorder.clear:1
+msgid "Clear the list of recorded warnings."
+msgstr ""
+
+#: ../../../doc/en/recwarn.rst:89
+msgid ""
+"Each recorded warning has the attributes ``message``, ``category``, "
+"``filename``, ``lineno``, ``file``, and ``line``. The ``category`` is the "
+"class of the warning. The ``message`` is the warning itself; calling "
+"``str(message)`` will return the actual message of the warning."
+msgstr ""
+
+#: ../../../doc/en/recwarn.rst:101
+msgid "Ensuring a function triggers a deprecation warning"
+msgstr ""
+
+#: ../../../doc/en/recwarn.rst:103
+msgid ""
+"You can also call a global helper for checking that a certain function call "
+"triggers a ``DeprecationWarning`` or ``PendingDeprecationWarning``::"
+msgstr ""
+
+#: ../../../doc/en/recwarn.rst:107
+msgid ""
+"import pytest\n"
+"\n"
+"def test_global():\n"
+"    pytest.deprecated_call(myfunction, 17)"
+msgstr ""
+
+#: ../../../doc/en/recwarn.rst:112
+msgid ""
+"By default, ``DeprecationWarning`` and ``PendingDeprecationWarning`` will "
+"not be caught when using ``pytest.warns`` or ``recwarn`` because default "
+"Python warnings filters hide them. If you wish to record them in your own "
+"code, use the command ``warnings.simplefilter('always')``::"
+msgstr ""
+
+#: ../../../doc/en/recwarn.rst:117
+msgid ""
+"import warnings\n"
+"import pytest\n"
+"\n"
+"def test_deprecation(recwarn):\n"
+"    warnings.simplefilter('always')\n"
+"    warnings.warn(\"deprecated\", DeprecationWarning)\n"
+"    assert len(recwarn) == 1\n"
+"    assert recwarn.pop(DeprecationWarning)"
+msgstr ""
+
+#: ../../../doc/en/recwarn.rst:126
+msgid "You can also use it as a contextmanager::"
+msgstr ""
+
+#: ../../../doc/en/recwarn.rst:128
+msgid ""
+"def test_global():\n"
+"    with pytest.deprecated_call():\n"
+"        myobject.deprecated_method()"
+msgstr ""

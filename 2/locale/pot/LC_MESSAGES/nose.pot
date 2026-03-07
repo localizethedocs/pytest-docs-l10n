@@ -1,0 +1,110 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/nose.rst:2
+msgid "Running tests written for nose"
+msgstr ""
+
+#: ../../../doc/en/nose.rst:6
+msgid "``pytest`` has basic support for running tests written for nose_."
+msgstr ""
+
+#: ../../../doc/en/nose.rst:11
+msgid "Usage"
+msgstr ""
+
+#: ../../../doc/en/nose.rst:13
+msgid "After :ref:`installation` type::"
+msgstr ""
+
+#: ../../../doc/en/nose.rst:15
+msgid ""
+"python setup.py develop  # make sure tests can import our package\n"
+"py.test  # instead of 'nosetests'"
+msgstr ""
+
+#: ../../../doc/en/nose.rst:18
+msgid ""
+"and you should be able to run your nose style tests and make use of pytest's "
+"capabilities."
+msgstr ""
+
+#: ../../../doc/en/nose.rst:22
+msgid "Supported nose Idioms"
+msgstr ""
+
+#: ../../../doc/en/nose.rst:24
+msgid "setup and teardown at module/class/method level"
+msgstr ""
+
+#: ../../../doc/en/nose.rst:25
+msgid "SkipTest exceptions and markers"
+msgstr ""
+
+#: ../../../doc/en/nose.rst:26
+msgid "setup/teardown decorators"
+msgstr ""
+
+#: ../../../doc/en/nose.rst:27
+msgid "yield-based tests and their setup"
+msgstr ""
+
+#: ../../../doc/en/nose.rst:28
+msgid "``__test__`` attribute on modules/classes/functions"
+msgstr ""
+
+#: ../../../doc/en/nose.rst:29
+msgid "general usage of nose utilities"
+msgstr ""
+
+#: ../../../doc/en/nose.rst:32
+msgid "Unsupported idioms / known issues"
+msgstr ""
+
+#: ../../../doc/en/nose.rst:34
+msgid ""
+"unittest-style ``setUp, tearDown, setUpClass, tearDownClass`` are recognized "
+"only on ``unittest.TestCase`` classes but not on plain classes.  ``nose`` "
+"supports these methods also on plain classes but pytest deliberately does "
+"not.  As nose and pytest already both support ``setup_class, teardown_class, "
+"setup_method, teardown_method`` it doesn't seem useful to duplicate the "
+"unittest-API like nose does. If you however rather think pytest should "
+"support the unittest-spelling on plain classes please post `to this issue "
+"<https://github.com/pytest-dev/pytest/issues/377/>`_."
+msgstr ""
+
+#: ../../../doc/en/nose.rst:44
+msgid ""
+"nose imports test modules with the same import path (e.g. ``tests."
+"test_mod``) but different file system paths (e.g. ``tests/test_mode.py`` and "
+"``other/tests/test_mode.py``) by extending sys.path/import semantics.   "
+"pytest does not do that but there is discussion in `issue268 <https://github."
+"com/pytest-dev/pytest/issues/268>`_ for adding some support.  Note that "
+"`nose2 choose to avoid this sys.path/import hackery <https://nose2."
+"readthedocs.io/en/latest/differences.html#test-discovery-and-loading>`_."
+msgstr ""
+
+#: ../../../doc/en/nose.rst:51
+msgid ""
+"nose-style doctests are not collected and executed correctly, also doctest "
+"fixtures don't work."
+msgstr ""
+
+#: ../../../doc/en/nose.rst:54
+msgid "no nose-configuration is recognized"
+msgstr ""

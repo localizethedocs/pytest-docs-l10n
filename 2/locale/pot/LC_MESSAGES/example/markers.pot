@@ -1,0 +1,857 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/example/markers.rst:5
+msgid "Working with custom markers"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:7
+msgid "Here are some example using the :ref:`mark` mechanism."
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:10
+msgid "Marking test functions and selecting them for a run"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:12
+msgid "You can \"mark\" a test function with custom metadata like this::"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:14
+msgid ""
+"# content of test_server.py\n"
+"\n"
+"import pytest\n"
+"@pytest.mark.webtest\n"
+"def test_send_http():\n"
+"    pass # perform some webtest test for your app\n"
+"def test_something_quick():\n"
+"    pass\n"
+"def test_another():\n"
+"    pass\n"
+"class TestClass:\n"
+"    def test_method(self):\n"
+"        pass"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:30
+msgid ""
+"You can then restrict a test run to only run tests marked with ``webtest``::"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:32
+msgid ""
+"$ py.test -v -m webtest\n"
+"======= test session starts ========\n"
+"platform linux -- Python 3.5.1, pytest-2.9.2, py-1.4.31, pluggy-0.3.1 -- "
+"$PYTHON_PREFIX/bin/python3.5\n"
+"cachedir: .cache\n"
+"rootdir: $REGENDOC_TMPDIR, inifile:\n"
+"collecting ... collected 4 items\n"
+"\n"
+"test_server.py::test_send_http PASSED\n"
+"\n"
+"======= 3 tests deselected by \"-m 'webtest'\" ========\n"
+"======= 1 passed, 3 deselected in 0.12 seconds ========"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:44
+msgid "Or the inverse, running all tests except the webtest ones::"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:46
+msgid ""
+"$ py.test -v -m \"not webtest\"\n"
+"======= test session starts ========\n"
+"platform linux -- Python 3.5.1, pytest-2.9.2, py-1.4.31, pluggy-0.3.1 -- "
+"$PYTHON_PREFIX/bin/python3.5\n"
+"cachedir: .cache\n"
+"rootdir: $REGENDOC_TMPDIR, inifile:\n"
+"collecting ... collected 4 items\n"
+"\n"
+"test_server.py::test_something_quick PASSED\n"
+"test_server.py::test_another PASSED\n"
+"test_server.py::TestClass::test_method PASSED\n"
+"\n"
+"======= 1 tests deselected by \"-m 'not webtest'\" ========\n"
+"======= 3 passed, 1 deselected in 0.12 seconds ========"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:61
+msgid "Selecting tests based on their node ID"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:63
+msgid ""
+"You can provide one or more :ref:`node IDs <node-id>` as positional "
+"arguments to select only specified tests. This makes it easy to select tests "
+"based on their module, class, method, or function name::"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:67
+msgid ""
+"$ py.test -v test_server.py::TestClass::test_method\n"
+"======= test session starts ========\n"
+"platform linux -- Python 3.5.1, pytest-2.9.2, py-1.4.31, pluggy-0.3.1 -- "
+"$PYTHON_PREFIX/bin/python3.5\n"
+"cachedir: .cache\n"
+"rootdir: $REGENDOC_TMPDIR, inifile:\n"
+"collecting ... collected 5 items\n"
+"\n"
+"test_server.py::TestClass::test_method PASSED\n"
+"\n"
+"======= 1 passed in 0.12 seconds ========"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:78
+msgid "You can also select on the class::"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:80
+msgid ""
+"$ py.test -v test_server.py::TestClass\n"
+"======= test session starts ========\n"
+"platform linux -- Python 3.5.1, pytest-2.9.2, py-1.4.31, pluggy-0.3.1 -- "
+"$PYTHON_PREFIX/bin/python3.5\n"
+"cachedir: .cache\n"
+"rootdir: $REGENDOC_TMPDIR, inifile:\n"
+"collecting ... collected 4 items\n"
+"\n"
+"test_server.py::TestClass::test_method PASSED\n"
+"\n"
+"======= 1 passed in 0.12 seconds ========"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:91
+msgid "Or select multiple nodes::"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:93
+msgid ""
+"$ py.test -v test_server.py::TestClass test_server.py::test_send_http\n"
+"======= test session starts ========\n"
+"platform linux -- Python 3.5.1, pytest-2.9.2, py-1.4.31, pluggy-0.3.1 -- "
+"$PYTHON_PREFIX/bin/python3.5\n"
+"cachedir: .cache\n"
+"rootdir: $REGENDOC_TMPDIR, inifile:\n"
+"collecting ... collected 8 items\n"
+"\n"
+"test_server.py::TestClass::test_method PASSED\n"
+"test_server.py::test_send_http PASSED\n"
+"\n"
+"======= 2 passed in 0.12 seconds ========"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:109
+msgid ""
+"Node IDs are of the form ``module.py::class::method`` or ``module.py::"
+"function``.  Node IDs control which tests are collected, so ``module.py::"
+"class`` will select all test methods on the class.  Nodes are also created "
+"for each parameter of a parametrized fixture or test, so selecting a "
+"parametrized test must include the parameter value, e.g. ``module.py::"
+"function[param]``."
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:117
+msgid ""
+"Node IDs for failing tests are displayed in the test summary info when "
+"running py.test with the ``-rf`` option.  You can also construct Node IDs "
+"from the output of ``py.test --collectonly``."
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:122
+msgid "Using ``-k expr`` to select tests based on their name"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:126
+msgid ""
+"You can use the ``-k`` command line option to specify an expression which "
+"implements a substring match on the test names instead of the exact match on "
+"markers that ``-m`` provides.  This makes it easy to select tests based on "
+"their names::"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:131
+msgid ""
+"$ py.test -v -k http  # running with the above defined example module\n"
+"======= test session starts ========\n"
+"platform linux -- Python 3.5.1, pytest-2.9.2, py-1.4.31, pluggy-0.3.1 -- "
+"$PYTHON_PREFIX/bin/python3.5\n"
+"cachedir: .cache\n"
+"rootdir: $REGENDOC_TMPDIR, inifile:\n"
+"collecting ... collected 4 items\n"
+"\n"
+"test_server.py::test_send_http PASSED\n"
+"\n"
+"======= 3 tests deselected by '-khttp' ========\n"
+"======= 1 passed, 3 deselected in 0.12 seconds ========"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:143
+msgid "And you can also run all tests except the ones that match the keyword::"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:145
+msgid ""
+"$ py.test -k \"not send_http\" -v\n"
+"======= test session starts ========\n"
+"platform linux -- Python 3.5.1, pytest-2.9.2, py-1.4.31, pluggy-0.3.1 -- "
+"$PYTHON_PREFIX/bin/python3.5\n"
+"cachedir: .cache\n"
+"rootdir: $REGENDOC_TMPDIR, inifile:\n"
+"collecting ... collected 4 items\n"
+"\n"
+"test_server.py::test_something_quick PASSED\n"
+"test_server.py::test_another PASSED\n"
+"test_server.py::TestClass::test_method PASSED\n"
+"\n"
+"======= 1 tests deselected by '-knot send_http' ========\n"
+"======= 3 passed, 1 deselected in 0.12 seconds ========"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:159
+msgid "Or to select \"http\" and \"quick\" tests::"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:161
+msgid ""
+"$ py.test -k \"http or quick\" -v\n"
+"======= test session starts ========\n"
+"platform linux -- Python 3.5.1, pytest-2.9.2, py-1.4.31, pluggy-0.3.1 -- "
+"$PYTHON_PREFIX/bin/python3.5\n"
+"cachedir: .cache\n"
+"rootdir: $REGENDOC_TMPDIR, inifile:\n"
+"collecting ... collected 4 items\n"
+"\n"
+"test_server.py::test_send_http PASSED\n"
+"test_server.py::test_something_quick PASSED\n"
+"\n"
+"======= 2 tests deselected by '-khttp or quick' ========\n"
+"======= 2 passed, 2 deselected in 0.12 seconds ========"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:176
+msgid ""
+"If you are using expressions such as \"X and Y\" then both X and Y need to "
+"be simple non-keyword names.  For example, \"pass\" or \"from\" will result "
+"in SyntaxErrors because \"-k\" evaluates the expression."
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:180
+msgid ""
+"However, if the \"-k\" argument is a simple string, no such restrictions "
+"apply.  Also \"-k 'not STRING'\" has no restrictions.  You can also specify "
+"numbers like \"-k 1.3\" to match tests which are parametrized with the float "
+"\"1.3\"."
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:186
+msgid "Registering markers"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:192
+msgid "Registering markers for your test suite is simple::"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:194
+msgid ""
+"# content of pytest.ini\n"
+"[pytest]\n"
+"markers =\n"
+"    webtest: mark a test as a webtest."
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:199
+msgid ""
+"You can ask which markers exist for your test suite - the list includes our "
+"just defined ``webtest`` markers::"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:201
+msgid ""
+"$ py.test --markers\n"
+"@pytest.mark.webtest: mark a test as a webtest.\n"
+"\n"
+"@pytest.mark.skip(reason=None): skip the given test function with an "
+"optional reason. Example: skip(reason=\"no way of currently testing this\") "
+"skips the test.\n"
+"\n"
+"@pytest.mark.skipif(condition): skip the given test function if "
+"eval(condition) results in a True value.  Evaluation happens within the "
+"module global context. Example: skipif('sys.platform == \"win32\"') skips "
+"the test if we are on the win32 platform. see http://pytest.org/latest/"
+"skipping.html\n"
+"\n"
+"@pytest.mark.xfail(condition, reason=None, run=True, raises=None, "
+"strict=False): mark the the test function as an expected failure if "
+"eval(condition) has a True value. Optionally specify a reason for better "
+"reporting and run=False if you don't even want to execute the test function. "
+"If only specific exception(s) are expected, you can list them in raises, and "
+"if the test fails in other ways, it will be reported as a true failure. See "
+"http://pytest.org/latest/skipping.html\n"
+"\n"
+"@pytest.mark.parametrize(argnames, argvalues): call a test function multiple "
+"times passing in different arguments in turn. argvalues generally needs to "
+"be a list of values if argnames specifies only one name or a list of tuples "
+"of values if argnames specifies multiple names. Example: "
+"@parametrize('arg1', [1,2]) would lead to two calls of the decorated test "
+"function, one with arg1=1 and another with arg1=2.see http://pytest.org/"
+"latest/parametrize.html for more info and examples.\n"
+"\n"
+"@pytest.mark.usefixtures(fixturename1, fixturename2, ...): mark tests as "
+"needing all of the specified fixtures. see http://pytest.org/latest/fixture."
+"html#usefixtures\n"
+"\n"
+"@pytest.mark.tryfirst: mark a hook implementation function such that the "
+"plugin machinery will try to call it first/as early as possible.\n"
+"\n"
+"@pytest.mark.trylast: mark a hook implementation function such that the "
+"plugin machinery will try to call it last/as late as possible."
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:219
+msgid ""
+"For an example on how to add and work with markers from a plugin, see :ref:"
+"`adding a custom marker from a plugin`."
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:224
+msgid "It is recommended to explicitly register markers so that:"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:226
+msgid "there is one place in your test suite defining your markers"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:228
+msgid "asking for existing markers via ``py.test --markers`` gives good output"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:230
+msgid ""
+"typos in function markers are treated as an error if you use the ``--"
+"strict`` option. Future versions of ``pytest`` are probably going to start "
+"treating non-registered markers as errors at some point."
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:237
+msgid "Marking whole classes or modules"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:239
+msgid ""
+"You may use ``pytest.mark`` decorators with classes to apply markers to all "
+"of its test methods::"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:242
+msgid ""
+"# content of test_mark_classlevel.py\n"
+"import pytest\n"
+"@pytest.mark.webtest\n"
+"class TestClass:\n"
+"    def test_startup(self):\n"
+"        pass\n"
+"    def test_startup_and_more(self):\n"
+"        pass"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:251
+msgid ""
+"This is equivalent to directly applying the decorator to the two test "
+"functions."
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:254
+msgid ""
+"To remain backward-compatible with Python 2.4 you can also set a "
+"``pytestmark`` attribute on a TestClass like this::"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:257
+msgid ""
+"import pytest\n"
+"\n"
+"class TestClass:\n"
+"    pytestmark = pytest.mark.webtest"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:262
+msgid "or if you need to use multiple markers you can use a list::"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:264
+msgid ""
+"import pytest\n"
+"\n"
+"class TestClass:\n"
+"    pytestmark = [pytest.mark.webtest, pytest.mark.slowtest]"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:269
+msgid "You can also set a module level marker::"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:271
+msgid ""
+"import pytest\n"
+"pytestmark = pytest.mark.webtest"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:274
+msgid ""
+"in which case it will be applied to all functions and methods defined in the "
+"module."
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:280
+msgid "Marking individual tests when using parametrize"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:282
+msgid ""
+"When using parametrize, applying a mark will make it apply to each "
+"individual test. However it is also possible to apply a marker to an "
+"individual test instance::"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:286
+msgid ""
+"import pytest\n"
+"\n"
+"@pytest.mark.foo\n"
+"@pytest.mark.parametrize((\"n\", \"expected\"), [\n"
+"    (1, 2),\n"
+"    pytest.mark.bar((1, 3)),\n"
+"    (2, 3),\n"
+"])\n"
+"def test_increment(n, expected):\n"
+"     assert n + 1 == expected"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:297
+msgid ""
+"In this example the mark \"foo\" will apply to each of the three tests, "
+"whereas the \"bar\" mark is only applied to the second test. Skip and xfail "
+"marks can also be applied in this way, see :ref:`skip/xfail with "
+"parametrize`."
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:303
+msgid ""
+"If the data you are parametrizing happen to be single callables, you need to "
+"be careful when marking these items. `pytest.mark.xfail(my_func)` won't work "
+"because it's also the signature of a function being decorated. To resolve "
+"this ambiguity, you need to pass a reason argument: `pytest.mark."
+"xfail(func_bar, reason=\"Issue#7\")`."
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:313
+msgid "Custom marker and command line option to control test runs"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:317
+msgid ""
+"Plugins can provide custom markers and implement specific behaviour based on "
+"it. This is a self-contained example which adds a command line option and a "
+"parametrized test function marker to run tests specifies via named "
+"environments::"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:322
+msgid ""
+"# content of conftest.py\n"
+"\n"
+"import pytest\n"
+"def pytest_addoption(parser):\n"
+"    parser.addoption(\"-E\", action=\"store\", metavar=\"NAME\",\n"
+"        help=\"only run tests matching the environment NAME.\")\n"
+"\n"
+"def pytest_configure(config):\n"
+"    # register an additional marker\n"
+"    config.addinivalue_line(\"markers\",\n"
+"        \"env(name): mark test to run only on named environment\")\n"
+"\n"
+"def pytest_runtest_setup(item):\n"
+"    envmarker = item.get_marker(\"env\")\n"
+"    if envmarker is not None:\n"
+"        envname = envmarker.args[0]\n"
+"        if envname != item.config.getoption(\"-E\"):\n"
+"            pytest.skip(\"test requires env %r\" % envname)"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:341
+msgid "A test file using this local plugin::"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:343
+msgid ""
+"# content of test_someenv.py\n"
+"\n"
+"import pytest\n"
+"@pytest.mark.env(\"stage1\")\n"
+"def test_basic_db_operation():\n"
+"    pass"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:350
+msgid ""
+"and an example invocations specifying a different environment than what the "
+"test needs::"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:353
+msgid ""
+"$ py.test -E stage2\n"
+"======= test session starts ========\n"
+"platform linux -- Python 3.5.1, pytest-2.9.2, py-1.4.31, pluggy-0.3.1\n"
+"rootdir: $REGENDOC_TMPDIR, inifile:\n"
+"collected 1 items\n"
+"\n"
+"test_someenv.py s\n"
+"\n"
+"======= 1 skipped in 0.12 seconds ========"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:363
+msgid "and here is one that specifies exactly the environment needed::"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:365
+msgid ""
+"$ py.test -E stage1\n"
+"======= test session starts ========\n"
+"platform linux -- Python 3.5.1, pytest-2.9.2, py-1.4.31, pluggy-0.3.1\n"
+"rootdir: $REGENDOC_TMPDIR, inifile:\n"
+"collected 1 items\n"
+"\n"
+"test_someenv.py .\n"
+"\n"
+"======= 1 passed in 0.12 seconds ========"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:375
+msgid "The ``--markers`` option always gives you a list of available markers::"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:377
+msgid ""
+"$ py.test --markers\n"
+"@pytest.mark.env(name): mark test to run only on named environment\n"
+"\n"
+"@pytest.mark.skip(reason=None): skip the given test function with an "
+"optional reason. Example: skip(reason=\"no way of currently testing this\") "
+"skips the test.\n"
+"\n"
+"@pytest.mark.skipif(condition): skip the given test function if "
+"eval(condition) results in a True value.  Evaluation happens within the "
+"module global context. Example: skipif('sys.platform == \"win32\"') skips "
+"the test if we are on the win32 platform. see http://pytest.org/latest/"
+"skipping.html\n"
+"\n"
+"@pytest.mark.xfail(condition, reason=None, run=True, raises=None, "
+"strict=False): mark the the test function as an expected failure if "
+"eval(condition) has a True value. Optionally specify a reason for better "
+"reporting and run=False if you don't even want to execute the test function. "
+"If only specific exception(s) are expected, you can list them in raises, and "
+"if the test fails in other ways, it will be reported as a true failure. See "
+"http://pytest.org/latest/skipping.html\n"
+"\n"
+"@pytest.mark.parametrize(argnames, argvalues): call a test function multiple "
+"times passing in different arguments in turn. argvalues generally needs to "
+"be a list of values if argnames specifies only one name or a list of tuples "
+"of values if argnames specifies multiple names. Example: "
+"@parametrize('arg1', [1,2]) would lead to two calls of the decorated test "
+"function, one with arg1=1 and another with arg1=2.see http://pytest.org/"
+"latest/parametrize.html for more info and examples.\n"
+"\n"
+"@pytest.mark.usefixtures(fixturename1, fixturename2, ...): mark tests as "
+"needing all of the specified fixtures. see http://pytest.org/latest/fixture."
+"html#usefixtures\n"
+"\n"
+"@pytest.mark.tryfirst: mark a hook implementation function such that the "
+"plugin machinery will try to call it first/as early as possible.\n"
+"\n"
+"@pytest.mark.trylast: mark a hook implementation function such that the "
+"plugin machinery will try to call it last/as late as possible."
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:396
+msgid "Reading markers which were set from multiple places"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:402
+msgid ""
+"If you are heavily using markers in your test suite you may encounter the "
+"case where a marker is applied several times to a test function.  From "
+"plugin code you can read over all such settings.  Example::"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:405
+msgid ""
+"# content of test_mark_three_times.py\n"
+"import pytest\n"
+"pytestmark = pytest.mark.glob(\"module\", x=1)\n"
+"\n"
+"@pytest.mark.glob(\"class\", x=2)\n"
+"class TestClass:\n"
+"    @pytest.mark.glob(\"function\", x=3)\n"
+"    def test_something(self):\n"
+"        pass"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:415
+msgid ""
+"Here we have the marker \"glob\" applied three times to the same test "
+"function.  From a conftest file we can read it like this::"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:418
+msgid ""
+"# content of conftest.py\n"
+"import sys\n"
+"\n"
+"def pytest_runtest_setup(item):\n"
+"    g = item.get_marker(\"glob\")\n"
+"    if g is not None:\n"
+"        for info in g:\n"
+"            print (\"glob args=%s kwargs=%s\" %(info.args, info.kwargs))\n"
+"            sys.stdout.flush()"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:428
+msgid "Let's run this without capturing output and see what we get::"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:430
+msgid ""
+"$ py.test -q -s\n"
+"glob args=('function',) kwargs={'x': 3}\n"
+"glob args=('class',) kwargs={'x': 2}\n"
+"glob args=('module',) kwargs={'x': 1}\n"
+".\n"
+"1 passed in 0.12 seconds"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:438
+msgid "marking platform specific tests with pytest"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:442
+msgid ""
+"Consider you have a test suite which marks tests for particular platforms, "
+"namely ``pytest.mark.darwin``, ``pytest.mark.win32`` etc. and you also have "
+"tests that run on all platforms and have no specific marker.  If you now "
+"want to have a way to only run the tests for your particular platform, you "
+"could use the following plugin::"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:448
+msgid ""
+"# content of conftest.py\n"
+"#\n"
+"import sys\n"
+"import pytest\n"
+"\n"
+"ALL = set(\"darwin linux2 win32\".split())\n"
+"\n"
+"def pytest_runtest_setup(item):\n"
+"    if isinstance(item, item.Function):\n"
+"        plat = sys.platform\n"
+"        if not item.get_marker(plat):\n"
+"            if ALL.intersection(item.keywords):\n"
+"                pytest.skip(\"cannot run on platform %s\" %(plat))"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:462
+msgid ""
+"then tests will be skipped if they were specified for a different platform. "
+"Let's do a little test file to show how this looks like::"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:465
+msgid ""
+"# content of test_plat.py\n"
+"\n"
+"import pytest\n"
+"\n"
+"@pytest.mark.darwin\n"
+"def test_if_apple_is_evil():\n"
+"    pass\n"
+"\n"
+"@pytest.mark.linux2\n"
+"def test_if_linux_works():\n"
+"    pass\n"
+"\n"
+"@pytest.mark.win32\n"
+"def test_if_win32_crashes():\n"
+"    pass\n"
+"\n"
+"def test_runs_everywhere():\n"
+"    pass"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:484
+msgid "then you will see two test skipped and two executed tests as expected::"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:486
+msgid ""
+"$ py.test -rs # this option reports skip reasons\n"
+"======= test session starts ========\n"
+"platform linux -- Python 3.5.1, pytest-2.9.2, py-1.4.31, pluggy-0.3.1\n"
+"rootdir: $REGENDOC_TMPDIR, inifile:\n"
+"collected 4 items\n"
+"\n"
+"test_plat.py sss.\n"
+"======= short test summary info ========\n"
+"SKIP [3] $REGENDOC_TMPDIR/conftest.py:12: cannot run on platform linux\n"
+"\n"
+"======= 1 passed, 3 skipped in 0.12 seconds ========"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:498
+msgid ""
+"Note that if you specify a platform via the marker-command line option like "
+"this::"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:500
+msgid ""
+"$ py.test -m linux2\n"
+"======= test session starts ========\n"
+"platform linux -- Python 3.5.1, pytest-2.9.2, py-1.4.31, pluggy-0.3.1\n"
+"rootdir: $REGENDOC_TMPDIR, inifile:\n"
+"collected 4 items\n"
+"\n"
+"test_plat.py s\n"
+"\n"
+"======= 3 tests deselected by \"-m 'linux2'\" ========\n"
+"======= 1 skipped, 3 deselected in 0.12 seconds ========"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:511
+msgid ""
+"then the unmarked-tests will not be run.  It is thus a way to restrict the "
+"run to the specific tests."
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:514
+msgid "Automatically adding markers based on test names"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:518
+msgid ""
+"If you a test suite where test function names indicate a certain type of "
+"test, you can implement a hook that automatically defines markers so that "
+"you can use the ``-m`` option with it. Let's look at this test module::"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:523
+msgid ""
+"# content of test_module.py\n"
+"\n"
+"def test_interface_simple():\n"
+"    assert 0\n"
+"\n"
+"def test_interface_complex():\n"
+"    assert 0\n"
+"\n"
+"def test_event_simple():\n"
+"    assert 0\n"
+"\n"
+"def test_something_else():\n"
+"    assert 0"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:537
+msgid ""
+"We want to dynamically define two markers and can do it in a ``conftest.py`` "
+"plugin::"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:540
+msgid ""
+"# content of conftest.py\n"
+"\n"
+"import pytest\n"
+"def pytest_collection_modifyitems(items):\n"
+"    for item in items:\n"
+"        if \"interface\" in item.nodeid:\n"
+"            item.add_marker(pytest.mark.interface)\n"
+"        elif \"event\" in item.nodeid:\n"
+"            item.add_marker(pytest.mark.event)"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:550
+msgid "We can now use the ``-m option`` to select one set::"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:552
+msgid ""
+"$ py.test -m interface --tb=short\n"
+"======= test session starts ========\n"
+"platform linux -- Python 3.5.1, pytest-2.9.2, py-1.4.31, pluggy-0.3.1\n"
+"rootdir: $REGENDOC_TMPDIR, inifile:\n"
+"collected 4 items\n"
+"\n"
+"test_module.py FF\n"
+"\n"
+"======= FAILURES ========\n"
+"_______ test_interface_simple ________\n"
+"test_module.py:3: in test_interface_simple\n"
+"    assert 0\n"
+"E   assert 0\n"
+"_______ test_interface_complex ________\n"
+"test_module.py:6: in test_interface_complex\n"
+"    assert 0\n"
+"E   assert 0\n"
+"======= 2 tests deselected by \"-m 'interface'\" ========\n"
+"======= 2 failed, 2 deselected in 0.12 seconds ========"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:572
+msgid "or to select both \"event\" and \"interface\" tests::"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:574
+msgid ""
+"$ py.test -m \"interface or event\" --tb=short\n"
+"======= test session starts ========\n"
+"platform linux -- Python 3.5.1, pytest-2.9.2, py-1.4.31, pluggy-0.3.1\n"
+"rootdir: $REGENDOC_TMPDIR, inifile:\n"
+"collected 4 items\n"
+"\n"
+"test_module.py FFF\n"
+"\n"
+"======= FAILURES ========\n"
+"_______ test_interface_simple ________\n"
+"test_module.py:3: in test_interface_simple\n"
+"    assert 0\n"
+"E   assert 0\n"
+"_______ test_interface_complex ________\n"
+"test_module.py:6: in test_interface_complex\n"
+"    assert 0\n"
+"E   assert 0\n"
+"_______ test_event_simple ________\n"
+"test_module.py:9: in test_event_simple\n"
+"    assert 0\n"
+"E   assert 0\n"
+"======= 1 tests deselected by \"-m 'interface or event'\" ========\n"
+"======= 3 failed, 1 deselected in 0.12 seconds ========"
+msgstr ""

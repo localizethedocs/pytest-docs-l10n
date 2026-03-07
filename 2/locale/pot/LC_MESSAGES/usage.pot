@@ -1,0 +1,433 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/usage.rst:5
+msgid "Usage and Invocations"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:11
+msgid "Calling pytest through ``python -m pytest``"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:15
+msgid ""
+"You can invoke testing through the Python interpreter from the command line::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:17
+msgid "python -m pytest [...]"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:19
+msgid ""
+"This is equivalent to invoking the command line script ``py.test [...]`` "
+"directly."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:23
+msgid "Getting help on version, option names, environment variables"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:27
+msgid ""
+"py.test --version   # shows where pytest was imported from\n"
+"py.test --fixtures  # show available builtin function arguments\n"
+"py.test -h | --help # show help on command line and config file options"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:33
+msgid "Stopping after the first (or N) failures"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:35
+msgid "To stop the testing process after the first (N) failures::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:37
+msgid ""
+"py.test -x            # stop after first failure\n"
+"py.test --maxfail=2    # stop after two failures"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:41
+msgid "Specifying tests / selecting tests"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:43
+msgid "Several test run options::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:45
+msgid ""
+"py.test test_mod.py   # run tests in module\n"
+"py.test somepath      # run all tests below somepath\n"
+"py.test -k stringexpr # only run tests with names that match the\n"
+"                      # \"string expression\", e.g. \"MyClass and not "
+"method\"\n"
+"                      # will select TestMyClass.test_something\n"
+"                      # but not TestMyClass.test_method_simple\n"
+"py.test test_mod.py::test_func  # only run tests that match the \"node "
+"ID\",\n"
+"                                # e.g \"test_mod.py::test_func\" will "
+"select\n"
+"                                # only test_func in test_mod.py\n"
+"py.test test_mod.py::TestClass::test_method  # run a single method in\n"
+"                                             # a single class"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:57
+msgid "Import 'pkg' and use its filesystem location to find and run tests::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:59
+msgid "py.test --pyargs pkg # run all tests found below directory of pkg"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:62
+msgid "Modifying Python traceback printing"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:64
+msgid "Examples for modifying traceback printing::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:66
+msgid ""
+"py.test --showlocals # show local variables in tracebacks\n"
+"py.test -l           # show local variables (shortcut)\n"
+"\n"
+"py.test --tb=auto    # (default) 'long' tracebacks for the first and last\n"
+"                     # entry, but 'short' style for the other entries\n"
+"py.test --tb=long    # exhaustive, informative traceback formatting\n"
+"py.test --tb=short   # shorter traceback format\n"
+"py.test --tb=line    # only one line per failure\n"
+"py.test --tb=native  # Python standard library formatting\n"
+"py.test --tb=no      # no traceback at all"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:77
+msgid ""
+"The ``--full-trace`` causes very long traces to be printed on error (longer "
+"than ``--tb=long``). It also ensures that a stack trace is printed on "
+"**KeyboardInterrrupt** (Ctrl+C). This is very useful if the tests are taking "
+"too long and you interrupt them with Ctrl+C to find out where the tests are "
+"*hanging*. By default no output will be shown (because KeyboardInterrupt is "
+"catched by pytest). By using this option you make sure a trace is shown."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:86
+msgid "Dropping to PDB_ (Python Debugger) on failures"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:90
+msgid ""
+"Python comes with a builtin Python debugger called PDB_.  ``pytest`` allows "
+"one to drop into the PDB_ prompt via a command line option::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:93
+msgid "py.test --pdb"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:95
+msgid ""
+"This will invoke the Python debugger on every failure.  Often you might only "
+"want to do this for the first failing test to understand a certain failure "
+"situation::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:99
+msgid ""
+"py.test -x --pdb   # drop to PDB on first failure, then end test session\n"
+"py.test --pdb --maxfail=3  # drop to PDB for first three failures"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:102
+msgid ""
+"Note that on any failure the exception information is stored on ``sys."
+"last_value``, ``sys.last_type`` and ``sys.last_traceback``. In interactive "
+"use, this allows one to drop into postmortem debugging with any debug tool. "
+"One can also manually access the exception information, for example::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:108
+msgid ""
+">>> import sys\n"
+">>> sys.last_traceback.tb_lineno\n"
+"42\n"
+">>> sys.last_value\n"
+"AssertionError('assert result == \"ok\"',)"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:115
+msgid "Setting a breakpoint / aka ``set_trace()``"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:117
+msgid ""
+"If you want to set a breakpoint and enter the ``pdb.set_trace()`` you can "
+"use a helper::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:120
+msgid ""
+"import pytest\n"
+"def test_function():\n"
+"    ...\n"
+"    pytest.set_trace()    # invoke PDB debugger and tracing"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:127
+msgid ""
+"Prior to pytest version 2.0.0 you could only enter PDB_ tracing if you "
+"disabled capturing on the command line via ``py.test -s``. In later "
+"versions, pytest automatically disables its output capture when you enter "
+"PDB_ tracing:"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:131
+msgid "Output capture in other tests is not affected."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:132
+msgid ""
+"Any prior test output that has already been captured and will be processed "
+"as such."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:134
+msgid ""
+"Any later output produced within the same test will not be captured and will "
+"instead get sent directly to ``sys.stdout``. Note that this holds true even "
+"for test output occurring after you exit the interactive PDB_ tracing "
+"session and continue with the regular test run."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:141
+msgid ""
+"Since pytest version 2.4.0 you can also use the native Python ``import pdb;"
+"pdb.set_trace()`` call to enter PDB_ tracing without having to use the "
+"``pytest.set_trace()`` wrapper or explicitly disable pytest's output "
+"capturing via ``py.test -s``."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:149
+msgid "Profiling test execution duration"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:153
+msgid "To get a list of the slowest 10 test durations::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:155
+msgid "py.test --durations=10"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:159
+msgid "Creating JUnitXML format files"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:161
+msgid ""
+"To create result files which can be read by Jenkins_ or other Continuous "
+"integration servers, use this invocation::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:164
+msgid "py.test --junitxml=path"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:166
+msgid "to create an XML file at ``path``."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:169
+msgid "record_xml_property"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:173
+msgid ""
+"If you want to log additional information for a test, you can use the "
+"``record_xml_property`` fixture:"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:176
+msgid ""
+"def test_function(record_xml_property):\n"
+"    record_xml_property(\"example_key\", 1)\n"
+"    assert 0"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:182
+msgid ""
+"This will add an extra property ``example_key=\"1\"`` to the generated "
+"``testcase`` tag:"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:185
+msgid ""
+"<testcase classname=\"test_function\" file=\"test_function.py\" line=\"0\" "
+"name=\"test_function\" time=\"0.0009\">\n"
+"  <properties>\n"
+"    <property name=\"example_key\" value=\"1\" />\n"
+"  </properties>\n"
+"</testcase>"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:195
+msgid ""
+"This is an experimental feature, and its interface might be replaced by "
+"something more powerful and general in future versions. The functionality "
+"per-se will be kept, however."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:199
+msgid "Currently it does not work when used with the ``pytest-xdist`` plugin."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:201
+msgid ""
+"Also please note that using this feature will break any schema verification. "
+"This might be a problem when used with some CI servers."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:205
+msgid "Creating resultlog format files"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:207
+msgid "To create plain-text machine-readable result files you can issue::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:209
+msgid "py.test --resultlog=path"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:211
+msgid ""
+"and look at the content at the ``path`` location.  Such files are used e.g. "
+"by the `PyPy-test`_ web page to show test results over several revisions."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:218
+msgid "Sending test report to online pastebin service"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:220
+msgid "**Creating a URL for each test failure**::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:222
+msgid "py.test --pastebin=failed"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:224
+msgid ""
+"This will submit test run information to a remote Paste service and provide "
+"a URL for each failure.  You may select tests as usual or add for example ``-"
+"x`` if you only want to send one particular failure."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:228
+msgid "**Creating a URL for a whole test session log**::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:230
+msgid "py.test --pastebin=all"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:232
+msgid "Currently only pasting to the http://bpaste.net service is implemented."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:235
+msgid "Disabling plugins"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:237
+msgid ""
+"To disable loading specific plugins at invocation time, use the ``-p`` "
+"option together with the prefix ``no:``."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:240
+msgid ""
+"Example: to disable loading the plugin ``doctest``, which is responsible for "
+"executing doctest tests from text files, invoke py.test like this::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:243
+msgid "py.test -p no:doctest"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:248
+msgid "Calling pytest from Python code"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:252
+msgid "You can invoke ``pytest`` from Python code directly::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:254
+msgid "pytest.main()"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:256
+msgid ""
+"this acts as if you would call \"py.test\" from the command line. It will "
+"not raise ``SystemExit`` but return the exitcode instead. You can pass in "
+"options and arguments::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:260
+msgid "pytest.main(['-x', 'mytestdir'])"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:262
+msgid "or pass in a string::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:264
+msgid "pytest.main(\"-x mytestdir\")"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:266
+msgid "You can specify additional plugins to ``pytest.main``::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:268
+msgid ""
+"# content of myinvoke.py\n"
+"import pytest\n"
+"class MyPlugin:\n"
+"    def pytest_sessionfinish(self):\n"
+"        print(\"*** test run reporting finishing\")\n"
+"\n"
+"pytest.main(\"-qq\", plugins=[MyPlugin()])"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:276
+msgid ""
+"Running it will show that ``MyPlugin`` was added and its hook was invoked::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:279
+msgid ""
+"$ python myinvoke.py\n"
+"*** test run reporting finishing"
+msgstr ""

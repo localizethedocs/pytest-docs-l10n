@@ -1,0 +1,182 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/doctest.rst:3
+msgid "Doctest integration for modules and test files"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:5
+msgid ""
+"By default all files matching the ``test*.txt`` pattern will be run through "
+"the python standard ``doctest`` module.  You can change the pattern by "
+"issuing::"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:9
+msgid "py.test --doctest-glob='*.rst'"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:11
+msgid ""
+"on the command line. Since version ``2.9``, ``--doctest-glob`` can be given "
+"multiple times in the command-line."
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:14
+msgid ""
+"You can also trigger running of doctests from docstrings in all python "
+"modules (including regular python test modules)::"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:18
+msgid "py.test --doctest-modules"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:20
+msgid ""
+"You can make these changes permanent in your project by putting them into a "
+"pytest.ini file like this:"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:23
+msgid ""
+"# content of pytest.ini\n"
+"[pytest]\n"
+"addopts = --doctest-modules"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:29
+msgid "If you then have a text file like this::"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:31
+msgid ""
+"# content of example.rst\n"
+"\n"
+"hello this is a doctest\n"
+">>> x = 3\n"
+">>> x\n"
+"3"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:38
+msgid "and another like this::"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:40
+msgid ""
+"# content of mymodule.py\n"
+"def something():\n"
+"    \"\"\" a doctest in a docstring\n"
+"    >>> something()\n"
+"    42\n"
+"    \"\"\"\n"
+"    return 42"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:48
+msgid "then you can just invoke ``py.test`` without command line options::"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:50
+msgid ""
+"$ py.test\n"
+"======= test session starts ========\n"
+"platform linux -- Python 3.5.1, pytest-2.9.2, py-1.4.31, pluggy-0.3.1\n"
+"rootdir: $REGENDOC_TMPDIR, inifile: pytest.ini\n"
+"collected 1 items\n"
+"\n"
+"mymodule.py .\n"
+"\n"
+"======= 1 passed in 0.12 seconds ========"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:60
+msgid "It is possible to use fixtures using the ``getfixture`` helper::"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:62
+msgid ""
+"# content of example.rst\n"
+">>> tmp = getfixture('tmpdir')\n"
+">>> ...\n"
+">>>"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:67
+msgid ""
+"Also, :ref:`usefixtures` and :ref:`autouse` fixtures are supported when "
+"executing text doctest files."
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:70
+msgid ""
+"The standard ``doctest`` module provides some setting flags to configure the "
+"strictness of doctest tests. In py.test You can enable those flags those "
+"flags using the configuration file. To make pytest ignore trailing "
+"whitespaces and ignore lengthy exception stack traces you can just write:"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:75
+msgid ""
+"[pytest]\n"
+"doctest_optionflags= NORMALIZE_WHITESPACE IGNORE_EXCEPTION_DETAIL"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:80
+msgid ""
+"py.test also introduces new options to allow doctests to run in Python 2 and "
+"Python 3 unchanged:"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:83
+msgid ""
+"``ALLOW_UNICODE``: when enabled, the ``u`` prefix is stripped from unicode "
+"strings in expected doctest output."
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:86
+msgid ""
+"``ALLOW_BYTES``: when enabled, the ``b`` prefix is stripped from byte "
+"strings in expected doctest output."
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:89
+msgid ""
+"As with any other option flag, these flags can be enabled in ``pytest.ini`` "
+"using the ``doctest_optionflags`` ini option:"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:92
+msgid ""
+"[pytest]\n"
+"doctest_optionflags = ALLOW_UNICODE ALLOW_BYTES"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:98
+msgid ""
+"Alternatively, it can be enabled by an inline comment in the doc test "
+"itself::"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:101
+msgid ""
+"# content of example.rst\n"
+">>> get_unicode_greeting()  # doctest: +ALLOW_UNICODE\n"
+"'Hello'"
+msgstr ""
