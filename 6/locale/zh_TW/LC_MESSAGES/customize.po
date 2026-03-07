@@ -1,0 +1,372 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015–2020, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/customize.rst:2
+msgid "Configuration"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:5
+msgid "Command line options and configuration file settings"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:7
+msgid ""
+"You can get help on command line options and values in INI-style "
+"configurations files by using the general help option:"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:10
+msgid "pytest -h   # prints options _and_ config file settings"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:14
+msgid ""
+"This will display command line and configuration file settings which were "
+"registered by installed plugins."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:20
+msgid "Configuration file formats"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:22
+msgid ""
+"Many :ref:`pytest settings <ini options ref>` can be set in a *configuration "
+"file*, which by convention resides on the root of your repository or in your "
+"tests folder."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:26
+msgid "A quick example of the configuration files supported by pytest:"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:29
+msgid "pytest.ini"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:31
+msgid "``pytest.ini`` files take precedence over other files, even when empty."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:33
+msgid ""
+"# pytest.ini\n"
+"[pytest]\n"
+"minversion = 6.0\n"
+"addopts = -ra -q\n"
+"testpaths =\n"
+"    tests\n"
+"    integration"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:45
+msgid "pyproject.toml"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:49
+msgid ""
+"``pyproject.toml`` are considered for configuration when they contain a "
+"``tool.pytest.ini_options`` table."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:51
+msgid ""
+"# pyproject.toml\n"
+"[tool.pytest.ini_options]\n"
+"minversion = \"6.0\"\n"
+"addopts = \"-ra -q\"\n"
+"testpaths = [\n"
+"    \"tests\",\n"
+"    \"integration\",\n"
+"]"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:64
+msgid ""
+"One might wonder why ``[tool.pytest.ini_options]`` instead of ``[tool."
+"pytest]`` as is the case with other tools."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:67
+msgid ""
+"The reason is that the pytest team intends to fully utilize the rich TOML "
+"data format for configuration in the future, reserving the ``[tool.pytest]`` "
+"table for that. The ``ini_options`` table is being used, for now, as a "
+"bridge between the existing ``.ini`` configuration system and the future "
+"configuration format."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:73
+msgid "tox.ini"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:75
+msgid ""
+"``tox.ini`` files are the configuration files of the `tox <https://tox."
+"readthedocs.io>`__ project, and can also be used to hold pytest "
+"configuration if they have a ``[pytest]`` section."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:78
+msgid ""
+"# tox.ini\n"
+"[pytest]\n"
+"minversion = 6.0\n"
+"addopts = -ra -q\n"
+"testpaths =\n"
+"    tests\n"
+"    integration"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:90
+msgid "setup.cfg"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:92
+msgid ""
+"``setup.cfg`` files are general purpose configuration files, used originally "
+"by `distutils <https://docs.python.org/3/distutils/configfile.html>`__, and "
+"can also be used to hold pytest configuration if they have a ``[tool:"
+"pytest]`` section."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:95
+msgid ""
+"# setup.cfg\n"
+"[tool:pytest]\n"
+"minversion = 6.0\n"
+"addopts = -ra -q\n"
+"testpaths =\n"
+"    tests\n"
+"    integration"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:107
+msgid ""
+"Usage of ``setup.cfg`` is not recommended unless for very simple use cases. "
+"``.cfg`` files use a different parser than ``pytest.ini`` and ``tox.ini`` "
+"which might cause hard to track down problems. When possible, it is "
+"recommended to use the latter files, or ``pyproject.toml``, to hold your "
+"pytest configuration."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:118
+msgid "Initialization: determining rootdir and configfile"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:120
+msgid ""
+"pytest determines a ``rootdir`` for each test run which depends on the "
+"command line arguments (specified test files, paths) and on the existence of "
+"configuration files.  The determined ``rootdir`` and ``configfile`` are "
+"printed as part of the pytest header during startup."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:125
+msgid "Here's a summary what ``pytest`` uses ``rootdir`` for:"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:127
+msgid ""
+"Construct *nodeids* during collection; each test is assigned a unique "
+"*nodeid* which is rooted at the ``rootdir`` and takes into account the full "
+"path, class name, function name and parametrization (if any)."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:131
+msgid ""
+"Is used by plugins as a stable location to store project/test run specific "
+"information; for example, the internal :ref:`cache <cache>` plugin creates a "
+"``.pytest_cache`` subdirectory in ``rootdir`` to store its cross-test run "
+"state."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:135
+msgid ""
+"``rootdir`` is **NOT** used to modify ``sys.path``/``PYTHONPATH`` or "
+"influence how modules are imported. See :ref:`pythonpath` for more details."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:138
+msgid ""
+"The ``--rootdir=path`` command-line option can be used to force a specific "
+"directory. Note that contrary to other command-line options, ``--rootdir`` "
+"cannot be used with :confval:`addopts` inside ``pytest.ini`` because the "
+"``rootdir`` is used to *find* ``pytest.ini`` already."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:144
+msgid "Finding the ``rootdir``"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:146
+msgid "Here is the algorithm which finds the rootdir from ``args``:"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:148
+msgid ""
+"Determine the common ancestor directory for the specified ``args`` that are "
+"recognised as paths that exist in the file system. If no such paths are "
+"found, the common ancestor directory is set to the current working directory."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:152
+msgid ""
+"Look for ``pytest.ini``, ``pyproject.toml``, ``tox.ini``, and ``setup.cfg`` "
+"files in the ancestor directory and upwards.  If one is matched, it becomes "
+"the ``configfile`` and its directory becomes the ``rootdir``."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:156
+msgid ""
+"If no configuration file was found, look for ``setup.py`` upwards from the "
+"common ancestor directory to determine the ``rootdir``."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:159
+msgid ""
+"If no ``setup.py`` was found, look for ``pytest.ini``, ``pyproject.toml``, "
+"``tox.ini``, and ``setup.cfg`` in each of the specified ``args`` and "
+"upwards. If one is matched, it becomes the ``configfile`` and its directory "
+"becomes the ``rootdir``."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:163
+msgid ""
+"If no ``configfile`` was found, use the already determined common ancestor "
+"as root directory. This allows the use of pytest in structures that are not "
+"part of a package and don't have any particular configuration file."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:167
+msgid ""
+"If no ``args`` are given, pytest collects test below the current working "
+"directory and also starts determining the ``rootdir`` from there."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:170
+msgid "Files will only be matched for configuration if:"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:172
+msgid "``pytest.ini``: will always match and take precedence, even if empty."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:173
+msgid "``pyproject.toml``: contains a ``[tool.pytest.ini_options]`` table."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:174
+msgid "``tox.ini``: contains a ``[pytest]`` section."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:175
+msgid "``setup.cfg``: contains a ``[tool:pytest]`` section."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:177
+msgid ""
+"The files are considered in the order above. Options from multiple "
+"``configfiles`` candidates are never merged - the first match wins."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:180
+msgid ""
+"The internal :class:`Config <_pytest.config.Config>` object (accessible via "
+"hooks or through the :fixture:`pytestconfig` fixture) will subsequently "
+"carry these attributes:"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:183
+msgid ""
+":attr:`config.rootpath <_pytest.config.Config.rootpath>`: the determined "
+"root directory, guaranteed to exist."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:185
+msgid ""
+":attr:`config.inipath <_pytest.config.Config.inipath>`: the determined "
+"``configfile``, may be ``None`` (it is named ``inipath`` for historical "
+"reasons)."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:188
+msgid ""
+"The ``config.rootpath`` and ``config.inipath`` properties. They are :class:"
+"`pathlib.Path` versions of the older ``config.rootdir`` and ``config."
+"inifile``, which have type ``py.path.local``, and still exist for backward "
+"compatibility."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:193
+msgid ""
+"The ``rootdir`` is used as a reference directory for constructing test "
+"addresses (\"nodeids\") and can be used also by plugins for storing per-"
+"testrun information."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:197
+msgid "Example:"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:199
+msgid "pytest path/to/testdir path/other/"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:203
+msgid ""
+"will determine the common ancestor as ``path`` and then check for "
+"configuration files as follows:"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:206
+msgid ""
+"# first look for pytest.ini files\n"
+"path/pytest.ini\n"
+"path/pyproject.toml  # must contain a [tool.pytest.ini_options] table to "
+"match\n"
+"path/tox.ini         # must contain [pytest] section to match\n"
+"path/setup.cfg       # must contain [tool:pytest] section to match\n"
+"pytest.ini\n"
+"... # all the way up to the root\n"
+"\n"
+"# now look for setup.py\n"
+"path/setup.py\n"
+"setup.py\n"
+"... # all the way up to the root"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:224
+msgid ""
+"Custom pytest plugin commandline arguments may include a path, as in "
+"``pytest --log-output ../../test.log args``. Then ``args`` is mandatory, "
+"otherwise pytest uses the folder of test.log for rootdir determination (see "
+"also `issue 1435 <https://github.com/pytest-dev/pytest/issues/1435>`_). A "
+"dot ``.`` for referencing to the current working directory is also possible."
+msgstr ""
+
+#: ../../../doc/en/customize.rst:237
+msgid "Builtin configuration file options"
+msgstr ""
+
+#: ../../../doc/en/customize.rst:239
+msgid ""
+"For the full list of options consult the :ref:`reference documentation <ini "
+"options ref>`."
+msgstr ""
