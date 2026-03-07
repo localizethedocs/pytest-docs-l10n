@@ -126,7 +126,7 @@ msgstr ""
 
 #: ../../../doc/en/index.rst:73
 msgid "Bugs/Requests"
-msgstr ""
+msgstr "臭蟲/請求"
 
 #: ../../../doc/en/index.rst:75
 msgid ""
