@@ -1,0 +1,433 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015–2020, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/getting-started.rst:2
+msgid "Installation and Getting Started"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:4
+msgid "**Pythons**: Python 3.6, 3.7, 3.8, 3.9, PyPy3"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:6
+msgid "**Platforms**: Linux and Windows"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:8
+msgid "**PyPI package name**: `pytest <https://pypi.org/project/pytest/>`_"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:10
+msgid ""
+"**Documentation as PDF**: `download latest <https://media.readthedocs.org/"
+"pdf/pytest/latest/pytest.pdf>`_"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:12
+msgid ""
+"``pytest`` is a framework that makes building simple and scalable tests "
+"easy. Tests are expressive and readable—no boilerplate code required. Get "
+"started in minutes with a small unit test or complex functional test for "
+"your application or library."
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:18
+msgid "Install ``pytest``"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:20
+msgid "Run the following command in your command line:"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:22
+msgid "pip install -U pytest"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:26
+msgid "Check that you installed the correct version:"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:28
+msgid ""
+"$ pytest --version\n"
+"pytest 6.2.5"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:36
+msgid "Create your first test"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:38
+msgid "Create a simple test function with just four lines of code:"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:40
+msgid ""
+"# content of test_sample.py\n"
+"def func(x):\n"
+"    return x + 1\n"
+"\n"
+"\n"
+"def test_answer():\n"
+"    assert func(3) == 5"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:50
+msgid "That’s it. You can now execute the test function:"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:52
+msgid ""
+"$ pytest\n"
+"=========================== test session starts "
+"============================\n"
+"platform linux -- Python 3.x.y, pytest-6.x.y, py-1.x.y, pluggy-1.x.y\n"
+"cachedir: $PYTHON_PREFIX/.pytest_cache\n"
+"rootdir: $REGENDOC_TMPDIR\n"
+"collected 1 item\n"
+"\n"
+"test_sample.py F                                                     [100%]\n"
+"\n"
+"================================= FAILURES "
+"=================================\n"
+"_______________________________ test_answer "
+"________________________________\n"
+"\n"
+"    def test_answer():\n"
+">       assert func(3) == 5\n"
+"E       assert 4 == 5\n"
+"E        +  where 4 = func(3)\n"
+"\n"
+"test_sample.py:6: AssertionError\n"
+"========================= short test summary info "
+"==========================\n"
+"FAILED test_sample.py::test_answer - assert 4 == 5\n"
+"============================ 1 failed in 0.12s ============================="
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:76
+msgid ""
+"The ``[100%]`` refers to the overall progress of running all test cases. "
+"After it finishes, pytest then shows a failure report because ``func(3)`` "
+"does not return ``5``."
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:80
+msgid ""
+"You can use the ``assert`` statement to verify test expectations. pytest’s "
+"`Advanced assertion introspection <http://docs.python.org/reference/"
+"simple_stmts.html#the-assert-statement>`_ will intelligently report "
+"intermediate values of the assert expression so you can avoid the many names "
+"`of JUnit legacy methods <http://docs.python.org/library/unittest.html#test-"
+"cases>`_."
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:83
+msgid "Run multiple tests"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:85
+msgid ""
+"``pytest`` will run all files of the form test_*.py or \\*_test.py in the "
+"current directory and its subdirectories. More generally, it follows :ref:"
+"`standard test discovery rules <test discovery>`."
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:89
+msgid "Assert that a certain exception is raised"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:91
+msgid ""
+"Use the :ref:`raises <assertraises>` helper to assert that some code raises "
+"an exception:"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:93
+msgid ""
+"# content of test_sysexit.py\n"
+"import pytest\n"
+"\n"
+"\n"
+"def f():\n"
+"    raise SystemExit(1)\n"
+"\n"
+"\n"
+"def test_mytest():\n"
+"    with pytest.raises(SystemExit):\n"
+"        f()"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:107
+msgid "Execute the test function with “quiet” reporting mode:"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:109
+msgid ""
+"$ pytest -q test_sysexit.py\n"
+".                                                                    [100%]\n"
+"1 passed in 0.12s"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:117
+msgid ""
+"The ``-q/--quiet`` flag keeps the output brief in this and following "
+"examples."
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:120
+msgid "Group multiple tests in a class"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:124
+msgid ""
+"Once you develop multiple tests, you may want to group them into a class. "
+"pytest makes it easy to create a class containing more than one test:"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:126
+msgid ""
+"# content of test_class.py\n"
+"class TestClass:\n"
+"    def test_one(self):\n"
+"        x = \"this\"\n"
+"        assert \"h\" in x\n"
+"\n"
+"    def test_two(self):\n"
+"        x = \"hello\"\n"
+"        assert hasattr(x, \"check\")"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:138
+msgid ""
+"``pytest`` discovers all tests following its :ref:`Conventions for Python "
+"test discovery <test discovery>`, so it finds both ``test_`` prefixed "
+"functions. There is no need to subclass anything, but make sure to prefix "
+"your class with ``Test`` otherwise the class will be skipped. We can simply "
+"run the module by passing its filename:"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:140
+msgid ""
+"$ pytest -q test_class.py\n"
+".F                                                                   [100%]\n"
+"================================= FAILURES "
+"=================================\n"
+"____________________________ TestClass.test_two "
+"____________________________\n"
+"\n"
+"self = <test_class.TestClass object at 0xdeadbeef>\n"
+"\n"
+"    def test_two(self):\n"
+"        x = \"hello\"\n"
+">       assert hasattr(x, \"check\")\n"
+"E       AssertionError: assert False\n"
+"E        +  where False = hasattr('hello', 'check')\n"
+"\n"
+"test_class.py:8: AssertionError\n"
+"========================= short test summary info "
+"==========================\n"
+"FAILED test_class.py::TestClass::test_two - AssertionError: assert False\n"
+"1 failed, 1 passed in 0.12s"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:160
+msgid ""
+"The first test passed and the second failed. You can easily see the "
+"intermediate values in the assertion to help you understand the reason for "
+"the failure."
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:162
+msgid "Grouping tests in classes can be beneficial for the following reasons:"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:164
+msgid "Test organization"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:165
+msgid "Sharing fixtures for tests only in that particular class"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:166
+msgid ""
+"Applying marks at the class level and having them implicitly apply to all "
+"tests"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:168
+msgid ""
+"Something to be aware of when grouping tests inside classes is that each "
+"test has a unique instance of the class. Having each test share the same "
+"class instance would be very detrimental to test isolation and would promote "
+"poor test practices. This is outlined below:"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:174
+msgid ""
+"# content of test_class_demo.py\n"
+"class TestClassDemoInstance:\n"
+"    def test_one(self):\n"
+"        assert 0\n"
+"\n"
+"    def test_two(self):\n"
+"        assert 0"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:185
+msgid ""
+"$ pytest -k TestClassDemoInstance -q\n"
+"FF                                                                   [100%]\n"
+"================================= FAILURES "
+"=================================\n"
+"______________________ TestClassDemoInstance.test_one "
+"______________________\n"
+"\n"
+"self = <test_class_demo.TestClassDemoInstance object at 0xdeadbeef>\n"
+"\n"
+"    def test_one(self):\n"
+">       assert 0\n"
+"E       assert 0\n"
+"\n"
+"test_class_demo.py:3: AssertionError\n"
+"______________________ TestClassDemoInstance.test_two "
+"______________________\n"
+"\n"
+"self = <test_class_demo.TestClassDemoInstance object at 0xdeadbeef>\n"
+"\n"
+"    def test_two(self):\n"
+">       assert 0\n"
+"E       assert 0\n"
+"\n"
+"test_class_demo.py:6: AssertionError\n"
+"========================= short test summary info "
+"==========================\n"
+"FAILED test_class_demo.py::TestClassDemoInstance::test_one - assert 0\n"
+"FAILED test_class_demo.py::TestClassDemoInstance::test_two - assert 0\n"
+"2 failed in 0.12s"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:214
+msgid "Request a unique temporary directory for functional tests"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:216
+msgid ""
+"``pytest`` provides `Builtin fixtures/function arguments <https://docs."
+"pytest.org/en/stable/builtin.html>`_ to request arbitrary resources, like a "
+"unique temporary directory:"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:218
+msgid ""
+"# content of test_tmpdir.py\n"
+"def test_needsfiles(tmpdir):\n"
+"    print(tmpdir)\n"
+"    assert 0"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:225
+msgid ""
+"List the name ``tmpdir`` in the test function signature and ``pytest`` will "
+"lookup and call a fixture factory to create the resource before performing "
+"the test function call. Before the test runs, ``pytest`` creates a unique-"
+"per-test-invocation temporary directory:"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:227
+msgid ""
+"$ pytest -q test_tmpdir.py\n"
+"F                                                                    [100%]\n"
+"================================= FAILURES "
+"=================================\n"
+"_____________________________ test_needsfiles "
+"______________________________\n"
+"\n"
+"tmpdir = local('PYTEST_TMPDIR/test_needsfiles0')\n"
+"\n"
+"    def test_needsfiles(tmpdir):\n"
+"        print(tmpdir)\n"
+">       assert 0\n"
+"E       assert 0\n"
+"\n"
+"test_tmpdir.py:3: AssertionError\n"
+"--------------------------- Captured stdout call "
+"---------------------------\n"
+"PYTEST_TMPDIR/test_needsfiles0\n"
+"========================= short test summary info "
+"==========================\n"
+"FAILED test_tmpdir.py::test_needsfiles - assert 0\n"
+"1 failed in 0.12s"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:248
+msgid ""
+"More info on tmpdir handling is available at :ref:`Temporary directories and "
+"files <tmpdir handling>`."
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:250
+msgid ""
+"Find out what kind of builtin :ref:`pytest fixtures <fixtures>` exist with "
+"the command:"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:252
+msgid "pytest --fixtures   # shows builtin and custom fixtures"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:256
+msgid ""
+"Note that this command omits fixtures with leading ``_`` unless the ``-v`` "
+"option is added."
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:259
+msgid "Continue reading"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:261
+msgid ""
+"Check out additional pytest resources to help you customize tests for your "
+"unique workflow:"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:263
+msgid "\":ref:`cmdline`\" for command line invocation examples"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:264
+msgid "\":ref:`existingtestsuite`\" for working with pre-existing tests"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:265
+msgid "\":ref:`mark`\" for information on the ``pytest.mark`` mechanism"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:266
+msgid "\":ref:`fixtures`\" for providing a functional baseline to your tests"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:267
+msgid "\":ref:`plugins`\" for managing and writing plugins"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:268
+msgid "\":ref:`goodpractices`\" for virtualenv and test layouts"
+msgstr ""
