@@ -130,7 +130,7 @@ msgstr ""
 
 #: ../../../doc/en/index.rst:78
 msgid "Bugs/Requests"
-msgstr ""
+msgstr "臭蟲/請求"
 
 #: ../../../doc/en/index.rst:80
 msgid ""
@@ -150,7 +150,7 @@ msgstr ""
 
 #: ../../../doc/en/index.rst:89
 msgid "Support pytest"
-msgstr ""
+msgstr "支援 pytest"
 
 #: ../../../doc/en/index.rst:91
 msgid ""
