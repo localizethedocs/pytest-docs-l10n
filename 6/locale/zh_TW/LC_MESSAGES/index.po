@@ -154,7 +154,7 @@ msgstr ""
 
 #: ../../../doc/en/index.rst:86
 msgid "Bugs/Requests"
-msgstr ""
+msgstr "臭蟲/請求"
 
 #: ../../../doc/en/index.rst:88
 msgid ""
@@ -174,7 +174,7 @@ msgstr ""
 
 #: ../../../doc/en/index.rst:97
 msgid "Support pytest"
-msgstr ""
+msgstr "支援 pytest"
 
 #: ../../../doc/en/index.rst:99
 msgid ""

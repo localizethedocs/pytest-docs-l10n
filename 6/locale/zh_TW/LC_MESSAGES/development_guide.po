@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../doc/en/development_guide.rst:3
 msgid "Development Guide"
-msgstr ""
+msgstr "開發指南"
 
 #: ../../../doc/en/development_guide.rst:5
 msgid ""
