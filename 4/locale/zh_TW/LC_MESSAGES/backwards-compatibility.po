@@ -1,0 +1,87 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015–2020, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/backwards-compatibility.rst:4
+msgid "Backwards Compatibility Policy"
+msgstr ""
+
+#: ../../../doc/en/backwards-compatibility.rst:6
+msgid ""
+"Keeping backwards compatibility has a very high priority in the pytest "
+"project. Although we have deprecated functionality over the years, most of "
+"it is still supported. All deprecations in pytest were done because simpler "
+"or more efficient ways of accomplishing the same tasks have emerged, making "
+"the old way of doing things unnecessary."
+msgstr ""
+
+#: ../../../doc/en/backwards-compatibility.rst:8
+msgid ""
+"With the pytest 3.0 release we introduced a clear communication scheme for "
+"when we will actually remove the old busted joint and politely ask you to "
+"use the new hotness instead, while giving you enough time to adjust your "
+"tests or raise concerns if there are valid reasons to keep deprecated "
+"functionality around."
+msgstr ""
+
+#: ../../../doc/en/backwards-compatibility.rst:10
+msgid ""
+"To communicate changes we issue deprecation warnings using a custom warning "
+"hierarchy (see :ref:`internal-warnings`). These warnings may be suppressed "
+"using the standard means: ``-W`` command-line flag or ``filterwarnings`` ini "
+"options (see :ref:`warnings`), but we suggest to use these sparingly and "
+"temporarily, and heed the warnings when possible."
+msgstr ""
+
+#: ../../../doc/en/backwards-compatibility.rst:12
+msgid ""
+"We will only start the removal of deprecated functionality in major releases "
+"(e.g. if we deprecate something in 3.0 we will start to remove it in 4.0), "
+"and keep it around for at least two minor releases (e.g. if we deprecate "
+"something in 3.9 and 4.0 is the next release, we start to remove it in 5.0, "
+"not in 4.0)."
+msgstr ""
+
+#: ../../../doc/en/backwards-compatibility.rst:14
+msgid ""
+"When the deprecation expires (e.g. 4.0 is released), we won't remove the "
+"deprecated functionality immediately, but will use the standard warning "
+"filters to turn them into **errors** by default. This approach makes it "
+"explicit that removal is imminent, and still gives you time to turn the "
+"deprecated feature into a warning instead of an error so it can be dealt "
+"with in your own time. In the next minor release (e.g. 4.1), the feature "
+"will be effectively removed."
+msgstr ""
+
+#: ../../../doc/en/backwards-compatibility.rst:18
+msgid "Deprecation Roadmap"
+msgstr ""
+
+#: ../../../doc/en/backwards-compatibility.rst:20
+msgid ""
+"Features currently deprecated and removed in previous releases can be found "
+"in :ref:`deprecations`."
+msgstr ""
+
+#: ../../../doc/en/backwards-compatibility.rst:22
+msgid ""
+"We track future deprecation and removal of features using milestones and the "
+"`deprecation <https://github.com/pytest-dev/pytest/issues?"
+"q=label%3A%22type%3A+deprecation%22>`_ and `removal <https://github.com/"
+"pytest-dev/pytest/labels/type%3A%20removal>`_ labels on GitHub."
+msgstr ""
