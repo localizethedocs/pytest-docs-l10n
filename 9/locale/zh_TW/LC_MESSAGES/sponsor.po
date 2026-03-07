@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../doc/en/sponsor.rst:2
 msgid "Sponsor"
-msgstr ""
+msgstr "贊助者"
 
 #: ../../../doc/en/sponsor.rst:4
 msgid ""
@@ -35,10 +35,12 @@ msgid ""
 "distribute in conferences for example) and every few years a large sprint "
 "involving all members."
 msgstr ""
+"資金亦用於資助當地的衝刺活動、商品製作（例如在會議上分發的貼紙），以及每隔幾"
+"年舉辦一次大型衝刺活動，匯集所有成員參加。"
 
 #: ../../../doc/en/sponsor.rst:12
 msgid "OpenCollective"
-msgstr ""
+msgstr "OpenCollective"
 
 #: ../../../doc/en/sponsor.rst:14
 msgid ""

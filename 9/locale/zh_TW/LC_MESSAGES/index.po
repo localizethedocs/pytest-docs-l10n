@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../doc/en/index.rst:21
 msgid "About the project"
-msgstr ""
+msgstr "關於此專案"
 
 #: ../../../doc/en/index.rst:33
 msgid "pytest @ PyPI"
@@ -31,11 +31,11 @@ msgstr ""
 
 #: ../../../doc/en/index.rst:33
 msgid "Issue Tracker"
-msgstr ""
+msgstr "議題追蹤器"
 
 #: ../../../doc/en/index.rst:33
 msgid "PDF Documentation"
-msgstr ""
+msgstr "PDF 文件"
 
 #: ../../../doc/en/index.rst:33
 msgid "Useful links"
@@ -70,7 +70,7 @@ msgstr ""
 
 #: ../../../doc/en/index.rst:48
 msgid "**PyPI package name**: :pypi:`pytest`"
-msgstr ""
+msgstr "**PyPI 軟體包名稱**： :pypi:`pytest`"
 
 #: ../../../doc/en/index.rst:51
 msgid "A quick example"
@@ -118,6 +118,30 @@ msgid ""
 "FAILED test_sample.py::test_answer - assert 4 == 5\n"
 "============================ 1 failed in 0.12s ============================="
 msgstr ""
+"$ pytest\n"
+"=========================== test session starts "
+"============================\n"
+"platform linux -- Python 3.x.y, pytest-9.x.y, pluggy-1.x.y\n"
+"rootdir: /home/sweet/project\n"
+"collected 1 item\n"
+"\n"
+"test_sample.py F                                                     [100%]\n"
+"\n"
+"================================= FAILURES "
+"=================================\n"
+"_______________________________ test_answer "
+"________________________________\n"
+"\n"
+"    def test_answer():\n"
+">       assert inc(3) == 5\n"
+"E       assert 4 == 5\n"
+"E        +  where 4 = inc(3)\n"
+"\n"
+"test_sample.py:6: AssertionError\n"
+"========================= short test summary info "
+"==========================\n"
+"FAILED test_sample.py::test_answer - assert 4 == 5\n"
+"============================ 1 failed in 0.12s ============================="
 
 #: ../../../doc/en/index.rst:89
 msgid ""
@@ -192,7 +216,7 @@ msgstr ""
 
 #: ../../../doc/en/index.rst:119
 msgid "Bugs/Requests"
-msgstr ""
+msgstr "臭蟲/請求"
 
 #: ../../../doc/en/index.rst:121
 msgid ""
@@ -202,7 +226,7 @@ msgstr ""
 
 #: ../../../doc/en/index.rst:125
 msgid "Support pytest"
-msgstr ""
+msgstr "支援 pytest"
 
 #: ../../../doc/en/index.rst:127
 msgid ""
