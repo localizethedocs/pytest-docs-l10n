@@ -1,0 +1,901 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015–2018 , holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/usage.rst:5
+msgid "Usage and Invocations"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:11
+msgid "Calling pytest through ``python -m pytest``"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:15
+msgid ""
+"You can invoke testing through the Python interpreter from the command line::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:17
+msgid "python -m pytest [...]"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:19
+msgid ""
+"This is almost equivalent to invoking the command line script ``pytest "
+"[...]`` directly, except that calling via ``python`` will also add the "
+"current directory to ``sys.path``."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:23
+msgid "Possible exit codes"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:25
+msgid "Running ``pytest`` can result in six different exit codes:"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:0
+msgid "Exit code 0"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:27
+msgid "All tests were collected and passed successfully"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:0
+msgid "Exit code 1"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:28
+msgid "Tests were collected and run but some of the tests failed"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:0
+msgid "Exit code 2"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:29
+msgid "Test execution was interrupted by the user"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:0
+msgid "Exit code 3"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:30
+msgid "Internal error happened while executing tests"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:0
+msgid "Exit code 4"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:31
+msgid "pytest command line usage error"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:0
+msgid "Exit code 5"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:32
+msgid "No tests were collected"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:35
+msgid "Getting help on version, option names, environment variables"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:39
+msgid ""
+"pytest --version   # shows where pytest was imported from\n"
+"pytest --fixtures  # show available builtin function arguments\n"
+"pytest -h | --help # show help on command line and config file options"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:47
+msgid "Stopping after the first (or N) failures"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:49
+msgid "To stop the testing process after the first (N) failures::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:51
+msgid ""
+"pytest -x            # stop after first failure\n"
+"pytest --maxfail=2    # stop after two failures"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:57
+msgid "Specifying tests / selecting tests"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:59
+msgid ""
+"Pytest supports several ways to run and select tests from the command-line."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:61
+msgid "**Run tests in a module**"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:65
+msgid "pytest test_mod.py"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:67
+msgid "**Run tests in a directory**"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:71
+msgid "pytest testing/"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:73
+msgid "**Run tests by keyword expressions**"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:77
+msgid "pytest -k \"MyClass and not method\""
+msgstr ""
+
+#: ../../../doc/en/usage.rst:79
+msgid ""
+"This will run tests which contain names that match the given *string "
+"expression*, which can include Python operators that use filenames, class "
+"names and function names as variables. The example above will run "
+"``TestMyClass.test_something``  but not ``TestMyClass.test_method_simple``."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:85
+msgid "**Run tests by node ids**"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:87
+msgid ""
+"Each collected test is assigned a unique ``nodeid`` which consist of the "
+"module filename followed by specifiers like class names, function names and "
+"parameters from parametrization, separated by ``::`` characters."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:90
+msgid "To run a specific test within a module::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:92
+msgid "pytest test_mod.py::test_func"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:95
+msgid "Another example specifying a test method in the command line::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:97
+msgid "pytest test_mod.py::TestClass::test_method"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:99
+msgid "**Run tests by marker expressions**"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:103
+msgid "pytest -m slow"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:105
+msgid ""
+"Will run all tests which are decorated with the ``@pytest.mark.slow`` "
+"decorator."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:107
+msgid "For more information see :ref:`marks <mark>`."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:109
+msgid "**Run tests from packages**"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:113
+msgid "pytest --pyargs pkg.testing"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:115
+msgid ""
+"This will import ``pkg.testing`` and use its filesystem location to find and "
+"run tests from."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:119
+msgid "Modifying Python traceback printing"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:121
+msgid "Examples for modifying traceback printing::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:123
+msgid ""
+"pytest --showlocals # show local variables in tracebacks\n"
+"pytest -l           # show local variables (shortcut)\n"
+"\n"
+"pytest --tb=auto    # (default) 'long' tracebacks for the first and last\n"
+"                     # entry, but 'short' style for the other entries\n"
+"pytest --tb=long    # exhaustive, informative traceback formatting\n"
+"pytest --tb=short   # shorter traceback format\n"
+"pytest --tb=line    # only one line per failure\n"
+"pytest --tb=native  # Python standard library formatting\n"
+"pytest --tb=no      # no traceback at all"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:134
+msgid ""
+"The ``--full-trace`` causes very long traces to be printed on error (longer "
+"than ``--tb=long``). It also ensures that a stack trace is printed on "
+"**KeyboardInterrupt** (Ctrl+C). This is very useful if the tests are taking "
+"too long and you interrupt them with Ctrl+C to find out where the tests are "
+"*hanging*. By default no output will be shown (because KeyboardInterrupt is "
+"caught by pytest). By using this option you make sure a trace is shown."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:146
+msgid "Detailed summary report"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:150
+msgid ""
+"The ``-r`` flag can be used to display test results summary at the end of "
+"the test session, making it easy in large test suites to get a clear picture "
+"of all failures, skips, xfails, etc."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:153
+msgid "Example::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:155
+msgid ""
+"$ pytest -ra\n"
+"=========================== test session starts "
+"============================\n"
+"platform linux -- Python 3.x.y, pytest-3.x.y, py-1.x.y, pluggy-0.x.y\n"
+"rootdir: $REGENDOC_TMPDIR, inifile:\n"
+"collected 0 items\n"
+"\n"
+"======================= no tests ran in 0.12 seconds ======================="
+msgstr ""
+
+#: ../../../doc/en/usage.rst:163
+msgid ""
+"The ``-r`` options accepts a number of characters after it, with ``a`` used "
+"above meaning \"all except passes\"."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:165
+msgid "Here is the full list of available characters that can be used:"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:167
+msgid "``f`` - failed"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:168
+msgid "``E`` - error"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:169
+msgid "``s`` - skipped"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:170
+msgid "``x`` - xfailed"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:171
+msgid "``X`` - xpassed"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:172
+msgid "``p`` - passed"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:173
+msgid "``P`` - passed with output"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:174
+msgid "``a`` - all except ``pP``"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:176
+msgid ""
+"More than one character can be used, so for example to only see failed and "
+"skipped tests, you can execute::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:178
+msgid ""
+"$ pytest -rfs\n"
+"=========================== test session starts "
+"============================\n"
+"platform linux -- Python 3.x.y, pytest-3.x.y, py-1.x.y, pluggy-0.x.y\n"
+"rootdir: $REGENDOC_TMPDIR, inifile:\n"
+"collected 0 items\n"
+"\n"
+"======================= no tests ran in 0.12 seconds ======================="
+msgstr ""
+
+#: ../../../doc/en/usage.rst:189
+msgid "Dropping to PDB_ (Python Debugger) on failures"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:193
+msgid ""
+"Python comes with a builtin Python debugger called PDB_.  ``pytest`` allows "
+"one to drop into the PDB_ prompt via a command line option::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:196
+msgid "pytest --pdb"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:198
+msgid ""
+"This will invoke the Python debugger on every failure (or "
+"KeyboardInterrupt). Often you might only want to do this for the first "
+"failing test to understand a certain failure situation::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:202
+msgid ""
+"pytest -x --pdb   # drop to PDB on first failure, then end test session\n"
+"pytest --pdb --maxfail=3  # drop to PDB for first three failures"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:205
+msgid ""
+"Note that on any failure the exception information is stored on ``sys."
+"last_value``, ``sys.last_type`` and ``sys.last_traceback``. In interactive "
+"use, this allows one to drop into postmortem debugging with any debug tool. "
+"One can also manually access the exception information, for example::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:211
+msgid ""
+">>> import sys\n"
+">>> sys.last_traceback.tb_lineno\n"
+"42\n"
+">>> sys.last_value\n"
+"AssertionError('assert result == \"ok\"',)"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:220
+msgid "Dropping to PDB_ (Python Debugger) at the start of a test"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:223
+msgid ""
+"``pytest`` allows one to drop into the PDB_ prompt immediately at the start "
+"of each test via a command line option::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:225
+msgid "pytest --trace"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:227
+msgid "This will invoke the Python debugger at the start of every test."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:232
+msgid "Setting breakpoints"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:236
+msgid ""
+"To set a breakpoint in your code use the native Python ``import pdb;pdb."
+"set_trace()`` call in your code and pytest automatically disables its output "
+"capture for that test:"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:239
+msgid "Output capture in other tests is not affected."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:240
+msgid ""
+"Any prior test output that has already been captured and will be processed "
+"as such."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:242
+msgid ""
+"Any later output produced within the same test will not be captured and will "
+"instead get sent directly to ``sys.stdout``. Note that this holds true even "
+"for test output occurring after you exit the interactive PDB_ tracing "
+"session and continue with the regular test run."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:251
+msgid "Using the builtin breakpoint function"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:253
+msgid ""
+"Python 3.7 introduces a builtin ``breakpoint()`` function. Pytest supports "
+"the use of ``breakpoint()`` with the following behaviours:"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:256
+msgid ""
+"When ``breakpoint()`` is called and ``PYTHONBREAKPOINT`` is set to the "
+"default value, pytest will use the custom internal PDB trace UI instead of "
+"the system default ``Pdb``."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:257
+msgid ""
+"When tests are complete, the system will default back to the system ``Pdb`` "
+"trace UI."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:258
+msgid ""
+"With ``--pdb`` passed to pytest, the custom internal Pdb trace UI is used "
+"with both ``breakpoint()`` and failed tests/unhandled exceptions."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:259
+msgid "``--pdbcls`` can be used to specify a custom debugger class."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:264
+msgid "Profiling test execution duration"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:268
+msgid "To get a list of the slowest 10 test durations::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:270
+msgid "pytest --durations=10"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:272
+msgid ""
+"By default, pytest will not show test durations that are too small (<0.01s) "
+"unless ``-vv`` is passed on the command-line."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:275
+msgid "Creating JUnitXML format files"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:277
+msgid ""
+"To create result files which can be read by Jenkins_ or other Continuous "
+"integration servers, use this invocation::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:280
+msgid "pytest --junitxml=path"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:282
+msgid "to create an XML file at ``path``."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:286
+msgid ""
+"To set the name of the root test suite xml item, you can configure the "
+"``junit_suite_name`` option in your config file:"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:288
+msgid ""
+"[pytest]\n"
+"junit_suite_name = my_suite"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:296
+msgid "record_property"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:301
+msgid ""
+"Fixture renamed from ``record_xml_property`` to ``record_property`` as user "
+"properties are now available to all reporters. ``record_xml_property`` is "
+"now deprecated."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:305
+msgid ""
+"If you want to log additional information for a test, you can use the "
+"``record_property`` fixture:"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:308
+msgid ""
+"def test_function(record_property):\n"
+"    record_property(\"example_key\", 1)\n"
+"    assert True"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:314
+msgid ""
+"This will add an extra property ``example_key=\"1\"`` to the generated "
+"``testcase`` tag:"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:317
+msgid ""
+"<testcase classname=\"test_function\" file=\"test_function.py\" line=\"0\" "
+"name=\"test_function\" time=\"0.0009\">\n"
+"  <properties>\n"
+"    <property name=\"example_key\" value=\"1\" />\n"
+"  </properties>\n"
+"</testcase>"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:325
+msgid ""
+"Alternatively, you can integrate this functionality with custom markers:"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:327
+msgid ""
+"# content of conftest.py\n"
+"\n"
+"\n"
+"def pytest_collection_modifyitems(session, config, items):\n"
+"    for item in items:\n"
+"        for marker in item.iter_markers(name=\"test_id\"):\n"
+"            test_id = marker.args[0]\n"
+"            item.user_properties.append((\"test_id\", test_id))"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:338
+msgid "And in your tests:"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:340
+msgid ""
+"# content of test_function.py\n"
+"import pytest\n"
+"\n"
+"\n"
+"@pytest.mark.test_id(1501)\n"
+"def test_function():\n"
+"    assert True"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:350
+msgid "Will result in:"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:352
+msgid ""
+"<testcase classname=\"test_function\" file=\"test_function.py\" line=\"0\" "
+"name=\"test_function\" time=\"0.0009\">\n"
+"  <properties>\n"
+"    <property name=\"test_id\" value=\"1501\" />\n"
+"  </properties>\n"
+"</testcase>"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:362
+msgid ""
+"``record_property`` is an experimental feature and may change in the future."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:364
+msgid ""
+"Also please note that using this feature will break any schema verification. "
+"This might be a problem when used with some CI servers."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:368
+msgid "record_xml_attribute"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:372
+msgid ""
+"To add an additional xml attribute to a testcase element, you can use "
+"``record_xml_attribute`` fixture. This can also be used to override existing "
+"values:"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:375
+msgid ""
+"def test_function(record_xml_attribute):\n"
+"    record_xml_attribute(\"assertions\", \"REQ-1234\")\n"
+"    record_xml_attribute(\"classname\", \"custom_classname\")\n"
+"    print(\"hello world\")\n"
+"    assert True"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:383
+msgid ""
+"Unlike ``record_property``, this will not add a new child element. Instead, "
+"this will add an attribute ``assertions=\"REQ-1234\"`` inside the generated "
+"``testcase`` tag and override the default ``classname`` with "
+"``\"classname=custom_classname\"``:"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:387
+msgid ""
+"<testcase classname=\"custom_classname\" file=\"test_function.py\" "
+"line=\"0\" name=\"test_function\" time=\"0.003\" assertions=\"REQ-1234\">\n"
+"    <system-out>\n"
+"        hello world\n"
+"    </system-out>\n"
+"</testcase>"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:397
+msgid ""
+"``record_xml_attribute`` is an experimental feature, and its interface might "
+"be replaced by something more powerful and general in future versions. The "
+"functionality per-se will be kept, however."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:401
+msgid ""
+"Using this over ``record_xml_property`` can help when using ci tools to "
+"parse the xml report. However, some parsers are quite strict about the "
+"elements and attributes that are allowed. Many tools use an xsd schema (like "
+"the example below) to validate incoming xml. Make sure you are using "
+"attribute names that are allowed by your parser."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:406
+msgid "Below is the Scheme used by Jenkins to validate the XML report:"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:408
+msgid ""
+"<xs:element name=\"testcase\">\n"
+"    <xs:complexType>\n"
+"        <xs:sequence>\n"
+"            <xs:element ref=\"skipped\" minOccurs=\"0\" maxOccurs=\"1\"/>\n"
+"            <xs:element ref=\"error\" minOccurs=\"0\" "
+"maxOccurs=\"unbounded\"/>\n"
+"            <xs:element ref=\"failure\" minOccurs=\"0\" "
+"maxOccurs=\"unbounded\"/>\n"
+"            <xs:element ref=\"system-out\" minOccurs=\"0\" "
+"maxOccurs=\"unbounded\"/>\n"
+"            <xs:element ref=\"system-err\" minOccurs=\"0\" "
+"maxOccurs=\"unbounded\"/>\n"
+"        </xs:sequence>\n"
+"        <xs:attribute name=\"name\" type=\"xs:string\" use=\"required\"/>\n"
+"        <xs:attribute name=\"assertions\" type=\"xs:string\" "
+"use=\"optional\"/>\n"
+"        <xs:attribute name=\"time\" type=\"xs:string\" use=\"optional\"/>\n"
+"        <xs:attribute name=\"classname\" type=\"xs:string\" use=\"optional\"/"
+">\n"
+"        <xs:attribute name=\"status\" type=\"xs:string\" use=\"optional\"/>\n"
+"    </xs:complexType>\n"
+"</xs:element>"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:428
+msgid "LogXML: add_global_property"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:432
+msgid ""
+"If you want to add a properties node in the testsuite level, which may "
+"contains properties that are relevant to all testcases you can use ``LogXML."
+"add_global_properties``"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:435
+msgid ""
+"import pytest\n"
+"\n"
+"\n"
+"@pytest.fixture(scope=\"session\")\n"
+"def log_global_env_facts(f):\n"
+"\n"
+"    if pytest.config.pluginmanager.hasplugin(\"junitxml\"):\n"
+"        my_junit = getattr(pytest.config, \"_xml\", None)\n"
+"\n"
+"    my_junit.add_global_property(\"ARCH\", \"PPC\")\n"
+"    my_junit.add_global_property(\"STORAGE_TYPE\", \"CEPH\")\n"
+"\n"
+"\n"
+"@pytest.mark.usefixtures(log_global_env_facts.__name__)\n"
+"def start_and_prepare_env():\n"
+"    pass\n"
+"\n"
+"\n"
+"class TestMe(object):\n"
+"    def test_foo(self):\n"
+"        assert True"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:459
+msgid ""
+"This will add a property node below the testsuite node to the generated xml:"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:461
+msgid ""
+"<testsuite errors=\"0\" failures=\"0\" name=\"pytest\" skips=\"0\" "
+"tests=\"1\" time=\"0.006\">\n"
+"  <properties>\n"
+"    <property name=\"ARCH\" value=\"PPC\"/>\n"
+"    <property name=\"STORAGE_TYPE\" value=\"CEPH\"/>\n"
+"  </properties>\n"
+"  <testcase classname=\"test_me.TestMe\" file=\"test_me.py\" line=\"16\" "
+"name=\"test_foo\" time=\"0.000243663787842\"/>\n"
+"</testsuite>"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:473
+msgid ""
+"This is an experimental feature, and its interface might be replaced by "
+"something more powerful and general in future versions. The functionality "
+"per-se will be kept."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:478
+msgid "Creating resultlog format files"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:482
+msgid "This option is rarely used and is scheduled for removal in 4.0."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:484
+msgid ""
+"An alternative for users which still need similar functionality is to use "
+"the `pytest-tap <https://pypi.org/project/pytest-tap/>`_ plugin which "
+"provides a stream of test data."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:488
+msgid ""
+"If you have any concerns, please don't hesitate to `open an issue <https://"
+"github.com/pytest-dev/pytest/issues>`_."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:491
+msgid "To create plain-text machine-readable result files you can issue::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:493
+msgid "pytest --resultlog=path"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:495
+msgid ""
+"and look at the content at the ``path`` location.  Such files are used e.g. "
+"by the `PyPy-test`_ web page to show test results over several revisions."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:502
+msgid "Sending test report to online pastebin service"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:504
+msgid "**Creating a URL for each test failure**::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:506
+msgid "pytest --pastebin=failed"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:508
+msgid ""
+"This will submit test run information to a remote Paste service and provide "
+"a URL for each failure.  You may select tests as usual or add for example ``-"
+"x`` if you only want to send one particular failure."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:512
+msgid "**Creating a URL for a whole test session log**::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:514
+msgid "pytest --pastebin=all"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:516
+msgid "Currently only pasting to the http://bpaste.net service is implemented."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:519
+msgid "Disabling plugins"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:521
+msgid ""
+"To disable loading specific plugins at invocation time, use the ``-p`` "
+"option together with the prefix ``no:``."
+msgstr ""
+
+#: ../../../doc/en/usage.rst:524
+msgid ""
+"Example: to disable loading the plugin ``doctest``, which is responsible for "
+"executing doctest tests from text files, invoke pytest like this::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:527
+msgid "pytest -p no:doctest"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:532
+msgid "Calling pytest from Python code"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:536
+msgid "You can invoke ``pytest`` from Python code directly::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:538
+msgid "pytest.main()"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:540
+msgid ""
+"this acts as if you would call \"pytest\" from the command line. It will not "
+"raise ``SystemExit`` but return the exitcode instead. You can pass in "
+"options and arguments::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:544
+msgid "pytest.main(['-x', 'mytestdir'])"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:546
+msgid "You can specify additional plugins to ``pytest.main``::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:548
+msgid ""
+"# content of myinvoke.py\n"
+"import pytest\n"
+"class MyPlugin(object):\n"
+"    def pytest_sessionfinish(self):\n"
+"        print(\"*** test run reporting finishing\")\n"
+"\n"
+"pytest.main([\"-qq\"], plugins=[MyPlugin()])"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:556
+msgid ""
+"Running it will show that ``MyPlugin`` was added and its hook was invoked::"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:559
+msgid ""
+"$ python myinvoke.py\n"
+".                                                                    "
+"[100%]*** test run reporting finishing"
+msgstr ""
+
+#: ../../../doc/en/usage.rst:565
+msgid ""
+"Calling ``pytest.main()`` will result in importing your tests and any "
+"modules that they import. Due to the caching mechanism of python's import "
+"system, making subsequent calls to ``pytest.main()`` from the same process "
+"will not reflect changes to those files between the calls. For this reason, "
+"making multiple calls to ``pytest.main()`` from the same process (in order "
+"to re-run tests, for example) is not recommended."
+msgstr ""
