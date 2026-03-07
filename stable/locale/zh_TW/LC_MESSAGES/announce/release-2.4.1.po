@@ -1,0 +1,64 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:28+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/announce/release-2.4.1.rst:2
+msgid "pytest-2.4.1: fixing three regressions compared to 2.3.5"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.4.1.rst:4
+msgid ""
+"pytest-2.4.1 is a quick follow up release to fix three regressions compared "
+"to 2.3.5 before they hit more people:"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.4.1.rst:7
+msgid ""
+"When using parser.addoption() unicode arguments to the \"type\" keyword "
+"should also be converted to the respective types. thanks Floris Bruynooghe, "
+"@dnozay. (fixes issue360 and issue362)"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.4.1.rst:11
+msgid ""
+"fix dotted filename completion when using argcomplete thanks Anthon van der "
+"Neuth. (fixes issue361)"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.4.1.rst:14
+msgid ""
+"fix regression when a 1-tuple (\"arg\",) is used for specifying "
+"parametrization (the values of the parametrization were passed nested in a "
+"tuple).  Thanks Donald Stufft."
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.4.1.rst:18
+msgid "also merge doc typo fixes, thanks Andy Dirnberger"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.4.1.rst:20
+msgid "as usual, docs at http://pytest.org and upgrades via::"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.4.1.rst:22
+msgid "pip install -U pytest"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.4.1.rst:24
+msgid "have fun, holger krekel"
+msgstr ""
