@@ -1,0 +1,31 @@
+<h3>{% trans %}Contents{% endtrans %}</h3>
+
+<ul>
+  <li><a href="{{ pathto('index') }}">{% trans %}Home{% endtrans %}</a></li>
+
+  <li><a href="{{ pathto('getting-started') }}">{% trans %}Get started{% endtrans %}</a></li>
+  <li><a href="{{ pathto('how-to/index') }}">{% trans %}How-to guides{% endtrans %}</a></li>
+  <li><a href="{{ pathto('reference/index') }}">{% trans %}Reference guides{% endtrans %}</a></li>
+  <li><a href="{{ pathto('explanation/index') }}">{% trans %}Explanation{% endtrans %}</a></li>
+  <li><a href="{{ pathto('contents') }}">{% trans %}Complete table of contents{% endtrans %}</a></li>
+  <li><a href="{{ pathto('example/index') }}">{% trans %}Library of examples{% endtrans %}</a></li>
+</ul>
+
+<h3>{% trans %}About the project{% endtrans %}</h3>
+
+<ul>
+  <li><a href="{{ pathto('changelog') }}">{% trans %}Changelog{% endtrans %}</a></li>
+  <li><a href="{{ pathto('contributing') }}">{% trans %}Contributing{% endtrans %}</a></li>
+  <li><a href="{{ pathto('backwards-compatibility') }}">{% trans %}Backwards Compatibility{% endtrans %}</a></li>
+  <li><a href="{{ pathto('sponsor') }}">{% trans %}Sponsor{% endtrans %}</a></li>
+  <li><a href="{{ pathto('tidelift') }}">{% trans %}pytest for Enterprise{% endtrans %}</a></li>
+  <li><a href="{{ pathto('license') }}">{% trans %}License{% endtrans %}</a></li>
+  <li><a href="{{ pathto('contact') }}">{% trans %}Contact Channels{% endtrans %}</a></li>
+</ul>
+
+{%- if display_toc %}
+  <hr>
+  {{ toc }}
+{%- endif %}
+
+<hr>
