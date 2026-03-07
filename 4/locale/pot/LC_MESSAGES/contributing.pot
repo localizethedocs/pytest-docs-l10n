@@ -1,0 +1,623 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015–2020, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../CONTRIBUTING.rst:3
+msgid "Contribution getting started"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:5
+msgid ""
+"Contributions are highly welcomed and appreciated.  Every little help "
+"counts, so do not hesitate!"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:10
+msgid "Contribution links"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:15
+msgid "Feature requests and feedback"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:17
+msgid "Do you like pytest?  Share some love on Twitter or in your blog posts!"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:19
+msgid ""
+"We'd also like to hear about your propositions and suggestions.  Feel free "
+"to `submit them as issues <https://github.com/pytest-dev/pytest/issues>`_ "
+"and:"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:22
+msgid "Explain in detail how they should work."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:23
+msgid ""
+"Keep the scope as narrow as possible.  This will make it easier to implement."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:29
+msgid "Report bugs"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:31
+msgid ""
+"Report bugs for pytest in the `issue tracker <https://github.com/pytest-dev/"
+"pytest/issues>`_."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:33
+msgid "If you are reporting a bug, please include:"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:35
+msgid "Your operating system name and version."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:36
+msgid ""
+"Any details about your local setup that might be helpful in troubleshooting, "
+"specifically the Python interpreter version, installed libraries, and pytest "
+"version."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:39
+msgid "Detailed steps to reproduce the bug."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:41
+msgid ""
+"If you can write a demonstration test that currently fails but should pass "
+"(xfail), that is a very useful commit to make as well, even if you cannot "
+"fix the bug itself."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:49
+msgid "Fix bugs"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:51
+msgid ""
+"Look through the `GitHub issues for bugs <https://github.com/pytest-dev/"
+"pytest/labels/type:%20bug>`_."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:53
+msgid ""
+":ref:`Talk <contact>` to developers to find out how you can fix specific "
+"bugs."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:55
+msgid ""
+"Don't forget to check the issue trackers of your favourite plugins, too!"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:60
+msgid "Implement features"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:62
+msgid ""
+"Look through the `GitHub issues for enhancements <https://github.com/pytest-"
+"dev/pytest/labels/type:%20enhancement>`_."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:64
+msgid ""
+":ref:`Talk <contact>` to developers to find out how you can implement "
+"specific features."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:68
+msgid "Write documentation"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:70
+msgid "Pytest could always use more documentation.  What exactly is needed?"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:72
+msgid ""
+"More complementary documentation.  Have you perhaps found something unclear?"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:73
+msgid "Documentation translations.  We currently have only English."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:74
+msgid "Docstrings.  There can never be too many of them."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:75
+msgid "Blog posts, articles and such -- they're all very appreciated."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:77
+msgid ""
+"You can also edit documentation files directly in the GitHub web interface, "
+"without using a local copy.  This can be convenient for small fixes."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:81
+msgid "Build the documentation locally with the following command:"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:83
+msgid "$ tox -e docs"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:87
+msgid "The built documentation should be available in the ``doc/en/_build/``."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:89
+msgid "Where 'en' refers to the documentation language."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:94
+msgid "Submitting Plugins to pytest-dev"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:96
+msgid ""
+"Pytest development of the core, some plugins and support code happens in "
+"repositories living under the ``pytest-dev`` organisations:"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:99
+msgid "`pytest-dev on GitHub <https://github.com/pytest-dev>`_"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:101
+msgid "`pytest-dev on Bitbucket <https://bitbucket.org/pytest-dev>`_"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:103
+msgid ""
+"All pytest-dev Contributors team members have write access to all contained "
+"repositories.  Pytest core and plugins are generally developed using `pull "
+"requests`_ to respective repositories."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:107
+msgid "The objectives of the ``pytest-dev`` organisation are:"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:109
+msgid "Having a central location for popular pytest plugins"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:110
+msgid ""
+"Sharing some of the maintenance responsibility (in case a maintainer no "
+"longer wishes to maintain a plugin)"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:113
+msgid ""
+"You can submit your plugin by subscribing to the `pytest-dev mail list "
+"<https://mail.python.org/mailman/listinfo/pytest-dev>`_ and writing a mail "
+"pointing to your existing pytest plugin repository which must have the "
+"following:"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:118
+msgid ""
+"PyPI presence with a ``setup.py`` that contains a license, ``pytest-`` "
+"prefixed name, version number, authors, short and long description."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:121
+msgid ""
+"a ``tox.ini`` for running tests using `tox <https://tox.readthedocs.io>`_."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:123
+msgid ""
+"a ``README.txt`` describing how to use the plugin and on which platforms it "
+"runs."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:126
+msgid ""
+"a ``LICENSE.txt`` file or equivalent containing the licensing information, "
+"with matching info in ``setup.py``."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:129
+msgid "an issue tracker for bug reports and enhancement requests."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:131
+msgid "a `changelog <http://keepachangelog.com/>`_"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:133
+msgid ""
+"If no contributor strongly objects and two agree, the repository can then be "
+"transferred to the ``pytest-dev`` organisation."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:136
+msgid ""
+"Here's a rundown of how a repository transfer usually proceeds (using a "
+"repository named ``joedoe/pytest-xyz`` as example):"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:139
+msgid ""
+"``joedoe`` transfers repository ownership to ``pytest-dev`` administrator "
+"``calvin``."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:140
+msgid ""
+"``calvin`` creates ``pytest-xyz-admin`` and ``pytest-xyz-developers`` teams, "
+"inviting ``joedoe`` to both as **maintainer**."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:141
+msgid ""
+"``calvin`` transfers repository to ``pytest-dev`` and configures team access:"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:143
+msgid "``pytest-xyz-admin`` **admin** access;"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:144
+msgid "``pytest-xyz-developers`` **write** access;"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:146
+msgid ""
+"The ``pytest-dev/Contributors`` team has write access to all projects, and "
+"every project administrator is in it. We recommend that each plugin has at "
+"least three people who have the right to release to PyPI."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:150
+msgid ""
+"Repository owners can rest assured that no ``pytest-dev`` administrator will "
+"ever make releases of your repository or take ownership in any way, except "
+"in rare cases where someone becomes unresponsive after months of contact "
+"attempts. As stated, the objective is to share maintenance and avoid "
+"\"plugin-abandon\"."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:160
+msgid "Preparing Pull Requests"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:163
+msgid "Short version"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:165
+msgid "Fork the repository."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:166
+msgid ""
+"Enable and install `pre-commit <https://pre-commit.com>`_ to ensure style-"
+"guides and code checks are followed."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:167
+msgid "Target ``master`` for bugfixes and doc changes."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:168
+msgid "Target ``features`` for new features or functionality changes."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:169
+msgid ""
+"Follow **PEP-8** for naming and `black <https://github.com/python/black>`_ "
+"for formatting."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:170
+msgid "Tests are run using ``tox``::"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:172
+msgid "tox -e linting,py27,py37"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:174
+msgid ""
+"The test environments above are usually enough to cover most cases locally."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:176
+msgid ""
+"Write a ``changelog`` entry: ``changelog/2574.bugfix``, use issue id number "
+"and one of ``bugfix``, ``removal``, ``feature``, ``vendor``, ``doc`` or "
+"``trivial`` for the issue type."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:179
+msgid ""
+"Unless your change is a trivial or a documentation fix (e.g., a typo or "
+"reword of a small section) please add yourself to the ``AUTHORS`` file, in "
+"alphabetical order."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:184
+msgid "Long version"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:186
+msgid ""
+"What is a \"pull request\"?  It informs the project's core developers about "
+"the changes you want to review and merge.  Pull requests are stored on "
+"`GitHub servers <https://github.com/pytest-dev/pytest/pulls>`_. Once you "
+"send a pull request, we can discuss its potential modifications and even add "
+"more commits to it later on. There's an excellent tutorial on how Pull "
+"Requests work in the `GitHub Help Center <https://help.github.com/articles/"
+"using-pull-requests/>`_."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:194
+msgid "Here is a simple overview, with pytest-specific bits:"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:196
+msgid ""
+"Fork the `pytest GitHub repository <https://github.com/pytest-dev/"
+"pytest>`__.  It's fine to use ``pytest`` as your fork repository name "
+"because it will live under your user."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:201
+msgid ""
+"Clone your fork locally using `git <https://git-scm.com/>`_ and create a "
+"branch::"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:203
+msgid ""
+"$ git clone git@github.com:YOUR_GITHUB_USERNAME/pytest.git\n"
+"$ cd pytest\n"
+"# now, to fix a bug create your own branch off \"master\":\n"
+"\n"
+"    $ git checkout -b your-bugfix-branch-name master\n"
+"\n"
+"# or to instead add a feature create your own branch off \"features\":\n"
+"\n"
+"    $ git checkout -b your-feature-branch-name features"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:213
+msgid ""
+"Given we have \"major.minor.micro\" version numbers, bugfixes will usually "
+"be released in micro releases whereas features will be released in minor "
+"releases and incompatible changes in major releases."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:217
+msgid ""
+"If you need some help with Git, follow this quick start guide: https://git."
+"wiki.kernel.org/index.php/QuickStart"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:220
+msgid ""
+"Install `pre-commit <https://pre-commit.com>`_ and its hook on the pytest "
+"repo::"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:222
+msgid ""
+"$ pip install --user pre-commit\n"
+"$ pre-commit install"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:225
+msgid "Afterwards ``pre-commit`` will run whenever you commit."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:227
+msgid ""
+"https://pre-commit.com/ is a framework for managing and maintaining multi-"
+"language pre-commit hooks to ensure code-style and code formatting is "
+"consistent."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:230
+msgid "Install tox"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:232
+msgid ""
+"Tox is used to run all the tests and will automatically setup virtualenvs to "
+"run the tests in. (will implicitly use http://www.virtualenv.org/en/"
+"latest/)::"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:236
+msgid "$ pip install tox"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:238
+msgid "Run all the tests"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:240
+msgid ""
+"You need to have Python 2.7 and 3.7 available in your system.  Now running "
+"tests is as simple as issuing this command::"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:243
+msgid "$ tox -e linting,py27,py37"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:245
+msgid ""
+"This command will run tests via the \"tox\" tool against Python 2.7 and 3.7 "
+"and also perform \"lint\" coding-style checks."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:248
+msgid ""
+"You can now edit your local working copy and run the tests again as "
+"necessary. Please follow PEP-8 for naming."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:250
+msgid ""
+"You can pass different options to ``tox``. For example, to run tests on "
+"Python 2.7 and pass options to pytest (e.g. enter pdb on failure) to pytest "
+"you can do::"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:253
+msgid "$ tox -e py27 -- --pdb"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:255
+msgid "Or to only run tests in a particular test module on Python 3.7::"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:257
+msgid "$ tox -e py37 -- testing/test_config.py"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:260
+msgid "When committing, ``pre-commit`` will re-format the files if necessary."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:262
+msgid ""
+"Commit and push once your tests pass and you are happy with your change(s)::"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:264
+msgid ""
+"$ git commit -a -m \"<commit message>\"\n"
+"$ git push -u"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:267
+msgid ""
+"Create a new changelog entry in ``changelog``. The file should be named "
+"``<issueid>.<type>``, where *issueid* is the number of the issue related to "
+"the change and *type* is one of ``bugfix``, ``removal``, ``feature``, "
+"``vendor``, ``doc`` or ``trivial``."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:271
+msgid ""
+"Add yourself to ``AUTHORS`` file if not there yet, in alphabetical order."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:273
+msgid ""
+"Finally, submit a pull request through the GitHub website using this data::"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:275
+msgid ""
+"head-fork: YOUR_GITHUB_USERNAME/pytest\n"
+"compare: your-branch-name\n"
+"\n"
+"base-fork: pytest-dev/pytest\n"
+"base: master          # if it's a bugfix\n"
+"base: features        # if it's a feature"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:284
+msgid "Writing Tests"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:286
+msgid ""
+"Writing tests for plugins or for pytest itself is often done using the "
+"`testdir fixture <https://docs.pytest.org/en/latest/reference."
+"html#testdir>`_, as a \"black-box\" test."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:288
+msgid "For example, to ensure a simple test passes you can write:"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:290
+msgid ""
+"def test_true_assertion(testdir):\n"
+"    testdir.makepyfile(\n"
+"        \"\"\"\n"
+"        def test_foo():\n"
+"            assert True\n"
+"    \"\"\"\n"
+"    )\n"
+"    result = testdir.runpytest()\n"
+"    result.assert_outcomes(failed=0, passed=1)"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:303
+msgid ""
+"Alternatively, it is possible to make checks based on the actual output of "
+"the termal using *glob-like* expressions:"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:306
+msgid ""
+"def test_true_assertion(testdir):\n"
+"    testdir.makepyfile(\n"
+"        \"\"\"\n"
+"        def test_foo():\n"
+"            assert False\n"
+"    \"\"\"\n"
+"    )\n"
+"    result = testdir.runpytest()\n"
+"    result.stdout.fnmatch_lines([\"*assert False*\", \"*1 failed*\"])"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:318
+msgid ""
+"When choosing a file where to write a new test, take a look at the existing "
+"files and see if there's one file which looks like a good fit. For example, "
+"a regression test about a bug in the ``--lf`` option should go into "
+"``test_cacheprovider.py``, given that this option is implemented in "
+"``cacheprovider.py``. If in doubt, go ahead and open a PR with your best "
+"guess and we can discuss this over the code."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:325
+msgid "Joining the Development Team"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:327
+msgid ""
+"Anyone who has successfully seen through a pull request which did not "
+"require any extra work from the development team to merge will themselves "
+"gain commit access if they so wish (if we forget to ask please send a "
+"friendly reminder).  This does not mean your workflow to contribute changes, "
+"everyone goes through the same pull-request-and-review process and no-one "
+"merges their own pull requests unless already approved.  It does however "
+"mean you can participate in the development process more fully since you can "
+"merge pull requests from other contributors yourself after having reviewed "
+"them."
+msgstr ""

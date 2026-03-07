@@ -1,0 +1,103 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015–2020, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/announce/release-2.2.4.rst:2
+msgid "pytest-2.2.4: bug fixes, better junitxml/unittest/python3 compat"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.2.4.rst:4
+msgid ""
+"pytest-2.2.4 is a minor backward-compatible release of the versatile py.test "
+"testing tool.   It contains bug fixes and a few refinements to junitxml "
+"reporting, better unittest- and python3 compatibility."
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.2.4.rst:8
+msgid "For general information see here:"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.2.4.rst:10
+msgid "http://pytest.org/"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.2.4.rst:12
+msgid "To install or upgrade pytest:"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.2.4.rst:14
+msgid "pip install -U pytest # or easy_install -U pytest"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.2.4.rst:17
+msgid ""
+"Special thanks for helping on this release to Ronny Pfannschmidt and "
+"Benjamin Peterson and the contributors of issues."
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.2.4.rst:20
+msgid "best, holger krekel"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.2.4.rst:24
+msgid "Changes between 2.2.3 and 2.2.4"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.2.4.rst:26
+msgid "fix error message for rewritten assertions involving the % operator"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.2.4.rst:27
+msgid ""
+"fix issue 126: correctly match all invalid xml characters for junitxml "
+"binary escape"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.2.4.rst:29
+msgid ""
+"fix issue with unittest: now @unittest.expectedFailure markers should be "
+"processed correctly (you can also use @pytest.mark markers)"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.2.4.rst:31
+msgid ""
+"document integration with the extended distribute/setuptools test commands"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.2.4.rst:32
+msgid ""
+"fix issue 140: properly get the real functions of bound classmethods for "
+"setup/teardown_class"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.2.4.rst:34
+msgid "fix issue #141: switch from the deceased paste.pocoo.org to bpaste.net"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.2.4.rst:35
+msgid ""
+"fix issue #143: call unconfigure/sessionfinish always when configure/"
+"sessionstart where called"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.2.4.rst:37
+msgid "fix issue #144: better mangle test ids to junitxml classnames"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.2.4.rst:38
+msgid "upgrade distribute_setup.py to 0.6.27"
+msgstr ""
