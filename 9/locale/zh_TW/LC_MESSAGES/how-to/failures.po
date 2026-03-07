@@ -1,0 +1,246 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/how-to/failures.rst:4
+msgid "How to handle test failures"
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:9
+msgid "Stopping after the first (or N) failures"
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:11
+msgid "To stop the testing process after the first (N) failures:"
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:13
+msgid ""
+"pytest -x           # stop after first failure\n"
+"pytest --maxfail=2  # stop after two failures"
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:22
+msgid "Using :doc:`python:library/pdb` with pytest"
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:25
+msgid "Dropping to :doc:`pdb <python:library/pdb>` on failures"
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:27
+msgid ""
+"Python comes with a builtin Python debugger called :doc:`pdb <python:library/"
+"pdb>`.  ``pytest`` allows one to drop into the :doc:`pdb <python:library/"
+"pdb>` prompt via a command line option:"
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:30
+msgid "pytest --pdb"
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:34
+msgid ""
+"This will invoke the Python debugger on every failure (or "
+"KeyboardInterrupt). Often you might only want to do this for the first "
+"failing test to understand a certain failure situation:"
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:38
+msgid ""
+"pytest -x --pdb   # drop to PDB on first failure, then end test session\n"
+"pytest --pdb --maxfail=3  # drop to PDB for first three failures"
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:43
+msgid ""
+"Note that on any failure the exception information is stored on ``sys."
+"last_value``, ``sys.last_type`` and ``sys.last_traceback``. In interactive "
+"use, this allows one to drop into postmortem debugging with any debug tool. "
+"One can also manually access the exception information, for example::"
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:49
+msgid ""
+">>> import sys\n"
+">>> sys.last_traceback.tb_lineno\n"
+"42\n"
+">>> sys.last_value\n"
+"AssertionError('assert result == \"ok\"',)"
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:59
+msgid "Dropping to :doc:`pdb <python:library/pdb>` at the start of a test"
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:61
+msgid ""
+"``pytest`` allows one to drop into the :doc:`pdb <python:library/pdb>` "
+"prompt immediately at the start of each test via a command line option:"
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:63
+msgid "pytest --trace"
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:67
+msgid "This will invoke the Python debugger at the start of every test."
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:72
+msgid "Setting breakpoints"
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:76
+msgid ""
+"To set a breakpoint in your code use the native Python ``import pdb;pdb."
+"set_trace()`` call in your code and pytest automatically disables its output "
+"capture for that test:"
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:79
+msgid "Output capture in other tests is not affected."
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:80
+msgid ""
+"Any prior test output that has already been captured and will be processed "
+"as such."
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:82
+msgid ""
+"Output capture gets resumed when ending the debugger session (via the "
+"``continue`` command)."
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:89
+msgid "Using the builtin breakpoint function"
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:91
+msgid ""
+"Python 3.7 introduces a builtin ``breakpoint()`` function. Pytest supports "
+"the use of ``breakpoint()`` with the following behaviours:"
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:94
+msgid ""
+"When ``breakpoint()`` is called and ``PYTHONBREAKPOINT`` is set to the "
+"default value, pytest will use the custom internal PDB trace UI instead of "
+"the system default ``Pdb``."
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:95
+msgid ""
+"When tests are complete, the system will default back to the system ``Pdb`` "
+"trace UI."
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:96
+msgid ""
+"With :option:`--pdb` passed to pytest, the custom internal Pdb trace UI is "
+"used with both ``breakpoint()`` and failed tests/unhandled exceptions."
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:97
+msgid ":option:`--pdbcls` can be used to specify a custom debugger class."
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:103
+msgid "Fault Handler"
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:107
+msgid ""
+"The :mod:`faulthandler` standard module can be used to dump Python "
+"tracebacks on a segfault or after a timeout."
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:110
+msgid ""
+"The module is automatically enabled for pytest runs, unless the ``-p no:"
+"faulthandler`` is given on the command-line."
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:113
+msgid ""
+"Also the :confval:`faulthandler_timeout=X<faulthandler_timeout>` "
+"configuration option can be used to dump the traceback of all threads if a "
+"test takes longer than ``X`` seconds to finish."
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:119
+msgid ""
+"This functionality has been integrated from the external `pytest-"
+"faulthandler <https://github.com/pytest-dev/pytest-faulthandler>`__ plugin, "
+"with two small differences:"
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:123
+msgid ""
+"To disable it, use ``-p no:faulthandler`` instead of ``--no-faulthandler``: "
+"the former can be used with any plugin, so it saves one option."
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:126
+msgid ""
+"The ``--faulthandler-timeout`` command-line option has become the :confval:"
+"`faulthandler_timeout` configuration option. It can still be configured from "
+"the command-line using ``-o faulthandler_timeout=X``."
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:134
+msgid "Warning about unraisable exceptions and unhandled thread exceptions"
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:138
+msgid ""
+"Unhandled exceptions are exceptions that are raised in a situation in which "
+"they cannot propagate to a caller. The most common case is an exception "
+"raised in a :meth:`__del__ <object.__del__>` implementation."
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:142
+msgid ""
+"Unhandled thread exceptions are exceptions raised in a :class:`~threading."
+"Thread` but not handled, causing the thread to terminate uncleanly."
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:145
+msgid ""
+"Both types of exceptions are normally considered bugs, but may go unnoticed "
+"because they don't cause the program itself to crash. Pytest detects these "
+"conditions and issues a warning that is visible in the test run summary."
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:149
+msgid ""
+"The plugins are automatically enabled for pytest runs, unless the ``-p no:"
+"unraisableexception`` (for unraisable exceptions) and ``-p no:"
+"threadexception`` (for thread exceptions) options are given on the command-"
+"line."
+msgstr ""
+
+#: ../../../doc/en/how-to/failures.rst:154
+msgid ""
+"The warnings may be silenced selectively using the :ref:`pytest.mark."
+"filterwarnings ref` mark. The warning categories are :class:`pytest."
+"PytestUnraisableExceptionWarning` and :class:`pytest."
+"PytestUnhandledThreadExceptionWarning`."
+msgstr ""

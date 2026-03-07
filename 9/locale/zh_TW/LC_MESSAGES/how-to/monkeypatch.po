@@ -1,0 +1,608 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/how-to/monkeypatch.rst:4
+msgid "How to monkeypatch/mock modules and environments"
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:8
+msgid ""
+"Sometimes tests need to invoke functionality which depends on global "
+"settings or which invokes code which cannot be easily tested such as network "
+"access.  The ``monkeypatch`` fixture helps you to safely set/delete an "
+"attribute, dictionary item or environment variable, or to modify ``sys."
+"path`` for importing."
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:14
+msgid ""
+"The ``monkeypatch`` fixture provides these helper methods for safely "
+"patching and mocking functionality in tests:"
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:17
+msgid ""
+":meth:`monkeypatch.setattr(obj, name, value, raising=True) <pytest."
+"MonkeyPatch.setattr>`"
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:18
+msgid ""
+":meth:`monkeypatch.delattr(obj, name, raising=True) <pytest.MonkeyPatch."
+"delattr>`"
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:19
+msgid ""
+":meth:`monkeypatch.setitem(mapping, name, value) <pytest.MonkeyPatch."
+"setitem>`"
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:20
+msgid ""
+":meth:`monkeypatch.delitem(obj, name, raising=True) <pytest.MonkeyPatch."
+"delitem>`"
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:21
+msgid ""
+":meth:`monkeypatch.setenv(name, value, prepend=None) <pytest.MonkeyPatch."
+"setenv>`"
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:22
+msgid ""
+":meth:`monkeypatch.delenv(name, raising=True) <pytest.MonkeyPatch.delenv>`"
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:23
+msgid ""
+":meth:`monkeypatch.syspath_prepend(path) <pytest.MonkeyPatch."
+"syspath_prepend>`"
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:24
+msgid ":meth:`monkeypatch.chdir(path) <pytest.MonkeyPatch.chdir>`"
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:25
+msgid ":meth:`monkeypatch.context() <pytest.MonkeyPatch.context>`"
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:28
+msgid ""
+"All modifications will be undone after the requesting test function or "
+"fixture has finished. The ``raising`` parameter determines if a ``KeyError`` "
+"or ``AttributeError`` will be raised if the target of the set/deletion "
+"operation does not exist."
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:33
+msgid "Consider the following scenarios:"
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:35
+msgid ""
+"1. Modifying the behavior of a function or the property of a class for a "
+"test e.g. there is an API call or database connection you will not make for "
+"a test but you know what the expected output should be. Use :py:meth:"
+"`monkeypatch.setattr <MonkeyPatch.setattr>` to patch the function or "
+"property with your desired testing behavior. This can include your own "
+"functions. Use :py:meth:`monkeypatch.delattr <MonkeyPatch.delattr>` to "
+"remove the function or property for the test."
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:41
+msgid ""
+"2. Modifying the values of dictionaries e.g. you have a global configuration "
+"that you want to modify for certain test cases. Use :py:meth:`monkeypatch."
+"setitem <MonkeyPatch.setitem>` to patch the dictionary for the test. :py:"
+"meth:`monkeypatch.delitem <MonkeyPatch.delitem>` can be used to remove items."
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:45
+msgid ""
+"3. Modifying environment variables for a test e.g. to test program behavior "
+"if an environment variable is missing, or to set multiple values to a known "
+"variable. :py:meth:`monkeypatch.setenv <MonkeyPatch.setenv>` and :py:meth:"
+"`monkeypatch.delenv <MonkeyPatch.delenv>` can be used for these patches."
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:50
+msgid ""
+"4. Use ``monkeypatch.setenv(\"PATH\", value, prepend=os.pathsep)`` to modify "
+"``$PATH``, and :py:meth:`monkeypatch.chdir <MonkeyPatch.chdir>` to change "
+"the context of the current working directory during a test."
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:54
+msgid ""
+"5. Use :py:meth:`monkeypatch.syspath_prepend <MonkeyPatch.syspath_prepend>` "
+"to modify ``sys.path`` which will also call ``pkg_resources."
+"fixup_namespace_packages`` and :py:func:`importlib.invalidate_caches`."
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:57
+msgid ""
+"6. Use :py:meth:`monkeypatch.context <MonkeyPatch.context>` to apply patches "
+"only in a specific scope, which can help control teardown of complex "
+"fixtures or patches to the stdlib."
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:60
+msgid ""
+"See the `monkeypatch blog post`_ for some introduction material and a "
+"discussion of its motivation."
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:66
+msgid "Monkeypatching functions"
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:68
+msgid ""
+"Consider a scenario where you are working with user directories. In the "
+"context of testing, you do not want your test to depend on the running user. "
+"``monkeypatch`` can be used to patch functions dependent on the user to "
+"always return a specific value."
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:73
+msgid ""
+"In this example, :py:meth:`monkeypatch.setattr <MonkeyPatch.setattr>` is "
+"used to patch ``Path.home`` so that the known testing path ``Path(\"/"
+"abc\")`` is always used when the test is run. This removes any dependency on "
+"the running user for testing purposes. :py:meth:`monkeypatch.setattr "
+"<MonkeyPatch.setattr>` must be called before the function which will use the "
+"patched function is called. After the test function finishes the ``Path."
+"home`` modification will be undone."
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:80
+msgid ""
+"# contents of test_module.py with source code and the test\n"
+"from pathlib import Path\n"
+"\n"
+"\n"
+"def getssh():\n"
+"    \"\"\"Simple function to return expanded homedir ssh path.\"\"\"\n"
+"    return Path.home() / \".ssh\"\n"
+"\n"
+"\n"
+"def test_getssh(monkeypatch):\n"
+"    # mocked return function to replace Path.home\n"
+"    # always return '/abc'\n"
+"    def mockreturn():\n"
+"        return Path(\"/abc\")\n"
+"\n"
+"    # Application of the monkeypatch to replace Path.home\n"
+"    # with the behavior of mockreturn defined above.\n"
+"    monkeypatch.setattr(Path, \"home\", mockreturn)\n"
+"\n"
+"    # Calling getssh() will use mockreturn in place of Path.home\n"
+"    # for this test with the monkeypatch.\n"
+"    x = getssh()\n"
+"    assert x == Path(\"/abc/.ssh\")"
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:107
+msgid "Monkeypatching returned objects: building mock classes"
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:109
+msgid ""
+":py:meth:`monkeypatch.setattr <MonkeyPatch.setattr>` can be used in "
+"conjunction with classes to mock returned objects from functions instead of "
+"values. Imagine a simple function to take an API url and return the json "
+"response."
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:113
+msgid ""
+"# contents of app.py, a simple API retrieval example\n"
+"import requests\n"
+"\n"
+"\n"
+"def get_json(url):\n"
+"    \"\"\"Takes a URL, and returns the JSON.\"\"\"\n"
+"    r = requests.get(url)\n"
+"    return r.json()"
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:124
+msgid ""
+"We need to mock ``r``, the returned response object for testing purposes. "
+"The mock of ``r`` needs a ``.json()`` method which returns a dictionary. "
+"This can be done in our test file by defining a class to represent ``r``."
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:128
+msgid ""
+"# contents of test_app.py, a simple test for our API retrieval\n"
+"# import requests for the purposes of monkeypatching\n"
+"import requests\n"
+"\n"
+"# our app.py that includes the get_json() function\n"
+"# this is the previous code block example\n"
+"import app\n"
+"\n"
+"\n"
+"# custom class to be the mock return value\n"
+"# will override the requests.Response returned from requests.get\n"
+"class MockResponse:\n"
+"    # mock json() method always returns a specific testing dictionary\n"
+"    @staticmethod\n"
+"    def json():\n"
+"        return {\"mock_key\": \"mock_response\"}\n"
+"\n"
+"\n"
+"def test_get_json(monkeypatch):\n"
+"    # Any arguments may be passed and mock_get() will always return our\n"
+"    # mocked object, which only has the .json() method.\n"
+"    def mock_get(*args, **kwargs):\n"
+"        return MockResponse()\n"
+"\n"
+"    # apply the monkeypatch for requests.get to mock_get\n"
+"    monkeypatch.setattr(requests, \"get\", mock_get)\n"
+"\n"
+"    # app.get_json, which contains requests.get, uses the monkeypatch\n"
+"    result = app.get_json(\"https://fakeurl\")\n"
+"    assert result[\"mock_key\"] == \"mock_response\""
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:162
+msgid ""
+"``monkeypatch`` applies the mock for ``requests.get`` with our ``mock_get`` "
+"function. The ``mock_get`` function returns an instance of the "
+"``MockResponse`` class, which has a ``json()`` method defined to return a "
+"known testing dictionary and does not require any outside API connection."
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:167
+msgid ""
+"You can build the ``MockResponse`` class with the appropriate degree of "
+"complexity for the scenario you are testing. For instance, it could include "
+"an ``ok`` property that always returns ``True``, or return different values "
+"from the ``json()`` mocked method based on input strings."
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:172
+msgid "This mock can be shared across tests using a ``fixture``:"
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:174
+msgid ""
+"# contents of test_app.py, a simple test for our API retrieval\n"
+"import pytest\n"
+"import requests\n"
+"\n"
+"# app.py that includes the get_json() function\n"
+"import app\n"
+"\n"
+"\n"
+"# custom class to be the mock return value of requests.get()\n"
+"class MockResponse:\n"
+"    @staticmethod\n"
+"    def json():\n"
+"        return {\"mock_key\": \"mock_response\"}\n"
+"\n"
+"\n"
+"# monkeypatched requests.get moved to a fixture\n"
+"@pytest.fixture\n"
+"def mock_response(monkeypatch):\n"
+"    \"\"\"Requests.get() mocked to return {'mock_key':'mock_response'}."
+"\"\"\"\n"
+"\n"
+"    def mock_get(*args, **kwargs):\n"
+"        return MockResponse()\n"
+"\n"
+"    monkeypatch.setattr(requests, \"get\", mock_get)\n"
+"\n"
+"\n"
+"# notice our test uses the custom fixture instead of monkeypatch directly\n"
+"def test_get_json(mock_response):\n"
+"    result = app.get_json(\"https://fakeurl\")\n"
+"    assert result[\"mock_key\"] == \"mock_response\""
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:208
+msgid ""
+"Furthermore, if the mock was designed to be applied to all tests, the "
+"``fixture`` could be moved to a ``conftest.py`` file and use the with "
+"``autouse=True`` option."
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:213
+msgid "Global patch example: preventing \"requests\" from remote operations"
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:215
+msgid ""
+"If you want to prevent the \"requests\" library from performing http "
+"requests in all your tests, you can do:"
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:218
+msgid ""
+"# contents of conftest.py\n"
+"import pytest\n"
+"\n"
+"\n"
+"@pytest.fixture(autouse=True)\n"
+"def no_requests(monkeypatch):\n"
+"    \"\"\"Remove requests.sessions.Session.request for all tests.\"\"\"\n"
+"    monkeypatch.delattr(\"requests.sessions.Session.request\")"
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:229
+msgid ""
+"This autouse fixture will be executed for each test function and it will "
+"delete the method ``request.session.Session.request`` so that any attempts "
+"within tests to create http requests will fail."
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:236
+msgid ""
+"Be advised that it is not recommended to patch builtin functions such as "
+"``open``, ``compile``, etc., because it might break pytest's internals. If "
+"that's unavoidable, passing :option:`--tb=native`, :option:`--assert=plain` "
+"and :option:`--capture=no` might help although there's no guarantee."
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:243
+msgid ""
+"Mind that patching ``stdlib`` functions and some third-party libraries used "
+"by pytest might break pytest itself, therefore in those cases it is "
+"recommended to use :meth:`MonkeyPatch.context` to limit the patching to the "
+"block you want tested:"
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:247
+msgid ""
+"import functools\n"
+"\n"
+"\n"
+"def test_partial(monkeypatch):\n"
+"    with monkeypatch.context() as m:\n"
+"        m.setattr(functools, \"partial\", 3)\n"
+"        assert functools.partial == 3"
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:257
+msgid "See :issue:`3290` for details."
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:261
+msgid "Monkeypatching environment variables"
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:263
+msgid ""
+"If you are working with environment variables you often need to safely "
+"change the values or delete them from the system for testing purposes. "
+"``monkeypatch`` provides a mechanism to do this using the ``setenv`` and "
+"``delenv`` method. Our example code to test:"
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:267
+msgid ""
+"# contents of our original code file e.g. code.py\n"
+"import os\n"
+"\n"
+"\n"
+"def get_os_user_lower():\n"
+"    \"\"\"Simple retrieval function.\n"
+"    Returns lowercase USER or raises OSError.\"\"\"\n"
+"    username = os.getenv(\"USER\")\n"
+"\n"
+"    if username is None:\n"
+"        raise OSError(\"USER environment is not set.\")\n"
+"\n"
+"    return username.lower()"
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:283
+msgid ""
+"There are two potential paths. First, the ``USER`` environment variable is "
+"set to a value. Second, the ``USER`` environment variable does not exist. "
+"Using ``monkeypatch`` both paths can be safely tested without impacting the "
+"running environment:"
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:287
+msgid ""
+"# contents of our test file e.g. test_code.py\n"
+"import pytest\n"
+"\n"
+"\n"
+"def test_upper_to_lower(monkeypatch):\n"
+"    \"\"\"Set the USER env var to assert the behavior.\"\"\"\n"
+"    monkeypatch.setenv(\"USER\", \"TestingUser\")\n"
+"    assert get_os_user_lower() == \"testinguser\"\n"
+"\n"
+"\n"
+"def test_raise_exception(monkeypatch):\n"
+"    \"\"\"Remove the USER env var and assert OSError is raised.\"\"\"\n"
+"    monkeypatch.delenv(\"USER\", raising=False)\n"
+"\n"
+"    with pytest.raises(OSError):\n"
+"        _ = get_os_user_lower()"
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:306
+msgid ""
+"This behavior can be moved into ``fixture`` structures and shared across "
+"tests:"
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:308
+msgid ""
+"# contents of our test file e.g. test_code.py\n"
+"import pytest\n"
+"\n"
+"\n"
+"@pytest.fixture\n"
+"def mock_env_user(monkeypatch):\n"
+"    monkeypatch.setenv(\"USER\", \"TestingUser\")\n"
+"\n"
+"\n"
+"@pytest.fixture\n"
+"def mock_env_missing(monkeypatch):\n"
+"    monkeypatch.delenv(\"USER\", raising=False)\n"
+"\n"
+"\n"
+"# notice the tests reference the fixtures for mocks\n"
+"def test_upper_to_lower(mock_env_user):\n"
+"    assert get_os_user_lower() == \"testinguser\"\n"
+"\n"
+"\n"
+"def test_raise_exception(mock_env_missing):\n"
+"    with pytest.raises(OSError):\n"
+"        _ = get_os_user_lower()"
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:335
+msgid "Monkeypatching dictionaries"
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:337
+msgid ""
+":py:meth:`monkeypatch.setitem <MonkeyPatch.setitem>` can be used to safely "
+"set the values of dictionaries to specific values during tests. Take this "
+"simplified connection string example:"
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:340
+msgid ""
+"# contents of app.py to generate a simple connection string\n"
+"DEFAULT_CONFIG = {\"user\": \"user1\", \"database\": \"db1\"}\n"
+"\n"
+"\n"
+"def create_connection_string(config=None):\n"
+"    \"\"\"Creates a connection string from input or defaults.\"\"\"\n"
+"    config = config or DEFAULT_CONFIG\n"
+"    return f\"User Id={config['user']}; Location={config['database']};\""
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:351
+msgid ""
+"For testing purposes we can patch the ``DEFAULT_CONFIG`` dictionary to "
+"specific values."
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:353
+msgid ""
+"# contents of test_app.py\n"
+"# app.py with the connection string function (prior code block)\n"
+"import app\n"
+"\n"
+"\n"
+"def test_connection(monkeypatch):\n"
+"    # Patch the values of DEFAULT_CONFIG to specific\n"
+"    # testing values only for this test.\n"
+"    monkeypatch.setitem(app.DEFAULT_CONFIG, \"user\", \"test_user\")\n"
+"    monkeypatch.setitem(app.DEFAULT_CONFIG, \"database\", \"test_db\")\n"
+"\n"
+"    # expected result based on the mocks\n"
+"    expected = \"User Id=test_user; Location=test_db;\"\n"
+"\n"
+"    # the test uses the monkeypatched dictionary settings\n"
+"    result = app.create_connection_string()\n"
+"    assert result == expected"
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:373
+msgid ""
+"You can use the :py:meth:`monkeypatch.delitem <MonkeyPatch.delitem>` to "
+"remove values."
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:375
+msgid ""
+"# contents of test_app.py\n"
+"import pytest\n"
+"\n"
+"# app.py with the connection string function\n"
+"import app\n"
+"\n"
+"\n"
+"def test_missing_user(monkeypatch):\n"
+"    # patch the DEFAULT_CONFIG t be missing the 'user' key\n"
+"    monkeypatch.delitem(app.DEFAULT_CONFIG, \"user\", raising=False)\n"
+"\n"
+"    # Key error expected because a config is not passed, and the\n"
+"    # default is now missing the 'user' entry.\n"
+"    with pytest.raises(KeyError):\n"
+"        _ = app.create_connection_string()"
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:394
+msgid ""
+"The modularity of fixtures gives you the flexibility to define separate "
+"fixtures for each potential mock and reference them in the needed tests."
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:397
+msgid ""
+"# contents of test_app.py\n"
+"import pytest\n"
+"\n"
+"# app.py with the connection string function\n"
+"import app\n"
+"\n"
+"\n"
+"# all of the mocks are moved into separated fixtures\n"
+"@pytest.fixture\n"
+"def mock_test_user(monkeypatch):\n"
+"    \"\"\"Set the DEFAULT_CONFIG user to test_user.\"\"\"\n"
+"    monkeypatch.setitem(app.DEFAULT_CONFIG, \"user\", \"test_user\")\n"
+"\n"
+"\n"
+"@pytest.fixture\n"
+"def mock_test_database(monkeypatch):\n"
+"    \"\"\"Set the DEFAULT_CONFIG database to test_db.\"\"\"\n"
+"    monkeypatch.setitem(app.DEFAULT_CONFIG, \"database\", \"test_db\")\n"
+"\n"
+"\n"
+"@pytest.fixture\n"
+"def mock_missing_default_user(monkeypatch):\n"
+"    \"\"\"Remove the user key from DEFAULT_CONFIG\"\"\"\n"
+"    monkeypatch.delitem(app.DEFAULT_CONFIG, \"user\", raising=False)\n"
+"\n"
+"\n"
+"# tests reference only the fixture mocks that are needed\n"
+"def test_connection(mock_test_user, mock_test_database):\n"
+"    expected = \"User Id=test_user; Location=test_db;\"\n"
+"\n"
+"    result = app.create_connection_string()\n"
+"    assert result == expected\n"
+"\n"
+"\n"
+"def test_missing_user(mock_missing_default_user):\n"
+"    with pytest.raises(KeyError):\n"
+"        _ = app.create_connection_string()"
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:441
+msgid "API Reference"
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:443
+msgid "Consult the docs for the :class:`MonkeyPatch` class."
+msgstr ""
