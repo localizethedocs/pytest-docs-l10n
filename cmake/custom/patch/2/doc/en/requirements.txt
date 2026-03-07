@@ -1,0 +1,4 @@
+sphinx>=3.1,<4
+
+# [patch] sphinx<4 is broken with latest jinja2
+jinja2<3.1
