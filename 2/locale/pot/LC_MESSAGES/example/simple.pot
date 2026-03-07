@@ -1,0 +1,976 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/example/simple.rst:3
+msgid "Basic patterns and examples"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:6
+msgid ""
+"Pass different values to a test function, depending on command line options"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:10
+msgid ""
+"Suppose we want to write a test that depends on a command line option. Here "
+"is a basic pattern to achieve this:"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:13
+msgid ""
+"# content of test_sample.py\n"
+"def test_answer(cmdopt):\n"
+"    if cmdopt == \"type1\":\n"
+"        print (\"first\")\n"
+"    elif cmdopt == \"type2\":\n"
+"        print (\"second\")\n"
+"    assert 0 # to see what was printed"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:24
+msgid ""
+"For this to work we need to add a command line option and provide the "
+"``cmdopt`` through a :ref:`fixture function <fixture function>`:"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:27
+msgid ""
+"# content of conftest.py\n"
+"import pytest\n"
+"\n"
+"def pytest_addoption(parser):\n"
+"    parser.addoption(\"--cmdopt\", action=\"store\", default=\"type1\",\n"
+"        help=\"my option: type1 or type2\")\n"
+"\n"
+"@pytest.fixture\n"
+"def cmdopt(request):\n"
+"    return request.config.getoption(\"--cmdopt\")"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:40
+msgid "Let's run this without supplying our new option::"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:42
+msgid ""
+"$ py.test -q test_sample.py\n"
+"F\n"
+"======= FAILURES ========\n"
+"_______ test_answer ________\n"
+"\n"
+"cmdopt = 'type1'\n"
+"\n"
+"    def test_answer(cmdopt):\n"
+"        if cmdopt == \"type1\":\n"
+"            print (\"first\")\n"
+"        elif cmdopt == \"type2\":\n"
+"            print (\"second\")\n"
+">       assert 0 # to see what was printed\n"
+"E       assert 0\n"
+"\n"
+"test_sample.py:6: AssertionError\n"
+"--------------------------- Captured stdout call "
+"---------------------------\n"
+"first\n"
+"1 failed in 0.12 seconds"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:62
+msgid "And now with supplying a command line option::"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:64
+msgid ""
+"$ py.test -q --cmdopt=type2\n"
+"F\n"
+"======= FAILURES ========\n"
+"_______ test_answer ________\n"
+"\n"
+"cmdopt = 'type2'\n"
+"\n"
+"    def test_answer(cmdopt):\n"
+"        if cmdopt == \"type1\":\n"
+"            print (\"first\")\n"
+"        elif cmdopt == \"type2\":\n"
+"            print (\"second\")\n"
+">       assert 0 # to see what was printed\n"
+"E       assert 0\n"
+"\n"
+"test_sample.py:6: AssertionError\n"
+"--------------------------- Captured stdout call "
+"---------------------------\n"
+"second\n"
+"1 failed in 0.12 seconds"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:84
+msgid ""
+"You can see that the command line option arrived in our test.  This "
+"completes the basic pattern.  However, one often rather wants to process "
+"command line options outside of the test and rather pass in different or "
+"more complex objects."
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:90
+msgid "Dynamically adding command line options"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:94
+msgid ""
+"Through :confval:`addopts` you can statically add command line options for "
+"your project.  You can also dynamically modify the command line arguments "
+"before they get processed:"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:98
+msgid ""
+"# content of conftest.py\n"
+"import sys\n"
+"def pytest_cmdline_preparse(args):\n"
+"    if 'xdist' in sys.modules: # pytest-xdist plugin\n"
+"        import multiprocessing\n"
+"        num = max(multiprocessing.cpu_count() / 2, 1)\n"
+"        args[:] = [\"-n\", str(num)] + args"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:108
+msgid ""
+"If you have the :ref:`xdist plugin <xdist>` installed you will now always "
+"perform test runs using a number of subprocesses close to your CPU. Running "
+"in an empty directory with the above conftest.py::"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:113
+#: ../../../doc/en/example/simple.rst:318
+msgid ""
+"$ py.test\n"
+"======= test session starts ========\n"
+"platform linux -- Python 3.5.1, pytest-2.9.2, py-1.4.31, pluggy-0.3.1\n"
+"rootdir: $REGENDOC_TMPDIR, inifile:\n"
+"collected 0 items\n"
+"\n"
+"======= no tests ran in 0.12 seconds ========"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:124
+msgid "Control skipping of tests according to command line option"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:128
+msgid ""
+"Here is a ``conftest.py`` file adding a ``--runslow`` command line option to "
+"control skipping of ``slow`` marked tests:"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:131
+msgid ""
+"# content of conftest.py\n"
+"\n"
+"import pytest\n"
+"def pytest_addoption(parser):\n"
+"    parser.addoption(\"--runslow\", action=\"store_true\",\n"
+"        help=\"run slow tests\")"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:140
+msgid "We can now write a test module like this:"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:142
+msgid ""
+"# content of test_module.py\n"
+"\n"
+"import pytest\n"
+"\n"
+"\n"
+"slow = pytest.mark.skipif(\n"
+"    not pytest.config.getoption(\"--runslow\"),\n"
+"    reason=\"need --runslow option to run\"\n"
+")\n"
+"\n"
+"\n"
+"def test_func_fast():\n"
+"    pass\n"
+"\n"
+"\n"
+"@slow\n"
+"def test_func_slow():\n"
+"    pass"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:163
+msgid "and when running it will see a skipped \"slow\" test::"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:165
+msgid ""
+"$ py.test -rs    # \"-rs\" means report details on the little 's'\n"
+"======= test session starts ========\n"
+"platform linux -- Python 3.5.1, pytest-2.9.2, py-1.4.31, pluggy-0.3.1\n"
+"rootdir: $REGENDOC_TMPDIR, inifile:\n"
+"collected 2 items\n"
+"\n"
+"test_module.py .s\n"
+"======= short test summary info ========\n"
+"SKIP [1] test_module.py:14: need --runslow option to run\n"
+"\n"
+"======= 1 passed, 1 skipped in 0.12 seconds ========"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:177
+msgid "Or run it including the ``slow`` marked test::"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:179
+msgid ""
+"$ py.test --runslow\n"
+"======= test session starts ========\n"
+"platform linux -- Python 3.5.1, pytest-2.9.2, py-1.4.31, pluggy-0.3.1\n"
+"rootdir: $REGENDOC_TMPDIR, inifile:\n"
+"collected 2 items\n"
+"\n"
+"test_module.py ..\n"
+"\n"
+"======= 2 passed in 0.12 seconds ========"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:190
+msgid "Writing well integrated assertion helpers"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:194
+msgid ""
+"If you have a test helper function called from a test you can use the "
+"``pytest.fail`` marker to fail a test with a certain message. The test "
+"support function will not show up in the traceback if you set the "
+"``__tracebackhide__`` option somewhere in the helper function. Example:"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:200
+msgid ""
+"# content of test_checkconfig.py\n"
+"import pytest\n"
+"def checkconfig(x):\n"
+"    __tracebackhide__ = True\n"
+"    if not hasattr(x, \"config\"):\n"
+"        pytest.fail(\"not configured: %s\" %(x,))\n"
+"\n"
+"def test_something():\n"
+"    checkconfig(42)"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:212
+msgid ""
+"The ``__tracebackhide__`` setting influences ``pytest`` showing of "
+"tracebacks: the ``checkconfig`` function will not be shown unless the ``--"
+"full-trace`` command line option is specified. Let's run our little "
+"function::"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:217
+msgid ""
+"$ py.test -q test_checkconfig.py\n"
+"F\n"
+"======= FAILURES ========\n"
+"_______ test_something ________\n"
+"\n"
+"    def test_something():\n"
+">       checkconfig(42)\n"
+"E       Failed: not configured: 42\n"
+"\n"
+"test_checkconfig.py:8: Failed\n"
+"1 failed in 0.12 seconds"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:230
+msgid "Detect if running from within a pytest run"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:234
+msgid ""
+"Usually it is a bad idea to make application code behave differently if "
+"called from a test.  But if you absolutely must find out if your application "
+"code is running from a test you can do something like this:"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:239
+msgid ""
+"# content of conftest.py\n"
+"\n"
+"def pytest_configure(config):\n"
+"    import sys\n"
+"    sys._called_from_test = True\n"
+"\n"
+"def pytest_unconfigure(config):\n"
+"    del sys._called_from_test"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:250
+msgid "and then check for the ``sys._called_from_test`` flag:"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:252
+msgid ""
+"if hasattr(sys, '_called_from_test'):\n"
+"    # called from within a test run\n"
+"else:\n"
+"    # called \"normally\""
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:259
+msgid ""
+"accordingly in your application.  It's also a good idea to use your own "
+"application module rather than ``sys`` for handling flag."
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:264
+msgid "Adding info to test report header"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:268
+msgid "It's easy to present extra information in a ``pytest`` run:"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:270
+msgid ""
+"# content of conftest.py\n"
+"\n"
+"def pytest_report_header(config):\n"
+"    return \"project deps: mylib-1.1\""
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:277
+msgid "which will add the string to the test header accordingly::"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:279
+msgid ""
+"$ py.test\n"
+"======= test session starts ========\n"
+"platform linux -- Python 3.5.1, pytest-2.9.2, py-1.4.31, pluggy-0.3.1\n"
+"project deps: mylib-1.1\n"
+"rootdir: $REGENDOC_TMPDIR, inifile:\n"
+"collected 0 items\n"
+"\n"
+"======= no tests ran in 0.12 seconds ========"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:290
+msgid ""
+"You can also return a list of strings which will be considered as several "
+"lines of information.  You can of course also make the amount of reporting "
+"information on e.g. the value of ``config.option.verbose`` so that you "
+"present more information appropriately:"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:295
+msgid ""
+"# content of conftest.py\n"
+"\n"
+"def pytest_report_header(config):\n"
+"    if config.option.verbose > 0:\n"
+"        return [\"info1: did you know that ...\", \"did you?\"]"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:303
+msgid "which will add info only when run with \"--v\"::"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:305
+msgid ""
+"$ py.test -v\n"
+"======= test session starts ========\n"
+"platform linux -- Python 3.5.1, pytest-2.9.2, py-1.4.31, pluggy-0.3.1 -- "
+"$PYTHON_PREFIX/bin/python3.5\n"
+"cachedir: .cache\n"
+"info1: did you know that ...\n"
+"did you?\n"
+"rootdir: $REGENDOC_TMPDIR, inifile:\n"
+"collecting ... collected 0 items\n"
+"\n"
+"======= no tests ran in 0.12 seconds ========"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:316
+msgid "and nothing when run plainly::"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:327
+msgid "profiling test duration"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:333
+msgid ""
+"If you have a slow running large test suite you might want to find out which "
+"tests are the slowest. Let's make an artificial test suite:"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:336
+msgid ""
+"# content of test_some_are_slow.py\n"
+"\n"
+"import time\n"
+"\n"
+"def test_funcfast():\n"
+"    pass\n"
+"\n"
+"def test_funcslow1():\n"
+"    time.sleep(0.1)\n"
+"\n"
+"def test_funcslow2():\n"
+"    time.sleep(0.2)"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:351
+msgid "Now we can profile which test functions execute the slowest::"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:353
+msgid ""
+"$ py.test --durations=3\n"
+"======= test session starts ========\n"
+"platform linux -- Python 3.5.1, pytest-2.9.2, py-1.4.31, pluggy-0.3.1\n"
+"rootdir: $REGENDOC_TMPDIR, inifile:\n"
+"collected 3 items\n"
+"\n"
+"test_some_are_slow.py ...\n"
+"\n"
+"======= slowest 3 test durations ========\n"
+"0.20s call     test_some_are_slow.py::test_funcslow2\n"
+"0.10s call     test_some_are_slow.py::test_funcslow1\n"
+"0.00s teardown test_some_are_slow.py::test_funcslow2\n"
+"======= 3 passed in 0.12 seconds ========"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:368
+msgid "incremental testing - test steps"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:372
+msgid ""
+"Sometimes you may have a testing situation which consists of a series of "
+"test steps.  If one step fails it makes no sense to execute further steps as "
+"they are all expected to fail anyway and their tracebacks add no insight.  "
+"Here is a simple ``conftest.py`` file which introduces an ``incremental`` "
+"marker which is to be used on classes:"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:378
+msgid ""
+"# content of conftest.py\n"
+"\n"
+"import pytest\n"
+"\n"
+"def pytest_runtest_makereport(item, call):\n"
+"    if \"incremental\" in item.keywords:\n"
+"        if call.excinfo is not None:\n"
+"            parent = item.parent\n"
+"            parent._previousfailed = item\n"
+"\n"
+"def pytest_runtest_setup(item):\n"
+"    if \"incremental\" in item.keywords:\n"
+"        previousfailed = getattr(item.parent, \"_previousfailed\", None)\n"
+"        if previousfailed is not None:\n"
+"            pytest.xfail(\"previous test failed (%s)\" %previousfailed.name)"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:396
+msgid ""
+"These two hook implementations work together to abort incremental-marked "
+"tests in a class.  Here is a test module example:"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:399
+msgid ""
+"# content of test_step.py\n"
+"\n"
+"import pytest\n"
+"\n"
+"@pytest.mark.incremental\n"
+"class TestUserHandling:\n"
+"    def test_login(self):\n"
+"        pass\n"
+"    def test_modification(self):\n"
+"        assert 0\n"
+"    def test_deletion(self):\n"
+"        pass\n"
+"\n"
+"def test_normal():\n"
+"    pass"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:417
+msgid "If we run this::"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:419
+msgid ""
+"$ py.test -rx\n"
+"======= test session starts ========\n"
+"platform linux -- Python 3.5.1, pytest-2.9.2, py-1.4.31, pluggy-0.3.1\n"
+"rootdir: $REGENDOC_TMPDIR, inifile:\n"
+"collected 4 items\n"
+"\n"
+"test_step.py .Fx.\n"
+"======= short test summary info ========\n"
+"XFAIL test_step.py::TestUserHandling::()::test_deletion\n"
+"  reason: previous test failed (test_modification)\n"
+"\n"
+"======= FAILURES ========\n"
+"_______ TestUserHandling.test_modification ________\n"
+"\n"
+"self = <test_step.TestUserHandling object at 0xdeadbeef>\n"
+"\n"
+"    def test_modification(self):\n"
+">       assert 0\n"
+"E       assert 0\n"
+"\n"
+"test_step.py:9: AssertionError\n"
+"======= 1 failed, 2 passed, 1 xfailed in 0.12 seconds ========"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:442
+msgid ""
+"We'll see that ``test_deletion`` was not executed because "
+"``test_modification`` failed.  It is reported as an \"expected failure\"."
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:447
+msgid "Package/Directory-level fixtures (setups)"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:449
+msgid ""
+"If you have nested test directories, you can have per-directory fixture "
+"scopes by placing fixture functions in a ``conftest.py`` file in that "
+"directory You can use all types of fixtures including :ref:`autouse fixtures "
+"<autouse fixtures>` which are the equivalent of xUnit's setup/teardown "
+"concept.  It's however recommended to have explicit fixture references in "
+"your tests or test classes rather than relying on implicitly executing setup/"
+"teardown functions, especially if they are far away from the actual tests."
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:457
+msgid ""
+"Here is a an example for making a ``db`` fixture available in a directory:"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:459
+msgid ""
+"# content of a/conftest.py\n"
+"import pytest\n"
+"\n"
+"class DB:\n"
+"    pass\n"
+"\n"
+"@pytest.fixture(scope=\"session\")\n"
+"def db():\n"
+"    return DB()"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:471
+msgid "and then a test module in that directory:"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:473
+msgid ""
+"# content of a/test_db.py\n"
+"def test_a1(db):\n"
+"    assert 0, db  # to show value"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:479
+msgid "another test module:"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:481
+msgid ""
+"# content of a/test_db2.py\n"
+"def test_a2(db):\n"
+"    assert 0, db  # to show value"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:487
+msgid ""
+"and then a module in a sister directory which will not see the ``db`` "
+"fixture:"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:490
+msgid ""
+"# content of b/test_error.py\n"
+"def test_root(db):  # no db here, will error out\n"
+"    pass"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:496
+msgid "We can run this::"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:498
+msgid ""
+"$ py.test\n"
+"======= test session starts ========\n"
+"platform linux -- Python 3.5.1, pytest-2.9.2, py-1.4.31, pluggy-0.3.1\n"
+"rootdir: $REGENDOC_TMPDIR, inifile:\n"
+"collected 7 items\n"
+"\n"
+"test_step.py .Fx.\n"
+"a/test_db.py F\n"
+"a/test_db2.py F\n"
+"b/test_error.py E\n"
+"\n"
+"======= ERRORS ========\n"
+"_______ ERROR at setup of test_root ________\n"
+"file $REGENDOC_TMPDIR/b/test_error.py, line 1\n"
+"  def test_root(db):  # no db here, will error out\n"
+"        fixture 'db' not found\n"
+"        available fixtures: tmpdir_factory, cache, tmpdir, pytestconfig, "
+"recwarn, monkeypatch, capfd, record_xml_property, capsys\n"
+"        use 'py.test --fixtures [testpath]' for help on them.\n"
+"\n"
+"$REGENDOC_TMPDIR/b/test_error.py:1\n"
+"======= FAILURES ========\n"
+"_______ TestUserHandling.test_modification ________\n"
+"\n"
+"self = <test_step.TestUserHandling object at 0xdeadbeef>\n"
+"\n"
+"    def test_modification(self):\n"
+">       assert 0\n"
+"E       assert 0\n"
+"\n"
+"test_step.py:9: AssertionError\n"
+"_______ test_a1 ________\n"
+"\n"
+"db = <conftest.DB object at 0xdeadbeef>\n"
+"\n"
+"    def test_a1(db):\n"
+">       assert 0, db  # to show value\n"
+"E       AssertionError: <conftest.DB object at 0xdeadbeef>\n"
+"E       assert 0\n"
+"\n"
+"a/test_db.py:2: AssertionError\n"
+"_______ test_a2 ________\n"
+"\n"
+"db = <conftest.DB object at 0xdeadbeef>\n"
+"\n"
+"    def test_a2(db):\n"
+">       assert 0, db  # to show value\n"
+"E       AssertionError: <conftest.DB object at 0xdeadbeef>\n"
+"E       assert 0\n"
+"\n"
+"a/test_db2.py:2: AssertionError\n"
+"======= 3 failed, 2 passed, 1 xfailed, 1 error in 0.12 seconds ========"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:550
+msgid ""
+"The two test modules in the ``a`` directory see the same ``db`` fixture "
+"instance while the one test in the sister-directory ``b`` doesn't see it.  "
+"We could of course also define a ``db`` fixture in that sister directory's "
+"``conftest.py`` file. Note that each fixture is only instantiated if there "
+"is a test actually needing it (unless you use \"autouse\" fixture which are "
+"always executed ahead of the first test executing)."
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:559
+msgid "post-process test reports / failures"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:561
+msgid ""
+"If you want to postprocess test reports and need access to the executing "
+"environment you can implement a hook that gets called when the test "
+"\"report\" object is about to be created.  Here we write out all failing "
+"test calls and also access a fixture (if it was used by the test) in case "
+"you want to query/look at it during your post processing.  In our case we "
+"just write some informations out to a ``failures`` file:"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:568
+msgid ""
+"# content of conftest.py\n"
+"\n"
+"import pytest\n"
+"import os.path\n"
+"\n"
+"@pytest.hookimpl(tryfirst=True, hookwrapper=True)\n"
+"def pytest_runtest_makereport(item, call):\n"
+"    # execute all other hooks to obtain the report object\n"
+"    outcome = yield\n"
+"    rep = outcome.get_result()\n"
+"\n"
+"    # we only look at actual failing test calls, not setup/teardown\n"
+"    if rep.when == \"call\" and rep.failed:\n"
+"        mode = \"a\" if os.path.exists(\"failures\") else \"w\"\n"
+"        with open(\"failures\", mode) as f:\n"
+"            # let's also access a fixture for the fun of it\n"
+"            if \"tmpdir\" in item.fixturenames:\n"
+"                extra = \" (%s)\" % item.funcargs[\"tmpdir\"]\n"
+"            else:\n"
+"                extra = \"\"\n"
+"\n"
+"            f.write(rep.nodeid + extra + \"\\n\")"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:594
+#: ../../../doc/en/example/simple.rst:678
+msgid "if you then have failing tests:"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:596
+msgid ""
+"# content of test_module.py\n"
+"def test_fail1(tmpdir):\n"
+"    assert 0\n"
+"def test_fail2():\n"
+"    assert 0"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:604
+msgid "and run them::"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:606
+msgid ""
+"$ py.test test_module.py\n"
+"======= test session starts ========\n"
+"platform linux -- Python 3.5.1, pytest-2.9.2, py-1.4.31, pluggy-0.3.1\n"
+"rootdir: $REGENDOC_TMPDIR, inifile:\n"
+"collected 2 items\n"
+"\n"
+"test_module.py FF\n"
+"\n"
+"======= FAILURES ========\n"
+"_______ test_fail1 ________\n"
+"\n"
+"tmpdir = local('PYTEST_TMPDIR/test_fail10')\n"
+"\n"
+"    def test_fail1(tmpdir):\n"
+">       assert 0\n"
+"E       assert 0\n"
+"\n"
+"test_module.py:2: AssertionError\n"
+"_______ test_fail2 ________\n"
+"\n"
+"    def test_fail2():\n"
+">       assert 0\n"
+"E       assert 0\n"
+"\n"
+"test_module.py:4: AssertionError\n"
+"======= 2 failed in 0.12 seconds ========"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:633
+msgid "you will have a \"failures\" file which contains the failing test ids::"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:635
+msgid ""
+"$ cat failures\n"
+"test_module.py::test_fail1 (PYTEST_TMPDIR/test_fail10)\n"
+"test_module.py::test_fail2"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:640
+msgid "Making test result information available in fixtures"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:644
+msgid ""
+"If you want to make test result reports available in fixture finalizers here "
+"is a little example implemented via a local plugin:"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:647
+msgid ""
+"# content of conftest.py\n"
+"\n"
+"import pytest\n"
+"\n"
+"@pytest.hookimpl(tryfirst=True, hookwrapper=True)\n"
+"def pytest_runtest_makereport(item, call):\n"
+"    # execute all other hooks to obtain the report object\n"
+"    outcome = yield\n"
+"    rep = outcome.get_result()\n"
+"\n"
+"    # set an report attribute for each phase of a call, which can\n"
+"    # be \"setup\", \"call\", \"teardown\"\n"
+"\n"
+"    setattr(item, \"rep_\" + rep.when, rep)\n"
+"\n"
+"\n"
+"@pytest.fixture\n"
+"def something(request):\n"
+"    def fin():\n"
+"        # request.node is an \"item\" because we use the default\n"
+"        # \"function\" scope\n"
+"        if request.node.rep_setup.failed:\n"
+"            print (\"setting up a test failed!\", request.node.nodeid)\n"
+"        elif request.node.rep_setup.passed:\n"
+"            if request.node.rep_call.failed:\n"
+"                print (\"executing test failed\", request.node.nodeid)\n"
+"    request.addfinalizer(fin)"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:680
+msgid ""
+"# content of test_module.py\n"
+"\n"
+"import pytest\n"
+"\n"
+"@pytest.fixture\n"
+"def other():\n"
+"    assert 0\n"
+"\n"
+"def test_setup_fails(something, other):\n"
+"    pass\n"
+"\n"
+"def test_call_fails(something):\n"
+"    assert 0\n"
+"\n"
+"def test_fail2():\n"
+"    assert 0"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:699
+msgid "and run it::"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:701
+msgid ""
+"$ py.test -s test_module.py\n"
+"======= test session starts ========\n"
+"platform linux -- Python 3.5.1, pytest-2.9.2, py-1.4.31, pluggy-0.3.1\n"
+"rootdir: $REGENDOC_TMPDIR, inifile:\n"
+"collected 3 items\n"
+"\n"
+"test_module.py Esetting up a test failed! test_module.py::test_setup_fails\n"
+"Fexecuting test failed test_module.py::test_call_fails\n"
+"F\n"
+"\n"
+"======= ERRORS ========\n"
+"_______ ERROR at setup of test_setup_fails ________\n"
+"\n"
+"    @pytest.fixture\n"
+"    def other():\n"
+">       assert 0\n"
+"E       assert 0\n"
+"\n"
+"test_module.py:6: AssertionError\n"
+"======= FAILURES ========\n"
+"_______ test_call_fails ________\n"
+"\n"
+"something = None\n"
+"\n"
+"    def test_call_fails(something):\n"
+">       assert 0\n"
+"E       assert 0\n"
+"\n"
+"test_module.py:12: AssertionError\n"
+"_______ test_fail2 ________\n"
+"\n"
+"    def test_fail2():\n"
+">       assert 0\n"
+"E       assert 0\n"
+"\n"
+"test_module.py:15: AssertionError\n"
+"======= 2 failed, 1 error in 0.12 seconds ========"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:739
+msgid ""
+"You'll see that the fixture finalizers could use the precise reporting "
+"information."
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:743
+msgid "Integrating pytest runner and cx_freeze"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:745
+msgid ""
+"If you freeze your application using a tool like `cx_freeze <https://cx-"
+"freeze.readthedocs.io>`_ in order to distribute it to your end-users, it is "
+"a good idea to also package your test runner and run your tests using the "
+"frozen application."
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:750
+msgid ""
+"This way packaging errors such as dependencies not being included into the "
+"executable can be detected early while also allowing you to send test files "
+"to users so they can run them in their machines, which can be invaluable to "
+"obtain more information about a hard to reproduce bug."
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:755
+msgid ""
+"Unfortunately ``cx_freeze`` can't discover them automatically because of "
+"``pytest``'s use of dynamic module loading, so you must declare them "
+"explicitly by using ``pytest.freeze_includes()``:"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:759
+msgid ""
+"# contents of setup.py\n"
+"from cx_Freeze import setup, Executable\n"
+"import pytest\n"
+"\n"
+"setup(\n"
+"    name=\"app_main\",\n"
+"    executables=[Executable(\"app_main.py\")],\n"
+"    options={\"build_exe\":\n"
+"        {\n"
+"        'includes': pytest.freeze_includes()}\n"
+"        },\n"
+"    # ... other options\n"
+")"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:775
+msgid ""
+"If you don't want to ship a different executable just in order to run your "
+"tests, you can make your program check for a certain flag and pass control "
+"over to ``pytest`` instead. For example:"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:779
+msgid ""
+"# contents of app_main.py\n"
+"import sys\n"
+"\n"
+"if len(sys.argv) > 1 and sys.argv[1] == '--pytest':\n"
+"    import pytest\n"
+"    sys.exit(pytest.main(sys.argv[2:]))\n"
+"else:\n"
+"    # normal application execution: at this point argv can be parsed\n"
+"    # by your argument-parsing library of choice as usual\n"
+"    ..."
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:792
+msgid ""
+"This makes it convenient to execute your tests from within your frozen "
+"application, using standard ``py.test`` command-line options::"
+msgstr ""
+
+#: ../../../doc/en/example/simple.rst:795
+msgid ""
+"./app_main --pytest --verbose --tb=long --junitxml=results.xml test-suite/"
+msgstr ""

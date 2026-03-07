@@ -1,0 +1,177 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/announce/sprint2016.rst:2
+msgid "python testing sprint June 20th-26th 2016"
+msgstr ""
+
+#: ../../../doc/en/announce/sprint2016.rst:7
+msgid ""
+"The pytest core group is heading towards the biggest sprint in its history, "
+"to take place in the black forest town Freiburg in Germany.  As of February "
+"2016 we have started a `funding campaign on Indiegogo to cover expenses "
+"<http://igg.me/at/pytest-sprint/x/4034848>`_ The page also mentions some "
+"preliminary topics:"
+msgstr ""
+
+#: ../../../doc/en/announce/sprint2016.rst:14
+msgid ""
+"improving pytest-xdist test scheduling to take into account fixture setups "
+"and explicit user hints."
+msgstr ""
+
+#: ../../../doc/en/announce/sprint2016.rst:17
+msgid "provide info on fixture dependencies during --collect-only"
+msgstr ""
+
+#: ../../../doc/en/announce/sprint2016.rst:19
+msgid ""
+"tying pytest-xdist to tox so that you can do \"py.test -e py34\" to run "
+"tests in a particular tox-managed virtualenv.  Also look into making pytest-"
+"xdist use tox environments on remote ssh-sides so that remote dependency "
+"management becomes easier."
+msgstr ""
+
+#: ../../../doc/en/announce/sprint2016.rst:25
+msgid "refactoring the fixture system so more people understand it :)"
+msgstr ""
+
+#: ../../../doc/en/announce/sprint2016.rst:27
+msgid ""
+"integrating PyUnit setup methods as autouse fixtures. possibly adding ways "
+"to influence ordering of same-scoped fixtures (so you can make a choice of "
+"which fixtures come before others)"
+msgstr ""
+
+#: ../../../doc/en/announce/sprint2016.rst:32
+msgid "fixing bugs and issues from the tracker, really an endless source :)"
+msgstr ""
+
+#: ../../../doc/en/announce/sprint2016.rst:36
+msgid "Participants"
+msgstr ""
+
+#: ../../../doc/en/announce/sprint2016.rst:38
+msgid ""
+"Here are preliminary participants who said they are likely to come, given "
+"some expenses funding::"
+msgstr ""
+
+#: ../../../doc/en/announce/sprint2016.rst:41
+msgid ""
+"Anatoly Bubenkoff, Netherlands\n"
+"Andreas Pelme, Personalkollen, Sweden\n"
+"Anthony Wang, Splunk, US\n"
+"Brianna Laugher, Australia\n"
+"Bruno Oliveira, Brazil\n"
+"Danielle Jenkins, Splunk, US\n"
+"Dave Hunt, UK\n"
+"Florian Bruhin, Switzerland\n"
+"Floris Bruynooghe, Cobe.io, UK\n"
+"Holger Krekel, merlinux, Germany\n"
+"Oliver Bestwalter, Avira, Germany\n"
+"Omar Kohl, Germany\n"
+"Raphael Pierzina, FanDuel, UK\n"
+"Tom Viner, UK\n"
+"\n"
+"<your name here?>"
+msgstr ""
+
+#: ../../../doc/en/announce/sprint2016.rst:58
+msgid ""
+"Other contributors and experienced newcomers are invited to join as well but "
+"please send a mail to the pytest-dev mailing list if you intend to do so "
+"somewhat soon, also how much funding you need if so.  And if you are working "
+"for a company and using pytest heavily you are welcome to join and we "
+"encourage your company to provide some funding for the sprint.  They may see "
+"it, and rightfully so, as a very cheap and deep training which brings you "
+"together with the experts in the field :)"
+msgstr ""
+
+#: ../../../doc/en/announce/sprint2016.rst:68
+msgid "Sprint organisation, schedule"
+msgstr ""
+
+#: ../../../doc/en/announce/sprint2016.rst:70
+msgid "tentative schedule:"
+msgstr ""
+
+#: ../../../doc/en/announce/sprint2016.rst:72
+msgid "19/20th arrival in Freiburg"
+msgstr ""
+
+#: ../../../doc/en/announce/sprint2016.rst:73
+msgid "20th social get together, initial hacking"
+msgstr ""
+
+#: ../../../doc/en/announce/sprint2016.rst:74
+msgid "21/22th full sprint days"
+msgstr ""
+
+#: ../../../doc/en/announce/sprint2016.rst:75
+msgid "23rd break day, hiking"
+msgstr ""
+
+#: ../../../doc/en/announce/sprint2016.rst:76
+msgid "24/25th full sprint days"
+msgstr ""
+
+#: ../../../doc/en/announce/sprint2016.rst:77
+msgid "26th departure"
+msgstr ""
+
+#: ../../../doc/en/announce/sprint2016.rst:79
+msgid ""
+"We might adjust according to weather to make sure that if we do some hiking "
+"or excursion we'll have good weather. Freiburg is one of the sunniest places "
+"in Germany so it shouldn't be too much of a constraint."
+msgstr ""
+
+#: ../../../doc/en/announce/sprint2016.rst:86
+msgid "Accomodation"
+msgstr ""
+
+#: ../../../doc/en/announce/sprint2016.rst:88
+msgid ""
+"We'll see to arrange for renting a flat with multiple beds/rooms.  Hotels "
+"are usually below 100 per night. The earlier we book the better."
+msgstr ""
+
+#: ../../../doc/en/announce/sprint2016.rst:93
+msgid "Money / funding"
+msgstr ""
+
+#: ../../../doc/en/announce/sprint2016.rst:95
+msgid ""
+"The Indiegogo campaign asks for 11000 USD which should cover the costs for "
+"flights and accomodation, renting a sprint place and maybe a bit of food as "
+"well."
+msgstr ""
+
+#: ../../../doc/en/announce/sprint2016.rst:99
+msgid ""
+"If your organisation wants to support the sprint but prefers to give money "
+"according to an invoice, get in contact with holger at http://merlinux.eu "
+"who can invoice your organisation properly."
+msgstr ""
+
+#: ../../../doc/en/announce/sprint2016.rst:104
+msgid ""
+"If we have excess money we'll use for further sprint/travel funding for "
+"pytest/tox contributors."
+msgstr ""

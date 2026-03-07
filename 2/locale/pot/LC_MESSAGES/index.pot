@@ -1,0 +1,181 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/index.rst:5
+msgid "pytest: helps you write better programs"
+msgstr ""
+
+#: ../../../doc/en/index.rst:7
+msgid "**a mature full-featured Python testing tool**"
+msgstr ""
+
+#: ../../../doc/en/index.rst:9
+msgid ""
+"runs on Posix/Windows, Python 2.6-3.5, PyPy and (possibly still) Jython-2.5.1"
+msgstr ""
+
+#: ../../../doc/en/index.rst:10
+msgid ""
+"free and open source software, distributed under the terms of the :ref:`MIT "
+"license <license>`"
+msgstr ""
+
+#: ../../../doc/en/index.rst:11
+msgid "**well tested** with more than a thousand tests against itself"
+msgstr ""
+
+#: ../../../doc/en/index.rst:12
+msgid "**strict backward compatibility policy** for safe pytest upgrades"
+msgstr ""
+
+#: ../../../doc/en/index.rst:13
+msgid ":ref:`comprehensive online <toc>` and `PDF documentation <pytest.pdf>`_"
+msgstr ""
+
+#: ../../../doc/en/index.rst:14
+msgid ""
+"many :ref:`third party plugins <extplugins>` and :ref:`builtin helpers "
+"<pytest helpers>`,"
+msgstr ""
+
+#: ../../../doc/en/index.rst:15
+msgid ""
+"used in :ref:`many small and large projects and organisations <projects>`"
+msgstr ""
+
+#: ../../../doc/en/index.rst:16
+msgid "comes with many :ref:`tested examples <examples>`"
+msgstr ""
+
+#: ../../../doc/en/index.rst:18
+msgid "**provides easy no-boilerplate testing**"
+msgstr ""
+
+#: ../../../doc/en/index.rst:20
+msgid ""
+"makes it :ref:`easy to get started <getstarted>`, has many :ref:`usage "
+"options <usage>`"
+msgstr ""
+
+#: ../../../doc/en/index.rst:22
+msgid ":ref:`assert with the assert statement`"
+msgstr ""
+
+#: ../../../doc/en/index.rst:23
+msgid "helpful :ref:`traceback and failing assertion reporting <tbreportdemo>`"
+msgstr ""
+
+#: ../../../doc/en/index.rst:24
+msgid ""
+":ref:`print debugging <printdebugging>` and :ref:`the capturing of standard "
+"output during test execution <captures>`"
+msgstr ""
+
+#: ../../../doc/en/index.rst:27
+msgid "**scales from simple unit to complex functional testing**"
+msgstr ""
+
+#: ../../../doc/en/index.rst:29
+msgid ""
+":ref:`modular parametrizeable fixtures <fixture>` (new in 2.3, continuously "
+"improved)"
+msgstr ""
+
+#: ../../../doc/en/index.rst:31
+msgid ":ref:`parametrized test functions <parametrized test functions>`"
+msgstr ""
+
+#: ../../../doc/en/index.rst:32
+msgid ":ref:`mark`"
+msgstr ""
+
+#: ../../../doc/en/index.rst:33
+msgid ":ref:`skipping` (improved in 2.4)"
+msgstr ""
+
+#: ../../../doc/en/index.rst:34
+msgid ""
+":ref:`distribute tests to multiple CPUs <xdistcpu>` through :ref:`xdist "
+"plugin <xdist>`"
+msgstr ""
+
+#: ../../../doc/en/index.rst:35
+msgid ":ref:`continuously re-run failing tests <looponfailing>`"
+msgstr ""
+
+#: ../../../doc/en/index.rst:36
+msgid ":doc:`cache`"
+msgstr ""
+
+#: ../../../doc/en/index.rst:37
+msgid "flexible :ref:`Python test discovery`"
+msgstr ""
+
+#: ../../../doc/en/index.rst:39
+msgid "**integrates with other testing methods and tools**:"
+msgstr ""
+
+#: ../../../doc/en/index.rst:41
+msgid ""
+"multi-paradigm: pytest can run ``nose``, ``unittest`` and ``doctest`` style "
+"test suites, including running testcases made for Django and trial"
+msgstr ""
+
+#: ../../../doc/en/index.rst:44
+msgid "supports :ref:`good integration practices <goodpractices>`"
+msgstr ""
+
+#: ../../../doc/en/index.rst:45
+msgid "supports extended :ref:`xUnit style setup <xunitsetup>`"
+msgstr ""
+
+#: ../../../doc/en/index.rst:46
+msgid "supports domain-specific :ref:`non-python tests`"
+msgstr ""
+
+#: ../../../doc/en/index.rst:47
+msgid ""
+"supports generating `test coverage reports <https://pypi.python.org/pypi/"
+"pytest-cov>`_"
+msgstr ""
+
+#: ../../../doc/en/index.rst:49
+msgid "supports :pep:`8` compliant coding styles in tests"
+msgstr ""
+
+#: ../../../doc/en/index.rst:51
+msgid "**extensive plugin and customization system**:"
+msgstr ""
+
+#: ../../../doc/en/index.rst:53
+msgid ""
+"all collection, reporting, running aspects are delegated to hook functions"
+msgstr ""
+
+#: ../../../doc/en/index.rst:54
+msgid ""
+"customizations can be per-directory, per-project or per PyPI released plugin"
+msgstr ""
+
+#: ../../../doc/en/index.rst:55
+msgid "it is easy to add command line options or customize existing behaviour"
+msgstr ""
+
+#: ../../../doc/en/index.rst:56
+msgid ":ref:`easy to write your own plugins <writing-plugins>`"
+msgstr ""
