@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../doc/en/index.rst:22
 msgid "About the project"
-msgstr ""
+msgstr "關於此專案"
 
 #: ../../../doc/en/index.rst:34
 msgid "pytest @ PyPI"
@@ -31,11 +31,11 @@ msgstr ""
 
 #: ../../../doc/en/index.rst:34
 msgid "Issue Tracker"
-msgstr ""
+msgstr "議題追蹤器"
 
 #: ../../../doc/en/index.rst:34
 msgid "PDF Documentation"
-msgstr ""
+msgstr "PDF 文件"
 
 #: ../../../doc/en/index.rst:34
 msgid "Useful links"
@@ -81,7 +81,7 @@ msgstr ""
 
 #: ../../../doc/en/index.rst:51
 msgid "**PyPI package name**: :pypi:`pytest`"
-msgstr ""
+msgstr "**PyPI 軟體包名稱**： :pypi:`pytest`"
 
 #: ../../../doc/en/index.rst:54
 msgid "A quick example"
@@ -203,7 +203,7 @@ msgstr ""
 
 #: ../../../doc/en/index.rst:122
 msgid "Bugs/Requests"
-msgstr ""
+msgstr "臭蟲/請求"
 
 #: ../../../doc/en/index.rst:124
 msgid ""
@@ -213,7 +213,7 @@ msgstr ""
 
 #: ../../../doc/en/index.rst:128
 msgid "Support pytest"
-msgstr ""
+msgstr "支援 pytest"
 
 #: ../../../doc/en/index.rst:130
 msgid ""
