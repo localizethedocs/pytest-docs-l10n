@@ -1,0 +1,219 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015–2020, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/index.rst:6
+msgid "pytest: helps you write better programs"
+msgstr ""
+
+#: ../../../doc/en/index.rst:9
+msgid ""
+"The ``pytest`` framework makes it easy to write small tests, yet scales to "
+"support complex functional testing for applications and libraries."
+msgstr ""
+
+#: ../../../doc/en/index.rst:12
+msgid "An example of a simple test:"
+msgstr ""
+
+#: ../../../doc/en/index.rst:14
+msgid ""
+"# content of test_sample.py\n"
+"def inc(x):\n"
+"    return x + 1\n"
+"\n"
+"\n"
+"def test_answer():\n"
+"    assert inc(3) == 5"
+msgstr ""
+
+#: ../../../doc/en/index.rst:25
+msgid "To execute it:"
+msgstr ""
+
+#: ../../../doc/en/index.rst:27
+msgid ""
+"$ pytest\n"
+"=========================== test session starts "
+"============================\n"
+"platform linux -- Python 3.x.y, pytest-5.x.y, py-1.x.y, pluggy-0.x.y\n"
+"cachedir: $PYTHON_PREFIX/.pytest_cache\n"
+"rootdir: $REGENDOC_TMPDIR\n"
+"collected 1 item\n"
+"\n"
+"test_sample.py F                                                     [100%]\n"
+"\n"
+"================================= FAILURES "
+"=================================\n"
+"_______________________________ test_answer "
+"________________________________\n"
+"\n"
+"    def test_answer():\n"
+">       assert inc(3) == 5\n"
+"E       assert 4 == 5\n"
+"E        +  where 4 = inc(3)\n"
+"\n"
+"test_sample.py:6: AssertionError\n"
+"========================= short test summary info "
+"==========================\n"
+"FAILED test_sample.py::test_answer - assert 4 == 5\n"
+"============================ 1 failed in 0.12s ============================="
+msgstr ""
+
+#: ../../../doc/en/index.rst:51
+msgid ""
+"Due to ``pytest``'s detailed assertion introspection, only plain ``assert`` "
+"statements are used. See :ref:`Getting Started <getstarted>` for more "
+"examples."
+msgstr ""
+
+#: ../../../doc/en/index.rst:56
+msgid "Features"
+msgstr ""
+
+#: ../../../doc/en/index.rst:58
+msgid ""
+"Detailed info on failing :ref:`assert statements <assert>` (no need to "
+"remember ``self.assert*`` names);"
+msgstr ""
+
+#: ../../../doc/en/index.rst:60
+msgid ":ref:`Auto-discovery <test discovery>` of test modules and functions;"
+msgstr ""
+
+#: ../../../doc/en/index.rst:62
+msgid ""
+":ref:`Modular fixtures <fixture>` for managing small or parametrized long-"
+"lived test resources;"
+msgstr ""
+
+#: ../../../doc/en/index.rst:64
+msgid ""
+"Can run :ref:`unittest <unittest>` (including trial) and :ref:`nose "
+"<noseintegration>` test suites out of the box;"
+msgstr ""
+
+#: ../../../doc/en/index.rst:66
+msgid "Python 3.5+ and PyPy 3;"
+msgstr ""
+
+#: ../../../doc/en/index.rst:68
+msgid ""
+"Rich plugin architecture, with over 315+ `external plugins <http://"
+"plugincompat.herokuapp.com>`_ and thriving community;"
+msgstr ""
+
+#: ../../../doc/en/index.rst:72
+msgid "Documentation"
+msgstr ""
+
+#: ../../../doc/en/index.rst:74
+msgid ""
+"Please see :ref:`Contents <toc>` for full documentation, including "
+"installation, tutorials and PDF documents."
+msgstr ""
+
+#: ../../../doc/en/index.rst:78
+msgid "Bugs/Requests"
+msgstr ""
+
+#: ../../../doc/en/index.rst:80
+msgid ""
+"Please use the `GitHub issue tracker <https://github.com/pytest-dev/pytest/"
+"issues>`_ to submit bugs or request features."
+msgstr ""
+
+#: ../../../doc/en/index.rst:84
+msgid "Changelog"
+msgstr ""
+
+#: ../../../doc/en/index.rst:86
+msgid ""
+"Consult the :ref:`Changelog <changelog>` page for fixes and enhancements of "
+"each version."
+msgstr ""
+
+#: ../../../doc/en/index.rst:89
+msgid "Support pytest"
+msgstr ""
+
+#: ../../../doc/en/index.rst:91
+msgid ""
+"`Open Collective`_ is an online funding platform for open and transparent "
+"communities. It provide tools to raise money and share your finances in full "
+"transparency."
+msgstr ""
+
+#: ../../../doc/en/index.rst:94
+msgid ""
+"It is the platform of choice for individuals and companies that want to make "
+"one-time or monthly donations directly to the project."
+msgstr ""
+
+#: ../../../doc/en/index.rst:97
+msgid "See more details in the `pytest collective`_."
+msgstr ""
+
+#: ../../../doc/en/index.rst:104
+msgid "pytest for enterprise"
+msgstr ""
+
+#: ../../../doc/en/index.rst:106
+msgid "Available as part of the Tidelift Subscription."
+msgstr ""
+
+#: ../../../doc/en/index.rst:108
+msgid ""
+"The maintainers of pytest and thousands of other packages are working with "
+"Tidelift to deliver commercial support and maintenance for the open source "
+"dependencies you use to build your applications. Save time, reduce risk, and "
+"improve code health, while paying the maintainers of the exact dependencies "
+"you use."
+msgstr ""
+
+#: ../../../doc/en/index.rst:112
+msgid ""
+"`Learn more. <https://tidelift.com/subscription/pkg/pypi-pytest?"
+"utm_source=pypi-"
+"pytest&utm_medium=referral&utm_campaign=enterprise&utm_term=repo>`_"
+msgstr ""
+
+#: ../../../doc/en/index.rst:115
+msgid "Security"
+msgstr ""
+
+#: ../../../doc/en/index.rst:117
+msgid ""
+"pytest has never been associated with a security vulnerability, but in any "
+"case, to report a security vulnerability please use the `Tidelift security "
+"contact <https://tidelift.com/security>`_. Tidelift will coordinate the fix "
+"and disclosure."
+msgstr ""
+
+#: ../../../doc/en/index.rst:123
+msgid "License"
+msgstr ""
+
+#: ../../../doc/en/index.rst:125
+msgid "Copyright Holger Krekel and others, 2004-2020."
+msgstr ""
+
+#: ../../../doc/en/index.rst:127
+msgid ""
+"Distributed under the terms of the `MIT`_ license, pytest is free and open "
+"source software."
+msgstr ""

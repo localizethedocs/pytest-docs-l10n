@@ -1,0 +1,437 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015–2020, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/example/pythoncollection.rst:2
+msgid "Changing standard (Python) test discovery"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:5
+msgid "Ignore paths during test collection"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:7
+msgid ""
+"You can easily ignore certain test directories and modules during collection "
+"by passing the ``--ignore=path`` option on the cli. ``pytest`` allows "
+"multiple ``--ignore`` options. Example:"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:11
+msgid ""
+"tests/\n"
+"|-- example\n"
+"|   |-- test_example_01.py\n"
+"|   |-- test_example_02.py\n"
+"|   '-- test_example_03.py\n"
+"|-- foobar\n"
+"|   |-- test_foobar_01.py\n"
+"|   |-- test_foobar_02.py\n"
+"|   '-- test_foobar_03.py\n"
+"'-- hello\n"
+"    '-- world\n"
+"        |-- test_world_01.py\n"
+"        |-- test_world_02.py\n"
+"        '-- test_world_03.py"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:28
+msgid ""
+"Now if you invoke ``pytest`` with ``--ignore=tests/foobar/test_foobar_03.py "
+"--ignore=tests/hello/``, you will see that ``pytest`` only collects test-"
+"modules, which do not match the patterns specified:"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:31
+msgid ""
+"=========================== test session starts "
+"============================\n"
+"platform linux -- Python 3.x.y, pytest-5.x.y, py-1.x.y, pluggy-0.x.y\n"
+"rootdir: $REGENDOC_TMPDIR, inifile:\n"
+"collected 5 items\n"
+"\n"
+"tests/example/test_example_01.py .                                   [ 20%]\n"
+"tests/example/test_example_02.py .                                   [ 40%]\n"
+"tests/example/test_example_03.py .                                   [ 60%]\n"
+"tests/foobar/test_foobar_01.py .                                     [ 80%]\n"
+"tests/foobar/test_foobar_02.py .                                     [100%]\n"
+"\n"
+"========================= 5 passed in 0.02 seconds ========================="
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:46
+msgid ""
+"The ``--ignore-glob`` option allows to ignore test file paths based on Unix "
+"shell-style wildcards. If you want to exclude test-modules that end with "
+"``_01.py``, execute ``pytest`` with ``--ignore-glob='*_01.py'``."
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:50
+msgid "Deselect tests during test collection"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:52
+msgid ""
+"Tests can individually be deselected during collection by passing the ``--"
+"deselect=item`` option. For example, say ``tests/foobar/test_foobar_01.py`` "
+"contains ``test_a`` and ``test_b``. You can run all of the tests within "
+"``tests/`` *except* for ``tests/foobar/test_foobar_01.py::test_a`` by "
+"invoking ``pytest`` with ``--deselect tests/foobar/test_foobar_01.py::"
+"test_a``. ``pytest`` allows multiple ``--deselect`` options."
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:59
+msgid "Keeping duplicate paths specified from command line"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:61
+msgid ""
+"Default behavior of ``pytest`` is to ignore duplicate paths specified from "
+"the command line. Example:"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:64
+msgid ""
+"pytest path_a path_a\n"
+"\n"
+"...\n"
+"collected 1 item\n"
+"..."
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:72
+msgid "Just collect tests once."
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:74
+msgid ""
+"To collect duplicate tests, use the ``--keep-duplicates`` option on the cli. "
+"Example:"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:77
+msgid ""
+"pytest --keep-duplicates path_a path_a\n"
+"\n"
+"...\n"
+"collected 2 items\n"
+"..."
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:85
+msgid ""
+"As the collector just works on directories, if you specify twice a single "
+"test file, ``pytest`` will still collect it twice, no matter if the ``--keep-"
+"duplicates`` is not specified. Example:"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:89
+msgid ""
+"pytest test_a.py test_a.py\n"
+"\n"
+"...\n"
+"collected 2 items\n"
+"..."
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:99
+msgid "Changing directory recursion"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:101
+msgid ""
+"You can set the :confval:`norecursedirs` option in an ini-file, for example "
+"your ``pytest.ini`` in the project root directory:"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:103
+msgid ""
+"# content of pytest.ini\n"
+"[pytest]\n"
+"norecursedirs = .svn _build tmp*"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:109
+msgid ""
+"This would tell ``pytest`` to not recurse into typical subversion or sphinx-"
+"build directories or into any ``tmp`` prefixed directory."
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:114
+msgid "Changing naming conventions"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:116
+msgid ""
+"You can configure different naming conventions by setting the :confval:"
+"`python_files`, :confval:`python_classes` and :confval:`python_functions` "
+"configuration options. Here is an example:"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:121
+msgid ""
+"# content of pytest.ini\n"
+"# Example 1: have pytest look for \"check\" instead of \"test\"\n"
+"# can also be defined in tox.ini or setup.cfg file, although the section\n"
+"# name in setup.cfg files should be \"tool:pytest\"\n"
+"[pytest]\n"
+"python_files = check_*.py\n"
+"python_classes = Check\n"
+"python_functions = *_check"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:132
+msgid ""
+"This would make ``pytest`` look for tests in files that match the ``check_* ."
+"py`` glob-pattern, ``Check`` prefixes in classes, and functions and methods "
+"that match ``*_check``. For example, if we have:"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:136
+msgid ""
+"# content of check_myapp.py\n"
+"class CheckMyApp:\n"
+"    def simple_check(self):\n"
+"        pass\n"
+"\n"
+"    def complex_check(self):\n"
+"        pass"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:146
+msgid "The test collection would look like this:"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:148
+msgid ""
+"$ pytest --collect-only\n"
+"=========================== test session starts "
+"============================\n"
+"platform linux -- Python 3.x.y, pytest-5.x.y, py-1.x.y, pluggy-0.x.y\n"
+"cachedir: $PYTHON_PREFIX/.pytest_cache\n"
+"rootdir: $REGENDOC_TMPDIR, inifile: pytest.ini\n"
+"collected 2 items\n"
+"<Module check_myapp.py>\n"
+"  <Class CheckMyApp>\n"
+"      <Function simple_check>\n"
+"      <Function complex_check>\n"
+"\n"
+"========================== no tests ran in 0.12s ==========================="
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:163
+msgid ""
+"You can check for multiple glob patterns by adding a space between the "
+"patterns:"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:165
+msgid ""
+"# Example 2: have pytest look for files with \"test\" and \"example\"\n"
+"# content of pytest.ini, tox.ini, or setup.cfg file (replace \"pytest\"\n"
+"# with \"tool:pytest\" for setup.cfg)\n"
+"[pytest]\n"
+"python_files = test_*.py example_*.py"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:175
+msgid ""
+"the ``python_functions`` and ``python_classes`` options has no effect for "
+"``unittest.TestCase`` test discovery because pytest delegates discovery of "
+"test case methods to unittest code."
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:180
+msgid "Interpreting cmdline arguments as Python packages"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:182
+msgid ""
+"You can use the ``--pyargs`` option to make ``pytest`` try interpreting "
+"arguments as python package names, deriving their file system path and then "
+"running the test. For example if you have unittest2 installed you can type:"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:187
+msgid "pytest --pyargs unittest2.test.test_skipping -q"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:191
+msgid ""
+"which would run the respective test module.  Like with other options, "
+"through an ini-file and the :confval:`addopts` option you can make this "
+"change more permanently:"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:195
+msgid ""
+"# content of pytest.ini\n"
+"[pytest]\n"
+"addopts = --pyargs"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:201
+msgid ""
+"Now a simple invocation of ``pytest NAME`` will check if NAME exists as an "
+"importable package/module and otherwise treat it as a filesystem path."
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:206
+msgid "Finding out what is collected"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:208
+msgid ""
+"You can always peek at the collection tree without running tests like this:"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:210
+msgid ""
+". $ pytest --collect-only pythoncollection.py\n"
+"=========================== test session starts "
+"============================\n"
+"platform linux -- Python 3.x.y, pytest-5.x.y, py-1.x.y, pluggy-0.x.y\n"
+"cachedir: $PYTHON_PREFIX/.pytest_cache\n"
+"rootdir: $REGENDOC_TMPDIR, inifile: pytest.ini\n"
+"collected 3 items\n"
+"<Module CWD/pythoncollection.py>\n"
+"  <Function test_function>\n"
+"  <Class TestClass>\n"
+"      <Function test_method>\n"
+"      <Function test_anothermethod>\n"
+"\n"
+"========================== no tests ran in 0.12s ==========================="
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:229
+msgid "Customizing test collection"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:233
+msgid ""
+"You can easily instruct ``pytest`` to discover tests from every Python file:"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:235
+msgid ""
+"# content of pytest.ini\n"
+"[pytest]\n"
+"python_files = *.py"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:241
+msgid ""
+"However, many projects will have a ``setup.py`` which they don't want to be "
+"imported. Moreover, there may files only importable by a specific python "
+"version. For such cases you can dynamically define files to be ignored by "
+"listing them in a ``conftest.py`` file:"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:246
+msgid ""
+"# content of conftest.py\n"
+"import sys\n"
+"\n"
+"collect_ignore = [\"setup.py\"]\n"
+"if sys.version_info[0] > 2:\n"
+"    collect_ignore.append(\"pkg/module_py2.py\")"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:255
+msgid "and then if you have a module file like this:"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:257
+msgid ""
+"# content of pkg/module_py2.py\n"
+"def test_only_on_python2():\n"
+"    try:\n"
+"        assert 0\n"
+"    except Exception, e:\n"
+"        pass"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:266
+msgid "and a ``setup.py`` dummy file like this:"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:268
+msgid ""
+"# content of setup.py\n"
+"0 / 0  # will raise exception if imported"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:273
+msgid ""
+"If you run with a Python 2 interpreter then you will find the one test and "
+"will leave out the ``setup.py`` file:"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:276
+msgid ""
+"#$ pytest --collect-only\n"
+"====== test session starts ======\n"
+"platform linux2 -- Python 2.7.10, pytest-2.9.1, py-1.4.31, pluggy-0.3.1\n"
+"rootdir: $REGENDOC_TMPDIR, inifile: pytest.ini\n"
+"collected 1 items\n"
+"<Module 'pkg/module_py2.py'>\n"
+"  <Function 'test_only_on_python2'>\n"
+"\n"
+"====== no tests ran in 0.04 seconds ======"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:288
+msgid ""
+"If you run with a Python 3 interpreter both the one test and the ``setup."
+"py`` file will be left out:"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:291
+msgid ""
+"$ pytest --collect-only\n"
+"=========================== test session starts "
+"============================\n"
+"platform linux -- Python 3.x.y, pytest-5.x.y, py-1.x.y, pluggy-0.x.y\n"
+"cachedir: $PYTHON_PREFIX/.pytest_cache\n"
+"rootdir: $REGENDOC_TMPDIR, inifile: pytest.ini\n"
+"collected 0 items\n"
+"\n"
+"========================== no tests ran in 0.12s ==========================="
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:302
+msgid ""
+"It's also possible to ignore files based on Unix shell-style wildcards by "
+"adding patterns to ``collect_ignore_glob``."
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:305
+msgid ""
+"The following example ``conftest.py`` ignores the file ``setup.py`` and in "
+"addition all files that end with ``*_py2.py`` when executed with a Python 3 "
+"interpreter:"
+msgstr ""
+
+#: ../../../doc/en/example/pythoncollection.rst:309
+msgid ""
+"# content of conftest.py\n"
+"import sys\n"
+"\n"
+"collect_ignore = [\"setup.py\"]\n"
+"if sys.version_info[0] > 2:\n"
+"    collect_ignore_glob = [\"*_py2.py\"]"
+msgstr ""
