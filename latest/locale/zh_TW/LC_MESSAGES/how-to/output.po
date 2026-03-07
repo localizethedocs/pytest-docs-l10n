@@ -1,0 +1,1151 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:29+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/how-to/output.rst:4
+msgid "Managing pytest's output"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:9
+msgid "Modifying Python traceback printing"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:11
+msgid "Examples for modifying traceback printing:"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:13
+msgid ""
+"pytest --showlocals     # show local variables in tracebacks\n"
+"pytest -l               # show local variables (shortcut)\n"
+"pytest --no-showlocals  # hide local variables (if addopts enables them)\n"
+"\n"
+"pytest --capture=fd  # default, capture at the file descriptor level\n"
+"pytest --capture=sys # capture at the sys level\n"
+"pytest --capture=no  # don't capture\n"
+"pytest -s            # don't capture (shortcut)\n"
+"pytest --capture=tee-sys # capture to logs but also output to sys level "
+"streams\n"
+"\n"
+"pytest --tb=auto    # (default) 'long' tracebacks for the first and last\n"
+"                     # entry, but 'short' style for the other entries\n"
+"pytest --tb=long    # exhaustive, informative traceback formatting\n"
+"pytest --tb=short   # shorter traceback format\n"
+"pytest --tb=line    # only one line per failure\n"
+"pytest --tb=native  # Python standard library formatting\n"
+"pytest --tb=no      # no traceback at all"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:33
+msgid ""
+"The :option:`--full-trace` causes very long traces to be printed on error "
+"(longer than :option:`--tb=long`). It also ensures that a stack trace is "
+"printed on **KeyboardInterrupt** (Ctrl+C). This is very useful if the tests "
+"are taking too long and you interrupt them with Ctrl+C to find out where the "
+"tests are *hanging*. By default no output will be shown (because "
+"KeyboardInterrupt is caught by pytest). By using this option you make sure a "
+"trace is shown."
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:43
+msgid "Verbosity"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:45
+msgid "Examples for modifying printing verbosity:"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:47
+msgid ""
+"pytest --quiet          # quiet - less verbose - mode\n"
+"pytest -q               # quiet - less verbose - mode (shortcut)\n"
+"pytest -v               # increase verbosity, display individual test names\n"
+"pytest -vv              # more verbose, display more details from the test "
+"output\n"
+"pytest -vvv             # not a standard , but may be used for even more "
+"detail in certain setups"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:55
+msgid ""
+"The :option:`-v` flag controls the verbosity of pytest output in various "
+"aspects: test session progress, assertion details when tests fail, fixtures "
+"details with :option:`--fixtures`, etc."
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:60
+msgid "Consider this simple file:"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:62
+msgid ""
+"# content of test_verbosity_example.py\n"
+"def test_ok():\n"
+"    pass\n"
+"\n"
+"\n"
+"def test_words_fail():\n"
+"    fruits1 = [\"banana\", \"apple\", \"grapes\", \"melon\", \"kiwi\"]\n"
+"    fruits2 = [\"banana\", \"apple\", \"orange\", \"melon\", \"kiwi\"]\n"
+"    assert fruits1 == fruits2\n"
+"\n"
+"\n"
+"def test_numbers_fail():\n"
+"    number_to_text1 = {str(x): x for x in range(5)}\n"
+"    number_to_text2 = {str(x * 10): x * 10 for x in range(5)}\n"
+"    assert number_to_text1 == number_to_text2\n"
+"\n"
+"\n"
+"def test_long_text_fail():\n"
+"    long_text = \"Lorem ipsum dolor sit amet \" * 10\n"
+"    assert \"hello world\" in long_text"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:85
+msgid ""
+"Executing pytest normally gives us this output (we are skipping the header "
+"to focus on the rest):"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:87
+msgid ""
+"$ pytest --no-header\n"
+"=========================== test session starts "
+"============================\n"
+"collected 4 items\n"
+"\n"
+"test_verbosity_example.py .FFF                                       [100%]\n"
+"\n"
+"================================= FAILURES "
+"=================================\n"
+"_____________________________ test_words_fail "
+"______________________________\n"
+"\n"
+"    def test_words_fail():\n"
+"        fruits1 = [\"banana\", \"apple\", \"grapes\", \"melon\", \"kiwi\"]\n"
+"        fruits2 = [\"banana\", \"apple\", \"orange\", \"melon\", \"kiwi\"]\n"
+">       assert fruits1 == fruits2\n"
+"E       AssertionError: assert ['banana', 'a...elon', 'kiwi'] == ['banana', "
+"'a...elon', 'kiwi']\n"
+"E\n"
+"E         At index 2 diff: 'grapes' != 'orange'\n"
+"E         Use -v to get more diff\n"
+"\n"
+"test_verbosity_example.py:8: AssertionError\n"
+"____________________________ test_numbers_fail "
+"_____________________________\n"
+"\n"
+"    def test_numbers_fail():\n"
+"        number_to_text1 = {str(x): x for x in range(5)}\n"
+"        number_to_text2 = {str(x * 10): x * 10 for x in range(5)}\n"
+">       assert number_to_text1 == number_to_text2\n"
+"E       AssertionError: assert {'0': 0, '1':..., '3': 3, ...} == {'0': 0, "
+"'10'...'30': 30, ...}\n"
+"E\n"
+"E         Omitting 1 identical items, use -vv to show\n"
+"E         Left contains 4 more items:\n"
+"E         {'1': 1, '2': 2, '3': 3, '4': 4}\n"
+"E         Right contains 4 more items:\n"
+"E         {'10': 10, '20': 20, '30': 30, '40': 40}\n"
+"E         Use -v to get more diff\n"
+"\n"
+"test_verbosity_example.py:14: AssertionError\n"
+"___________________________ test_long_text_fail "
+"____________________________\n"
+"\n"
+"    def test_long_text_fail():\n"
+"        long_text = \"Lorem ipsum dolor sit amet \" * 10\n"
+">       assert \"hello world\" in long_text\n"
+"E       AssertionError: assert 'hello world' in 'Lorem ipsum dolor sit amet "
+"Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit "
+"amet Lorem ips... sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit "
+"amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet '\n"
+"\n"
+"test_verbosity_example.py:19: AssertionError\n"
+"========================= short test summary info "
+"==========================\n"
+"FAILED test_verbosity_example.py::test_words_fail - AssertionError: "
+"asser...\n"
+"FAILED test_verbosity_example.py::test_numbers_fail - AssertionError: "
+"ass...\n"
+"FAILED test_verbosity_example.py::test_long_text_fail - AssertionError: "
+"a...\n"
+"======================= 3 failed, 1 passed in 0.12s ========================"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:138
+msgid "Notice that:"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:140
+msgid ""
+"Each test inside the file is shown by a single character in the output: ``."
+"`` for passing, ``F`` for failure."
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:141
+msgid ""
+"``test_words_fail`` failed, and we are shown a short summary indicating the "
+"index 2 of the two lists differ."
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:142
+msgid ""
+"``test_numbers_fail`` failed, and we are shown a summary of left/right "
+"differences on dictionary items. Identical items are omitted."
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:143
+msgid ""
+"``test_long_text_fail`` failed, and the right hand side of the ``in`` "
+"statement is truncated using ``...``` because it is longer than an internal "
+"threshold (240 characters currently)."
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:146
+msgid "Now we can increase pytest's verbosity:"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:148
+msgid ""
+"$ pytest --no-header -v\n"
+"=========================== test session starts "
+"============================\n"
+"collecting ... collected 4 items\n"
+"\n"
+"test_verbosity_example.py::test_ok PASSED                            [ 25%]\n"
+"test_verbosity_example.py::test_words_fail FAILED                    [ 50%]\n"
+"test_verbosity_example.py::test_numbers_fail FAILED                  [ 75%]\n"
+"test_verbosity_example.py::test_long_text_fail FAILED                [100%]\n"
+"\n"
+"================================= FAILURES "
+"=================================\n"
+"_____________________________ test_words_fail "
+"______________________________\n"
+"\n"
+"    def test_words_fail():\n"
+"        fruits1 = [\"banana\", \"apple\", \"grapes\", \"melon\", \"kiwi\"]\n"
+"        fruits2 = [\"banana\", \"apple\", \"orange\", \"melon\", \"kiwi\"]\n"
+">       assert fruits1 == fruits2\n"
+"E       AssertionError: assert ['banana', 'a...elon', 'kiwi'] == ['banana', "
+"'a...elon', 'kiwi']\n"
+"E\n"
+"E         At index 2 diff: 'grapes' != 'orange'\n"
+"E\n"
+"E         Full diff:\n"
+"E           [\n"
+"E               'banana',\n"
+"E               'apple',...\n"
+"E\n"
+"E         ...Full output truncated (7 lines hidden), use '-vv' to show\n"
+"\n"
+"test_verbosity_example.py:8: AssertionError\n"
+"____________________________ test_numbers_fail "
+"_____________________________\n"
+"\n"
+"    def test_numbers_fail():\n"
+"        number_to_text1 = {str(x): x for x in range(5)}\n"
+"        number_to_text2 = {str(x * 10): x * 10 for x in range(5)}\n"
+">       assert number_to_text1 == number_to_text2\n"
+"E       AssertionError: assert {'0': 0, '1':..., '3': 3, ...} == {'0': 0, "
+"'10'...'30': 30, ...}\n"
+"E\n"
+"E         Omitting 1 identical items, use -vv to show\n"
+"E         Left contains 4 more items:\n"
+"E         {'1': 1, '2': 2, '3': 3, '4': 4}\n"
+"E         Right contains 4 more items:\n"
+"E         {'10': 10, '20': 20, '30': 30, '40': 40}\n"
+"E         ...\n"
+"E\n"
+"E         ...Full output truncated (16 lines hidden), use '-vv' to show\n"
+"\n"
+"test_verbosity_example.py:14: AssertionError\n"
+"___________________________ test_long_text_fail "
+"____________________________\n"
+"\n"
+"    def test_long_text_fail():\n"
+"        long_text = \"Lorem ipsum dolor sit amet \" * 10\n"
+">       assert \"hello world\" in long_text\n"
+"E       AssertionError: assert 'hello world' in 'Lorem ipsum dolor sit amet "
+"Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit "
+"amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor "
+"sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum "
+"dolor sit amet '\n"
+"\n"
+"test_verbosity_example.py:19: AssertionError\n"
+"========================= short test summary info "
+"==========================\n"
+"FAILED test_verbosity_example.py::test_words_fail - AssertionError: "
+"asser...\n"
+"FAILED test_verbosity_example.py::test_numbers_fail - AssertionError: "
+"ass...\n"
+"FAILED test_verbosity_example.py::test_long_text_fail - AssertionError: "
+"a...\n"
+"======================= 3 failed, 1 passed in 0.12s ========================"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:210 ../../../doc/en/how-to/output.rst:340
+msgid "Notice now that:"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:212 ../../../doc/en/how-to/output.rst:342
+msgid "Each test inside the file gets its own line in the output."
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:213
+msgid ""
+"``test_words_fail`` now shows the two failing lists in full, in addition to "
+"which index differs."
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:214
+msgid ""
+"``test_numbers_fail`` now shows a text diff of the two dictionaries, "
+"truncated."
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:215
+msgid ""
+"``test_long_text_fail`` no longer truncates the right hand side of the "
+"``in`` statement, because the internal threshold for truncation is larger "
+"now (2400 characters currently)."
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:218
+msgid "Now if we increase verbosity even more:"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:220
+msgid ""
+"$ pytest --no-header -vv\n"
+"=========================== test session starts "
+"============================\n"
+"collecting ... collected 4 items\n"
+"\n"
+"test_verbosity_example.py::test_ok PASSED                            [ 25%]\n"
+"test_verbosity_example.py::test_words_fail FAILED                    [ 50%]\n"
+"test_verbosity_example.py::test_numbers_fail FAILED                  [ 75%]\n"
+"test_verbosity_example.py::test_long_text_fail FAILED                [100%]\n"
+"\n"
+"================================= FAILURES "
+"=================================\n"
+"_____________________________ test_words_fail "
+"______________________________\n"
+"\n"
+"    def test_words_fail():\n"
+"        fruits1 = [\"banana\", \"apple\", \"grapes\", \"melon\", \"kiwi\"]\n"
+"        fruits2 = [\"banana\", \"apple\", \"orange\", \"melon\", \"kiwi\"]\n"
+">       assert fruits1 == fruits2\n"
+"E       AssertionError: assert ['banana', 'apple', 'grapes', 'melon', "
+"'kiwi'] == ['banana', 'apple', 'orange', 'melon', 'kiwi']\n"
+"E\n"
+"E         At index 2 diff: 'grapes' != 'orange'\n"
+"E\n"
+"E         Full diff:\n"
+"E           [\n"
+"E               'banana',\n"
+"E               'apple',\n"
+"E         -     'orange',\n"
+"E         ?      ^  ^^\n"
+"E         +     'grapes',\n"
+"E         ?      ^  ^ +\n"
+"E               'melon',\n"
+"E               'kiwi',\n"
+"E           ]\n"
+"\n"
+"test_verbosity_example.py:8: AssertionError\n"
+"____________________________ test_numbers_fail "
+"_____________________________\n"
+"\n"
+"    def test_numbers_fail():\n"
+"        number_to_text1 = {str(x): x for x in range(5)}\n"
+"        number_to_text2 = {str(x * 10): x * 10 for x in range(5)}\n"
+">       assert number_to_text1 == number_to_text2\n"
+"E       AssertionError: assert {'0': 0, '1': 1, '2': 2, '3': 3, '4': 4} == "
+"{'0': 0, '10': 10, '20': 20, '30': 30, '40': 40}\n"
+"E\n"
+"E         Common items:\n"
+"E         {'0': 0}\n"
+"E         Left contains 4 more items:\n"
+"E         {'1': 1, '2': 2, '3': 3, '4': 4}\n"
+"E         Right contains 4 more items:\n"
+"E         {'10': 10, '20': 20, '30': 30, '40': 40}\n"
+"E\n"
+"E         Full diff:\n"
+"E           {\n"
+"E               '0': 0,\n"
+"E         -     '10': 10,\n"
+"E         ?       -    -\n"
+"E         +     '1': 1,\n"
+"E         -     '20': 20,\n"
+"E         ?       -    -\n"
+"E         +     '2': 2,\n"
+"E         -     '30': 30,\n"
+"E         ?       -    -\n"
+"E         +     '3': 3,\n"
+"E         -     '40': 40,\n"
+"E         ?       -    -\n"
+"E         +     '4': 4,\n"
+"E           }\n"
+"\n"
+"test_verbosity_example.py:14: AssertionError\n"
+"___________________________ test_long_text_fail "
+"____________________________\n"
+"\n"
+"    def test_long_text_fail():\n"
+"        long_text = \"Lorem ipsum dolor sit amet \" * 10\n"
+">       assert \"hello world\" in long_text\n"
+"E       AssertionError: assert 'hello world' in 'Lorem ipsum dolor sit amet "
+"Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit "
+"amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor "
+"sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum "
+"dolor sit amet '\n"
+"\n"
+"test_verbosity_example.py:19: AssertionError\n"
+"========================= short test summary info "
+"==========================\n"
+"FAILED test_verbosity_example.py::test_words_fail - AssertionError: assert "
+"['banana', 'apple', 'grapes', 'melon', 'kiwi'] == ['banana', 'apple', "
+"'orange', 'melon', 'kiwi']\n"
+"\n"
+"  At index 2 diff: 'grapes' != 'orange'\n"
+"\n"
+"  Full diff:\n"
+"    [\n"
+"        'banana',\n"
+"        'apple',\n"
+"  -     'orange',\n"
+"  ?      ^  ^^\n"
+"  +     'grapes',\n"
+"  ?      ^  ^ +\n"
+"        'melon',\n"
+"        'kiwi',\n"
+"    ]\n"
+"FAILED test_verbosity_example.py::test_numbers_fail - AssertionError: assert "
+"{'0': 0, '1': 1, '2': 2, '3': 3, '4': 4} == {'0': 0, '10': 10, '20': 20, "
+"'30': 30, '40': 40}\n"
+"\n"
+"  Common items:\n"
+"  {'0': 0}\n"
+"  Left contains 4 more items:\n"
+"  {'1': 1, '2': 2, '3': 3, '4': 4}\n"
+"  Right contains 4 more items:\n"
+"  {'10': 10, '20': 20, '30': 30, '40': 40}\n"
+"\n"
+"  Full diff:\n"
+"    {\n"
+"        '0': 0,\n"
+"  -     '10': 10,\n"
+"  ?       -    -\n"
+"  +     '1': 1,\n"
+"  -     '20': 20,\n"
+"  ?       -    -\n"
+"  +     '2': 2,\n"
+"  -     '30': 30,\n"
+"  ?       -    -\n"
+"  +     '3': 3,\n"
+"  -     '40': 40,\n"
+"  ?       -    -\n"
+"  +     '4': 4,\n"
+"    }\n"
+"FAILED test_verbosity_example.py::test_long_text_fail - AssertionError: "
+"assert 'hello world' in 'Lorem ipsum dolor sit amet Lorem ipsum dolor sit "
+"amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor "
+"sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum "
+"dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet '\n"
+"======================= 3 failed, 1 passed in 0.12s ========================"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:343
+msgid "``test_words_fail`` gives the same output as before in this case."
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:344
+msgid ""
+"``test_numbers_fail`` now shows a full text diff of the two dictionaries."
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:345
+msgid ""
+"``test_long_text_fail`` also doesn't truncate on the right hand side as "
+"before, but now pytest won't truncate any text at all, regardless of its "
+"size."
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:348
+msgid ""
+"Those were examples of how verbosity affects normal test session output, but "
+"verbosity also is used in other situations, for example you are shown even "
+"fixtures that start with ``_`` if you use ``pytest --fixtures -v``."
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:351
+msgid ""
+"Using higher verbosity levels (``-vvv``, ``-vvvv``, ...) is supported, but "
+"has no effect in pytest itself at the moment, however some plugins might "
+"make use of higher verbosity."
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:357
+msgid "Fine-grained verbosity"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:359
+msgid ""
+"In addition to specifying the application wide verbosity level, it is "
+"possible to control specific aspects independently. This is done by setting "
+"a verbosity level in the configuration file for the specific aspect of the "
+"output."
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:362
+msgid ""
+":confval:`verbosity_assertions`: Controls how verbose the assertion output "
+"should be when pytest is executed. Running ``pytest --no-header`` with a "
+"value of ``2`` would have the same output as the previous example, but each "
+"test inside the file is shown by a single character in the output."
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:366
+msgid ""
+":confval:`verbosity_test_cases`: Controls how verbose the test execution "
+"output should be when pytest is executed. Running ``pytest --no-header`` "
+"with a value of ``2`` would have the same output as the first verbosity "
+"example, but each test inside the file gets its own line in the output."
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:373
+msgid "Producing a detailed summary report"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:375
+msgid ""
+"The :option:`-r` flag can be used to display a \"short test summary info\" "
+"at the end of the test session, making it easy in large test suites to get a "
+"clear picture of all failures, skips, xfails, etc."
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:378
+msgid "It defaults to ``fE`` to list failures and errors."
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:382
+msgid "Example:"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:384
+msgid ""
+"# content of test_example.py\n"
+"import pytest\n"
+"\n"
+"\n"
+"@pytest.fixture\n"
+"def error_fixture():\n"
+"    assert 0\n"
+"\n"
+"\n"
+"def test_ok():\n"
+"    print(\"ok\")\n"
+"\n"
+"\n"
+"def test_fail():\n"
+"    assert 0\n"
+"\n"
+"\n"
+"def test_error(error_fixture):\n"
+"    pass\n"
+"\n"
+"\n"
+"def test_skip():\n"
+"    pytest.skip(\"skipping this test\")\n"
+"\n"
+"\n"
+"def test_xfail():\n"
+"    pytest.xfail(\"xfailing this test\")\n"
+"\n"
+"\n"
+"@pytest.mark.xfail(reason=\"always xfail\")\n"
+"def test_xpass():\n"
+"    pass"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:420
+msgid ""
+"$ pytest -ra\n"
+"=========================== test session starts "
+"============================\n"
+"platform linux -- Python 3.x.y, pytest-9.x.y, pluggy-1.x.y\n"
+"rootdir: /home/sweet/project\n"
+"collected 6 items\n"
+"\n"
+"test_example.py .FEsxX                                               [100%]\n"
+"\n"
+"================================== ERRORS "
+"==================================\n"
+"_______________________ ERROR at setup of test_error "
+"_______________________\n"
+"\n"
+"    @pytest.fixture\n"
+"    def error_fixture():\n"
+">       assert 0\n"
+"E       assert 0\n"
+"\n"
+"test_example.py:6: AssertionError\n"
+"================================= FAILURES "
+"=================================\n"
+"________________________________ test_fail "
+"_________________________________\n"
+"\n"
+"    def test_fail():\n"
+">       assert 0\n"
+"E       assert 0\n"
+"\n"
+"test_example.py:14: AssertionError\n"
+"================================= XPASSES "
+"==================================\n"
+"========================= short test summary info "
+"==========================\n"
+"SKIPPED [1] test_example.py:22: skipping this test\n"
+"XFAIL test_example.py::test_xfail - xfailing this test\n"
+"XPASS test_example.py::test_xpass - always xfail\n"
+"ERROR test_example.py::test_error - assert 0\n"
+"FAILED test_example.py::test_fail - assert 0\n"
+"== 1 failed, 1 passed, 1 skipped, 1 xfailed, 1 xpassed, 1 error in 0.12s ==="
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:456
+msgid ""
+"The :option:`-r` options accepts a number of characters after it, with ``a`` "
+"used above meaning \"all except passes\"."
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:459
+msgid "Here is the full list of available characters that can be used:"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:461
+msgid "``f`` - failed"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:462
+msgid "``E`` - error"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:463
+msgid "``s`` - skipped"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:464
+msgid "``x`` - xfailed"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:465
+msgid "``X`` - xpassed"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:466
+msgid "``p`` - passed"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:467
+msgid "``P`` - passed with output"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:469
+msgid "Special characters for (de)selection of groups:"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:471
+msgid "``a`` - all except ``pP``"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:472
+msgid "``A`` - all"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:473
+msgid ""
+"``N`` - none, this can be used to display nothing (since ``fE`` is the "
+"default)"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:475
+msgid ""
+"More than one character can be used, so for example to only see failed and "
+"skipped tests, you can execute:"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:477
+msgid ""
+"$ pytest -rfs\n"
+"=========================== test session starts "
+"============================\n"
+"platform linux -- Python 3.x.y, pytest-9.x.y, pluggy-1.x.y\n"
+"rootdir: /home/sweet/project\n"
+"collected 6 items\n"
+"\n"
+"test_example.py .FEsxX                                               [100%]\n"
+"\n"
+"================================== ERRORS "
+"==================================\n"
+"_______________________ ERROR at setup of test_error "
+"_______________________\n"
+"\n"
+"    @pytest.fixture\n"
+"    def error_fixture():\n"
+">       assert 0\n"
+"E       assert 0\n"
+"\n"
+"test_example.py:6: AssertionError\n"
+"================================= FAILURES "
+"=================================\n"
+"________________________________ test_fail "
+"_________________________________\n"
+"\n"
+"    def test_fail():\n"
+">       assert 0\n"
+"E       assert 0\n"
+"\n"
+"test_example.py:14: AssertionError\n"
+"========================= short test summary info "
+"==========================\n"
+"FAILED test_example.py::test_fail - assert 0\n"
+"SKIPPED [1] test_example.py:22: skipping this test\n"
+"== 1 failed, 1 passed, 1 skipped, 1 xfailed, 1 xpassed, 1 error in 0.12s ==="
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:509
+msgid ""
+"Using ``p`` lists the passing tests, whilst ``P`` adds an extra section "
+"\"PASSES\" with those tests that passed but had captured output:"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:512
+msgid ""
+"$ pytest -rpP\n"
+"=========================== test session starts "
+"============================\n"
+"platform linux -- Python 3.x.y, pytest-9.x.y, pluggy-1.x.y\n"
+"rootdir: /home/sweet/project\n"
+"collected 6 items\n"
+"\n"
+"test_example.py .FEsxX                                               [100%]\n"
+"\n"
+"================================== ERRORS "
+"==================================\n"
+"_______________________ ERROR at setup of test_error "
+"_______________________\n"
+"\n"
+"    @pytest.fixture\n"
+"    def error_fixture():\n"
+">       assert 0\n"
+"E       assert 0\n"
+"\n"
+"test_example.py:6: AssertionError\n"
+"================================= FAILURES "
+"=================================\n"
+"________________________________ test_fail "
+"_________________________________\n"
+"\n"
+"    def test_fail():\n"
+">       assert 0\n"
+"E       assert 0\n"
+"\n"
+"test_example.py:14: AssertionError\n"
+"================================== PASSES "
+"==================================\n"
+"_________________________________ test_ok "
+"__________________________________\n"
+"--------------------------- Captured stdout call "
+"---------------------------\n"
+"ok\n"
+"========================= short test summary info "
+"==========================\n"
+"PASSED test_example.py::test_ok\n"
+"== 1 failed, 1 passed, 1 skipped, 1 xfailed, 1 xpassed, 1 error in 0.12s ==="
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:549
+msgid ""
+"By default, parametrized variants of skipped tests are grouped together if "
+"they share the same skip reason. You can use :option:`--no-fold-skipped` to "
+"print each skipped test separately."
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:556
+msgid "Modifying truncation limits"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:560
+msgid ""
+"Default truncation limits are 8 lines or 640 characters, whichever comes "
+"first. To set custom truncation limits you can use the following "
+"configuration file options:"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:565 ../../../doc/en/how-to/output.rst:573
+msgid ""
+"[pytest]\n"
+"truncation_limit_lines = 10\n"
+"truncation_limit_chars = 90"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:579
+msgid ""
+"That will cause pytest to truncate the assertions to 10 lines or 90 "
+"characters, whichever comes first."
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:581
+msgid ""
+"Setting both :confval:`truncation_limit_lines` and :confval:"
+"`truncation_limit_chars` to ``0`` will disable the truncation. However, "
+"setting only one of those values will disable one truncation mode, but will "
+"leave the other one intact."
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:586
+msgid "Creating JUnitXML format files"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:588
+msgid ""
+"To create result files which can be read by Jenkins_ or other Continuous "
+"integration servers, use this invocation:"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:591
+msgid "pytest --junit-xml=path"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:595
+msgid "to create an XML file at ``path``."
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:599
+msgid ""
+"To set the name of the root test suite xml item, you can configure the "
+"``junit_suite_name`` option in your config file:"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:603
+msgid ""
+"[pytest]\n"
+"junit_suite_name = \"my_suite\""
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:610
+msgid ""
+"[pytest]\n"
+"junit_suite_name = my_suite"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:617
+msgid ""
+"JUnit XML specification seems to indicate that ``\"time\"`` attribute should "
+"report total test execution times, including setup and teardown (`1 <http://"
+"windyroad.com.au/dl/Open%20Source/JUnit.xsd>`_, `2 <https://www.ibm.com/"
+"support/knowledgecenter/en/SSQ2R2_14.1.0/com.ibm.rsar.analysis.codereview."
+"cobol.doc/topics/cac_useresults_junit.html>`_). It is the default pytest "
+"behavior. To report just call durations instead, configure the "
+"``junit_duration_report`` option like this:"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:626
+msgid ""
+"[pytest]\n"
+"junit_duration_report = \"call\""
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:633
+msgid ""
+"[pytest]\n"
+"junit_duration_report = call"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:641
+msgid "record_property"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:643
+msgid ""
+"If you want to log additional information for a test, you can use the "
+"``record_property`` fixture:"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:646
+msgid ""
+"def test_function(record_property):\n"
+"    record_property(\"example_key\", 1)\n"
+"    assert True"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:652
+msgid ""
+"This will add an extra property ``example_key=\"1\"`` to the generated "
+"``testcase`` tag:"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:655
+msgid ""
+"<testcase classname=\"test_function\" file=\"test_function.py\" line=\"0\" "
+"name=\"test_function\" time=\"0.0009\">\n"
+"  <properties>\n"
+"    <property name=\"example_key\" value=\"1\" />\n"
+"  </properties>\n"
+"</testcase>"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:663
+msgid ""
+"Alternatively, you can integrate this functionality with custom markers:"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:665
+msgid ""
+"# content of conftest.py\n"
+"\n"
+"\n"
+"def pytest_collection_modifyitems(session, config, items):\n"
+"    for item in items:\n"
+"        for marker in item.iter_markers(name=\"test_id\"):\n"
+"            test_id = marker.args[0]\n"
+"            item.user_properties.append((\"test_id\", test_id))"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:676
+msgid "And in your tests:"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:678
+msgid ""
+"# content of test_function.py\n"
+"import pytest\n"
+"\n"
+"\n"
+"@pytest.mark.test_id(1501)\n"
+"def test_function():\n"
+"    assert True"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:688
+msgid "Will result in:"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:690
+msgid ""
+"<testcase classname=\"test_function\" file=\"test_function.py\" line=\"0\" "
+"name=\"test_function\" time=\"0.0009\">\n"
+"  <properties>\n"
+"    <property name=\"test_id\" value=\"1501\" />\n"
+"  </properties>\n"
+"</testcase>"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:700 ../../../doc/en/how-to/output.rst:764
+msgid ""
+"Please note that using this feature will break schema verifications for the "
+"latest JUnitXML schema. This might be a problem when used with some CI "
+"servers."
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:705
+msgid "record_xml_attribute"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:707
+msgid ""
+"To add an additional xml attribute to a testcase element, you can use "
+"``record_xml_attribute`` fixture. This can also be used to override existing "
+"values:"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:710
+msgid ""
+"def test_function(record_xml_attribute):\n"
+"    record_xml_attribute(\"assertions\", \"REQ-1234\")\n"
+"    record_xml_attribute(\"classname\", \"custom_classname\")\n"
+"    print(\"hello world\")\n"
+"    assert True"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:718
+msgid ""
+"Unlike ``record_property``, this will not add a new child element. Instead, "
+"this will add an attribute ``assertions=\"REQ-1234\"`` inside the generated "
+"``testcase`` tag and override the default ``classname`` with "
+"``\"classname=custom_classname\"``:"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:722
+msgid ""
+"<testcase classname=\"custom_classname\" file=\"test_function.py\" "
+"line=\"0\" name=\"test_function\" time=\"0.003\" assertions=\"REQ-1234\">\n"
+"    <system-out>\n"
+"        hello world\n"
+"    </system-out>\n"
+"</testcase>"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:732
+msgid ""
+"``record_xml_attribute`` is an experimental feature, and its interface might "
+"be replaced by something more powerful and general in future versions. The "
+"functionality per-se will be kept, however."
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:736
+msgid ""
+"Using this over ``record_xml_property`` can help when using ci tools to "
+"parse the xml report. However, some parsers are quite strict about the "
+"elements and attributes that are allowed. Many tools use an xsd schema (like "
+"the example below) to validate incoming xml. Make sure you are using "
+"attribute names that are allowed by your parser."
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:741
+msgid "Below is the Scheme used by Jenkins to validate the XML report:"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:743
+msgid ""
+"<xs:element name=\"testcase\">\n"
+"    <xs:complexType>\n"
+"        <xs:sequence>\n"
+"            <xs:element ref=\"skipped\" minOccurs=\"0\" maxOccurs=\"1\"/>\n"
+"            <xs:element ref=\"error\" minOccurs=\"0\" "
+"maxOccurs=\"unbounded\"/>\n"
+"            <xs:element ref=\"failure\" minOccurs=\"0\" "
+"maxOccurs=\"unbounded\"/>\n"
+"            <xs:element ref=\"system-out\" minOccurs=\"0\" "
+"maxOccurs=\"unbounded\"/>\n"
+"            <xs:element ref=\"system-err\" minOccurs=\"0\" "
+"maxOccurs=\"unbounded\"/>\n"
+"        </xs:sequence>\n"
+"        <xs:attribute name=\"name\" type=\"xs:string\" use=\"required\"/>\n"
+"        <xs:attribute name=\"assertions\" type=\"xs:string\" "
+"use=\"optional\"/>\n"
+"        <xs:attribute name=\"time\" type=\"xs:string\" use=\"optional\"/>\n"
+"        <xs:attribute name=\"classname\" type=\"xs:string\" use=\"optional\"/"
+">\n"
+"        <xs:attribute name=\"status\" type=\"xs:string\" use=\"optional\"/>\n"
+"    </xs:complexType>\n"
+"</xs:element>"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:770
+msgid "record_testsuite_property"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:774
+msgid ""
+"If you want to add a properties node at the test-suite level, which may "
+"contain properties that are relevant to all tests, you can use the "
+"``record_testsuite_property`` session-scoped fixture:"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:777
+msgid ""
+"The ``record_testsuite_property`` session-scoped fixture can be used to add "
+"properties relevant to all tests."
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:780
+msgid ""
+"import pytest\n"
+"\n"
+"\n"
+"@pytest.fixture(scope=\"session\", autouse=True)\n"
+"def log_global_env_facts(record_testsuite_property):\n"
+"    record_testsuite_property(\"ARCH\", \"PPC\")\n"
+"    record_testsuite_property(\"STORAGE_TYPE\", \"CEPH\")\n"
+"\n"
+"\n"
+"class TestMe:\n"
+"    def test_foo(self):\n"
+"        assert True"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:795
+msgid ""
+"The fixture is a callable which receives ``name`` and ``value`` of a "
+"``<property>`` tag added at the test-suite level of the generated xml:"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:798
+msgid ""
+"<testsuite errors=\"0\" failures=\"0\" name=\"pytest\" skipped=\"0\" "
+"tests=\"1\" time=\"0.006\">\n"
+"  <properties>\n"
+"    <property name=\"ARCH\" value=\"PPC\"/>\n"
+"    <property name=\"STORAGE_TYPE\" value=\"CEPH\"/>\n"
+"  </properties>\n"
+"  <testcase classname=\"test_me.TestMe\" file=\"test_me.py\" line=\"16\" "
+"name=\"test_foo\" time=\"0.000243663787842\"/>\n"
+"</testsuite>"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:808
+msgid ""
+"``name`` must be a string, ``value`` will be converted to a string and "
+"properly xml-escaped."
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:810
+msgid ""
+"The generated XML is compatible with the latest ``xunit`` standard, contrary "
+"to `record_property`_ and `record_xml_attribute`_."
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:815
+msgid "Sending test report to an online pastebin service"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:817
+msgid "**Creating a URL for each test failure**:"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:819
+msgid "pytest --pastebin=failed"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:823
+msgid ""
+"This will submit test run information to a remote Paste service and provide "
+"a URL for each failure.  You may select tests as usual or add for example :"
+"option:`-x` if you only want to send one particular failure."
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:827
+msgid "**Creating a URL for a whole test session log**:"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:829
+msgid "pytest --pastebin=all"
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:833
+msgid ""
+"Currently only pasting to the https://bpaste.net/ service is implemented."
+msgstr ""
+
+#: ../../../doc/en/how-to/output.rst:837
+msgid ""
+"If creating the URL fails for any reason, a warning is generated instead of "
+"failing the entire test suite."
+msgstr ""
