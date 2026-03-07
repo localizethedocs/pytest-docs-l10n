@@ -1,0 +1,216 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015–2020, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/plugins.rst:6
+msgid "Installing and Using plugins"
+msgstr ""
+
+#: ../../../doc/en/plugins.rst:8
+msgid ""
+"This section talks about installing and using third party plugins. For "
+"writing your own plugins, please refer to :ref:`writing-plugins`."
+msgstr ""
+
+#: ../../../doc/en/plugins.rst:11
+msgid "Installing a third party plugin can be easily done with ``pip``::"
+msgstr ""
+
+#: ../../../doc/en/plugins.rst:13
+msgid ""
+"pip install pytest-NAME\n"
+"pip uninstall pytest-NAME"
+msgstr ""
+
+#: ../../../doc/en/plugins.rst:16
+msgid ""
+"If a plugin is installed, ``pytest`` automatically finds and integrates it, "
+"there is no need to activate it."
+msgstr ""
+
+#: ../../../doc/en/plugins.rst:19
+msgid "Here is a little annotated list for some popular plugins:"
+msgstr ""
+
+#: ../../../doc/en/plugins.rst:23
+msgid ""
+"`pytest-django <https://pypi.org/project/pytest-django/>`_: write tests for "
+"`django`_ apps, using pytest integration."
+msgstr ""
+
+#: ../../../doc/en/plugins.rst:26
+msgid ""
+"`pytest-twisted <https://pypi.org/project/pytest-twisted/>`_: write tests "
+"for `twisted <http://twistedmatrix.com>`_ apps, starting a reactor and "
+"processing deferreds from test functions."
+msgstr ""
+
+#: ../../../doc/en/plugins.rst:30
+msgid ""
+"`pytest-cov <https://pypi.org/project/pytest-cov/>`__: coverage reporting, "
+"compatible with distributed testing"
+msgstr ""
+
+#: ../../../doc/en/plugins.rst:33
+msgid ""
+"`pytest-xdist <https://pypi.org/project/pytest-xdist/>`_: to distribute "
+"tests to CPUs and remote hosts, to run in boxed mode which allows to survive "
+"segmentation faults, to run in looponfailing mode, automatically re-running "
+"failing tests on file changes."
+msgstr ""
+
+#: ../../../doc/en/plugins.rst:39
+msgid ""
+"`pytest-instafail <https://pypi.org/project/pytest-instafail/>`_: to report "
+"failures while the test run is happening."
+msgstr ""
+
+#: ../../../doc/en/plugins.rst:42
+msgid ""
+"`pytest-bdd <https://pypi.org/project/pytest-bdd/>`_ and `pytest-konira "
+"<https://pypi.org/project/pytest-konira/>`_ to write tests using behaviour-"
+"driven testing."
+msgstr ""
+
+#: ../../../doc/en/plugins.rst:46
+msgid ""
+"`pytest-timeout <https://pypi.org/project/pytest-timeout/>`_: to timeout "
+"tests based on function marks or global definitions."
+msgstr ""
+
+#: ../../../doc/en/plugins.rst:49
+msgid ""
+"`pytest-pep8 <https://pypi.org/project/pytest-pep8/>`_: a ``--pep8`` option "
+"to enable PEP8 compliance checking."
+msgstr ""
+
+#: ../../../doc/en/plugins.rst:52
+msgid ""
+"`pytest-flakes <https://pypi.org/project/pytest-flakes/>`_: check source "
+"code with pyflakes."
+msgstr ""
+
+#: ../../../doc/en/plugins.rst:55
+msgid ""
+"`oejskit <https://pypi.org/project/oejskit/>`_: a plugin to run javascript "
+"unittests in live browsers."
+msgstr ""
+
+#: ../../../doc/en/plugins.rst:58
+msgid ""
+"To see a complete list of all plugins with their latest testing status "
+"against different pytest and Python versions, please visit `plugincompat "
+"<http://plugincompat.herokuapp.com/>`_."
+msgstr ""
+
+#: ../../../doc/en/plugins.rst:62
+msgid ""
+"You may also discover more plugins through a `pytest- pypi.org search`_."
+msgstr ""
+
+#: ../../../doc/en/plugins.rst:70
+msgid "Requiring/Loading plugins in a test module or conftest file"
+msgstr ""
+
+#: ../../../doc/en/plugins.rst:72
+msgid "You can require plugins in a test module or a conftest file like this:"
+msgstr ""
+
+#: ../../../doc/en/plugins.rst:74
+msgid "pytest_plugins = (\"myapp.testsupport.myplugin\",)"
+msgstr ""
+
+#: ../../../doc/en/plugins.rst:78
+msgid ""
+"When the test module or conftest plugin is loaded the specified plugins will "
+"be loaded as well."
+msgstr ""
+
+#: ../../../doc/en/plugins.rst:82
+msgid ""
+"Requiring plugins using a ``pytest_plugins`` variable in non-root ``conftest."
+"py`` files is deprecated. See :ref:`full explanation <requiring plugins in "
+"non-root conftests>` in the Writing plugins section."
+msgstr ""
+
+#: ../../../doc/en/plugins.rst:88
+msgid ""
+"The name ``pytest_plugins`` is reserved and should not be used as a name for "
+"a custom plugin module."
+msgstr ""
+
+#: ../../../doc/en/plugins.rst:95
+msgid "Finding out which plugins are active"
+msgstr ""
+
+#: ../../../doc/en/plugins.rst:97
+msgid ""
+"If you want to find out which plugins are active in your environment you can "
+"type::"
+msgstr ""
+
+#: ../../../doc/en/plugins.rst:100
+msgid "pytest --trace-config"
+msgstr ""
+
+#: ../../../doc/en/plugins.rst:102
+msgid ""
+"and will get an extended test header which shows activated plugins and their "
+"names. It will also print local plugins aka :ref:`conftest.py <conftest.py "
+"plugins>` files when they are loaded."
+msgstr ""
+
+#: ../../../doc/en/plugins.rst:109
+msgid "Deactivating / unregistering a plugin by name"
+msgstr ""
+
+#: ../../../doc/en/plugins.rst:111
+msgid "You can prevent plugins from loading or unregister them::"
+msgstr ""
+
+#: ../../../doc/en/plugins.rst:113
+msgid "pytest -p no:NAME"
+msgstr ""
+
+#: ../../../doc/en/plugins.rst:115
+msgid ""
+"This means that any subsequent try to activate/load the named plugin will "
+"not work."
+msgstr ""
+
+#: ../../../doc/en/plugins.rst:118
+msgid ""
+"If you want to unconditionally disable a plugin for a project, you can add "
+"this option to your ``pytest.ini`` file:"
+msgstr ""
+
+#: ../../../doc/en/plugins.rst:121
+msgid ""
+"[pytest]\n"
+"addopts = -p no:NAME"
+msgstr ""
+
+#: ../../../doc/en/plugins.rst:126
+msgid ""
+"Alternatively to disable it only in certain environments (for example in a "
+"CI server), you can set ``PYTEST_ADDOPTS`` environment variable to ``-p no:"
+"name``."
+msgstr ""
+
+#: ../../../doc/en/plugins.rst:130
+msgid "See :ref:`findpluginname` for how to obtain the name of a plugin."
+msgstr ""
