@@ -50,7 +50,7 @@ msgstr ""
 
 #: ../../../doc/en/index.rst:22
 msgid "**PyPI package name**: :pypi:`pytest`"
-msgstr ""
+msgstr "**PyPI 軟體包名稱**： :pypi:`pytest`"
 
 #: ../../../doc/en/index.rst:26
 msgid "A quick example"
@@ -172,7 +172,7 @@ msgstr ""
 
 #: ../../../doc/en/index.rst:94
 msgid "Bugs/Requests"
-msgstr ""
+msgstr "臭蟲/請求"
 
 #: ../../../doc/en/index.rst:96
 msgid ""
@@ -182,7 +182,7 @@ msgstr ""
 
 #: ../../../doc/en/index.rst:100
 msgid "Support pytest"
-msgstr ""
+msgstr "支援 pytest"
 
 #: ../../../doc/en/index.rst:102
 msgid ""
