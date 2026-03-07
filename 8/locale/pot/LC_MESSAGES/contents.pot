@@ -1,0 +1,47 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 8\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/contents.rst:6
+msgid "Full pytest documentation"
+msgstr ""
+
+#: ../../../doc/en/contents.rst:8
+msgid ""
+"`Download latest version as PDF <https://media.readthedocs.org/pdf/pytest/"
+"latest/pytest.pdf>`_"
+msgstr ""
+
+#: ../../../doc/en/contents.rst:14
+msgid "Start here"
+msgstr ""
+
+#: ../../../doc/en/contents.rst:23
+msgid "How-to guides"
+msgstr ""
+
+#: ../../../doc/en/contents.rst:55
+msgid "Reference guides"
+msgstr ""
+
+#: ../../../doc/en/contents.rst:67
+msgid "Explanation"
+msgstr ""
+
+#: ../../../doc/en/contents.rst:80
+msgid "Further topics"
+msgstr ""
