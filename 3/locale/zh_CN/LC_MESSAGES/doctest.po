@@ -1,0 +1,274 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015–2018 , holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/doctest.rst:3
+msgid "Doctest integration for modules and test files"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:5
+msgid ""
+"By default all files matching the ``test*.txt`` pattern will be run through "
+"the python standard ``doctest`` module.  You can change the pattern by "
+"issuing::"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:9
+msgid "pytest --doctest-glob='*.rst'"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:11
+msgid ""
+"on the command line. Since version ``2.9``, ``--doctest-glob`` can be given "
+"multiple times in the command-line."
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:16
+msgid ""
+"You can specify the encoding that will be used for those doctest files using "
+"the ``doctest_encoding`` ini option:"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:19
+msgid ""
+"# content of pytest.ini\n"
+"[pytest]\n"
+"doctest_encoding = latin1"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:25
+msgid "The default encoding is UTF-8."
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:27
+msgid ""
+"You can also trigger running of doctests from docstrings in all python "
+"modules (including regular python test modules)::"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:31
+msgid "pytest --doctest-modules"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:33
+msgid ""
+"You can make these changes permanent in your project by putting them into a "
+"pytest.ini file like this:"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:36
+msgid ""
+"# content of pytest.ini\n"
+"[pytest]\n"
+"addopts = --doctest-modules"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:42
+msgid "If you then have a text file like this::"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:44
+msgid ""
+"# content of example.rst\n"
+"\n"
+"hello this is a doctest\n"
+">>> x = 3\n"
+">>> x\n"
+"3"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:51
+msgid "and another like this::"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:53
+msgid ""
+"# content of mymodule.py\n"
+"def something():\n"
+"    \"\"\" a doctest in a docstring\n"
+"    >>> something()\n"
+"    42\n"
+"    \"\"\"\n"
+"    return 42"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:61
+msgid "then you can just invoke ``pytest`` without command line options::"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:63
+msgid ""
+"$ pytest\n"
+"=========================== test session starts "
+"============================\n"
+"platform linux -- Python 3.x.y, pytest-3.x.y, py-1.x.y, pluggy-0.x.y\n"
+"rootdir: $REGENDOC_TMPDIR, inifile: pytest.ini\n"
+"collected 1 item\n"
+"\n"
+"mymodule.py .                                                        [100%]\n"
+"\n"
+"========================= 1 passed in 0.12 seconds ========================="
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:73
+msgid "It is possible to use fixtures using the ``getfixture`` helper::"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:75
+msgid ""
+"# content of example.rst\n"
+">>> tmp = getfixture('tmpdir')\n"
+">>> ...\n"
+">>>"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:80
+msgid ""
+"Also, :ref:`usefixtures` and :ref:`autouse` fixtures are supported when "
+"executing text doctest files."
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:83
+msgid ""
+"The standard ``doctest`` module provides some setting flags to configure the "
+"strictness of doctest tests. In pytest, you can enable those flags using the "
+"configuration file. To make pytest ignore trailing whitespaces and ignore "
+"lengthy exception stack traces you can just write:"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:88
+msgid ""
+"[pytest]\n"
+"doctest_optionflags= NORMALIZE_WHITESPACE IGNORE_EXCEPTION_DETAIL"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:93
+msgid ""
+"pytest also introduces new options to allow doctests to run in Python 2 and "
+"Python 3 unchanged:"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:96
+msgid ""
+"``ALLOW_UNICODE``: when enabled, the ``u`` prefix is stripped from unicode "
+"strings in expected doctest output."
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:99
+msgid ""
+"``ALLOW_BYTES``: when enabled, the ``b`` prefix is stripped from byte "
+"strings in expected doctest output."
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:102
+msgid ""
+"As with any other option flag, these flags can be enabled in ``pytest.ini`` "
+"using the ``doctest_optionflags`` ini option:"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:105
+msgid ""
+"[pytest]\n"
+"doctest_optionflags = ALLOW_UNICODE ALLOW_BYTES"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:111
+msgid ""
+"Alternatively, it can be enabled by an inline comment in the doc test "
+"itself::"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:114
+msgid ""
+"# content of example.rst\n"
+">>> get_unicode_greeting()  # doctest: +ALLOW_UNICODE\n"
+"'Hello'"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:118
+msgid ""
+"By default, pytest would report only the first failure for a given doctest.  "
+"If you want to continue the test even when you have failures, do::"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:121
+msgid "pytest --doctest-modules --doctest-continue-on-failure"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:127
+msgid "The 'doctest_namespace' fixture"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:131
+msgid ""
+"The ``doctest_namespace`` fixture can be used to inject items into the "
+"namespace in which your doctests run. It is intended to be used within your "
+"own fixtures to provide the tests that use them with context."
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:135
+msgid ""
+"``doctest_namespace`` is a standard ``dict`` object into which you place the "
+"objects you want to appear in the doctest namespace::"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:138
+msgid ""
+"# content of conftest.py\n"
+"import numpy\n"
+"@pytest.fixture(autouse=True)\n"
+"def add_np(doctest_namespace):\n"
+"    doctest_namespace['np'] = numpy"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:144
+msgid "which can then be used in your doctests directly::"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:146
+msgid ""
+"# content of numpy.py\n"
+"def arange():\n"
+"    \"\"\"\n"
+"    >>> a = np.arange(10)\n"
+"    >>> len(a)\n"
+"    10\n"
+"    \"\"\"\n"
+"    pass"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:157
+msgid "Output format"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:161
+msgid ""
+"You can change the diff output format on failure for your doctests by using "
+"one of standard doctest modules format in options (see :data:`python:doctest."
+"REPORT_UDIFF`, :data:`python:doctest.REPORT_CDIFF`, :data:`python:doctest."
+"REPORT_NDIFF`, :data:`python:doctest.REPORT_ONLY_FIRST_FAILURE`)::"
+msgstr ""
+
+#: ../../../doc/en/doctest.rst:166
+msgid ""
+"pytest --doctest-modules --doctest-report none\n"
+"pytest --doctest-modules --doctest-report udiff\n"
+"pytest --doctest-modules --doctest-report cdiff\n"
+"pytest --doctest-modules --doctest-report ndiff\n"
+"pytest --doctest-modules --doctest-report only_first_failure"
+msgstr ""
