@@ -1,0 +1,568 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:29+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/explanation/goodpractices.rst:5
+msgid "Good Integration Practices"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:8
+msgid "Install package with pip"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:10
+msgid ""
+"For development, we recommend you use :mod:`venv` for virtual environments "
+"and :doc:`pip:index` for installing your application and any dependencies, "
+"as well as the ``pytest`` package itself. This ensures your code and "
+"dependencies are isolated from your system Python installation."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:15
+msgid ""
+"Create a ``pyproject.toml`` file in the root of your repository as described "
+"in :doc:`packaging:tutorials/packaging-projects`. The first few lines should "
+"look like this:"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:19
+msgid ""
+"[build-system]\n"
+"requires = [\"hatchling\"]\n"
+"build-backend = \"hatchling.build\"\n"
+"\n"
+"[project]\n"
+"name = \"PACKAGENAME\"\n"
+"version = \"PACKAGEVERSION\""
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:29
+msgid ""
+"where ``PACKAGENAME`` and ``PACKAGEVERSION`` are the name and version of "
+"your package respectively."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:31
+msgid ""
+"You can then install your package in \"editable\" mode by running from the "
+"same directory:"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:33
+msgid "pip install -e ."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:37
+msgid ""
+"which lets you change your source code (both tests and application) and "
+"rerun tests at will."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:43
+msgid "Conventions for Python test discovery"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:45
+msgid "``pytest`` implements the following standard test discovery:"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:47
+msgid ""
+"If no arguments are specified then collection starts from :confval:"
+"`testpaths` (if configured) or the current directory. Alternatively, command "
+"line arguments can be used in any combination of directories, file names or "
+"node ids."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:50
+msgid "Recurse into directories, unless they match :confval:`norecursedirs`."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:51
+msgid ""
+"In those directories, search for ``test_*.py`` or ``*_test.py`` files, "
+"imported by their `test package name`_."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:52
+msgid "From those files, collect test items:"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:54
+msgid "``test`` prefixed test functions or methods outside of class."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:55
+msgid ""
+"``test`` prefixed test functions or methods inside ``Test`` prefixed test "
+"classes (without an ``__init__`` method). Methods decorated with "
+"``@staticmethod`` and ``@classmethods`` are also considered."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:57
+msgid ""
+"For examples of how to customize your test discovery :doc:`/example/"
+"pythoncollection`."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:59
+msgid ""
+"Within Python modules, ``pytest`` also discovers tests using the standard :"
+"ref:`unittest.TestCase <unittest.TestCase>` subclassing technique."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:66
+msgid "Choosing a test layout"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:68
+msgid "``pytest`` supports two common test layouts:"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:71
+msgid "Tests outside application code"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:73
+msgid ""
+"Putting tests into an extra directory outside your actual application code "
+"might be useful if you have many functional tests or for other reasons want "
+"to keep tests separate from actual application code (often a good idea):"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:77
+msgid ""
+"pyproject.toml\n"
+"src/\n"
+"    mypkg/\n"
+"        __init__.py\n"
+"        app.py\n"
+"        view.py\n"
+"tests/\n"
+"    test_app.py\n"
+"    test_view.py\n"
+"    ..."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:90
+msgid "This has the following benefits:"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:92
+msgid ""
+"Your tests can run against an installed version after executing ``pip "
+"install .``."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:93
+msgid ""
+"Your tests can run against the local copy with an editable install after "
+"executing ``pip install --editable .``."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:95
+msgid ""
+"For new projects, we recommend to use ``importlib`` :ref:`import mode "
+"<import-modes>` (see which-import-mode_ for a detailed explanation). To this "
+"end, add the following to your configuration file:"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:99
+msgid ""
+"# content of pytest.toml\n"
+"[pytest]\n"
+"addopts = [\"--import-mode=importlib\"]"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:107
+msgid ""
+"Generally, but especially if you use the default import mode ``prepend``, it "
+"is **strongly** suggested to use a ``src`` layout. Here, your application "
+"root package resides in a sub-directory of your root, i.e. ``src/mypkg/`` "
+"instead of ``mypkg``."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:112
+msgid ""
+"This layout prevents a lot of common pitfalls and has many benefits, which "
+"are better explained in this excellent `blog post`_ by Ionel Cristian Mărieș."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:119
+msgid ""
+"If you do not use an editable install and use the ``src`` layout as above "
+"you need to extend the Python's search path for module files to execute the "
+"tests against the local copy directly. You can do it in an ad-hoc manner by "
+"setting the ``PYTHONPATH`` environment variable:"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:123
+msgid "PYTHONPATH=src pytest"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:127
+msgid ""
+"or in a permanent manner by using the :confval:`pythonpath` configuration "
+"variable and adding the following to your configuration file:"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:132
+msgid ""
+"[pytest]\n"
+"pythonpath = [\"src\"]"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:139
+msgid ""
+"[pytest]\n"
+"pythonpath = src"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:146
+msgid ""
+"If you do not use an editable install and do not use the ``src`` layout "
+"(``mypkg`` directly in the root directory) you can rely on the fact that "
+"Python by default puts the current directory in ``sys.path`` to import your "
+"package and run ``python -m pytest`` to execute the tests against the local "
+"copy directly."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:150
+msgid ""
+"See :ref:`pytest vs python -m pytest` for more information about the "
+"difference between calling ``pytest`` and ``python -m pytest``."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:155
+msgid ":doc:`packaging:discussions/src-layout-vs-flat-layout`"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:156
+msgid ""
+"The Python Packaging User Guide discusses the trade-offs between the ``src`` "
+"layout and ``flat`` layout."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:159
+msgid "Tests as part of application code"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:161
+msgid ""
+"Inlining test directories into your application package is useful if you "
+"have direct relation between tests and application modules and want to "
+"distribute them along with your application:"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:165
+msgid ""
+"pyproject.toml\n"
+"[src/]mypkg/\n"
+"    __init__.py\n"
+"    app.py\n"
+"    view.py\n"
+"    tests/\n"
+"        __init__.py\n"
+"        test_app.py\n"
+"        test_view.py\n"
+"        ..."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:178
+msgid ""
+"In this scheme, it is easy to run your tests using the :option:`--pyargs` "
+"option:"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:180
+msgid "pytest --pyargs mypkg"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:184
+msgid ""
+"``pytest`` will discover where ``mypkg`` is installed and collect tests from "
+"there."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:186
+msgid ""
+"Note that this layout also works in conjunction with the ``src`` layout "
+"mentioned in the previous section."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:191
+msgid ""
+"You can use namespace packages (PEP420) for your application but pytest will "
+"still perform `test package name`_ discovery based on the presence of "
+"``__init__.py`` files.  If you use one of the two recommended file system "
+"layouts above but leave away the ``__init__.py`` files from your "
+"directories, it should just work.  From \"inlined tests\", however, you will "
+"need to use absolute imports for getting at your application code."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:203
+msgid ""
+"In ``prepend`` and ``append`` import-modes, if pytest finds a ``\"a/b/"
+"test_module.py\"`` test file while recursing into the filesystem it "
+"determines the import name as follows:"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:207
+msgid ""
+"determine ``basedir``: this is the first \"upward\" (towards the root) "
+"directory not containing an ``__init__.py``.  If e.g. both ``a`` and ``b`` "
+"contain an ``__init__.py`` file then the parent directory of ``a`` will "
+"become the ``basedir``."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:212
+msgid ""
+"perform ``sys.path.insert(0, basedir)`` to make the test module importable "
+"under the fully qualified import name."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:215
+msgid ""
+"``import a.b.test_module`` where the path is determined by converting path "
+"separators ``/`` into \".\" characters.  This means you must follow the "
+"convention of having directory and file names map directly to the import "
+"names."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:220
+msgid ""
+"The reason for this somewhat evolved importing technique is that in larger "
+"projects multiple test modules might import from each other and thus "
+"deriving a canonical import name helps to avoid surprises such as a test "
+"module getting imported twice."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:225
+msgid ""
+"With :option:`--import-mode=importlib` things are less convoluted because "
+"pytest doesn't need to change ``sys.path``, making things much less "
+"surprising."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:233
+msgid "Choosing an import mode"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:235
+msgid ""
+"For historical reasons, pytest defaults to the ``prepend`` :ref:`import mode "
+"<import-modes>` instead of the ``importlib`` import mode we recommend for "
+"new projects. The reason lies in the way the ``prepend`` mode works:"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:239
+msgid ""
+"Since there are no packages to derive a full package name from, ``pytest`` "
+"will import your test files as *top-level* modules. The test files in the "
+"first example (:ref:`src layout <src-layout>`) would be imported as "
+"``test_app`` and ``test_view`` top-level modules by adding ``tests/`` to "
+"``sys.path``."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:244
+msgid ""
+"This results in a drawback compared to the import mode ``importlib``: your "
+"test files must have **unique names**."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:247
+msgid ""
+"If you need to have test modules with the same name, as a workaround you "
+"might add ``__init__.py`` files to your ``tests`` directory and "
+"subdirectories, changing them to packages:"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:251
+msgid ""
+"pyproject.toml\n"
+"mypkg/\n"
+"    ...\n"
+"tests/\n"
+"    __init__.py\n"
+"    foo/\n"
+"        __init__.py\n"
+"        test_view.py\n"
+"    bar/\n"
+"        __init__.py\n"
+"        test_view.py"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:265
+msgid ""
+"Now pytest will load the modules as ``tests.foo.test_view`` and ``tests.bar."
+"test_view``, allowing you to have modules with the same name. But now this "
+"introduces a subtle problem: in order to load the test modules from the "
+"``tests`` directory, pytest prepends the root of the repository to ``sys."
+"path``, which adds the side-effect that now ``mypkg`` is also importable."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:272
+msgid ""
+"This is problematic if you are using a tool like tox_ to test your package "
+"in a virtual environment, because you want to test the *installed* version "
+"of your package, not the local code from the repository."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:276
+msgid ""
+"The ``importlib`` import mode does not have any of the drawbacks above, "
+"because ``sys.path`` is not changed when importing test modules."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:285
+msgid "tox"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:287
+msgid ""
+"Once you are done with your work and want to make sure that your actual "
+"package passes all tests you may want to look into :doc:`tox <tox:index>`, "
+"the virtualenv test automation tool. ``tox`` helps you to setup virtualenv "
+"environments with pre-defined dependencies and then executing a pre-"
+"configured test command with options.  It will run tests against the "
+"installed package and not against your source code checkout, helping to "
+"detect packaging glitches."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:297
+msgid "Do not run via setuptools"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:299
+msgid ""
+"Integration with setuptools is **not recommended**, i.e. you should not be "
+"using ``python setup.py test`` or ``pytest-runner``, and may stop working in "
+"the future."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:303
+msgid ""
+"This is deprecated since it depends on deprecated features of setuptools and "
+"relies on features that break security mechanisms in pip. For example "
+"'setup_requires' and 'tests_require' bypass ``pip --require-hashes``. For "
+"more information and migration instructions, see the `pytest-runner notice "
+"<https://github.com/pytest-dev/pytest-runner#deprecation-notice>`_. See also "
+"`pypa/setuptools#1684 <https://github.com/pypa/setuptools/issues/1684>`_."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:310
+msgid ""
+"setuptools intends to `remove the test command <https://github.com/pypa/"
+"setuptools/issues/931>`_."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:314
+msgid "Checking with flake8-pytest-style"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:316
+msgid ""
+"In order to ensure that pytest is being used correctly in your project, it "
+"can be helpful to use the `flake8-pytest-style <https://github.com/m-burst/"
+"flake8-pytest-style>`_ flake8 plugin."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:319
+msgid ""
+"flake8-pytest-style checks for common mistakes and coding style violations "
+"in pytest code, such as incorrect use of fixtures, test function names, and "
+"markers. By using this plugin, you can catch these errors early in the "
+"development process and ensure that your pytest code is consistent and easy "
+"to maintain."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:324
+msgid ""
+"A list of the lints detected by flake8-pytest-style can be found on its "
+"`PyPI page <https://pypi.org/project/flake8-pytest-style/>`_."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:328
+msgid ""
+"flake8-pytest-style is not an official pytest project. Some of the rules "
+"enforce certain style choices, such as using `@pytest.fixture()` over "
+"`@pytest.fixture`, but you can configure the plugin to fit your preferred "
+"style."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:333
+msgid "Using pytest's strict mode"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:337
+msgid ""
+"Pytest contains a set of configuration options that make it more strict. The "
+"options are off by default for compatibility or other reasons, but you "
+"should enable them if you can."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:341
+msgid ""
+"You can enable all of the strictness options at once by setting the :confval:"
+"`strict` configuration option:"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:345
+#: ../../../doc/en/explanation/goodpractices.rst:352
+msgid ""
+"[pytest]\n"
+"strict = true"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:357
+msgid ""
+"See the :confval:`strict` documentation for the options it enables and their "
+"effect."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:359
+msgid ""
+"If pytest adds new strictness options in the future, they will also be "
+"enabled in strict mode. Therefore, you should only enable strict mode if you "
+"use a pinned/locked version of pytest, or if you want to proactively adopt "
+"new strictness options as they are added. If you don't want to automatically "
+"pick up new options, you can enable options individually:"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:366
+#: ../../../doc/en/explanation/goodpractices.rst:376
+msgid ""
+"[pytest]\n"
+"strict_config = true\n"
+"strict_markers = true\n"
+"strict_parametrization_ids = true\n"
+"strict_xfail = true"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:384
+msgid ""
+"If you want to use strict mode but are having trouble with a specific "
+"option, you can turn it off individually:"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:388
+#: ../../../doc/en/explanation/goodpractices.rst:396
+msgid ""
+"[pytest]\n"
+"strict = true\n"
+"strict_parametrization_ids = false"
+msgstr ""
