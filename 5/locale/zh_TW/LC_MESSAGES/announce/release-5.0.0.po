@@ -55,7 +55,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-5.0.0.rst:20
 msgid "pip install -U pytest"
-msgstr ""
+msgstr "pip install -U pytest"
 
 #: ../../../doc/en/announce/release-5.0.0.rst:22
 msgid "Thanks to all who contributed to this release, among them:"
@@ -79,7 +79,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-5.0.0.rst:28
 msgid "Evan Kepner"
-msgstr ""
+msgstr "Evan Kepner"
 
 #: ../../../doc/en/announce/release-5.0.0.rst:29
 msgid "Florian Bruhin"
@@ -103,15 +103,15 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-5.0.0.rst:34
 msgid "Ronny Pfannschmidt"
-msgstr ""
+msgstr "Ronny Pfannschmidt"
 
 #: ../../../doc/en/announce/release-5.0.0.rst:35
 msgid "Thomas Grainger"
-msgstr ""
+msgstr "Thomas Grainger"
 
 #: ../../../doc/en/announce/release-5.0.0.rst:36
 msgid "Thomas Hisch"
-msgstr ""
+msgstr "Thomas Hisch"
 
 #: ../../../doc/en/announce/release-5.0.0.rst:37
 msgid "Tim Gates"
@@ -119,7 +119,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-5.0.0.rst:38
 msgid "Victor Maryama"
-msgstr ""
+msgstr "Victor Maryama"
 
 #: ../../../doc/en/announce/release-5.0.0.rst:39
 msgid "Yuri Apollov"

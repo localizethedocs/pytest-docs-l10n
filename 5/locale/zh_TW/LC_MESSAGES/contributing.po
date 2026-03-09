@@ -57,7 +57,7 @@ msgstr ""
 
 #: ../../../CONTRIBUTING.rst:30
 msgid "Report bugs"
-msgstr ""
+msgstr "回報臭蟲"
 
 #: ../../../CONTRIBUTING.rst:32
 msgid ""
@@ -93,7 +93,7 @@ msgstr ""
 
 #: ../../../CONTRIBUTING.rst:50
 msgid "Fix bugs"
-msgstr ""
+msgstr "修復臭蟲"
 
 #: ../../../CONTRIBUTING.rst:52
 msgid ""
@@ -131,7 +131,7 @@ msgstr ""
 
 #: ../../../CONTRIBUTING.rst:70
 msgid "Write documentation"
-msgstr ""
+msgstr "撰寫文件"
 
 #: ../../../CONTRIBUTING.rst:72
 msgid "Pytest could always use more documentation.  What exactly is needed?"
@@ -166,7 +166,7 @@ msgstr ""
 
 #: ../../../CONTRIBUTING.rst:85
 msgid "$ tox -e docs"
-msgstr ""
+msgstr "$ tox -e docs"
 
 #: ../../../CONTRIBUTING.rst:89
 msgid "The built documentation should be available in ``doc/en/_build/html``."
@@ -309,7 +309,7 @@ msgstr ""
 
 #: ../../../CONTRIBUTING.rst:162
 msgid "Preparing Pull Requests"
-msgstr ""
+msgstr "準備拉取請求"
 
 #: ../../../CONTRIBUTING.rst:165
 msgid "Short version"
@@ -317,7 +317,7 @@ msgstr ""
 
 #: ../../../CONTRIBUTING.rst:167
 msgid "Fork the repository."
-msgstr ""
+msgstr "分叉儲存庫。"
 
 #: ../../../CONTRIBUTING.rst:168
 msgid ""

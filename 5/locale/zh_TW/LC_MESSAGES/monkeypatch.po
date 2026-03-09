@@ -345,7 +345,7 @@ msgstr ""
 
 #: ../../../doc/en/monkeypatch.rst:257
 msgid "Monkeypatching environment variables"
-msgstr ""
+msgstr "猴子修補環境變數"
 
 #: ../../../doc/en/monkeypatch.rst:259
 msgid ""
@@ -435,7 +435,7 @@ msgstr ""
 
 #: ../../../doc/en/monkeypatch.rst:331
 msgid "Monkeypatching dictionaries"
-msgstr ""
+msgstr "猴子修補字典"
 
 #: ../../../doc/en/monkeypatch.rst:333
 msgid ""
@@ -558,7 +558,7 @@ msgstr ""
 
 #: ../../../doc/en/monkeypatch.rst:440
 msgid "API Reference"
-msgstr ""
+msgstr "API 參考"
 
 #: ../../../doc/en/monkeypatch.rst:442
 msgid "Consult the docs for the :class:`MonkeyPatch` class."

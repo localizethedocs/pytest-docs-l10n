@@ -31,7 +31,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-3.6.3.rst:8
 msgid "pip install --upgrade pytest"
-msgstr ""
+msgstr "pip install --upgrade pytest"
 
 #: ../../../doc/en/announce/release-3.6.3.rst:10
 msgid ""
@@ -73,7 +73,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-3.6.3.rst:21
 msgid "Ronny Pfannschmidt"
-msgstr ""
+msgstr "Ronny Pfannschmidt"
 
 #: ../../../doc/en/announce/release-3.6.3.rst:22
 msgid "T.E.A de Souza"
@@ -81,7 +81,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-3.6.3.rst:23
 msgid "Victor Maryama"
-msgstr ""
+msgstr "Victor Maryama"
 
 #: ../../../doc/en/announce/release-3.6.3.rst:26
 msgid "Happy testing, The pytest Development Team"

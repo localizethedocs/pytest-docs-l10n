@@ -68,7 +68,7 @@ msgstr ""
 
 #: ../../../doc/en/skipping.rst:40
 msgid "Skipping test functions"
-msgstr ""
+msgstr "略過測試函式"
 
 #: ../../../doc/en/skipping.rst:44
 msgid ""
@@ -220,6 +220,11 @@ msgid ""
 "    def test_function(self):\n"
 "        \"will not be setup or run under 'win32' platform\""
 msgstr ""
+"@pytest.mark.skipif(sys.platform == \"win32\", reason=\"does not run on "
+"windows\")\n"
+"class TestPosixCalls:\n"
+"    def test_function(self):\n"
+"        \"will not be setup or run under 'win32' platform\""
 
 #: ../../../doc/en/skipping.rst:152
 msgid ""
@@ -247,7 +252,7 @@ msgstr ""
 
 #: ../../../doc/en/skipping.rst:170
 msgid "Skipping files or directories"
-msgstr ""
+msgstr "略過檔案或目錄"
 
 #: ../../../doc/en/skipping.rst:172
 msgid ""
@@ -270,7 +275,7 @@ msgstr ""
 
 #: ../../../doc/en/skipping.rst:185
 msgid "docutils = pytest.importorskip(\"docutils\")"
-msgstr ""
+msgstr "docutils = pytest.importorskip(\"docutils\")"
 
 #: ../../../doc/en/skipping.rst:189
 msgid ""
@@ -280,7 +285,7 @@ msgstr ""
 
 #: ../../../doc/en/skipping.rst:192
 msgid "docutils = pytest.importorskip(\"docutils\", minversion=\"0.3\")"
-msgstr ""
+msgstr "docutils = pytest.importorskip(\"docutils\", minversion=\"0.3\")"
 
 #: ../../../doc/en/skipping.rst:196
 msgid ""
@@ -304,7 +309,7 @@ msgstr ""
 
 #: ../../../doc/en/skipping.rst:206
 msgid "pytestmark = pytest.mark.skip(\"all tests still WIP\")"
-msgstr ""
+msgstr "pytestmark = pytest.mark.skip(\"all tests still WIP\")"
 
 #: ../../../doc/en/skipping.rst:210
 msgid "Skip all tests in a module based on some condition:"
@@ -315,6 +320,8 @@ msgid ""
 "pytestmark = pytest.mark.skipif(sys.platform == \"win32\", reason=\"tests "
 "for linux only\")"
 msgstr ""
+"pytestmark = pytest.mark.skipif(sys.platform == \"win32\", reason=\"tests "
+"for linux only\")"
 
 #: ../../../doc/en/skipping.rst:216
 msgid "Skip all tests in a module if some import is missing:"
@@ -368,6 +375,11 @@ msgid ""
 "    if slow_module.slow_function():\n"
 "        pytest.xfail(\"slow_module taking too long\")"
 msgstr ""
+"def test_function2():\n"
+"    import slow_module\n"
+"\n"
+"    if slow_module.slow_function():\n"
+"        pytest.xfail(\"slow_module taking too long\")"
 
 #: ../../../doc/en/skipping.rst:258
 msgid ""
@@ -389,7 +401,7 @@ msgstr ""
 
 #: ../../../doc/en/skipping.rst:271
 msgid "``strict`` parameter"
-msgstr ""
+msgstr "``strict`` 參數"
 
 #: ../../../doc/en/skipping.rst:275
 msgid ""
@@ -424,7 +436,7 @@ msgstr ""
 
 #: ../../../doc/en/skipping.rst:297
 msgid "``reason`` parameter"
-msgstr ""
+msgstr "``reason`` 參數"
 
 #: ../../../doc/en/skipping.rst:299
 msgid ""
@@ -442,7 +454,7 @@ msgstr ""
 
 #: ../../../doc/en/skipping.rst:310
 msgid "``raises`` parameter"
-msgstr ""
+msgstr "``raises`` 參數"
 
 #: ../../../doc/en/skipping.rst:312
 msgid ""
@@ -466,7 +478,7 @@ msgstr ""
 
 #: ../../../doc/en/skipping.rst:325
 msgid "``run`` parameter"
-msgstr ""
+msgstr "``run`` 參數"
 
 #: ../../../doc/en/skipping.rst:327
 msgid ""
@@ -489,7 +501,7 @@ msgstr ""
 
 #: ../../../doc/en/skipping.rst:341
 msgid "Ignoring xfail"
-msgstr ""
+msgstr "忽略 xfail"
 
 #: ../../../doc/en/skipping.rst:343
 msgid "By specifying on the commandline:"
@@ -497,7 +509,7 @@ msgstr ""
 
 #: ../../../doc/en/skipping.rst:345
 msgid "pytest --runxfail"
-msgstr ""
+msgstr "pytest --runxfail"
 
 #: ../../../doc/en/skipping.rst:349
 msgid ""

@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../doc/en/reference.rst:4
 msgid "API Reference"
-msgstr ""
+msgstr "API 參考"
 
 #: ../../../doc/en/reference.rst:6
 msgid "This page contains the full reference to pytest's API."
@@ -31,7 +31,7 @@ msgstr ""
 
 #: ../../../doc/en/reference.rst:16
 msgid "pytest.approx"
-msgstr ""
+msgstr "pytest.approx"
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python_api.py:docstring
 #: of _pytest.python_api.approx:1
@@ -53,6 +53,8 @@ msgid ""
 ">>> 0.1 + 0.2 == 0.3\n"
 "False"
 msgstr ""
+">>> 0.1 + 0.2 == 0.3\n"
+"False"
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python_api.py:docstring
 #: of _pytest.python_api.approx:12
@@ -69,6 +71,8 @@ msgid ""
 ">>> abs((0.1 + 0.2) - 0.3) < 1e-6\n"
 "True"
 msgstr ""
+">>> abs((0.1 + 0.2) - 0.3) < 1e-6\n"
+"True"
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python_api.py:docstring
 #: of _pytest.python_api.approx:20
@@ -96,6 +100,9 @@ msgid ""
 ">>> 0.1 + 0.2 == approx(0.3)\n"
 "True"
 msgstr ""
+">>> from pytest import approx\n"
+">>> 0.1 + 0.2 == approx(0.3)\n"
+"True"
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python_api.py:docstring
 #: of _pytest.python_api.approx:35
@@ -120,6 +127,8 @@ msgid ""
 ">>> {'a': 0.1 + 0.2, 'b': 0.2 + 0.4} == approx({'a': 0.3, 'b': 0.6})\n"
 "True"
 msgstr ""
+">>> {'a': 0.1 + 0.2, 'b': 0.2 + 0.4} == approx({'a': 0.3, 'b': 0.6})\n"
+"True"
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python_api.py:docstring
 #: of _pytest.python_api.approx:45
@@ -182,6 +191,12 @@ msgid ""
 ">>> 1.0001 == approx(1, abs=1e-3)\n"
 "True"
 msgstr ""
+">>> 1.0001 == approx(1)\n"
+"False\n"
+">>> 1.0001 == approx(1, rel=1e-3)\n"
+"True\n"
+">>> 1.0001 == approx(1, abs=1e-3)\n"
+"True"
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python_api.py:docstring
 #: of _pytest.python_api.approx:79
@@ -204,6 +219,12 @@ msgid ""
 ">>> 1 + 1e-8 == approx(1, rel=1e-6, abs=1e-12)\n"
 "True"
 msgstr ""
+">>> 1 + 1e-8 == approx(1)\n"
+"True\n"
+">>> 1 + 1e-8 == approx(1, abs=1e-12)\n"
+"False\n"
+">>> 1 + 1e-8 == approx(1, rel=1e-6, abs=1e-12)\n"
+"True"
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python_api.py:docstring
 #: of _pytest.python_api.approx:93
@@ -285,7 +306,7 @@ msgstr ""
 
 #: ../../../doc/en/reference.rst:21
 msgid "pytest.fail"
-msgstr ""
+msgstr "pytest.fail"
 
 #: ../../../doc/en/reference.rst:23
 msgid "**Tutorial**: :ref:`skipping`"
@@ -376,7 +397,7 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.8/site-packages/pluggy/manager.py:docstring
 #: pluggy.manager.PluginManager.load_setuptools_entrypoints:0
 msgid "Parameters"
-msgstr ""
+msgstr "參數"
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/outcomes.py:docstring
 #: of _pytest.outcomes.fail:3
@@ -492,7 +513,7 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/outcomes.py:docstring
 #: of _pytest.outcomes.importorskip:15
 msgid "docutils = pytest.importorskip(\"docutils\")"
-msgstr ""
+msgstr "docutils = pytest.importorskip(\"docutils\")"
 
 #: ../../../doc/en/reference.rst:40
 msgid "pytest.xfail"
@@ -1519,7 +1540,7 @@ msgstr ""
 #: ../../../doc/en/reference.rst:322 ../../../doc/en/reference.rst:347
 #: ../../../doc/en/reference.rst:369 ../../../doc/en/reference.rst:391
 msgid "Example:"
-msgstr ""
+msgstr "範例："
 
 #: ../../../doc/en/reference.rst:324
 msgid ""
@@ -3996,7 +4017,7 @@ msgstr ""
 
 #: ../../../doc/en/reference.rst:750
 msgid "Class"
-msgstr ""
+msgstr "類別"
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
 #: of _pytest.python.Class:1
@@ -4667,7 +4688,7 @@ msgstr ""
 
 #: ../../../doc/en/reference.rst:839
 msgid "Module"
-msgstr ""
+msgstr "模組"
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
 #: of _pytest.python.Module:1
@@ -5558,7 +5579,7 @@ msgstr ""
 
 #: ../../../doc/en/reference.rst:1002
 msgid "PYTEST_CURRENT_TEST"
-msgstr ""
+msgstr "PYTEST_CURRENT_TEST"
 
 #: ../../../doc/en/reference.rst:1004
 msgid ""
@@ -6282,6 +6303,9 @@ msgid ""
 "usefixtures =\n"
 "    clean_db"
 msgstr ""
+"[pytest]\n"
+"usefixtures =\n"
+"    clean_db"
 
 #: ../../../doc/en/reference.rst:1592
 msgid ""

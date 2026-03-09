@@ -1295,7 +1295,7 @@ msgstr ""
 
 #: ../../../doc/en/fixture.rst:906
 msgid "Example:"
-msgstr ""
+msgstr "範例："
 
 #: ../../../doc/en/fixture.rst:908
 msgid ""
