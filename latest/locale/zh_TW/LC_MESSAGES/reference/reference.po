@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:6
 msgid "API Reference"
-msgstr ""
+msgstr "API 參考"
 
 #: ../../../doc/en/reference/reference.rst:8
 msgid "This page contains the full reference to pytest's API."
@@ -485,7 +485,7 @@ msgstr ""
 #: _pytest.terminal.TerminalReporter.rewrite:0
 #: ../../../doc/en/reference/reference.rst:0
 msgid "Parameters"
-msgstr ""
+msgstr "參數"
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/outcomes.py:docstring
 #: of pytest.fail:3
@@ -2292,6 +2292,8 @@ msgid ""
 ":meth:`monkeypatch.setattr(obj, name, value, raising=True) <pytest."
 "MonkeyPatch.setattr>`"
 msgstr ""
+":meth:`monkeypatch.setattr(obj, name, value, raising=True) <pytest."
+"MonkeyPatch.setattr>`"
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/monkeypatch.py:docstring
 #: of _pytest.monkeypatch.monkeypatch:7
@@ -2299,6 +2301,8 @@ msgid ""
 ":meth:`monkeypatch.delattr(obj, name, raising=True) <pytest.MonkeyPatch."
 "delattr>`"
 msgstr ""
+":meth:`monkeypatch.delattr(obj, name, raising=True) <pytest.MonkeyPatch."
+"delattr>`"
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/monkeypatch.py:docstring
 #: of _pytest.monkeypatch.monkeypatch:8
@@ -2306,6 +2310,8 @@ msgid ""
 ":meth:`monkeypatch.setitem(mapping, name, value) <pytest.MonkeyPatch."
 "setitem>`"
 msgstr ""
+":meth:`monkeypatch.setitem(mapping, name, value) <pytest.MonkeyPatch."
+"setitem>`"
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/monkeypatch.py:docstring
 #: of _pytest.monkeypatch.monkeypatch:9
@@ -2313,6 +2319,8 @@ msgid ""
 ":meth:`monkeypatch.delitem(obj, name, raising=True) <pytest.MonkeyPatch."
 "delitem>`"
 msgstr ""
+":meth:`monkeypatch.delitem(obj, name, raising=True) <pytest.MonkeyPatch."
+"delitem>`"
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/monkeypatch.py:docstring
 #: of _pytest.monkeypatch.monkeypatch:10
@@ -2320,12 +2328,15 @@ msgid ""
 ":meth:`monkeypatch.setenv(name, value, prepend=None) <pytest.MonkeyPatch."
 "setenv>`"
 msgstr ""
+":meth:`monkeypatch.setenv(name, value, prepend=None) <pytest.MonkeyPatch."
+"setenv>`"
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/monkeypatch.py:docstring
 #: of _pytest.monkeypatch.monkeypatch:11
 msgid ""
 ":meth:`monkeypatch.delenv(name, raising=True) <pytest.MonkeyPatch.delenv>`"
 msgstr ""
+":meth:`monkeypatch.delenv(name, raising=True) <pytest.MonkeyPatch.delenv>`"
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/monkeypatch.py:docstring
 #: of _pytest.monkeypatch.monkeypatch:12
@@ -2333,16 +2344,18 @@ msgid ""
 ":meth:`monkeypatch.syspath_prepend(path) <pytest.MonkeyPatch."
 "syspath_prepend>`"
 msgstr ""
+":meth:`monkeypatch.syspath_prepend(path) <pytest.MonkeyPatch."
+"syspath_prepend>`"
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/monkeypatch.py:docstring
 #: of _pytest.monkeypatch.monkeypatch:13
 msgid ":meth:`monkeypatch.chdir(path) <pytest.MonkeyPatch.chdir>`"
-msgstr ""
+msgstr ":meth:`monkeypatch.chdir(path) <pytest.MonkeyPatch.chdir>`"
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/monkeypatch.py:docstring
 #: of _pytest.monkeypatch.monkeypatch:14
 msgid ":meth:`monkeypatch.context() <pytest.MonkeyPatch.context>`"
-msgstr ""
+msgstr ":meth:`monkeypatch.context() <pytest.MonkeyPatch.context>`"
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/monkeypatch.py:docstring
 #: of _pytest.monkeypatch.monkeypatch:16
@@ -6494,7 +6507,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:908
 msgid "Package"
-msgstr ""
+msgstr "軟體包"
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
 #: of _pytest.python.Package:1
@@ -6522,7 +6535,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:915
 msgid "Module"
-msgstr ""
+msgstr "模組"
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
 #: of _pytest.python.Module:1
@@ -6538,7 +6551,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:922
 msgid "Class"
-msgstr ""
+msgstr "類別"
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
 #: of _pytest.python.Class:1

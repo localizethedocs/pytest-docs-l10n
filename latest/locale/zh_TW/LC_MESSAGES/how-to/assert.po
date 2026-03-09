@@ -659,7 +659,7 @@ msgstr ""
 
 #: ../../../doc/en/how-to/assert.rst:0
 msgid "Parameters"
-msgstr ""
+msgstr "參數"
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
 #: of _pytest.hookspec.pytest_assertrepr_compare:8

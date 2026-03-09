@@ -41,49 +41,62 @@ msgid ""
 ":meth:`monkeypatch.setattr(obj, name, value, raising=True) <pytest."
 "MonkeyPatch.setattr>`"
 msgstr ""
+":meth:`monkeypatch.setattr(obj, name, value, raising=True) <pytest."
+"MonkeyPatch.setattr>`"
 
 #: ../../../doc/en/how-to/monkeypatch.rst:18
 msgid ""
 ":meth:`monkeypatch.delattr(obj, name, raising=True) <pytest.MonkeyPatch."
 "delattr>`"
 msgstr ""
+":meth:`monkeypatch.delattr(obj, name, raising=True) <pytest.MonkeyPatch."
+"delattr>`"
 
 #: ../../../doc/en/how-to/monkeypatch.rst:19
 msgid ""
 ":meth:`monkeypatch.setitem(mapping, name, value) <pytest.MonkeyPatch."
 "setitem>`"
 msgstr ""
+":meth:`monkeypatch.setitem(mapping, name, value) <pytest.MonkeyPatch."
+"setitem>`"
 
 #: ../../../doc/en/how-to/monkeypatch.rst:20
 msgid ""
 ":meth:`monkeypatch.delitem(obj, name, raising=True) <pytest.MonkeyPatch."
 "delitem>`"
 msgstr ""
+":meth:`monkeypatch.delitem(obj, name, raising=True) <pytest.MonkeyPatch."
+"delitem>`"
 
 #: ../../../doc/en/how-to/monkeypatch.rst:21
 msgid ""
 ":meth:`monkeypatch.setenv(name, value, prepend=None) <pytest.MonkeyPatch."
 "setenv>`"
 msgstr ""
+":meth:`monkeypatch.setenv(name, value, prepend=None) <pytest.MonkeyPatch."
+"setenv>`"
 
 #: ../../../doc/en/how-to/monkeypatch.rst:22
 msgid ""
 ":meth:`monkeypatch.delenv(name, raising=True) <pytest.MonkeyPatch.delenv>`"
 msgstr ""
+":meth:`monkeypatch.delenv(name, raising=True) <pytest.MonkeyPatch.delenv>`"
 
 #: ../../../doc/en/how-to/monkeypatch.rst:23
 msgid ""
 ":meth:`monkeypatch.syspath_prepend(path) <pytest.MonkeyPatch."
 "syspath_prepend>`"
 msgstr ""
+":meth:`monkeypatch.syspath_prepend(path) <pytest.MonkeyPatch."
+"syspath_prepend>`"
 
 #: ../../../doc/en/how-to/monkeypatch.rst:24
 msgid ":meth:`monkeypatch.chdir(path) <pytest.MonkeyPatch.chdir>`"
-msgstr ""
+msgstr ":meth:`monkeypatch.chdir(path) <pytest.MonkeyPatch.chdir>`"
 
 #: ../../../doc/en/how-to/monkeypatch.rst:25
 msgid ":meth:`monkeypatch.context() <pytest.MonkeyPatch.context>`"
-msgstr ""
+msgstr ":meth:`monkeypatch.context() <pytest.MonkeyPatch.context>`"
 
 #: ../../../doc/en/how-to/monkeypatch.rst:28
 msgid ""
@@ -390,7 +403,7 @@ msgstr ""
 
 #: ../../../doc/en/how-to/monkeypatch.rst:261
 msgid "Monkeypatching environment variables"
-msgstr ""
+msgstr "猴子修補環境變數"
 
 #: ../../../doc/en/how-to/monkeypatch.rst:263
 msgid ""
@@ -479,7 +492,7 @@ msgstr ""
 
 #: ../../../doc/en/how-to/monkeypatch.rst:335
 msgid "Monkeypatching dictionaries"
-msgstr ""
+msgstr "猴子修補字典"
 
 #: ../../../doc/en/how-to/monkeypatch.rst:337
 msgid ""
@@ -601,7 +614,7 @@ msgstr ""
 
 #: ../../../doc/en/how-to/monkeypatch.rst:441
 msgid "API Reference"
-msgstr ""
+msgstr "API 參考"
 
 #: ../../../doc/en/how-to/monkeypatch.rst:443
 msgid "Consult the docs for the :class:`MonkeyPatch` class."

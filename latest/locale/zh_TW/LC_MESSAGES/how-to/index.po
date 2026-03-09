@@ -39,4 +39,4 @@ msgstr ""
 
 #: ../../../doc/en/how-to/index.rst:59
 msgid "pytest development environment"
-msgstr ""
+msgstr "pytest 開發環境"

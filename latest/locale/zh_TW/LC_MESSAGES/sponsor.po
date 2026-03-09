@@ -51,6 +51,8 @@ msgid ""
 "communities. It provides tools to raise money and share your finances in "
 "full transparency."
 msgstr ""
+"`Open Collective`_ 是一個專為開放透明社群設計的線上募資平臺。它提供工具來籌集"
+"資金，並以完全透明的方式共享財務資訊。"
 
 #: ../../../doc/en/sponsor.rst:17
 msgid ""

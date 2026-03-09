@@ -77,7 +77,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:37
 #: ../../../doc/en/reference/plugin_list.rst:1914
 msgid ":pypi:`databricks-labs-pytester`"
-msgstr ""
+msgstr ":pypi:`databricks-labs-pytester`"
 
 #: ../../../doc/en/reference/plugin_list.rst:37
 #: ../../../doc/en/reference/plugin_list.rst:1919
@@ -613,7 +613,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:38
 #: ../../../doc/en/reference/plugin_list.rst:1921
 msgid ":pypi:`logassert`"
-msgstr ""
+msgstr ":pypi:`logassert`"
 
 #: ../../../doc/en/reference/plugin_list.rst:38
 #: ../../../doc/en/reference/plugin_list.rst:1926
@@ -1025,7 +1025,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:39
 #: ../../../doc/en/reference/plugin_list.rst:1928
 msgid ":pypi:`logot`"
-msgstr ""
+msgstr ":pypi:`logot`"
 
 #: ../../../doc/en/reference/plugin_list.rst:39
 #: ../../../doc/en/reference/plugin_list.rst:1933
@@ -1048,7 +1048,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:40
 #: ../../../doc/en/reference/plugin_list.rst:1935
 msgid ":pypi:`nuts`"
-msgstr ""
+msgstr ":pypi:`nuts`"
 
 #: ../../../doc/en/reference/plugin_list.rst:40
 #: ../../../doc/en/reference/plugin_list.rst:1940
@@ -2110,7 +2110,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:41
 #: ../../../doc/en/reference/plugin_list.rst:1942
 msgid ":pypi:`pytest-abort`"
-msgstr ""
+msgstr ":pypi:`pytest-abort`"
 
 #: ../../../doc/en/reference/plugin_list.rst:41
 #: ../../../doc/en/reference/plugin_list.rst:1947
@@ -2373,7 +2373,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:42
 #: ../../../doc/en/reference/plugin_list.rst:1949
 msgid ":pypi:`pytest-abq`"
-msgstr ""
+msgstr ":pypi:`pytest-abq`"
 
 #: ../../../doc/en/reference/plugin_list.rst:42
 #: ../../../doc/en/reference/plugin_list.rst:1954
@@ -2387,7 +2387,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:43
 #: ../../../doc/en/reference/plugin_list.rst:1956
 msgid ":pypi:`pytest-abstracts`"
-msgstr ""
+msgstr ":pypi:`pytest-abstracts`"
 
 #: ../../../doc/en/reference/plugin_list.rst:43
 #: ../../../doc/en/reference/plugin_list.rst:1961
@@ -2401,7 +2401,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:44
 #: ../../../doc/en/reference/plugin_list.rst:1963
 msgid ":pypi:`pytest-accept`"
-msgstr ""
+msgstr ":pypi:`pytest-accept`"
 
 #: ../../../doc/en/reference/plugin_list.rst:44
 #: ../../../doc/en/reference/plugin_list.rst:1087
@@ -2430,7 +2430,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:45
 #: ../../../doc/en/reference/plugin_list.rst:1970
 msgid ":pypi:`pytest-adaptavist`"
-msgstr ""
+msgstr ":pypi:`pytest-adaptavist`"
 
 #: ../../../doc/en/reference/plugin_list.rst:45
 #: ../../../doc/en/reference/plugin_list.rst:46
@@ -2456,7 +2456,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:46
 #: ../../../doc/en/reference/plugin_list.rst:1977
 msgid ":pypi:`pytest-adaptavist-fixed`"
-msgstr ""
+msgstr ":pypi:`pytest-adaptavist-fixed`"
 
 #: ../../../doc/en/reference/plugin_list.rst:46
 #: ../../../doc/en/reference/plugin_list.rst:61
@@ -2472,7 +2472,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:47
 #: ../../../doc/en/reference/plugin_list.rst:1984
 msgid ":pypi:`pytest-addons-test`"
-msgstr ""
+msgstr ":pypi:`pytest-addons-test`"
 
 #: ../../../doc/en/reference/plugin_list.rst:47
 #: ../../../doc/en/reference/plugin_list.rst:1989
@@ -2493,7 +2493,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:48
 #: ../../../doc/en/reference/plugin_list.rst:1991
 msgid ":pypi:`pytest-adf`"
-msgstr ""
+msgstr ":pypi:`pytest-adf`"
 
 #: ../../../doc/en/reference/plugin_list.rst:48
 #: ../../../doc/en/reference/plugin_list.rst:49
@@ -2562,7 +2562,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:49
 #: ../../../doc/en/reference/plugin_list.rst:1998
 msgid ":pypi:`pytest-adf-azure-identity`"
-msgstr ""
+msgstr ":pypi:`pytest-adf-azure-identity`"
 
 #: ../../../doc/en/reference/plugin_list.rst:49
 msgid "Mar 06, 2021"
@@ -2571,7 +2571,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:50
 #: ../../../doc/en/reference/plugin_list.rst:2005
 msgid ":pypi:`pytest-ads-testplan`"
-msgstr ""
+msgstr ":pypi:`pytest-ads-testplan`"
 
 #: ../../../doc/en/reference/plugin_list.rst:50
 #: ../../../doc/en/reference/plugin_list.rst:2010
@@ -2586,7 +2586,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:51
 #: ../../../doc/en/reference/plugin_list.rst:2012
 msgid ":pypi:`pytest-adversarial`"
-msgstr ""
+msgstr ":pypi:`pytest-adversarial`"
 
 #: ../../../doc/en/reference/plugin_list.rst:51
 #: ../../../doc/en/reference/plugin_list.rst:2017
@@ -2674,7 +2674,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:52
 #: ../../../doc/en/reference/plugin_list.rst:2019
 msgid ":pypi:`pytest-affected`"
-msgstr ""
+msgstr ":pypi:`pytest-affected`"
 
 #: ../../../doc/en/reference/plugin_list.rst:52
 #: ../../../doc/en/reference/plugin_list.rst:1825
@@ -2684,7 +2684,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:53
 #: ../../../doc/en/reference/plugin_list.rst:2026
 msgid ":pypi:`pytest-agent`"
-msgstr ""
+msgstr ":pypi:`pytest-agent`"
 
 #: ../../../doc/en/reference/plugin_list.rst:53
 #: ../../../doc/en/reference/plugin_list.rst:2031
@@ -2702,7 +2702,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:54
 #: ../../../doc/en/reference/plugin_list.rst:2033
 msgid ":pypi:`pytest-agentcontract`"
-msgstr ""
+msgstr ":pypi:`pytest-agentcontract`"
 
 #: ../../../doc/en/reference/plugin_list.rst:54
 #: ../../../doc/en/reference/plugin_list.rst:2038
@@ -2722,7 +2722,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:55
 #: ../../../doc/en/reference/plugin_list.rst:2040
 msgid ":pypi:`pytest-agent-evals`"
-msgstr ""
+msgstr ":pypi:`pytest-agent-evals`"
 
 #: ../../../doc/en/reference/plugin_list.rst:55
 #: ../../../doc/en/reference/plugin_list.rst:2045
@@ -2742,7 +2742,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:56
 #: ../../../doc/en/reference/plugin_list.rst:2047
 msgid ":pypi:`pytest-agents`"
-msgstr ""
+msgstr ":pypi:`pytest-agents`"
 
 #: ../../../doc/en/reference/plugin_list.rst:56
 #: ../../../doc/en/reference/plugin_list.rst:2052
@@ -2779,7 +2779,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:57
 #: ../../../doc/en/reference/plugin_list.rst:2054
 msgid ":pypi:`pytest-aggreport`"
-msgstr ""
+msgstr ":pypi:`pytest-aggreport`"
 
 #: ../../../doc/en/reference/plugin_list.rst:57
 #: ../../../doc/en/reference/plugin_list.rst:2059
@@ -2800,7 +2800,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:58
 #: ../../../doc/en/reference/plugin_list.rst:2061
 msgid ":pypi:`pytest-ai`"
-msgstr ""
+msgstr ":pypi:`pytest-ai`"
 
 #: ../../../doc/en/reference/plugin_list.rst:58
 #: ../../../doc/en/reference/plugin_list.rst:2066
@@ -3512,7 +3512,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:81
 #: ../../../doc/en/reference/plugin_list.rst:2222
 msgid ":pypi:`pytest-allure-host`"
-msgstr ""
+msgstr ":pypi:`pytest-allure-host`"
 
 #: ../../../doc/en/reference/plugin_list.rst:81
 #: ../../../doc/en/reference/plugin_list.rst:2227
@@ -3530,7 +3530,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:82
 #: ../../../doc/en/reference/plugin_list.rst:2229
 msgid ":pypi:`pytest-allure-id2history`"
-msgstr ""
+msgstr ":pypi:`pytest-allure-id2history`"
 
 #: ../../../doc/en/reference/plugin_list.rst:82
 #: ../../../doc/en/reference/plugin_list.rst:2234
@@ -3590,7 +3590,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:83
 #: ../../../doc/en/reference/plugin_list.rst:2236
 msgid ":pypi:`pytest-allure-intersection`"
-msgstr ""
+msgstr ":pypi:`pytest-allure-intersection`"
 
 #: ../../../doc/en/reference/plugin_list.rst:83
 msgid "Oct 27, 2022"
@@ -3603,7 +3603,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:84
 #: ../../../doc/en/reference/plugin_list.rst:2243
 msgid ":pypi:`pytest-allure-spec-coverage`"
-msgstr ""
+msgstr ":pypi:`pytest-allure-spec-coverage`"
 
 #: ../../../doc/en/reference/plugin_list.rst:84
 #: ../../../doc/en/reference/plugin_list.rst:2248
@@ -3619,7 +3619,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:85
 #: ../../../doc/en/reference/plugin_list.rst:2250
 msgid ":pypi:`pytest-allure-step`"
-msgstr ""
+msgstr ":pypi:`pytest-allure-step`"
 
 #: ../../../doc/en/reference/plugin_list.rst:85
 #: ../../../doc/en/reference/plugin_list.rst:2255
@@ -3658,7 +3658,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:86
 #: ../../../doc/en/reference/plugin_list.rst:2257
 msgid ":pypi:`pytest-alphamoon`"
-msgstr ""
+msgstr ":pypi:`pytest-alphamoon`"
 
 #: ../../../doc/en/reference/plugin_list.rst:86
 #: ../../../doc/en/reference/plugin_list.rst:2262
@@ -3672,7 +3672,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:87
 #: ../../../doc/en/reference/plugin_list.rst:2264
 msgid ":pypi:`pytest-amaranth-sim`"
-msgstr ""
+msgstr ":pypi:`pytest-amaranth-sim`"
 
 #: ../../../doc/en/reference/plugin_list.rst:87
 #: ../../../doc/en/reference/plugin_list.rst:2269
@@ -3682,7 +3682,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:88
 #: ../../../doc/en/reference/plugin_list.rst:2271
 msgid ":pypi:`pytest-ampel-core`"
-msgstr ""
+msgstr ":pypi:`pytest-ampel-core`"
 
 #: ../../../doc/en/reference/plugin_list.rst:88
 #: ../../../doc/en/reference/plugin_list.rst:2276
@@ -3701,7 +3701,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:89
 #: ../../../doc/en/reference/plugin_list.rst:2278
 msgid ":pypi:`pytest-analyzer`"
-msgstr ""
+msgstr ":pypi:`pytest-analyzer`"
 
 #: ../../../doc/en/reference/plugin_list.rst:89
 #: ../../../doc/en/reference/plugin_list.rst:2283
@@ -3721,7 +3721,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:90
 #: ../../../doc/en/reference/plugin_list.rst:2285
 msgid ":pypi:`pytest-android`"
-msgstr ""
+msgstr ":pypi:`pytest-android`"
 
 #: ../../../doc/en/reference/plugin_list.rst:90
 #: ../../../doc/en/reference/plugin_list.rst:164
@@ -3739,7 +3739,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:91
 #: ../../../doc/en/reference/plugin_list.rst:2292
 msgid ":pypi:`pytest-anki`"
-msgstr ""
+msgstr ":pypi:`pytest-anki`"
 
 #: ../../../doc/en/reference/plugin_list.rst:91
 #: ../../../doc/en/reference/plugin_list.rst:2297
@@ -3754,7 +3754,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:92
 #: ../../../doc/en/reference/plugin_list.rst:2299
 msgid ":pypi:`pytest-annotate`"
-msgstr ""
+msgstr ":pypi:`pytest-annotate`"
 
 #: ../../../doc/en/reference/plugin_list.rst:92
 #: ../../../doc/en/reference/plugin_list.rst:2304
@@ -3774,7 +3774,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:93
 #: ../../../doc/en/reference/plugin_list.rst:2306
 msgid ":pypi:`pytest-annotated`"
-msgstr ""
+msgstr ":pypi:`pytest-annotated`"
 
 #: ../../../doc/en/reference/plugin_list.rst:93
 #: ../../../doc/en/reference/plugin_list.rst:2311
@@ -3797,7 +3797,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:94
 #: ../../../doc/en/reference/plugin_list.rst:2313
 msgid ":pypi:`pytest-ansible`"
-msgstr ""
+msgstr ":pypi:`pytest-ansible`"
 
 #: ../../../doc/en/reference/plugin_list.rst:94
 #: ../../../doc/en/reference/plugin_list.rst:2318
@@ -3830,7 +3830,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:95
 #: ../../../doc/en/reference/plugin_list.rst:2320
 msgid ":pypi:`pytest-ansible-playbook`"
-msgstr ""
+msgstr ":pypi:`pytest-ansible-playbook`"
 
 #: ../../../doc/en/reference/plugin_list.rst:95
 #: ../../../doc/en/reference/plugin_list.rst:96
@@ -3846,7 +3846,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:96
 #: ../../../doc/en/reference/plugin_list.rst:2327
 msgid ":pypi:`pytest-ansible-playbook-runner`"
-msgstr ""
+msgstr ":pypi:`pytest-ansible-playbook-runner`"
 
 #: ../../../doc/en/reference/plugin_list.rst:96
 #: ../../../doc/en/reference/plugin_list.rst:1353
@@ -3861,7 +3861,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:97
 #: ../../../doc/en/reference/plugin_list.rst:2334
 msgid ":pypi:`pytest-ansible-units`"
-msgstr ""
+msgstr ":pypi:`pytest-ansible-units`"
 
 #: ../../../doc/en/reference/plugin_list.rst:97
 #: ../../../doc/en/reference/plugin_list.rst:2339
@@ -3876,7 +3876,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:98
 #: ../../../doc/en/reference/plugin_list.rst:2341
 msgid ":pypi:`pytest-antilru`"
-msgstr ""
+msgstr ":pypi:`pytest-antilru`"
 
 #: ../../../doc/en/reference/plugin_list.rst:98
 #: ../../../doc/en/reference/plugin_list.rst:2346
@@ -3895,7 +3895,7 @@ msgstr "pytest>=7; python_version >= \"3.10\""
 #: ../../../doc/en/reference/plugin_list.rst:99
 #: ../../../doc/en/reference/plugin_list.rst:2348
 msgid ":pypi:`pytest-anyio`"
-msgstr ""
+msgstr ":pypi:`pytest-anyio`"
 
 #: ../../../doc/en/reference/plugin_list.rst:99
 #: ../../../doc/en/reference/plugin_list.rst:2353
@@ -3910,7 +3910,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:100
 #: ../../../doc/en/reference/plugin_list.rst:2355
 msgid ":pypi:`pytest-anything`"
-msgstr ""
+msgstr ":pypi:`pytest-anything`"
 
 #: ../../../doc/en/reference/plugin_list.rst:100
 #: ../../../doc/en/reference/plugin_list.rst:2360
@@ -3924,7 +3924,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:101
 #: ../../../doc/en/reference/plugin_list.rst:2362
 msgid ":pypi:`pytest-aoc`"
-msgstr ""
+msgstr ":pypi:`pytest-aoc`"
 
 #: ../../../doc/en/reference/plugin_list.rst:101
 #: ../../../doc/en/reference/plugin_list.rst:2367
@@ -3944,7 +3944,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:102
 #: ../../../doc/en/reference/plugin_list.rst:2369
 msgid ":pypi:`pytest-aoreporter`"
-msgstr ""
+msgstr ":pypi:`pytest-aoreporter`"
 
 #: ../../../doc/en/reference/plugin_list.rst:102
 #: ../../../doc/en/reference/plugin_list.rst:2374
@@ -3958,7 +3958,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:103
 #: ../../../doc/en/reference/plugin_list.rst:2376
 msgid ":pypi:`pytest-api`"
-msgstr ""
+msgstr ":pypi:`pytest-api`"
 
 #: ../../../doc/en/reference/plugin_list.rst:103
 #: ../../../doc/en/reference/plugin_list.rst:2381
@@ -3980,7 +3980,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:104
 #: ../../../doc/en/reference/plugin_list.rst:2383
 msgid ":pypi:`pytest-apibean`"
-msgstr ""
+msgstr ":pypi:`pytest-apibean`"
 
 #: ../../../doc/en/reference/plugin_list.rst:104
 #: ../../../doc/en/reference/plugin_list.rst:2388
@@ -4000,7 +4000,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:105
 #: ../../../doc/en/reference/plugin_list.rst:2390
 msgid ":pypi:`pytest-api-cov`"
-msgstr ""
+msgstr ":pypi:`pytest-api-cov`"
 
 #: ../../../doc/en/reference/plugin_list.rst:105
 #: ../../../doc/en/reference/plugin_list.rst:2395
@@ -4017,7 +4017,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:106
 #: ../../../doc/en/reference/plugin_list.rst:2397
 msgid ":pypi:`pytest-api-framework`"
-msgstr ""
+msgstr ":pypi:`pytest-api-framework`"
 
 #: ../../../doc/en/reference/plugin_list.rst:106
 #: ../../../doc/en/reference/plugin_list.rst:2402
@@ -4038,7 +4038,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:107
 #: ../../../doc/en/reference/plugin_list.rst:2404
 msgid ":pypi:`pytest-api-framework-alpha`"
-msgstr ""
+msgstr ":pypi:`pytest-api-framework-alpha`"
 
 #: ../../../doc/en/reference/plugin_list.rst:107
 #: ../../../doc/en/reference/plugin_list.rst:195
@@ -4052,7 +4052,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:108
 #: ../../../doc/en/reference/plugin_list.rst:2411
 msgid ":pypi:`pytest-api-soup`"
-msgstr ""
+msgstr ":pypi:`pytest-api-soup`"
 
 #: ../../../doc/en/reference/plugin_list.rst:108
 #: ../../../doc/en/reference/plugin_list.rst:2416
@@ -4067,7 +4067,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:109
 #: ../../../doc/en/reference/plugin_list.rst:2418
 msgid ":pypi:`pytest-apistellar`"
-msgstr ""
+msgstr ":pypi:`pytest-apistellar`"
 
 #: ../../../doc/en/reference/plugin_list.rst:109
 #: ../../../doc/en/reference/plugin_list.rst:2423
@@ -4081,7 +4081,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:110
 #: ../../../doc/en/reference/plugin_list.rst:2425
 msgid ":pypi:`pytest-apiver`"
-msgstr ""
+msgstr ":pypi:`pytest-apiver`"
 
 #: ../../../doc/en/reference/plugin_list.rst:110
 msgid "Jun 21, 2024"
@@ -4090,7 +4090,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:111
 #: ../../../doc/en/reference/plugin_list.rst:2432
 msgid ":pypi:`pytest-appengine`"
-msgstr ""
+msgstr ":pypi:`pytest-appengine`"
 
 #: ../../../doc/en/reference/plugin_list.rst:111
 #: ../../../doc/en/reference/plugin_list.rst:2437
@@ -4104,7 +4104,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:112
 #: ../../../doc/en/reference/plugin_list.rst:2439
 msgid ":pypi:`pytest-appium`"
-msgstr ""
+msgstr ":pypi:`pytest-appium`"
 
 #: ../../../doc/en/reference/plugin_list.rst:112
 #: ../../../doc/en/reference/plugin_list.rst:2444
@@ -4119,7 +4119,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:113
 #: ../../../doc/en/reference/plugin_list.rst:2446
 msgid ":pypi:`pytest-approval`"
-msgstr ""
+msgstr ":pypi:`pytest-approval`"
 
 #: ../../../doc/en/reference/plugin_list.rst:113
 #: ../../../doc/en/reference/plugin_list.rst:2451
@@ -4152,7 +4152,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:114
 #: ../../../doc/en/reference/plugin_list.rst:2453
 msgid ":pypi:`pytest-approvaltests`"
-msgstr ""
+msgstr ":pypi:`pytest-approvaltests`"
 
 #: ../../../doc/en/reference/plugin_list.rst:114
 #: ../../../doc/en/reference/plugin_list.rst:2458
@@ -4171,7 +4171,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:115
 #: ../../../doc/en/reference/plugin_list.rst:2460
 msgid ":pypi:`pytest-approvaltests-geo`"
-msgstr ""
+msgstr ":pypi:`pytest-approvaltests-geo`"
 
 #: ../../../doc/en/reference/plugin_list.rst:115
 #: ../../../doc/en/reference/plugin_list.rst:2465
@@ -4186,7 +4186,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:116
 #: ../../../doc/en/reference/plugin_list.rst:2467
 msgid ":pypi:`pytest-archon`"
-msgstr ""
+msgstr ":pypi:`pytest-archon`"
 
 #: ../../../doc/en/reference/plugin_list.rst:116
 #: ../../../doc/en/reference/plugin_list.rst:2472
@@ -4206,7 +4206,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:117
 #: ../../../doc/en/reference/plugin_list.rst:2474
 msgid ":pypi:`pytest-argus`"
-msgstr ""
+msgstr ":pypi:`pytest-argus`"
 
 #: ../../../doc/en/reference/plugin_list.rst:117
 #: ../../../doc/en/reference/plugin_list.rst:2479
@@ -4226,7 +4226,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:118
 #: ../../../doc/en/reference/plugin_list.rst:2481
 msgid ":pypi:`pytest-argus-reporter`"
-msgstr ""
+msgstr ":pypi:`pytest-argus-reporter`"
 
 #: ../../../doc/en/reference/plugin_list.rst:118
 #: ../../../doc/en/reference/plugin_list.rst:2486
@@ -4248,7 +4248,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:119
 #: ../../../doc/en/reference/plugin_list.rst:2488
 msgid ":pypi:`pytest-argus-server`"
-msgstr ""
+msgstr ":pypi:`pytest-argus-server`"
 
 #: ../../../doc/en/reference/plugin_list.rst:119
 #: ../../../doc/en/reference/plugin_list.rst:2493
@@ -4262,7 +4262,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:120
 #: ../../../doc/en/reference/plugin_list.rst:2495
 msgid ":pypi:`pytest-arraydiff`"
-msgstr ""
+msgstr ":pypi:`pytest-arraydiff`"
 
 #: ../../../doc/en/reference/plugin_list.rst:120
 #: ../../../doc/en/reference/plugin_list.rst:2500
@@ -4283,7 +4283,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:121
 #: ../../../doc/en/reference/plugin_list.rst:2502
 msgid ":pypi:`pytest-artifact`"
-msgstr ""
+msgstr ":pypi:`pytest-artifact`"
 
 #: ../../../doc/en/reference/plugin_list.rst:121
 #: ../../../doc/en/reference/plugin_list.rst:2507
@@ -4303,7 +4303,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:122
 #: ../../../doc/en/reference/plugin_list.rst:2509
 msgid ":pypi:`pytest-asdf-plugin`"
-msgstr ""
+msgstr ":pypi:`pytest-asdf-plugin`"
 
 #: ../../../doc/en/reference/plugin_list.rst:122
 #: ../../../doc/en/reference/plugin_list.rst:2514
@@ -4318,7 +4318,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:123
 #: ../../../doc/en/reference/plugin_list.rst:2516
 msgid ":pypi:`pytest-asgi-server`"
-msgstr ""
+msgstr ":pypi:`pytest-asgi-server`"
 
 #: ../../../doc/en/reference/plugin_list.rst:123
 #: ../../../doc/en/reference/plugin_list.rst:2521
@@ -4336,7 +4336,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:124
 #: ../../../doc/en/reference/plugin_list.rst:2523
 msgid ":pypi:`pytest-aspec`"
-msgstr ""
+msgstr ":pypi:`pytest-aspec`"
 
 #: ../../../doc/en/reference/plugin_list.rst:124
 #: ../../../doc/en/reference/plugin_list.rst:2528
@@ -4350,7 +4350,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:125
 #: ../../../doc/en/reference/plugin_list.rst:2530
 msgid ":pypi:`pytest-asptest`"
-msgstr ""
+msgstr ":pypi:`pytest-asptest`"
 
 #: ../../../doc/en/reference/plugin_list.rst:125
 #: ../../../doc/en/reference/plugin_list.rst:2535
@@ -4364,7 +4364,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:126
 #: ../../../doc/en/reference/plugin_list.rst:2537
 msgid ":pypi:`pytest-assay`"
-msgstr ""
+msgstr ":pypi:`pytest-assay`"
 
 #: ../../../doc/en/reference/plugin_list.rst:126
 #: ../../../doc/en/reference/plugin_list.rst:2542
@@ -4380,7 +4380,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:127
 #: ../../../doc/en/reference/plugin_list.rst:2544
 msgid ":pypi:`pytest-assertcount`"
-msgstr ""
+msgstr ":pypi:`pytest-assertcount`"
 
 #: ../../../doc/en/reference/plugin_list.rst:127
 #: ../../../doc/en/reference/plugin_list.rst:2549
@@ -4406,7 +4406,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:128
 #: ../../../doc/en/reference/plugin_list.rst:2551
 msgid ":pypi:`pytest-assertions`"
-msgstr ""
+msgstr ":pypi:`pytest-assertions`"
 
 #: ../../../doc/en/reference/plugin_list.rst:128
 #: ../../../doc/en/reference/plugin_list.rst:2556
@@ -4422,7 +4422,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:129
 #: ../../../doc/en/reference/plugin_list.rst:2558
 msgid ":pypi:`pytest-assert-type`"
-msgstr ""
+msgstr ":pypi:`pytest-assert-type`"
 
 #: ../../../doc/en/reference/plugin_list.rst:129
 #: ../../../doc/en/reference/plugin_list.rst:2563
@@ -4438,7 +4438,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:130
 #: ../../../doc/en/reference/plugin_list.rst:2565
 msgid ":pypi:`pytest-assertutil`"
-msgstr ""
+msgstr ":pypi:`pytest-assertutil`"
 
 #: ../../../doc/en/reference/plugin_list.rst:130
 #: ../../../doc/en/reference/plugin_list.rst:2570
@@ -5285,7 +5285,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:181
 #: ../../../doc/en/reference/plugin_list.rst:2922
 msgid ":pypi:`pytest-bashdoctest`"
-msgstr ""
+msgstr ":pypi:`pytest-bashdoctest`"
 
 #: ../../../doc/en/reference/plugin_list.rst:181
 #: ../../../doc/en/reference/plugin_list.rst:2927
@@ -5301,7 +5301,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:182
 #: ../../../doc/en/reference/plugin_list.rst:2929
 msgid ":pypi:`pytest-batch-regression`"
-msgstr ""
+msgstr ":pypi:`pytest-batch-regression`"
 
 #: ../../../doc/en/reference/plugin_list.rst:182
 #: ../../../doc/en/reference/plugin_list.rst:2934
@@ -5316,7 +5316,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:183
 #: ../../../doc/en/reference/plugin_list.rst:2936
 msgid ":pypi:`pytest-bazel`"
-msgstr ""
+msgstr ":pypi:`pytest-bazel`"
 
 #: ../../../doc/en/reference/plugin_list.rst:183
 #: ../../../doc/en/reference/plugin_list.rst:2941
@@ -5332,7 +5332,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:184
 #: ../../../doc/en/reference/plugin_list.rst:2943
 msgid ":pypi:`pytest-bdd`"
-msgstr ""
+msgstr ":pypi:`pytest-bdd`"
 
 #: ../../../doc/en/reference/plugin_list.rst:184
 #: ../../../doc/en/reference/plugin_list.rst:187
@@ -5361,7 +5361,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:185
 #: ../../../doc/en/reference/plugin_list.rst:2950
 msgid ":pypi:`pytest-bdd-html`"
-msgstr ""
+msgstr ":pypi:`pytest-bdd-html`"
 
 #: ../../../doc/en/reference/plugin_list.rst:185
 #: ../../../doc/en/reference/plugin_list.rst:2955
@@ -5379,7 +5379,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:186
 #: ../../../doc/en/reference/plugin_list.rst:2957
 msgid ":pypi:`pytest-bdd-md-report`"
-msgstr ""
+msgstr ":pypi:`pytest-bdd-md-report`"
 
 #: ../../../doc/en/reference/plugin_list.rst:186
 #: ../../../doc/en/reference/plugin_list.rst:2962
@@ -5400,7 +5400,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:187
 #: ../../../doc/en/reference/plugin_list.rst:2964
 msgid ":pypi:`pytest-bdd-ng`"
-msgstr ""
+msgstr ":pypi:`pytest-bdd-ng`"
 
 #: ../../../doc/en/reference/plugin_list.rst:187
 msgid "Nov 26, 2024"
@@ -5413,7 +5413,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:188
 #: ../../../doc/en/reference/plugin_list.rst:2971
 msgid ":pypi:`pytest-bdd-report`"
-msgstr ""
+msgstr ":pypi:`pytest-bdd-report`"
 
 #: ../../../doc/en/reference/plugin_list.rst:188
 #: ../../../doc/en/reference/plugin_list.rst:2976
@@ -5433,7 +5433,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:189
 #: ../../../doc/en/reference/plugin_list.rst:2978
 msgid ":pypi:`pytest-bdd-reporter`"
-msgstr ""
+msgstr ":pypi:`pytest-bdd-reporter`"
 
 #: ../../../doc/en/reference/plugin_list.rst:189
 #: ../../../doc/en/reference/plugin_list.rst:2983
@@ -5450,7 +5450,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:190
 #: ../../../doc/en/reference/plugin_list.rst:2985
 msgid ":pypi:`pytest-bdd-splinter`"
-msgstr ""
+msgstr ":pypi:`pytest-bdd-splinter`"
 
 #: ../../../doc/en/reference/plugin_list.rst:190
 #: ../../../doc/en/reference/plugin_list.rst:2990
@@ -5473,7 +5473,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:191
 #: ../../../doc/en/reference/plugin_list.rst:2992
 msgid ":pypi:`pytest-bdd-web`"
-msgstr ""
+msgstr ":pypi:`pytest-bdd-web`"
 
 #: ../../../doc/en/reference/plugin_list.rst:191
 msgid "Jan 02, 2020"
@@ -5482,7 +5482,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:192
 #: ../../../doc/en/reference/plugin_list.rst:2999
 msgid ":pypi:`pytest-bdd-wrappers`"
-msgstr ""
+msgstr ":pypi:`pytest-bdd-wrappers`"
 
 #: ../../../doc/en/reference/plugin_list.rst:192
 #: ../../../doc/en/reference/plugin_list.rst:813
@@ -5513,7 +5513,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:193
 #: ../../../doc/en/reference/plugin_list.rst:3006
 msgid ":pypi:`pytest-beakerlib`"
-msgstr ""
+msgstr ":pypi:`pytest-beakerlib`"
 
 #: ../../../doc/en/reference/plugin_list.rst:193
 #: ../../../doc/en/reference/plugin_list.rst:3011
@@ -5527,7 +5527,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:194
 #: ../../../doc/en/reference/plugin_list.rst:3013
 msgid ":pypi:`pytest-beartype`"
-msgstr ""
+msgstr ":pypi:`pytest-beartype`"
 
 #: ../../../doc/en/reference/plugin_list.rst:194
 #: ../../../doc/en/reference/plugin_list.rst:3018
@@ -5543,7 +5543,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:195
 #: ../../../doc/en/reference/plugin_list.rst:3020
 msgid ":pypi:`pytest-bec-e2e`"
-msgstr ""
+msgstr ":pypi:`pytest-bec-e2e`"
 
 #: ../../../doc/en/reference/plugin_list.rst:195
 #: ../../../doc/en/reference/plugin_list.rst:3025
@@ -5553,7 +5553,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:196
 #: ../../../doc/en/reference/plugin_list.rst:3027
 msgid ":pypi:`pytest-beds`"
-msgstr ""
+msgstr ":pypi:`pytest-beds`"
 
 #: ../../../doc/en/reference/plugin_list.rst:196
 #: ../../../doc/en/reference/plugin_list.rst:3032
@@ -5567,7 +5567,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:197
 #: ../../../doc/en/reference/plugin_list.rst:3034
 msgid ":pypi:`pytest-beeprint`"
-msgstr ""
+msgstr ":pypi:`pytest-beeprint`"
 
 #: ../../../doc/en/reference/plugin_list.rst:197
 #: ../../../doc/en/reference/plugin_list.rst:843
@@ -5583,7 +5583,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:198
 #: ../../../doc/en/reference/plugin_list.rst:3041
 msgid ":pypi:`pytest-bench`"
-msgstr ""
+msgstr ":pypi:`pytest-bench`"
 
 #: ../../../doc/en/reference/plugin_list.rst:198
 #: ../../../doc/en/reference/plugin_list.rst:3046
@@ -5597,7 +5597,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:199
 #: ../../../doc/en/reference/plugin_list.rst:3048
 msgid ":pypi:`pytest-benchmark`"
-msgstr ""
+msgstr ":pypi:`pytest-benchmark`"
 
 #: ../../../doc/en/reference/plugin_list.rst:199
 #: ../../../doc/en/reference/plugin_list.rst:3053
@@ -5624,7 +5624,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:200
 #: ../../../doc/en/reference/plugin_list.rst:3055
 msgid ":pypi:`pytest-better-datadir`"
-msgstr ""
+msgstr ":pypi:`pytest-better-datadir`"
 
 #: ../../../doc/en/reference/plugin_list.rst:200
 #: ../../../doc/en/reference/plugin_list.rst:1748
@@ -5642,7 +5642,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:201
 #: ../../../doc/en/reference/plugin_list.rst:3062
 msgid ":pypi:`pytest-better-parametrize`"
-msgstr ""
+msgstr ":pypi:`pytest-better-parametrize`"
 
 #: ../../../doc/en/reference/plugin_list.rst:201
 #: ../../../doc/en/reference/plugin_list.rst:3067
@@ -5663,7 +5663,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:202
 #: ../../../doc/en/reference/plugin_list.rst:3069
 msgid ":pypi:`pytest-bg-process`"
-msgstr ""
+msgstr ":pypi:`pytest-bg-process`"
 
 #: ../../../doc/en/reference/plugin_list.rst:202
 #: ../../../doc/en/reference/plugin_list.rst:3074
@@ -5678,7 +5678,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:203
 #: ../../../doc/en/reference/plugin_list.rst:3076
 msgid ":pypi:`pytest-bigchaindb`"
-msgstr ""
+msgstr ":pypi:`pytest-bigchaindb`"
 
 #: ../../../doc/en/reference/plugin_list.rst:203
 #: ../../../doc/en/reference/plugin_list.rst:3081
@@ -5688,7 +5688,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:204
 #: ../../../doc/en/reference/plugin_list.rst:3083
 msgid ":pypi:`pytest-bigquery-mock`"
-msgstr ""
+msgstr ":pypi:`pytest-bigquery-mock`"
 
 #: ../../../doc/en/reference/plugin_list.rst:204
 #: ../../../doc/en/reference/plugin_list.rst:3088
@@ -5714,7 +5714,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:205
 #: ../../../doc/en/reference/plugin_list.rst:3090
 msgid ":pypi:`pytest-bisect-tests`"
-msgstr ""
+msgstr ":pypi:`pytest-bisect-tests`"
 
 #: ../../../doc/en/reference/plugin_list.rst:205
 #: ../../../doc/en/reference/plugin_list.rst:3095
@@ -5731,7 +5731,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:206
 #: ../../../doc/en/reference/plugin_list.rst:3097
 msgid ":pypi:`pytest-black`"
-msgstr ""
+msgstr ":pypi:`pytest-black`"
 
 #: ../../../doc/en/reference/plugin_list.rst:206
 #: ../../../doc/en/reference/plugin_list.rst:208
@@ -5748,7 +5748,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:207
 #: ../../../doc/en/reference/plugin_list.rst:3104
 msgid ":pypi:`pytest-black-multipy`"
-msgstr ""
+msgstr ":pypi:`pytest-black-multipy`"
 
 #: ../../../doc/en/reference/plugin_list.rst:207
 #: ../../../doc/en/reference/plugin_list.rst:3109
@@ -5766,7 +5766,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:208
 #: ../../../doc/en/reference/plugin_list.rst:3111
 msgid ":pypi:`pytest-black-ng`"
-msgstr ""
+msgstr ":pypi:`pytest-black-ng`"
 
 #: ../../../doc/en/reference/plugin_list.rst:208
 #: ../../../doc/en/reference/plugin_list.rst:293
@@ -5784,7 +5784,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:209
 #: ../../../doc/en/reference/plugin_list.rst:3118
 msgid ":pypi:`pytest-blame`"
-msgstr ""
+msgstr ":pypi:`pytest-blame`"
 
 #: ../../../doc/en/reference/plugin_list.rst:209
 #: ../../../doc/en/reference/plugin_list.rst:3123
@@ -5796,7 +5796,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:210
 #: ../../../doc/en/reference/plugin_list.rst:3125
 msgid ":pypi:`pytest-blender`"
-msgstr ""
+msgstr ":pypi:`pytest-blender`"
 
 #: ../../../doc/en/reference/plugin_list.rst:210
 #: ../../../doc/en/reference/plugin_list.rst:3130
@@ -5811,7 +5811,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:211
 #: ../../../doc/en/reference/plugin_list.rst:3132
 msgid ":pypi:`pytest-blink1`"
-msgstr ""
+msgstr ":pypi:`pytest-blink1`"
 
 #: ../../../doc/en/reference/plugin_list.rst:211
 #: ../../../doc/en/reference/plugin_list.rst:3137
@@ -5825,7 +5825,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:212
 #: ../../../doc/en/reference/plugin_list.rst:3139
 msgid ":pypi:`pytest-blockage`"
-msgstr ""
+msgstr ":pypi:`pytest-blockage`"
 
 #: ../../../doc/en/reference/plugin_list.rst:212
 #: ../../../doc/en/reference/plugin_list.rst:3144
@@ -5840,7 +5840,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:213
 #: ../../../doc/en/reference/plugin_list.rst:3146
 msgid ":pypi:`pytest-blocker`"
-msgstr ""
+msgstr ":pypi:`pytest-blocker`"
 
 #: ../../../doc/en/reference/plugin_list.rst:213
 #: ../../../doc/en/reference/plugin_list.rst:3151
@@ -5854,7 +5854,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:214
 #: ../../../doc/en/reference/plugin_list.rst:3153
 msgid ":pypi:`pytest-b-logger`"
-msgstr ""
+msgstr ":pypi:`pytest-b-logger`"
 
 #: ../../../doc/en/reference/plugin_list.rst:214
 #: ../../../doc/en/reference/plugin_list.rst:3158
@@ -5871,7 +5871,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:215
 #: ../../../doc/en/reference/plugin_list.rst:3160
 msgid ":pypi:`pytest-blue`"
-msgstr ""
+msgstr ":pypi:`pytest-blue`"
 
 #: ../../../doc/en/reference/plugin_list.rst:215
 #: ../../../doc/en/reference/plugin_list.rst:3165
@@ -5886,7 +5886,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:216
 #: ../../../doc/en/reference/plugin_list.rst:3167
 msgid ":pypi:`pytest-board`"
-msgstr ""
+msgstr ":pypi:`pytest-board`"
 
 #: ../../../doc/en/reference/plugin_list.rst:216
 #: ../../../doc/en/reference/plugin_list.rst:1836
@@ -5902,7 +5902,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:217
 #: ../../../doc/en/reference/plugin_list.rst:3174
 msgid ":pypi:`pytest-boardfarm3`"
-msgstr ""
+msgstr ":pypi:`pytest-boardfarm3`"
 
 #: ../../../doc/en/reference/plugin_list.rst:217
 #: ../../../doc/en/reference/plugin_list.rst:3179
@@ -5916,7 +5916,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:218
 #: ../../../doc/en/reference/plugin_list.rst:3181
 msgid ":pypi:`pytest-boilerplate`"
-msgstr ""
+msgstr ":pypi:`pytest-boilerplate`"
 
 #: ../../../doc/en/reference/plugin_list.rst:218
 #: ../../../doc/en/reference/plugin_list.rst:3186
@@ -5937,7 +5937,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:219
 #: ../../../doc/en/reference/plugin_list.rst:3188
 msgid ":pypi:`pytest-bonsai`"
-msgstr ""
+msgstr ":pypi:`pytest-bonsai`"
 
 #: ../../../doc/en/reference/plugin_list.rst:219
 #: ../../../doc/en/reference/plugin_list.rst:1373
@@ -5947,7 +5947,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:220
 #: ../../../doc/en/reference/plugin_list.rst:3195
 msgid ":pypi:`pytest-boost-xml`"
-msgstr ""
+msgstr ":pypi:`pytest-boost-xml`"
 
 #: ../../../doc/en/reference/plugin_list.rst:220
 #: ../../../doc/en/reference/plugin_list.rst:3200
@@ -5962,7 +5962,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:221
 #: ../../../doc/en/reference/plugin_list.rst:3202
 msgid ":pypi:`pytest-bootstrap`"
-msgstr ""
+msgstr ":pypi:`pytest-bootstrap`"
 
 #: ../../../doc/en/reference/plugin_list.rst:221
 msgid "Mar 04, 2022"
@@ -5971,7 +5971,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:222
 #: ../../../doc/en/reference/plugin_list.rst:3209
 msgid ":pypi:`pytest-boto-mock`"
-msgstr ""
+msgstr ":pypi:`pytest-boto-mock`"
 
 #: ../../../doc/en/reference/plugin_list.rst:222
 #: ../../../doc/en/reference/plugin_list.rst:1073
@@ -5994,7 +5994,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:223
 #: ../../../doc/en/reference/plugin_list.rst:3216
 msgid ":pypi:`pytest-bpdb`"
-msgstr ""
+msgstr ":pypi:`pytest-bpdb`"
 
 #: ../../../doc/en/reference/plugin_list.rst:223
 #: ../../../doc/en/reference/plugin_list.rst:3221
@@ -6008,7 +6008,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:224
 #: ../../../doc/en/reference/plugin_list.rst:3223
 msgid ":pypi:`pytest-bq`"
-msgstr ""
+msgstr ":pypi:`pytest-bq`"
 
 #: ../../../doc/en/reference/plugin_list.rst:224
 #: ../../../doc/en/reference/plugin_list.rst:3228
@@ -6027,7 +6027,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:225
 #: ../../../doc/en/reference/plugin_list.rst:3230
 msgid ":pypi:`pytest-bravado`"
-msgstr ""
+msgstr ":pypi:`pytest-bravado`"
 
 #: ../../../doc/en/reference/plugin_list.rst:225
 #: ../../../doc/en/reference/plugin_list.rst:3235
@@ -6043,7 +6043,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:226
 #: ../../../doc/en/reference/plugin_list.rst:3237
 msgid ":pypi:`pytest-breakword`"
-msgstr ""
+msgstr ":pypi:`pytest-breakword`"
 
 #: ../../../doc/en/reference/plugin_list.rst:226
 #: ../../../doc/en/reference/plugin_list.rst:3242
@@ -6057,7 +6057,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:227
 #: ../../../doc/en/reference/plugin_list.rst:3244
 msgid ":pypi:`pytest-breed-adapter`"
-msgstr ""
+msgstr ":pypi:`pytest-breed-adapter`"
 
 #: ../../../doc/en/reference/plugin_list.rst:227
 #: ../../../doc/en/reference/plugin_list.rst:3249
@@ -6071,7 +6071,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:228
 #: ../../../doc/en/reference/plugin_list.rst:3251
 msgid ":pypi:`pytest-briefcase`"
-msgstr ""
+msgstr ":pypi:`pytest-briefcase`"
 
 #: ../../../doc/en/reference/plugin_list.rst:228
 #: ../../../doc/en/reference/plugin_list.rst:3256
@@ -6085,7 +6085,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:229
 #: ../../../doc/en/reference/plugin_list.rst:3258
 msgid ":pypi:`pytest-brightest`"
-msgstr ""
+msgstr ":pypi:`pytest-brightest`"
 
 #: ../../../doc/en/reference/plugin_list.rst:229
 #: ../../../doc/en/reference/plugin_list.rst:3263
@@ -6109,7 +6109,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:230
 #: ../../../doc/en/reference/plugin_list.rst:3265
 msgid ":pypi:`pytest-broadcaster`"
-msgstr ""
+msgstr ":pypi:`pytest-broadcaster`"
 
 #: ../../../doc/en/reference/plugin_list.rst:230
 #: ../../../doc/en/reference/plugin_list.rst:3270
@@ -6961,7 +6961,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:281
 #: ../../../doc/en/reference/plugin_list.rst:3622
 msgid ":pypi:`pytest-check-links`"
-msgstr ""
+msgstr ":pypi:`pytest-check-links`"
 
 #: ../../../doc/en/reference/plugin_list.rst:281
 #: ../../../doc/en/reference/plugin_list.rst:3627

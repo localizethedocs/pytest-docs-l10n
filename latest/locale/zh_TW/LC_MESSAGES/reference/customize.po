@@ -23,7 +23,7 @@ msgstr "組態"
 
 #: ../../../doc/en/reference/customize.rst:5
 msgid "Command line options and configuration file settings"
-msgstr ""
+msgstr "命令行選項與組態檔設定"
 
 #: ../../../doc/en/reference/customize.rst:7
 msgid ""
@@ -434,7 +434,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/customize.rst:290
 msgid "Builtin configuration file options"
-msgstr ""
+msgstr "內建的組態檔選項"
 
 #: ../../../doc/en/reference/customize.rst:292
 msgid ""
