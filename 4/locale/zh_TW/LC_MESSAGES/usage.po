@@ -51,7 +51,7 @@ msgstr ""
 
 #: ../../../doc/en/usage.rst:0
 msgid "Exit code 0"
-msgstr ""
+msgstr "退出碼 0"
 
 #: ../../../doc/en/usage.rst:29
 msgid "All tests were collected and passed successfully"
@@ -59,7 +59,7 @@ msgstr ""
 
 #: ../../../doc/en/usage.rst:0
 msgid "Exit code 1"
-msgstr ""
+msgstr "退出碼 1"
 
 #: ../../../doc/en/usage.rst:30
 msgid "Tests were collected and run but some of the tests failed"
@@ -67,7 +67,7 @@ msgstr ""
 
 #: ../../../doc/en/usage.rst:0
 msgid "Exit code 2"
-msgstr ""
+msgstr "退出碼 2"
 
 #: ../../../doc/en/usage.rst:31
 msgid "Test execution was interrupted by the user"
@@ -75,7 +75,7 @@ msgstr ""
 
 #: ../../../doc/en/usage.rst:0
 msgid "Exit code 3"
-msgstr ""
+msgstr "退出碼 3"
 
 #: ../../../doc/en/usage.rst:32
 msgid "Internal error happened while executing tests"
@@ -83,7 +83,7 @@ msgstr ""
 
 #: ../../../doc/en/usage.rst:0
 msgid "Exit code 4"
-msgstr ""
+msgstr "退出碼 4"
 
 #: ../../../doc/en/usage.rst:33
 msgid "pytest command line usage error"
@@ -91,7 +91,7 @@ msgstr ""
 
 #: ../../../doc/en/usage.rst:0
 msgid "Exit code 5"
-msgstr ""
+msgstr "退出碼 5"
 
 #: ../../../doc/en/usage.rst:34
 msgid "No tests were collected"
@@ -267,7 +267,7 @@ msgstr ""
 
 #: ../../../doc/en/usage.rst:163
 msgid "Example:"
-msgstr ""
+msgstr "範例："
 
 #: ../../../doc/en/usage.rst:165
 msgid ""

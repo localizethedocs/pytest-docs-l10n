@@ -19,11 +19,11 @@ msgstr ""
 
 #: ../../../doc/en/customize.rst:2
 msgid "Configuration"
-msgstr ""
+msgstr "組態"
 
 #: ../../../doc/en/customize.rst:5
 msgid "Command line options and configuration file settings"
-msgstr ""
+msgstr "命令行選項與組態檔設定"
 
 #: ../../../doc/en/customize.rst:7
 msgid ""
@@ -178,11 +178,11 @@ msgstr ""
 
 #: ../../../doc/en/customize.rst:97
 msgid "Example:"
-msgstr ""
+msgstr "範例："
 
 #: ../../../doc/en/customize.rst:99
 msgid "pytest path/to/testdir path/other/"
-msgstr ""
+msgstr "pytest path/to/testdir path/other/"
 
 #: ../../../doc/en/customize.rst:103
 msgid ""
@@ -270,7 +270,7 @@ msgstr ""
 
 #: ../../../doc/en/customize.rst:171
 msgid "Builtin configuration file options"
-msgstr ""
+msgstr "內建的組態檔選項"
 
 #: ../../../doc/en/customize.rst:173
 msgid ""

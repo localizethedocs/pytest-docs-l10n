@@ -23,7 +23,7 @@ msgstr ""
 
 #: ../../../doc/en/goodpractices.rst:8
 msgid "Install package with pip"
-msgstr ""
+msgstr "使用 pip 安裝軟體包"
 
 #: ../../../doc/en/goodpractices.rst:10
 msgid ""
@@ -54,7 +54,7 @@ msgstr ""
 
 #: ../../../doc/en/goodpractices.rst:24
 msgid "pip install -e ."
-msgstr ""
+msgstr "pip install -e ."
 
 #: ../../../doc/en/goodpractices.rst:26
 msgid ""

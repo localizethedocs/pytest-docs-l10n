@@ -394,7 +394,7 @@ msgstr ""
 
 #: ../../../doc/en/cache.rst:298
 msgid "Clearing Cache content"
-msgstr ""
+msgstr "清除快取內容"
 
 #: ../../../doc/en/cache.rst:300
 msgid ""
@@ -404,7 +404,7 @@ msgstr ""
 
 #: ../../../doc/en/cache.rst:303
 msgid "pytest --cache-clear"
-msgstr ""
+msgstr "pytest --cache-clear"
 
 #: ../../../doc/en/cache.rst:307
 msgid ""

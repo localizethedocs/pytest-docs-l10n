@@ -125,7 +125,7 @@ msgstr ""
 
 #: ../../../doc/en/monkeypatch.rst:85
 msgid "Monkeypatching environment variables"
-msgstr ""
+msgstr "猴子修補環境變數"
 
 #: ../../../doc/en/monkeypatch.rst:87
 msgid ""
@@ -214,7 +214,7 @@ msgstr ""
 
 #: ../../../doc/en/monkeypatch.rst:161
 msgid "API Reference"
-msgstr ""
+msgstr "API 參考"
 
 #: ../../../doc/en/monkeypatch.rst:163
 msgid "Consult the docs for the :class:`MonkeyPatch` class."

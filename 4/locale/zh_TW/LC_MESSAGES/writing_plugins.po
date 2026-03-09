@@ -859,7 +859,7 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
 #: of _pytest.hookspec.pytest_addhooks:0
 msgid "Parameters"
-msgstr ""
+msgstr "參數"
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
 #: of _pytest.hookspec.pytest_addhooks:5
