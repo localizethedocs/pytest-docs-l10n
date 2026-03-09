@@ -55,7 +55,7 @@ msgstr ""
 
 #: ../../../doc/en/getting-started.rst:21
 msgid "Install ``pytest``"
-msgstr ""
+msgstr "安裝 ``pytest``"
 
 #: ../../../doc/en/getting-started.rst:23
 msgid "Run the following command in your command line::"
@@ -63,7 +63,7 @@ msgstr ""
 
 #: ../../../doc/en/getting-started.rst:25
 msgid "pip install -U pytest"
-msgstr ""
+msgstr "pip install -U pytest"
 
 #: ../../../doc/en/getting-started.rst:27
 msgid "Check that you installed the correct version::"

@@ -148,7 +148,7 @@ msgstr ""
 
 #: ../../../doc/en/mark.rst:78
 msgid "Updating code"
-msgstr ""
+msgstr "更新程式碼"
 
 #: ../../../doc/en/mark.rst:80
 msgid ""
@@ -221,7 +221,7 @@ msgstr ""
 
 #: ../../../doc/en/mark.rst:126
 msgid "Related issues"
-msgstr ""
+msgstr "相關議題"
 
 #: ../../../doc/en/mark.rst:128
 msgid ""

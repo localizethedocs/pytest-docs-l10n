@@ -68,7 +68,7 @@ msgstr ""
 
 #: ../../../doc/en/skipping.rst:38
 msgid "Skipping test functions"
-msgstr ""
+msgstr "略過測試函式"
 
 #: ../../../doc/en/skipping.rst:42
 msgid ""
@@ -241,7 +241,7 @@ msgstr ""
 
 #: ../../../doc/en/skipping.rst:156
 msgid "Skipping files or directories"
-msgstr ""
+msgstr "略過檔案或目錄"
 
 #: ../../../doc/en/skipping.rst:158
 msgid ""
@@ -264,7 +264,7 @@ msgstr ""
 
 #: ../../../doc/en/skipping.rst:171
 msgid "docutils = pytest.importorskip(\"docutils\")"
-msgstr ""
+msgstr "docutils = pytest.importorskip(\"docutils\")"
 
 #: ../../../doc/en/skipping.rst:173
 msgid ""
@@ -274,7 +274,7 @@ msgstr ""
 
 #: ../../../doc/en/skipping.rst:177
 msgid "docutils = pytest.importorskip(\"docutils\", minversion=\"0.3\")"
-msgstr ""
+msgstr "docutils = pytest.importorskip(\"docutils\", minversion=\"0.3\")"
 
 #: ../../../doc/en/skipping.rst:179
 msgid ""
@@ -298,7 +298,7 @@ msgstr ""
 
 #: ../../../doc/en/skipping.rst:189
 msgid "pytestmark = pytest.mark.skip(\"all tests still WIP\")"
-msgstr ""
+msgstr "pytestmark = pytest.mark.skip(\"all tests still WIP\")"
 
 #: ../../../doc/en/skipping.rst:193
 msgid "Skip all tests in a module based on some condition:"
@@ -368,7 +368,7 @@ msgstr ""
 
 #: ../../../doc/en/skipping.rst:241
 msgid "``strict`` parameter"
-msgstr ""
+msgstr "``strict`` 參數"
 
 #: ../../../doc/en/skipping.rst:245
 msgid ""
@@ -403,7 +403,7 @@ msgstr ""
 
 #: ../../../doc/en/skipping.rst:267
 msgid "``reason`` parameter"
-msgstr ""
+msgstr "``reason`` 參數"
 
 #: ../../../doc/en/skipping.rst:269
 msgid ""
@@ -421,7 +421,7 @@ msgstr ""
 
 #: ../../../doc/en/skipping.rst:279
 msgid "``raises`` parameter"
-msgstr ""
+msgstr "``raises`` 參數"
 
 #: ../../../doc/en/skipping.rst:281
 msgid ""
@@ -445,7 +445,7 @@ msgstr ""
 
 #: ../../../doc/en/skipping.rst:294
 msgid "``run`` parameter"
-msgstr ""
+msgstr "``run`` 參數"
 
 #: ../../../doc/en/skipping.rst:296
 msgid ""
@@ -468,7 +468,7 @@ msgstr ""
 
 #: ../../../doc/en/skipping.rst:310
 msgid "Ignoring xfail"
-msgstr ""
+msgstr "忽略 xfail"
 
 #: ../../../doc/en/skipping.rst:312
 msgid "By specifying on the commandline::"
@@ -476,7 +476,7 @@ msgstr ""
 
 #: ../../../doc/en/skipping.rst:314
 msgid "pytest --runxfail"
-msgstr ""
+msgstr "pytest --runxfail"
 
 #: ../../../doc/en/skipping.rst:316
 msgid ""

@@ -33,7 +33,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-3.0.3.rst:9
 msgid "pip install --upgrade pytest"
-msgstr ""
+msgstr "pip install --upgrade pytest"
 
 #: ../../../doc/en/announce/release-3.0.3.rst:11
 msgid ""
@@ -70,7 +70,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-3.0.3.rst:21
 msgid "Ronny Pfannschmidt"
-msgstr ""
+msgstr "Ronny Pfannschmidt"
 
 #: ../../../doc/en/announce/release-3.0.3.rst:22
 msgid "Roy Williams"
@@ -78,7 +78,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-3.0.3.rst:23
 msgid "Tyler Goodlet"
-msgstr ""
+msgstr "Tyler Goodlet"
 
 #: ../../../doc/en/announce/release-3.0.3.rst:24
 msgid "mbyt"

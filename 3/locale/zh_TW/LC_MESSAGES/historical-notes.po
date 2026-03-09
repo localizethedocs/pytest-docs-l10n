@@ -54,7 +54,7 @@ msgstr ""
 
 #: ../../../doc/en/historical-notes.rst:31
 msgid "``@pytest.yield_fixture`` decorator"
-msgstr ""
+msgstr "``@pytest.yield_fixture`` 裝飾器"
 
 #: ../../../doc/en/historical-notes.rst:35
 msgid ""
@@ -237,7 +237,7 @@ msgstr ""
 
 #: ../../../doc/en/historical-notes.rst:163
 msgid "``pytest.set_trace()``"
-msgstr ""
+msgstr "``pytest.set_trace()``"
 
 #: ../../../doc/en/historical-notes.rst:167
 msgid ""

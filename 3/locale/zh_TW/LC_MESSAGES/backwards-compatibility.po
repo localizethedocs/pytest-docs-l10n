@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../doc/en/backwards-compatibility.rst:4
 msgid "Backwards Compatibility Policy"
-msgstr ""
+msgstr "向後相容性方針"
 
 #: ../../../doc/en/backwards-compatibility.rst:6
 msgid ""
@@ -70,7 +70,7 @@ msgstr ""
 
 #: ../../../doc/en/backwards-compatibility.rst:18
 msgid "Deprecation Roadmap"
-msgstr ""
+msgstr "棄用路線圖"
 
 #: ../../../doc/en/backwards-compatibility.rst:20
 msgid ""
