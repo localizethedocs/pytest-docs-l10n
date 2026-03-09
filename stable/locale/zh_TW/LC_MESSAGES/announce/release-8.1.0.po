@@ -49,7 +49,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-8.1.0.rst:17
 msgid "pip install -U pytest"
-msgstr ""
+msgstr "pip install -U pytest"
 
 #: ../../../doc/en/announce/release-8.1.0.rst:19
 msgid "Thanks to all of the contributors to this release:"
@@ -109,7 +109,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-8.1.0.rst:34
 msgid "John Litborn"
-msgstr ""
+msgstr "John Litborn"
 
 #: ../../../doc/en/announce/release-8.1.0.rst:35
 msgid "Loïc Estève"
@@ -137,7 +137,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-8.1.0.rst:41
 msgid "Ronny Pfannschmidt"
-msgstr ""
+msgstr "Ronny Pfannschmidt"
 
 #: ../../../doc/en/announce/release-8.1.0.rst:42
 msgid "Russell Martin"

@@ -49,7 +49,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-8.4.1.rst:14
 msgid "John Litborn"
-msgstr ""
+msgstr "John Litborn"
 
 #: ../../../doc/en/announce/release-8.4.1.rst:15
 msgid "Martin Fischer"

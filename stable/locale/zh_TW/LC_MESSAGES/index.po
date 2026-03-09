@@ -43,7 +43,7 @@ msgstr ""
 
 #: ../../../doc/en/index.rst:3
 msgid "**Next Open Trainings and Events**"
-msgstr ""
+msgstr "**下一次公開訓練與活動**"
 
 #: ../../../doc/en/index.rst:5
 msgid ""
@@ -67,6 +67,8 @@ msgid ""
 "can scale to support complex functional testing for applications and "
 "libraries."
 msgstr ""
+"``pytest`` 框架讓編寫小型且具可讀性的測試變得容易，並能擴展以支援應用程式與程"
+"式庫的複雜功能測試。"
 
 #: ../../../doc/en/index.rst:48
 msgid "**PyPI package name**: :pypi:`pytest`"
@@ -188,7 +190,7 @@ msgstr ""
 
 #: ../../../doc/en/index.rst:110
 msgid "Documentation"
-msgstr ""
+msgstr "文件"
 
 #: ../../../doc/en/index.rst:112
 msgid ""
@@ -207,6 +209,7 @@ msgid ""
 ":ref:`Reference guides <reference>` - includes the complete pytest API "
 "reference, lists of plugins and more"
 msgstr ""
+":ref:`參考指南 <reference>` - 包含完整的 pytest API 參考、插件列表等更多內容"
 
 #: ../../../doc/en/index.rst:115
 msgid ""
@@ -234,6 +237,8 @@ msgid ""
 "communities. It provides tools to raise money and share your finances in "
 "full transparency."
 msgstr ""
+"`Open Collective`_ 是一個專為開放透明社群設計的線上募資平臺。它提供工具來籌集"
+"資金，並以完全透明的方式共享財務資訊。"
 
 #: ../../../doc/en/index.rst:130
 msgid ""

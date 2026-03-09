@@ -31,7 +31,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-5.2.1.rst:8
 msgid "pip install --upgrade pytest"
-msgstr ""
+msgstr "pip install --upgrade pytest"
 
 #: ../../../doc/en/announce/release-5.2.1.rst:10
 msgid ""
@@ -57,7 +57,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-5.2.1.rst:17
 msgid "Hynek Schlawack"
-msgstr ""
+msgstr "Hynek Schlawack"
 
 #: ../../../doc/en/announce/release-5.2.1.rst:18
 msgid "Kevin J. Foley"
