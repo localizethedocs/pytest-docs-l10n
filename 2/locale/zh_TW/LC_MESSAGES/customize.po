@@ -23,7 +23,7 @@ msgstr ""
 
 #: ../../../doc/en/customize.rst:5
 msgid "Command line options and configuration file settings"
-msgstr ""
+msgstr "命令行選項與組態檔設定"
 
 #: ../../../doc/en/customize.rst:7
 msgid ""
@@ -177,7 +177,7 @@ msgstr ""
 
 #: ../../../doc/en/customize.rst:111
 msgid "Builtin configuration file options"
-msgstr ""
+msgstr "內建的組態檔選項"
 
 #: ../../../doc/en/customize.rst:115
 msgid "Specifies a minimal pytest version required for running tests."

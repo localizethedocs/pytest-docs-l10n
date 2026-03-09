@@ -44,7 +44,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-2.6.1.rst:17
 msgid "pip install -U pytest"
-msgstr ""
+msgstr "pip install -U pytest"
 
 #: ../../../doc/en/announce/release-2.6.1.rst:19
 msgid "Thanks to all who contributed, among them:"

@@ -48,7 +48,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-2.8.7.rst:17
 msgid "pip install -U pytest"
-msgstr ""
+msgstr "pip install -U pytest"
 
 #: ../../../doc/en/announce/release-2.8.7.rst:19
 msgid "Thanks to all who contributed to this release, among them:"
@@ -56,7 +56,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-2.8.7.rst:21
 msgid "Ronny Pfannschmidt"
-msgstr ""
+msgstr "Ronny Pfannschmidt"
 
 #: ../../../doc/en/announce/release-2.8.7.rst:24
 msgid "Happy testing, The py.test Development Team"

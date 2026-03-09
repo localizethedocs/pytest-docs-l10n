@@ -308,7 +308,7 @@ msgstr ""
 
 #: ../../../doc/en/cache.rst:248
 msgid "Clearing Cache content"
-msgstr ""
+msgstr "清除快取內容"
 
 #: ../../../doc/en/cache.rst:250
 msgid ""
@@ -354,7 +354,7 @@ msgstr ""
 #: of _pytest.cacheprovider.Cache.get:0 _pytest.cacheprovider.Cache.set:0
 #: _pytest.cacheprovider.Cache.makedir:0
 msgid "Parameters"
-msgstr ""
+msgstr "參數"
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/cacheprovider.py:docstring
 #: of _pytest.cacheprovider.Cache.get:5 _pytest.cacheprovider.Cache.set:3

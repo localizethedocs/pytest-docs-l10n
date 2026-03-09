@@ -216,7 +216,7 @@ msgstr ""
 
 #: ../../../doc/en/skipping.rst:139
 msgid "``strict`` parameter"
-msgstr ""
+msgstr "``strict`` 參數"
 
 #: ../../../doc/en/skipping.rst:143
 msgid ""
@@ -251,7 +251,7 @@ msgstr ""
 
 #: ../../../doc/en/skipping.rst:165
 msgid "``reason`` parameter"
-msgstr ""
+msgstr "``reason`` 參數"
 
 #: ../../../doc/en/skipping.rst:167
 msgid ""
@@ -269,7 +269,7 @@ msgstr ""
 
 #: ../../../doc/en/skipping.rst:177
 msgid "``raises`` parameter"
-msgstr ""
+msgstr "``raises`` 參數"
 
 #: ../../../doc/en/skipping.rst:179
 msgid ""
@@ -293,7 +293,7 @@ msgstr ""
 
 #: ../../../doc/en/skipping.rst:192
 msgid "``run`` parameter"
-msgstr ""
+msgstr "``run`` 參數"
 
 #: ../../../doc/en/skipping.rst:194
 msgid ""
@@ -323,7 +323,7 @@ msgstr ""
 
 #: ../../../doc/en/skipping.rst:211
 msgid "pytest --runxfail"
-msgstr ""
+msgstr "pytest --runxfail"
 
 #: ../../../doc/en/skipping.rst:213
 msgid ""
@@ -478,7 +478,7 @@ msgstr ""
 
 #: ../../../doc/en/skipping.rst:303
 msgid "docutils = pytest.importorskip(\"docutils\")"
-msgstr ""
+msgstr "docutils = pytest.importorskip(\"docutils\")"
 
 #: ../../../doc/en/skipping.rst:305
 msgid ""
@@ -488,7 +488,7 @@ msgstr ""
 
 #: ../../../doc/en/skipping.rst:309
 msgid "docutils = pytest.importorskip(\"docutils\", minversion=\"0.3\")"
-msgstr ""
+msgstr "docutils = pytest.importorskip(\"docutils\", minversion=\"0.3\")"
 
 #: ../../../doc/en/skipping.rst:311
 msgid ""

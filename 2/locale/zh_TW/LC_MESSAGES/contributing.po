@@ -57,7 +57,7 @@ msgstr ""
 
 #: ../../../CONTRIBUTING.rst:29
 msgid "Report bugs"
-msgstr ""
+msgstr "回報臭蟲"
 
 #: ../../../CONTRIBUTING.rst:31
 msgid ""
@@ -93,7 +93,7 @@ msgstr ""
 
 #: ../../../CONTRIBUTING.rst:49
 msgid "Fix bugs"
-msgstr ""
+msgstr "修復臭蟲"
 
 #: ../../../CONTRIBUTING.rst:51
 msgid ""
@@ -130,7 +130,7 @@ msgstr ""
 
 #: ../../../CONTRIBUTING.rst:71
 msgid "Write documentation"
-msgstr ""
+msgstr "撰寫文件"
 
 #: ../../../CONTRIBUTING.rst:73
 msgid "pytest could always use more documentation.  What exactly is needed?"
