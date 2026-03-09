@@ -55,7 +55,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-3.10.0.rst:20
 msgid "pip install -U pytest"
-msgstr ""
+msgstr "pip install -U pytest"
 
 #: ../../../doc/en/announce/release-3.10.0.rst:22
 msgid "Thanks to all who contributed to this release, among them:"
@@ -71,7 +71,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-3.10.0.rst:26
 msgid "Ankit Goel"
-msgstr ""
+msgstr "Ankit Goel"
 
 #: ../../../doc/en/announce/release-3.10.0.rst:27
 msgid "Anthony Sottile"
@@ -111,7 +111,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-3.10.0.rst:36
 msgid "Ronny Pfannschmidt"
-msgstr ""
+msgstr "Ronny Pfannschmidt"
 
 #: ../../../doc/en/announce/release-3.10.0.rst:37
 msgid "Sven-Hendrik Haase"

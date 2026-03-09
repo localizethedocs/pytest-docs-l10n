@@ -55,7 +55,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-3.3.0.rst:20
 msgid "pip install -U pytest"
-msgstr ""
+msgstr "pip install -U pytest"
 
 #: ../../../doc/en/announce/release-3.3.0.rst:22
 msgid "Thanks to all who contributed to this release, among them:"
@@ -99,47 +99,47 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-3.3.0.rst:33
 msgid "Jesús Espino"
-msgstr ""
+msgstr "Jesús Espino"
 
 #: ../../../doc/en/announce/release-3.3.0.rst:34
 msgid "Joan Massich"
-msgstr ""
+msgstr "Joan Massich"
 
 #: ../../../doc/en/announce/release-3.3.0.rst:35
 msgid "Ofir"
-msgstr ""
+msgstr "Ofir"
 
 #: ../../../doc/en/announce/release-3.3.0.rst:36
 msgid "OfirOshir"
-msgstr ""
+msgstr "OfirOshir"
 
 #: ../../../doc/en/announce/release-3.3.0.rst:37
 msgid "Ronny Pfannschmidt"
-msgstr ""
+msgstr "Ronny Pfannschmidt"
 
 #: ../../../doc/en/announce/release-3.3.0.rst:38
 msgid "Samuel Dion-Girardeau"
-msgstr ""
+msgstr "Samuel Dion-Girardeau"
 
 #: ../../../doc/en/announce/release-3.3.0.rst:39
 msgid "Srinivas Reddy Thatiparthy"
-msgstr ""
+msgstr "Srinivas Reddy Thatiparthy"
 
 #: ../../../doc/en/announce/release-3.3.0.rst:40
 msgid "Sviatoslav Abakumov"
-msgstr ""
+msgstr "Sviatoslav Abakumov"
 
 #: ../../../doc/en/announce/release-3.3.0.rst:41
 msgid "Tarcisio Fischer"
-msgstr ""
+msgstr "Tarcisio Fischer"
 
 #: ../../../doc/en/announce/release-3.3.0.rst:42
 msgid "Thomas Hisch"
-msgstr ""
+msgstr "Thomas Hisch"
 
 #: ../../../doc/en/announce/release-3.3.0.rst:43
 msgid "Tyler Goodlet"
-msgstr ""
+msgstr "Tyler Goodlet"
 
 #: ../../../doc/en/announce/release-3.3.0.rst:44
 msgid "hugovk"

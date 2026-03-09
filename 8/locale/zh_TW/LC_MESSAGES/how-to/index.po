@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../doc/en/how-to/index.rst:6
 msgid "How-to guides"
-msgstr ""
+msgstr "操作指南"
 
 #: ../../../doc/en/how-to/index.rst:9
 msgid "Core pytest functionality"
@@ -39,4 +39,4 @@ msgstr ""
 
 #: ../../../doc/en/how-to/index.rst:58
 msgid "pytest development environment"
-msgstr ""
+msgstr "pytest 開發環境"

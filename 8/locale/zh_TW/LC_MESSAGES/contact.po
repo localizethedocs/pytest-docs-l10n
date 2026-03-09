@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../doc/en/contact.rst:6
 msgid "Contact channels"
-msgstr ""
+msgstr "聯絡通道"
 
 #: ../../../doc/en/contact.rst:9
 msgid "Web"

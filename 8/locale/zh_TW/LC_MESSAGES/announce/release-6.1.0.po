@@ -49,7 +49,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-6.1.0.rst:17
 msgid "pip install -U pytest"
-msgstr ""
+msgstr "pip install -U pytest"
 
 #: ../../../doc/en/announce/release-6.1.0.rst:19
 msgid "Thanks to all of the contributors to this release:"
@@ -85,7 +85,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-6.1.0.rst:28
 msgid "Hynek Schlawack"
-msgstr ""
+msgstr "Hynek Schlawack"
 
 #: ../../../doc/en/announce/release-6.1.0.rst:29
 msgid "Joseph Lucas"
@@ -121,7 +121,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-6.1.0.rst:37
 msgid "Thomas Grainger"
-msgstr ""
+msgstr "Thomas Grainger"
 
 #: ../../../doc/en/announce/release-6.1.0.rst:38
 msgid "Vipul Kumar"

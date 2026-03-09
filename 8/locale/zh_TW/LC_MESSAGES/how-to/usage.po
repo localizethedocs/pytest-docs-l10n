@@ -36,7 +36,7 @@ msgstr ""
 
 #: ../../../doc/en/how-to/usage.rst:18
 msgid "Specifying which tests to run"
-msgstr ""
+msgstr "指定要執行哪個測試"
 
 #: ../../../doc/en/how-to/usage.rst:20
 msgid ""
@@ -166,7 +166,7 @@ msgstr ""
 
 #: ../../../doc/en/how-to/usage.rst:105
 msgid "**Read arguments from file**"
-msgstr ""
+msgstr "**從檔案讀取引數**"
 
 #: ../../../doc/en/how-to/usage.rst:109
 msgid "All of the above can be read from a file using the ``@`` prefix:"

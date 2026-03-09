@@ -322,7 +322,7 @@ msgstr ""
 
 #: ../../../doc/en/how-to/writing_plugins.rst:0
 msgid "Parameters"
-msgstr ""
+msgstr "參數"
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/assertion/__init__.py:docstring
 #: of _pytest.assertion.register_assert_rewrite:9

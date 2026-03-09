@@ -616,7 +616,7 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
 #: of _pytest.hookspec.pytest_assertrepr_compare:0
 msgid "Parameters"
-msgstr ""
+msgstr "參數"
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
 #: of _pytest.hookspec.pytest_assertrepr_compare:8
@@ -740,7 +740,7 @@ msgstr ""
 
 #: ../../../doc/en/how-to/assert.rst:488
 msgid "Example:"
-msgstr ""
+msgstr "範例："
 
 #: ../../../doc/en/how-to/assert.rst:490
 msgid ""
