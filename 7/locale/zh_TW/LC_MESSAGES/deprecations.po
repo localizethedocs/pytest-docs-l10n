@@ -1020,7 +1020,7 @@ msgstr ""
 #: ../../../doc/en/deprecations.rst:714 ../../../doc/en/deprecations.rst:847
 #: ../../../doc/en/deprecations.rst:872
 msgid "Example:"
-msgstr ""
+msgstr "範例："
 
 #: ../../../doc/en/deprecations.rst:716
 msgid ""

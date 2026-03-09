@@ -124,7 +124,7 @@ msgstr ""
 
 #: ../../../doc/en/explanation/pythonpath.rst:59
 msgid "The :confval:`pythonpath` configuration variable."
-msgstr ""
+msgstr ":confval:`pythonpath` 組態變數。"
 
 #: ../../../doc/en/explanation/pythonpath.rst:63
 msgid "``prepend`` and ``append`` import modes scenarios"
@@ -158,6 +158,15 @@ msgid ""
 "         |- __init__.py\n"
 "         |- test_foo.py"
 msgstr ""
+"root/\n"
+"|- foo/\n"
+"   |- __init__.py\n"
+"   |- conftest.py\n"
+"   |- bar/\n"
+"      |- __init__.py\n"
+"      |- tests/\n"
+"         |- __init__.py\n"
+"         |- test_foo.py"
 
 #: ../../../doc/en/explanation/pythonpath.rst:85
 #: ../../../doc/en/explanation/pythonpath.rst:117
@@ -206,6 +215,12 @@ msgid ""
 "      |- tests/\n"
 "         |- test_foo.py"
 msgstr ""
+"root/\n"
+"|- foo/\n"
+"   |- conftest.py\n"
+"   |- bar/\n"
+"      |- tests/\n"
+"         |- test_foo.py"
 
 #: ../../../doc/en/explanation/pythonpath.rst:123
 msgid ""

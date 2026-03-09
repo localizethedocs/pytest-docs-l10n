@@ -23,7 +23,7 @@ msgstr ""
 
 #: ../../../doc/en/explanation/goodpractices.rst:8
 msgid "Install package with pip"
-msgstr ""
+msgstr "使用 pip 安裝軟體包"
 
 #: ../../../doc/en/explanation/goodpractices.rst:10
 msgid ""
@@ -50,6 +50,13 @@ msgid ""
 "name = \"PACKAGENAME\"\n"
 "version = \"PACKAGEVERSION\""
 msgstr ""
+"[build-system]\n"
+"requires = [\"hatchling\"]\n"
+"build-backend = \"hatchling.build\"\n"
+"\n"
+"[project]\n"
+"name = \"PACKAGENAME\"\n"
+"version = \"PACKAGEVERSION\""
 
 #: ../../../doc/en/explanation/goodpractices.rst:29
 msgid ""
@@ -65,7 +72,7 @@ msgstr ""
 
 #: ../../../doc/en/explanation/goodpractices.rst:33
 msgid "pip install -e ."
-msgstr ""
+msgstr "pip install -e ."
 
 #: ../../../doc/en/explanation/goodpractices.rst:37
 msgid ""
@@ -214,7 +221,7 @@ msgstr ""
 
 #: ../../../doc/en/explanation/goodpractices.rst:122
 msgid "PYTHONPATH=src pytest"
-msgstr ""
+msgstr "PYTHONPATH=src pytest"
 
 #: ../../../doc/en/explanation/goodpractices.rst:126
 msgid ""
@@ -390,6 +397,17 @@ msgid ""
 "        __init__.py\n"
 "        test_view.py"
 msgstr ""
+"pyproject.toml\n"
+"mypkg/\n"
+"    ...\n"
+"tests/\n"
+"    __init__.py\n"
+"    foo/\n"
+"        __init__.py\n"
+"        test_view.py\n"
+"    bar/\n"
+"        __init__.py\n"
+"        test_view.py"
 
 #: ../../../doc/en/explanation/goodpractices.rst:250
 msgid ""
@@ -430,7 +448,7 @@ msgstr ""
 
 #: ../../../doc/en/explanation/goodpractices.rst:282
 msgid "Do not run via setuptools"
-msgstr ""
+msgstr "請不要透過 setuptools 執行"
 
 #: ../../../doc/en/explanation/goodpractices.rst:284
 msgid ""

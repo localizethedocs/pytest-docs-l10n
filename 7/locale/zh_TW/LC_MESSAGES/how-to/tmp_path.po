@@ -140,7 +140,7 @@ msgstr ""
 
 #: ../../../doc/en/how-to/tmp_path.rst:103
 msgid "The ``tmpdir`` and ``tmpdir_factory`` fixtures"
-msgstr ""
+msgstr "``tmpdir`` 和 ``tmpdir_factory`` 夾具"
 
 #: ../../../doc/en/how-to/tmp_path.rst:105
 msgid ""

@@ -19,4 +19,4 @@ msgstr ""
 
 #: ../../../doc/en/reference/index.rst:6
 msgid "Reference guides"
-msgstr ""
+msgstr "參考指南"

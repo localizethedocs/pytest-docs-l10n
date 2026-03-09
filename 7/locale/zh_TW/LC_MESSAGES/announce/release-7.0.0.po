@@ -49,7 +49,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-7.0.0.rst:17
 msgid "pip install -U pytest"
-msgstr ""
+msgstr "pip install -U pytest"
 
 #: ../../../doc/en/announce/release-7.0.0.rst:19
 msgid "Thanks to all of the contributors to this release:"
@@ -181,7 +181,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-7.0.0.rst:52
 msgid "Ronny Pfannschmidt"
-msgstr ""
+msgstr "Ronny Pfannschmidt"
 
 #: ../../../doc/en/announce/release-7.0.0.rst:53
 msgid "Simon K"
@@ -205,11 +205,11 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-7.0.0.rst:58
 msgid "Thomas Grainger"
-msgstr ""
+msgstr "Thomas Grainger"
 
 #: ../../../doc/en/announce/release-7.0.0.rst:59
 msgid "Thomas Hisch"
-msgstr ""
+msgstr "Thomas Hisch"
 
 #: ../../../doc/en/announce/release-7.0.0.rst:60
 msgid "William Jamir Silva"

@@ -36,7 +36,7 @@ msgstr ""
 
 #: ../../../doc/en/how-to/usage.rst:18
 msgid "Specifying which tests to run"
-msgstr ""
+msgstr "指定要執行哪個測試"
 
 #: ../../../doc/en/how-to/usage.rst:20
 msgid ""

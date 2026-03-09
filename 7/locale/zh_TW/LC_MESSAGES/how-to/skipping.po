@@ -68,7 +68,7 @@ msgstr ""
 
 #: ../../../doc/en/how-to/skipping.rst:40
 msgid "Skipping test functions"
-msgstr ""
+msgstr "略過測試函式"
 
 #: ../../../doc/en/how-to/skipping.rst:44
 msgid ""
@@ -221,6 +221,11 @@ msgid ""
 "    def test_function(self):\n"
 "        \"will not be setup or run under 'win32' platform\""
 msgstr ""
+"@pytest.mark.skipif(sys.platform == \"win32\", reason=\"does not run on "
+"windows\")\n"
+"class TestPosixCalls:\n"
+"    def test_function(self):\n"
+"        \"will not be setup or run under 'win32' platform\""
 
 #: ../../../doc/en/how-to/skipping.rst:153
 msgid ""
@@ -248,7 +253,7 @@ msgstr ""
 
 #: ../../../doc/en/how-to/skipping.rst:171
 msgid "Skipping files or directories"
-msgstr ""
+msgstr "略過檔案或目錄"
 
 #: ../../../doc/en/how-to/skipping.rst:173
 msgid ""
@@ -271,7 +276,7 @@ msgstr ""
 
 #: ../../../doc/en/how-to/skipping.rst:186
 msgid "docutils = pytest.importorskip(\"docutils\")"
-msgstr ""
+msgstr "docutils = pytest.importorskip(\"docutils\")"
 
 #: ../../../doc/en/how-to/skipping.rst:190
 msgid ""
@@ -281,7 +286,7 @@ msgstr ""
 
 #: ../../../doc/en/how-to/skipping.rst:193
 msgid "docutils = pytest.importorskip(\"docutils\", minversion=\"0.3\")"
-msgstr ""
+msgstr "docutils = pytest.importorskip(\"docutils\", minversion=\"0.3\")"
 
 #: ../../../doc/en/how-to/skipping.rst:197
 msgid ""
@@ -305,7 +310,7 @@ msgstr ""
 
 #: ../../../doc/en/how-to/skipping.rst:207
 msgid "pytestmark = pytest.mark.skip(\"all tests still WIP\")"
-msgstr ""
+msgstr "pytestmark = pytest.mark.skip(\"all tests still WIP\")"
 
 #: ../../../doc/en/how-to/skipping.rst:211
 msgid "Skip all tests in a module based on some condition:"
@@ -316,6 +321,8 @@ msgid ""
 "pytestmark = pytest.mark.skipif(sys.platform == \"win32\", reason=\"tests "
 "for linux only\")"
 msgstr ""
+"pytestmark = pytest.mark.skipif(sys.platform == \"win32\", reason=\"tests "
+"for linux only\")"
 
 #: ../../../doc/en/how-to/skipping.rst:217
 msgid "Skip all tests in a module if some import is missing:"
@@ -369,6 +376,11 @@ msgid ""
 "    if slow_module.slow_function():\n"
 "        pytest.xfail(\"slow_module taking too long\")"
 msgstr ""
+"def test_function2():\n"
+"    import slow_module\n"
+"\n"
+"    if slow_module.slow_function():\n"
+"        pytest.xfail(\"slow_module taking too long\")"
 
 #: ../../../doc/en/how-to/skipping.rst:259
 msgid ""
@@ -390,7 +402,7 @@ msgstr ""
 
 #: ../../../doc/en/how-to/skipping.rst:270
 msgid "``condition`` parameter"
-msgstr ""
+msgstr "``condition`` 參數"
 
 #: ../../../doc/en/how-to/skipping.rst:272
 msgid ""
@@ -414,7 +426,7 @@ msgstr ""
 
 #: ../../../doc/en/how-to/skipping.rst:285
 msgid "``reason`` parameter"
-msgstr ""
+msgstr "``reason`` 參數"
 
 #: ../../../doc/en/how-to/skipping.rst:287
 msgid ""
@@ -431,7 +443,7 @@ msgstr ""
 
 #: ../../../doc/en/how-to/skipping.rst:297
 msgid "``raises`` parameter"
-msgstr ""
+msgstr "``raises`` 參數"
 
 #: ../../../doc/en/how-to/skipping.rst:299
 msgid ""
@@ -455,7 +467,7 @@ msgstr ""
 
 #: ../../../doc/en/how-to/skipping.rst:312
 msgid "``run`` parameter"
-msgstr ""
+msgstr "``run`` 參數"
 
 #: ../../../doc/en/how-to/skipping.rst:314
 msgid ""
@@ -478,7 +490,7 @@ msgstr ""
 
 #: ../../../doc/en/how-to/skipping.rst:329
 msgid "``strict`` parameter"
-msgstr ""
+msgstr "``strict`` 參數"
 
 #: ../../../doc/en/how-to/skipping.rst:331
 msgid ""
@@ -513,7 +525,7 @@ msgstr ""
 
 #: ../../../doc/en/how-to/skipping.rst:353
 msgid "Ignoring xfail"
-msgstr ""
+msgstr "忽略 xfail"
 
 #: ../../../doc/en/how-to/skipping.rst:355
 msgid "By specifying on the commandline:"
@@ -521,7 +533,7 @@ msgstr ""
 
 #: ../../../doc/en/how-to/skipping.rst:357
 msgid "pytest --runxfail"
-msgstr ""
+msgstr "pytest --runxfail"
 
 #: ../../../doc/en/how-to/skipping.rst:361
 msgid ""
@@ -612,6 +624,31 @@ msgid ""
 "XFAIL xfail_demo.py::test_hello7\n"
 "============================ 7 xfailed in 0.12s ============================"
 msgstr ""
+"! pytest -rx xfail_demo.py\n"
+"=========================== test session starts "
+"============================\n"
+"platform linux -- Python 3.x.y, pytest-6.x.y, py-1.x.y, pluggy-1.x.y\n"
+"cachedir: $PYTHON_PREFIX/.pytest_cache\n"
+"rootdir: $REGENDOC_TMPDIR/example\n"
+"collected 7 items\n"
+"\n"
+"xfail_demo.py xxxxxxx                                                [100%]\n"
+"\n"
+"========================= short test summary info "
+"==========================\n"
+"XFAIL xfail_demo.py::test_hello\n"
+"XFAIL xfail_demo.py::test_hello2\n"
+"  reason: [NOTRUN]\n"
+"XFAIL xfail_demo.py::test_hello3\n"
+"  condition: hasattr(os, 'sep')\n"
+"XFAIL xfail_demo.py::test_hello4\n"
+"  bug 110\n"
+"XFAIL xfail_demo.py::test_hello5\n"
+"  condition: pytest.__version__[0] != \"17\"\n"
+"XFAIL xfail_demo.py::test_hello6\n"
+"  reason: reason\n"
+"XFAIL xfail_demo.py::test_hello7\n"
+"============================ 7 xfailed in 0.12s ============================"
 
 #: ../../../doc/en/how-to/skipping.rst:405
 msgid "Skip/xfail with parametrize"
@@ -648,3 +685,25 @@ msgid ""
 "def test_increment(n, expected):\n"
 "    assert n + 1 == expected"
 msgstr ""
+"import sys\n"
+"\n"
+"import pytest\n"
+"\n"
+"\n"
+"@pytest.mark.parametrize(\n"
+"    (\"n\", \"expected\"),\n"
+"    [\n"
+"        (1, 2),\n"
+"        pytest.param(1, 0, marks=pytest.mark.xfail),\n"
+"        pytest.param(1, 3, marks=pytest.mark.xfail(reason=\"some bug\")),\n"
+"        (2, 3),\n"
+"        (3, 4),\n"
+"        (4, 5),\n"
+"        pytest.param(\n"
+"            10, 11, marks=pytest.mark.skipif(sys.version_info >= (3, 0), "
+"reason=\"py2k\")\n"
+"        ),\n"
+"    ],\n"
+")\n"
+"def test_increment(n, expected):\n"
+"    assert n + 1 == expected"

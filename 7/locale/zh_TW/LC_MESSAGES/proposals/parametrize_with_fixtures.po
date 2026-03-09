@@ -29,7 +29,7 @@ msgstr ""
 
 #: ../../../doc/en/proposals/parametrize_with_fixtures.rst:13
 msgid "Problem"
-msgstr ""
+msgstr "問題"
 
 #: ../../../doc/en/proposals/parametrize_with_fixtures.rst:15
 msgid ""
@@ -46,7 +46,7 @@ msgstr ""
 
 #: ../../../doc/en/proposals/parametrize_with_fixtures.rst:22
 msgid "use default values"
-msgstr ""
+msgstr "使用預設值"
 
 #: ../../../doc/en/proposals/parametrize_with_fixtures.rst:24
 msgid "emulate user input"
@@ -167,19 +167,19 @@ msgstr ""
 
 #: ../../../doc/en/proposals/parametrize_with_fixtures.rst:107
 msgid "``{}``"
-msgstr ""
+msgstr "``{}``"
 
 #: ../../../doc/en/proposals/parametrize_with_fixtures.rst:109
 msgid "``{'author': 'alice'}``"
-msgstr ""
+msgstr "``{'author': 'alice'}``"
 
 #: ../../../doc/en/proposals/parametrize_with_fixtures.rst:111
 msgid "``{'project_slug': 'helloworld'}``"
-msgstr ""
+msgstr "``{'project_slug': 'helloworld'}``"
 
 #: ../../../doc/en/proposals/parametrize_with_fixtures.rst:113
 msgid "``{'author': 'bob', 'project_slug': 'foobar'}``"
-msgstr ""
+msgstr "``{'author': 'bob', 'project_slug': 'foobar'}``"
 
 #: ../../../doc/en/proposals/parametrize_with_fixtures.rst:116
 msgid "Alternative approach"
@@ -217,6 +217,23 @@ msgid ""
 "    \"\"\"\n"
 "    return request.param"
 msgstr ""
+"@pytest.fixture(\n"
+"    params=[\n"
+"        pytest.fixture_request(\"default_context\"),\n"
+"        pytest.fixture_request(\"extra_context\"),\n"
+"    ]\n"
+")\n"
+"def context(request):\n"
+"    \"\"\"Returns all values for ``default_context``, one-by-one before it\n"
+"    does the same for ``extra_context``.\n"
+"\n"
+"    request.param:\n"
+"        - {}\n"
+"        - {'author': 'alice'}\n"
+"        - {'project_slug': 'helloworld'}\n"
+"        - {'author': 'bob', 'project_slug': 'foobar'}\n"
+"    \"\"\"\n"
+"    return request.param"
 
 #: ../../../doc/en/proposals/parametrize_with_fixtures.rst:146
 msgid ""
@@ -240,3 +257,17 @@ msgid ""
 "\n"
 "    assert result.exit_code == exit_code"
 msgstr ""
+"@pytest.mark.parametrize(\n"
+"    \"context, expected_response_code\",\n"
+"    [\n"
+"        (pytest.fixture_request(\"default_context\"), 0),\n"
+"        (pytest.fixture_request(\"extra_context\"), 0),\n"
+"    ],\n"
+")\n"
+"def test_generate_project(cookies, context, exit_code):\n"
+"    \"\"\"Call the cookiecutter API to generate a new project from a\n"
+"    template.\n"
+"    \"\"\"\n"
+"    result = cookies.bake(extra_context=context)\n"
+"\n"
+"    assert result.exit_code == exit_code"

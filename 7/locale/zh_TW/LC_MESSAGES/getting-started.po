@@ -19,11 +19,11 @@ msgstr ""
 
 #: ../../../doc/en/getting-started.rst:4
 msgid "Get Started"
-msgstr ""
+msgstr "開始使用"
 
 #: ../../../doc/en/getting-started.rst:10
 msgid "Install ``pytest``"
-msgstr ""
+msgstr "安裝 ``pytest``"
 
 #: ../../../doc/en/getting-started.rst:12
 msgid "``pytest`` requires: Python 3.7+ or PyPy3."
@@ -35,7 +35,7 @@ msgstr ""
 
 #: ../../../doc/en/getting-started.rst:16
 msgid "pip install -U pytest"
-msgstr ""
+msgstr "pip install -U pytest"
 
 #: ../../../doc/en/getting-started.rst:20
 msgid "Check that you installed the correct version:"
@@ -294,6 +294,26 @@ msgid ""
 "FAILED test_class_demo.py::TestClassDemoInstance::test_two - assert 0 == 1\n"
 "1 failed, 1 passed in 0.12s"
 msgstr ""
+"$ pytest -k TestClassDemoInstance -q\n"
+".F                                                                   [100%]\n"
+"================================= FAILURES "
+"=================================\n"
+"______________________ TestClassDemoInstance.test_two "
+"______________________\n"
+"\n"
+"self = <test_class_demo.TestClassDemoInstance object at 0xdeadbeef0002>\n"
+"\n"
+"    def test_two(self):\n"
+">       assert self.value == 1\n"
+"E       assert 0 == 1\n"
+"E        +  where 0 = <test_class_demo.TestClassDemoInstance object at "
+"0xdeadbeef0002>.value\n"
+"\n"
+"test_class_demo.py:9: AssertionError\n"
+"========================= short test summary info "
+"==========================\n"
+"FAILED test_class_demo.py::TestClassDemoInstance::test_two - assert 0 == 1\n"
+"1 failed, 1 passed in 0.12s"
 
 #: ../../../doc/en/getting-started.rst:200
 msgid ""

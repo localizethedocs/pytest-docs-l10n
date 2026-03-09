@@ -49,7 +49,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-7.4.0.rst:17
 msgid "pip install -U pytest"
-msgstr ""
+msgstr "pip install -U pytest"
 
 #: ../../../doc/en/announce/release-7.4.0.rst:19
 msgid "Thanks to all of the contributors to this release:"
@@ -117,7 +117,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-7.4.0.rst:36
 msgid "Ronny Pfannschmidt"
-msgstr ""
+msgstr "Ronny Pfannschmidt"
 
 #: ../../../doc/en/announce/release-7.4.0.rst:37
 msgid "Sergey Kim"

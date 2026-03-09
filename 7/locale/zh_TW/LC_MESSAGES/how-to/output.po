@@ -425,7 +425,7 @@ msgstr ""
 
 #: ../../../doc/en/how-to/output.rst:285
 msgid "Example:"
-msgstr ""
+msgstr "範例："
 
 #: ../../../doc/en/how-to/output.rst:287
 msgid ""

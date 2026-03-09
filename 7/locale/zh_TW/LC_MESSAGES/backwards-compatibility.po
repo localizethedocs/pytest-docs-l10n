@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../doc/en/backwards-compatibility.rst:4
 msgid "Backwards Compatibility Policy"
-msgstr ""
+msgstr "向後相容性方針"
 
 #: ../../../doc/en/backwards-compatibility.rst:8
 msgid ""
@@ -204,7 +204,7 @@ msgstr ""
 
 #: ../../../doc/en/backwards-compatibility.rst:75
 msgid "Deprecation Roadmap"
-msgstr ""
+msgstr "棄用路線圖"
 
 #: ../../../doc/en/backwards-compatibility.rst:77
 msgid ""
@@ -222,21 +222,21 @@ msgstr ""
 
 #: ../../../doc/en/backwards-compatibility.rst:83
 msgid "Python version support"
-msgstr ""
+msgstr "Python 版本支援"
 
 #: ../../../doc/en/backwards-compatibility.rst:85
 msgid ""
 "Released pytest versions support all Python versions that are actively "
 "maintained at the time of the release:"
-msgstr ""
+msgstr "發行的 pytest 版本支援在發行時所有仍處於主動維護狀態的 Python 版本："
 
 #: ../../../doc/en/backwards-compatibility.rst:88
 msgid "pytest version"
-msgstr ""
+msgstr "pytest 版本"
 
 #: ../../../doc/en/backwards-compatibility.rst:88
 msgid "min. Python version"
-msgstr ""
+msgstr "最低 Python 版本"
 
 #: ../../../doc/en/backwards-compatibility.rst:90
 msgid "7.1+"
@@ -272,4 +272,4 @@ msgstr ""
 
 #: ../../../doc/en/backwards-compatibility.rst:96
 msgid "`Status of Python Versions <https://devguide.python.org/versions/>`__."
-msgstr ""
+msgstr "`Python 版本的狀態 <https://devguide.python.org/versions/>`__。"

@@ -78,7 +78,7 @@ msgstr ""
 
 #: ../../../doc/en/historical-notes.rst:34
 msgid "Updating code"
-msgstr ""
+msgstr "更新程式碼"
 
 #: ../../../doc/en/historical-notes.rst:36
 msgid ""
@@ -151,7 +151,7 @@ msgstr ""
 
 #: ../../../doc/en/historical-notes.rst:82
 msgid "Related issues"
-msgstr ""
+msgstr "相關議題"
 
 #: ../../../doc/en/historical-notes.rst:84
 msgid ""
@@ -251,7 +251,7 @@ msgstr ""
 
 #: ../../../doc/en/historical-notes.rst:143
 msgid "``@pytest.yield_fixture`` decorator"
-msgstr ""
+msgstr "``@pytest.yield_fixture`` 裝飾器"
 
 #: ../../../doc/en/historical-notes.rst:147
 msgid ""
@@ -437,7 +437,7 @@ msgstr ""
 
 #: ../../../doc/en/historical-notes.rst:284
 msgid "``pytest.set_trace()``"
-msgstr ""
+msgstr "``pytest.set_trace()``"
 
 #: ../../../doc/en/historical-notes.rst:288
 msgid ""

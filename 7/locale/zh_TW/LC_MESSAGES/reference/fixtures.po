@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/fixtures.rst:9
 msgid "Fixtures reference"
-msgstr ""
+msgstr "夾具參考"
 
 #: ../../../doc/en/reference/fixtures.rst:11
 msgid ":ref:`about-fixtures`"

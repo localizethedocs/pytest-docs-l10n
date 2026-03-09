@@ -119,6 +119,39 @@ msgid ""
 "FAILED test_50.py::test_num[25] - Failed: bad luck\n"
 "2 failed, 48 passed in 0.12s"
 msgstr ""
+"$ pytest -q\n"
+".................F.......F........................                   [100%]\n"
+"================================= FAILURES "
+"=================================\n"
+"_______________________________ test_num[17] "
+"_______________________________\n"
+"\n"
+"i = 17\n"
+"\n"
+"    @pytest.mark.parametrize(\"i\", range(50))\n"
+"    def test_num(i):\n"
+"        if i in (17, 25):\n"
+">           pytest.fail(\"bad luck\")\n"
+"E           Failed: bad luck\n"
+"\n"
+"test_50.py:7: Failed\n"
+"_______________________________ test_num[25] "
+"_______________________________\n"
+"\n"
+"i = 25\n"
+"\n"
+"    @pytest.mark.parametrize(\"i\", range(50))\n"
+"    def test_num(i):\n"
+"        if i in (17, 25):\n"
+">           pytest.fail(\"bad luck\")\n"
+"E           Failed: bad luck\n"
+"\n"
+"test_50.py:7: Failed\n"
+"========================= short test summary info "
+"==========================\n"
+"FAILED test_50.py::test_num[17] - Failed: bad luck\n"
+"FAILED test_50.py::test_num[25] - Failed: bad luck\n"
+"2 failed, 48 passed in 0.12s"
 
 #: ../../../doc/en/how-to/cache.rst:83
 msgid "If you then run it with ``--lf``:"
@@ -263,7 +296,7 @@ msgstr ""
 
 #: ../../../doc/en/how-to/cache.rst:188
 msgid "Example:"
-msgstr ""
+msgstr "範例："
 
 #: ../../../doc/en/how-to/cache.rst:190
 msgid ""
@@ -427,7 +460,7 @@ msgstr ""
 
 #: ../../../doc/en/how-to/cache.rst:316
 msgid "Clearing Cache content"
-msgstr ""
+msgstr "清除快取內容"
 
 #: ../../../doc/en/how-to/cache.rst:318
 msgid ""
@@ -437,7 +470,7 @@ msgstr ""
 
 #: ../../../doc/en/how-to/cache.rst:321
 msgid "pytest --cache-clear"
-msgstr ""
+msgstr "pytest --cache-clear"
 
 #: ../../../doc/en/how-to/cache.rst:325
 msgid ""

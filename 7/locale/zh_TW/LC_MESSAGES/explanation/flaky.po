@@ -50,7 +50,7 @@ msgstr ""
 
 #: ../../../doc/en/explanation/flaky.rst:17
 msgid "System state"
-msgstr ""
+msgstr "系統狀態"
 
 #: ../../../doc/en/explanation/flaky.rst:19
 msgid ""
@@ -110,7 +110,7 @@ msgstr ""
 
 #: ../../../doc/en/explanation/flaky.rst:44
 msgid "PYTEST_CURRENT_TEST"
-msgstr ""
+msgstr "PYTEST_CURRENT_TEST"
 
 #: ../../../doc/en/explanation/flaky.rst:46
 msgid ""
@@ -295,7 +295,7 @@ msgstr ""
 
 #: ../../../doc/en/explanation/flaky.rst:118
 msgid "Microsoft:"
-msgstr ""
+msgstr "Microsoft："
 
 #: ../../../doc/en/explanation/flaky.rst:120
 msgid ""
@@ -313,7 +313,7 @@ msgstr ""
 
 #: ../../../doc/en/explanation/flaky.rst:123
 msgid "Google:"
-msgstr ""
+msgstr "Google："
 
 #: ../../../doc/en/explanation/flaky.rst:125
 msgid ""
