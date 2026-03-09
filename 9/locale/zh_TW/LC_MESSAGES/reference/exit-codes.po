@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/exit-codes.rst:4
 msgid "Exit codes"
-msgstr ""
+msgstr "退出碼"
 
 #: ../../../doc/en/reference/exit-codes.rst:6
 msgid "Running ``pytest`` can result in six different exit codes:"
@@ -27,7 +27,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/exit-codes.rst:0
 msgid "Exit code 0"
-msgstr ""
+msgstr "退出碼 0"
 
 #: ../../../doc/en/reference/exit-codes.rst:8
 msgid "All tests were collected and passed successfully"
@@ -35,7 +35,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/exit-codes.rst:0
 msgid "Exit code 1"
-msgstr ""
+msgstr "退出碼 1"
 
 #: ../../../doc/en/reference/exit-codes.rst:9
 msgid "Tests were collected and run but some of the tests failed"
@@ -43,7 +43,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/exit-codes.rst:0
 msgid "Exit code 2"
-msgstr ""
+msgstr "退出碼 2"
 
 #: ../../../doc/en/reference/exit-codes.rst:10
 msgid "Test execution was interrupted by the user"
@@ -51,7 +51,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/exit-codes.rst:0
 msgid "Exit code 3"
-msgstr ""
+msgstr "退出碼 3"
 
 #: ../../../doc/en/reference/exit-codes.rst:11
 msgid "Internal error happened while executing tests"
@@ -59,7 +59,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/exit-codes.rst:0
 msgid "Exit code 4"
-msgstr ""
+msgstr "退出碼 4"
 
 #: ../../../doc/en/reference/exit-codes.rst:12
 msgid "pytest command line usage error"
@@ -67,7 +67,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/exit-codes.rst:0
 msgid "Exit code 5"
-msgstr ""
+msgstr "退出碼 5"
 
 #: ../../../doc/en/reference/exit-codes.rst:13
 msgid "No tests were collected"

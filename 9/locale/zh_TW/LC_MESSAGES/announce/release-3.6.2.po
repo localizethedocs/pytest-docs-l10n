@@ -31,7 +31,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-3.6.2.rst:8
 msgid "pip install --upgrade pytest"
-msgstr ""
+msgstr "pip install --upgrade pytest"
 
 #: ../../../doc/en/announce/release-3.6.2.rst:10
 msgid ""
@@ -45,51 +45,51 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-3.6.2.rst:14
 msgid "Alan Velasco"
-msgstr ""
+msgstr "Alan Velasco"
 
 #: ../../../doc/en/announce/release-3.6.2.rst:15
 msgid "Alex Barbato"
-msgstr ""
+msgstr "Alex Barbato"
 
 #: ../../../doc/en/announce/release-3.6.2.rst:16
 msgid "Anthony Sottile"
-msgstr ""
+msgstr "Anthony Sottile"
 
 #: ../../../doc/en/announce/release-3.6.2.rst:17
 msgid "Bartosz Cierocki"
-msgstr ""
+msgstr "Bartosz Cierocki"
 
 #: ../../../doc/en/announce/release-3.6.2.rst:18
 msgid "Bruno Oliveira"
-msgstr ""
+msgstr "Bruno Oliveira"
 
 #: ../../../doc/en/announce/release-3.6.2.rst:19
 msgid "Daniel Hahler"
-msgstr ""
+msgstr "Daniel Hahler"
 
 #: ../../../doc/en/announce/release-3.6.2.rst:20
 msgid "Guoqiang Zhang"
-msgstr ""
+msgstr "Guoqiang Zhang"
 
 #: ../../../doc/en/announce/release-3.6.2.rst:21
 msgid "Hynek Schlawack"
-msgstr ""
+msgstr "Hynek Schlawack"
 
 #: ../../../doc/en/announce/release-3.6.2.rst:22
 msgid "John T. Wodder II"
-msgstr ""
+msgstr "John T. Wodder II"
 
 #: ../../../doc/en/announce/release-3.6.2.rst:23
 msgid "Michael Käufl"
-msgstr ""
+msgstr "Michael Käufl"
 
 #: ../../../doc/en/announce/release-3.6.2.rst:24
 msgid "Ronny Pfannschmidt"
-msgstr ""
+msgstr "Ronny Pfannschmidt"
 
 #: ../../../doc/en/announce/release-3.6.2.rst:25
 msgid "Samuel Dion-Girardeau"
-msgstr ""
+msgstr "Samuel Dion-Girardeau"
 
 #: ../../../doc/en/announce/release-3.6.2.rst:28
 msgid "Happy testing, The pytest Development Team"

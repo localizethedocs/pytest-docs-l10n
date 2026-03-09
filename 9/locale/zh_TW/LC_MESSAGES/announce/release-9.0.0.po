@@ -49,7 +49,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-9.0.0.rst:17
 msgid "pip install -U pytest"
-msgstr ""
+msgstr "pip install -U pytest"
 
 #: ../../../doc/en/announce/release-9.0.0.rst:19
 msgid "Thanks to all of the contributors to this release:"
@@ -61,7 +61,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-9.0.0.rst:22
 msgid "Aditi De"
-msgstr ""
+msgstr "Aditi De"
 
 #: ../../../doc/en/announce/release-9.0.0.rst:23
 msgid "Ali Nazzal"
@@ -117,7 +117,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-9.0.0.rst:36
 msgid "John Litborn"
-msgstr ""
+msgstr "John Litborn"
 
 #: ../../../doc/en/announce/release-9.0.0.rst:37
 msgid "Jordan Macdonald"
@@ -129,11 +129,11 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-9.0.0.rst:39
 msgid "Liam DeVoe"
-msgstr ""
+msgstr "Liam DeVoe"
 
 #: ../../../doc/en/announce/release-9.0.0.rst:40
 msgid "Marc Mueller"
-msgstr ""
+msgstr "Marc Mueller"
 
 #: ../../../doc/en/announce/release-9.0.0.rst:41
 msgid "Marcos Boger"
@@ -149,11 +149,11 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-9.0.0.rst:44
 msgid "NayeemJohn"
-msgstr ""
+msgstr "NayeemJohn"
 
 #: ../../../doc/en/announce/release-9.0.0.rst:45
 msgid "Olivier Grisel"
-msgstr ""
+msgstr "Olivier Grisel"
 
 #: ../../../doc/en/announce/release-9.0.0.rst:46
 msgid "Omri Golan"

@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:5
 msgid "Changelog"
-msgstr ""
+msgstr "變更日誌"
 
 #: ../../../doc/en/changelog.rst:7
 msgid ""
@@ -203,7 +203,7 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:119 ../../../doc/en/changelog.rst:611
 #: ../../../doc/en/changelog.rst:730
 msgid "Example:"
-msgstr ""
+msgstr "範例："
 
 #: ../../../doc/en/changelog.rst:121
 msgid ""

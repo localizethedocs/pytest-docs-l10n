@@ -31,7 +31,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-6.2.5.rst:8
 msgid "pip install --upgrade pytest"
-msgstr ""
+msgstr "pip install --upgrade pytest"
 
 #: ../../../doc/en/announce/release-6.2.5.rst:10
 msgid ""
@@ -45,19 +45,19 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-6.2.5.rst:14
 msgid "Anthony Sottile"
-msgstr ""
+msgstr "Anthony Sottile"
 
 #: ../../../doc/en/announce/release-6.2.5.rst:15
 msgid "Bruno Oliveira"
-msgstr ""
+msgstr "Bruno Oliveira"
 
 #: ../../../doc/en/announce/release-6.2.5.rst:16
 msgid "Brylie Christopher Oxley"
-msgstr ""
+msgstr "Brylie Christopher Oxley"
 
 #: ../../../doc/en/announce/release-6.2.5.rst:17
 msgid "Daniel Asztalos"
-msgstr ""
+msgstr "Daniel Asztalos"
 
 #: ../../../doc/en/announce/release-6.2.5.rst:18
 msgid "Florian Bruhin"
@@ -77,23 +77,23 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-6.2.5.rst:22
 msgid "Miro Hrončok"
-msgstr ""
+msgstr "Miro Hrončok"
 
 #: ../../../doc/en/announce/release-6.2.5.rst:23
 msgid "Ran Benita"
-msgstr ""
+msgstr "Ran Benita"
 
 #: ../../../doc/en/announce/release-6.2.5.rst:24
 msgid "Ronny Pfannschmidt"
-msgstr ""
+msgstr "Ronny Pfannschmidt"
 
 #: ../../../doc/en/announce/release-6.2.5.rst:25
 msgid "Sylvain Bellemare"
-msgstr ""
+msgstr "Sylvain Bellemare"
 
 #: ../../../doc/en/announce/release-6.2.5.rst:26
 msgid "Thomas Güttler"
-msgstr ""
+msgstr "Thomas Güttler"
 
 #: ../../../doc/en/announce/release-6.2.5.rst:29
 msgid "Happy testing, The pytest Development Team"

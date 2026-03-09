@@ -31,7 +31,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-5.2.2.rst:8
 msgid "pip install --upgrade pytest"
-msgstr ""
+msgstr "pip install --upgrade pytest"
 
 #: ../../../doc/en/announce/release-5.2.2.rst:10
 msgid ""
@@ -45,23 +45,23 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-5.2.2.rst:14
 msgid "Albert Tugushev"
-msgstr ""
+msgstr "Albert Tugushev"
 
 #: ../../../doc/en/announce/release-5.2.2.rst:15
 msgid "Andrzej Klajnert"
-msgstr ""
+msgstr "Andrzej Klajnert"
 
 #: ../../../doc/en/announce/release-5.2.2.rst:16
 msgid "Anthony Sottile"
-msgstr ""
+msgstr "Anthony Sottile"
 
 #: ../../../doc/en/announce/release-5.2.2.rst:17
 msgid "Bruno Oliveira"
-msgstr ""
+msgstr "Bruno Oliveira"
 
 #: ../../../doc/en/announce/release-5.2.2.rst:18
 msgid "Daniel Hahler"
-msgstr ""
+msgstr "Daniel Hahler"
 
 #: ../../../doc/en/announce/release-5.2.2.rst:19
 msgid "Florian Bruhin"
@@ -69,27 +69,27 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-5.2.2.rst:20
 msgid "Nattaphoom Chaipreecha"
-msgstr ""
+msgstr "Nattaphoom Chaipreecha"
 
 #: ../../../doc/en/announce/release-5.2.2.rst:21
 msgid "Oliver Bestwalter"
-msgstr ""
+msgstr "Oliver Bestwalter"
 
 #: ../../../doc/en/announce/release-5.2.2.rst:22
 msgid "Philipp Loose"
-msgstr ""
+msgstr "Philipp Loose"
 
 #: ../../../doc/en/announce/release-5.2.2.rst:23
 msgid "Ran Benita"
-msgstr ""
+msgstr "Ran Benita"
 
 #: ../../../doc/en/announce/release-5.2.2.rst:24
 msgid "Victor Maryama"
-msgstr ""
+msgstr "Victor Maryama"
 
 #: ../../../doc/en/announce/release-5.2.2.rst:25
 msgid "Yoav Caspi"
-msgstr ""
+msgstr "Yoav Caspi"
 
 #: ../../../doc/en/announce/release-5.2.2.rst:28
 msgid "Happy testing, The pytest Development Team"

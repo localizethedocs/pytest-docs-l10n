@@ -49,7 +49,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-8.0.0rc1.rst:17
 msgid "pip install -U pytest"
-msgstr ""
+msgstr "pip install -U pytest"
 
 #: ../../../doc/en/announce/release-8.0.0rc1.rst:19
 msgid "Thanks to all of the contributors to this release:"
@@ -149,7 +149,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-8.0.0rc1.rst:44
 msgid "Marc Mueller"
-msgstr ""
+msgstr "Marc Mueller"
 
 #: ../../../doc/en/announce/release-8.0.0rc1.rst:45
 msgid "Michał Górny"
@@ -181,7 +181,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-8.0.0rc1.rst:52
 msgid "Ronny Pfannschmidt"
-msgstr ""
+msgstr "Ronny Pfannschmidt"
 
 #: ../../../doc/en/announce/release-8.0.0rc1.rst:53
 msgid "Sadra Barikbin"
@@ -217,7 +217,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-8.0.0rc1.rst:61
 msgid "Thomas Grainger"
-msgstr ""
+msgstr "Thomas Grainger"
 
 #: ../../../doc/en/announce/release-8.0.0rc1.rst:62
 msgid "Tom Mortimer-Jones"

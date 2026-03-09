@@ -68,6 +68,10 @@ msgid ""
 "        if value == target:\n"
 "            return caption"
 msgstr ""
+"def get_caption(target: int, items: list[tuple[int, str]]) -> str:\n"
+"    for value, caption in items:\n"
+"        if value == target:\n"
+"            return caption"
 
 #: ../../../doc/en/explanation/types.rst:30
 msgid ""
@@ -80,6 +84,8 @@ msgid ""
 "def test_get_caption() -> None:\n"
 "    assert get_caption(10, [(1, \"foo\"), (10, \"bar\")]) == \"bar\""
 msgstr ""
+"def test_get_caption() -> None:\n"
+"    assert get_caption(10, [(1, \"foo\"), (10, \"bar\")]) == \"bar\""
 
 #: ../../../doc/en/explanation/types.rst:38
 msgid ""
@@ -107,6 +113,12 @@ msgid ""
 "def sample_fixture() -> int:\n"
 "    return 38"
 msgstr ""
+"import pytest\n"
+"\n"
+"\n"
+"@pytest.fixture\n"
+"def sample_fixture() -> int:\n"
+"    return 38"
 
 #: ../../../doc/en/explanation/types.rst:56
 msgid ""
@@ -119,6 +131,8 @@ msgid ""
 "def test_sample_fixture(sample_fixture: int) -> None:\n"
 "    assert sample_fixture == 38"
 msgstr ""
+"def test_sample_fixture(sample_fixture: int) -> None:\n"
+"    assert sample_fixture == 38"
 
 #: ../../../doc/en/explanation/types.rst:63
 msgid ""
@@ -140,6 +154,10 @@ msgid ""
 "def test_increment(input_value: int, expected_output: int) -> None:\n"
 "    assert input_value + 1 == expected_output"
 msgstr ""
+"@pytest.mark.parametrize(\"input_value, expected_output\", [(1, 2), (5, 6), "
+"(10, 11)])\n"
+"def test_increment(input_value: int, expected_output: int) -> None:\n"
+"    assert input_value + 1 == expected_output"
 
 #: ../../../doc/en/explanation/types.rst:76
 msgid ""
@@ -153,6 +171,9 @@ msgid ""
 "def mock_env_user(monkeypatch: pytest.MonkeyPatch) -> None:\n"
 "    monkeypatch.setenv(\"USER\", \"TestingUser\")"
 msgstr ""
+"@pytest.fixture\n"
+"def mock_env_user(monkeypatch: pytest.MonkeyPatch) -> None:\n"
+"    monkeypatch.setenv(\"USER\", \"TestingUser\")"
 
 #: ../../../doc/en/explanation/types.rst:86
 msgid "Conclusion"
