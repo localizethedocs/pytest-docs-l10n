@@ -31,7 +31,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-6.0.0rc1.rst:8
 msgid "pip install --upgrade pytest"
-msgstr ""
+msgstr "pip install --upgrade pytest"
 
 #: ../../../doc/en/announce/release-6.0.0rc1.rst:10
 msgid ""
@@ -177,7 +177,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-6.0.0rc1.rst:47
 msgid "Ronny Pfannschmidt"
-msgstr ""
+msgstr "Ronny Pfannschmidt"
 
 #: ../../../doc/en/announce/release-6.0.0rc1.rst:48
 msgid "Ruaridh Williamson"
@@ -189,7 +189,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-6.0.0rc1.rst:50
 msgid "Tim Hoffmann"
-msgstr ""
+msgstr "Tim Hoffmann"
 
 #: ../../../doc/en/announce/release-6.0.0rc1.rst:51
 msgid "Tor Colvin"

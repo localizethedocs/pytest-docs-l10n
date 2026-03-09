@@ -19,11 +19,11 @@ msgstr ""
 
 #: ../../../doc/en/customize.rst:2
 msgid "Configuration"
-msgstr ""
+msgstr "組態"
 
 #: ../../../doc/en/customize.rst:5
 msgid "Command line options and configuration file settings"
-msgstr ""
+msgstr "命令行選項與組態檔設定"
 
 #: ../../../doc/en/customize.rst:7
 msgid ""
@@ -43,7 +43,7 @@ msgstr ""
 
 #: ../../../doc/en/customize.rst:20
 msgid "Configuration file formats"
-msgstr ""
+msgstr "組態檔格式"
 
 #: ../../../doc/en/customize.rst:22
 msgid ""
@@ -77,7 +77,7 @@ msgstr ""
 
 #: ../../../doc/en/customize.rst:45
 msgid "pyproject.toml"
-msgstr ""
+msgstr "pyproject.toml"
 
 #: ../../../doc/en/customize.rst:49
 msgid ""
@@ -323,11 +323,11 @@ msgstr ""
 
 #: ../../../doc/en/customize.rst:197
 msgid "Example:"
-msgstr ""
+msgstr "範例："
 
 #: ../../../doc/en/customize.rst:199
 msgid "pytest path/to/testdir path/other/"
-msgstr ""
+msgstr "pytest path/to/testdir path/other/"
 
 #: ../../../doc/en/customize.rst:203
 msgid ""
@@ -363,7 +363,7 @@ msgstr ""
 
 #: ../../../doc/en/customize.rst:237
 msgid "Builtin configuration file options"
-msgstr ""
+msgstr "內建的組態檔選項"
 
 #: ../../../doc/en/customize.rst:239
 msgid ""

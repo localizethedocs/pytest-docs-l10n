@@ -573,7 +573,7 @@ msgstr ""
 
 #: ../../../doc/en/fixture.rst:375
 msgid "Fixtures are reusable"
-msgstr ""
+msgstr "夾具是可重新使用的"
 
 #: ../../../doc/en/fixture.rst:377
 msgid ""
@@ -1047,7 +1047,7 @@ msgstr ""
 
 #: ../../../doc/en/fixture.rst:757
 msgid "Fixture errors"
-msgstr ""
+msgstr "夾具錯誤"
 
 #: ../../../doc/en/fixture.rst:759
 msgid ""
@@ -2791,7 +2791,7 @@ msgstr ""
 
 #: ../../../doc/en/fixture.rst:1960
 msgid "Example:"
-msgstr ""
+msgstr "範例："
 
 #: ../../../doc/en/fixture.rst:1962
 msgid ""

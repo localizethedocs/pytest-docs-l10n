@@ -144,7 +144,7 @@ msgstr ""
 
 #: ../../../doc/en/index.rst:80
 msgid "Documentation"
-msgstr ""
+msgstr "文件"
 
 #: ../../../doc/en/index.rst:82
 msgid ""

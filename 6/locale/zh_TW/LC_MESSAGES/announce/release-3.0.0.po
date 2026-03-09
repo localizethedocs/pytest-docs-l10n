@@ -50,7 +50,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-3.0.0.rst:19
 msgid "http://docs.pytest.org"
-msgstr ""
+msgstr "http://docs.pytest.org"
 
 #: ../../../doc/en/announce/release-3.0.0.rst:21
 msgid "As usual, you can upgrade from pypi via:"
@@ -58,7 +58,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-3.0.0.rst:23
 msgid "pip install -U pytest"
-msgstr ""
+msgstr "pip install -U pytest"
 
 #: ../../../doc/en/announce/release-3.0.0.rst:25
 msgid "Thanks to all who contributed to this release, among them:"
