@@ -118,7 +118,7 @@ msgstr ""
 
 #: ../../../doc/en/index.rst:68
 msgid ":ref:`Auto-discovery <test discovery>` of test modules and functions"
-msgstr ""
+msgstr "測試模組與函式的\\ :ref:`自動探索 <test discovery>`"
 
 #: ../../../doc/en/index.rst:70
 msgid ""
