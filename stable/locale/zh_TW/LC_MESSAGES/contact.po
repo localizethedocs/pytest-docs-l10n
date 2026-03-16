@@ -42,7 +42,7 @@ msgstr ""
 
 #: ../../../doc/en/contact.rst:18
 msgid "Chat"
-msgstr ""
+msgstr "聊天"
 
 #: ../../../doc/en/contact.rst:20
 msgid ""
@@ -63,7 +63,7 @@ msgstr ""
 
 #: ../../../doc/en/contact.rst:28
 msgid "Microblogging"
-msgstr ""
+msgstr "微型網誌"
 
 #: ../../../doc/en/contact.rst:30
 msgid "Bluesky: `@pytest.org <https://bsky.app/profile/pytest.org>`_"
