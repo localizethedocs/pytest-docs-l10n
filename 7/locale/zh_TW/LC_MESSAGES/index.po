@@ -120,7 +120,7 @@ msgstr ""
 
 #: ../../../doc/en/index.rst:73
 msgid ":ref:`Auto-discovery <test discovery>` of test modules and functions"
-msgstr ""
+msgstr "測試模組與函式的\\ :ref:`自動探索 <test discovery>`"
 
 #: ../../../doc/en/index.rst:75
 msgid ""
@@ -158,7 +158,7 @@ msgstr ""
 msgid ""
 ":ref:`How-to guides <how-to>` - step-by-step guides, covering a vast range "
 "of use-cases and needs"
-msgstr ""
+msgstr ":ref:`操作指南 <how-to>` - 逐步引導，涵蓋廣泛的使用案例與需求"
 
 #: ../../../doc/en/index.rst:89
 msgid ""

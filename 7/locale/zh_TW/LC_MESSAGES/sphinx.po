@@ -95,11 +95,11 @@ msgstr ""
 
 #: ../../../doc/en/_templates/links.html:5
 msgid "Issue Tracker"
-msgstr ""
+msgstr "議題追蹤器"
 
 #: ../../../doc/en/_templates/links.html:6
 msgid "PDF Documentation"
-msgstr ""
+msgstr "PDF 文件"
 
 #: ../../../doc/en/_templates/relations.html:1
 msgid "Related Topics"
