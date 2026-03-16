@@ -166,6 +166,9 @@ msgid ""
 "or more efficient ways of accomplishing the same tasks have emerged, making "
 "the old way of doing things unnecessary."
 msgstr ""
+"在 pytest 專案中，保持向後相容性具有極高的優先級。雖然多年來我們棄用了一些功"
+"能，但其中大部分目前仍受支援。pytest 中所有的棄用措施，都是因為出現了更簡單或"
+"更有效率的方法來完成相同的任務，使得舊有的做法變得不再必要。"
 
 #: ../../../doc/en/backwards-compatibility.rst:63
 msgid ""
