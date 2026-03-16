@@ -172,6 +172,9 @@ msgid ""
 "or more efficient ways of accomplishing the same tasks have emerged, making "
 "the old way of doing things unnecessary."
 msgstr ""
+"在 pytest 專案中，保持向後相容性具有極高的優先級。雖然多年來我們棄用了一些功"
+"能，但其中大部分目前仍受支援。pytest 中所有的棄用措施，都是因為出現了更簡單或"
+"更有效率的方法來完成相同的任務，使得舊有的做法變得不再必要。"
 
 #: ../../../doc/en/backwards-compatibility.rst:61
 msgid ""
@@ -181,6 +184,9 @@ msgid ""
 "tests or raise concerns if there are valid reasons to keep deprecated "
 "functionality around."
 msgstr ""
+"隨著 pytest 3.0 的發行，我們引進了一套明確的溝通方案，用以說明何時會正式移除"
+"舊有的過時功能，並禮貌地請您改用新的替代方案。同時，這也為您留出足夠的時間來"
+"調整測試程式碼，或者在有正當理由需要保留已棄用功能時提出疑慮。"
 
 #: ../../../doc/en/backwards-compatibility.rst:63
 msgid ""

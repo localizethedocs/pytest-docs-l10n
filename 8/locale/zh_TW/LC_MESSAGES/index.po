@@ -151,7 +151,7 @@ msgstr ""
 
 #: ../../../doc/en/index.rst:101
 msgid ":ref:`Auto-discovery <test discovery>` of test modules and functions"
-msgstr ""
+msgstr "測試模組與函式的\\ :ref:`自動探索 <test discovery>`"
 
 #: ../../../doc/en/index.rst:103
 msgid ""
@@ -184,12 +184,13 @@ msgid ""
 ":ref:`Get started <get-started>` - install pytest and grasp its basics in "
 "just twenty minutes"
 msgstr ""
+":ref:`開始使用 <get-started>` - 在短短二十分鐘內安裝 pytest 並掌握其基礎知識"
 
 #: ../../../doc/en/index.rst:116
 msgid ""
 ":ref:`How-to guides <how-to>` - step-by-step guides, covering a vast range "
 "of use-cases and needs"
-msgstr ""
+msgstr ":ref:`操作指南 <how-to>` - 逐步引導，涵蓋廣泛的使用案例與需求"
 
 #: ../../../doc/en/index.rst:117
 msgid ""
