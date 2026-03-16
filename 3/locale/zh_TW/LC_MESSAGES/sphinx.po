@@ -83,11 +83,11 @@ msgstr ""
 
 #: ../../../doc/en/_templates/links.html:6
 msgid "Issue Tracker"
-msgstr ""
+msgstr "議題追蹤器"
 
 #: ../../../doc/en/_templates/links.html:7
 msgid "PDF Documentation"
-msgstr ""
+msgstr "PDF 文件"
 
 #: ../../../doc/en/_templates/sidebarintro.html:1
 msgid "About pytest"
