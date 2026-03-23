@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-07 06:29+0000\n"
+"POT-Creation-Date: 2026-03-23 08:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -263,7 +264,8 @@ msgid ""
 "PytestPluginManager.add_hookspecs>`."
 msgstr ""
 
-#: ../../../doc/en/how-to/writing_hook_functions.rst:0
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_addhooks:0
 msgid "Parameters"
 msgstr ""
 
