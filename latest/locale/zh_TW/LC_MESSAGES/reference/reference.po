@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-07 06:29+0000\n"
+"POT-Creation-Date: 2026-03-23 08:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -481,6 +481,54 @@ msgstr ""
 #: _pytest.config.argparsing.Parser.addini:0
 #: _pytest.config.argparsing.Parser.addoption:0
 #: _pytest.config.argparsing.Parser.getgroup:0
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
+#: _pytest.hookspec.pytest_addhooks:0 _pytest.hookspec.pytest_addoption:0
+#: _pytest.hookspec.pytest_assertion_pass:0
+#: _pytest.hookspec.pytest_assertrepr_compare:0
+#: _pytest.hookspec.pytest_cmdline_main:0
+#: _pytest.hookspec.pytest_cmdline_parse:0
+#: _pytest.hookspec.pytest_collect_directory:0
+#: _pytest.hookspec.pytest_collect_file:0 _pytest.hookspec.pytest_collection:0
+#: _pytest.hookspec.pytest_collection_finish:0
+#: _pytest.hookspec.pytest_collection_modifyitems:0
+#: _pytest.hookspec.pytest_collectreport:0
+#: _pytest.hookspec.pytest_collectstart:0 _pytest.hookspec.pytest_configure:0
+#: _pytest.hookspec.pytest_deselected:0 _pytest.hookspec.pytest_enter_pdb:0
+#: _pytest.hookspec.pytest_exception_interact:0
+#: _pytest.hookspec.pytest_fixture_post_finalizer:0
+#: _pytest.hookspec.pytest_fixture_setup:0
+#: _pytest.hookspec.pytest_generate_tests:0
+#: _pytest.hookspec.pytest_ignore_collect:0
+#: _pytest.hookspec.pytest_internalerror:0
+#: _pytest.hookspec.pytest_itemcollected:0
+#: _pytest.hookspec.pytest_keyboard_interrupt:0
+#: _pytest.hookspec.pytest_leave_pdb:0
+#: _pytest.hookspec.pytest_load_initial_conftests:0
+#: _pytest.hookspec.pytest_make_collect_report:0
+#: _pytest.hookspec.pytest_make_parametrize_id:0
+#: _pytest.hookspec.pytest_markeval_namespace:0
+#: _pytest.hookspec.pytest_plugin_registered:0
+#: _pytest.hookspec.pytest_pycollect_makeitem:0
+#: _pytest.hookspec.pytest_pycollect_makemodule:0
+#: _pytest.hookspec.pytest_pyfunc_call:0
+#: _pytest.hookspec.pytest_report_collectionfinish:0
+#: _pytest.hookspec.pytest_report_from_serializable:0
+#: _pytest.hookspec.pytest_report_header:0
+#: _pytest.hookspec.pytest_report_teststatus:0
+#: _pytest.hookspec.pytest_report_to_serializable:0
+#: _pytest.hookspec.pytest_runtest_call:0
+#: _pytest.hookspec.pytest_runtest_logfinish:0
+#: _pytest.hookspec.pytest_runtest_logstart:0
+#: _pytest.hookspec.pytest_runtest_makereport:0
+#: _pytest.hookspec.pytest_runtest_protocol:0
+#: _pytest.hookspec.pytest_runtest_setup:0
+#: _pytest.hookspec.pytest_runtest_teardown:0
+#: _pytest.hookspec.pytest_runtestloop:0
+#: _pytest.hookspec.pytest_sessionfinish:0
+#: _pytest.hookspec.pytest_sessionstart:0
+#: _pytest.hookspec.pytest_terminal_summary:0
+#: _pytest.hookspec.pytest_unconfigure:0
+#: _pytest.hookspec.pytest_warning_recorded:0
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/terminal.py:docstring
 #: _pytest.terminal.TerminalReporter.rewrite:0
 #: ../../../doc/en/reference/reference.rst:0
@@ -604,11 +652,10 @@ msgstr ""
 #: of _pytest.outcomes.importorskip:12
 msgid ""
 "The exception that should be captured in order to skip modules. Must be :py:"
-"class:`ImportError` or a subclass.  If the module can be imported but "
-"raises :class:`ImportError`, pytest will issue a warning to the user, as "
-"often users expect the module not to be found (which would raise :class:"
-"`ModuleNotFoundError` instead).  This warning can be suppressed by passing "
-"``exc_type=ImportError`` explicitly.  See :ref:`import-or-skip-import-error` "
+"class:`ImportError` or a subclass.  Defaults to :class:`ModuleNotFoundError` "
+"when not given, which means the module must be missing for the test to be "
+"skipped. Pass ``exc_type=ImportError`` to also skip modules that raise :"
+"class:`ImportError` during import.  See :ref:`import-or-skip-import-error` "
 "for details."
 msgstr ""
 
@@ -622,20 +669,14 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/outcomes.py:docstring
 #: of _pytest.outcomes.importorskip:16
 msgid ""
-"If the module can be imported but raises :class:`ImportError`, pytest will "
-"issue a warning to the user, as often users expect the module not to be "
-"found (which would raise :class:`ModuleNotFoundError` instead)."
+"Defaults to :class:`ModuleNotFoundError` when not given, which means the "
+"module must be missing for the test to be skipped. Pass "
+"``exc_type=ImportError`` to also skip modules that raise :class:"
+"`ImportError` during import."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/outcomes.py:docstring
-#: of _pytest.outcomes.importorskip:20
-msgid ""
-"This warning can be suppressed by passing ``exc_type=ImportError`` "
-"explicitly."
-msgstr ""
-
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/outcomes.py:docstring
-#: of _pytest.outcomes.importorskip:22
+#: of _pytest.outcomes.importorskip:21
 msgid "See :ref:`import-or-skip-import-error` for details."
 msgstr ""
 
@@ -643,26 +684,25 @@ msgstr ""
 #: of _pytest.config.PytestPluginManager.register:0
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/argparsing.py:docstring
 #: _pytest.config.argparsing.Parser.getgroup:0
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
+#: _pytest.hookspec.pytest_cmdline_main:0
+#: _pytest.hookspec.pytest_cmdline_parse:0
+#: _pytest.hookspec.pytest_fixture_setup:0
+#: _pytest.hookspec.pytest_markeval_namespace:0
+#: _pytest.hookspec.pytest_pycollect_makeitem:0
+#: _pytest.hookspec.pytest_report_teststatus:0
 #: ../../../doc/en/reference/reference.rst:0
 msgid "Returns"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/outcomes.py:docstring
-#: of _pytest.outcomes.importorskip:25
+#: of _pytest.outcomes.importorskip:24
 msgid "The imported module. This should be assigned to its canonical name."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/outcomes.py:docstring
-#: of _pytest.outcomes.importorskip:28
+#: of _pytest.outcomes.importorskip:27
 msgid "If the module cannot be imported."
-msgstr ""
-
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
-#: of _pytest.config.PytestPluginManager.register:0
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/argparsing.py:docstring
-#: _pytest.config.argparsing.Parser.getgroup:0
-#: ../../../doc/en/reference/reference.rst:0
-msgid "Return type"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/fixtures.py:docstring
@@ -672,7 +712,7 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/mark/structures.py:docstring
 #: _pytest.mark.structures.MarkGenerator:4
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/outcomes.py:docstring
-#: _pytest.outcomes.importorskip:31
+#: _pytest.outcomes.importorskip:30
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/raises.py:docstring
 #: _pytest.raises.RaisesGroup.matches:4
 #: ../../../doc/en/reference/reference.rst:2878
@@ -681,13 +721,18 @@ msgid "Example::"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/outcomes.py:docstring
-#: of _pytest.outcomes.importorskip:33
+#: of _pytest.outcomes.importorskip:32
 msgid "docutils = pytest.importorskip(\"docutils\")"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/outcomes.py:docstring
-#: of _pytest.outcomes.importorskip:37
+#: of _pytest.outcomes.importorskip:36
 msgid "The ``exc_type`` parameter."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/outcomes.py:docstring
+#: of _pytest.outcomes.importorskip:40
+msgid "The default for ``exc_type`` is now :class:`ModuleNotFoundError`."
 msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:90
@@ -1916,6 +1961,14 @@ msgstr ""
 msgid "The list of captured records at the given stage."
 msgstr ""
 
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
+#: of _pytest.config.PytestPluginManager.register:0
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/argparsing.py:docstring
+#: _pytest.config.argparsing.Parser.getgroup:0
+#: ../../../doc/en/reference/reference.rst:0
+msgid "Return type"
+msgstr ""
+
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/logging.py:docstring
 #: of pytest.LogCaptureFixture.text:1
 msgid "The formatted log text."
@@ -2655,14 +2708,16 @@ msgid ""
 "environment variables during initialization."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.Pytester.plugins:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/pytester.py:docstring
+#: of pytest.Pytester.plugins:1
 msgid ""
 "A list of plugins to use with :py:meth:`parseconfig` and :py:meth:"
 "`runpytest`. Initially this is an empty list but plugins can be added to the "
 "list."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.Pytester.plugins:5
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/pytester.py:docstring
+#: of pytest.Pytester.plugins:5
 msgid ""
 "When running in subprocess mode, specify plugins by name (str) - adding "
 "plugin objects directly is not supported."
@@ -3327,34 +3382,41 @@ msgstr ""
 msgid "The result of running a command from :class:`~pytest.Pytester`."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.RunResult.ret:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/pytester.py:docstring
+#: of pytest.RunResult.ret:1
 msgid "The return value."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.RunResult.outlines:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/pytester.py:docstring
+#: of pytest.RunResult.outlines:1
 msgid "List of lines captured from stdout."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.RunResult.errlines:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/pytester.py:docstring
+#: of pytest.RunResult.errlines:1
 msgid "List of lines captured from stderr."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.RunResult.stdout:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/pytester.py:docstring
+#: of pytest.RunResult.stdout:1
 msgid ":class:`~pytest.LineMatcher` of stdout."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.RunResult.stdout:3
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/pytester.py:docstring
+#: of pytest.RunResult.stdout:3
 msgid ""
 "Use e.g. :func:`str(stdout) <pytest.LineMatcher.__str__()>` to reconstruct "
 "stdout, or the commonly used :func:`stdout.fnmatch_lines() <pytest."
 "LineMatcher.fnmatch_lines()>` method."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.RunResult.stderr:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/pytester.py:docstring
+#: of pytest.RunResult.stderr:1
 msgid ":class:`~pytest.LineMatcher` of stderr."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.RunResult.duration:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/pytester.py:docstring
+#: of pytest.RunResult.duration:1
 msgid "Duration in seconds."
 msgstr ""
 
@@ -3764,7 +3826,8 @@ msgid ""
 "``param`` attribute in case the fixture is parametrized."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.FixtureRequest.fixturename:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/fixtures.py:docstring
+#: of pytest.FixtureRequest.fixturename:1
 msgid "Fixture for which this request is being performed."
 msgstr ""
 
@@ -3876,17 +3939,25 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/fixtures.py:docstring
 #: of _pytest.fixtures.FixtureRequest.getfixturevalue:8
 msgid ""
-"This method can be used during the test setup phase or the test run phase, "
-"but during the test teardown phase a fixture's value may not be available."
+"This method can be used during the test setup phase or the test run phase. "
+"Avoid using it during the teardown phase."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/fixtures.py:docstring
-#: of _pytest.fixtures.FixtureRequest.getfixturevalue:12
+#: of _pytest.fixtures.FixtureRequest.getfixturevalue:11
+msgid ""
+"Calling ``request.getfixturevalue()`` during teardown to request a fixture "
+"that was not already requested :ref:`is deprecated <dynamic-fixture-request-"
+"during-teardown>`."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/fixtures.py:docstring
+#: of _pytest.fixtures.FixtureRequest.getfixturevalue:16
 msgid "The fixture name."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/fixtures.py:docstring
-#: of _pytest.fixtures.FixtureRequest.getfixturevalue:14
+#: of _pytest.fixtures.FixtureRequest.getfixturevalue:18
 msgid "If the given fixture could not be found."
 msgstr ""
 
@@ -4360,7 +4431,7 @@ msgstr ""
 #: _pytest.hookspec.pytest_cmdline_main:8
 #: _pytest.hookspec.pytest_collection_modifyitems:10
 #: _pytest.hookspec.pytest_configure:6 _pytest.hookspec.pytest_enter_pdb:6
-#: _pytest.hookspec.pytest_ignore_collect:16
+#: _pytest.hookspec.pytest_ignore_collect:15
 #: _pytest.hookspec.pytest_leave_pdb:6
 #: _pytest.hookspec.pytest_load_initial_conftests:4
 #: _pytest.hookspec.pytest_make_parametrize_id:9
@@ -4371,12 +4442,16 @@ msgstr ""
 #: _pytest.hookspec.pytest_report_teststatus:18
 #: _pytest.hookspec.pytest_report_to_serializable:4
 #: _pytest.hookspec.pytest_terminal_summary:5
-#: _pytest.hookspec.pytest_unconfigure:3 ../../../doc/docstring
+#: _pytest.hookspec.pytest_unconfigure:3
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/main.py:docstring
+#: pytest.Dir.config:1 pytest.Session.config:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
 #: _pytest.nodes.FSCollector.config:1 _pytest.nodes.Node.config:1
+#: pytest.Collector.config:1 pytest.Directory.config:1 pytest.File.config:1
+#: pytest.Item.config:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
 #: _pytest.python.FunctionDefinition.config:1 pytest.Class.config:1
-#: pytest.Collector.config:1 pytest.Dir.config:1 pytest.Directory.config:1
-#: pytest.File.config:1 pytest.Function.config:1 pytest.Item.config:1
-#: pytest.Module.config:1 pytest.Package.config:1 pytest.Session.config:1
+#: pytest.Function.config:1 pytest.Module.config:1 pytest.Package.config:1
 msgid "The pytest config object."
 msgstr ""
 
@@ -4397,7 +4472,7 @@ msgstr ""
 #: _pytest.hookspec.pytest_cmdline_main:12
 #: _pytest.hookspec.pytest_cmdline_parse:15
 #: _pytest.hookspec.pytest_collect_directory:20
-#: _pytest.hookspec.pytest_collect_file:18
+#: _pytest.hookspec.pytest_collect_file:17
 #: _pytest.hookspec.pytest_collection:35
 #: _pytest.hookspec.pytest_collection_finish:6
 #: _pytest.hookspec.pytest_collection_modifyitems:14
@@ -4408,7 +4483,7 @@ msgstr ""
 #: _pytest.hookspec.pytest_fixture_post_finalizer:11
 #: _pytest.hookspec.pytest_fixture_setup:18
 #: _pytest.hookspec.pytest_generate_tests:7
-#: _pytest.hookspec.pytest_ignore_collect:24
+#: _pytest.hookspec.pytest_ignore_collect:23
 #: _pytest.hookspec.pytest_internalerror:10
 #: _pytest.hookspec.pytest_itemcollected:7
 #: _pytest.hookspec.pytest_keyboard_interrupt:6
@@ -4419,11 +4494,11 @@ msgstr ""
 #: _pytest.hookspec.pytest_markeval_namespace:15
 #: _pytest.hookspec.pytest_plugin_registered:11
 #: _pytest.hookspec.pytest_pycollect_makeitem:15
-#: _pytest.hookspec.pytest_pycollect_makemodule:19
+#: _pytest.hookspec.pytest_pycollect_makemodule:18
 #: _pytest.hookspec.pytest_pyfunc_call:9
-#: _pytest.hookspec.pytest_report_collectionfinish:27
+#: _pytest.hookspec.pytest_report_collectionfinish:26
 #: _pytest.hookspec.pytest_report_from_serializable:7
-#: _pytest.hookspec.pytest_report_header:21
+#: _pytest.hookspec.pytest_report_header:20
 #: _pytest.hookspec.pytest_report_teststatus:24
 #: _pytest.hookspec.pytest_report_to_serializable:8
 #: _pytest.hookspec.pytest_runtest_call:9
@@ -4516,7 +4591,7 @@ msgstr ""
 #: of _pytest.hookspec.pytest_addoption:36
 #: _pytest.hookspec.pytest_cmdline_main:14
 #: _pytest.hookspec.pytest_collection:37
-#: _pytest.hookspec.pytest_report_header:23
+#: _pytest.hookspec.pytest_report_header:22
 #: _pytest.hookspec.pytest_sessionstart:9
 msgid "This hook is only called for :ref:`initial conftests <pluginorder>`."
 msgstr ""
@@ -4820,12 +4895,7 @@ msgid "The path to analyze."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
-#: of _pytest.hookspec.pytest_ignore_collect:15
-msgid "The path to analyze (deprecated)."
-msgstr ""
-
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
-#: of _pytest.hookspec.pytest_ignore_collect:18
+#: of _pytest.hookspec.pytest_ignore_collect:17
 msgid ""
 "The ``collection_path`` parameter was added as a :class:`pathlib.Path` "
 "equivalent of the ``path`` parameter. The ``path`` parameter has been "
@@ -4833,7 +4903,7 @@ msgid ""
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
-#: of _pytest.hookspec.pytest_ignore_collect:26
+#: of _pytest.hookspec.pytest_ignore_collect:25
 msgid ""
 "Any conftest file can implement this hook. For a given collection path, only "
 "conftest files in parent directories of the collection path are consulted "
@@ -4892,12 +4962,7 @@ msgid ""
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
-#: of _pytest.hookspec.pytest_collect_file:10
-msgid "The path to collect (deprecated)."
-msgstr ""
-
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
-#: of _pytest.hookspec.pytest_collect_file:12
+#: of _pytest.hookspec.pytest_collect_file:11
 msgid ""
 "The ``file_path`` parameter was added as a :class:`pathlib.Path` equivalent "
 "of the ``path`` parameter. The ``path`` parameter has been deprecated and "
@@ -4905,7 +4970,7 @@ msgid ""
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
-#: of _pytest.hookspec.pytest_collect_file:20
+#: of _pytest.hookspec.pytest_collect_file:19
 msgid ""
 "Any conftest file can implement this hook. For a given file path, only "
 "conftest files in parent directories of the file path are consulted."
@@ -4930,12 +4995,7 @@ msgid "The path of the module to collect."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
-#: of _pytest.hookspec.pytest_pycollect_makemodule:11
-msgid "The path of the module to collect (deprecated)."
-msgstr ""
-
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
-#: of _pytest.hookspec.pytest_pycollect_makemodule:13
+#: of _pytest.hookspec.pytest_pycollect_makemodule:12
 msgid ""
 "The ``module_path`` parameter was added as a :class:`pathlib.Path` "
 "equivalent of the ``path`` parameter. The ``path`` parameter has been "
@@ -4943,7 +5003,7 @@ msgid ""
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
-#: of _pytest.hookspec.pytest_pycollect_makemodule:21
+#: of _pytest.hookspec.pytest_pycollect_makemodule:20
 msgid ""
 "Any conftest file can implement this hook. For a given parent collector, "
 "only conftest files in the collector's directory and its parent directories "
@@ -5099,7 +5159,7 @@ msgstr ""
 #: _pytest.hookspec.pytest_internalerror:12
 #: _pytest.hookspec.pytest_keyboard_interrupt:8
 #: _pytest.hookspec.pytest_leave_pdb:12
-#: _pytest.hookspec.pytest_report_collectionfinish:29
+#: _pytest.hookspec.pytest_report_collectionfinish:28
 #: _pytest.hookspec.pytest_report_teststatus:26
 #: _pytest.hookspec.pytest_terminal_summary:13
 msgid "Any conftest plugin can implement this hook."
@@ -5471,14 +5531,8 @@ msgid "The starting dir."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
-#: of _pytest.hookspec.pytest_report_collectionfinish:11
-#: _pytest.hookspec.pytest_report_header:6
-msgid "The starting dir (deprecated)."
-msgstr ""
-
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
-#: of _pytest.hookspec.pytest_report_collectionfinish:16
-#: _pytest.hookspec.pytest_report_header:10
+#: of _pytest.hookspec.pytest_report_collectionfinish:15
+#: _pytest.hookspec.pytest_report_header:9
 msgid ""
 "Lines returned by a plugin are displayed before those of plugins which ran "
 "before it. If you want to have your line(s) displayed first, use :ref:"
@@ -5486,8 +5540,8 @@ msgid ""
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
-#: of _pytest.hookspec.pytest_report_collectionfinish:21
-#: _pytest.hookspec.pytest_report_header:15
+#: of _pytest.hookspec.pytest_report_collectionfinish:20
+#: _pytest.hookspec.pytest_report_header:14
 msgid ""
 "The ``start_path`` parameter was added as a :class:`pathlib.Path` equivalent "
 "of the ``startdir`` parameter. The ``startdir`` parameter has been "
@@ -5509,7 +5563,7 @@ msgid ""
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
-#: of _pytest.hookspec.pytest_report_collectionfinish:12
+#: of _pytest.hookspec.pytest_report_collectionfinish:11
 msgid ""
 "List of pytest items that are going to be executed; this list should not be "
 "modified."
@@ -5954,11 +6008,6 @@ msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
 #: of _pytest.nodes.Node:1
-msgid "Bases: :py:class:`~abc.ABC`"
-msgstr ""
-
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
-#: of _pytest.nodes.Node:1
 msgid ""
 "Base class of :class:`Collector` and :class:`Item`, the components of the "
 "test collection tree."
@@ -5971,7 +6020,8 @@ msgid ""
 "the leaf nodes."
 msgstr ""
 
-#: ../../../doc/docstring of _pytest.nodes.Node.fspath:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
+#: of _pytest.nodes.Node.fspath:1
 msgid ""
 "A ``LEGACY_PATH`` copy of the :attr:`path` attribute. Intended for usage for "
 "methods not migrated to ``pathlib.Path`` yet, such as :meth:`Item.reportinfo "
@@ -5979,55 +6029,71 @@ msgid ""
 "using :attr:`path` instead."
 msgstr ""
 
-#: ../../../doc/docstring of _pytest.nodes.FSCollector.name:1
-#: _pytest.nodes.Node.name:1 _pytest.python.FunctionDefinition.name:1
-#: pytest.Class.name:1 pytest.Collector.name:1 pytest.Dir.name:1
-#: pytest.Directory.name:1 pytest.File.name:1 pytest.Function.name:1
-#: pytest.Item.name:1 pytest.Module.name:1 pytest.Package.name:1
-#: pytest.Session.name:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/main.py:docstring
+#: of pytest.Dir.name:1 pytest.Session.name:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
+#: _pytest.nodes.FSCollector.name:1 _pytest.nodes.Node.name:1
+#: pytest.Collector.name:1 pytest.Directory.name:1 pytest.File.name:1
+#: pytest.Item.name:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
+#: _pytest.python.FunctionDefinition.name:1 pytest.Class.name:1
+#: pytest.Function.name:1 pytest.Module.name:1 pytest.Package.name:1
 msgid "A unique name within the scope of the parent node."
 msgstr ""
 
-#: ../../../doc/docstring of _pytest.nodes.FSCollector.parent:1
-#: _pytest.nodes.Node.parent:1 _pytest.python.FunctionDefinition.parent:1
-#: pytest.Class.parent:1 pytest.Collector.parent:1 pytest.Dir.parent:1
-#: pytest.Directory.parent:1 pytest.File.parent:1 pytest.Function.parent:1
-#: pytest.Item.parent:1 pytest.Module.parent:1 pytest.Package.parent:1
-#: pytest.Session.parent:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/main.py:docstring
+#: of pytest.Dir.parent:1 pytest.Session.parent:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
+#: _pytest.nodes.FSCollector.parent:1 _pytest.nodes.Node.parent:1
+#: pytest.Collector.parent:1 pytest.Directory.parent:1 pytest.File.parent:1
+#: pytest.Item.parent:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
+#: _pytest.python.FunctionDefinition.parent:1 pytest.Class.parent:1
+#: pytest.Function.parent:1 pytest.Module.parent:1 pytest.Package.parent:1
 msgid "The parent collector node."
 msgstr ""
 
-#: ../../../doc/docstring of _pytest.nodes.FSCollector.session:1
-#: _pytest.nodes.Node.session:1 _pytest.python.FunctionDefinition.session:1
-#: pytest.Class.session:1 pytest.Collector.session:1 pytest.Dir.session:1
-#: pytest.Directory.session:1 pytest.File.session:1 pytest.Function.session:1
-#: pytest.Item.session:1 pytest.Module.session:1 pytest.Package.session:1
-#: pytest.Session.session:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/main.py:docstring
+#: of pytest.Dir.session:1 pytest.Session.session:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
+#: _pytest.nodes.FSCollector.session:1 _pytest.nodes.Node.session:1
+#: pytest.Collector.session:1 pytest.Directory.session:1 pytest.File.session:1
+#: pytest.Item.session:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
+#: _pytest.python.FunctionDefinition.session:1 pytest.Class.session:1
+#: pytest.Function.session:1 pytest.Module.session:1 pytest.Package.session:1
 msgid "The pytest session this node is part of."
 msgstr ""
 
-#: ../../../doc/docstring of _pytest.nodes.FSCollector.path:1
-#: _pytest.nodes.Node.path:1 _pytest.python.FunctionDefinition.path:1
-#: pytest.Class.path:1 pytest.Collector.path:1 pytest.Dir.path:1
-#: pytest.Directory.path:1 pytest.File.path:1 pytest.Function.path:1
-#: pytest.Item.path:1 pytest.Module.path:1 pytest.Package.path:1
-#: pytest.Session.path:1
-msgid "Filesystem path where this node was collected from (can be None)."
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/main.py:docstring
+#: of pytest.Dir.path:1 pytest.Session.path:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
+#: _pytest.nodes.FSCollector.path:1 _pytest.nodes.Node.path:1
+#: pytest.Collector.path:1 pytest.Directory.path:1 pytest.File.path:1
+#: pytest.Item.path:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
+#: _pytest.python.FunctionDefinition.path:1 pytest.Class.path:1
+#: pytest.Function.path:1 pytest.Module.path:1 pytest.Package.path:1
+msgid "Filesystem path where this node was collected from."
 msgstr ""
 
-#: ../../../doc/docstring of _pytest.nodes.Node.keywords:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
+#: of _pytest.nodes.Node.keywords:1
 msgid "Keywords/markers collected from all scopes."
 msgstr ""
 
-#: ../../../doc/docstring of _pytest.nodes.Node.own_markers:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
+#: of _pytest.nodes.Node.own_markers:1
 msgid "The marker objects belonging to this node."
 msgstr ""
 
-#: ../../../doc/docstring of _pytest.nodes.Node.extra_keyword_matches:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
+#: of _pytest.nodes.Node.extra_keyword_matches:1
 msgid "Allow adding of extra keywords to use for matching."
 msgstr ""
 
-#: ../../../doc/docstring of _pytest.nodes.Node.stash:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
+#: of _pytest.nodes.Node.stash:1
 msgid ""
 "A place where plugins can store information on the node for their own use."
 msgstr ""
@@ -6058,7 +6124,7 @@ msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
 #: of _pytest.nodes.Node.ihook:1
-msgid "fspath-sensitive hook proxy used to call pytest hooks."
+msgid "Path-sensitive hook proxy used to call pytest hooks."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
@@ -6238,11 +6304,6 @@ msgid "Collector"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
-#: of _pytest.nodes.Collector:1 _pytest.nodes.Item:1
-msgid "Bases: :py:class:`~_pytest.nodes.Node`, :py:class:`~abc.ABC`"
-msgstr ""
-
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
 #: of _pytest.nodes.Collector:1
 msgid "Base class of all collectors."
 msgstr ""
@@ -6252,15 +6313,6 @@ msgstr ""
 msgid ""
 "Collector create children through `collect()` and thus iteratively build the "
 "collection tree."
-msgstr ""
-
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/main.py:docstring
-#: of _pytest.main.Failed:1
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
-#: _pytest.nodes.Collector.CollectError:1
-#: ../../../../../.conda/lib/python3.12/site-packages/pytest/__init__.py:docstring
-#: pytest.UsageError:1
-msgid "Bases: :py:class:`Exception`"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
@@ -6299,7 +6351,8 @@ msgid ""
 "items."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.Item.user_properties:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
+#: of pytest.Item.user_properties:1
 msgid ""
 "A list of tuples (name, value) that holds user defined properties for this "
 "test."
@@ -6386,11 +6439,6 @@ msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
 #: of _pytest.nodes.File:1
-msgid "Bases: :py:class:`~_pytest.nodes.FSCollector`, :py:class:`~abc.ABC`"
-msgstr ""
-
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
-#: of _pytest.nodes.File:1
 msgid "Base class for collecting tests from a file."
 msgstr ""
 
@@ -6401,11 +6449,6 @@ msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:894
 msgid "FSCollector"
-msgstr ""
-
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
-#: of _pytest.nodes.FSCollector:1
-msgid "Bases: :py:class:`~_pytest.nodes.Collector`, :py:class:`~abc.ABC`"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
@@ -6428,11 +6471,6 @@ msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/main.py:docstring
 #: of _pytest.main.Session:1
-msgid "Bases: :py:class:`~_pytest.nodes.Collector`"
-msgstr ""
-
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/main.py:docstring
-#: of _pytest.main.Session:1
 msgid "The root of the collection tree."
 msgstr ""
 
@@ -6441,13 +6479,7 @@ msgstr ""
 msgid "``Session`` collects the initial paths given as arguments to pytest."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/main.py:docstring
-#: of builtins.Interrupted:1
-msgid "Bases: :py:class:`KeyboardInterrupt`"
-msgstr ""
-
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/main.py:docstring
-#: of builtins.Interrupted:1
+#: ../../../doc/docstring of builtins.Interrupted:1
 msgid "Signals that the test run was interrupted."
 msgstr ""
 
@@ -6511,11 +6543,6 @@ msgstr "軟體包"
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
 #: of _pytest.python.Package:1
-msgid "Bases: :py:class:`~_pytest.nodes.Directory`"
-msgstr ""
-
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
-#: of _pytest.python.Package:1
 msgid ""
 "Collector for files and directories in a Python packages -- directories with "
 "an `__init__.py` file."
@@ -6539,13 +6566,6 @@ msgstr "模組"
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
 #: of _pytest.python.Module:1
-msgid ""
-"Bases: :py:class:`~_pytest.nodes.File`, :py:class:`~_pytest.python."
-"PyCollector`"
-msgstr ""
-
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
-#: of _pytest.python.Module:1
 msgid "Collector for test classes and functions in a Python module."
 msgstr ""
 
@@ -6555,23 +6575,11 @@ msgstr "類別"
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
 #: of _pytest.python.Class:1
-msgid "Bases: :py:class:`~_pytest.python.PyCollector`"
-msgstr ""
-
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
-#: of _pytest.python.Class:1
 msgid "Collector for test methods (and nested classes) in a Python class."
 msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:929
 msgid "Function"
-msgstr ""
-
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
-#: of _pytest.python.Function:1
-msgid ""
-"Bases: :py:class:`~_pytest.python.PyobjMixin`, :py:class:`~_pytest.nodes."
-"Item`"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
@@ -6635,7 +6643,8 @@ msgid ""
 "(``my_func[my_param]``)."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.Function.originalname:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
+#: of pytest.Function.originalname:1
 msgid ""
 "Original function name, without any decorations (for example parametrization "
 "adds a ``\"[...]\"`` suffix to function names), used to access the "
@@ -6672,11 +6681,6 @@ msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
 #: of _pytest.python.FunctionDefinition:1
-msgid "Bases: :py:class:`~_pytest.python.Function`"
-msgstr ""
-
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
-#: of _pytest.python.FunctionDefinition:1
 msgid ""
 "This class is a stop gap solution until we evolve to have actual function "
 "definition nodes and manage to get rid of ``metafunc``."
@@ -6701,23 +6705,32 @@ msgstr ""
 msgid "Result/Exception info of a function invocation."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.CallInfo.excinfo:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/runner.py:docstring
+#: of pytest.CallInfo.excinfo:1
 msgid "The captured exception of the call, if it raised."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.CallInfo.start:1 pytest.TestReport.start:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/reports.py:docstring
+#: of pytest.TestReport.start:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/runner.py:docstring
+#: pytest.CallInfo.start:1
 msgid "The system time when the call started, in seconds since the epoch."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.CallInfo.stop:1 pytest.TestReport.stop:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/reports.py:docstring
+#: of pytest.TestReport.stop:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/runner.py:docstring
+#: pytest.CallInfo.stop:1
 msgid "The system time when the call ended, in seconds since the epoch."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.CallInfo.duration:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/runner.py:docstring
+#: of pytest.CallInfo.duration:1
 msgid "The call duration, in seconds."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.CallInfo.when:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/runner.py:docstring
+#: of pytest.CallInfo.when:1
 msgid ""
 "The context of invocation: \"collect\", \"setup\", \"call\" or \"teardown\"."
 msgstr ""
@@ -6759,11 +6772,6 @@ msgid "CollectReport"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/reports.py:docstring
-#: of _pytest.reports.CollectReport:1 _pytest.reports.TestReport:1
-msgid "Bases: :py:class:`~_pytest.reports.BaseReport`"
-msgstr ""
-
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/reports.py:docstring
 #: of _pytest.reports.CollectReport:1
 msgid "Collection report object."
 msgstr ""
@@ -6773,27 +6781,28 @@ msgstr ""
 msgid "Reports can contain arbitrary extra attributes."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.CollectReport.nodeid:1
-#: pytest.TestReport.nodeid:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/reports.py:docstring
+#: of pytest.CollectReport.nodeid:1 pytest.TestReport.nodeid:1
 msgid "Normalized collection nodeid."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.CollectReport.outcome:1
-#: pytest.TestReport.outcome:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/reports.py:docstring
+#: of pytest.CollectReport.outcome:1 pytest.TestReport.outcome:1
 msgid "Test outcome, always one of \"passed\", \"failed\", \"skipped\"."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.CollectReport.longrepr:1
-#: pytest.TestReport.longrepr:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/reports.py:docstring
+#: of pytest.CollectReport.longrepr:1 pytest.TestReport.longrepr:1
 msgid "None or a failure representation."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.CollectReport.result:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/reports.py:docstring
+#: of pytest.CollectReport.result:1
 msgid "The collected items and collection nodes."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.CollectReport.sections:1
-#: pytest.TestReport.sections:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/reports.py:docstring
+#: of pytest.CollectReport.sections:1 pytest.TestReport.sections:1
 msgid ""
 "Tuples of str ``(heading, content)`` with extra information for the test "
 "report. Used by pytest to add text captured from ``stdout``, ``stderr``, and "
@@ -6920,15 +6929,18 @@ msgstr ""
 msgid "Plugins accessing ``InvocationParams`` must be aware of that."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.Config.InvocationParams.args:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
+#: of pytest.Config.InvocationParams.args:1
 msgid "The command-line arguments as passed to :func:`pytest.main`."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.Config.InvocationParams.plugins:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
+#: of pytest.Config.InvocationParams.plugins:1
 msgid "Extra plugins, might be `None`."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.Config.InvocationParams.dir:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
+#: of pytest.Config.InvocationParams.dir:1
 msgid "The directory from which :func:`pytest.main` was invoked."
 msgstr ""
 
@@ -6937,55 +6949,66 @@ msgstr ""
 msgid "Indicates the source of the test arguments."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.Config.ArgsSource.ARGS:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
+#: of pytest.Config.ArgsSource.ARGS:1
 msgid "Command line arguments."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.Config.ArgsSource.INVOCATION_DIR:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
+#: of pytest.Config.ArgsSource.INVOCATION_DIR:1
 msgid "Invocation directory."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.Config.ArgsSource.TESTPATHS:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
+#: of pytest.Config.ArgsSource.TESTPATHS:1
 msgid "'testpaths' configuration value."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.Config.option:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
+#: of pytest.Config.option:1
 msgid "Access to command line option as attributes."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.Config.invocation_params:0
-#: pytest.Config.option:0 pytest.Config.pluginmanager:0 pytest.Config.stash:0
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
+#: of pytest.Config.invocation_params:0 pytest.Config.option:0
+#: pytest.Config.pluginmanager:0 pytest.Config.stash:0
 msgid "type"
 msgstr ""
 
-#: ../../../doc/docstring of pytest.Config.option:3
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
+#: of pytest.Config.option:3
 msgid "argparse.Namespace"
 msgstr ""
 
-#: ../../../doc/docstring of pytest.Config.invocation_params:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
+#: of pytest.Config.invocation_params:1
 msgid "The parameters with which pytest was invoked."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.Config.invocation_params:3
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
+#: of pytest.Config.invocation_params:3
 msgid "InvocationParams"
 msgstr ""
 
-#: ../../../doc/docstring of pytest.Config.pluginmanager:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
+#: of pytest.Config.pluginmanager:1
 msgid "The plugin manager handles plugin registration and hook invocation."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1043 ../../../doc/docstring of
-#: pytest.Config.pluginmanager:3
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
+#: of pytest.Config.pluginmanager:3
+#: ../../../doc/en/reference/reference.rst:1043
 msgid "PytestPluginManager"
 msgstr ""
 
-#: ../../../doc/docstring of pytest.Config.stash:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
+#: of pytest.Config.stash:1
 msgid ""
 "A place where plugins can store information on the config for their own use."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1095 ../../../doc/docstring of
-#: pytest.Config.stash:4
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
+#: of pytest.Config.stash:4 ../../../doc/en/reference/reference.rst:1095
 msgid "Stash"
 msgstr ""
 
@@ -7131,17 +7154,20 @@ msgstr ""
 msgid "Deprecated, use getoption(skip=True) instead."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.Config.VERBOSITY_ASSERTIONS:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
+#: of pytest.Config.VERBOSITY_ASSERTIONS:1
 msgid ""
 "Verbosity type for failed assertions (see :confval:`verbosity_assertions`)."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.Config.VERBOSITY_TEST_CASES:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
+#: of pytest.Config.VERBOSITY_TEST_CASES:1
 msgid ""
 "Verbosity type for test case execution (see :confval:`verbosity_test_cases`)."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.Config.VERBOSITY_SUBTESTS:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
+#: of pytest.Config.VERBOSITY_SUBTESTS:1
 msgid "Verbosity type for failed subtests (see :confval:`verbosity_subtests`)."
 msgstr ""
 
@@ -7522,13 +7548,6 @@ msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/fixtures.py:docstring
 #: of _pytest.fixtures.FixtureDef:1
-msgid ""
-"Bases: :py:class:`~typing.Generic`\\ [:py:obj:`~_pytest.fixtures."
-"FixtureValue`]"
-msgstr ""
-
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/fixtures.py:docstring
-#: of _pytest.fixtures.FixtureDef:1
 msgid "A container for a fixture definition."
 msgstr ""
 
@@ -7680,15 +7699,18 @@ msgstr ""
 msgid "A pytest mark."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.Mark.name:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/mark/structures.py:docstring
+#: of pytest.Mark.name:1
 msgid "Name of the mark."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.Mark.args:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/mark/structures.py:docstring
+#: of pytest.Mark.args:1
 msgid "Positional arguments of the mark decorator."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.Mark.kwargs:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/mark/structures.py:docstring
+#: of pytest.Mark.kwargs:1
 msgid "Keyword arguments of the mark decorator."
 msgstr ""
 
@@ -7724,27 +7746,33 @@ msgid ""
 "function is defined."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.Metafunc.definition:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
+#: of pytest.Metafunc.definition:1
 msgid "Access to the underlying :class:`_pytest.python.FunctionDefinition`."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.Metafunc.config:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
+#: of pytest.Metafunc.config:1
 msgid "Access to the :class:`pytest.Config` object for the test session."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.Metafunc.module:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
+#: of pytest.Metafunc.module:1
 msgid "The module object where the test function is defined in."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.Metafunc.function:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
+#: of pytest.Metafunc.function:1
 msgid "Underlying Python test function."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.Metafunc.fixturenames:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
+#: of pytest.Metafunc.fixturenames:1
 msgid "Set of fixture names required by the test function."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.Metafunc.cls:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
+#: of pytest.Metafunc.cls:1
 msgid "Class object where the test function is defined in or ``None``."
 msgstr ""
 
@@ -8157,11 +8185,6 @@ msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
 #: of _pytest.config.PytestPluginManager:1
-msgid "Bases: :py:class:`~pluggy._manager.PluginManager`"
-msgstr ""
-
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
-#: of _pytest.config.PytestPluginManager:1
 msgid ""
 "A :py:class:`pluggy.PluginManager <pluggy.PluginManager>` with additional "
 "pytest-specific functionality:"
@@ -8399,17 +8422,20 @@ msgstr ""
 msgid "Returns the unregistered plugin, or ``None`` if not found."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.PytestPluginManager.project_name:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
+#: of pytest.PytestPluginManager.project_name:1
 msgid "The project name."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.PytestPluginManager.hook:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
+#: of pytest.PytestPluginManager.hook:1
 msgid ""
 "The \"hook relay\", used to call a hook on all registered plugins. See :ref:"
 "`calling`."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.PytestPluginManager.trace:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
+#: of pytest.PytestPluginManager.trace:1
 msgid "The tracing entry point. See :ref:`tracing`."
 msgstr ""
 
@@ -8486,8 +8512,8 @@ msgid ""
 "    ..."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.RaisesExc.fail_reason:1
-#: pytest.RaisesGroup.fail_reason:1
+#: ../../../../../.conda/lib/python3.12/site-packages/pytest/__init__.py:docstring
+#: of pytest.RaisesExc.fail_reason:1 pytest.RaisesGroup.fail_reason:1
 msgid ""
 "Set after a call to :meth:`matches` to give a human-readable reason for why "
 "the match failed. When used as a context manager the string will be printed "
@@ -8832,7 +8858,8 @@ msgid ""
 "fail)."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.TestReport.location:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/reports.py:docstring
+#: of pytest.TestReport.location:1
 msgid ""
 "A (filesystempath, lineno, domaininfo) tuple indicating the actual location "
 "of a test item - it might be different from the collected one e.g. if a "
@@ -8840,23 +8867,27 @@ msgid ""
 "relative to ``config.rootdir``. The line number is 0-based."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.TestReport.keywords:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/reports.py:docstring
+#: of pytest.TestReport.keywords:1
 msgid ""
 "A name -> value dictionary containing all keywords and markers associated "
 "with a test invocation."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.TestReport.when:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/reports.py:docstring
+#: of pytest.TestReport.when:1
 msgid "One of 'setup', 'call', 'teardown' to indicate runtest phase."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.TestReport.user_properties:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/reports.py:docstring
+#: of pytest.TestReport.user_properties:1
 msgid ""
 "User properties is a list of tuples (name, value) that holds user defined "
 "properties of the test."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.TestReport.duration:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/reports.py:docstring
+#: of pytest.TestReport.duration:1
 msgid "Time it took to run just the test."
 msgstr ""
 
@@ -8902,15 +8933,18 @@ msgid ""
 "``\"PASSED\"``, ``\"SKIPPED\"``, ``\"ERROR\"``, or the empty string."
 msgstr ""
 
-#: ../../../doc/docstring of pytest.TestShortLogReport.category:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/terminal.py:docstring
+#: of pytest.TestShortLogReport.category:1
 msgid "Alias for field number 0"
 msgstr ""
 
-#: ../../../doc/docstring of pytest.TestShortLogReport.letter:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/terminal.py:docstring
+#: of pytest.TestShortLogReport.letter:1
 msgid "Alias for field number 1"
 msgstr ""
 
-#: ../../../doc/docstring of pytest.TestShortLogReport.word:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/terminal.py:docstring
+#: of pytest.TestShortLogReport.word:1
 msgid "Alias for field number 2"
 msgstr ""
 
@@ -9026,11 +9060,6 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/stash.py:docstring
 #: of _pytest.stash.Stash.__len__:1
 msgid "Return how many items exist in the stash."
-msgstr ""
-
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/stash.py:docstring
-#: of _pytest.stash.StashKey:1
-msgid "Bases: :py:class:`~typing.Generic`\\ [:py:obj:`~_pytest.stash.T`]"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/stash.py:docstring
@@ -9249,11 +9278,6 @@ msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/fixtures.py:docstring
 #: of _pytest.fixtures.FixtureLookupError:1
-msgid "Bases: :py:class:`LookupError`"
-msgstr ""
-
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/fixtures.py:docstring
-#: of _pytest.fixtures.FixtureLookupError:1
 msgid "Could not return a requested fixture (missing or invalid)."
 msgstr ""
 
@@ -9270,21 +9294,7 @@ msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/pytest/__init__.py:docstring
 #: of pytest.PytestWarning:1
-msgid "Bases: :py:class:`UserWarning`"
-msgstr ""
-
-#: ../../../../../.conda/lib/python3.12/site-packages/pytest/__init__.py:docstring
-#: of pytest.PytestWarning:1
 msgid "Base class for all warnings emitted by pytest."
-msgstr ""
-
-#: ../../../../../.conda/lib/python3.12/site-packages/pytest/__init__.py:docstring
-#: of pytest.PytestAssertRewriteWarning:1 pytest.PytestCacheWarning:1
-#: pytest.PytestCollectionWarning:1 pytest.PytestConfigWarning:1
-#: pytest.PytestReturnNotNoneWarning:1
-#: pytest.PytestUnhandledThreadExceptionWarning:1
-#: pytest.PytestUnknownMarkWarning:1 pytest.PytestUnraisableExceptionWarning:1
-msgid "Bases: :py:class:`~pytest.PytestWarning`"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/pytest/__init__.py:docstring
@@ -9311,18 +9321,7 @@ msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/pytest/__init__.py:docstring
 #: of pytest.PytestDeprecationWarning:1
-msgid ""
-"Bases: :py:class:`~pytest.PytestWarning`, :py:class:`DeprecationWarning`"
-msgstr ""
-
-#: ../../../../../.conda/lib/python3.12/site-packages/pytest/__init__.py:docstring
-#: of pytest.PytestDeprecationWarning:1
 msgid "Warning class for features that will be removed in a future version."
-msgstr ""
-
-#: ../../../../../.conda/lib/python3.12/site-packages/pytest/__init__.py:docstring
-#: of pytest.PytestExperimentalApiWarning:1
-msgid "Bases: :py:class:`~pytest.PytestWarning`, :py:class:`FutureWarning`"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/pytest/__init__.py:docstring
@@ -9349,13 +9348,8 @@ msgid "See :ref:`return-not-none` for details."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/pytest/__init__.py:docstring
-#: of pytest.PytestRemovedIn9Warning:1
-msgid "Bases: :py:class:`~pytest.PytestDeprecationWarning`"
-msgstr ""
-
-#: ../../../../../.conda/lib/python3.12/site-packages/pytest/__init__.py:docstring
-#: of pytest.PytestRemovedIn9Warning:1
-msgid "Warning class for features that will be removed in pytest 9."
+#: of pytest.PytestRemovedIn10Warning:1
+msgid "Warning class for features that will be removed in pytest 10."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/pytest/__init__.py:docstring

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-07 06:29+0000\n"
+"POT-Creation-Date: 2026-03-23 08:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,7 +38,7 @@ msgid "To be included in v\\ |release| (if present)"
 msgstr ""
 
 #: ../../../doc/[towncrier-fragments]:2
-msgid "pytest \\ |release| [UNRELEASED DRAFT] (2026-03-07)"
+msgid "pytest \\ |release| [UNRELEASED DRAFT] (2026-03-23)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:329 ../../../doc/en/changelog.rst:509
@@ -48,6 +48,18 @@ msgstr ""
 
 #: ../../../doc/[towncrier-fragments]:7
 msgid ""
+"`#12882 <https://github.com/pytest-dev/pytest/issues/12882>`_: Calling :meth:"
+"`request.getfixturevalue() <pytest.FixtureRequest.getfixturevalue>` during "
+"teardown to request a fixture that was not already requested is now "
+"deprecated and will become an error in pytest 10."
+msgstr ""
+
+#: ../../../doc/[towncrier-fragments]:9
+msgid "See :ref:`dynamic-fixture-request-during-teardown` for details."
+msgstr ""
+
+#: ../../../doc/[towncrier-fragments]:12
+msgid ""
 "`#13409 <https://github.com/pytest-dev/pytest/issues/13409>`_: Using non-:"
 "class:`~collections.abc.Collection` iterables (such as generators, "
 "iterators, or custom iterable objects) for the ``argvalues`` parameter in :"
@@ -55,7 +67,7 @@ msgid ""
 "`metafunc.parametrize <pytest.Metafunc.parametrize>` is now deprecated."
 msgstr ""
 
-#: ../../../doc/[towncrier-fragments]:9
+#: ../../../doc/[towncrier-fragments]:14
 msgid ""
 "These iterables get exhausted after the first iteration, leading to tests "
 "getting unexpectedly skipped in cases such as running :func:`pytest.main()` "
@@ -63,38 +75,38 @@ msgid ""
 "tests multiple times."
 msgstr ""
 
-#: ../../../doc/[towncrier-fragments]:14
+#: ../../../doc/[towncrier-fragments]:19
 msgid "See :ref:`parametrize-iterators` for details and suggestions."
 msgstr ""
 
-#: ../../../doc/[towncrier-fragments]:17
+#: ../../../doc/[towncrier-fragments]:22
 msgid ""
 "`#13946 <https://github.com/pytest-dev/pytest/issues/13946>`_: The private "
 "``config.inicfg`` attribute is now deprecated. Use :meth:`config.getini() "
 "<pytest.Config.getini>` to access configuration values instead."
 msgstr ""
 
-#: ../../../doc/[towncrier-fragments]:20
+#: ../../../doc/[towncrier-fragments]:25
 msgid "See :ref:`config-inicfg` for more details."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:112 ../../../doc/en/changelog.rst:516
-#: ../../../doc/en/changelog.rst:1057 ../../../doc/[towncrier-fragments]:25
+#: ../../../doc/en/changelog.rst:1057 ../../../doc/[towncrier-fragments]:30
 msgid "New features"
 msgstr ""
 
-#: ../../../doc/[towncrier-fragments]:27
+#: ../../../doc/[towncrier-fragments]:32
 msgid ""
 "`#14023 <https://github.com/pytest-dev/pytest/issues/14023>`_: Added `--"
 "report-chars` long CLI option."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:246 ../../../doc/en/changelog.rst:582
-#: ../../../doc/en/changelog.rst:1095 ../../../doc/[towncrier-fragments]:32
+#: ../../../doc/en/changelog.rst:1095 ../../../doc/[towncrier-fragments]:37
 msgid "Improvements in existing functionality"
 msgstr ""
 
-#: ../../../doc/[towncrier-fragments]:34
+#: ../../../doc/[towncrier-fragments]:39
 msgid ""
 "`#14026 <https://github.com/pytest-dev/pytest/issues/14026>`_: Added test "
 "coverage for compiled regex patterns in :func:`pytest.raises` match "
@@ -106,84 +118,105 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:463 ../../../doc/en/changelog.rst:754
 #: ../../../doc/en/changelog.rst:912 ../../../doc/en/changelog.rst:953
 #: ../../../doc/en/changelog.rst:994 ../../../doc/en/changelog.rst:1040
-#: ../../../doc/en/changelog.rst:1156 ../../../doc/[towncrier-fragments]:39
+#: ../../../doc/en/changelog.rst:1156 ../../../doc/[towncrier-fragments]:44
 msgid "Bug fixes"
 msgstr ""
 
-#: ../../../doc/[towncrier-fragments]:41
+#: ../../../doc/[towncrier-fragments]:46
 msgid ""
 "`#12444 <https://github.com/pytest-dev/pytest/issues/12444>`_: Fixed :func:"
 "`pytest.approx` which now correctly takes into account :class:`~collections."
 "abc.Mapping` keys order to compare them."
 msgstr ""
 
-#: ../../../doc/[towncrier-fragments]:44
+#: ../../../doc/[towncrier-fragments]:49
+msgid ""
+"`#13192 <https://github.com/pytest-dev/pytest/issues/13192>`_: Fixed `|` "
+"(pipe) not being treated as a regex meta-character that needs escaping in :"
+"func:`pytest.raises(match=...) <pytest.raises>`."
+msgstr ""
+
+#: ../../../doc/[towncrier-fragments]:52
 msgid ""
 "`#13634 <https://github.com/pytest-dev/pytest/issues/13634>`_: Blocking a "
 "``conftest.py`` file using the ``-p no:`` option is now explicitly "
 "disallowed."
 msgstr ""
 
-#: ../../../doc/[towncrier-fragments]:46
+#: ../../../doc/[towncrier-fragments]:54
 msgid ""
 "Previously this resulted in an internal assertion failure during plugin "
 "loading."
 msgstr ""
 
-#: ../../../doc/[towncrier-fragments]:48
+#: ../../../doc/[towncrier-fragments]:56
 msgid ""
 "Pytest now raises a clear ``UsageError`` explaining that conftest files are "
 "not plugins and cannot be disabled via ``-p``."
 msgstr ""
 
-#: ../../../doc/[towncrier-fragments]:51
+#: ../../../doc/[towncrier-fragments]:59
 msgid ""
 "`#13734 <https://github.com/pytest-dev/pytest/issues/13734>`_: Fixed crash "
 "when a test raises an exceptiongroup with ``__tracebackhide__ = True``."
 msgstr ""
 
-#: ../../../doc/[towncrier-fragments]:54
+#: ../../../doc/[towncrier-fragments]:62
 msgid ""
 "`#13884 <https://github.com/pytest-dev/pytest/issues/13884>`_: Fixed rare "
 "internal IndexError caused by `builtins.compile` being overridden in client "
 "code."
 msgstr ""
 
-#: ../../../doc/[towncrier-fragments]:57
+#: ../../../doc/[towncrier-fragments]:65
 msgid ""
 "`#13917 <https://github.com/pytest-dev/pytest/issues/13917>`_: :class:"
 "`unittest.SkipTest` is no longer considered an interactive exception, i.e. :"
 "hook:`pytest_exception_interact` is no longer called for it."
 msgstr ""
 
-#: ../../../doc/[towncrier-fragments]:60
+#: ../../../doc/[towncrier-fragments]:68
 msgid ""
 "`#13963 <https://github.com/pytest-dev/pytest/issues/13963>`_: Fixed "
 "subtests running with :pypi:`pytest-xdist` when their contexts contain "
 "objects that are not JSON-serializable."
 msgstr ""
 
-#: ../../../doc/[towncrier-fragments]:62
+#: ../../../doc/[towncrier-fragments]:70
 msgid ""
 "Fixes `pytest-dev/pytest-xdist#1273 <https://github.com/pytest-dev/pytest-"
 "xdist/issues/1273>`__."
 msgstr ""
 
-#: ../../../doc/[towncrier-fragments]:65
+#: ../../../doc/[towncrier-fragments]:73
 msgid ""
 "`#14050 <https://github.com/pytest-dev/pytest/issues/14050>`_: Display "
 "dictionary differences in assertion failures using the original key "
 "insertion order instead of sorted order."
 msgstr ""
 
-#: ../../../doc/[towncrier-fragments]:68
+#: ../../../doc/[towncrier-fragments]:76
+msgid ""
+"`#14114 <https://github.com/pytest-dev/pytest/issues/14114>`_: An exception "
+"from :hook:`pytest_fixture_post_finalizer` no longer prevents fixtures from "
+"being torn down, causing additional errors in the following tests."
+msgstr ""
+
+#: ../../../doc/[towncrier-fragments]:79
 msgid ""
 "`#14195 <https://github.com/pytest-dev/pytest/issues/14195>`_: Fixed an "
 "issue where non-string messages passed to `unittest.TestCase.subTest()` were "
 "not printed."
 msgstr ""
 
-#: ../../../doc/[towncrier-fragments]:71
+#: ../../../doc/[towncrier-fragments]:82
+msgid ""
+"`#5848 <https://github.com/pytest-dev/pytest/issues/5848>`_: :hook:"
+"`pytest_fixture_post_finalizer` is no longer called extra times for the same "
+"fixture teardown in some cases."
+msgstr ""
+
+#: ../../../doc/[towncrier-fragments]:85
 msgid ""
 "`#719 <https://github.com/pytest-dev/pytest/issues/719>`_: Fixed :ref:"
 "`@pytest.mark.parametrize <pytest.mark.parametrize ref>` not unpacking "
@@ -191,7 +224,7 @@ msgid ""
 "comma (e.g., ``\"arg,\"``)."
 msgstr ""
 
-#: ../../../doc/[towncrier-fragments]:73
+#: ../../../doc/[towncrier-fragments]:87
 msgid ""
 "The trailing comma form now correctly behaves like the tuple form "
 "``(\"arg\",)``, treating argvalues as a list of tuples to unpack."
@@ -201,18 +234,18 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:482 ../../../doc/en/changelog.rst:851
 #: ../../../doc/en/changelog.rst:931 ../../../doc/en/changelog.rst:969
 #: ../../../doc/en/changelog.rst:1021 ../../../doc/en/changelog.rst:1207
-#: ../../../doc/[towncrier-fragments]:78
+#: ../../../doc/[towncrier-fragments]:92
 msgid "Improved documentation"
 msgstr ""
 
-#: ../../../doc/[towncrier-fragments]:80
+#: ../../../doc/[towncrier-fragments]:94
 msgid ""
 "`#13388 <https://github.com/pytest-dev/pytest/issues/13388>`_: Clarified "
 "documentation for ``-p`` vs ``PYTEST_PLUGINS`` plugin loading and fixed an "
 "incorrect ``-p`` example."
 msgstr ""
 
-#: ../../../doc/[towncrier-fragments]:83
+#: ../../../doc/[towncrier-fragments]:97
 msgid ""
 "`#13731 <https://github.com/pytest-dev/pytest/issues/13731>`_: Clarified "
 "that capture fixtures (e.g. ``capsys`` and ``capfd``) take precedence over "
@@ -220,27 +253,33 @@ msgid ""
 "captured output from a test function <accessing-captured-output>`."
 msgstr ""
 
-#: ../../../doc/[towncrier-fragments]:86
+#: ../../../doc/[towncrier-fragments]:100
 msgid ""
 "`#14088 <https://github.com/pytest-dev/pytest/issues/14088>`_: Clarified "
 "that the default :hook:`pytest_collection` hook sets ``session.items`` "
 "before it calls :hook:`pytest_collection_finish`, not after."
 msgstr ""
 
-#: ../../../doc/[towncrier-fragments]:89
+#: ../../../doc/[towncrier-fragments]:103
 msgid ""
 "`#14255 <https://github.com/pytest-dev/pytest/issues/14255>`_: TOML integer "
 "log levels must be quoted: Updating reference documentation."
 msgstr ""
 
+#: ../../../doc/[towncrier-fragments]:106
+msgid ""
+"`#14303 <https://github.com/pytest-dev/pytest/issues/14303>`_: The "
+"documentation is now built with Sphinx >= 9."
+msgstr ""
+
 #: ../../../doc/en/changelog.rst:95 ../../../doc/en/changelog.rst:383
 #: ../../../doc/en/changelog.rst:448 ../../../doc/en/changelog.rst:887
 #: ../../../doc/en/changelog.rst:940 ../../../doc/en/changelog.rst:985
-#: ../../../doc/en/changelog.rst:1227 ../../../doc/[towncrier-fragments]:94
+#: ../../../doc/en/changelog.rst:1227 ../../../doc/[towncrier-fragments]:111
 msgid "Contributor-facing changes"
 msgstr ""
 
-#: ../../../doc/[towncrier-fragments]:96
+#: ../../../doc/[towncrier-fragments]:113
 msgid ""
 "`#12689 <https://github.com/pytest-dev/pytest/issues/12689>`_: The test "
 "reports are now published to Codecov from GitHub Actions. The test "
@@ -248,7 +287,7 @@ msgid ""
 "pytest-dev/pytest/tests>`__."
 msgstr ""
 
-#: ../../../doc/[towncrier-fragments]:100
+#: ../../../doc/[towncrier-fragments]:117
 msgid "-- by :user:`aleguy02`"
 msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-07 06:29+0000\n"
+"POT-Creation-Date: 2026-03-23 08:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,7 +33,7 @@ msgid ""
 "tests:"
 msgstr ""
 
-#: ../../../doc/en/example/nonpython.rst:1
+#: ../../../doc/en/example/nonpython/conftest.py:1
 msgid ""
 "# content of conftest.py\n"
 "from __future__ import annotations\n"
@@ -93,7 +93,7 @@ msgstr ""
 msgid "You can create a simple example file:"
 msgstr ""
 
-#: ../../../doc/en/example/nonpython.rst:1
+#: ../../../doc/en/example/nonpython/test_simple.yaml:1
 msgid ""
 "# test_simple.yaml\n"
 "ok:\n"
