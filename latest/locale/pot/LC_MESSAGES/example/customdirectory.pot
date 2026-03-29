@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-07 06:29+0000\n"
+"POT-Creation-Date: 2026-03-23 08:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -43,7 +44,7 @@ msgid ""
 "globs."
 msgstr ""
 
-#: ../../../doc/en/example/customdirectory.rst:1
+#: ../../../doc/en/example/customdirectory/conftest.py:1
 msgid ""
 "# content of conftest.py\n"
 "from __future__ import annotations\n"
@@ -85,7 +86,7 @@ msgstr ""
 msgid "You can create a ``manifest.json`` file and some test files:"
 msgstr ""
 
-#: ../../../doc/en/example/customdirectory.rst:1
+#: ../../../doc/en/example/customdirectory/tests/manifest.json:1
 msgid ""
 "{\n"
 "    \"files\": [\n"
@@ -95,7 +96,7 @@ msgid ""
 "}\n"
 msgstr ""
 
-#: ../../../doc/en/example/customdirectory.rst:1
+#: ../../../doc/en/example/customdirectory/tests/test_first.py:1
 msgid ""
 "# content of test_first.py\n"
 "from __future__ import annotations\n"
@@ -105,7 +106,7 @@ msgid ""
 "    pass\n"
 msgstr ""
 
-#: ../../../doc/en/example/customdirectory.rst:1
+#: ../../../doc/en/example/customdirectory/tests/test_second.py:1
 msgid ""
 "# content of test_second.py\n"
 "from __future__ import annotations\n"
@@ -115,7 +116,7 @@ msgid ""
 "    pass\n"
 msgstr ""
 
-#: ../../../doc/en/example/customdirectory.rst:1
+#: ../../../doc/en/example/customdirectory/tests/test_third.py:1
 msgid ""
 "# content of test_third.py\n"
 "from __future__ import annotations\n"
