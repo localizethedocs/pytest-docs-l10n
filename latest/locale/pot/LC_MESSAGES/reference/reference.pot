@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-23 08:43+0000\n"
+"POT-Creation-Date: 2026-04-06 09:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1125,7 +1125,7 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/raises.py:docstring
 #: of _pytest.raises.raises:120
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/recwarn.py:docstring
-#: _pytest.recwarn.warns:33
+#: _pytest.recwarn.warns:35
 msgid "**Using with** ``pytest.mark.parametrize``"
 msgstr ""
 
@@ -1348,18 +1348,20 @@ msgid ""
 "...         warnings.warn(\"this is not here\", UserWarning)\n"
 "Traceback (most recent call last):\n"
 "  ...\n"
-"Failed: DID NOT WARN. No warnings of type ...UserWarning... were emitted..."
+"Failed: Regex pattern did not match any of the 1 warnings emitted.\n"
+" Regex: ...\n"
+" Emitted warnings: ...UserWarning..."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/recwarn.py:docstring
-#: of _pytest.recwarn.warns:35
+#: of _pytest.recwarn.warns:37
 msgid ""
 "When using :ref:`pytest.mark.parametrize ref` it is possible to parametrize "
 "tests such that some runs raise a warning and others do not."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/recwarn.py:docstring
-#: of _pytest.recwarn.warns:38
+#: of _pytest.recwarn.warns:40
 msgid ""
 "This could be achieved in the same way as with exceptions, see :ref:"
 "`parametrizing_conditional_raising` for an example."
