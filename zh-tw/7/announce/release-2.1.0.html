@@ -1,0 +1,191 @@
+
+
+
+<!DOCTYPE html>
+
+<html lang="zh-TW">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>py.test 2.1.0: perfected assertions and bug fixes &#8212; pytest documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/flask.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments_pytest.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script data-project="pytest" data-version="7" src="../_static/describe_version.js"></script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/pytest-docs-l10n/announce/release-2.1.0.html" />
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="search" title="搜尋" href="../search.html" />
+    <link rel="next" title="py.test 2.0.3: bug fixes and speed ups" href="release-2.0.3.html" />
+    <link rel="prev" title="py.test 2.1.1: assertion fixes and improved junitxml output" href="release-2.1.1.html" />
+
+  <script>DOCUMENTATION_OPTIONS.URL_ROOT = '';</script>
+   
+<script type="text/javascript" src="../ltd-provenance.js"></script>
+<script type="text/javascript" src="../ltd-current.js"></script>
+<script type="text/javascript" src="../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../ltd-flyout.js"></script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>瀏覽</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../py-modindex.html" title="Python 模組索引"
+             >模組</a></li>
+        <li class="right" >
+          <a href="release-2.0.3.html" title="py.test 2.0.3: bug fixes and speed ups"
+             accesskey="N">下一頁</a> |</li>
+        <li class="right" >
+          <a href="release-2.1.1.html" title="py.test 2.1.1: assertion fixes and improved junitxml output"
+             accesskey="P">上一頁</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">pytest-7.4</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Release announcements</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">py.test 2.1.0: perfected assertions and bug fixes</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="py-test-2-1-0-perfected-assertions-and-bug-fixes">
+<h1>py.test 2.1.0: perfected assertions and bug fixes<a class="headerlink" href="#py-test-2-1-0-perfected-assertions-and-bug-fixes" title="本標頭的永久連結">¶</a></h1>
+<p>Welcome to the release of pytest-2.1, a mature testing tool for Python,
+supporting CPython 2.4-3.2, Jython and latest PyPy interpreters.  See
+the improved extensive docs (now also as PDF!) with tested examples here:</p>
+<blockquote>
+<div><p><a class="reference external" href="http://pytest.org/">http://pytest.org/</a></p>
+</div></blockquote>
+<p>The single biggest news about this release are <strong>perfected assertions</strong>
+courtesy of Benjamin Peterson.  You can now safely use <code class="docutils literal notranslate"><span class="pre">assert</span></code>
+statements in test modules without having to worry about side effects
+or python optimization (「-OO」) options.  This is achieved by rewriting
+assert statements in test modules upon import, using a PEP302 hook.
+See <a class="reference external" href="https://docs.pytest.org/en/stable/how-to/assert.html">https://docs.pytest.org/en/stable/how-to/assert.html</a> for
+detailed information.  The work has been partly sponsored by my company,
+merlinux GmbH.</p>
+<p>For further details on bug fixes and smaller enhancements see below.</p>
+<p>If you want to install or upgrade pytest, just type one of:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">pytest</span> <span class="c1"># or</span>
+<span class="n">easy_install</span> <span class="o">-</span><span class="n">U</span> <span class="n">pytest</span>
+</pre></div>
+</div>
+<p>best,
+holger krekel / <a class="reference external" href="https://merlinux.eu/">https://merlinux.eu/</a></p>
+<section id="changes-between-2-0-3-and-2-1-0">
+<h2>Changes between 2.0.3 and 2.1.0<a class="headerlink" href="#changes-between-2-0-3-and-2-1-0" title="本標頭的永久連結">¶</a></h2>
+<ul class="simple">
+<li><p>fix issue53 call nosestyle setup functions with correct ordering</p></li>
+<li><p>fix issue58 and issue59: new assertion code fixes</p></li>
+<li><p>merge Benjamin’s assertionrewrite branch: now assertions
+for test modules on python 2.6 and above are done by rewriting
+the AST and saving the pyc file before the test module is imported.
+see doc/assert.txt for more info.</p></li>
+<li><p>fix issue43: improve doctests with better traceback reporting on
+unexpected exceptions</p></li>
+<li><p>fix issue47: timing output in junitxml for test cases is now correct</p></li>
+<li><p>fix issue48: typo in MarkInfo repr leading to exception</p></li>
+<li><p>fix issue49: avoid confusing error when initialization partially fails</p></li>
+<li><p>fix issue44: env/username expansion for junitxml file path</p></li>
+<li><p>show releaselevel information in test runs for pypy</p></li>
+<li><p>reworked doc pages for better navigation and PDF generation</p></li>
+<li><p>report KeyboardInterrupt even if interrupted during session startup</p></li>
+<li><p>fix issue 35 - provide PDF doc version and download link from index page</p></li>
+</ul>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+  <span id="sidebar-top"></span>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  
+    
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/pytest_logo_curves.svg" alt="Logo"/>
+            </a></p>
+  
+
+<div id="searchbox" style="display: none" role="search">
+  <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel"
+        placeholder="Search"/>
+      <input type="submit" value="前往" />
+    </form>
+  </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><h3>內容</h3>
+
+<ul>
+  <li><a href="../index.html">Home</a></li>
+
+  <li><a href="../getting-started.html">Get started</a></li>
+  <li><a href="../how-to/index.html">How-to guides</a></li>
+  <li><a href="../reference/index.html">Reference guides</a></li>
+  <li><a href="../explanation/index.html">Explanation</a></li>
+  <li><a href="../contents.html">Complete table of contents</a></li>
+  <li><a href="../example/index.html">Library of examples</a></li>
+</ul>
+
+<h3>About the project</h3>
+
+<ul>
+  <li><a href="../changelog.html">Changelog</a></li>
+  <li><a href="../contributing.html">Contributing</a></li>
+  <li><a href="../backwards-compatibility.html">Backwards Compatibility</a></li>
+  <li><a href="../sponsor.html">Sponsor</a></li>
+  <li><a href="../tidelift.html">pytest for Enterprise</a></li>
+  <li><a href="../license.html">License</a></li>
+  <li><a href="../contact.html">Contact Channels</a></li>
+</ul>
+  <hr>
+  <ul>
+<li><a class="reference internal" href="#">py.test 2.1.0: perfected assertions and bug fixes</a><ul>
+<li><a class="reference internal" href="#changes-between-2-0-3-and-2-1-0">Changes between 2.0.3 and 2.1.0</a></li>
+</ul>
+</li>
+</ul>
+
+
+<hr><h3>Related Topics</h3>
+<ul>
+  <li><a href="../contents.html">Documentation overview</a><ul>
+  <li><a href="index.html">Release announcements</a><ul>
+      <li>Previous: <a href="release-2.1.1.html" title="上一章">py.test 2.1.1: assertion fixes and improved junitxml output</a></li>
+      <li>Next: <a href="release-2.0.3.html" title="下一章">py.test 2.0.3: bug fixes and speed ups</a></li>
+  </ul></li>
+  </ul></li>
+</ul><h3>Useful Links</h3>
+<ul>
+  <li><a href="https://pypi.org/project/pytest/">pytest @ PyPI</a></li>
+  <li><a href="https://github.com/pytest-dev/pytest/">pytest @ GitHub</a></li>
+  <li><a href="https://github.com/pytest-dev/pytest/issues">議題追蹤器</a></li>
+  <li><a href="https://media.readthedocs.org/pdf/pytest/latest/pytest.pdf">PDF 文件</a></li>
+</ul>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  
+    <div class="footer" role="contentinfo">
+        &#169; 版權所有 2015, holger krekel and pytest-dev team。
+      使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0 建立。
+    </div>
+  <script src="../_static/version_warning_offset.js"></script>
+
+  </body>
+</html>
