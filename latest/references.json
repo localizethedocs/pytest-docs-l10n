@@ -37,9 +37,9 @@
     "branch" : "main",
     "commit" : 
     {
-      "date" : "2026-03-23 06:01:16 +0100",
-      "hash" : "75609e71415e67c0f74492d192ca99ca94a3f582",
-      "title" : "build(deps): Bump actions/download-artifact from 8.0.0 to 8.0.1 (#14316)"
+      "date" : "2026-04-06 07:14:46 +0200",
+      "hash" : "728652641b378bb6ff31843698e562fc45536634",
+      "title" : "build(deps): Bump anyio in /testing/plugins_integration (#14352)"
     }
   },
   "type" : "branch",
