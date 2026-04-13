@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest stable\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-07 06:28+0000\n"
+"POT-Creation-Date: 2026-04-13 09:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -234,7 +235,7 @@ msgstr ""
 
 #: ../../../doc/en/explanation/goodpractices.rst:146
 msgid ""
-"If you do not use an editable install and not use the ``src`` layout "
+"If you do not use an editable install and do not use the ``src`` layout "
 "(``mypkg`` directly in the root directory) you can rely on the fact that "
 "Python by default puts the current directory in ``sys.path`` to import your "
 "package and run ``python -m pytest`` to execute the tests against the local "
@@ -247,18 +248,28 @@ msgid ""
 "difference between calling ``pytest`` and ``python -m pytest``."
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:154
-msgid "Tests as part of application code"
+#: ../../../doc/en/explanation/goodpractices.rst:155
+msgid ":doc:`packaging:discussions/src-layout-vs-flat-layout`"
 msgstr ""
 
 #: ../../../doc/en/explanation/goodpractices.rst:156
+msgid ""
+"The Python Packaging User Guide discusses the trade-offs between the ``src`` "
+"layout and ``flat`` layout."
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:159
+msgid "Tests as part of application code"
+msgstr ""
+
+#: ../../../doc/en/explanation/goodpractices.rst:161
 msgid ""
 "Inlining test directories into your application package is useful if you "
 "have direct relation between tests and application modules and want to "
 "distribute them along with your application:"
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:160
+#: ../../../doc/en/explanation/goodpractices.rst:165
 msgid ""
 "pyproject.toml\n"
 "[src/]mypkg/\n"
@@ -272,29 +283,29 @@ msgid ""
 "        ..."
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:173
+#: ../../../doc/en/explanation/goodpractices.rst:178
 msgid ""
 "In this scheme, it is easy to run your tests using the :option:`--pyargs` "
 "option:"
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:175
+#: ../../../doc/en/explanation/goodpractices.rst:180
 msgid "pytest --pyargs mypkg"
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:179
+#: ../../../doc/en/explanation/goodpractices.rst:184
 msgid ""
 "``pytest`` will discover where ``mypkg`` is installed and collect tests from "
 "there."
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:181
+#: ../../../doc/en/explanation/goodpractices.rst:186
 msgid ""
 "Note that this layout also works in conjunction with the ``src`` layout "
 "mentioned in the previous section."
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:186
+#: ../../../doc/en/explanation/goodpractices.rst:191
 msgid ""
 "You can use namespace packages (PEP420) for your application but pytest will "
 "still perform `test package name`_ discovery based on the presence of "
@@ -304,14 +315,14 @@ msgid ""
 "need to use absolute imports for getting at your application code."
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:198
+#: ../../../doc/en/explanation/goodpractices.rst:203
 msgid ""
 "In ``prepend`` and ``append`` import-modes, if pytest finds a ``\"a/b/"
 "test_module.py\"`` test file while recursing into the filesystem it "
 "determines the import name as follows:"
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:202
+#: ../../../doc/en/explanation/goodpractices.rst:207
 msgid ""
 "determine ``basedir``: this is the first \"upward\" (towards the root) "
 "directory not containing an ``__init__.py``.  If e.g. both ``a`` and ``b`` "
@@ -319,13 +330,13 @@ msgid ""
 "become the ``basedir``."
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:207
+#: ../../../doc/en/explanation/goodpractices.rst:212
 msgid ""
 "perform ``sys.path.insert(0, basedir)`` to make the test module importable "
 "under the fully qualified import name."
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:210
+#: ../../../doc/en/explanation/goodpractices.rst:215
 msgid ""
 "``import a.b.test_module`` where the path is determined by converting path "
 "separators ``/`` into \".\" characters.  This means you must follow the "
@@ -333,7 +344,7 @@ msgid ""
 "names."
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:215
+#: ../../../doc/en/explanation/goodpractices.rst:220
 msgid ""
 "The reason for this somewhat evolved importing technique is that in larger "
 "projects multiple test modules might import from each other and thus "
@@ -341,25 +352,25 @@ msgid ""
 "module getting imported twice."
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:220
+#: ../../../doc/en/explanation/goodpractices.rst:225
 msgid ""
 "With :option:`--import-mode=importlib` things are less convoluted because "
 "pytest doesn't need to change ``sys.path``, making things much less "
 "surprising."
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:228
+#: ../../../doc/en/explanation/goodpractices.rst:233
 msgid "Choosing an import mode"
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:230
+#: ../../../doc/en/explanation/goodpractices.rst:235
 msgid ""
 "For historical reasons, pytest defaults to the ``prepend`` :ref:`import mode "
 "<import-modes>` instead of the ``importlib`` import mode we recommend for "
 "new projects. The reason lies in the way the ``prepend`` mode works:"
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:234
+#: ../../../doc/en/explanation/goodpractices.rst:239
 msgid ""
 "Since there are no packages to derive a full package name from, ``pytest`` "
 "will import your test files as *top-level* modules. The test files in the "
@@ -368,20 +379,20 @@ msgid ""
 "``sys.path``."
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:239
+#: ../../../doc/en/explanation/goodpractices.rst:244
 msgid ""
 "This results in a drawback compared to the import mode ``importlib``: your "
 "test files must have **unique names**."
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:242
+#: ../../../doc/en/explanation/goodpractices.rst:247
 msgid ""
 "If you need to have test modules with the same name, as a workaround you "
 "might add ``__init__.py`` files to your ``tests`` folder and subfolders, "
 "changing them to packages:"
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:246
+#: ../../../doc/en/explanation/goodpractices.rst:251
 msgid ""
 "pyproject.toml\n"
 "mypkg/\n"
@@ -396,7 +407,7 @@ msgid ""
 "        test_view.py"
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:260
+#: ../../../doc/en/explanation/goodpractices.rst:265
 msgid ""
 "Now pytest will load the modules as ``tests.foo.test_view`` and ``tests.bar."
 "test_view``, allowing you to have modules with the same name. But now this "
@@ -405,24 +416,24 @@ msgid ""
 "path``, which adds the side-effect that now ``mypkg`` is also importable."
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:267
+#: ../../../doc/en/explanation/goodpractices.rst:272
 msgid ""
 "This is problematic if you are using a tool like tox_ to test your package "
 "in a virtual environment, because you want to test the *installed* version "
 "of your package, not the local code from the repository."
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:271
+#: ../../../doc/en/explanation/goodpractices.rst:276
 msgid ""
 "The ``importlib`` import mode does not have any of the drawbacks above, "
 "because ``sys.path`` is not changed when importing test modules."
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:280
+#: ../../../doc/en/explanation/goodpractices.rst:285
 msgid "tox"
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:282
+#: ../../../doc/en/explanation/goodpractices.rst:287
 msgid ""
 "Once you are done with your work and want to make sure that your actual "
 "package passes all tests you may want to look into :doc:`tox <tox:index>`, "
@@ -433,18 +444,18 @@ msgid ""
 "detect packaging glitches."
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:292
+#: ../../../doc/en/explanation/goodpractices.rst:297
 msgid "Do not run via setuptools"
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:294
+#: ../../../doc/en/explanation/goodpractices.rst:299
 msgid ""
 "Integration with setuptools is **not recommended**, i.e. you should not be "
 "using ``python setup.py test`` or ``pytest-runner``, and may stop working in "
 "the future."
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:298
+#: ../../../doc/en/explanation/goodpractices.rst:303
 msgid ""
 "This is deprecated since it depends on deprecated features of setuptools and "
 "relies on features that break security mechanisms in pip. For example "
@@ -454,24 +465,24 @@ msgid ""
 "`pypa/setuptools#1684 <https://github.com/pypa/setuptools/issues/1684>`_."
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:305
+#: ../../../doc/en/explanation/goodpractices.rst:310
 msgid ""
 "setuptools intends to `remove the test command <https://github.com/pypa/"
 "setuptools/issues/931>`_."
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:309
+#: ../../../doc/en/explanation/goodpractices.rst:314
 msgid "Checking with flake8-pytest-style"
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:311
+#: ../../../doc/en/explanation/goodpractices.rst:316
 msgid ""
 "In order to ensure that pytest is being used correctly in your project, it "
 "can be helpful to use the `flake8-pytest-style <https://github.com/m-burst/"
 "flake8-pytest-style>`_ flake8 plugin."
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:314
+#: ../../../doc/en/explanation/goodpractices.rst:319
 msgid ""
 "flake8-pytest-style checks for common mistakes and coding style violations "
 "in pytest code, such as incorrect use of fixtures, test function names, and "
@@ -480,13 +491,13 @@ msgid ""
 "to maintain."
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:319
+#: ../../../doc/en/explanation/goodpractices.rst:324
 msgid ""
 "A list of the lints detected by flake8-pytest-style can be found on its "
 "`PyPI page <https://pypi.org/project/flake8-pytest-style/>`_."
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:323
+#: ../../../doc/en/explanation/goodpractices.rst:328
 msgid ""
 "flake8-pytest-style is not an official pytest project. Some of the rules "
 "enforce certain style choices, such as using `@pytest.fixture()` over "
@@ -494,37 +505,37 @@ msgid ""
 "style."
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:328
+#: ../../../doc/en/explanation/goodpractices.rst:333
 msgid "Using pytest's strict mode"
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:332
+#: ../../../doc/en/explanation/goodpractices.rst:337
 msgid ""
 "Pytest contains a set of configuration options that make it more strict. The "
 "options are off by default for compatibility or other reasons, but you "
 "should enable them if you can."
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:336
+#: ../../../doc/en/explanation/goodpractices.rst:341
 msgid ""
 "You can enable all of the strictness options at once by setting the :confval:"
 "`strict` configuration option:"
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:340
-#: ../../../doc/en/explanation/goodpractices.rst:347
+#: ../../../doc/en/explanation/goodpractices.rst:345
+#: ../../../doc/en/explanation/goodpractices.rst:352
 msgid ""
 "[pytest]\n"
 "strict = true"
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:352
+#: ../../../doc/en/explanation/goodpractices.rst:357
 msgid ""
 "See the :confval:`strict` documentation for the options it enables and their "
 "effect."
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:354
+#: ../../../doc/en/explanation/goodpractices.rst:359
 msgid ""
 "If pytest adds new strictness options in the future, they will also be "
 "enabled in strict mode. Therefore, you should only enable strict mode if you "
@@ -533,8 +544,8 @@ msgid ""
 "pick up new options, you can enable options individually:"
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:361
-#: ../../../doc/en/explanation/goodpractices.rst:371
+#: ../../../doc/en/explanation/goodpractices.rst:366
+#: ../../../doc/en/explanation/goodpractices.rst:376
 msgid ""
 "[pytest]\n"
 "strict_config = true\n"
@@ -543,14 +554,14 @@ msgid ""
 "strict_xfail = true"
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:379
+#: ../../../doc/en/explanation/goodpractices.rst:384
 msgid ""
-"If you want to use strict mode but having trouble with a specific option, "
-"you can turn it off individually:"
+"If you want to use strict mode but are having trouble with a specific "
+"option, you can turn it off individually:"
 msgstr ""
 
-#: ../../../doc/en/explanation/goodpractices.rst:383
-#: ../../../doc/en/explanation/goodpractices.rst:391
+#: ../../../doc/en/explanation/goodpractices.rst:388
+#: ../../../doc/en/explanation/goodpractices.rst:396
 msgid ""
 "[pytest]\n"
 "strict = true\n"
