@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-23 08:43+0000\n"
+"POT-Creation-Date: 2026-04-13 09:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -467,31 +467,24 @@ msgstr ""
 
 #: ../../../doc/en/how-to/assert.rst:325
 msgid ""
-"The reporter will provide you with helpful output in case of failures such "
-"as *no exception* or *wrong exception*."
-msgstr ""
-
-#: ../../../doc/en/how-to/assert.rst:328
-msgid ""
 "This form was the original :func:`pytest.raises` API, developed before the "
 "``with`` statement was added to the Python language. Nowadays, this form is "
 "rarely used, with the context-manager form (using ``with``) being considered "
-"more readable. Nonetheless, this form is fully supported and not deprecated "
-"in any way."
+"more readable."
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:334
+#: ../../../doc/en/how-to/assert.rst:330
 msgid "xfail mark and pytest.raises"
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:336
+#: ../../../doc/en/how-to/assert.rst:332
 msgid ""
 "It is also possible to specify a ``raises`` argument to :ref:`pytest.mark."
 "xfail <pytest.mark.xfail ref>`, which checks that the test is failing in a "
 "more specific way than just having any exception raised:"
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:340
+#: ../../../doc/en/how-to/assert.rst:336
 msgid ""
 "def f():\n"
 "    raise IndexError()\n"
@@ -502,31 +495,31 @@ msgid ""
 "    f()"
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:351
+#: ../../../doc/en/how-to/assert.rst:347
 msgid ""
 "This will only \"xfail\" if the test fails by raising ``IndexError`` or "
 "subclasses."
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:353
+#: ../../../doc/en/how-to/assert.rst:349
 msgid ""
 "Using :ref:`pytest.mark.xfail <pytest.mark.xfail ref>` with the ``raises`` "
 "parameter is probably better for something like documenting unfixed bugs "
 "(where the test describes what \"should\" happen) or bugs in dependencies."
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:356
+#: ../../../doc/en/how-to/assert.rst:352
 msgid ""
 "Using :func:`pytest.raises` is likely to be better for cases where you are "
 "testing exceptions your own code is deliberately raising, which is the "
 "majority of cases."
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:359
+#: ../../../doc/en/how-to/assert.rst:355
 msgid "You can also use :class:`pytest.RaisesGroup`:"
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:361
+#: ../../../doc/en/how-to/assert.rst:357
 msgid ""
 "def f():\n"
 "    raise ExceptionGroup(\"\", [IndexError()])\n"
@@ -537,27 +530,27 @@ msgid ""
 "    f()"
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:375
+#: ../../../doc/en/how-to/assert.rst:371
 msgid "Assertions about expected warnings"
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:379
+#: ../../../doc/en/how-to/assert.rst:375
 msgid ""
 "You can check that code raises a particular warning using :ref:`pytest.warns "
 "<warns>`."
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:386
+#: ../../../doc/en/how-to/assert.rst:382
 msgid "Making use of context-sensitive comparisons"
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:390
+#: ../../../doc/en/how-to/assert.rst:386
 msgid ""
 "``pytest`` has rich support for providing context-sensitive information when "
 "it encounters comparisons.  For example:"
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:393
+#: ../../../doc/en/how-to/assert.rst:389
 msgid ""
 "# content of test_assert2.py\n"
 "def test_set_comparison():\n"
@@ -566,11 +559,11 @@ msgid ""
 "    assert set1 == set2"
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:401
+#: ../../../doc/en/how-to/assert.rst:397
 msgid "if you run this module:"
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:403
+#: ../../../doc/en/how-to/assert.rst:399
 msgid ""
 "$ pytest test_assert2.py\n"
 "=========================== test session starts "
@@ -606,38 +599,38 @@ msgid ""
 "============================ 1 failed in 0.12s ============================="
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:433
+#: ../../../doc/en/how-to/assert.rst:429
 msgid "Special comparisons are done for a number of cases:"
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:435
+#: ../../../doc/en/how-to/assert.rst:431
 msgid "comparing long strings: a context diff is shown"
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:436
+#: ../../../doc/en/how-to/assert.rst:432
 msgid "comparing long sequences: first failing indices"
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:437
+#: ../../../doc/en/how-to/assert.rst:433
 msgid "comparing dicts: different entries"
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:439
+#: ../../../doc/en/how-to/assert.rst:435
 msgid ""
 "In string context diffs, lines prefixed with ``-`` come from the left-hand "
 "side of ``assert left == right``, while lines prefixed with ``+`` come from "
 "the right-hand side."
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:443
+#: ../../../doc/en/how-to/assert.rst:439
 msgid "See the :ref:`reporting demo <tbreportdemo>` for many more examples."
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:446
+#: ../../../doc/en/how-to/assert.rst:442
 msgid "Defining your own explanation for failed assertions"
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:448
+#: ../../../doc/en/how-to/assert.rst:444
 msgid ""
 "It is possible to add your own detailed explanations by implementing the "
 "``pytest_assertrepr_compare`` hook."
@@ -694,14 +687,14 @@ msgid ""
 "files in the item's directory and its parent directories are consulted."
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:454
+#: ../../../doc/en/how-to/assert.rst:450
 msgid ""
 "As an example consider adding the following hook in a :ref:`conftest.py "
 "<conftest.py>` file which provides an alternative explanation for ``Foo`` "
 "objects:"
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:457
+#: ../../../doc/en/how-to/assert.rst:453
 msgid ""
 "# content of conftest.py\n"
 "from test_foocompare import Foo\n"
@@ -715,11 +708,11 @@ msgid ""
 "        ]"
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:470
+#: ../../../doc/en/how-to/assert.rst:466
 msgid "now, given this test module:"
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:472
+#: ../../../doc/en/how-to/assert.rst:468
 msgid ""
 "# content of test_foocompare.py\n"
 "class Foo:\n"
@@ -736,13 +729,13 @@ msgid ""
 "    assert f1 == f2"
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:488
+#: ../../../doc/en/how-to/assert.rst:484
 msgid ""
 "you can run the test module and get the custom output defined in the "
 "conftest file:"
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:491
+#: ../../../doc/en/how-to/assert.rst:487
 msgid ""
 "$ pytest -q test_foocompare.py\n"
 "F                                                                    [100%]\n"
@@ -765,28 +758,28 @@ msgid ""
 "1 failed in 0.12s"
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:513
+#: ../../../doc/en/how-to/assert.rst:509
 msgid "Returning non-None value in test functions"
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:515
+#: ../../../doc/en/how-to/assert.rst:511
 msgid ""
 "A :class:`pytest.PytestReturnNotNoneWarning` is emitted when a test function "
 "returns a value other than ``None``."
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:517
+#: ../../../doc/en/how-to/assert.rst:513
 msgid ""
 "This helps prevent a common mistake made by beginners who assume that "
 "returning a ``bool`` (e.g., ``True`` or ``False``) will determine whether a "
 "test passes or fails."
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:519
+#: ../../../doc/en/how-to/assert.rst:515
 msgid "Example:"
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:521
+#: ../../../doc/en/how-to/assert.rst:517
 msgid ""
 "@pytest.mark.parametrize(\n"
 "    [\"a\", \"b\", \"result\"],\n"
@@ -800,18 +793,18 @@ msgid ""
 "    return foo(a, b) == result  # Incorrect usage, do not do this."
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:534
+#: ../../../doc/en/how-to/assert.rst:530
 msgid ""
 "Since pytest ignores return values, it might be surprising that the test "
 "will never fail based on the returned value."
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:536
+#: ../../../doc/en/how-to/assert.rst:532
 msgid ""
 "The correct fix is to replace the ``return`` statement with an ``assert``:"
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:538
+#: ../../../doc/en/how-to/assert.rst:534
 msgid ""
 "@pytest.mark.parametrize(\n"
 "    [\"a\", \"b\", \"result\"],\n"
@@ -825,11 +818,11 @@ msgid ""
 "    assert foo(a, b) == result"
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:558
+#: ../../../doc/en/how-to/assert.rst:554
 msgid "Assertion introspection details"
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:561
+#: ../../../doc/en/how-to/assert.rst:557
 msgid ""
 "Reporting details about a failing assertion is achieved by rewriting assert "
 "statements before they are run.  Rewritten assert statements put "
@@ -839,25 +832,25 @@ msgid ""
 "modules will not be rewritten**."
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:567
+#: ../../../doc/en/how-to/assert.rst:563
 msgid ""
 "You can manually enable assertion rewriting for an imported module by "
 "calling :ref:`register_assert_rewrite <assertion-rewriting>` before you "
 "import it (a good place to do that is in your root ``conftest.py``)."
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:571
+#: ../../../doc/en/how-to/assert.rst:567
 msgid ""
 "For further information, Benjamin Peterson wrote up `Behind the scenes of "
 "pytest's new assertion rewriting <http://pybites.blogspot.com/2011/07/behind-"
 "scenes-of-pytests-new-assertion.html>`_."
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:574
+#: ../../../doc/en/how-to/assert.rst:570
 msgid "Assertion rewriting caches files on disk"
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:576
+#: ../../../doc/en/how-to/assert.rst:572
 msgid ""
 "``pytest`` will write back the rewritten modules to disk for caching. You "
 "can disable this behavior (for example to avoid leaving stale ``.pyc`` files "
@@ -865,30 +858,30 @@ msgid ""
 "of your ``conftest.py`` file:"
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:580
+#: ../../../doc/en/how-to/assert.rst:576
 msgid ""
 "import sys\n"
 "\n"
 "sys.dont_write_bytecode = True"
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:586
+#: ../../../doc/en/how-to/assert.rst:582
 msgid ""
 "Note that you still get the benefits of assertion introspection, the only "
 "change is that the ``.pyc`` files won't be cached on disk."
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:589
+#: ../../../doc/en/how-to/assert.rst:585
 msgid ""
 "Additionally, rewriting will silently skip caching if it cannot write new ``."
 "pyc`` files, e.g. in a read-only filesystem or a zipfile."
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:594
+#: ../../../doc/en/how-to/assert.rst:590
 msgid "Disabling assert rewriting"
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:596
+#: ../../../doc/en/how-to/assert.rst:592
 msgid ""
 "``pytest`` rewrites test modules on import by using an import hook to write "
 "new ``pyc`` files. Most of the time this works transparently. However, if "
@@ -896,16 +889,16 @@ msgid ""
 "interfere."
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:601
+#: ../../../doc/en/how-to/assert.rst:597
 msgid "If this is the case you have two options:"
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:603
+#: ../../../doc/en/how-to/assert.rst:599
 msgid ""
 "Disable rewriting for a specific module by adding the string "
 "``PYTEST_DONT_REWRITE`` to its docstring."
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:606
+#: ../../../doc/en/how-to/assert.rst:602
 msgid "Disable rewriting for all modules by using :option:`--assert=plain`."
 msgstr ""
