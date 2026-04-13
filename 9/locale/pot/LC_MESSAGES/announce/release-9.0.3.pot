@@ -1,0 +1,135 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-13 09:55+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/announce/release-9.0.3.rst:2
+msgid "pytest-9.0.3"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.0.3.rst:4
+msgid "pytest 9.0.3 has just been released to PyPI."
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.0.3.rst:6
+msgid "This is a bug-fix release, being a drop-in replacement."
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.0.3.rst:8
+msgid ""
+"The full changelog is available at https://docs.pytest.org/en/stable/"
+"changelog.html."
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.0.3.rst:10
+msgid "Thanks to all of the contributors to this release:"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.0.3.rst:12
+msgid "Aditya Giri"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.0.3.rst:13
+msgid "Alejandro Villate"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.0.3.rst:14
+msgid "Bruno Oliveira"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.0.3.rst:15
+msgid "Bubble-Interface"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.0.3.rst:16
+msgid "Charles-Meldhine Madi Mnemoi"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.0.3.rst:17
+msgid "DavidAG"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.0.3.rst:18
+msgid "Denis Cherednichenko"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.0.3.rst:19
+msgid "Dr Alex Mitre"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.0.3.rst:20
+msgid "Freya"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.0.3.rst:21
+msgid "Freya Bruhin"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.0.3.rst:22
+msgid "Hugo van Kemenade"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.0.3.rst:23
+msgid "John Litborn"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.0.3.rst:24
+msgid "Liam DeVoe"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.0.3.rst:25
+msgid "Lily Wu"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.0.3.rst:26
+msgid "Maxime Grenu"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.0.3.rst:27
+msgid "Ran Benita"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.0.3.rst:28
+msgid "Randy Döring"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.0.3.rst:29
+msgid "Ronald Eddy Jr"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.0.3.rst:30
+msgid "Samuel Newbold"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.0.3.rst:31
+msgid "Tejas Verma"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.0.3.rst:32
+msgid "Vladimir"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.0.3.rst:33
+msgid "jxramos"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.0.3.rst:34
+msgid "🇺🇦 Sviatoslav Sydorenko (Святослав Сидоренко)"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.0.3.rst:37
+msgid "Happy testing, The pytest Development Team"
+msgstr ""
