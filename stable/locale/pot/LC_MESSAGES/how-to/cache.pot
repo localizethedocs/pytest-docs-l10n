@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest stable\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-07 06:28+0000\n"
+"POT-Creation-Date: 2026-04-13 09:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -63,7 +64,7 @@ msgid "Rerunning only failures or failures first"
 msgstr ""
 
 #: ../../../doc/en/how-to/cache.rst:36
-msgid "First, let's create 50 test invocation of which only 2 fail:"
+msgid "First, let's create 50 test invocations of which only 2 fail:"
 msgstr ""
 
 #: ../../../doc/en/how-to/cache.rst:38

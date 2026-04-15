@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest stable\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-07 06:28+0000\n"
+"POT-Creation-Date: 2026-04-13 09:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -100,8 +101,8 @@ msgstr ""
 
 #: ../../../doc/en/contact.rst:43
 msgid ""
-"Florian Bruhin (:user:`The-Compiler`, `florian@pytest.org <mailto:"
-"florian@pytest.org>`_)"
+"Freya Bruhin (:user:`The-Compiler`, `freya@pytest.org <mailto:freya@pytest."
+"org>`_)"
 msgstr ""
 
 #: ../../../doc/en/contact.rst:44
@@ -139,6 +140,6 @@ msgstr ""
 
 #: ../../../doc/en/contact.rst:54
 msgid ""
-"Florian Bruhin (:user:`The-Compiler`) offers pytest professional teaching "
-"and consulting via `Bruhin Software <https://bruhin.software>`_."
+"Freya Bruhin (:user:`The-Compiler`) offers pytest professional teaching and "
+"consulting via `Bruhin Software <https://bruhin.software>`_."
 msgstr ""

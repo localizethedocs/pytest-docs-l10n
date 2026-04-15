@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest stable\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-07 06:28+0000\n"
+"POT-Creation-Date: 2026-04-13 09:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -49,20 +50,20 @@ msgstr ""
 #: ../../../doc/en/talks.rst:20
 msgid ""
 "Training: `pytest - simple, rapid and fun testing with Python <https://www."
-"youtube.com/watch?v=ofPHJrAOaTE>`_, Florian Bruhin, PyConDE 2022"
+"youtube.com/watch?v=ofPHJrAOaTE>`_, Freya Bruhin, PyConDE 2022"
 msgstr ""
 
 #: ../../../doc/en/talks.rst:22
 msgid ""
 "`pytest: Simple, rapid and fun testing with Python, <https://youtu.be/cSJ-"
-"X3TbQ1c?t=15752>`_ (@ 4:22:32), Florian Bruhin, WeAreDevelopers World "
-"Congress 2021"
+"X3TbQ1c?t=15752>`_ (@ 4:22:32), Freya Bruhin, WeAreDevelopers World Congress "
+"2021"
 msgstr ""
 
 #: ../../../doc/en/talks.rst:24
 msgid ""
 "Webinar: `pytest: Test Driven Development für Python (German) <https://"
-"bruhin.software/ins-pytest/>`_, Florian Bruhin, via mylearning.ch, 2020"
+"bruhin.software/ins-pytest/>`_, Freya Bruhin, via mylearning.ch, 2020"
 msgstr ""
 
 #: ../../../doc/en/talks.rst:26
@@ -75,7 +76,7 @@ msgstr ""
 #: ../../../doc/en/talks.rst:28
 msgid ""
 "Training: `Introduction to pytest - simple, rapid and fun testing with "
-"Python <https://www.youtube.com/watch?v=CMuSn9cofbI>`_, Florian Bruhin, "
+"Python <https://www.youtube.com/watch?v=CMuSn9cofbI>`_, Freya Bruhin, "
 "PyConDE 2019"
 msgstr ""
 
@@ -89,8 +90,8 @@ msgstr ""
 
 #: ../../../doc/en/talks.rst:32
 msgid ""
-"Testing PySide/PyQt code easily using the pytest framework, Florian Bruhin, "
-"Qt World Summit 2019 (`slides <https://bruhin.software/talks/qtws19.pdf>`__, "
+"Testing PySide/PyQt code easily using the pytest framework, Freya Bruhin, Qt "
+"World Summit 2019 (`slides <https://bruhin.software/talks/qtws19.pdf>`__, "
 "`recording <https://www.youtube.com/watch?v=zdsBS5BXGqQ>`__)"
 msgstr ""
 
@@ -124,7 +125,7 @@ msgstr ""
 
 #: ../../../doc/en/talks.rst:44
 msgid ""
-"`pytest - Rapid Simple Testing, Florian Bruhin, Swiss Python Summit 2016 "
+"`pytest - Rapid Simple Testing, Freya Bruhin, Swiss Python Summit 2016 "
 "<https://www.youtube.com/watch?v=rCBHkQ_LVIs>`_."
 msgstr ""
 
