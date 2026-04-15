@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest stable\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-07 06:28+0000\n"
+"POT-Creation-Date: 2026-04-13 09:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -144,7 +144,7 @@ msgstr ""
 
 #: ../../../doc/en/how-to/writing_hook_functions.rst:97
 msgid ""
-"In other cases, the wrapper wants the adjust or adapt the result, in which "
+"In other cases, the wrapper wants to adjust or adapt the result, in which "
 "case it can return a new value. If the result of the underlying hook is a "
 "mutable object, the wrapper may modify that result, but it's probably better "
 "to avoid it."
@@ -264,8 +264,7 @@ msgid ""
 "PytestPluginManager.add_hookspecs>`."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
-#: of _pytest.hookspec.pytest_addhooks:0
+#: ../../../doc/en/how-to/writing_hook_functions.rst:0
 msgid "Parameters"
 msgstr "參數"
 

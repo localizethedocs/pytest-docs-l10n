@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest stable\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-07 06:28+0000\n"
+"POT-Creation-Date: 2026-04-13 09:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -568,7 +568,7 @@ msgstr ""
 #: ../../../doc/en/how-to/fixtures.rst:473
 msgid ""
 "You see the two ``assert 0`` failing and more importantly you can also see "
-"that the **exactly same** ``smtp_connection`` object was passed into the two "
+"that the **exact same** ``smtp_connection`` object was passed into the two "
 "test functions because pytest shows the incoming argument values in the "
 "traceback.  As a result, the two test functions using ``smtp_connection`` "
 "run as quick as a single one because they reuse the same instance."
@@ -1742,7 +1742,7 @@ msgid ""
 "rootdir: /home/sweet/project\n"
 "collected 12 items\n"
 "\n"
-"<Dir fixtures.rst-233>\n"
+"<Dir fixtures.rst-234>\n"
 "  <Module test_anothersmtp.py>\n"
 "    <Function test_showhelo[smtp.gmail.com]>\n"
 "    <Function test_showhelo[mail.python.org]>\n"
@@ -2005,7 +2005,7 @@ msgstr ""
 #: ../../../doc/en/how-to/fixtures.rst:1647
 msgid ""
 "You can see that the parametrized module-scoped ``modarg`` resource caused "
-"an ordering of test execution that lead to the fewest possible \"active\" "
+"an ordering of test execution that led to the fewest possible \"active\" "
 "resources. The finalizer for the ``mod1`` parametrized resource was executed "
 "before the ``mod2`` resource was setup."
 msgstr ""
@@ -2020,7 +2020,7 @@ msgstr ""
 #: ../../../doc/en/how-to/fixtures.rst:1656
 msgid ""
 "The ``otherarg`` parametrized resource (having function scope) was set up "
-"before and teared down after every test that used it."
+"before and torn down after every test that used it."
 msgstr ""
 
 #: ../../../doc/en/how-to/fixtures.rst:1663
@@ -2151,9 +2151,8 @@ msgstr ""
 
 #: ../../../doc/en/how-to/fixtures.rst:1765
 msgid ""
-"In relatively large test suite, you most likely need to ``override`` a "
-"``global`` or ``root`` fixture with a ``locally`` defined one, keeping the "
-"test code readable and maintainable."
+"In a relatively large test suite, you may want to *override* a fixture, to "
+"augment or change its behavior inside of certain test modules or directories."
 msgstr ""
 
 #: ../../../doc/en/how-to/fixtures.rst:1769
@@ -2200,8 +2199,8 @@ msgstr ""
 
 #: ../../../doc/en/how-to/fixtures.rst:1803
 msgid ""
-"As you can see, a fixture with the same name can be overridden for certain "
-"test folder level. Note that the ``base`` or ``super`` fixture can be "
+"As you can see, a fixture with the same name can be overridden for a certain "
+"test directory level. Note that the ``base`` or ``super`` fixture can be "
 "accessed from the ``overriding`` fixture easily - used in the example above."
 msgstr ""
 
@@ -2245,7 +2244,7 @@ msgstr ""
 
 #: ../../../doc/en/how-to/fixtures.rst:1845
 msgid ""
-"In the example above, a fixture with the same name can be overridden for "
+"In the example above, a fixture with the same name can be overridden for a "
 "certain test module."
 msgstr ""
 

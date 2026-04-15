@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest stable\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-07 06:28+0000\n"
+"POT-Creation-Date: 2026-04-13 09:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,7 +44,7 @@ msgid ""
 "globs."
 msgstr ""
 
-#: ../../../doc/en/example/customdirectory/conftest.py:1
+#: ../../../doc/en/example/customdirectory.rst:1
 msgid ""
 "# content of conftest.py\n"
 "from __future__ import annotations\n"
@@ -86,7 +86,7 @@ msgstr ""
 msgid "You can create a ``manifest.json`` file and some test files:"
 msgstr ""
 
-#: ../../../doc/en/example/customdirectory/tests/manifest.json:1
+#: ../../../doc/en/example/customdirectory.rst:1
 msgid ""
 "{\n"
 "    \"files\": [\n"
@@ -96,7 +96,7 @@ msgid ""
 "}\n"
 msgstr ""
 
-#: ../../../doc/en/example/customdirectory/tests/test_first.py:1
+#: ../../../doc/en/example/customdirectory.rst:1
 msgid ""
 "# content of test_first.py\n"
 "from __future__ import annotations\n"
@@ -106,7 +106,7 @@ msgid ""
 "    pass\n"
 msgstr ""
 
-#: ../../../doc/en/example/customdirectory/tests/test_second.py:1
+#: ../../../doc/en/example/customdirectory.rst:1
 msgid ""
 "# content of test_second.py\n"
 "from __future__ import annotations\n"
@@ -116,7 +116,7 @@ msgid ""
 "    pass\n"
 msgstr ""
 
-#: ../../../doc/en/example/customdirectory/tests/test_third.py:1
+#: ../../../doc/en/example/customdirectory.rst:1
 msgid ""
 "# content of test_third.py\n"
 "from __future__ import annotations\n"
@@ -127,7 +127,7 @@ msgid ""
 msgstr ""
 
 #: ../../../doc/en/example/customdirectory.rst:39
-msgid "An you can now execute the test specification:"
+msgid "And you can now execute the test specification:"
 msgstr ""
 
 #: ../../../doc/en/example/customdirectory.rst:41

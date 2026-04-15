@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest stable\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-07 06:28+0000\n"
+"POT-Creation-Date: 2026-04-13 09:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,7 +41,7 @@ msgstr "PDF 文件"
 msgid "Useful links"
 msgstr ""
 
-#: ../../../doc/en/index.rst:3
+#: ../../../doc/en/index.rst:-1
 msgid "**Next Open Trainings and Events**"
 msgstr "**下一次公開訓練與活動**"
 
@@ -49,7 +49,7 @@ msgstr "**下一次公開訓練與活動**"
 msgid ""
 "`Professional Testing with Python <https://python-academy.com/courses/"
 "python_course_testing.html>`_, via `Python Academy <https://www.python-"
-"academy.com/>`_ (3 day in-depth training), **March 3th -- 5th 2026**, "
+"academy.com/>`_ (3 day in-depth training), **March 9th -- 11th 2027**, "
 "Leipzig (DE) / Remote"
 msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest stable\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-07 06:28+0000\n"
+"POT-Creation-Date: 2026-04-13 09:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,8 +26,8 @@ msgid ""
 "Pytest intercepts stdout and stderr as configured by the :option:`--"
 "capture=` command-line argument or by using fixtures. The ``--capture=`` "
 "flag configures reporting, whereas the fixtures offer more granular control "
-"and allows inspection of output during testing. The reports can be "
-"customized with the :option:`-r` flag."
+"and allow inspection of output during testing. The reports can be customized "
+"with the :option:`-r` flag."
 msgstr ""
 
 #: ../../../doc/en/how-to/capture-stdout-stderr.rst:14
@@ -52,7 +52,7 @@ msgstr ""
 #: ../../../doc/en/how-to/capture-stdout-stderr.rst:25
 msgid ""
 "By default capturing is done by intercepting writes to low level file "
-"descriptors.  This allows to capture output from simple print statements as "
+"descriptors.  This allows capturing output from simple print statements as "
 "well as output from a subprocess started by a test."
 msgstr ""
 
@@ -164,23 +164,23 @@ msgid ""
 "======================= 1 failed, 1 passed in 0.12s ========================"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-stdout-stderr.rst:113
+#: ../../../doc/en/how-to/capture-stdout-stderr.rst:115
 msgid "Accessing captured output from a test function"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-stdout-stderr.rst:115
+#: ../../../doc/en/how-to/capture-stdout-stderr.rst:117
 msgid ""
 "The :fixture:`capsys`, :fixture:`capteesys`, :fixture:`capsysbinary`, :"
 "fixture:`capfd`, and :fixture:`capfdbinary` fixtures allow access to "
 "``stdout``/``stderr`` output created during test execution."
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-stdout-stderr.rst:118
+#: ../../../doc/en/how-to/capture-stdout-stderr.rst:120
 msgid ""
 "Here is an example test function that performs some output related checks:"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-stdout-stderr.rst:120
+#: ../../../doc/en/how-to/capture-stdout-stderr.rst:122
 msgid ""
 "def test_myoutput(capsys):  # or use \"capfd\" for fd-level\n"
 "    print(\"hello\")\n"
@@ -193,7 +193,7 @@ msgid ""
 "    assert captured.out == \"next\\n\""
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-stdout-stderr.rst:132
+#: ../../../doc/en/how-to/capture-stdout-stderr.rst:134
 msgid ""
 "The ``readouterr()`` call snapshots the output so far - and capturing will "
 "be continued.  After the test function finishes the original streams will be "
@@ -202,20 +202,20 @@ msgid ""
 "pytest's own per-test capturing."
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-stdout-stderr.rst:140
+#: ../../../doc/en/how-to/capture-stdout-stderr.rst:142
 msgid ""
 "The return value of ``readouterr()`` is a ``namedtuple`` with two "
 "attributes, ``out`` and ``err``."
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-stdout-stderr.rst:142
+#: ../../../doc/en/how-to/capture-stdout-stderr.rst:144
 msgid ""
 "If the code under test writes non-textual data (``bytes``), you can capture "
 "this using the :fixture:`capsysbinary` fixture which instead returns "
 "``bytes`` from the ``readouterr`` method."
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-stdout-stderr.rst:146
+#: ../../../doc/en/how-to/capture-stdout-stderr.rst:148
 msgid ""
 "If you want to capture at the file descriptor level you can use the :fixture:"
 "`capfd` fixture which offers the exact same interface but allows to also "
@@ -225,18 +225,32 @@ msgid ""
 "the file descriptor level."
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-stdout-stderr.rst:154
+#: ../../../doc/en/how-to/capture-stdout-stderr.rst:156
 msgid ""
 "To temporarily disable capture within a test, the capture fixtures have a "
 "``disabled()`` method that can be used as a context manager, disabling "
 "capture inside the ``with`` block:"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-stdout-stderr.rst:158
+#: ../../../doc/en/how-to/capture-stdout-stderr.rst:160
 msgid ""
 "def test_disabling_capturing(capsys):\n"
 "    print(\"this output is captured\")\n"
 "    with capsys.disabled():\n"
 "        print(\"output not captured, going directly to sys.stdout\")\n"
 "    print(\"this output is also captured\")"
+msgstr ""
+
+#: ../../../doc/en/how-to/capture-stdout-stderr.rst:170
+msgid ""
+"When a capture fixture such as :fixture:`capsys` or :fixture:`capfd` is "
+"used, it takes precedence over the global capturing configuration set via "
+"command-line options such as ``-s`` or ``--capture=no``."
+msgstr ""
+
+#: ../../../doc/en/how-to/capture-stdout-stderr.rst:174
+msgid ""
+"This means that output produced within a test using a capture fixture will "
+"still be captured and available via ``readouterr()``, even if global "
+"capturing is disabled."
 msgstr ""

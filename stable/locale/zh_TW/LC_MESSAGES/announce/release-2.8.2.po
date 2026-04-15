@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest stable\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-07 06:28+0000\n"
+"POT-Creation-Date: 2026-04-13 09:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,7 +50,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-2.8.2.rst:18
 msgid ""
-"Bruno Oliveira Demian Brecht Florian Bruhin Ionel Cristian Mărieș Raphael "
+"Bruno Oliveira Demian Brecht Freya Bruhin Ionel Cristian Mărieș Raphael "
 "Pierzina Ronny Pfannschmidt holger krekel"
 msgstr ""
 

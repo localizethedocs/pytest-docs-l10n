@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest stable\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-07 06:28+0000\n"
+"POT-Creation-Date: 2026-04-13 09:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,7 +41,7 @@ msgstr ""
 msgid ""
 ">>> import pytest\n"
 ">>> pytest.__version__\n"
-"'7.0.0'"
+"'9.0.2'"
 msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:26
@@ -478,54 +478,6 @@ msgstr ""
 #: _pytest.config.argparsing.Parser.addini:0
 #: _pytest.config.argparsing.Parser.addoption:0
 #: _pytest.config.argparsing.Parser.getgroup:0
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
-#: _pytest.hookspec.pytest_addhooks:0 _pytest.hookspec.pytest_addoption:0
-#: _pytest.hookspec.pytest_assertion_pass:0
-#: _pytest.hookspec.pytest_assertrepr_compare:0
-#: _pytest.hookspec.pytest_cmdline_main:0
-#: _pytest.hookspec.pytest_cmdline_parse:0
-#: _pytest.hookspec.pytest_collect_directory:0
-#: _pytest.hookspec.pytest_collect_file:0 _pytest.hookspec.pytest_collection:0
-#: _pytest.hookspec.pytest_collection_finish:0
-#: _pytest.hookspec.pytest_collection_modifyitems:0
-#: _pytest.hookspec.pytest_collectreport:0
-#: _pytest.hookspec.pytest_collectstart:0 _pytest.hookspec.pytest_configure:0
-#: _pytest.hookspec.pytest_deselected:0 _pytest.hookspec.pytest_enter_pdb:0
-#: _pytest.hookspec.pytest_exception_interact:0
-#: _pytest.hookspec.pytest_fixture_post_finalizer:0
-#: _pytest.hookspec.pytest_fixture_setup:0
-#: _pytest.hookspec.pytest_generate_tests:0
-#: _pytest.hookspec.pytest_ignore_collect:0
-#: _pytest.hookspec.pytest_internalerror:0
-#: _pytest.hookspec.pytest_itemcollected:0
-#: _pytest.hookspec.pytest_keyboard_interrupt:0
-#: _pytest.hookspec.pytest_leave_pdb:0
-#: _pytest.hookspec.pytest_load_initial_conftests:0
-#: _pytest.hookspec.pytest_make_collect_report:0
-#: _pytest.hookspec.pytest_make_parametrize_id:0
-#: _pytest.hookspec.pytest_markeval_namespace:0
-#: _pytest.hookspec.pytest_plugin_registered:0
-#: _pytest.hookspec.pytest_pycollect_makeitem:0
-#: _pytest.hookspec.pytest_pycollect_makemodule:0
-#: _pytest.hookspec.pytest_pyfunc_call:0
-#: _pytest.hookspec.pytest_report_collectionfinish:0
-#: _pytest.hookspec.pytest_report_from_serializable:0
-#: _pytest.hookspec.pytest_report_header:0
-#: _pytest.hookspec.pytest_report_teststatus:0
-#: _pytest.hookspec.pytest_report_to_serializable:0
-#: _pytest.hookspec.pytest_runtest_call:0
-#: _pytest.hookspec.pytest_runtest_logfinish:0
-#: _pytest.hookspec.pytest_runtest_logstart:0
-#: _pytest.hookspec.pytest_runtest_makereport:0
-#: _pytest.hookspec.pytest_runtest_protocol:0
-#: _pytest.hookspec.pytest_runtest_setup:0
-#: _pytest.hookspec.pytest_runtest_teardown:0
-#: _pytest.hookspec.pytest_runtestloop:0
-#: _pytest.hookspec.pytest_sessionfinish:0
-#: _pytest.hookspec.pytest_sessionstart:0
-#: _pytest.hookspec.pytest_terminal_summary:0
-#: _pytest.hookspec.pytest_unconfigure:0
-#: _pytest.hookspec.pytest_warning_recorded:0
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/terminal.py:docstring
 #: _pytest.terminal.TerminalReporter.rewrite:0
 #: ../../../doc/en/reference/reference.rst:0
@@ -688,13 +640,6 @@ msgstr ""
 #: of _pytest.config.PytestPluginManager.register:0
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/argparsing.py:docstring
 #: _pytest.config.argparsing.Parser.getgroup:0
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
-#: _pytest.hookspec.pytest_cmdline_main:0
-#: _pytest.hookspec.pytest_cmdline_parse:0
-#: _pytest.hookspec.pytest_fixture_setup:0
-#: _pytest.hookspec.pytest_markeval_namespace:0
-#: _pytest.hookspec.pytest_pycollect_makeitem:0
-#: _pytest.hookspec.pytest_report_teststatus:0
 #: ../../../doc/en/reference/reference.rst:0
 msgid "Returns"
 msgstr ""
@@ -709,6 +654,14 @@ msgstr ""
 msgid "If the module cannot be imported."
 msgstr ""
 
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
+#: of _pytest.config.PytestPluginManager.register:0
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/argparsing.py:docstring
+#: _pytest.config.argparsing.Parser.getgroup:0
+#: ../../../doc/en/reference/reference.rst:0
+msgid "Return type"
+msgstr ""
+
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/fixtures.py:docstring
 #: of _pytest.fixtures.pytestconfig:4
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/junitxml.py:docstring
@@ -719,8 +672,8 @@ msgstr ""
 #: _pytest.outcomes.importorskip:31
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/raises.py:docstring
 #: _pytest.raises.RaisesGroup.matches:4
-#: ../../../doc/en/reference/reference.rst:2864
-#: ../../../doc/en/reference/reference.rst:3122
+#: ../../../doc/en/reference/reference.rst:2873
+#: ../../../doc/en/reference/reference.rst:3131
 msgid "Example::"
 msgstr ""
 
@@ -1455,7 +1408,7 @@ msgstr ""
 #: of _pytest.monkeypatch.MonkeyPatch.setattr:3
 #: ../../../doc/en/reference/reference.rst:185
 #: ../../../doc/en/reference/reference.rst:297
-#: ../../../doc/en/reference/reference.rst:1385
+#: ../../../doc/en/reference/reference.rst:1386
 msgid "For example:"
 msgstr ""
 
@@ -1667,7 +1620,7 @@ msgid ""
 msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:326
-#: ../../../doc/en/reference/reference.rst:2828
+#: ../../../doc/en/reference/reference.rst:2837
 msgid "Fixtures"
 msgstr ""
 
@@ -1958,14 +1911,6 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/logging.py:docstring
 #: of _pytest.logging.LogCaptureFixture.get_records:7
 msgid "The list of captured records at the given stage."
-msgstr ""
-
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
-#: of _pytest.config.PytestPluginManager.register:0
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/argparsing.py:docstring
-#: _pytest.config.argparsing.Parser.getgroup:0
-#: ../../../doc/en/reference/reference.rst:0
-msgid "Return type"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/logging.py:docstring
@@ -2707,16 +2652,14 @@ msgid ""
 "environment variables during initialization."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/pytester.py:docstring
-#: of pytest.Pytester.plugins:1
+#: ../../../doc/docstring of pytest.Pytester.plugins:1
 msgid ""
 "A list of plugins to use with :py:meth:`parseconfig` and :py:meth:"
 "`runpytest`. Initially this is an empty list but plugins can be added to the "
 "list."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/pytester.py:docstring
-#: of pytest.Pytester.plugins:5
+#: ../../../doc/docstring of pytest.Pytester.plugins:5
 msgid ""
 "When running in subprocess mode, specify plugins by name (str) - adding "
 "plugin objects directly is not supported."
@@ -3381,41 +3324,34 @@ msgstr ""
 msgid "The result of running a command from :class:`~pytest.Pytester`."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/pytester.py:docstring
-#: of pytest.RunResult.ret:1
+#: ../../../doc/docstring of pytest.RunResult.ret:1
 msgid "The return value."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/pytester.py:docstring
-#: of pytest.RunResult.outlines:1
+#: ../../../doc/docstring of pytest.RunResult.outlines:1
 msgid "List of lines captured from stdout."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/pytester.py:docstring
-#: of pytest.RunResult.errlines:1
+#: ../../../doc/docstring of pytest.RunResult.errlines:1
 msgid "List of lines captured from stderr."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/pytester.py:docstring
-#: of pytest.RunResult.stdout:1
+#: ../../../doc/docstring of pytest.RunResult.stdout:1
 msgid ":class:`~pytest.LineMatcher` of stdout."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/pytester.py:docstring
-#: of pytest.RunResult.stdout:3
+#: ../../../doc/docstring of pytest.RunResult.stdout:3
 msgid ""
 "Use e.g. :func:`str(stdout) <pytest.LineMatcher.__str__()>` to reconstruct "
 "stdout, or the commonly used :func:`stdout.fnmatch_lines() <pytest."
 "LineMatcher.fnmatch_lines()>` method."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/pytester.py:docstring
-#: of pytest.RunResult.stderr:1
+#: ../../../doc/docstring of pytest.RunResult.stderr:1
 msgid ":class:`~pytest.LineMatcher` of stderr."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/pytester.py:docstring
-#: of pytest.RunResult.duration:1
+#: ../../../doc/docstring of pytest.RunResult.duration:1
 msgid "Duration in seconds."
 msgstr ""
 
@@ -3825,8 +3761,7 @@ msgid ""
 "``param`` attribute in case the fixture is parametrized."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/fixtures.py:docstring
-#: of pytest.FixtureRequest.fixturename:1
+#: ../../../doc/docstring of pytest.FixtureRequest.fixturename:1
 msgid "Fixture for which this request is being performed."
 msgstr ""
 
@@ -4433,16 +4368,12 @@ msgstr ""
 #: _pytest.hookspec.pytest_report_teststatus:18
 #: _pytest.hookspec.pytest_report_to_serializable:4
 #: _pytest.hookspec.pytest_terminal_summary:5
-#: _pytest.hookspec.pytest_unconfigure:3
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/main.py:docstring
-#: pytest.Dir.config:1 pytest.Session.config:1
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
+#: _pytest.hookspec.pytest_unconfigure:3 ../../../doc/docstring
 #: _pytest.nodes.FSCollector.config:1 _pytest.nodes.Node.config:1
-#: pytest.Collector.config:1 pytest.Directory.config:1 pytest.File.config:1
-#: pytest.Item.config:1
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
 #: _pytest.python.FunctionDefinition.config:1 pytest.Class.config:1
-#: pytest.Function.config:1 pytest.Module.config:1 pytest.Package.config:1
+#: pytest.Collector.config:1 pytest.Dir.config:1 pytest.Directory.config:1
+#: pytest.File.config:1 pytest.Function.config:1 pytest.Item.config:1
+#: pytest.Module.config:1 pytest.Package.config:1 pytest.Session.config:1
 msgid "The pytest config object."
 msgstr ""
 
@@ -4833,12 +4764,12 @@ msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
 #: of _pytest.hookspec.pytest_collection:24
-msgid "``pytest_collection_finish(session)``"
+msgid "Set ``session.items`` to the list of collected items"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
 #: of _pytest.hookspec.pytest_collection:25
-msgid "Set ``session.items`` to the list of collected items"
+msgid "``pytest_collection_finish(session)``"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
@@ -5186,11 +5117,11 @@ msgstr ""
 msgid "Called after collection has been performed and modified."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:763
+#: ../../../doc/en/reference/reference.rst:764
 msgid "Test running (runtest) hooks"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:765
+#: ../../../doc/en/reference/reference.rst:766
 msgid ""
 "All runtest related hooks receive a :py:class:`pytest.Item <pytest.Item>` "
 "object."
@@ -5435,7 +5366,7 @@ msgstr ""
 msgid "The :class:`~pytest.CallInfo` for the phase."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:784
+#: ../../../doc/en/reference/reference.rst:785
 msgid ""
 "For deeper understanding you may look at the default implementation of these "
 "hooks in ``_pytest.runner`` and maybe also in ``_pytest.pdb`` which "
@@ -5453,11 +5384,11 @@ msgstr ""
 msgid "The function item."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:794
+#: ../../../doc/en/reference/reference.rst:795
 msgid "Reporting hooks"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:796
+#: ../../../doc/en/reference/reference.rst:797
 msgid "Session related reporting hooks:"
 msgstr ""
 
@@ -5787,7 +5718,7 @@ msgid ""
 "consulted."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:827
+#: ../../../doc/en/reference/reference.rst:828
 msgid "Central hook for reporting about test execution:"
 msgstr ""
 
@@ -5798,7 +5729,7 @@ msgid ""
 "and teardown runtest phases of an item."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:832
+#: ../../../doc/en/reference/reference.rst:833
 msgid "Assertion related hooks:"
 msgstr ""
 
@@ -5854,8 +5785,8 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
 #: of _pytest.hookspec.pytest_assertion_pass:15
 #: _pytest.hookspec.pytest_assertion_pass:22
-#: ../../../doc/en/reference/reference.rst:1527
-#: ../../../doc/en/reference/reference.rst:1534
+#: ../../../doc/en/reference/reference.rst:1528
+#: ../../../doc/en/reference/reference.rst:1535
 msgid ""
 "[pytest]\n"
 "enable_assertion_pass_hook = true"
@@ -5889,11 +5820,11 @@ msgstr ""
 msgid "String with the assert explanation."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:841
+#: ../../../doc/en/reference/reference.rst:842
 msgid "Debugging/Interaction hooks"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:843
+#: ../../../doc/en/reference/reference.rst:844
 msgid ""
 "There are few hooks which can be used for special reporting or interaction "
 "with exceptions:"
@@ -6007,18 +5938,23 @@ msgid ""
 "leaves interactive mode."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:859
+#: ../../../doc/en/reference/reference.rst:860
 msgid "Collection tree objects"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:861
+#: ../../../doc/en/reference/reference.rst:862
 msgid ""
 "These are the collector and item classes (collectively called \"nodes\") "
 "which make up the collection tree."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:865
+#: ../../../doc/en/reference/reference.rst:866
 msgid "Node"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
+#: of _pytest.nodes.Node:1
+msgid "Bases: :py:class:`~abc.ABC`"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
@@ -6035,8 +5971,7 @@ msgid ""
 "the leaf nodes."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
-#: of _pytest.nodes.Node.fspath:1
+#: ../../../doc/docstring of _pytest.nodes.Node.fspath:1
 msgid ""
 "A ``LEGACY_PATH`` copy of the :attr:`path` attribute. Intended for usage for "
 "methods not migrated to ``pathlib.Path`` yet, such as :meth:`Item.reportinfo "
@@ -6044,71 +5979,55 @@ msgid ""
 "using :attr:`path` instead."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/main.py:docstring
-#: of pytest.Dir.name:1 pytest.Session.name:1
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
-#: _pytest.nodes.FSCollector.name:1 _pytest.nodes.Node.name:1
-#: pytest.Collector.name:1 pytest.Directory.name:1 pytest.File.name:1
-#: pytest.Item.name:1
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
-#: _pytest.python.FunctionDefinition.name:1 pytest.Class.name:1
-#: pytest.Function.name:1 pytest.Module.name:1 pytest.Package.name:1
+#: ../../../doc/docstring of _pytest.nodes.FSCollector.name:1
+#: _pytest.nodes.Node.name:1 _pytest.python.FunctionDefinition.name:1
+#: pytest.Class.name:1 pytest.Collector.name:1 pytest.Dir.name:1
+#: pytest.Directory.name:1 pytest.File.name:1 pytest.Function.name:1
+#: pytest.Item.name:1 pytest.Module.name:1 pytest.Package.name:1
+#: pytest.Session.name:1
 msgid "A unique name within the scope of the parent node."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/main.py:docstring
-#: of pytest.Dir.parent:1 pytest.Session.parent:1
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
-#: _pytest.nodes.FSCollector.parent:1 _pytest.nodes.Node.parent:1
-#: pytest.Collector.parent:1 pytest.Directory.parent:1 pytest.File.parent:1
-#: pytest.Item.parent:1
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
-#: _pytest.python.FunctionDefinition.parent:1 pytest.Class.parent:1
-#: pytest.Function.parent:1 pytest.Module.parent:1 pytest.Package.parent:1
+#: ../../../doc/docstring of _pytest.nodes.FSCollector.parent:1
+#: _pytest.nodes.Node.parent:1 _pytest.python.FunctionDefinition.parent:1
+#: pytest.Class.parent:1 pytest.Collector.parent:1 pytest.Dir.parent:1
+#: pytest.Directory.parent:1 pytest.File.parent:1 pytest.Function.parent:1
+#: pytest.Item.parent:1 pytest.Module.parent:1 pytest.Package.parent:1
+#: pytest.Session.parent:1
 msgid "The parent collector node."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/main.py:docstring
-#: of pytest.Dir.session:1 pytest.Session.session:1
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
-#: _pytest.nodes.FSCollector.session:1 _pytest.nodes.Node.session:1
-#: pytest.Collector.session:1 pytest.Directory.session:1 pytest.File.session:1
-#: pytest.Item.session:1
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
-#: _pytest.python.FunctionDefinition.session:1 pytest.Class.session:1
-#: pytest.Function.session:1 pytest.Module.session:1 pytest.Package.session:1
+#: ../../../doc/docstring of _pytest.nodes.FSCollector.session:1
+#: _pytest.nodes.Node.session:1 _pytest.python.FunctionDefinition.session:1
+#: pytest.Class.session:1 pytest.Collector.session:1 pytest.Dir.session:1
+#: pytest.Directory.session:1 pytest.File.session:1 pytest.Function.session:1
+#: pytest.Item.session:1 pytest.Module.session:1 pytest.Package.session:1
+#: pytest.Session.session:1
 msgid "The pytest session this node is part of."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/main.py:docstring
-#: of pytest.Dir.path:1 pytest.Session.path:1
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
-#: _pytest.nodes.FSCollector.path:1 _pytest.nodes.Node.path:1
-#: pytest.Collector.path:1 pytest.Directory.path:1 pytest.File.path:1
-#: pytest.Item.path:1
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
-#: _pytest.python.FunctionDefinition.path:1 pytest.Class.path:1
-#: pytest.Function.path:1 pytest.Module.path:1 pytest.Package.path:1
+#: ../../../doc/docstring of _pytest.nodes.FSCollector.path:1
+#: _pytest.nodes.Node.path:1 _pytest.python.FunctionDefinition.path:1
+#: pytest.Class.path:1 pytest.Collector.path:1 pytest.Dir.path:1
+#: pytest.Directory.path:1 pytest.File.path:1 pytest.Function.path:1
+#: pytest.Item.path:1 pytest.Module.path:1 pytest.Package.path:1
+#: pytest.Session.path:1
 msgid "Filesystem path where this node was collected from (can be None)."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
-#: of _pytest.nodes.Node.keywords:1
+#: ../../../doc/docstring of _pytest.nodes.Node.keywords:1
 msgid "Keywords/markers collected from all scopes."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
-#: of _pytest.nodes.Node.own_markers:1
+#: ../../../doc/docstring of _pytest.nodes.Node.own_markers:1
 msgid "The marker objects belonging to this node."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
-#: of _pytest.nodes.Node.extra_keyword_matches:1
+#: ../../../doc/docstring of _pytest.nodes.Node.extra_keyword_matches:1
 msgid "Allow adding of extra keywords to use for matching."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
-#: of _pytest.nodes.Node.stash:1
+#: ../../../doc/docstring of _pytest.nodes.Node.stash:1
 msgid ""
 "A place where plugins can store information on the node for their own use."
 msgstr ""
@@ -6314,8 +6233,13 @@ msgstr ""
 msgid "Exception information for the failure."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:872
+#: ../../../doc/en/reference/reference.rst:873
 msgid "Collector"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
+#: of _pytest.nodes.Collector:1 _pytest.nodes.Item:1
+msgid "Bases: :py:class:`~_pytest.nodes.Node`, :py:class:`~abc.ABC`"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
@@ -6328,6 +6252,15 @@ msgstr ""
 msgid ""
 "Collector create children through `collect()` and thus iteratively build the "
 "collection tree."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/main.py:docstring
+#: of _pytest.main.Failed:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
+#: _pytest.nodes.Collector.CollectError:1
+#: ../../../../../.conda/lib/python3.12/site-packages/pytest/__init__.py:docstring
+#: pytest.UsageError:1
+msgid "Bases: :py:class:`Exception`"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
@@ -6350,7 +6283,7 @@ msgstr ""
 msgid "Return a representation of a collection failure."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:879
+#: ../../../doc/en/reference/reference.rst:880
 msgid "Item"
 msgstr ""
 
@@ -6366,8 +6299,7 @@ msgid ""
 "items."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
-#: of pytest.Item.user_properties:1
+#: ../../../doc/docstring of pytest.Item.user_properties:1
 msgid ""
 "A list of tuples (name, value) that holds user defined properties for this "
 "test."
@@ -6448,8 +6380,13 @@ msgid ""
 "based line number."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:886
+#: ../../../doc/en/reference/reference.rst:887
 msgid "File"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
+#: of _pytest.nodes.File:1
+msgid "Bases: :py:class:`~_pytest.nodes.FSCollector`, :py:class:`~abc.ABC`"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
@@ -6462,8 +6399,13 @@ msgstr ""
 msgid ":ref:`non-python tests`."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:893
+#: ../../../doc/en/reference/reference.rst:894
 msgid "FSCollector"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
+#: of _pytest.nodes.FSCollector:1
+msgid "Bases: :py:class:`~_pytest.nodes.Collector`, :py:class:`~abc.ABC`"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
@@ -6480,8 +6422,13 @@ msgstr ""
 msgid "The public constructor."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:900
+#: ../../../doc/en/reference/reference.rst:901
 msgid "Session"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/main.py:docstring
+#: of _pytest.main.Session:1
+msgid "Bases: :py:class:`~_pytest.nodes.Collector`"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/main.py:docstring
@@ -6494,7 +6441,13 @@ msgstr ""
 msgid "``Session`` collects the initial paths given as arguments to pytest."
 msgstr ""
 
-#: ../../../doc/docstring of builtins.Interrupted:1
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/main.py:docstring
+#: of builtins.Interrupted:1
+msgid "Bases: :py:class:`KeyboardInterrupt`"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/main.py:docstring
+#: of builtins.Interrupted:1
 msgid "Signals that the test run was interrupted."
 msgstr ""
 
@@ -6552,9 +6505,14 @@ msgid ""
 "empty."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:907
+#: ../../../doc/en/reference/reference.rst:908
 msgid "Package"
 msgstr "軟體包"
+
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.Package:1
+msgid "Bases: :py:class:`~_pytest.nodes.Directory`"
+msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
 #: of _pytest.python.Package:1
@@ -6575,26 +6533,45 @@ msgstr ""
 msgid "Now inherits from :class:`~pytest.Directory`."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:914
+#: ../../../doc/en/reference/reference.rst:915
 msgid "Module"
 msgstr "模組"
+
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.Module:1
+msgid ""
+"Bases: :py:class:`~_pytest.nodes.File`, :py:class:`~_pytest.python."
+"PyCollector`"
+msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
 #: of _pytest.python.Module:1
 msgid "Collector for test classes and functions in a Python module."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:921
+#: ../../../doc/en/reference/reference.rst:922
 msgid "Class"
 msgstr "類別"
+
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.Class:1
+msgid "Bases: :py:class:`~_pytest.python.PyCollector`"
+msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
 #: of _pytest.python.Class:1
 msgid "Collector for test methods (and nested classes) in a Python class."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:928
+#: ../../../doc/en/reference/reference.rst:929
 msgid "Function"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.Function:1
+msgid ""
+"Bases: :py:class:`~_pytest.python.PyobjMixin`, :py:class:`~_pytest.nodes."
+"Item`"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
@@ -6658,8 +6635,7 @@ msgid ""
 "(``my_func[my_param]``)."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
-#: of pytest.Function.originalname:1
+#: ../../../doc/docstring of pytest.Function.originalname:1
 msgid ""
 "Original function name, without any decorations (for example parametrization "
 "adds a ``\"[...]\"`` suffix to function names), used to access the "
@@ -6690,8 +6666,13 @@ msgstr ""
 msgid "Execute the underlying test function."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:935
+#: ../../../doc/en/reference/reference.rst:936
 msgid "FunctionDefinition"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.FunctionDefinition:1
+msgid "Bases: :py:class:`~_pytest.python.Function`"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
@@ -6701,17 +6682,17 @@ msgid ""
 "definition nodes and manage to get rid of ``metafunc``."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:943
+#: ../../../doc/en/reference/reference.rst:944
 msgid "Objects"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:945
+#: ../../../doc/en/reference/reference.rst:946
 msgid ""
 "Objects accessible from :ref:`fixtures <fixture>` or :ref:`hooks <hook-"
 "reference>` or importable from ``pytest``."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:950
+#: ../../../doc/en/reference/reference.rst:951
 msgid "CallInfo"
 msgstr ""
 
@@ -6720,32 +6701,23 @@ msgstr ""
 msgid "Result/Exception info of a function invocation."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/runner.py:docstring
-#: of pytest.CallInfo.excinfo:1
+#: ../../../doc/docstring of pytest.CallInfo.excinfo:1
 msgid "The captured exception of the call, if it raised."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/reports.py:docstring
-#: of pytest.TestReport.start:1
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/runner.py:docstring
-#: pytest.CallInfo.start:1
+#: ../../../doc/docstring of pytest.CallInfo.start:1 pytest.TestReport.start:1
 msgid "The system time when the call started, in seconds since the epoch."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/reports.py:docstring
-#: of pytest.TestReport.stop:1
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/runner.py:docstring
-#: pytest.CallInfo.stop:1
+#: ../../../doc/docstring of pytest.CallInfo.stop:1 pytest.TestReport.stop:1
 msgid "The system time when the call ended, in seconds since the epoch."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/runner.py:docstring
-#: of pytest.CallInfo.duration:1
+#: ../../../doc/docstring of pytest.CallInfo.duration:1
 msgid "The call duration, in seconds."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/runner.py:docstring
-#: of pytest.CallInfo.when:1
+#: ../../../doc/docstring of pytest.CallInfo.when:1
 msgid ""
 "The context of invocation: \"collect\", \"setup\", \"call\" or \"teardown\"."
 msgstr ""
@@ -6782,8 +6754,13 @@ msgid ""
 "instead of being wrapped in the CallInfo."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:956
+#: ../../../doc/en/reference/reference.rst:957
 msgid "CollectReport"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/reports.py:docstring
+#: of _pytest.reports.CollectReport:1 _pytest.reports.TestReport:1
+msgid "Bases: :py:class:`~_pytest.reports.BaseReport`"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/reports.py:docstring
@@ -6796,28 +6773,27 @@ msgstr ""
 msgid "Reports can contain arbitrary extra attributes."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/reports.py:docstring
-#: of pytest.CollectReport.nodeid:1 pytest.TestReport.nodeid:1
+#: ../../../doc/docstring of pytest.CollectReport.nodeid:1
+#: pytest.TestReport.nodeid:1
 msgid "Normalized collection nodeid."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/reports.py:docstring
-#: of pytest.CollectReport.outcome:1 pytest.TestReport.outcome:1
+#: ../../../doc/docstring of pytest.CollectReport.outcome:1
+#: pytest.TestReport.outcome:1
 msgid "Test outcome, always one of \"passed\", \"failed\", \"skipped\"."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/reports.py:docstring
-#: of pytest.CollectReport.longrepr:1 pytest.TestReport.longrepr:1
+#: ../../../doc/docstring of pytest.CollectReport.longrepr:1
+#: pytest.TestReport.longrepr:1
 msgid "None or a failure representation."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/reports.py:docstring
-#: of pytest.CollectReport.result:1
+#: ../../../doc/docstring of pytest.CollectReport.result:1
 msgid "The collected items and collection nodes."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/reports.py:docstring
-#: of pytest.CollectReport.sections:1 pytest.TestReport.sections:1
+#: ../../../doc/docstring of pytest.CollectReport.sections:1
+#: pytest.TestReport.sections:1
 msgid ""
 "Tuples of str ``(heading, content)`` with extra information for the test "
 "report. Used by pytest to add text captured from ``stdout``, ``stderr``, and "
@@ -6901,7 +6877,7 @@ msgstr ""
 msgid "Whether the outcome is skipped."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:964
+#: ../../../doc/en/reference/reference.rst:965
 msgid "Config"
 msgstr ""
 
@@ -6944,18 +6920,15 @@ msgstr ""
 msgid "Plugins accessing ``InvocationParams`` must be aware of that."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
-#: of pytest.Config.InvocationParams.args:1
+#: ../../../doc/docstring of pytest.Config.InvocationParams.args:1
 msgid "The command-line arguments as passed to :func:`pytest.main`."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
-#: of pytest.Config.InvocationParams.plugins:1
+#: ../../../doc/docstring of pytest.Config.InvocationParams.plugins:1
 msgid "Extra plugins, might be `None`."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
-#: of pytest.Config.InvocationParams.dir:1
+#: ../../../doc/docstring of pytest.Config.InvocationParams.dir:1
 msgid "The directory from which :func:`pytest.main` was invoked."
 msgstr ""
 
@@ -6964,66 +6937,55 @@ msgstr ""
 msgid "Indicates the source of the test arguments."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
-#: of pytest.Config.ArgsSource.ARGS:1
+#: ../../../doc/docstring of pytest.Config.ArgsSource.ARGS:1
 msgid "Command line arguments."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
-#: of pytest.Config.ArgsSource.INVOCATION_DIR:1
+#: ../../../doc/docstring of pytest.Config.ArgsSource.INVOCATION_DIR:1
 msgid "Invocation directory."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
-#: of pytest.Config.ArgsSource.TESTPATHS:1
+#: ../../../doc/docstring of pytest.Config.ArgsSource.TESTPATHS:1
 msgid "'testpaths' configuration value."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
-#: of pytest.Config.option:1
+#: ../../../doc/docstring of pytest.Config.option:1
 msgid "Access to command line option as attributes."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
-#: of pytest.Config.invocation_params:0 pytest.Config.option:0
-#: pytest.Config.pluginmanager:0 pytest.Config.stash:0
+#: ../../../doc/docstring of pytest.Config.invocation_params:0
+#: pytest.Config.option:0 pytest.Config.pluginmanager:0 pytest.Config.stash:0
 msgid "type"
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
-#: of pytest.Config.option:3
+#: ../../../doc/docstring of pytest.Config.option:3
 msgid "argparse.Namespace"
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
-#: of pytest.Config.invocation_params:1
+#: ../../../doc/docstring of pytest.Config.invocation_params:1
 msgid "The parameters with which pytest was invoked."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
-#: of pytest.Config.invocation_params:3
+#: ../../../doc/docstring of pytest.Config.invocation_params:3
 msgid "InvocationParams"
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
-#: of pytest.Config.pluginmanager:1
+#: ../../../doc/docstring of pytest.Config.pluginmanager:1
 msgid "The plugin manager handles plugin registration and hook invocation."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
-#: of pytest.Config.pluginmanager:3
-#: ../../../doc/en/reference/reference.rst:1042
+#: ../../../doc/en/reference/reference.rst:1043 ../../../doc/docstring of
+#: pytest.Config.pluginmanager:3
 msgid "PytestPluginManager"
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
-#: of pytest.Config.stash:1
+#: ../../../doc/docstring of pytest.Config.stash:1
 msgid ""
 "A place where plugins can store information on the config for their own use."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
-#: of pytest.Config.stash:4 ../../../doc/en/reference/reference.rst:1094
+#: ../../../doc/en/reference/reference.rst:1095 ../../../doc/docstring of
+#: pytest.Config.stash:4
 msgid "Stash"
 msgstr ""
 
@@ -7169,20 +7131,17 @@ msgstr ""
 msgid "Deprecated, use getoption(skip=True) instead."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
-#: of pytest.Config.VERBOSITY_ASSERTIONS:1
+#: ../../../doc/docstring of pytest.Config.VERBOSITY_ASSERTIONS:1
 msgid ""
 "Verbosity type for failed assertions (see :confval:`verbosity_assertions`)."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
-#: of pytest.Config.VERBOSITY_TEST_CASES:1
+#: ../../../doc/docstring of pytest.Config.VERBOSITY_TEST_CASES:1
 msgid ""
 "Verbosity type for test case execution (see :confval:`verbosity_test_cases`)."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
-#: of pytest.Config.VERBOSITY_SUBTESTS:1
+#: ../../../doc/docstring of pytest.Config.VERBOSITY_SUBTESTS:1
 msgid "Verbosity type for failed subtests (see :confval:`verbosity_subtests`)."
 msgstr ""
 
@@ -7218,7 +7177,7 @@ msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
 #: of _pytest.config.Config.get_verbosity:25
-#: ../../../doc/en/reference/reference.rst:2603
+#: ../../../doc/en/reference/reference.rst:2612
 msgid ""
 "[pytest]\n"
 "verbosity_assertions = 2"
@@ -7236,7 +7195,7 @@ msgid ""
 "print(config.get_verbosity(Config.VERBOSITY_ASSERTIONS))  # 2"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:970
+#: ../../../doc/en/reference/reference.rst:971
 msgid "Dir"
 msgstr ""
 
@@ -7263,7 +7222,7 @@ msgstr ""
 msgid "The directory's path."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:976
+#: ../../../doc/en/reference/reference.rst:977
 msgid "Directory"
 msgstr ""
 
@@ -7293,7 +7252,7 @@ msgstr ""
 msgid ":ref:`custom directory collectors`."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:982
+#: ../../../doc/en/reference/reference.rst:983
 msgid "ExceptionInfo"
 msgstr ""
 
@@ -7543,7 +7502,7 @@ msgid ""
 "exceptions*. You should instead consider using :class:`pytest.RaisesGroup`"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:989
+#: ../../../doc/en/reference/reference.rst:990
 msgid "ExitCode"
 msgstr ""
 
@@ -7557,8 +7516,15 @@ msgstr ""
 msgid "Currently users and plugins may supply other exit codes as well."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:996
+#: ../../../doc/en/reference/reference.rst:997
 msgid "FixtureDef"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/fixtures.py:docstring
+#: of _pytest.fixtures.FixtureDef:1
+msgid ""
+"Bases: :py:class:`~typing.Generic`\\ [:py:obj:`~_pytest.fixtures."
+"FixtureValue`]"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/fixtures.py:docstring
@@ -7578,7 +7544,7 @@ msgstr ""
 msgid "Return the value of this fixture, executing it if not cached."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1003
+#: ../../../doc/en/reference/reference.rst:1004
 msgid "MarkDecorator"
 msgstr ""
 
@@ -7678,7 +7644,7 @@ msgid ""
 "argument is a callable/class."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1010
+#: ../../../doc/en/reference/reference.rst:1011
 msgid "MarkGenerator"
 msgstr ""
 
@@ -7705,7 +7671,7 @@ msgstr ""
 msgid "applies a 'slowtest' :class:`Mark` on ``test_function``."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1017
+#: ../../../doc/en/reference/reference.rst:1018
 msgid "Mark"
 msgstr ""
 
@@ -7714,18 +7680,15 @@ msgstr ""
 msgid "A pytest mark."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/mark/structures.py:docstring
-#: of pytest.Mark.name:1
+#: ../../../doc/docstring of pytest.Mark.name:1
 msgid "Name of the mark."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/mark/structures.py:docstring
-#: of pytest.Mark.args:1
+#: ../../../doc/docstring of pytest.Mark.args:1
 msgid "Positional arguments of the mark decorator."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/mark/structures.py:docstring
-#: of pytest.Mark.kwargs:1
+#: ../../../doc/docstring of pytest.Mark.kwargs:1
 msgid "Keyword arguments of the mark decorator."
 msgstr ""
 
@@ -7744,7 +7707,7 @@ msgstr ""
 msgid "The mark to combine with."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1024
+#: ../../../doc/en/reference/reference.rst:1025
 msgid "Metafunc"
 msgstr ""
 
@@ -7761,33 +7724,27 @@ msgid ""
 "function is defined."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
-#: of pytest.Metafunc.definition:1
+#: ../../../doc/docstring of pytest.Metafunc.definition:1
 msgid "Access to the underlying :class:`_pytest.python.FunctionDefinition`."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
-#: of pytest.Metafunc.config:1
+#: ../../../doc/docstring of pytest.Metafunc.config:1
 msgid "Access to the :class:`pytest.Config` object for the test session."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
-#: of pytest.Metafunc.module:1
+#: ../../../doc/docstring of pytest.Metafunc.module:1
 msgid "The module object where the test function is defined in."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
-#: of pytest.Metafunc.function:1
+#: ../../../doc/docstring of pytest.Metafunc.function:1
 msgid "Underlying Python test function."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
-#: of pytest.Metafunc.fixturenames:1
+#: ../../../doc/docstring of pytest.Metafunc.fixturenames:1
 msgid "Set of fixture names required by the test function."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
-#: of pytest.Metafunc.cls:1
+#: ../../../doc/docstring of pytest.Metafunc.cls:1
 msgid "Class object where the test function is defined in or ``None``."
 msgstr ""
 
@@ -7917,7 +7874,7 @@ msgid ""
 "or configuration."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1030
+#: ../../../doc/en/reference/reference.rst:1031
 msgid "Parser"
 msgstr ""
 
@@ -8158,7 +8115,7 @@ msgid ""
 "`config.getini(name) <pytest.Config.getini>`."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1036
+#: ../../../doc/en/reference/reference.rst:1037
 msgid "OptionGroup"
 msgstr ""
 
@@ -8179,6 +8136,11 @@ msgid ""
 "in the help. ``addoption('--twowords', '--two-words')`` results in help "
 "showing ``--two-words`` only, but ``--twowords`` gets accepted **and** the "
 "automatic destination is in ``args.twowords``."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
+#: of _pytest.config.PytestPluginManager:1
+msgid "Bases: :py:class:`~pluggy._manager.PluginManager`"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
@@ -8420,24 +8382,21 @@ msgstr ""
 msgid "Returns the unregistered plugin, or ``None`` if not found."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
-#: of pytest.PytestPluginManager.project_name:1
+#: ../../../doc/docstring of pytest.PytestPluginManager.project_name:1
 msgid "The project name."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
-#: of pytest.PytestPluginManager.hook:1
+#: ../../../doc/docstring of pytest.PytestPluginManager.hook:1
 msgid ""
 "The \"hook relay\", used to call a hook on all registered plugins. See :ref:"
 "`calling`."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
-#: of pytest.PytestPluginManager.trace:1
+#: ../../../doc/docstring of pytest.PytestPluginManager.trace:1
 msgid "The tracing entry point. See :ref:`tracing`."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1051
+#: ../../../doc/en/reference/reference.rst:1052
 msgid "RaisesExc"
 msgstr ""
 
@@ -8493,9 +8452,9 @@ msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/raises.py:docstring
 #: of _pytest.raises.RaisesExc:29 _pytest.raises.RaisesExc.matches:4
-#: _pytest.raises.RaisesGroup:52 ../../../doc/en/reference/reference.rst:2682
-#: ../../../doc/en/reference/reference.rst:2698
-#: ../../../doc/en/reference/reference.rst:2926
+#: _pytest.raises.RaisesGroup:52 ../../../doc/en/reference/reference.rst:2691
+#: ../../../doc/en/reference/reference.rst:2707
+#: ../../../doc/en/reference/reference.rst:2935
 msgid "Examples::"
 msgstr ""
 
@@ -8510,8 +8469,8 @@ msgid ""
 "    ..."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/pytest/__init__.py:docstring
-#: of pytest.RaisesExc.fail_reason:1 pytest.RaisesGroup.fail_reason:1
+#: ../../../doc/docstring of pytest.RaisesExc.fail_reason:1
+#: pytest.RaisesGroup.fail_reason:1
 msgid ""
 "Set after a call to :meth:`matches` to give a human-readable reason for why "
 "the match failed. When used as a context manager the string will be printed "
@@ -8542,11 +8501,11 @@ msgid ""
 "assert re.search(\"foo\", str(excinfo.value.__cause__)"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1059
+#: ../../../doc/en/reference/reference.rst:1060
 msgid "RaisesGroup"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1060
+#: ../../../doc/en/reference/reference.rst:1061
 msgid "**Tutorial**: :ref:`assert-matching-exception-groups`"
 msgstr ""
 
@@ -8777,7 +8736,7 @@ msgid ""
 "assert isinstance(myexc.exceptions[0], ValueError)"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1068
+#: ../../../doc/en/reference/reference.rst:1069
 msgid "TerminalReporter"
 msgstr ""
 
@@ -8845,7 +8804,7 @@ msgid ""
 "second element of the returned tuple."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1075
+#: ../../../doc/en/reference/reference.rst:1076
 msgid "TestReport"
 msgstr ""
 
@@ -8856,8 +8815,7 @@ msgid ""
 "fail)."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/reports.py:docstring
-#: of pytest.TestReport.location:1
+#: ../../../doc/docstring of pytest.TestReport.location:1
 msgid ""
 "A (filesystempath, lineno, domaininfo) tuple indicating the actual location "
 "of a test item - it might be different from the collected one e.g. if a "
@@ -8865,27 +8823,23 @@ msgid ""
 "relative to ``config.rootdir``. The line number is 0-based."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/reports.py:docstring
-#: of pytest.TestReport.keywords:1
+#: ../../../doc/docstring of pytest.TestReport.keywords:1
 msgid ""
 "A name -> value dictionary containing all keywords and markers associated "
 "with a test invocation."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/reports.py:docstring
-#: of pytest.TestReport.when:1
+#: ../../../doc/docstring of pytest.TestReport.when:1
 msgid "One of 'setup', 'call', 'teardown' to indicate runtest phase."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/reports.py:docstring
-#: of pytest.TestReport.user_properties:1
+#: ../../../doc/docstring of pytest.TestReport.user_properties:1
 msgid ""
 "User properties is a list of tuples (name, value) that holds user defined "
 "properties of the test."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/reports.py:docstring
-#: of pytest.TestReport.duration:1
+#: ../../../doc/docstring of pytest.TestReport.duration:1
 msgid "Time it took to run just the test."
 msgstr ""
 
@@ -8899,7 +8853,7 @@ msgstr ""
 msgid "The call info."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1083
+#: ../../../doc/en/reference/reference.rst:1084
 msgid "TestShortLogReport"
 msgstr ""
 
@@ -8931,26 +8885,23 @@ msgid ""
 "``\"PASSED\"``, ``\"SKIPPED\"``, ``\"ERROR\"``, or the empty string."
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/terminal.py:docstring
-#: of pytest.TestShortLogReport.category:1
+#: ../../../doc/docstring of pytest.TestShortLogReport.category:1
 msgid "Alias for field number 0"
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/terminal.py:docstring
-#: of pytest.TestShortLogReport.letter:1
+#: ../../../doc/docstring of pytest.TestShortLogReport.letter:1
 msgid "Alias for field number 1"
 msgstr ""
 
-#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/terminal.py:docstring
-#: of pytest.TestShortLogReport.word:1
+#: ../../../doc/docstring of pytest.TestShortLogReport.word:1
 msgid "Alias for field number 2"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1089
+#: ../../../doc/en/reference/reference.rst:1090
 msgid "Result"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1091
+#: ../../../doc/en/reference/reference.rst:1092
 msgid ""
 "Result object used within :ref:`hook wrappers <hookwrapper>`, see :py:class:"
 "`Result in the pluggy documentation <pluggy.Result>` for more information."
@@ -9062,6 +9013,11 @@ msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/stash.py:docstring
 #: of _pytest.stash.StashKey:1
+msgid "Bases: :py:class:`~typing.Generic`\\ [:py:obj:`~_pytest.stash.T`]"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/stash.py:docstring
+#: of _pytest.stash.StashKey:1
 msgid "``StashKey`` is an object used as a key to a :class:`Stash`."
 msgstr ""
 
@@ -9076,117 +9032,117 @@ msgstr ""
 msgid "A ``StashKey`` is unique and cannot conflict with another key."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1106
+#: ../../../doc/en/reference/reference.rst:1107
 msgid "Global Variables"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1108
+#: ../../../doc/en/reference/reference.rst:1109
 msgid ""
 "pytest treats some global variables in a special manner when defined in a "
 "test module or ``conftest.py`` files."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1114
-#: ../../../doc/en/reference/reference.rst:1126
+#: ../../../doc/en/reference/reference.rst:1115
+#: ../../../doc/en/reference/reference.rst:1127
 msgid "**Tutorial**: :ref:`customizing-test-collection`"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1116
+#: ../../../doc/en/reference/reference.rst:1117
 msgid ""
 "Can be declared in *conftest.py files* to exclude test directories or "
 "modules. Needs to be a list of paths (``str``, :class:`pathlib.Path` or any :"
 "class:`os.PathLike`)."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1119
+#: ../../../doc/en/reference/reference.rst:1120
 msgid "collect_ignore = [\"setup.py\"]"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1128
+#: ../../../doc/en/reference/reference.rst:1129
 msgid ""
 "Can be declared in *conftest.py files* to exclude test directories or "
 "modules with Unix shell-style wildcards. Needs to be ``list[str]`` where "
 "``str`` can contain glob patterns."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1132
+#: ../../../doc/en/reference/reference.rst:1133
 msgid "collect_ignore_glob = [\"*_ignore.py\"]"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1139
+#: ../../../doc/en/reference/reference.rst:1140
 msgid "**Tutorial**: :ref:`available installable plugins`"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1141
+#: ../../../doc/en/reference/reference.rst:1142
 msgid ""
 "Can be declared at the **global** level in *test modules* and *conftest.py "
 "files* to register additional plugins. Can be either a ``str`` or "
 "``Sequence[str]``."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1144
+#: ../../../doc/en/reference/reference.rst:1145
 msgid "pytest_plugins = \"myapp.testsupport.myplugin\""
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1148
+#: ../../../doc/en/reference/reference.rst:1149
 msgid ""
 "pytest_plugins = (\"myapp.testsupport.tools\", \"myapp.testsupport."
 "regression\")"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1155
+#: ../../../doc/en/reference/reference.rst:1156
 msgid "**Tutorial**: :ref:`scoped-marking`"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1157
+#: ../../../doc/en/reference/reference.rst:1158
 msgid ""
 "Can be declared at the **global** level in *test modules* to apply one or "
 "more :ref:`marks <marks ref>` to all test functions and methods. Can be "
 "either a single mark or a list of marks (applied in left-to-right order)."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1160
+#: ../../../doc/en/reference/reference.rst:1161
 msgid ""
 "import pytest\n"
 "\n"
 "pytestmark = pytest.mark.webtest"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1167
+#: ../../../doc/en/reference/reference.rst:1168
 msgid ""
 "import pytest\n"
 "\n"
 "pytestmark = [pytest.mark.integration, pytest.mark.slow]"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1175
+#: ../../../doc/en/reference/reference.rst:1176
 msgid "Environment Variables"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1177
+#: ../../../doc/en/reference/reference.rst:1178
 msgid "Environment variables that can be used to change pytest's behavior."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1181
+#: ../../../doc/en/reference/reference.rst:1182
 msgid ""
-"When set to a non-empty value, pytest acknowledges that is running in a CI "
-"process. See also :ref:`ci-pipelines`."
+"When set to a non-empty value, pytest acknowledges that it is running in a "
+"CI process. See also :ref:`ci-pipelines`."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1185
+#: ../../../doc/en/reference/reference.rst:1186
 msgid ""
-"When set to a non-empty value, pytest acknowledges that is running in a CI "
-"process. Alternative to :envvar:`CI`. See also :ref:`ci-pipelines`."
+"When set to a non-empty value, pytest acknowledges that it is running in a "
+"CI process. Alternative to :envvar:`CI`. See also :ref:`ci-pipelines`."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1189
+#: ../../../doc/en/reference/reference.rst:1190
 msgid ""
 "This contains a command-line (parsed by the py:mod:`shlex` module) that will "
 "be **prepended** to the command line given by the user, see :ref:`adding "
 "default options` for more information."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1194
+#: ../../../doc/en/reference/reference.rst:1195
 msgid ""
 "This environment variable is defined at the start of the pytest session and "
 "is undefined afterwards. It contains the value of ``pytest.__version__``, "
@@ -9194,24 +9150,24 @@ msgid ""
 "within a pytest run."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1199
+#: ../../../doc/en/reference/reference.rst:1200
 msgid ""
 "This is not meant to be set by users, but is set by pytest internally with "
 "the name of the current test so other processes can inspect it, see :ref:"
 "`pytest current test env` for more information."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1204
+#: ../../../doc/en/reference/reference.rst:1205
 msgid "When set, pytest will print tracing and debug information."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1208
+#: ../../../doc/en/reference/reference.rst:1209
 msgid ""
 "Root for temporary directories produced by fixtures like :fixture:`tmp_path` "
 "as discussed in :ref:`temporary directory location and retention`."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1213
+#: ../../../doc/en/reference/reference.rst:1214
 msgid ""
 "When set, disables plugin auto-loading through :std:doc:`entry point "
 "packaging metadata <packaging:guides/creating-and-discovering-plugins>`. "
@@ -9220,37 +9176,37 @@ msgid ""
 "<disable_plugin_autoload>`."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1220
+#: ../../../doc/en/reference/reference.rst:1221
 msgid ""
 "Contains comma-separated list of modules that should be loaded as plugins:"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1222
+#: ../../../doc/en/reference/reference.rst:1223
 msgid "export PYTEST_PLUGINS=mymodule.plugin,xdist"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1226
+#: ../../../doc/en/reference/reference.rst:1227
 msgid "See also :option:`-p`."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1230
+#: ../../../doc/en/reference/reference.rst:1231
 msgid ""
 "Sets a `pygment style <https://pygments.org/docs/styles/>`_ to use for the "
 "code output."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1234
+#: ../../../doc/en/reference/reference.rst:1235
 msgid "Sets the :envvar:`PYTEST_THEME` to be either *dark* or *light*."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1238
+#: ../../../doc/en/reference/reference.rst:1239
 msgid ""
 "When set to ``1``, pytest will use color in terminal output. When set to "
 "``0``, pytest will not use color. ``PY_COLORS`` takes precedence over "
 "``NO_COLOR`` and ``FORCE_COLOR``."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1244
+#: ../../../doc/en/reference/reference.rst:1245
 msgid ""
 "When set to a non-empty string (regardless of value), pytest will not use "
 "color in terminal output. ``PY_COLORS`` takes precedence over ``NO_COLOR``, "
@@ -9258,14 +9214,14 @@ msgid ""
 "color.org/>`__ for other libraries supporting this community standard."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1250
+#: ../../../doc/en/reference/reference.rst:1251
 msgid ""
 "When set to a non-empty string (regardless of value), pytest will use color "
 "in terminal output. ``PY_COLORS`` and ``NO_COLOR`` take precedence over "
 "``FORCE_COLOR``."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1254
+#: ../../../doc/en/reference/reference.rst:1255
 msgid "Exceptions"
 msgstr ""
 
@@ -9276,15 +9232,20 @@ msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/fixtures.py:docstring
 #: of _pytest.fixtures.FixtureLookupError:1
+msgid "Bases: :py:class:`LookupError`"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/fixtures.py:docstring
+#: of _pytest.fixtures.FixtureLookupError:1
 msgid "Could not return a requested fixture (missing or invalid)."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1265
-#: ../../../doc/en/reference/reference.rst:3055
+#: ../../../doc/en/reference/reference.rst:1266
+#: ../../../doc/en/reference/reference.rst:3064
 msgid "Warnings"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1267
+#: ../../../doc/en/reference/reference.rst:1268
 msgid ""
 "Custom warnings generated in some situations such as improper usage or "
 "deprecated features."
@@ -9292,7 +9253,21 @@ msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/pytest/__init__.py:docstring
 #: of pytest.PytestWarning:1
+msgid "Bases: :py:class:`UserWarning`"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.12/site-packages/pytest/__init__.py:docstring
+#: of pytest.PytestWarning:1
 msgid "Base class for all warnings emitted by pytest."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.12/site-packages/pytest/__init__.py:docstring
+#: of pytest.PytestAssertRewriteWarning:1 pytest.PytestCacheWarning:1
+#: pytest.PytestCollectionWarning:1 pytest.PytestConfigWarning:1
+#: pytest.PytestReturnNotNoneWarning:1
+#: pytest.PytestUnhandledThreadExceptionWarning:1
+#: pytest.PytestUnknownMarkWarning:1 pytest.PytestUnraisableExceptionWarning:1
+msgid "Bases: :py:class:`~pytest.PytestWarning`"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/pytest/__init__.py:docstring
@@ -9319,7 +9294,18 @@ msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/pytest/__init__.py:docstring
 #: of pytest.PytestDeprecationWarning:1
+msgid ""
+"Bases: :py:class:`~pytest.PytestWarning`, :py:class:`DeprecationWarning`"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.12/site-packages/pytest/__init__.py:docstring
+#: of pytest.PytestDeprecationWarning:1
 msgid "Warning class for features that will be removed in a future version."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.12/site-packages/pytest/__init__.py:docstring
+#: of pytest.PytestExperimentalApiWarning:1
+msgid "Bases: :py:class:`~pytest.PytestWarning`, :py:class:`FutureWarning`"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/pytest/__init__.py:docstring
@@ -9343,6 +9329,11 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/pytest/__init__.py:docstring
 #: of pytest.PytestReturnNotNoneWarning:3
 msgid "See :ref:`return-not-none` for details."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.12/site-packages/pytest/__init__.py:docstring
+#: of pytest.PytestRemovedIn9Warning:1
+msgid "Bases: :py:class:`~pytest.PytestDeprecationWarning`"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/pytest/__init__.py:docstring
@@ -9383,28 +9374,28 @@ msgstr ""
 msgid "Such exceptions don't propagate normally."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1306
+#: ../../../doc/en/reference/reference.rst:1307
 msgid ""
 "Consult the :ref:`internal-warnings` section in the documentation for more "
 "information."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1312
+#: ../../../doc/en/reference/reference.rst:1313
 msgid "Configuration Options"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1314
+#: ../../../doc/en/reference/reference.rst:1315
 msgid ""
 "Here is a list of builtin configuration options that may be written in a "
 "``pytest.ini`` (or ``.pytest.ini``), ``pyproject.toml``, ``tox.ini``, or "
 "``setup.cfg`` file, usually located at the root of your repository."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1317
-msgid "To see each file format in details, see :ref:`config file formats`."
+#: ../../../doc/en/reference/reference.rst:1318
+msgid "To see each file format in detail, see :ref:`config file formats`."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1320
+#: ../../../doc/en/reference/reference.rst:1321
 msgid ""
 "Usage of ``setup.cfg`` is not recommended except for very simple use cases. "
 "``.cfg`` files use a different parser than ``pytest.ini`` and ``tox.ini`` "
@@ -9413,25 +9404,25 @@ msgid ""
 "toml``, to hold your pytest configuration."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1325
+#: ../../../doc/en/reference/reference.rst:1326
 msgid ""
 "Configuration options may be overwritten in the command-line by using ``-o/--"
 "override-ini``, which can also be passed multiple times. The expected format "
 "is ``name=value``. For example::"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1328
+#: ../../../doc/en/reference/reference.rst:1329
 msgid "pytest -o console_output_style=classic -o cache_dir=/tmp/mycache"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1333
+#: ../../../doc/en/reference/reference.rst:1334
 msgid ""
 "Add the specified ``OPTS`` to the set of command line arguments as if they "
 "had been specified by the user. Example: if you have this configuration file "
 "content:"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1336
+#: ../../../doc/en/reference/reference.rst:1337
 msgid ""
 "# content of pytest.toml\n"
 "[pytest]\n"
@@ -9439,19 +9430,19 @@ msgid ""
 "info"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1342
+#: ../../../doc/en/reference/reference.rst:1343
 msgid "issuing ``pytest test_hello.py`` actually means:"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1344
+#: ../../../doc/en/reference/reference.rst:1345
 msgid "pytest --maxfail=2 -rf test_hello.py"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1348
+#: ../../../doc/en/reference/reference.rst:1349
 msgid "Default is to add no options."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1353
+#: ../../../doc/en/reference/reference.rst:1354
 msgid ""
 "Sets the directory where the cache plugin's content is stored. Default "
 "directory is ``.pytest_cache`` which is created in :ref:`rootdir <rootdir>`. "
@@ -9461,31 +9452,31 @@ msgid ""
 "information about cache plugin please refer to :ref:`cache_provider`."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1364
+#: ../../../doc/en/reference/reference.rst:1365
 msgid ""
 "Setting this to ``false`` will make pytest collect classes/functions from "
 "test files **only** if they are defined in that file (as opposed to imported "
 "there)."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1369
-#: ../../../doc/en/reference/reference.rst:1376
+#: ../../../doc/en/reference/reference.rst:1370
+#: ../../../doc/en/reference/reference.rst:1377
 msgid ""
 "[pytest]\n"
 "collect_imported_tests = false"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1381
+#: ../../../doc/en/reference/reference.rst:1382
 msgid "Default: ``true``"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1383
+#: ../../../doc/en/reference/reference.rst:1384
 msgid ""
 "pytest traditionally collects classes/functions in the test module namespace "
 "even if they are imported from another file."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1387
+#: ../../../doc/en/reference/reference.rst:1388
 msgid ""
 "# contents of src/domain.py\n"
 "class Testament: ...\n"
@@ -9498,7 +9489,7 @@ msgid ""
 "def test_testament(): ..."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1399
+#: ../../../doc/en/reference/reference.rst:1400
 msgid ""
 "In this scenario, with the default options, pytest will collect the class "
 "`Testament` from `tests/test_testament.py` because it starts with `Test`, "
@@ -9506,26 +9497,26 @@ msgid ""
 "module namespace."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1401
+#: ../../../doc/en/reference/reference.rst:1402
 msgid ""
 "Set ``collected_imported_tests`` to ``false`` in the configuration file "
 "prevents that."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1405
+#: ../../../doc/en/reference/reference.rst:1406
 msgid ""
 "Controls if pytest should attempt to identify `namespace packages <https://"
 "packaging.python.org/en/latest/guides/packaging-namespace-packages>`__ when "
 "collecting Python modules. Default is ``False``."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1408
+#: ../../../doc/en/reference/reference.rst:1409
 msgid ""
 "Set to ``True`` if the package you are testing is part of a namespace "
 "package. Namespace packages are also supported as :option:`--pyargs` target."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1411
+#: ../../../doc/en/reference/reference.rst:1412
 msgid ""
 "Only `native namespace packages <https://packaging.python.org/en/latest/"
 "guides/packaging-namespace-packages/#native-namespace-packages>`__ are "
@@ -9534,54 +9525,54 @@ msgid ""
 "namespace-packages>`__."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1418
+#: ../../../doc/en/reference/reference.rst:1419
 msgid "Sets the console output style while running tests:"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1420
+#: ../../../doc/en/reference/reference.rst:1421
 msgid "``classic``: classic pytest output."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1421
+#: ../../../doc/en/reference/reference.rst:1422
 msgid ""
 "``progress``: like classic pytest output, but with a progress indicator."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1422
+#: ../../../doc/en/reference/reference.rst:1423
 msgid ""
 "``progress-even-when-capture-no``: allows the use of the progress indicator "
 "even when ``capture=no``."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1423
+#: ../../../doc/en/reference/reference.rst:1424
 msgid ""
 "``count``: like progress, but shows progress as the number of tests "
 "completed instead of a percent."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1424
+#: ../../../doc/en/reference/reference.rst:1425
 msgid "``times``: show tests duration."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1426
+#: ../../../doc/en/reference/reference.rst:1427
 msgid ""
 "The default is ``progress``, but you can fallback to ``classic`` if you "
 "prefer or the new mode is causing unexpected problems:"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1431
+#: ../../../doc/en/reference/reference.rst:1432
 msgid ""
 "[pytest]\n"
 "console_output_style = \"classic\""
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1438
+#: ../../../doc/en/reference/reference.rst:1439
 msgid ""
 "[pytest]\n"
 "console_output_style = classic"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1448
+#: ../../../doc/en/reference/reference.rst:1449
 msgid ""
 "pytest by default escapes any non-ascii characters used in unicode strings "
 "for the parametrization because it has several downsides. If however you "
@@ -9589,84 +9580,84 @@ msgid ""
 "terminal as is (non-escaped), use this option in your configuration file:"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1456
-#: ../../../doc/en/reference/reference.rst:1463
+#: ../../../doc/en/reference/reference.rst:1457
+#: ../../../doc/en/reference/reference.rst:1464
 msgid ""
 "[pytest]\n"
 "disable_test_id_escaping_and_forfeit_all_rights_to_community_support = true"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1468
+#: ../../../doc/en/reference/reference.rst:1469
 msgid ""
 "Keep in mind however that this might cause unwanted side effects and even "
 "bugs depending on the OS used and plugins currently installed, so use it at "
 "your own risk."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1472
+#: ../../../doc/en/reference/reference.rst:1473
 msgid "Default: ``False``."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1474
+#: ../../../doc/en/reference/reference.rst:1475
 msgid "See :ref:`parametrizemark`."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1480
+#: ../../../doc/en/reference/reference.rst:1481
 msgid ""
 "Default encoding to use to decode text files with docstrings. :ref:`See how "
 "pytest handles doctests <doctest>`."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1486
+#: ../../../doc/en/reference/reference.rst:1487
 msgid ""
 "One or more doctest flag names from the standard ``doctest`` module. :ref:"
 "`See how pytest handles doctests <doctest>`."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1494
+#: ../../../doc/en/reference/reference.rst:1495
 msgid "Allows to pick the action for empty parametersets in parameterization"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1496
+#: ../../../doc/en/reference/reference.rst:1497
 msgid "``skip`` skips tests with an empty parameterset (default)"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1497
+#: ../../../doc/en/reference/reference.rst:1498
 msgid "``xfail`` marks tests with an empty parameterset as xfail(run=False)"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1498
+#: ../../../doc/en/reference/reference.rst:1499
 msgid ""
 "``fail_at_collect`` raises an exception if parametrize collects an empty "
 "parameter set"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1502
+#: ../../../doc/en/reference/reference.rst:1503
 msgid ""
 "[pytest]\n"
 "empty_parameter_set_mark = \"xfail\""
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1509
+#: ../../../doc/en/reference/reference.rst:1510
 msgid ""
 "[pytest]\n"
 "empty_parameter_set_mark = xfail"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1516
+#: ../../../doc/en/reference/reference.rst:1517
 msgid ""
 "The default value of this option is planned to change to ``xfail`` in future "
 "releases as this is considered less error prone, see :issue:`3155` for more "
 "details."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1522
+#: ../../../doc/en/reference/reference.rst:1523
 msgid ""
 "Enables the :hook:`pytest_assertion_pass` hook. Make sure to delete any "
 "previously generated ``.pyc`` cache files."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1542
+#: ../../../doc/en/reference/reference.rst:1543
 msgid ""
 "Exit the pytest process after the per-test timeout is reached by passing "
 "`exit=True` to the :func:`faulthandler.dump_traceback_later` function. This "
@@ -9674,19 +9665,19 @@ msgid ""
 "are prone to putting the main Python interpreter into a deadlock state."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1547
+#: ../../../doc/en/reference/reference.rst:1548
 msgid "This option is set to 'false' by default."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1551
-#: ../../../doc/en/reference/reference.rst:1559
+#: ../../../doc/en/reference/reference.rst:1552
+#: ../../../doc/en/reference/reference.rst:1560
 msgid ""
 "[pytest]\n"
 "faulthandler_timeout = 5\n"
 "faulthandler_exit_on_timeout = true"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1569
+#: ../../../doc/en/reference/reference.rst:1570
 msgid ""
 "Dumps the tracebacks of all threads if a test takes longer than ``X`` "
 "seconds to run (including fixture setup and teardown). Implemented using "
@@ -9694,17 +9685,15 @@ msgid ""
 "apply."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1575
-#: ../../../doc/en/reference/reference.rst:1582
+#: ../../../doc/en/reference/reference.rst:1576
+#: ../../../doc/en/reference/reference.rst:1583
 msgid ""
 "[pytest]\n"
 "faulthandler_timeout = 5"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1587
-msgid ""
-"For more information please refer to :ref:`faulthandler`. For more "
-"information please refer to :ref:`faulthandler`."
+#: ../../../doc/en/reference/reference.rst:1588
+msgid "For more information please refer to :ref:`faulthandler`."
 msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:1594
@@ -9959,7 +9948,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:1809
 #: ../../../doc/en/reference/reference.rst:1831
-#: ../../../doc/en/reference/reference.rst:1855
+#: ../../../doc/en/reference/reference.rst:1858
 msgid "For more information, see :ref:`live_logs`."
 msgstr ""
 
@@ -9984,199 +9973,211 @@ msgstr ""
 #: ../../../doc/en/reference/reference.rst:1838
 msgid ""
 "Sets the minimum log message level that should be captured for live logging. "
-"The integer value or the names of the levels can be used."
+"The integer value or the names of the levels can be used. Note in TOML the "
+"integer must be quoted, as there is no support for config parameters of "
+"mixed type."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1843
+#: ../../../doc/en/reference/reference.rst:1844
 msgid ""
 "[pytest]\n"
-"log_cli_level = \"INFO\""
+"log_cli_level = \"INFO\"\n"
+"log_cli_level = \"10\""
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1850
+#: ../../../doc/en/reference/reference.rst:1852
 msgid ""
 "[pytest]\n"
-"log_cli_level = INFO"
+"log_cli_level = INFO\n"
+"log_cli_level = 10"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1862
+#: ../../../doc/en/reference/reference.rst:1865
 msgid ""
 "Sets a :py:func:`time.strftime`-compatible string that will be used when "
 "formatting dates for logging capture."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1866
+#: ../../../doc/en/reference/reference.rst:1869
 msgid ""
 "[pytest]\n"
 "log_date_format = \"%Y-%m-%d %H:%M:%S\""
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1873
+#: ../../../doc/en/reference/reference.rst:1876
 msgid ""
 "[pytest]\n"
 "log_date_format = %Y-%m-%d %H:%M:%S"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1878
-#: ../../../doc/en/reference/reference.rst:1902
-#: ../../../doc/en/reference/reference.rst:1925
-#: ../../../doc/en/reference/reference.rst:1947
-#: ../../../doc/en/reference/reference.rst:1970
-#: ../../../doc/en/reference/reference.rst:1992
-#: ../../../doc/en/reference/reference.rst:2015
-#: ../../../doc/en/reference/reference.rst:2039
+#: ../../../doc/en/reference/reference.rst:1881
+#: ../../../doc/en/reference/reference.rst:1905
+#: ../../../doc/en/reference/reference.rst:1928
+#: ../../../doc/en/reference/reference.rst:1950
+#: ../../../doc/en/reference/reference.rst:1976
+#: ../../../doc/en/reference/reference.rst:1998
+#: ../../../doc/en/reference/reference.rst:2021
+#: ../../../doc/en/reference/reference.rst:2048
 msgid "For more information, see :ref:`logging`."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1885
+#: ../../../doc/en/reference/reference.rst:1888
 msgid ""
 "Sets a file name relative to the current working directory where log "
 "messages should be written to, in addition to the other logging facilities "
 "that are active."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1890
+#: ../../../doc/en/reference/reference.rst:1893
 msgid ""
 "[pytest]\n"
 "log_file = \"logs/pytest-logs.txt\""
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1897
+#: ../../../doc/en/reference/reference.rst:1900
 msgid ""
 "[pytest]\n"
 "log_file = logs/pytest-logs.txt"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1909
+#: ../../../doc/en/reference/reference.rst:1912
 msgid ""
 "Sets a :py:func:`time.strftime`-compatible string that will be used when "
 "formatting dates for the logging file."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1913
+#: ../../../doc/en/reference/reference.rst:1916
 msgid ""
 "[pytest]\n"
 "log_file_date_format = \"%Y-%m-%d %H:%M:%S\""
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1920
+#: ../../../doc/en/reference/reference.rst:1923
 msgid ""
 "[pytest]\n"
 "log_file_date_format = %Y-%m-%d %H:%M:%S"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1931
+#: ../../../doc/en/reference/reference.rst:1934
 msgid ""
 "Sets a :py:mod:`logging`-compatible string used to format logging messages "
 "redirected to the logging file."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1935
+#: ../../../doc/en/reference/reference.rst:1938
 msgid ""
 "[pytest]\n"
 "log_file_format = \"%(asctime)s %(levelname)s %(message)s\""
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1942
+#: ../../../doc/en/reference/reference.rst:1945
 msgid ""
 "[pytest]\n"
 "log_file_format = %(asctime)s %(levelname)s %(message)s"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1953
+#: ../../../doc/en/reference/reference.rst:1956
 msgid ""
 "Sets the minimum log message level that should be captured for the logging "
-"file. The integer value or the names of the levels can be used."
+"file. The integer value or the names of the levels can be used. Note in TOML "
+"the integer must be quoted, as there is no support for config parameters of "
+"mixed type."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1958
+#: ../../../doc/en/reference/reference.rst:1962
 msgid ""
 "[pytest]\n"
-"log_file_level = \"INFO\""
+"log_file_level = \"INFO\"\n"
+"log_cli_level = \"10\""
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1965
+#: ../../../doc/en/reference/reference.rst:1970
 msgid ""
 "[pytest]\n"
-"log_file_level = INFO"
+"log_file_level = INFO\n"
+"log_cli_level = 10"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1975
+#: ../../../doc/en/reference/reference.rst:1981
 msgid ""
 "Sets the mode that the logging file is opened with. The options are "
 "``\"w\"`` to recreate the file (the default) or ``\"a\"`` to append to the "
 "file."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1980
+#: ../../../doc/en/reference/reference.rst:1986
 msgid ""
 "[pytest]\n"
 "log_file_mode = \"a\""
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1987
+#: ../../../doc/en/reference/reference.rst:1993
 msgid ""
 "[pytest]\n"
 "log_file_mode = a"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:1999
+#: ../../../doc/en/reference/reference.rst:2005
 msgid ""
 "Sets a :py:mod:`logging`-compatible string used to format captured logging "
 "messages."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2003
+#: ../../../doc/en/reference/reference.rst:2009
 msgid ""
 "[pytest]\n"
 "log_format = \"%(asctime)s %(levelname)s %(message)s\""
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2010
+#: ../../../doc/en/reference/reference.rst:2016
 msgid ""
 "[pytest]\n"
 "log_format = %(asctime)s %(levelname)s %(message)s"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2022
+#: ../../../doc/en/reference/reference.rst:2028
 msgid ""
 "Sets the minimum log message level that should be captured for logging "
-"capture. The integer value or the names of the levels can be used."
-msgstr ""
-
-#: ../../../doc/en/reference/reference.rst:2027
-msgid ""
-"[pytest]\n"
-"log_level = \"INFO\""
+"capture. The integer value or the names of the levels can be used. Note in "
+"TOML the integer must be quoted, as there is no support for config "
+"parameters of mixed type."
 msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:2034
 msgid ""
 "[pytest]\n"
-"log_level = INFO"
+"log_level = \"INFO\"\n"
+"log_cli_level = \"10\""
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2044
+#: ../../../doc/en/reference/reference.rst:2042
+msgid ""
+"[pytest]\n"
+"log_level = INFO\n"
+"log_cli_level = 10"
+msgstr ""
+
+#: ../../../doc/en/reference/reference.rst:2053
 msgid ""
 "When the :confval:`strict_markers` configuration option is set, only known "
 "markers - defined in code by core pytest or some plugin - are allowed."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2047
+#: ../../../doc/en/reference/reference.rst:2056
 msgid ""
 "You can list additional markers in this setting to add them to the "
 "whitelist, in which case you probably want to set :confval:`strict_markers` "
 "to ``true`` to avoid future regressions:"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2053
+#: ../../../doc/en/reference/reference.rst:2062
 msgid ""
 "[pytest]\n"
 "addopts = [\"--strict-markers\"]\n"
 "markers = [\"slow\", \"serial\"]"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2061
+#: ../../../doc/en/reference/reference.rst:2070
 msgid ""
 "[pytest]\n"
 "strict_markers = true\n"
@@ -10185,18 +10186,18 @@ msgid ""
 "    serial"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2072
+#: ../../../doc/en/reference/reference.rst:2081
 msgid "Specifies a minimal pytest version required for running tests."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2076
-#: ../../../doc/en/reference/reference.rst:2083
+#: ../../../doc/en/reference/reference.rst:2085
+#: ../../../doc/en/reference/reference.rst:2092
 msgid ""
 "[pytest]\n"
 "minversion = 3.0  # will fail if we run with pytest-2.8"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2091
+#: ../../../doc/en/reference/reference.rst:2100
 msgid ""
 "Set the directory basename patterns to avoid when recursing for test "
 "discovery.  The individual (fnmatch-style) patterns are applied to the "
@@ -10204,7 +10205,7 @@ msgid ""
 "characters::"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2096
+#: ../../../doc/en/reference/reference.rst:2105
 msgid ""
 "*       matches everything\n"
 "?       matches any single character\n"
@@ -10212,7 +10213,7 @@ msgid ""
 "[!seq]  matches any char not in seq"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2101
+#: ../../../doc/en/reference/reference.rst:2110
 msgid ""
 "Default patterns are ``'*.egg'``, ``'.*'``, ``'_darcs'``, ``'build'``, "
 "``'CVS'``, ``'dist'``, ``'node_modules'``, ``'venv'``, ``'{arch}'``. Setting "
@@ -10220,25 +10221,25 @@ msgid ""
 "avoid certain directories:"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2108
+#: ../../../doc/en/reference/reference.rst:2117
 msgid ""
 "[pytest]\n"
 "norecursedirs = [\".svn\", \"_build\", \"tmp*\"]"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2115
+#: ../../../doc/en/reference/reference.rst:2124
 msgid ""
 "[pytest]\n"
 "norecursedirs = .svn _build tmp*"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2120
+#: ../../../doc/en/reference/reference.rst:2129
 msgid ""
 "This would tell ``pytest`` to not look into typical subversion or sphinx-"
 "build directories or into any ``tmp`` prefixed directory."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2123
+#: ../../../doc/en/reference/reference.rst:2132
 msgid ""
 "Additionally, ``pytest`` will attempt to intelligently identify and ignore a "
 "virtualenv.  Any directory deemed to be the root of a virtual environment "
@@ -10249,7 +10250,7 @@ msgid ""
 "``norecursedirs`` in addition to using the ``--collect-in-virtualenv`` flag."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2135
+#: ../../../doc/en/reference/reference.rst:2144
 msgid ""
 "One or more name prefixes or glob-style patterns determining which classes "
 "are considered for test collection. Search for multiple glob patterns by "
@@ -10258,49 +10259,49 @@ msgid ""
 "collect tests from classes that end in ``Suite``:"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2143
+#: ../../../doc/en/reference/reference.rst:2152
 msgid ""
 "[pytest]\n"
 "python_classes = [\"*Suite\"]"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2150
+#: ../../../doc/en/reference/reference.rst:2159
 msgid ""
 "[pytest]\n"
 "python_classes = *Suite"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2155
+#: ../../../doc/en/reference/reference.rst:2164
 msgid ""
 "Note that ``unittest.TestCase`` derived classes are always collected "
 "regardless of this option, as ``unittest``'s own collection framework is "
 "used to collect those tests."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2162
+#: ../../../doc/en/reference/reference.rst:2171
 msgid ""
 "One or more Glob-style file patterns determining which python files are "
 "considered as test modules. Search for multiple glob patterns by adding a "
 "space between patterns:"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2168
+#: ../../../doc/en/reference/reference.rst:2177
 msgid ""
 "[pytest]\n"
 "python_files = [\"test_*.py\", \"check_*.py\", \"example_*.py\"]"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2175
+#: ../../../doc/en/reference/reference.rst:2184
 msgid ""
 "[pytest]\n"
 "python_files = test_*.py check_*.py example_*.py"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2180
+#: ../../../doc/en/reference/reference.rst:2189
 msgid "Or one per line:"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2182
+#: ../../../doc/en/reference/reference.rst:2191
 msgid ""
 "[pytest]\n"
 "python_files =\n"
@@ -10309,13 +10310,13 @@ msgid ""
 "    example_*.py"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2190
+#: ../../../doc/en/reference/reference.rst:2199
 msgid ""
 "By default, files matching ``test_*.py`` and ``*_test.py`` will be "
 "considered test modules."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2196
+#: ../../../doc/en/reference/reference.rst:2205
 msgid ""
 "One or more name prefixes or glob-patterns determining which test functions "
 "and methods are considered tests. Search for multiple glob patterns by "
@@ -10324,30 +10325,30 @@ msgid ""
 "collect test functions and methods that end in ``_test``:"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2204
+#: ../../../doc/en/reference/reference.rst:2213
 msgid ""
 "[pytest]\n"
 "python_functions = [\"*_test\"]"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2211
+#: ../../../doc/en/reference/reference.rst:2220
 msgid ""
 "[pytest]\n"
 "python_functions = *_test"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2216
+#: ../../../doc/en/reference/reference.rst:2225
 msgid ""
 "Note that this has no effect on methods that live on a ``unittest.TestCase`` "
 "derived class, as ``unittest``'s own collection framework is used to collect "
 "those tests."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2220
+#: ../../../doc/en/reference/reference.rst:2229
 msgid "See :ref:`change naming conventions` for more detailed examples."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2225
+#: ../../../doc/en/reference/reference.rst:2234
 msgid ""
 "Sets list of directories that should be added to the python search path. "
 "Directories will be added to the head of :data:`sys.path`. Similar to the :"
@@ -10357,19 +10358,19 @@ msgid ""
 "duration of the test session."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2234
+#: ../../../doc/en/reference/reference.rst:2243
 msgid ""
 "[pytest]\n"
 "pythonpath = [\"src1\", \"src2\"]"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2241
+#: ../../../doc/en/reference/reference.rst:2250
 msgid ""
 "[pytest]\n"
 "pythonpath = src1 src2"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2249
+#: ../../../doc/en/reference/reference.rst:2258
 msgid ""
 "A space separated list of plugins that must be present for pytest to run. "
 "Plugins can be listed with or without version specifiers directly following "
@@ -10377,53 +10378,53 @@ msgid ""
 "If any one of the plugins is not found, emit an error."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2256
+#: ../../../doc/en/reference/reference.rst:2265
 msgid ""
 "[pytest]\n"
 "required_plugins = [\"pytest-django>=3.0.0,<4.0.0\", \"pytest-html\", "
 "\"pytest-xdist>=1.0.0\"]"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2263
+#: ../../../doc/en/reference/reference.rst:2272
 msgid ""
 "[pytest]\n"
 "required_plugins = pytest-django>=3.0.0,<4.0.0 pytest-html pytest-"
 "xdist>=1.0.0"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2271
+#: ../../../doc/en/reference/reference.rst:2280
 msgid ""
 "If set to ``true``, enable \"strict mode\", which enables the following "
 "options:"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2273
+#: ../../../doc/en/reference/reference.rst:2282
 msgid ":confval:`strict_config`"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2274
+#: ../../../doc/en/reference/reference.rst:2283
 msgid ":confval:`strict_markers`"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2275
+#: ../../../doc/en/reference/reference.rst:2284
 msgid ":confval:`strict_parametrization_ids`"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2276
+#: ../../../doc/en/reference/reference.rst:2285
 msgid ":confval:`strict_xfail`"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2278
+#: ../../../doc/en/reference/reference.rst:2287
 msgid "Plugins may also enable their own strictness options."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2280
+#: ../../../doc/en/reference/reference.rst:2289
 msgid ""
 "If you explicitly set an individual strictness option, it takes precedence "
 "over ``strict``."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2283
+#: ../../../doc/en/reference/reference.rst:2292
 msgid ""
 "If pytest adds new strictness options in the future, they will also be "
 "enabled in strict mode. Therefore, you should only enable strict mode if you "
@@ -10431,70 +10432,70 @@ msgid ""
 "new strictness options as they are added."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2289
-#: ../../../doc/en/reference/reference.rst:2296
+#: ../../../doc/en/reference/reference.rst:2298
+#: ../../../doc/en/reference/reference.rst:2305
 msgid ""
 "[pytest]\n"
 "strict = true"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2306
+#: ../../../doc/en/reference/reference.rst:2315
 msgid ""
 "If set to ``true``, any warnings encountered while parsing the ``pytest`` "
 "section of the configuration file will raise errors."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2310
-#: ../../../doc/en/reference/reference.rst:2317
+#: ../../../doc/en/reference/reference.rst:2319
+#: ../../../doc/en/reference/reference.rst:2326
 msgid ""
 "[pytest]\n"
 "strict_config = true"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2322
-#: ../../../doc/en/reference/reference.rst:2343
-#: ../../../doc/en/reference/reference.rst:2367
-#: ../../../doc/en/reference/reference.rst:2416
+#: ../../../doc/en/reference/reference.rst:2331
+#: ../../../doc/en/reference/reference.rst:2352
+#: ../../../doc/en/reference/reference.rst:2376
+#: ../../../doc/en/reference/reference.rst:2425
 msgid "You can also enable this option via the :confval:`strict` option."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2327
+#: ../../../doc/en/reference/reference.rst:2336
 msgid ""
 "If set to ``true``, markers not registered in the ``markers`` section of the "
 "configuration file will raise errors."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2331
-#: ../../../doc/en/reference/reference.rst:2338
+#: ../../../doc/en/reference/reference.rst:2340
+#: ../../../doc/en/reference/reference.rst:2347
 msgid ""
 "[pytest]\n"
 "strict_markers = true"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2348
+#: ../../../doc/en/reference/reference.rst:2357
 msgid ""
 "If set to ``true``, pytest emits an error if it detects non-unique parameter "
 "set IDs."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2350
+#: ../../../doc/en/reference/reference.rst:2359
 msgid ""
 "If not set (the default), pytest automatically handles this by adding `0`, "
 "`1`, ... to duplicate IDs, making them unique."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2355
-#: ../../../doc/en/reference/reference.rst:2362
+#: ../../../doc/en/reference/reference.rst:2364
+#: ../../../doc/en/reference/reference.rst:2371
 msgid ""
 "[pytest]\n"
 "strict_parametrization_ids = true"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2369
+#: ../../../doc/en/reference/reference.rst:2378
 msgid "For example,"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2371
+#: ../../../doc/en/reference/reference.rst:2380
 msgid ""
 "import pytest\n"
 "\n"
@@ -10504,19 +10505,19 @@ msgid ""
 "    assert letter.isascii()"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2380
+#: ../../../doc/en/reference/reference.rst:2389
 msgid ""
 "will emit an error because both cases (parameter sets) have the same auto-"
 "generated ID \"a\"."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2382
+#: ../../../doc/en/reference/reference.rst:2391
 msgid ""
 "To fix the error, if you decide to keep the duplicates, explicitly assign "
 "unique IDs:"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2384
+#: ../../../doc/en/reference/reference.rst:2393
 msgid ""
 "import pytest\n"
 "\n"
@@ -10526,33 +10527,33 @@ msgid ""
 "    assert letter.isascii()"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2393
+#: ../../../doc/en/reference/reference.rst:2402
 msgid ""
 "See :func:`parametrize <pytest.Metafunc.parametrize>` and :func:`pytest."
 "param` for other ways to set IDs."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2398
+#: ../../../doc/en/reference/reference.rst:2407
 msgid ""
 "If set to ``true``, tests marked with ``@pytest.mark.xfail`` that actually "
 "succeed will by default fail the test suite. For more information, see :ref:"
 "`xfail strict tutorial`."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2404
-#: ../../../doc/en/reference/reference.rst:2411
+#: ../../../doc/en/reference/reference.rst:2413
+#: ../../../doc/en/reference/reference.rst:2420
 msgid ""
 "[pytest]\n"
 "strict_xfail = true"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2418
+#: ../../../doc/en/reference/reference.rst:2427
 msgid ""
 "Renamed from ``xfail_strict`` to ``strict_xfail``. ``xfail_strict`` is "
 "accepted as an alias for ``strict_xfail``."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2425
+#: ../../../doc/en/reference/reference.rst:2434
 msgid ""
 "Sets list of directories that should be searched for tests when no specific "
 "directories, files or test ids are given in the command line when executing "
@@ -10560,216 +10561,217 @@ msgid ""
 "use shell-style wildcards, including the recursive ``**`` pattern."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2431
+#: ../../../doc/en/reference/reference.rst:2440
 msgid ""
 "Useful when all project tests are in a known location to speed up test "
 "collection and to avoid picking up undesired tests by accident."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2436
+#: ../../../doc/en/reference/reference.rst:2445
 msgid ""
 "[pytest]\n"
 "testpaths = [\"testing\", \"doc\"]"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2443
+#: ../../../doc/en/reference/reference.rst:2452
 msgid ""
 "[pytest]\n"
 "testpaths = testing doc"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2448
+#: ../../../doc/en/reference/reference.rst:2457
 msgid "This configuration means that executing:"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2450
+#: ../../../doc/en/reference/reference.rst:2459
 msgid "pytest"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2454
+#: ../../../doc/en/reference/reference.rst:2463
 msgid "has the same practical effects as executing:"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2456
+#: ../../../doc/en/reference/reference.rst:2465
 msgid "pytest testing doc"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2462
+#: ../../../doc/en/reference/reference.rst:2471
 msgid ""
 "How many sessions should we keep the `tmp_path` directories, according to :"
 "confval:`tmp_path_retention_policy`."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2467
+#: ../../../doc/en/reference/reference.rst:2476
 msgid ""
 "[pytest]\n"
 "tmp_path_retention_count = \"3\""
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2474
+#: ../../../doc/en/reference/reference.rst:2483
 msgid ""
 "[pytest]\n"
 "tmp_path_retention_count = 3"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2479
+#: ../../../doc/en/reference/reference.rst:2488
 msgid "Default: ``3``"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2486
+#: ../../../doc/en/reference/reference.rst:2495
 msgid ""
 "Controls which directories created by the `tmp_path` fixture are kept "
 "around, based on test outcome."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2489
+#: ../../../doc/en/reference/reference.rst:2498
 msgid "`all`: retains directories for all tests, regardless of the outcome."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2490
+#: ../../../doc/en/reference/reference.rst:2499
 msgid ""
 "`failed`: retains directories only for tests with outcome `error` or "
 "`failed`."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2491
+#: ../../../doc/en/reference/reference.rst:2500
 msgid ""
 "`none`: directories are always removed after each test ends, regardless of "
 "the outcome."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2495
+#: ../../../doc/en/reference/reference.rst:2504
 msgid ""
 "[pytest]\n"
 "tmp_path_retention_policy = \"all\""
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2502
+#: ../../../doc/en/reference/reference.rst:2511
 msgid ""
 "[pytest]\n"
 "tmp_path_retention_policy = all"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2507
+#: ../../../doc/en/reference/reference.rst:2516
 msgid "Default: ``all``"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2512
+#: ../../../doc/en/reference/reference.rst:2521
 msgid ""
 "Controls maximum number of characters to truncate assertion message contents."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2514
+#: ../../../doc/en/reference/reference.rst:2523
 msgid "Setting value to ``0`` disables the character limit for truncation."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2518
-#: ../../../doc/en/reference/reference.rst:2525
+#: ../../../doc/en/reference/reference.rst:2527
+#: ../../../doc/en/reference/reference.rst:2534
 msgid ""
 "[pytest]\n"
 "truncation_limit_chars = 640"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2530
-#: ../../../doc/en/reference/reference.rst:2559
+#: ../../../doc/en/reference/reference.rst:2539
+#: ../../../doc/en/reference/reference.rst:2568
 msgid ""
 "pytest truncates the assert messages to a certain limit by default to "
 "prevent comparison with large data to overload the console output."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2532
+#: ../../../doc/en/reference/reference.rst:2541
 msgid "Default: ``640``"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2536
-#: ../../../doc/en/reference/reference.rst:2565
+#: ../../../doc/en/reference/reference.rst:2545
+#: ../../../doc/en/reference/reference.rst:2574
 msgid ""
 "If pytest detects it is :ref:`running on CI <ci-pipelines>`, truncation is "
 "disabled automatically."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2541
-msgid "Controls maximum number of linesto truncate assertion message contents."
+#: ../../../doc/en/reference/reference.rst:2550
+msgid ""
+"Controls maximum number of lines to truncate assertion message contents."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2543
+#: ../../../doc/en/reference/reference.rst:2552
 msgid "Setting value to ``0`` disables the lines limit for truncation."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2547
-#: ../../../doc/en/reference/reference.rst:2554
+#: ../../../doc/en/reference/reference.rst:2556
+#: ../../../doc/en/reference/reference.rst:2563
 msgid ""
 "[pytest]\n"
 "truncation_limit_lines = 8"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2561
+#: ../../../doc/en/reference/reference.rst:2570
 msgid "Default: ``8``"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2570
+#: ../../../doc/en/reference/reference.rst:2579
 msgid ""
 "List of fixtures that will be applied to all test functions; this is "
 "semantically the same to apply the ``@pytest.mark.usefixtures`` marker to "
 "all test functions."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2576
+#: ../../../doc/en/reference/reference.rst:2585
 msgid ""
 "[pytest]\n"
 "usefixtures = [\"clean_db\"]"
 msgstr ""
 "[pytest]\n"
 "usefixtures = [\"clean_db\"]"
-
-#: ../../../doc/en/reference/reference.rst:2583
-msgid ""
-"[pytest]\n"
-"usefixtures =\n"
-"    clean_db"
-msgstr ""
-"[pytest]\n"
-"usefixtures =\n"
-"    clean_db"
 
 #: ../../../doc/en/reference/reference.rst:2592
+msgid ""
+"[pytest]\n"
+"usefixtures =\n"
+"    clean_db"
+msgstr ""
+"[pytest]\n"
+"usefixtures =\n"
+"    clean_db"
+
+#: ../../../doc/en/reference/reference.rst:2601
 msgid ""
 "Set a verbosity level specifically for assertion related output, overriding "
 "the application wide level."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2596
+#: ../../../doc/en/reference/reference.rst:2605
 msgid ""
 "[pytest]\n"
 "verbosity_assertions = \"2\""
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2608
-#: ../../../doc/en/reference/reference.rst:2633
-#: ../../../doc/en/reference/reference.rst:2657
+#: ../../../doc/en/reference/reference.rst:2617
+#: ../../../doc/en/reference/reference.rst:2642
+#: ../../../doc/en/reference/reference.rst:2666
 msgid ""
 "If not set, defaults to application wide verbosity level (via the :option:`-"
 "v` command-line option). A special value of ``\"auto\"`` can be used to "
 "explicitly use the global verbosity level."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2614
+#: ../../../doc/en/reference/reference.rst:2623
 msgid "Set the verbosity level specifically for **passed** subtests."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2618
+#: ../../../doc/en/reference/reference.rst:2627
 msgid ""
 "[pytest]\n"
 "verbosity_subtests = \"1\""
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2625
+#: ../../../doc/en/reference/reference.rst:2634
 msgid ""
 "[pytest]\n"
 "verbosity_subtests = 1"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2630
+#: ../../../doc/en/reference/reference.rst:2639
 msgid ""
 "A value of ``1`` or higher will show output for **passed** subtests "
 "(**failed** subtests are always reported). Passed subtests output can be "
@@ -10777,57 +10779,57 @@ msgid ""
 "line option."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2636
+#: ../../../doc/en/reference/reference.rst:2645
 msgid "See also: :ref:`subtests`."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2641
+#: ../../../doc/en/reference/reference.rst:2650
 msgid ""
 "Set a verbosity level specifically for test case execution related output, "
 "overriding the application wide level."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2645
+#: ../../../doc/en/reference/reference.rst:2654
 msgid ""
 "[pytest]\n"
 "verbosity_test_cases = \"2\""
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2652
+#: ../../../doc/en/reference/reference.rst:2661
 msgid ""
 "[pytest]\n"
 "verbosity_test_cases = 2"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2664
+#: ../../../doc/en/reference/reference.rst:2673
 msgid "Command-line Flags"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2666
+#: ../../../doc/en/reference/reference.rst:2675
 msgid ""
 "This section documents all command-line options provided by pytest's core "
 "plugins."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2670
+#: ../../../doc/en/reference/reference.rst:2679
 msgid ""
 "External plugins can add their own command-line options. This reference "
 "documents only the options from pytest's core plugins. To see all available "
 "options including those from installed plugins, run ``pytest --help``."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2675
+#: ../../../doc/en/reference/reference.rst:2684
 msgid "Test Selection"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2679
+#: ../../../doc/en/reference/reference.rst:2688
 msgid ""
 "Only run tests which match the given substring expression. An expression is "
 "a Python evaluable expression where all names are substring-matched against "
 "test names and their parent classes."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2684
+#: ../../../doc/en/reference/reference.rst:2693
 msgid ""
 "pytest -k \"test_method or test_other\"  # matches names containing "
 "'test_method' OR 'test_other'\n"
@@ -10836,771 +10838,771 @@ msgid ""
 "pytest -k \"not test_method and not test_other\"  # excludes both"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2688
+#: ../../../doc/en/reference/reference.rst:2697
 msgid ""
 "The matching is case-insensitive. Keywords are also matched to classes and "
 "functions containing extra names in their ``extra_keyword_matches`` set."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2691
+#: ../../../doc/en/reference/reference.rst:2700
 msgid "See :ref:`select-tests` for more information and examples."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2695
+#: ../../../doc/en/reference/reference.rst:2704
 msgid ""
 "Only run tests matching given mark expression. Supports ``and``, ``or``, and "
 "``not`` operators."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2700
+#: ../../../doc/en/reference/reference.rst:2709
 msgid ""
 "pytest -m slow                  # run tests marked with @pytest.mark.slow\n"
 "pytest -m \"not slow\"            # run tests NOT marked slow\n"
 "pytest -m \"mark1 and not mark2\" # run tests marked mark1 but not mark2"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2704
+#: ../../../doc/en/reference/reference.rst:2713
 msgid "See :ref:`mark` for more information on markers."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2708
+#: ../../../doc/en/reference/reference.rst:2717
 msgid ""
 "Show all available markers (builtin, plugin, and per-project markers defined "
 "in configuration)."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2711
+#: ../../../doc/en/reference/reference.rst:2720
 msgid "Test Execution Control"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2715
+#: ../../../doc/en/reference/reference.rst:2724
 msgid "Exit instantly on first error or failed test."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2719
+#: ../../../doc/en/reference/reference.rst:2728
 msgid ""
 "Exit after first ``num`` failures or errors. Useful for CI environments "
 "where you want to fail fast but see a few failures."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2724
+#: ../../../doc/en/reference/reference.rst:2733
 msgid ""
 "Rerun only the tests that failed at the last run. If no tests failed (or no "
 "cached data exists), all tests are run. See also :confval:`cache_dir` and :"
 "ref:`cache`."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2730
+#: ../../../doc/en/reference/reference.rst:2739
 msgid ""
 "Run all tests, but run the last failures first. This may re-order tests and "
 "thus lead to repeated fixture setup/teardown."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2735
+#: ../../../doc/en/reference/reference.rst:2744
 msgid ""
 "Run tests from new files first, then the rest of the tests sorted by file "
 "modification time."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2739
+#: ../../../doc/en/reference/reference.rst:2748
 msgid ""
 "Exit on test failure and continue from last failing test next time. Useful "
 "for fixing multiple test failures one at a time."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2742
+#: ../../../doc/en/reference/reference.rst:2751
 msgid "See :ref:`cache stepwise` for more information."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2746
+#: ../../../doc/en/reference/reference.rst:2755
 msgid ""
 "Ignore the first failing test but stop on the next failing test. Implicitly "
 "enables :option:`--stepwise`."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2751
+#: ../../../doc/en/reference/reference.rst:2760
 msgid ""
 "Resets stepwise state, restarting the stepwise workflow. Implicitly enables :"
 "option:`--stepwise`."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2756
+#: ../../../doc/en/reference/reference.rst:2765
 msgid ""
 "With :option:`--last-failed`, determines whether to execute tests when there "
 "are no previously known failures or when no cached ``lastfailed`` data was "
 "found."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2758
+#: ../../../doc/en/reference/reference.rst:2767
 msgid "``all`` (default): runs the full test suite again"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2759
+#: ../../../doc/en/reference/reference.rst:2768
 msgid ""
 "``none``: just emits a message about no known failures and exits successfully"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2763
+#: ../../../doc/en/reference/reference.rst:2772
 msgid ""
 "Report the results of xfail tests as if they were not marked. Useful for "
 "debugging xfailed tests. See :ref:`xfail`."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2768
+#: ../../../doc/en/reference/reference.rst:2777
 msgid "Collection"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2772
+#: ../../../doc/en/reference/reference.rst:2781
 msgid ""
 "Only collect tests, don't execute them. Shows which tests would be collected "
 "and run."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2777
+#: ../../../doc/en/reference/reference.rst:2786
 msgid ""
 "Try to interpret all arguments as Python packages. Useful for running tests "
 "of installed packages::"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2780
+#: ../../../doc/en/reference/reference.rst:2789
 msgid "pytest --pyargs pkg.testing"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2784
+#: ../../../doc/en/reference/reference.rst:2793
 msgid ""
 "Ignore path during collection (multi-allowed). Can be specified multiple "
 "times."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2789
+#: ../../../doc/en/reference/reference.rst:2798
 msgid ""
 "Ignore path pattern during collection (multi-allowed). Supports glob "
 "patterns."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2794
+#: ../../../doc/en/reference/reference.rst:2803
 msgid "Deselect item (via node id prefix) during collection (multi-allowed)."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2798
+#: ../../../doc/en/reference/reference.rst:2807
 msgid "Only load ``conftest.py`` files relative to specified directory."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2802
+#: ../../../doc/en/reference/reference.rst:2811
 msgid "Don't load any ``conftest.py`` files."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2806
+#: ../../../doc/en/reference/reference.rst:2815
 msgid "Keep duplicate tests. By default, pytest removes duplicate test items."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2810
+#: ../../../doc/en/reference/reference.rst:2819
 msgid ""
 "Don't ignore tests in a local virtualenv directory. By default, pytest skips "
 "tests in virtualenv directories."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2815
+#: ../../../doc/en/reference/reference.rst:2824
 msgid "Force test execution even if collection errors occur."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2819
+#: ../../../doc/en/reference/reference.rst:2828
 msgid ""
 "Prepend/append to sys.path when importing test modules and conftest files."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2821
+#: ../../../doc/en/reference/reference.rst:2830
 msgid "``prepend`` (default): prepend to sys.path"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2822
+#: ../../../doc/en/reference/reference.rst:2831
 msgid "``append``: append to sys.path"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2823
+#: ../../../doc/en/reference/reference.rst:2832
 msgid "``importlib``: use importlib to import test modules"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2825
+#: ../../../doc/en/reference/reference.rst:2834
 msgid "See :ref:`pythonpath` for more information."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2832
+#: ../../../doc/en/reference/reference.rst:2841
 msgid ""
 "Show available fixtures, sorted by plugin appearance. Fixtures with leading "
 "``_`` are only shown with :option:`--verbose`."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2837
+#: ../../../doc/en/reference/reference.rst:2846
 msgid "Show fixtures per test."
 msgstr "顯示每個測試的夾具。"
 
-#: ../../../doc/en/reference/reference.rst:2841
+#: ../../../doc/en/reference/reference.rst:2850
 msgid "Only setup fixtures, do not execute tests. See :ref:`how-to-fixtures`."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2846
+#: ../../../doc/en/reference/reference.rst:2855
 msgid "Show setup of fixtures while executing tests."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2850
+#: ../../../doc/en/reference/reference.rst:2859
 msgid ""
 "Show what fixtures and tests would be executed but don't execute anything."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2853
+#: ../../../doc/en/reference/reference.rst:2862
 msgid "Debugging"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2857
+#: ../../../doc/en/reference/reference.rst:2866
 msgid ""
 "Start the interactive Python debugger on errors or KeyboardInterrupt. See :"
 "ref:`pdb-option`."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2862
+#: ../../../doc/en/reference/reference.rst:2871
 msgid ""
 "Specify a custom interactive Python debugger for use with :option:`--pdb`."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2866
+#: ../../../doc/en/reference/reference.rst:2875
 msgid "pytest --pdbcls=IPython.terminal.debugger:TerminalPdb"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2870
+#: ../../../doc/en/reference/reference.rst:2879
 msgid "Immediately break when running each test."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2872
+#: ../../../doc/en/reference/reference.rst:2881
 msgid "See :ref:`trace-option` for more information."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2876
+#: ../../../doc/en/reference/reference.rst:2885
 msgid "Don't cut any tracebacks (default is to cut)."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2878
+#: ../../../doc/en/reference/reference.rst:2887
 msgid "See :ref:`how-to-modifying-python-tb-printing` for more information."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2882
+#: ../../../doc/en/reference/reference.rst:2891
 msgid ""
 "Store internal tracing debug information in this log file. This file is "
 "opened with ``'w'`` and truncated as a result, care advised. Default file "
 "name if not specified: ``pytestdebug.log``."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2888
+#: ../../../doc/en/reference/reference.rst:2897
 msgid "Trace considerations of conftest.py files."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2891
+#: ../../../doc/en/reference/reference.rst:2900
 msgid "Output and Reporting"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2895
+#: ../../../doc/en/reference/reference.rst:2904
 msgid ""
 "Increase verbosity. Can be specified multiple times (e.g., ``-vv``) for even "
 "more verbose output."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2898
+#: ../../../doc/en/reference/reference.rst:2907
 msgid ""
 "See :ref:`pytest.fine_grained_verbosity` for fine-grained control over "
 "verbosity."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2902
+#: ../../../doc/en/reference/reference.rst:2911
 msgid "Decrease verbosity."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2906
+#: ../../../doc/en/reference/reference.rst:2915
 msgid "Set verbosity level explicitly. Default: 0."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2910
+#: ../../../doc/en/reference/reference.rst:2919
 msgid "Show extra test summary info as specified by chars:"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2912
+#: ../../../doc/en/reference/reference.rst:2921
 msgid "``f``: failed"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2913
+#: ../../../doc/en/reference/reference.rst:2922
 msgid "``E``: error"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2914
+#: ../../../doc/en/reference/reference.rst:2923
 msgid "``s``: skipped"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2915
+#: ../../../doc/en/reference/reference.rst:2924
 msgid "``x``: xfailed"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2916
+#: ../../../doc/en/reference/reference.rst:2925
 msgid "``X``: xpassed"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2917
+#: ../../../doc/en/reference/reference.rst:2926
 msgid "``p``: passed"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2918
+#: ../../../doc/en/reference/reference.rst:2927
 msgid "``P``: passed with output"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2919
+#: ../../../doc/en/reference/reference.rst:2928
 msgid "``a``: all except passed (p/P)"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2920
+#: ../../../doc/en/reference/reference.rst:2929
 msgid "``A``: all"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2921
+#: ../../../doc/en/reference/reference.rst:2930
 msgid "``w``: warnings (enabled by default)"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2922
+#: ../../../doc/en/reference/reference.rst:2931
 msgid "``N``: resets the list"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2924
+#: ../../../doc/en/reference/reference.rst:2933
 msgid "Default: ``'fE'``"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2928
+#: ../../../doc/en/reference/reference.rst:2937
 msgid ""
 "pytest -rA           # show all outcomes\n"
 "pytest -rfE          # show only failed and errors (default)\n"
 "pytest -rfs          # show failed and skipped"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2932
+#: ../../../doc/en/reference/reference.rst:2941
 msgid "See :ref:`pytest.detailed_failed_tests_usage` for more information."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2936
+#: ../../../doc/en/reference/reference.rst:2945
 msgid "Disable header."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2940
+#: ../../../doc/en/reference/reference.rst:2949
 msgid "Disable summary."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2944
+#: ../../../doc/en/reference/reference.rst:2953
 msgid "Do not fold skipped tests in short summary."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2948
+#: ../../../doc/en/reference/reference.rst:2957
 msgid "Force condensed summary output regardless of verbosity level."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2952
+#: ../../../doc/en/reference/reference.rst:2961
 msgid "Show locals in tracebacks (disabled by default)."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2956
+#: ../../../doc/en/reference/reference.rst:2965
 msgid ""
 "Hide locals in tracebacks (negate :option:`--showlocals` passed through "
 "addopts)."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2960
+#: ../../../doc/en/reference/reference.rst:2969
 msgid "Traceback print mode:"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2962
+#: ../../../doc/en/reference/reference.rst:2971
 msgid "``auto``: intelligent traceback formatting (default)"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2963
+#: ../../../doc/en/reference/reference.rst:2972
 msgid "``long``: exhaustive, informative traceback formatting"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2964
+#: ../../../doc/en/reference/reference.rst:2973
 msgid "``short``: shorter traceback format"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2965
+#: ../../../doc/en/reference/reference.rst:2974
 msgid "``line``: only the failing line"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2966
+#: ../../../doc/en/reference/reference.rst:2975
 msgid "``native``: Python's standard traceback"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2967
+#: ../../../doc/en/reference/reference.rst:2976
 msgid "``no``: no traceback"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2969
+#: ../../../doc/en/reference/reference.rst:2978
 msgid "See :ref:`how-to-modifying-python-tb-printing` for examples."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2973
+#: ../../../doc/en/reference/reference.rst:2982
 msgid "Show tracebacks for xfail (as long as :option:`--tb` != ``no``)."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2977
+#: ../../../doc/en/reference/reference.rst:2986
 msgid "Controls how captured stdout/stderr/log is shown on failed tests."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2979
+#: ../../../doc/en/reference/reference.rst:2988
 msgid "``no``: don't show captured output"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2980
+#: ../../../doc/en/reference/reference.rst:2989
 msgid "``stdout``: show captured stdout"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2981
+#: ../../../doc/en/reference/reference.rst:2990
 msgid "``stderr``: show captured stderr"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2982
+#: ../../../doc/en/reference/reference.rst:2991
 msgid "``log``: show captured logging"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2983
+#: ../../../doc/en/reference/reference.rst:2992
 msgid "``all`` (default): show all captured output"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2987
+#: ../../../doc/en/reference/reference.rst:2996
 msgid "Color terminal output:"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2989
+#: ../../../doc/en/reference/reference.rst:2998
 msgid "``yes``: always use color"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2990
+#: ../../../doc/en/reference/reference.rst:2999
 msgid "``no``: never use color"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2991
+#: ../../../doc/en/reference/reference.rst:3000
 msgid "``auto`` (default): use color if terminal supports it"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:2995
+#: ../../../doc/en/reference/reference.rst:3004
 msgid ""
 "Whether code should be highlighted (only if :option:`--color` is also "
 "enabled). Default: ``yes``."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3000
+#: ../../../doc/en/reference/reference.rst:3009
 msgid "Send failed|all info to bpaste.net pastebin service."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3004
+#: ../../../doc/en/reference/reference.rst:3013
 msgid ""
 "Show N slowest setup/test durations (N=0 for all). See :ref:`durations`."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3009
+#: ../../../doc/en/reference/reference.rst:3018
 msgid ""
 "Minimal duration in seconds for inclusion in slowest list. Default: 0.005 "
 "(or 0.0 if ``-vv`` is given)."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3013
+#: ../../../doc/en/reference/reference.rst:3022
 msgid "Output Capture"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3017
+#: ../../../doc/en/reference/reference.rst:3026
 msgid "Per-test capturing method:"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3019
+#: ../../../doc/en/reference/reference.rst:3028
 msgid "``fd``: capture at file descriptor level (default)"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3020
+#: ../../../doc/en/reference/reference.rst:3029
 msgid "``sys``: capture at sys level"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3021
+#: ../../../doc/en/reference/reference.rst:3030
 msgid "``no``: don't capture output"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3022
+#: ../../../doc/en/reference/reference.rst:3031
 msgid "``tee-sys``: capture but also show output on terminal"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3024
+#: ../../../doc/en/reference/reference.rst:3033
 msgid "See :ref:`captures`."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3028
+#: ../../../doc/en/reference/reference.rst:3037
 msgid "Shortcut for :option:`--capture=no`."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3031
+#: ../../../doc/en/reference/reference.rst:3040
 msgid "JUnit XML"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3035
+#: ../../../doc/en/reference/reference.rst:3044
 msgid "Create junit-xml style report file at given path."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3039
+#: ../../../doc/en/reference/reference.rst:3048
 msgid "Prepend prefix to classnames in junit-xml output."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3042
+#: ../../../doc/en/reference/reference.rst:3051
 msgid "Cache"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3046
+#: ../../../doc/en/reference/reference.rst:3055
 msgid ""
 "Show cache contents, don't perform collection or tests. Default glob "
 "pattern: ``'*'``."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3051
+#: ../../../doc/en/reference/reference.rst:3060
 msgid "Remove all cache contents at start of test run. See :ref:`cache`."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3059
+#: ../../../doc/en/reference/reference.rst:3068
 msgid "Disable warnings summary."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3063
+#: ../../../doc/en/reference/reference.rst:3072
 msgid ""
 "Set which warnings to report, see ``-W`` option of Python itself. Can be "
 "specified multiple times."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3067
+#: ../../../doc/en/reference/reference.rst:3076
 msgid "Doctest"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3071
+#: ../../../doc/en/reference/reference.rst:3080
 msgid "Run doctests in all .py modules."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3073
+#: ../../../doc/en/reference/reference.rst:3082
 msgid "See :ref:`doctest` for more information on using doctests with pytest."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3077
+#: ../../../doc/en/reference/reference.rst:3086
 msgid "Choose another output format for diffs on doctest failure:"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3079
+#: ../../../doc/en/reference/reference.rst:3088
 msgid "``none``"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3080
+#: ../../../doc/en/reference/reference.rst:3089
 msgid "``cdiff``"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3081
+#: ../../../doc/en/reference/reference.rst:3090
 msgid "``ndiff``"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3082
+#: ../../../doc/en/reference/reference.rst:3091
 msgid "``udiff``"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3083
+#: ../../../doc/en/reference/reference.rst:3092
 msgid "``only_first_failure``"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3087
+#: ../../../doc/en/reference/reference.rst:3096
 msgid "Doctests file matching pattern. Default: ``test*.txt``."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3092
+#: ../../../doc/en/reference/reference.rst:3101
 msgid "Ignore doctest collection errors."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3096
+#: ../../../doc/en/reference/reference.rst:3105
 msgid "For a given doctest, continue to run after the first failure."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3099
+#: ../../../doc/en/reference/reference.rst:3108
 msgid "Configuration"
 msgstr "組態"
 
-#: ../../../doc/en/reference/reference.rst:3103
+#: ../../../doc/en/reference/reference.rst:3112
 msgid ""
 "Load configuration from ``FILE`` instead of trying to locate one of the "
 "implicit configuration files."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3107
+#: ../../../doc/en/reference/reference.rst:3116
 msgid ""
 "Define root directory for tests. Can be relative path: ``'root_dir'``, ``'./"
 "root_dir'``, ``'root_dir/another_dir/'``; absolute path: ``'/home/user/"
 "root_dir'``; path with variables: ``'$HOME/root_dir'``."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3112
+#: ../../../doc/en/reference/reference.rst:3121
 msgid ""
 "Base temporary directory for this test run. Warning: this directory is "
 "removed if it exists."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3115
+#: ../../../doc/en/reference/reference.rst:3124
 msgid ""
 "See :ref:`temporary directory location and retention` for more information."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3119
+#: ../../../doc/en/reference/reference.rst:3128
 msgid ""
 "Override configuration option with ``option=value`` style. Can be specified "
 "multiple times."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3124
+#: ../../../doc/en/reference/reference.rst:3133
 msgid "pytest -o strict_xfail=true -o cache_dir=cache"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3128
+#: ../../../doc/en/reference/reference.rst:3137
 msgid "Enables the :confval:`strict_config` option."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3132
+#: ../../../doc/en/reference/reference.rst:3141
 msgid "Enables the :confval:`strict_markers` option."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3136
+#: ../../../doc/en/reference/reference.rst:3145
 msgid ""
 "Enables the :confval:`strict` option (which enables all strictness options)."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3140
+#: ../../../doc/en/reference/reference.rst:3149
 msgid "Control assertion debugging tools:"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3142
+#: ../../../doc/en/reference/reference.rst:3151
 msgid "``plain``: performs no assertion debugging"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3143
+#: ../../../doc/en/reference/reference.rst:3152
 msgid ""
 "``rewrite`` (default): rewrites assert statements in test modules on import "
 "to provide assert expression information"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3146
+#: ../../../doc/en/reference/reference.rst:3155
 msgid "Logging"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3148
+#: ../../../doc/en/reference/reference.rst:3157
 msgid "See :ref:`logging` for a guide on using these flags."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3152
+#: ../../../doc/en/reference/reference.rst:3161
 msgid ""
 "Level of messages to catch/display. Not set by default, so it depends on the "
 "root/parent log handler's effective level, where it is ``WARNING`` by "
 "default."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3157
+#: ../../../doc/en/reference/reference.rst:3166
 msgid "Log format used by the logging module."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3161
+#: ../../../doc/en/reference/reference.rst:3170
 msgid "Log date format used by the logging module."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3165
+#: ../../../doc/en/reference/reference.rst:3174
 msgid "CLI logging level. See :ref:`live_logs`."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3169
+#: ../../../doc/en/reference/reference.rst:3178
 msgid "Log format used by the logging module for CLI output."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3173
+#: ../../../doc/en/reference/reference.rst:3182
 msgid "Log date format used by the logging module for CLI output."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3177
-msgid "Path to a file when logging will be written to."
+#: ../../../doc/en/reference/reference.rst:3186
+msgid "Path to a file logging will be written to."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3181
+#: ../../../doc/en/reference/reference.rst:3190
 msgid "Log file open mode:"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3183
+#: ../../../doc/en/reference/reference.rst:3192
 msgid "``w`` (default): recreate the file"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3184
+#: ../../../doc/en/reference/reference.rst:3193
 msgid "``a``: append to the file"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3188
+#: ../../../doc/en/reference/reference.rst:3197
 msgid "Log file logging level."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3192
+#: ../../../doc/en/reference/reference.rst:3201
 msgid "Log format used by the logging module for the log file."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3196
+#: ../../../doc/en/reference/reference.rst:3205
 msgid "Log date format used by the logging module for the log file."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3200
+#: ../../../doc/en/reference/reference.rst:3209
 msgid ""
 "Auto-indent multiline messages passed to the logging module. Accepts ``true|"
 "on``, ``false|off`` or an integer."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3205
+#: ../../../doc/en/reference/reference.rst:3214
 msgid "Disable a logger by name. Can be passed multiple times."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3208
+#: ../../../doc/en/reference/reference.rst:3217
 msgid "Plugin and Extension Management"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3212
+#: ../../../doc/en/reference/reference.rst:3221
 msgid ""
 "Early-load given plugin module name or entry point (multi-allowed). To avoid "
 "loading of plugins, use the ``no:`` prefix, e.g. ``no:doctest``. See also :"
 "option:`--disable-plugin-autoload`."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3218
+#: ../../../doc/en/reference/reference.rst:3227
 msgid ""
 "Disable plugin auto-loading through entry point packaging metadata. Only "
 "plugins explicitly specified in :option:`-p` or env var :envvar:"
 "`PYTEST_PLUGINS` will be loaded."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3222
+#: ../../../doc/en/reference/reference.rst:3231
 msgid "Version and Help"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3226
+#: ../../../doc/en/reference/reference.rst:3235
 msgid ""
 "Display pytest version and information about plugins. When given twice, also "
 "display information about plugins."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3230
+#: ../../../doc/en/reference/reference.rst:3239
 msgid "Show help message and configuration info."
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3233
+#: ../../../doc/en/reference/reference.rst:3242
 msgid "Complete Help Output"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3235
+#: ../../../doc/en/reference/reference.rst:3244
 msgid ""
 "All the command-line flags can also be obtained by running ``pytest --"
 "help``::"
 msgstr ""
 
-#: ../../../doc/en/reference/reference.rst:3237
+#: ../../../doc/en/reference/reference.rst:3246
 msgid ""
 "$ pytest --help\n"
 "usage: pytest [options] [file_or_dir] [file_or_dir] [...]\n"

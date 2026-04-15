@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest stable\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-07 06:28+0000\n"
+"POT-Creation-Date: 2026-04-13 09:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -56,7 +56,7 @@ msgid "Eugene Prikazchikov"
 msgstr "Eugene Prikazchikov"
 
 #: ../../../doc/en/announce/release-3.3.1.rst:17
-msgid "Florian Bruhin"
+msgid "Freya Bruhin"
 msgstr ""
 
 #: ../../../doc/en/announce/release-3.3.1.rst:18
