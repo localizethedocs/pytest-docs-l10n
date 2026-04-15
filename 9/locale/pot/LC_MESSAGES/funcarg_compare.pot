@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest 9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"POT-Creation-Date: 2026-04-13 09:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -38,8 +39,8 @@ msgid ""
 "The pre pytest-2.3 funcarg mechanism calls a factory each time a funcarg for "
 "a test function is required.  If a factory wants to reuse a resource across "
 "different scopes, it often used the ``request.cached_setup()`` helper to "
-"manage caching of resources.  Here is a basic example how we could implement "
-"a per-session Database object:"
+"manage caching of resources.  Here is a basic example of how we could "
+"implement a per-session Database object:"
 msgstr ""
 
 #: ../../../doc/en/funcarg_compare.rst:24
@@ -65,13 +66,13 @@ msgstr ""
 
 #: ../../../doc/en/funcarg_compare.rst:42
 msgid ""
-"Scoping funcarg resource creation is not straight forward, instead one must "
+"Scoping funcarg resource creation is not straightforward, instead one must "
 "understand the intricate cached_setup() method mechanics."
 msgstr ""
 
 #: ../../../doc/en/funcarg_compare.rst:45
 msgid ""
-"parametrizing the \"db\" resource is not straight forward: you need to apply "
+"parametrizing the \"db\" resource is not straightforward: you need to apply "
 "a \"parametrize\" decorator or implement a :hook:`pytest_generate_tests` "
 "hook calling :py:func:`~pytest.Metafunc.parametrize` which performs "
 "parametrization at the places where the resource is used.  Moreover, you "
@@ -88,8 +89,7 @@ msgstr ""
 
 #: ../../../doc/en/funcarg_compare.rst:58
 msgid ""
-"there is no way how you can make use of funcarg factories in xUnit setup "
-"methods."
+"there is no way you can make use of funcarg factories in xUnit setup methods."
 msgstr ""
 
 #: ../../../doc/en/funcarg_compare.rst:61

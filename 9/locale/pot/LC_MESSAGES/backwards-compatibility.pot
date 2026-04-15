@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest 9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"POT-Creation-Date: 2026-04-13 09:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -160,7 +161,7 @@ msgid "History"
 msgstr ""
 
 #: ../../../doc/en/backwards-compatibility.rst:57
-msgid "Focus primary on smooth transition - stance (pre 6.0)"
+msgid "Focus primarily on smooth transition - stance (pre 6.0)"
 msgstr ""
 
 #: ../../../doc/en/backwards-compatibility.rst:59
@@ -247,53 +248,61 @@ msgid "min. Python version"
 msgstr ""
 
 #: ../../../doc/en/backwards-compatibility.rst:86
-msgid "8.4+"
+msgid "9.0+"
 msgstr ""
 
 #: ../../../doc/en/backwards-compatibility.rst:86
+msgid "3.10+"
+msgstr ""
+
+#: ../../../doc/en/backwards-compatibility.rst:87
+msgid "8.4"
+msgstr ""
+
+#: ../../../doc/en/backwards-compatibility.rst:87
 msgid "3.9+"
 msgstr ""
 
-#: ../../../doc/en/backwards-compatibility.rst:87
-msgid "8.0+"
+#: ../../../doc/en/backwards-compatibility.rst:88
+msgid "8.0 - 8.3"
 msgstr ""
 
-#: ../../../doc/en/backwards-compatibility.rst:87
+#: ../../../doc/en/backwards-compatibility.rst:88
 msgid "3.8+"
 msgstr ""
 
-#: ../../../doc/en/backwards-compatibility.rst:88
-msgid "7.1+"
+#: ../../../doc/en/backwards-compatibility.rst:89
+msgid "7.1 - 7.4"
 msgstr ""
 
-#: ../../../doc/en/backwards-compatibility.rst:88
+#: ../../../doc/en/backwards-compatibility.rst:89
 msgid "3.7+"
 msgstr ""
 
-#: ../../../doc/en/backwards-compatibility.rst:89
+#: ../../../doc/en/backwards-compatibility.rst:90
 msgid "6.2 - 7.0"
 msgstr ""
 
-#: ../../../doc/en/backwards-compatibility.rst:89
+#: ../../../doc/en/backwards-compatibility.rst:90
 msgid "3.6+"
 msgstr ""
 
-#: ../../../doc/en/backwards-compatibility.rst:90
+#: ../../../doc/en/backwards-compatibility.rst:91
 msgid "5.0 - 6.1"
 msgstr ""
 
-#: ../../../doc/en/backwards-compatibility.rst:90
+#: ../../../doc/en/backwards-compatibility.rst:91
 msgid "3.5+"
 msgstr ""
 
-#: ../../../doc/en/backwards-compatibility.rst:91
+#: ../../../doc/en/backwards-compatibility.rst:92
 msgid "3.3 - 4.6"
 msgstr ""
 
-#: ../../../doc/en/backwards-compatibility.rst:91
+#: ../../../doc/en/backwards-compatibility.rst:92
 msgid "2.7, 3.4+"
 msgstr ""
 
-#: ../../../doc/en/backwards-compatibility.rst:94
+#: ../../../doc/en/backwards-compatibility.rst:95
 msgid "`Status of Python Versions <https://devguide.python.org/versions/>`__."
 msgstr ""
