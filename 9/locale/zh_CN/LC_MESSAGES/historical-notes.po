@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest 9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"POT-Creation-Date: 2026-04-13 09:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -414,36 +414,39 @@ msgid ""
 msgstr ""
 
 #: ../../../doc/en/historical-notes.rst:266
-msgid "The equivalent with \"boolean conditions\" is:"
+msgid "The equivalent with \"boolean conditions\" using ``request.config`` is:"
 msgstr ""
 
 #: ../../../doc/en/historical-notes.rst:268
 msgid ""
-"@pytest.mark.skipif(not pytest.config.getvalue(\"db\"), reason=\"--db was "
-"not specified\")\n"
+"@pytest.fixture(autouse=True)\n"
+"def skip_if_no_db(request):\n"
+"    if not request.config.getoption(\"--db\", default=False):\n"
+"        pytest.skip(\"--db was not specified\")\n"
+"\n"
+"\n"
 "def test_function():\n"
 "    pass"
 msgstr ""
 
-#: ../../../doc/en/historical-notes.rst:276
+#: ../../../doc/en/historical-notes.rst:281
 msgid ""
-"You cannot use ``pytest.config.getvalue()`` in code imported before pytest's "
-"argument parsing takes place.  For example, ``conftest.py`` files are "
-"imported before command line parsing and thus ``config.getvalue()`` will not "
-"execute correctly."
-msgstr ""
-
-#: ../../../doc/en/historical-notes.rst:282
-msgid "``pytest.set_trace()``"
+"``pytest.config`` was removed in pytest 5.0. Use ``request.config`` (via the "
+"``request`` fixture) or the ``pytestconfig`` fixture instead. See :ref:"
+"`pytest.config global deprecated` for details."
 msgstr ""
 
 #: ../../../doc/en/historical-notes.rst:286
+msgid "``pytest.set_trace()``"
+msgstr ""
+
+#: ../../../doc/en/historical-notes.rst:290
 msgid ""
 "Previous to version 2.4 to set a break point in code one needed to use "
 "``pytest.set_trace()``:"
 msgstr ""
 
-#: ../../../doc/en/historical-notes.rst:288
+#: ../../../doc/en/historical-notes.rst:292
 msgid ""
 "import pytest\n"
 "\n"
@@ -453,28 +456,28 @@ msgid ""
 "    pytest.set_trace()  # invoke PDB debugger and tracing"
 msgstr ""
 
-#: ../../../doc/en/historical-notes.rst:298
+#: ../../../doc/en/historical-notes.rst:302
 msgid ""
 "This is no longer needed and one can use the native ``import pdb;pdb."
 "set_trace()`` call directly."
 msgstr ""
 
-#: ../../../doc/en/historical-notes.rst:300
+#: ../../../doc/en/historical-notes.rst:304
 msgid "For more details see :ref:`breakpoints`."
 msgstr ""
 
-#: ../../../doc/en/historical-notes.rst:303
+#: ../../../doc/en/historical-notes.rst:307
 msgid "\"compat\" properties"
 msgstr ""
 
-#: ../../../doc/en/historical-notes.rst:307
+#: ../../../doc/en/historical-notes.rst:311
 msgid ""
 "Access of ``Module``, ``Function``, ``Class``, ``Instance``, ``File`` and "
-"``Item`` through ``Node`` instances have long been documented as deprecated, "
+"``Item`` through ``Node`` instances has long been documented as deprecated, "
 "but started to emit warnings from pytest ``3.9`` and onward."
 msgstr ""
 
-#: ../../../doc/en/historical-notes.rst:310
+#: ../../../doc/en/historical-notes.rst:314
 msgid ""
 "Users should just ``import pytest`` and access those objects using the "
 "``pytest`` module."

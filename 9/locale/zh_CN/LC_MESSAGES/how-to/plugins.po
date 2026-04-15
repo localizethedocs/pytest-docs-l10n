@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest 9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"POT-Creation-Date: 2026-04-13 09:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -234,7 +234,7 @@ msgid ""
 msgstr ""
 
 #: ../../../doc/en/how-to/plugins.rst:159
-msgid "pytest --disable-plugin-autoload -p NAME,NAME2"
+msgid "pytest --disable-plugin-autoload -p NAME -p NAME2"
 msgstr ""
 
 #: ../../../doc/en/how-to/plugins.rst:165
@@ -255,4 +255,49 @@ msgstr ""
 
 #: ../../../doc/en/how-to/plugins.rst:182
 msgid "The :option:`--disable-plugin-autoload` command-line flag."
+msgstr ""
+
+#: ../../../doc/en/how-to/plugins.rst:186
+msgid ""
+":option:`-p` and :envvar:`PYTEST_PLUGINS` are both ways to explicitly "
+"control which plugins are loaded, but they serve slightly different use-"
+"cases."
+msgstr ""
+
+#: ../../../doc/en/how-to/plugins.rst:189
+msgid ""
+":option:`-p` loads (or disables with ``-p no:<name>``) a plugin by name or "
+"entry point for a specific pytest invocation, and is processed early during "
+"startup."
+msgstr ""
+
+#: ../../../doc/en/how-to/plugins.rst:191
+msgid ""
+":envvar:`PYTEST_PLUGINS` is a comma-separated list of Python modules that "
+"are imported and registered as plugins during startup. This mechanism is "
+"commonly used by test suites, for example when testing a plugin."
+msgstr ""
+
+#: ../../../doc/en/how-to/plugins.rst:195
+msgid ""
+"When explicitly controlling plugin loading (especially with :envvar:"
+"`PYTEST_DISABLE_PLUGIN_AUTOLOAD` or :option:`--disable-plugin-autoload`), "
+"avoid specifying the same plugin via multiple mechanisms. Registering the "
+"same plugin more than once can lead to errors during plugin registration."
+msgstr ""
+
+#: ../../../doc/en/how-to/plugins.rst:200
+msgid "Examples:"
+msgstr ""
+
+#: ../../../doc/en/how-to/plugins.rst:202
+msgid ""
+"# Disable auto-loading and load only specific plugins for this invocation\n"
+"PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 pytest -p xdist"
+msgstr ""
+
+#: ../../../doc/en/how-to/plugins.rst:207
+msgid ""
+"# Disable auto-loading and load plugin modules during startup\n"
+"PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTEST_PLUGINS=mymodule.plugin,xdist pytest"
 msgstr ""

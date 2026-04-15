@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest 9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"POT-Creation-Date: 2026-04-13 09:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -257,7 +257,7 @@ msgstr ""
 
 #: ../../../CONTRIBUTING.rst:149
 msgid ""
-"a  `tox configuration <https://tox.readthedocs.io/en/latest/config."
+"a `tox configuration <https://tox.readthedocs.io/en/latest/config."
 "html#configuration-discovery>`_ for running tests using `tox <https://tox."
 "readthedocs.io>`_."
 msgstr ""
@@ -527,8 +527,8 @@ msgstr ""
 #: ../../../CONTRIBUTING.rst:282
 msgid ""
 "You can pass different options to ``tox``. For example, to run tests on "
-"Python 3.13 and pass options to pytest (e.g. enter pdb on failure) to pytest "
-"you can do::"
+"Python 3.13 and pass options to pytest (e.g. enter pdb on failure) you can "
+"do::"
 msgstr ""
 
 #: ../../../CONTRIBUTING.rst:285
@@ -641,7 +641,7 @@ msgstr ""
 #: ../../../CONTRIBUTING.rst:349
 msgid ""
 "Alternatively, it is possible to make checks based on the actual output of "
-"the termal using *glob-like* expressions:"
+"the terminal using *glob-like* expressions:"
 msgstr ""
 
 #: ../../../CONTRIBUTING.rst:352
@@ -921,16 +921,16 @@ msgstr ""
 #: ../../../CONTRIBUTING.rst:482
 msgid ""
 "For bugs submitted by non-maintainers, it is expected that a core developer "
-"will to do the backport, normally the one that merged the PR on ``main``."
+"will do the backport, normally the one that merged the PR on ``main``."
 msgstr ""
 
 #: ../../../CONTRIBUTING.rst:484
 msgid ""
-"If a non-maintainers notices a bug which is fixed on ``main`` but has not "
+"If a non-maintainer notices a bug which is fixed on ``main`` but has not "
 "been backported (due to maintainers forgetting to apply the *needs backport* "
-"label, or just plain missing it), they are also welcome to open a PR with "
-"the backport. The procedure is simple and really helps with the maintenance "
-"of the project."
+"or *backport x.x.x* labels, or just plain missing it), they are also welcome "
+"to open a PR with the backport. The procedure is simple and really helps "
+"with the maintenance of the project."
 msgstr ""
 
 #: ../../../CONTRIBUTING.rst:489
@@ -982,7 +982,7 @@ msgstr ""
 
 #: ../../../CONTRIBUTING.rst:515
 msgid ""
-"Here are a few general rules the maintainers use deciding when to close "
+"Here are a few general rules the maintainers use to decide when to close "
 "issues/PRs because of lack of inactivity:"
 msgstr ""
 
@@ -1015,8 +1015,8 @@ msgstr ""
 
 #: ../../../CONTRIBUTING.rst:527
 msgid ""
-"When closing a Pull Request, it needs to be acknowledging the time, effort, "
-"and interest demonstrated by the person which submitted it. As mentioned "
+"When closing a Pull Request, we should acknowledge the time, effort, and "
+"interest demonstrated by the person who submitted it. As mentioned "
 "previously, it is not the intent of the team to dismiss a stalled pull "
 "request entirely but to merely to clear up our queue, so a message like the "
 "one below is warranted when closing a pull request that went stale:"
@@ -1042,7 +1042,7 @@ msgstr ""
 
 #: ../../../CONTRIBUTING.rst:535
 msgid ""
-"So for those reasons we, think it is best to close the PR for now, but with "
+"So for those reasons, we think it is best to close the PR for now, but with "
 "the only intention to clean up our queue, it is by no means a rejection of "
 "your changes. We still encourage you to re-open this PR (it is just a click "
 "of a button away) when you are ready to get back to it."

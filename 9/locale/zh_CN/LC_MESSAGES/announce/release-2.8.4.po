@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest 9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"POT-Creation-Date: 2026-04-13 09:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,7 +50,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-2.8.4.rst:18
 msgid ""
-"Bruno Oliveira Florian Bruhin Jeff Widman Mehdy Khoshnoody Nicholas Chammas "
+"Bruno Oliveira Freya Bruhin Jeff Widman Mehdy Khoshnoody Nicholas Chammas "
 "Ronny Pfannschmidt Tim Chan"
 msgstr ""
 
@@ -84,12 +84,12 @@ msgstr ""
 #: ../../../doc/en/announce/release-2.8.4.rst:45
 msgid ""
 "fix #1204: another error when collecting with a nasty __getattr__(). Thanks "
-"Florian Bruhin for the PR."
+"Freya Bruhin for the PR."
 msgstr ""
 
 #: ../../../doc/en/announce/release-2.8.4.rst:48
 msgid ""
-"fix the summary printed when no tests did run. Thanks Florian Bruhin for the "
+"fix the summary printed when no tests did run. Thanks Freya Bruhin for the "
 "PR."
 msgstr ""
 
