@@ -1,0 +1,314 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015–2018 , holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/mark.rst:5
+msgid "Marking test functions with attributes"
+msgstr ""
+
+#: ../../../doc/en/mark.rst:8
+msgid ""
+"By using the ``pytest.mark`` helper you can easily set metadata on your test "
+"functions. There are some builtin markers, for example:"
+msgstr ""
+
+#: ../../../doc/en/mark.rst:12
+msgid ":ref:`skip <skip>` - always skip a test function"
+msgstr ""
+
+#: ../../../doc/en/mark.rst:13
+msgid ""
+":ref:`skipif <skipif>` - skip a test function if a certain condition is met"
+msgstr ""
+
+#: ../../../doc/en/mark.rst:14
+msgid ""
+":ref:`xfail <xfail>` - produce an \"expected failure\" outcome if a certain "
+"condition is met"
+msgstr ""
+
+#: ../../../doc/en/mark.rst:16
+msgid ""
+":ref:`parametrize <parametrizemark>` to perform multiple calls to the same "
+"test function."
+msgstr ""
+
+#: ../../../doc/en/mark.rst:19
+msgid ""
+"It's easy to create custom markers or to apply markers to whole test classes "
+"or modules. See :ref:`mark examples` for examples which also serve as "
+"documentation."
+msgstr ""
+
+#: ../../../doc/en/mark.rst:25
+msgid ""
+"Marks can only be applied to tests, having no effect on :ref:`fixtures "
+"<fixtures>`."
+msgstr ""
+
+#: ../../../doc/en/mark.rst:30
+msgid "Raising errors on unknown marks: --strict"
+msgstr ""
+
+#: ../../../doc/en/mark.rst:32
+msgid ""
+"When the ``--strict`` command-line flag is passed, any marks not registered "
+"in the ``pytest.ini`` file will trigger an error."
+msgstr ""
+
+#: ../../../doc/en/mark.rst:34
+msgid "Marks can be registered like this:"
+msgstr ""
+
+#: ../../../doc/en/mark.rst:36
+msgid ""
+"[pytest]\n"
+"markers =\n"
+"    slow\n"
+"    serial"
+msgstr ""
+
+#: ../../../doc/en/mark.rst:43
+msgid ""
+"This can be used to prevent users mistyping mark names by accident. Test "
+"suites that want to enforce this should add ``--strict`` to ``addopts``:"
+msgstr ""
+
+#: ../../../doc/en/mark.rst:46
+msgid ""
+"[pytest]\n"
+"addopts = --strict\n"
+"markers =\n"
+"    slow\n"
+"    serial"
+msgstr ""
+
+#: ../../../doc/en/mark.rst:58
+msgid "Marker revamp and iteration"
+msgstr ""
+
+#: ../../../doc/en/mark.rst:62
+msgid ""
+"pytest's marker implementation traditionally worked by simply updating the "
+"``__dict__`` attribute of functions to cumulatively add markers. As a "
+"result, markers would unintentionally be passed along class hierarchies in "
+"surprising ways. Further, the API for retrieving them was inconsistent, as "
+"markers from parameterization would be stored differently than markers "
+"applied using the ``@pytest.mark`` decorator and markers added via ``node."
+"add_marker``."
+msgstr ""
+
+#: ../../../doc/en/mark.rst:64
+msgid ""
+"This state of things made it technically next to impossible to use data from "
+"markers correctly without having a deep understanding of the internals, "
+"leading to subtle and hard to understand bugs in more advanced usages."
+msgstr ""
+
+#: ../../../doc/en/mark.rst:66
+msgid ""
+"Depending on how a marker got declared/changed one would get either a "
+"``MarkerInfo`` which might contain markers from sibling classes, "
+"``MarkDecorators`` when marks came from parameterization or from a ``node."
+"add_marker`` call, discarding prior marks. Also ``MarkerInfo`` acts like a "
+"single mark, when it in fact represents a merged view on multiple marks with "
+"the same name."
+msgstr ""
+
+#: ../../../doc/en/mark.rst:69
+msgid ""
+"On top of that markers were not accessible the same way for modules, "
+"classes, and functions/methods. In fact, markers were only accessible in "
+"functions, even if they were declared on classes/modules."
+msgstr ""
+
+#: ../../../doc/en/mark.rst:72
+msgid ""
+"A new API to access markers has been introduced in pytest 3.6 in order to "
+"solve the problems with the initial design, providing :func:`_pytest.nodes."
+"Node.iter_markers` method to iterate over markers in a consistent manner and "
+"reworking the internals, which solved great deal of problems with the "
+"initial design."
+msgstr ""
+
+#: ../../../doc/en/mark.rst:78
+msgid "Updating code"
+msgstr ""
+
+#: ../../../doc/en/mark.rst:80
+msgid ""
+"The old ``Node.get_marker(name)`` function is considered deprecated because "
+"it returns an internal ``MarkerInfo`` object which contains the merged name, "
+"``*args`` and ``**kwargs`` of all the markers which apply to that node."
+msgstr ""
+
+#: ../../../doc/en/mark.rst:83
+msgid "In general there are two scenarios on how markers should be handled:"
+msgstr ""
+
+#: ../../../doc/en/mark.rst:85
+msgid ""
+"1. Marks overwrite each other. Order matters but you only want to think of "
+"your mark as a single item. E.g. ``log_level('info')`` at a module level can "
+"be overwritten by ``log_level('debug')`` for a specific test."
+msgstr ""
+
+#: ../../../doc/en/mark.rst:88
+msgid "In this case, use ``Node.get_closest_marker(name)``:"
+msgstr ""
+
+#: ../../../doc/en/mark.rst:90
+msgid ""
+"# replace this:\n"
+"marker = item.get_marker(\"log_level\")\n"
+"if marker:\n"
+"    level = marker.args[0]\n"
+"\n"
+"# by this:\n"
+"marker = item.get_closest_marker(\"log_level\")\n"
+"if marker:\n"
+"    level = marker.args[0]"
+msgstr ""
+
+#: ../../../doc/en/mark.rst:102
+msgid ""
+"2. Marks compose in an additive manner. E.g. ``skipif(condition)`` marks "
+"mean you just want to evaluate all of them, order doesn't even matter. You "
+"probably want to think of your marks as a set here."
+msgstr ""
+
+#: ../../../doc/en/mark.rst:105
+msgid ""
+"In this case iterate over each mark and handle their ``*args`` and "
+"``**kwargs`` individually."
+msgstr ""
+
+#: ../../../doc/en/mark.rst:107
+msgid ""
+"# replace this\n"
+"skipif = item.get_marker(\"skipif\")\n"
+"if skipif:\n"
+"    for condition in skipif.args:\n"
+"        # eval condition\n"
+"        ...\n"
+"\n"
+"# by this:\n"
+"for skipif in item.iter_markers(\"skipif\"):\n"
+"    condition = skipif.args[0]\n"
+"    # eval condition"
+msgstr ""
+
+#: ../../../doc/en/mark.rst:122
+msgid ""
+"If you are unsure or have any questions, please consider opening `an issue "
+"<https://github.com/pytest-dev/pytest/issues>`_."
+msgstr ""
+
+#: ../../../doc/en/mark.rst:126
+msgid "Related issues"
+msgstr ""
+
+#: ../../../doc/en/mark.rst:128
+msgid ""
+"Here is a non-exhaustive list of issues fixed by the new implementation:"
+msgstr ""
+
+#: ../../../doc/en/mark.rst:130
+msgid ""
+"Marks don't pick up nested classes (`#199 <https://github.com/pytest-dev/"
+"pytest/issues/199>`_)."
+msgstr ""
+
+#: ../../../doc/en/mark.rst:132
+msgid ""
+"Markers stain on all related classes (`#568 <https://github.com/pytest-dev/"
+"pytest/issues/568>`_)."
+msgstr ""
+
+#: ../../../doc/en/mark.rst:134
+msgid ""
+"Combining marks - args and kwargs calculation (`#2897 <https://github.com/"
+"pytest-dev/pytest/issues/2897>`_)."
+msgstr ""
+
+#: ../../../doc/en/mark.rst:136
+msgid ""
+"``request.node.get_marker('name')`` returns ``None`` for markers applied in "
+"classes (`#902 <https://github.com/pytest-dev/pytest/issues/902>`_)."
+msgstr ""
+
+#: ../../../doc/en/mark.rst:138
+msgid ""
+"Marks applied in parametrize are stored as markdecorator (`#2400 <https://"
+"github.com/pytest-dev/pytest/issues/2400>`_)."
+msgstr ""
+
+#: ../../../doc/en/mark.rst:140
+msgid ""
+"Fix marker interaction in a backward incompatible way (`#1670 <https://"
+"github.com/pytest-dev/pytest/issues/1670>`_)."
+msgstr ""
+
+#: ../../../doc/en/mark.rst:142
+msgid ""
+"Refactor marks to get rid of the current \"marks transfer\" mechanism "
+"(`#2363 <https://github.com/pytest-dev/pytest/issues/2363>`_)."
+msgstr ""
+
+#: ../../../doc/en/mark.rst:144
+msgid ""
+"Introduce FunctionDefinition node, use it in generate_tests (`#2522 <https://"
+"github.com/pytest-dev/pytest/issues/2522>`_)."
+msgstr ""
+
+#: ../../../doc/en/mark.rst:146
+msgid ""
+"Remove named marker attributes and collect markers in items (`#891 <https://"
+"github.com/pytest-dev/pytest/issues/891>`_)."
+msgstr ""
+
+#: ../../../doc/en/mark.rst:148
+msgid ""
+"skipif mark from parametrize hides module level skipif mark (`#1540 <https://"
+"github.com/pytest-dev/pytest/issues/1540>`_)."
+msgstr ""
+
+#: ../../../doc/en/mark.rst:150
+msgid ""
+"skipif + parametrize not skipping tests (`#1296 <https://github.com/pytest-"
+"dev/pytest/issues/1296>`_)."
+msgstr ""
+
+#: ../../../doc/en/mark.rst:152
+msgid ""
+"Marker transfer incompatible with inheritance (`#535 <https://github.com/"
+"pytest-dev/pytest/issues/535>`_)."
+msgstr ""
+
+#: ../../../doc/en/mark.rst:154
+msgid ""
+"More details can be found in the `original PR <https://github.com/pytest-dev/"
+"pytest/pull/3317>`_."
+msgstr ""
+
+#: ../../../doc/en/mark.rst:158
+msgid ""
+"in a future major relase of pytest we will introduce class based markers, at "
+"which points markers will no longer be limited to instances of :py:class:"
+"`Mark`"
+msgstr ""
