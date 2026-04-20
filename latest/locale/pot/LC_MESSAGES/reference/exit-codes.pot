@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-23 08:43+0000\n"
+"POT-Creation-Date: 2026-04-20 09:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgid "Exit codes"
 msgstr ""
 
 #: ../../../doc/en/reference/exit-codes.rst:6
-msgid "Running ``pytest`` can result in six different exit codes:"
+msgid "Running ``pytest`` can result in seven different exit codes:"
 msgstr ""
 
 #: ../../../doc/en/reference/exit-codes.rst:0
@@ -73,17 +73,25 @@ msgstr ""
 msgid "No tests were collected"
 msgstr ""
 
-#: ../../../doc/en/reference/exit-codes.rst:15
+#: ../../../doc/en/reference/exit-codes.rst:0
+msgid "Exit code 6"
+msgstr ""
+
+#: ../../../doc/en/reference/exit-codes.rst:14
+msgid "Maximum number of warnings exceeded (see :option:`--max-warnings`)"
+msgstr ""
+
+#: ../../../doc/en/reference/exit-codes.rst:16
 msgid ""
 "They are represented by the :class:`pytest.ExitCode` enum. The exit codes "
 "being a part of the public API can be imported and accessed directly using:"
 msgstr ""
 
-#: ../../../doc/en/reference/exit-codes.rst:17
+#: ../../../doc/en/reference/exit-codes.rst:18
 msgid "from pytest import ExitCode"
 msgstr ""
 
-#: ../../../doc/en/reference/exit-codes.rst:23
+#: ../../../doc/en/reference/exit-codes.rst:24
 msgid ""
 "If you would like to customize the exit code in some scenarios, specifically "
 "when no tests are collected, consider using the `pytest-custom_exit_code "
