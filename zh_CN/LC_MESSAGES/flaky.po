@@ -1,0 +1,330 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015–2020, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/flaky.rst:3
+msgid "Flaky tests"
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:5
+msgid ""
+"A \"flaky\" test is one that exhibits intermittent or sporadic failure, that "
+"seems to have non-deterministic behaviour. Sometimes it passes, sometimes it "
+"fails, and it's not clear why. This page discusses pytest features that can "
+"help and other general strategies for identifying, fixing or mitigating them."
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:8
+msgid "Why flaky tests are a problem"
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:10
+msgid ""
+"Flaky tests are particularly troublesome when a continuous integration (CI) "
+"server is being used, so that all tests must pass before a new code change "
+"can be merged. If the test result is not a reliable signal -- that a test "
+"failure means the code change broke the test -- developers can become "
+"mistrustful of the test results, which can lead to overlooking genuine "
+"failures. It is also a source of wasted time as developers must re-run test "
+"suites and investigate spurious failures."
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:14
+msgid "Potential root causes"
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:17
+msgid "System state"
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:19
+msgid ""
+"Broadly speaking, a flaky test indicates that the test relies on some system "
+"state that is not being appropriately controlled - the test environment is "
+"not sufficiently isolated. Higher level tests are more likely to be flaky as "
+"they rely on more state."
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:21
+msgid ""
+"Flaky tests sometimes appear when a test suite is run in parallel (such as "
+"use of pytest-xdist). This can indicate a test is reliant on test ordering."
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:23
+msgid ""
+"Perhaps a different test is failing to clean up after itself and leaving "
+"behind data which causes the flaky test to fail."
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:24
+msgid ""
+"The flaky test is reliant on data from a previous test that doesn't clean up "
+"after itself, and in parallel runs that previous test is not always present"
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:25
+msgid "Tests that modify global state typically cannot be run in parallel."
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:29
+msgid "Overly strict assertion"
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:31
+msgid ""
+"Overly strict assertions can cause problems with floating point comparison "
+"as well as timing issues. `pytest.approx <https://docs.pytest.org/en/latest/"
+"reference.html#pytest-approx>`_ is useful here."
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:35
+msgid "Pytest features"
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:38
+msgid "Xfail strict"
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:40
+msgid ""
+":ref:`pytest.mark.xfail ref` with ``strict=False`` can be used to mark a "
+"test so that its failure does not cause the whole build to break. This could "
+"be considered like a manual quarantine, and is rather dangerous to use "
+"permanently."
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:44
+msgid "PYTEST_CURRENT_TEST"
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:46
+msgid ""
+":ref:`pytest current test env` may be useful for figuring out \"which test "
+"got stuck\"."
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:50
+msgid "Plugins"
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:52
+msgid ""
+"Rerunning any failed tests can mitigate the negative effects of flaky tests "
+"by giving them additional chances to pass, so that the overall build does "
+"not fail. Several pytest plugins support this:"
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:54
+msgid "`flaky <https://github.com/box/flaky>`_"
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:55
+msgid ""
+"`pytest-flakefinder <https://github.com/dropbox/pytest-flakefinder>`_ - "
+"`blog post <https://blogs.dropbox.com/tech/2016/03/open-sourcing-pytest-"
+"tools/>`_"
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:56
+msgid ""
+"`pytest-rerunfailures <https://github.com/pytest-dev/pytest-rerunfailures>`_"
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:57
+msgid ""
+"`pytest-replay <https://github.com/ESSS/pytest-replay>`_: This plugin helps "
+"to reproduce locally crashes or flaky tests observed during CI runs."
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:59
+msgid ""
+"Plugins to deliberately randomize tests can help expose tests with state "
+"problems:"
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:61
+msgid "`pytest-random-order <https://github.com/jbasko/pytest-random-order>`_"
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:62
+msgid "`pytest-randomly <https://github.com/pytest-dev/pytest-randomly>`_"
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:66
+msgid "Other general strategies"
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:69
+msgid "Split up test suites"
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:71
+msgid ""
+"It can be common to split a single test suite into two, such as unit vs "
+"integration, and only use the unit test suite as a CI gate. This also helps "
+"keep build times manageable as high level tests tend to be slower. However, "
+"it means it does become possible for code that breaks the build to be "
+"merged, so extra vigilance is needed for monitoring the integration test "
+"results."
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:75
+msgid "Video/screenshot on failure"
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:77
+msgid ""
+"For UI tests these are important for understanding what the state of the UI "
+"was when the test failed. pytest-splinter can be used with plugins like "
+"pytest-bdd and can `save a screenshot on test failure <https://pytest-"
+"splinter.readthedocs.io/en/latest/#automatic-screenshots-on-test-failure>`_, "
+"which can help to isolate the cause."
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:81
+msgid "Delete or rewrite the test"
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:83
+msgid ""
+"If the functionality is covered by other tests, perhaps the test can be "
+"removed. If not, perhaps it can be rewritten at a lower level which will "
+"remove the flakiness or make its source more apparent."
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:87
+msgid "Quarantine"
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:89
+msgid ""
+"Mark Lapierre discusses the `Pros and Cons of Quarantined Tests <https://dev."
+"to/mlapierre/pros-and-cons-of-quarantined-tests-2emj>`_ in a post from 2018."
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:94
+msgid "CI tools that rerun on failure"
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:96
+msgid ""
+"Azure Pipelines (the Azure cloud CI/CD tool, formerly Visual Studio Team "
+"Services or VSTS) has a feature to `identify flaky tests <https://docs."
+"microsoft.com/en-us/azure/devops/release-notes/2017/dec-11-vsts#identify-"
+"flaky-tests>`_ and rerun failed tests."
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:101
+msgid "Research"
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:103
+msgid ""
+"This is a limited list, please submit an issue or pull request to expand it!"
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:105
+msgid ""
+"Gao, Zebao, Yalan Liang, Myra B. Cohen, Atif M. Memon, and Zhen Wang. "
+"\"Making system user interactive tests repeatable: When and what should we "
+"control?.\" In *Software Engineering (ICSE), 2015 IEEE/ACM 37th IEEE "
+"International Conference on*, vol. 1, pp. 55-65. IEEE, 2015.  `PDF <http://"
+"www.cs.umd.edu/~atif/pubs/gao-icse15.pdf>`__"
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:106
+msgid ""
+"Palomba, Fabio, and Andy Zaidman. \"Does refactoring of test smells induce "
+"fixing flaky tests?.\" In *Software Maintenance and Evolution (ICSME), 2017 "
+"IEEE International Conference on*, pp. 1-12. IEEE, 2017. `PDF in Google "
+"Drive <https://drive.google.com/file/d/10HdcCQiuQVgW3yYUJD-TSTq1NbYEprl0/"
+"view>`__"
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:107
+msgid ""
+"Bell, Jonathan, Owolabi Legunsen, Michael Hilton, Lamyaa Eloussi, Tifany "
+"Yung, and Darko Marinov. \"DeFlaker: Automatically detecting flaky tests.\" "
+"In *Proceedings of the 2018 International Conference on Software "
+"Engineering*. 2018. `PDF <https://www.jonbell.net/icse18-deflaker.pdf>`__"
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:111
+msgid "Resources"
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:113
+msgid ""
+"`Eradicating Non-Determinism in Tests <https://martinfowler.com/articles/"
+"nonDeterminism.html>`_ by Martin Fowler, 2011"
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:114
+msgid ""
+"`No more flaky tests on the Go team <https://www.thoughtworks.com/insights/"
+"blog/no-more-flaky-tests-go-team>`_ by Pavan Sudarshan, 2012"
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:115
+msgid ""
+"`The Build That Cried Broken: Building Trust in your Continuous Integration "
+"Tests <https://www.youtube.com/embed/VotJqV4n8ig>`_ talk (video) by `Angie "
+"Jones <http://angiejones.tech/>`_ at SeleniumConf Austin 2017"
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:116
+msgid ""
+"`Test and Code Podcast: Flaky Tests and How to Deal with Them <https://"
+"testandcode.com/50>`_ by Brian Okken and Anthony Shaw, 2018"
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:117
+msgid "Microsoft:"
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:119
+msgid ""
+"`How we approach testing VSTS to enable continuous delivery <https://blogs."
+"msdn.microsoft.com/bharry/2017/06/28/testing-in-a-cloud-delivery-cadence/>`_ "
+"by Brian Harry MS, 2017"
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:120
+msgid ""
+"`Eliminating Flaky Tests <https://docs.microsoft.com/en-us/azure/devops/"
+"learn/devops-at-microsoft/eliminating-flaky-tests>`_ blog and talk (video) "
+"by Munil Shah, 2017"
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:122
+msgid "Google:"
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:124
+msgid ""
+"`Flaky Tests at Google and How We Mitigate Them <https://testing.googleblog."
+"com/2016/05/flaky-tests-at-google-and-how-we.html>`_ by John Micco, 2016"
+msgstr ""
+
+#: ../../../doc/en/flaky.rst:125
+msgid ""
+"`Where do Google's flaky tests come from? <https://docs.google.com/document/"
+"d/1mZ0-Kc97DI_F3tf_GBW_NB_aqka-P1jVOsFfufxqUUM/edit#heading=h."
+"ec0r4fypsleh>`_  by Jeff Listfield, 2017"
+msgstr ""
