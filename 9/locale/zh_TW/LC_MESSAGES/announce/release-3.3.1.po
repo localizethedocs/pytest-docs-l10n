@@ -57,7 +57,7 @@ msgstr "Eugene Prikazchikov"
 
 #: ../../../doc/en/announce/release-3.3.1.rst:17
 msgid "Freya Bruhin"
-msgstr ""
+msgstr "Freya Bruhin"
 
 #: ../../../doc/en/announce/release-3.3.1.rst:18
 msgid "Roland Puntaier"

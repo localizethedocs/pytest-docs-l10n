@@ -65,7 +65,7 @@ msgstr "Daniel Hahler"
 
 #: ../../../doc/en/announce/release-5.2.2.rst:19
 msgid "Freya Bruhin"
-msgstr ""
+msgstr "Freya Bruhin"
 
 #: ../../../doc/en/announce/release-5.2.2.rst:20
 msgid "Nattaphoom Chaipreecha"
