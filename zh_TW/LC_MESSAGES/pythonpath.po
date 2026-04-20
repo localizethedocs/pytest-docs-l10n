@@ -1,0 +1,145 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015–2020, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/pythonpath.rst:4
+msgid "pytest import mechanisms and ``sys.path``/``PYTHONPATH``"
+msgstr ""
+
+#: ../../../doc/en/pythonpath.rst:6
+msgid ""
+"Here's a list of scenarios where pytest may need to change ``sys.path`` in "
+"order to import test modules or ``conftest.py`` files."
+msgstr ""
+
+#: ../../../doc/en/pythonpath.rst:10
+msgid "Test modules / ``conftest.py`` files inside packages"
+msgstr ""
+
+#: ../../../doc/en/pythonpath.rst:12 ../../../doc/en/pythonpath.rst:49
+msgid "Consider this file and directory layout::"
+msgstr ""
+
+#: ../../../doc/en/pythonpath.rst:14
+msgid ""
+"root/\n"
+"|- foo/\n"
+"   |- __init__.py\n"
+"   |- conftest.py\n"
+"   |- bar/\n"
+"      |- __init__.py\n"
+"      |- tests/\n"
+"         |- __init__.py\n"
+"         |- test_foo.py"
+msgstr ""
+"root/\n"
+"|- foo/\n"
+"   |- __init__.py\n"
+"   |- conftest.py\n"
+"   |- bar/\n"
+"      |- __init__.py\n"
+"      |- tests/\n"
+"         |- __init__.py\n"
+"         |- test_foo.py"
+
+#: ../../../doc/en/pythonpath.rst:25 ../../../doc/en/pythonpath.rst:59
+msgid "When executing:"
+msgstr ""
+
+#: ../../../doc/en/pythonpath.rst:27 ../../../doc/en/pythonpath.rst:61
+msgid "pytest root/"
+msgstr ""
+
+#: ../../../doc/en/pythonpath.rst:33
+msgid ""
+"pytest will find ``foo/bar/tests/test_foo.py`` and realize it is part of a "
+"package given that there's an ``__init__.py`` file in the same folder. It "
+"will then search upwards until it can find the last folder which still "
+"contains an ``__init__.py`` file in order to find the package *root* (in "
+"this case ``foo/``). To load the module, it will insert ``root/``  to the "
+"front of ``sys.path`` (if not there already) in order to load ``test_foo."
+"py`` as the *module* ``foo.bar.tests.test_foo``."
+msgstr ""
+
+#: ../../../doc/en/pythonpath.rst:40
+msgid ""
+"The same logic applies to the ``conftest.py`` file: it will be imported as "
+"``foo.conftest`` module."
+msgstr ""
+
+#: ../../../doc/en/pythonpath.rst:42
+msgid ""
+"Preserving the full package name is important when tests live in a package "
+"to avoid problems and allow test modules to have duplicated names. This is "
+"also discussed in details in :ref:`test discovery`."
+msgstr ""
+
+#: ../../../doc/en/pythonpath.rst:47
+msgid "Standalone test modules / ``conftest.py`` files"
+msgstr ""
+
+#: ../../../doc/en/pythonpath.rst:51
+msgid ""
+"root/\n"
+"|- foo/\n"
+"   |- conftest.py\n"
+"   |- bar/\n"
+"      |- tests/\n"
+"         |- test_foo.py"
+msgstr ""
+"root/\n"
+"|- foo/\n"
+"   |- conftest.py\n"
+"   |- bar/\n"
+"      |- tests/\n"
+"         |- test_foo.py"
+
+#: ../../../doc/en/pythonpath.rst:65
+msgid ""
+"pytest will find ``foo/bar/tests/test_foo.py`` and realize it is NOT part of "
+"a package given that there's no ``__init__.py`` file in the same folder. It "
+"will then add ``root/foo/bar/tests`` to ``sys.path`` in order to import "
+"``test_foo.py`` as the *module* ``test_foo``. The same is done with the "
+"``conftest.py`` file by adding ``root/foo`` to ``sys.path`` to import it as "
+"``conftest``."
+msgstr ""
+
+#: ../../../doc/en/pythonpath.rst:70
+msgid ""
+"For this reason this layout cannot have test modules with the same name, as "
+"they all will be imported in the global import namespace."
+msgstr ""
+
+#: ../../../doc/en/pythonpath.rst:73
+msgid "This is also discussed in details in :ref:`test discovery`."
+msgstr ""
+
+#: ../../../doc/en/pythonpath.rst:78
+msgid "Invoking ``pytest`` versus ``python -m pytest``"
+msgstr ""
+
+#: ../../../doc/en/pythonpath.rst:80
+msgid ""
+"Running pytest with ``pytest [...]`` instead of ``python -m pytest [...]`` "
+"yields nearly equivalent behaviour, except that the latter will add the "
+"current directory to ``sys.path``, which is standard ``python`` behavior."
+msgstr ""
+
+#: ../../../doc/en/pythonpath.rst:84
+msgid "See also :ref:`cmdline`."
+msgstr ""
