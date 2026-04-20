@@ -1,0 +1,247 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-23 08:43+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/how-to/subtests.rst:4
+msgid "How to use subtests"
+msgstr ""
+
+#: ../../../doc/en/how-to/subtests.rst:10
+msgid ""
+"This feature is experimental. Its behavior, particularly how failures are "
+"reported, may evolve in future releases. However, the core functionality and "
+"usage are considered stable."
+msgstr ""
+
+#: ../../../doc/en/how-to/subtests.rst:12
+msgid ""
+"pytest allows for grouping assertions within a normal test, known as "
+"*subtests*."
+msgstr ""
+
+#: ../../../doc/en/how-to/subtests.rst:14
+msgid ""
+"Subtests are an alternative to parametrization, particularly useful when the "
+"exact parametrization values are not known at collection time."
+msgstr ""
+
+#: ../../../doc/en/how-to/subtests.rst:17
+msgid ""
+"# content of test_subtest.py\n"
+"\n"
+"\n"
+"def test(subtests):\n"
+"    for i in range(5):\n"
+"        with subtests.test(msg=\"custom message\", i=i):\n"
+"            assert i % 2 == 0"
+msgstr ""
+
+#: ../../../doc/en/how-to/subtests.rst:27
+msgid ""
+"Each assertion failure or error is caught by the context manager and "
+"reported individually:"
+msgstr ""
+
+#: ../../../doc/en/how-to/subtests.rst:29
+msgid ""
+"$ pytest -q test_subtest.py\n"
+"uuuuuF                                                               [100%]\n"
+"================================= FAILURES "
+"=================================\n"
+"_______________________ test [custom message] (i=1) "
+"________________________\n"
+"\n"
+"subtests = <_pytest.subtests.Subtests object at 0xdeadbeef0001>\n"
+"\n"
+"    def test(subtests):\n"
+"        for i in range(5):\n"
+"            with subtests.test(msg=\"custom message\", i=i):\n"
+">               assert i % 2 == 0\n"
+"E               assert (1 % 2) == 0\n"
+"\n"
+"test_subtest.py:6: AssertionError\n"
+"_______________________ test [custom message] (i=3) "
+"________________________\n"
+"\n"
+"subtests = <_pytest.subtests.Subtests object at 0xdeadbeef0001>\n"
+"\n"
+"    def test(subtests):\n"
+"        for i in range(5):\n"
+"            with subtests.test(msg=\"custom message\", i=i):\n"
+">               assert i % 2 == 0\n"
+"E               assert (3 % 2) == 0\n"
+"\n"
+"test_subtest.py:6: AssertionError\n"
+"___________________________________ test "
+"___________________________________\n"
+"contains 2 failed subtests\n"
+"========================= short test summary info "
+"==========================\n"
+"SUBFAILED[custom message] (i=1) test_subtest.py::test - assert (1 % 2) == 0\n"
+"SUBFAILED[custom message] (i=3) test_subtest.py::test - assert (3 % 2) == 0\n"
+"FAILED test_subtest.py::test - contains 2 failed subtests\n"
+"3 failed, 3 subtests passed in 0.12s"
+msgstr ""
+
+#: ../../../doc/en/how-to/subtests.rst:64
+msgid "In the output above:"
+msgstr ""
+
+#: ../../../doc/en/how-to/subtests.rst:66
+msgid "Subtest failures are reported as ``SUBFAILED``."
+msgstr ""
+
+#: ../../../doc/en/how-to/subtests.rst:67
+msgid ""
+"Subtests are reported first and the \"top-level\" test is reported at the "
+"end on its own."
+msgstr ""
+
+#: ../../../doc/en/how-to/subtests.rst:69
+msgid ""
+"Note that it is possible to use ``subtests`` multiple times in the same "
+"test, or even mix and match with normal assertions outside the ``subtests."
+"test`` block:"
+msgstr ""
+
+#: ../../../doc/en/how-to/subtests.rst:72
+msgid ""
+"def test(subtests):\n"
+"    for i in range(5):\n"
+"        with subtests.test(\"stage 1\", i=i):\n"
+"            assert i % 2 == 0\n"
+"\n"
+"    assert func() == 10\n"
+"\n"
+"    for i in range(10, 20):\n"
+"        with subtests.test(\"stage 2\", i=i):\n"
+"            assert i % 2 == 0"
+msgstr ""
+
+#: ../../../doc/en/how-to/subtests.rst:87
+msgid "See :ref:`parametrize` for an alternative to subtests."
+msgstr ""
+
+#: ../../../doc/en/how-to/subtests.rst:91
+msgid "Verbosity"
+msgstr ""
+
+#: ../../../doc/en/how-to/subtests.rst:93
+msgid ""
+"By default, only **subtest failures** are shown. Higher verbosity levels (:"
+"option:`-v`) will also show progress output for **passed** subtests."
+msgstr ""
+
+#: ../../../doc/en/how-to/subtests.rst:95
+msgid ""
+"It is possible to control the verbosity of subtests by setting :confval:"
+"`verbosity_subtests`."
+msgstr ""
+
+#: ../../../doc/en/how-to/subtests.rst:99
+msgid "Typing"
+msgstr ""
+
+#: ../../../doc/en/how-to/subtests.rst:101
+msgid ""
+":class:`pytest.Subtests` is exported so it can be used in type annotations:"
+msgstr ""
+
+#: ../../../doc/en/how-to/subtests.rst:103
+msgid "def test(subtests: pytest.Subtests) -> None: ..."
+msgstr ""
+
+#: ../../../doc/en/how-to/subtests.rst:110
+msgid "Parametrization vs Subtests"
+msgstr ""
+
+#: ../../../doc/en/how-to/subtests.rst:112
+msgid ""
+"While :ref:`traditional pytest parametrization <parametrize>` and "
+"``subtests`` are similar, they have important differences and use cases."
+msgstr ""
+
+#: ../../../doc/en/how-to/subtests.rst:116
+msgid "Parametrization"
+msgstr ""
+
+#: ../../../doc/en/how-to/subtests.rst:118
+msgid "Happens at collection time."
+msgstr ""
+
+#: ../../../doc/en/how-to/subtests.rst:119
+msgid "Generates individual tests."
+msgstr ""
+
+#: ../../../doc/en/how-to/subtests.rst:120
+msgid "Parametrized tests can be referenced from the command line."
+msgstr ""
+
+#: ../../../doc/en/how-to/subtests.rst:121
+msgid ""
+"Plays well with plugins that handle test execution, such as :option:`--last-"
+"failed`."
+msgstr ""
+
+#: ../../../doc/en/how-to/subtests.rst:122
+msgid "Ideal for decision table testing."
+msgstr ""
+
+#: ../../../doc/en/how-to/subtests.rst:125
+msgid "Subtests"
+msgstr ""
+
+#: ../../../doc/en/how-to/subtests.rst:127
+msgid "Happen during test execution."
+msgstr ""
+
+#: ../../../doc/en/how-to/subtests.rst:128
+msgid "Are not known at collection time."
+msgstr ""
+
+#: ../../../doc/en/how-to/subtests.rst:129
+msgid "Can be generated dynamically."
+msgstr ""
+
+#: ../../../doc/en/how-to/subtests.rst:130
+msgid "Cannot be referenced individually from the command line."
+msgstr ""
+
+#: ../../../doc/en/how-to/subtests.rst:131
+msgid "Plugins that handle test execution cannot target individual subtests."
+msgstr ""
+
+#: ../../../doc/en/how-to/subtests.rst:132
+msgid ""
+"An assertion failure inside a subtest does not interrupt the test, letting "
+"users see all failures in the same report."
+msgstr ""
+
+#: ../../../doc/en/how-to/subtests.rst:137
+msgid ""
+"This feature was originally implemented as a separate plugin in `pytest-"
+"subtests <https://github.com/pytest-dev/pytest-subtests>`__, but since "
+"``9.0`` has been merged into the core."
+msgstr ""
+
+#: ../../../doc/en/how-to/subtests.rst:139
+msgid ""
+"The core implementation should be compatible with the plugin implementation, "
+"except it does not contain custom command-line options to control subtest "
+"output."
+msgstr ""

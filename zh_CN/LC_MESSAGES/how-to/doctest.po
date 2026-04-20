@@ -1,0 +1,478 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-23 08:43+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/how-to/doctest.rst:4
+msgid "How to run doctests"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:6
+msgid ""
+"By default, all files matching the ``test*.txt`` pattern will be run through "
+"the python standard :mod:`doctest` module.  You can change the pattern by "
+"issuing:"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:10
+msgid "pytest --doctest-glob=\"*.rst\""
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:14
+msgid ""
+"on the command line. :option:`--doctest-glob` can be given multiple times in "
+"the command-line."
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:16
+msgid "If you then have a text file like this:"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:18
+msgid ""
+"# content of test_example.txt\n"
+"\n"
+"hello this is a doctest\n"
+">>> x = 3\n"
+">>> x\n"
+"3"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:27
+msgid "then you can just invoke ``pytest`` directly:"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:29
+msgid ""
+"$ pytest\n"
+"=========================== test session starts "
+"============================\n"
+"platform linux -- Python 3.x.y, pytest-9.x.y, pluggy-1.x.y\n"
+"rootdir: /home/sweet/project\n"
+"collected 1 item\n"
+"\n"
+"test_example.txt .                                                   [100%]\n"
+"\n"
+"============================ 1 passed in 0.12s ============================="
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:41
+msgid ""
+"By default, pytest will collect ``test*.txt`` files looking for doctest "
+"directives, but you can pass additional globs using the :option:`--doctest-"
+"glob` option (multi-allowed)."
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:44
+msgid ""
+"In addition to text files, you can also execute doctests directly from "
+"docstrings of your classes and functions, including from test modules:"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:47
+msgid ""
+"# content of mymodule.py\n"
+"def something():\n"
+"    \"\"\"a doctest in a docstring\n"
+"    >>> something()\n"
+"    42\n"
+"    \"\"\"\n"
+"    return 42"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:57
+msgid ""
+"$ pytest --doctest-modules\n"
+"=========================== test session starts "
+"============================\n"
+"platform linux -- Python 3.x.y, pytest-9.x.y, pluggy-1.x.y\n"
+"rootdir: /home/sweet/project\n"
+"collected 2 items\n"
+"\n"
+"mymodule.py .                                                        [ 50%]\n"
+"test_example.txt .                                                   [100%]\n"
+"\n"
+"============================ 2 passed in 0.12s ============================="
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:70
+msgid ""
+"You can make these changes permanent in your project by putting them into a "
+"configuration file like this:"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:73
+msgid ""
+"# content of pytest.toml\n"
+"[pytest]\n"
+"addopts = [\"--doctest-modules\"]"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:80
+msgid "Encoding"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:82
+msgid ""
+"The default encoding is **UTF-8**, but you can specify the encoding that "
+"will be used for those doctest files using the :confval:`doctest_encoding` "
+"configuration option:"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:88
+msgid ""
+"[pytest]\n"
+"doctest_encoding = \"latin1\""
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:95
+msgid ""
+"[pytest]\n"
+"doctest_encoding = latin1"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:103
+msgid "Using 'doctest' options"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:105
+msgid ""
+"Python's standard :mod:`doctest` module provides some :ref:`options <python:"
+"option-flags-and-directives>` to configure the strictness of doctest tests. "
+"In pytest, you can enable those flags using the configuration file."
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:109
+msgid ""
+"For example, to make pytest ignore trailing whitespaces and ignore lengthy "
+"exception stack traces you can just write:"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:114
+msgid ""
+"[pytest]\n"
+"doctest_optionflags = [\"NORMALIZE_WHITESPACE\", \"IGNORE_EXCEPTION_DETAIL\"]"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:121
+msgid ""
+"[pytest]\n"
+"doctest_optionflags = NORMALIZE_WHITESPACE IGNORE_EXCEPTION_DETAIL"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:126
+msgid ""
+"Alternatively, options can be enabled by an inline comment in the doc test "
+"itself:"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:129
+msgid ""
+">>> something_that_raises()  # doctest: +IGNORE_EXCEPTION_DETAIL\n"
+"Traceback (most recent call last):\n"
+"ValueError: ..."
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:135
+msgid "pytest also introduces new options:"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:137
+msgid ""
+"``ALLOW_UNICODE``: when enabled, the ``u`` prefix is stripped from unicode "
+"strings in expected doctest output. This allows doctests to run in Python 2 "
+"and Python 3 unchanged."
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:141
+msgid ""
+"``ALLOW_BYTES``: similarly, the ``b`` prefix is stripped from byte strings "
+"in expected doctest output."
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:144
+msgid ""
+"``NUMBER``: when enabled, floating-point numbers only need to match as far "
+"as the precision you have written in the expected doctest output. The "
+"numbers are compared using :func:`pytest.approx` with relative tolerance "
+"equal to the precision. For example, the following output would only need to "
+"match to 2 decimal places when comparing ``3.14`` to ``pytest.approx(math."
+"pi, rel=10**-2)``::"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:151
+msgid ""
+">>> math.pi\n"
+"3.14"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:154
+msgid ""
+"If you wrote ``3.1416`` then the actual output would need to match to "
+"approximately 4 decimal places; and so on."
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:157
+msgid ""
+"This avoids false positives caused by limited floating-point precision, like "
+"this::"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:160
+msgid ""
+"Expected:\n"
+"    0.233\n"
+"Got:\n"
+"    0.23300000000000001"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:165
+msgid ""
+"``NUMBER`` also supports lists of floating-point numbers -- in fact, it "
+"matches floating-point numbers appearing anywhere in the output, even inside "
+"a string! This means that it may not be appropriate to enable globally in "
+"``doctest_optionflags`` in your configuration file."
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:174
+msgid "Continue on failure"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:176
+msgid ""
+"By default, pytest would report only the first failure for a given doctest. "
+"If you want to continue the test even when you have failures, do:"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:179
+msgid "pytest --doctest-modules --doctest-continue-on-failure"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:185
+msgid "Output format"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:187
+msgid ""
+"You can change the diff output format on failure for your doctests by using "
+"one of the standard doctest module's format options (see :data:`python:"
+"doctest.REPORT_UDIFF`, :data:`python:doctest.REPORT_CDIFF`, :data:`python:"
+"doctest.REPORT_NDIFF`, :data:`python:doctest.REPORT_ONLY_FIRST_FAILURE`):"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:192
+msgid ""
+"pytest --doctest-modules --doctest-report none\n"
+"pytest --doctest-modules --doctest-report udiff\n"
+"pytest --doctest-modules --doctest-report cdiff\n"
+"pytest --doctest-modules --doctest-report ndiff\n"
+"pytest --doctest-modules --doctest-report only_first_failure"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:202
+msgid "pytest-specific features"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:204
+msgid ""
+"Some features are provided to make writing doctests easier or with better "
+"integration with your existing test suite. Keep in mind however that by "
+"using those features you will make your doctests incompatible with the "
+"standard ``doctests`` module."
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:209
+msgid "Using fixtures"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:211
+msgid "It is possible to use fixtures using the ``getfixture`` helper:"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:213
+msgid ""
+"# content of example.rst\n"
+">>> tmp = getfixture('tmp_path')\n"
+">>> ...\n"
+">>>"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:220
+msgid ""
+"Note that the fixture needs to be defined in a place visible by pytest, for "
+"example, a `conftest.py` file or plugin; normal python files containing "
+"docstrings are not normally scanned for fixtures unless explicitly "
+"configured by :confval:`python_files`."
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:224
+msgid ""
+"Also, the :ref:`usefixtures <usefixtures>` mark and fixtures marked as :ref:"
+"`autouse <autouse>` are supported when executing text doctest files."
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:231
+msgid "'doctest_namespace' fixture"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:233
+msgid ""
+"The ``doctest_namespace`` fixture can be used to inject items into the "
+"namespace in which your doctests run. It is intended to be used within your "
+"own fixtures to provide the tests that use them with context."
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:237
+msgid ""
+"``doctest_namespace`` is a standard ``dict`` object into which you place the "
+"objects you want to appear in the doctest namespace:"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:240
+msgid ""
+"# content of conftest.py\n"
+"import pytest\n"
+"import numpy\n"
+"\n"
+"\n"
+"@pytest.fixture(autouse=True)\n"
+"def add_np(doctest_namespace):\n"
+"    doctest_namespace[\"np\"] = numpy"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:251
+msgid "which can then be used in your doctests directly:"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:253
+msgid ""
+"# content of numpy.py\n"
+"def arange():\n"
+"    \"\"\"\n"
+"    >>> a = np.arange(10)\n"
+"    >>> len(a)\n"
+"    10\n"
+"    \"\"\""
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:263
+msgid ""
+"Note that like the normal ``conftest.py``, the fixtures are discovered in "
+"the directory tree conftest is in. Meaning that if you put your doctest with "
+"your source code, the relevant conftest.py needs to be in the same directory "
+"tree. Fixtures will not be discovered in a sibling directory tree!"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:268
+msgid "Skipping tests"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:270
+msgid ""
+"For the same reasons one might want to skip normal tests, it is also "
+"possible to skip tests inside doctests."
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:273
+msgid ""
+"To skip a single check inside a doctest you can use the standard :data:"
+"`doctest.SKIP` directive:"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:276
+msgid ""
+"def test_random(y):\n"
+"    \"\"\"\n"
+"    >>> random.random()  # doctest: +SKIP\n"
+"    0.156231223\n"
+"\n"
+"    >>> 1 + 1\n"
+"    2\n"
+"    \"\"\""
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:287
+msgid "This will skip the first check, but not the second."
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:289
+msgid ""
+"pytest also allows using the standard pytest functions :func:`pytest.skip` "
+"and :func:`pytest.xfail` inside doctests, which might be useful because you "
+"can then skip/xfail tests based on external conditions:"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:294
+msgid ""
+">>> import sys, pytest\n"
+">>> if sys.platform.startswith('win'):\n"
+"...     pytest.skip('this doctest does not work on Windows')\n"
+"...\n"
+">>> import fcntl\n"
+">>> ..."
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:303
+msgid ""
+"However using those functions is discouraged because it reduces the "
+"readability of the docstring."
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:308
+msgid ""
+":func:`pytest.skip` and :func:`pytest.xfail` behave differently depending if "
+"the doctests are in a Python file (in docstrings) or a text file containing "
+"doctests intermingled with text:"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:312
+msgid ""
+"Python modules (docstrings): the functions only act in that specific "
+"docstring, letting the other docstrings in the same module execute as normal."
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:315
+msgid ""
+"Text files: the functions will skip/xfail the checks for the rest of the "
+"entire file."
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:320
+msgid "Alternatives"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:322
+msgid ""
+"While the built-in pytest support provides a good set of functionalities for "
+"using doctests, if you use them extensively you might be interested in those "
+"external packages which add many more features, and include pytest "
+"integration:"
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:326
+msgid ""
+"`pytest-doctestplus <https://github.com/scientific-python/pytest-"
+"doctestplus>`__: provides advanced doctest support and enables the testing "
+"of reStructuredText (\".rst\") files."
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:329
+msgid ""
+"`Sybil <https://sybil.readthedocs.io>`__: provides a way to test examples in "
+"your documentation by parsing them from the documentation source and "
+"evaluating the parsed examples as part of your normal test run."
+msgstr ""
