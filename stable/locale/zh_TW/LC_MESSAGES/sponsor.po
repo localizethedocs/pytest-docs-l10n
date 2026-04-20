@@ -28,6 +28,9 @@ msgid ""
 "it daily in our jobs, monetary compensation when possible is welcome to "
 "justify time away from friends, family and personal time."
 msgstr ""
+"pytest 是由來自世界各地的志願者團隊在他們的空閒時間維護的。雖然我們投入 "
+"pytest 的工作是因為我們熱愛這個專案，並且在日常工作中經常使用它，但當我們需要"
+"從與朋友、家人相處及個人時間中抽身時，可能的金錢補償是受歡迎的。"
 
 #: ../../../doc/en/sponsor.rst:8
 msgid ""
@@ -48,6 +51,8 @@ msgid ""
 "communities. It provides tools to raise money and share your finances in "
 "full transparency."
 msgstr ""
+"`Open Collective`_ 是一個專為開放透明社群設計的線上募資平臺。它提供工具來籌集"
+"資金，並以完全透明的方式共享財務資訊。"
 
 #: ../../../doc/en/sponsor.rst:17
 msgid ""

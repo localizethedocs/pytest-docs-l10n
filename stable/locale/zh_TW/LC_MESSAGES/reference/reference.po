@@ -43,6 +43,9 @@ msgid ""
 ">>> pytest.__version__\n"
 "'9.0.2'"
 msgstr ""
+">>> import pytest\n"
+">>> pytest.__version__\n"
+"'9.0.2'"
 
 #: ../../../doc/en/reference/reference.rst:26
 msgid "pytest.HIDDEN_PARAM"

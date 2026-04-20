@@ -481,10 +481,3 @@ msgstr ""
 #: ../../../doc/en/getting-started.rst:277
 msgid "\":ref:`goodpractices`\" for virtualenv and test layouts"
 msgstr ""
-
-#~ msgid ""
-#~ "$ pytest --version\n"
-#~ "pytest 9.0.2"
-#~ msgstr ""
-#~ "$ pytest --version\n"
-#~ "pytest 9.0.2"
