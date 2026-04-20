@@ -37,9 +37,9 @@
     "branch" : "main",
     "commit" : 
     {
-      "date" : "2026-04-12 16:48:57 +0300",
-      "hash" : "2d3d16907540149a9d8bd5b58d5a767e513718d7",
-      "title" : "Merge pull request #13626 from mon/insufficient_cleanup_on_keyboardinterrupt"
+      "date" : "2026-04-20 09:43:03 +0200",
+      "hash" : "9979555d6d63f9d829c3b5ad13377139b0ddab90",
+      "title" : "build(deps): Bump actions/cache from 5.0.4 to 5.0.5 (#14400)"
     }
   },
   "type" : "branch",
