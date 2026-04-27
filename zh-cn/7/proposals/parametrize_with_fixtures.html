@@ -1,0 +1,282 @@
+
+
+
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PROPOSAL: Parametrize with fixtures &#8212; pytest documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/flask.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments_pytest.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script data-project="pytest" data-version="7" src="../_static/describe_version.js"></script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/pytest-docs-l10n/proposals/parametrize_with_fixtures.html" />
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="search" title="搜索" href="../search.html" />
+
+  <script>DOCUMENTATION_OPTIONS.URL_ROOT = '';</script>
+   
+<script type="text/javascript" src="../ltd-provenance.js"></script>
+<script type="text/javascript" src="../ltd-current.js"></script>
+<script type="text/javascript" src="../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../ltd-flyout.js"></script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../py-modindex.html" title="Python 模块索引"
+             >模块</a></li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">pytest-7.4</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">PROPOSAL: Parametrize with fixtures</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="proposal-parametrize-with-fixtures">
+<h1>PROPOSAL: Parametrize with fixtures<a class="headerlink" href="#proposal-parametrize-with-fixtures" title="此标题的永久链接">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>This document outlines a proposal around using fixtures as input
+of parametrized tests or fixtures.</p>
+</div>
+<section id="problem">
+<h2>Problem<a class="headerlink" href="#problem" title="此标题的永久链接">¶</a></h2>
+<p>As a user I have functional tests that I would like to run against various
+scenarios.</p>
+<p>In this particular example we want to generate a new project based on a
+cookiecutter template. We want to test default values but also data that
+emulates user input.</p>
+<ul class="simple">
+<li><p>use default values</p></li>
+<li><p>emulate user input</p>
+<ul>
+<li><p>specify ‘author’</p></li>
+<li><p>specify ‘project_slug’</p></li>
+<li><p>specify ‘author’ and ‘project_slug’</p></li>
+</ul>
+</li>
+</ul>
+<p>This is how a functional test could look like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span>
+
+
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">default_context</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;extra_context&quot;</span><span class="p">:</span> <span class="p">{}}</span>
+
+
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span>
+    <span class="n">params</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span><span class="s2">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;alice&quot;</span><span class="p">},</span>
+        <span class="p">{</span><span class="s2">&quot;project_slug&quot;</span><span class="p">:</span> <span class="s2">&quot;helloworld&quot;</span><span class="p">},</span>
+        <span class="p">{</span><span class="s2">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;bob&quot;</span><span class="p">,</span> <span class="s2">&quot;project_slug&quot;</span><span class="p">:</span> <span class="s2">&quot;foobar&quot;</span><span class="p">},</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">extra_context</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;extra_context&quot;</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">param</span><span class="p">}</span>
+
+
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;default&quot;</span><span class="p">,</span> <span class="s2">&quot;extra&quot;</span><span class="p">])</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">context</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">param</span> <span class="o">==</span> <span class="s2">&quot;default&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">request</span><span class="o">.</span><span class="n">getfuncargvalue</span><span class="p">(</span><span class="s2">&quot;default_context&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">request</span><span class="o">.</span><span class="n">getfuncargvalue</span><span class="p">(</span><span class="s2">&quot;extra_context&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">test_generate_project</span><span class="p">(</span><span class="n">cookies</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Call the cookiecutter API to generate a new project from a</span>
+<span class="sd">    template.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">cookies</span><span class="o">.</span><span class="n">bake</span><span class="p">(</span><span class="n">extra_context</span><span class="o">=</span><span class="n">context</span><span class="p">)</span>
+
+    <span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">exit_code</span> <span class="o">==</span> <span class="mi">0</span>
+    <span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">exception</span> <span class="ow">is</span> <span class="kc">None</span>
+    <span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">project</span><span class="o">.</span><span class="n">isdir</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="issues">
+<h2>Issues<a class="headerlink" href="#issues" title="此标题的永久链接">¶</a></h2>
+<ul class="simple">
+<li><p>By using <code class="docutils literal notranslate"><span class="pre">request.getfuncargvalue()</span></code> we rely on actual fixture function
+execution to know what fixtures are involved, due to its dynamic nature</p></li>
+<li><p>More importantly, <code class="docutils literal notranslate"><span class="pre">request.getfuncargvalue()</span></code> cannot be combined with
+parametrized fixtures, such as <code class="docutils literal notranslate"><span class="pre">extra_context</span></code></p></li>
+<li><p>This is very inconvenient if you wish to extend an existing test suite by
+certain parameters for fixtures that are already used by tests</p></li>
+</ul>
+<p>pytest version 3.0 reports an error if you try to run above code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Failed</span><span class="p">:</span> <span class="n">The</span> <span class="n">requested</span> <span class="n">fixture</span> <span class="n">has</span> <span class="n">no</span> <span class="n">parameter</span> <span class="n">defined</span> <span class="k">for</span> <span class="n">the</span> <span class="n">current</span>
+<span class="n">test</span><span class="o">.</span>
+
+<span class="n">Requested</span> <span class="n">fixture</span> <span class="s1">&#39;extra_context&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="proposed-solution">
+<h2>Proposed solution<a class="headerlink" href="#proposed-solution" title="此标题的永久链接">¶</a></h2>
+<p>A new function that can be used in modules can be used to dynamically define
+fixtures from existing ones.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pytest</span><span class="o">.</span><span class="n">define_combined_fixture</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;context&quot;</span><span class="p">,</span> <span class="n">fixtures</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;default_context&quot;</span><span class="p">,</span> <span class="s2">&quot;extra_context&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>The new fixture <code class="docutils literal notranslate"><span class="pre">context</span></code> inherits the scope from the used fixtures and yield
+the following values.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">{}</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{'author':</span> <span class="pre">'alice'}</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{'project_slug':</span> <span class="pre">'helloworld'}</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{'author':</span> <span class="pre">'bob',</span> <span class="pre">'project_slug':</span> <span class="pre">'foobar'}</span></code></p></li>
+</ul>
+</section>
+<section id="alternative-approach">
+<h2>Alternative approach<a class="headerlink" href="#alternative-approach" title="此标题的永久链接">¶</a></h2>
+<p>A new helper function named <code class="docutils literal notranslate"><span class="pre">fixture_request</span></code> would tell pytest to yield
+all parameters marked as a fixture.</p>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>The <a class="reference external" href="https://pypi.org/project/pytest-lazy-fixture/">pytest-lazy-fixture</a> plugin implements a very
+similar solution to the proposal below, make sure to check it out.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span>
+    <span class="n">params</span><span class="o">=</span><span class="p">[</span>
+        <span class="n">pytest</span><span class="o">.</span><span class="n">fixture_request</span><span class="p">(</span><span class="s2">&quot;default_context&quot;</span><span class="p">),</span>
+        <span class="n">pytest</span><span class="o">.</span><span class="n">fixture_request</span><span class="p">(</span><span class="s2">&quot;extra_context&quot;</span><span class="p">),</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">context</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns all values for ``default_context``, one-by-one before it</span>
+<span class="sd">    does the same for ``extra_context``.</span>
+
+<span class="sd">    request.param:</span>
+<span class="sd">        - {}</span>
+<span class="sd">        - {&#39;author&#39;: &#39;alice&#39;}</span>
+<span class="sd">        - {&#39;project_slug&#39;: &#39;helloworld&#39;}</span>
+<span class="sd">        - {&#39;author&#39;: &#39;bob&#39;, &#39;project_slug&#39;: &#39;foobar&#39;}</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">request</span><span class="o">.</span><span class="n">param</span>
+</pre></div>
+</div>
+<p>The same helper can be used in combination with <code class="docutils literal notranslate"><span class="pre">pytest.mark.parametrize</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+    <span class="s2">&quot;context, expected_response_code&quot;</span><span class="p">,</span>
+    <span class="p">[</span>
+        <span class="p">(</span><span class="n">pytest</span><span class="o">.</span><span class="n">fixture_request</span><span class="p">(</span><span class="s2">&quot;default_context&quot;</span><span class="p">),</span> <span class="mi">0</span><span class="p">),</span>
+        <span class="p">(</span><span class="n">pytest</span><span class="o">.</span><span class="n">fixture_request</span><span class="p">(</span><span class="s2">&quot;extra_context&quot;</span><span class="p">),</span> <span class="mi">0</span><span class="p">),</span>
+    <span class="p">],</span>
+<span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_generate_project</span><span class="p">(</span><span class="n">cookies</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">exit_code</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Call the cookiecutter API to generate a new project from a</span>
+<span class="sd">    template.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">cookies</span><span class="o">.</span><span class="n">bake</span><span class="p">(</span><span class="n">extra_context</span><span class="o">=</span><span class="n">context</span><span class="p">)</span>
+
+    <span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">exit_code</span> <span class="o">==</span> <span class="n">exit_code</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+  <span id="sidebar-top"></span>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  
+    
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/pytest_logo_curves.svg" alt="Logo"/>
+            </a></p>
+  
+
+<div id="searchbox" style="display: none" role="search">
+  <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel"
+        placeholder="Search"/>
+      <input type="submit" value="提交" />
+    </form>
+  </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><h3>目录</h3>
+
+<ul>
+  <li><a href="../index.html">Home</a></li>
+
+  <li><a href="../getting-started.html">Get started</a></li>
+  <li><a href="../how-to/index.html">How-to guides</a></li>
+  <li><a href="../reference/index.html">Reference guides</a></li>
+  <li><a href="../explanation/index.html">Explanation</a></li>
+  <li><a href="../contents.html">Complete table of contents</a></li>
+  <li><a href="../example/index.html">Library of examples</a></li>
+</ul>
+
+<h3>About the project</h3>
+
+<ul>
+  <li><a href="../changelog.html">Changelog</a></li>
+  <li><a href="../contributing.html">Contributing</a></li>
+  <li><a href="../backwards-compatibility.html">Backwards Compatibility</a></li>
+  <li><a href="../sponsor.html">Sponsor</a></li>
+  <li><a href="../tidelift.html">pytest for Enterprise</a></li>
+  <li><a href="../license.html">License</a></li>
+  <li><a href="../contact.html">Contact Channels</a></li>
+</ul>
+  <hr>
+  <ul>
+<li><a class="reference internal" href="#">PROPOSAL: Parametrize with fixtures</a><ul>
+<li><a class="reference internal" href="#problem">Problem</a></li>
+<li><a class="reference internal" href="#issues">Issues</a></li>
+<li><a class="reference internal" href="#proposed-solution">Proposed solution</a></li>
+<li><a class="reference internal" href="#alternative-approach">Alternative approach</a></li>
+</ul>
+</li>
+</ul>
+
+
+<hr><h3>Related Topics</h3>
+<ul>
+  <li><a href="../contents.html">Documentation overview</a><ul>
+  </ul></li>
+</ul><h3>Useful Links</h3>
+<ul>
+  <li><a href="https://pypi.org/project/pytest/">pytest @ PyPI</a></li>
+  <li><a href="https://github.com/pytest-dev/pytest/">pytest @ GitHub</a></li>
+  <li><a href="https://github.com/pytest-dev/pytest/issues">Issue Tracker</a></li>
+  <li><a href="https://media.readthedocs.org/pdf/pytest/latest/pytest.pdf">PDF Documentation</a></li>
+</ul>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  
+    <div class="footer" role="contentinfo">
+        &#169; 版权所有 2015, holger krekel and pytest-dev team.
+      由 <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0创建。
+    </div>
+  <script src="../_static/version_warning_offset.js"></script>
+
+  </body>
+</html>
