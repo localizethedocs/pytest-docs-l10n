@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-23 08:43+0000\n"
+"POT-Creation-Date: 2026-05-04 10:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -413,11 +413,18 @@ msgid ""
 "\n"
 "@pytest.fixture\n"
 "def mydata(pytestconfig):\n"
-"    val = pytestconfig.cache.get(\"example/value\", None)\n"
+"    cache = getattr(pytestconfig, \"cache\", None)\n"
+"    if cache is None:\n"
+"        # pytestconfig not having the cache attribute means the\n"
+"        # cache plugin is disabled.\n"
+"        expensive_computation()\n"
+"        return 42\n"
+"\n"
+"    val = cache.get(\"example/value\", None)\n"
 "    if val is None:\n"
 "        expensive_computation()\n"
 "        val = 42\n"
-"        pytestconfig.cache.set(\"example/value\", val)\n"
+"        cache.set(\"example/value\", val)\n"
 "    return val\n"
 "\n"
 "\n"
@@ -425,12 +432,12 @@ msgid ""
 "    assert mydata == 23"
 msgstr ""
 
-#: ../../../doc/en/how-to/cache.rst:228
+#: ../../../doc/en/how-to/cache.rst:235
 msgid ""
 "If you run this command for the first time, you can see the print statement:"
 msgstr ""
 
-#: ../../../doc/en/how-to/cache.rst:230
+#: ../../../doc/en/how-to/cache.rst:237
 msgid ""
 "$ pytest -q\n"
 "F                                                                    [100%]\n"
@@ -455,13 +462,13 @@ msgid ""
 "1 failed in 0.12s"
 msgstr ""
 
-#: ../../../doc/en/how-to/cache.rst:250
+#: ../../../doc/en/how-to/cache.rst:257
 msgid ""
 "If you run it a second time, the value will be retrieved from the cache and "
 "nothing will be printed:"
 msgstr ""
 
-#: ../../../doc/en/how-to/cache.rst:253
+#: ../../../doc/en/how-to/cache.rst:260
 msgid ""
 "$ pytest -q\n"
 "F                                                                    [100%]\n"
@@ -483,21 +490,21 @@ msgid ""
 "1 failed in 0.12s"
 msgstr ""
 
-#: ../../../doc/en/how-to/cache.rst:271
+#: ../../../doc/en/how-to/cache.rst:278
 msgid "See the :fixture:`config.cache fixture <cache>` for more details."
 msgstr ""
 
-#: ../../../doc/en/how-to/cache.rst:275
+#: ../../../doc/en/how-to/cache.rst:282
 msgid "Inspecting Cache content"
 msgstr ""
 
-#: ../../../doc/en/how-to/cache.rst:277
+#: ../../../doc/en/how-to/cache.rst:284
 msgid ""
 "You can always peek at the content of the cache using the :option:`--cache-"
 "show` command line option:"
 msgstr ""
 
-#: ../../../doc/en/how-to/cache.rst:280
+#: ../../../doc/en/how-to/cache.rst:287
 msgid ""
 "$ pytest --cache-show\n"
 "=========================== test session starts "
@@ -517,13 +524,13 @@ msgid ""
 "========================== no tests ran in 0.12s ==========================="
 msgstr ""
 
-#: ../../../doc/en/how-to/cache.rst:297
+#: ../../../doc/en/how-to/cache.rst:304
 msgid ""
 ":option:`--cache-show` takes an optional argument to specify a glob pattern "
 "for filtering:"
 msgstr ""
 
-#: ../../../doc/en/how-to/cache.rst:300
+#: ../../../doc/en/how-to/cache.rst:307
 msgid ""
 "$ pytest --cache-show example/*\n"
 "=========================== test session starts "
@@ -539,31 +546,31 @@ msgid ""
 "========================== no tests ran in 0.12s ==========================="
 msgstr ""
 
-#: ../../../doc/en/how-to/cache.rst:314
+#: ../../../doc/en/how-to/cache.rst:321
 msgid "Clearing Cache content"
 msgstr "清除快取內容"
 
-#: ../../../doc/en/how-to/cache.rst:316
+#: ../../../doc/en/how-to/cache.rst:323
 msgid ""
 "You can instruct pytest to clear all cache files and values by adding the :"
 "option:`--cache-clear` option like this:"
 msgstr ""
 
-#: ../../../doc/en/how-to/cache.rst:319
+#: ../../../doc/en/how-to/cache.rst:326
 msgid "pytest --cache-clear"
 msgstr "pytest --cache-clear"
 
-#: ../../../doc/en/how-to/cache.rst:323
+#: ../../../doc/en/how-to/cache.rst:330
 msgid ""
 "This is recommended for invocations from Continuous Integration servers "
 "where isolation and correctness is more important than speed."
 msgstr ""
 
-#: ../../../doc/en/how-to/cache.rst:331
+#: ../../../doc/en/how-to/cache.rst:338
 msgid "Stepwise"
 msgstr ""
 
-#: ../../../doc/en/how-to/cache.rst:333
+#: ../../../doc/en/how-to/cache.rst:340
 msgid ""
 "As an alternative to :option:`--lf` :option:`-x`, especially for cases where "
 "you expect a large part of the test suite will fail, :option:`--sw, --"

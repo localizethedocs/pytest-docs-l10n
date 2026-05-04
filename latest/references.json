@@ -16,9 +16,9 @@
       "branch" : "main",
       "commit" : 
       {
-        "date" : "2026-04-12 16:48:57 +0300",
-        "hash" : "2d3d16907540149a9d8bd5b58d5a767e513718d7",
-        "title" : "Merge pull request #13626 from mon/insufficient_cleanup_on_keyboardinterrupt"
+        "date" : "2026-05-03 22:14:18 +0300",
+        "hash" : "8f81c76744daf72d4f77cfc8423f4bdc60733d78",
+        "title" : "Merge pull request #10546 from ykadowak/refactor_atexit"
       }
     },
     "zh_TW" : 
@@ -26,9 +26,9 @@
       "branch" : "main",
       "commit" : 
       {
-        "date" : "2026-04-12 16:48:57 +0300",
-        "hash" : "2d3d16907540149a9d8bd5b58d5a767e513718d7",
-        "title" : "Merge pull request #13626 from mon/insufficient_cleanup_on_keyboardinterrupt"
+        "date" : "2026-05-03 22:14:18 +0300",
+        "hash" : "8f81c76744daf72d4f77cfc8423f4bdc60733d78",
+        "title" : "Merge pull request #10546 from ykadowak/refactor_atexit"
       }
     }
   },
