@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-04 10:06+0000\n"
+"POT-Creation-Date: 2026-05-11 10:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -311,6 +311,36 @@ msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python_api.py:docstring
 #: of _pytest.python_api.approx:114
+msgid "**datetime and timedelta**"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python_api.py:docstring
+#: of _pytest.python_api.approx:116
+msgid ""
+"You can also use ``approx`` to compare :class:`~datetime.datetime` and :"
+"class:`~datetime.timedelta` objects by specifying an absolute tolerance as "
+"a :class:`~datetime.timedelta`::"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python_api.py:docstring
+#: of _pytest.python_api.approx:120
+msgid ""
+">>> from datetime import datetime, timedelta\n"
+">>> dt1 = datetime(2024, 1, 1, 12, 0, 0)\n"
+">>> dt2 = datetime(2024, 1, 1, 12, 0, 0, 500000)\n"
+">>> dt1 == approx(dt2, abs=timedelta(seconds=1))\n"
+"True"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python_api.py:docstring
+#: of _pytest.python_api.approx:126
+msgid ""
+"Note that ``rel`` is not supported for datetime comparisons, and ``abs`` or "
+"``rel`` must be explicitly provided as a ``timedelta`` object."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python_api.py:docstring
+#: of _pytest.python_api.approx:131
 msgid ""
 "If you're thinking about using ``approx``, then you might want to know how "
 "it compares to other good ways of comparing floating-point numbers.  All of "
@@ -319,7 +349,7 @@ msgid ""
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python_api.py:docstring
-#: of _pytest.python_api.approx:119
+#: of _pytest.python_api.approx:136
 msgid ""
 "``math.isclose(a, b, rel_tol=1e-9, abs_tol=0.0)``:  True if the relative "
 "tolerance is met w.r.t. either ``a`` or ``b`` or if the absolute tolerance "
@@ -331,7 +361,7 @@ msgid ""
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python_api.py:docstring
-#: of _pytest.python_api.approx:127
+#: of _pytest.python_api.approx:144
 msgid ""
 "``numpy.isclose(a, b, rtol=1e-5, atol=1e-8)``: True if the difference "
 "between ``a`` and ``b`` is less that the sum of the relative tolerance w.r."
@@ -343,7 +373,7 @@ msgid ""
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python_api.py:docstring
-#: of _pytest.python_api.approx:135
+#: of _pytest.python_api.approx:152
 msgid ""
 "``unittest.TestCase.assertAlmostEqual(a, b)``: True if ``a`` and ``b`` are "
 "within an absolute tolerance of ``1e-7``.  No relative tolerance is "
@@ -354,7 +384,7 @@ msgid ""
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python_api.py:docstring
-#: of _pytest.python_api.approx:142
+#: of _pytest.python_api.approx:159
 msgid ""
 "``a == pytest.approx(b, rel=1e-6, abs=1e-12)``: True if the relative "
 "tolerance is met w.r.t. ``b`` or if the absolute tolerance is met. Because "
@@ -365,7 +395,7 @@ msgid ""
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python_api.py:docstring
-#: of _pytest.python_api.approx:151
+#: of _pytest.python_api.approx:168
 msgid ""
 "``approx`` can handle numpy arrays, but we recommend the specialised test "
 "helpers in :std:doc:`numpy:reference/routines.testing` if you need support "
@@ -373,7 +403,7 @@ msgid ""
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python_api.py:docstring
-#: of _pytest.python_api.approx:155
+#: of _pytest.python_api.approx:172
 msgid ""
 "To match strings using regex, you can use `Matches <https://github.com/"
 "asottile/re-assert#re_assertmatchespattern-str-args-kwargs>`_ from the "
@@ -381,21 +411,21 @@ msgid ""
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python_api.py:docstring
-#: of _pytest.python_api.approx:163
+#: of _pytest.python_api.approx:180
 msgid ""
 "Unlike built-in equality, this function considers booleans unequal to "
 "numeric zero or one. For example::"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python_api.py:docstring
-#: of _pytest.python_api.approx:166
+#: of _pytest.python_api.approx:183
 msgid ""
 ">>> 1 == approx(True)\n"
 "False"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python_api.py:docstring
-#: of _pytest.python_api.approx:173
+#: of _pytest.python_api.approx:190
 msgid ""
 "In order to avoid inconsistent behavior, :py:exc:`TypeError` is raised for "
 "``>``, ``>=``, ``<`` and ``<=`` comparisons. The example below illustrates "
@@ -403,14 +433,14 @@ msgid ""
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python_api.py:docstring
-#: of _pytest.python_api.approx:177
+#: of _pytest.python_api.approx:194
 msgid ""
 "assert approx(0.1) > 0.1 + 1e-10  # calls approx(0.1).__gt__(0.1 + 1e-10)\n"
 "assert 0.1 + 1e-10 > approx(0.1)  # calls approx(0.1).__lt__(0.1 + 1e-10)"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python_api.py:docstring
-#: of _pytest.python_api.approx:180
+#: of _pytest.python_api.approx:197
 msgid ""
 "In the second example one expects ``approx(0.1).__le__(0.1 + 1e-10)`` to be "
 "called. But instead, ``approx(0.1).__lt__(0.1 + 1e-10)`` is used to "
@@ -419,14 +449,14 @@ msgid ""
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python_api.py:docstring
-#: of _pytest.python_api.approx:185
+#: of _pytest.python_api.approx:202
 msgid ""
 "``approx`` raises ``TypeError`` when it encounters a dict value or sequence "
 "element of non-numeric type."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python_api.py:docstring
-#: of _pytest.python_api.approx:189
+#: of _pytest.python_api.approx:206
 msgid ""
 "``approx`` falls back to strict equality for non-numeric types instead of "
 "raising ``TypeError``."
