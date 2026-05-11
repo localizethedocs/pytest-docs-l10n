@@ -1,0 +1,129 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-13 09:26+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/announce/release-2.3.2.rst:2
+msgid "pytest-2.3.2: some fixes and more traceback-printing speed"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.3.2.rst:4
+msgid "pytest-2.3.2 is another stabilization release:"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.3.2.rst:6
+msgid "issue 205: fixes a regression with conftest detection"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.3.2.rst:7
+msgid "issue 208/29: fixes traceback-printing speed in some bad cases"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.3.2.rst:8
+#: ../../../doc/en/announce/release-2.3.2.rst:36
+msgid "fix teardown-ordering for parametrized setups"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.3.2.rst:9
+msgid ""
+"fix unittest and trial compat behaviour with respect  to runTest() methods"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.3.2.rst:10
+msgid "issue 206 and others: some improvements to packaging"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.3.2.rst:11
+msgid "fix issue127 and others: improve some docs"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.3.2.rst:13
+msgid "See"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.3.2.rst:15
+msgid "http://pytest.org/"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.3.2.rst:17
+msgid "for general information.  To install or upgrade pytest:"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.3.2.rst:19
+msgid "pip install -U pytest # or easy_install -U pytest"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.3.2.rst:22
+msgid "best, holger krekel"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.3.2.rst:27
+msgid "Changes between 2.3.1 and 2.3.2"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.3.2.rst:29
+msgid ""
+"fix issue208 and fix issue29 use new py version to avoid long pauses when "
+"printing tracebacks in long modules"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.3.2.rst:32
+msgid ""
+"fix issue205 - conftests in subdirs customizing pytest_pycollect_makemodule "
+"and pytest_pycollect_makeitem now work properly"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.3.2.rst:38
+msgid ""
+"fix issue127 - better documentation for pytest_addoption and related objects."
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.3.2.rst:41
+msgid ""
+"fix unittest behaviour: TestCase.runtest only called if there are test "
+"methods defined"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.3.2.rst:44
+msgid ""
+"improve trial support: don't collect its empty unittest.TestCase.runTest() "
+"method"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.3.2.rst:47
+msgid "\"python setup.py test\" now works with pytest itself"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.3.2.rst:49
+msgid "fix/improve internal/packaging related bits:"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.3.2.rst:51
+msgid "exception message check of test_nose.py now passes on python33 as well"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.3.2.rst:53
+msgid ""
+"issue206 - fix test_assertrewrite.py to work when a global "
+"PYTHONDONTWRITEBYTECODE=1 is present"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.3.2.rst:56
+msgid ""
+"add tox.ini to pytest distribution so that ignore-dirs and others config "
+"bits are properly distributed for maintainers who run pytest-own tests"
+msgstr ""
