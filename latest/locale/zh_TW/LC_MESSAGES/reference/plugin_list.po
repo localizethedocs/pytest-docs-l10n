@@ -39370,6 +39370,3 @@ msgid ""
 "*last release*: Mar 02, 2026, *status*: 5 - Production/Stable, *requires*: "
 "pytest>=8.3.5"
 msgstr ""
-
-#~ msgid ":pypi:`pytest-artifact`"
-#~ msgstr ":pypi:`pytest-artifact`"
