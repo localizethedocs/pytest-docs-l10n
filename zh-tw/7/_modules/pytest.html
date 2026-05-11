@@ -1,0 +1,299 @@
+
+
+
+<!DOCTYPE html>
+
+<html lang="zh-TW">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>pytest &#8212; pytest documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/flask.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments_pytest.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script data-project="pytest" data-version="7" src="../_static/describe_version.js"></script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/pytest-docs-l10n/_modules/pytest.html" />
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="search" title="搜尋" href="../search.html" />
+
+  <script>DOCUMENTATION_OPTIONS.URL_ROOT = '';</script>
+   
+<script type="text/javascript" src="../ltd-provenance.js"></script>
+<script type="text/javascript" src="../ltd-current.js"></script>
+<script type="text/javascript" src="../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../ltd-flyout.js"></script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>瀏覽</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../py-modindex.html" title="Python 模組索引"
+             >模組</a></li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">pytest-7.4</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">模組原始碼</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pytest</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>pytest 的原始碼</h1><div class="highlight"><pre>
+<span></span><span class="c1"># PYTHON_ARGCOMPLETE_OK</span>
+<span class="sd">&quot;&quot;&quot;pytest: unit and functional testing with Python.&quot;&quot;&quot;</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest</span><span class="w"> </span><span class="kn">import</span> <span class="n">__version__</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest</span><span class="w"> </span><span class="kn">import</span> <span class="n">version_tuple</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest._code</span><span class="w"> </span><span class="kn">import</span> <span class="n">ExceptionInfo</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.assertion</span><span class="w"> </span><span class="kn">import</span> <span class="n">register_assert_rewrite</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.cacheprovider</span><span class="w"> </span><span class="kn">import</span> <span class="n">Cache</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.capture</span><span class="w"> </span><span class="kn">import</span> <span class="n">CaptureFixture</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">cmdline</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">Config</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">console_main</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">ExitCode</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">hookimpl</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">hookspec</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">main</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">PytestPluginManager</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">UsageError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.config.argparsing</span><span class="w"> </span><span class="kn">import</span> <span class="n">OptionGroup</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.config.argparsing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Parser</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.debugging</span><span class="w"> </span><span class="kn">import</span> <span class="n">pytestPDB</span> <span class="k">as</span> <span class="n">__pytestPDB</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.doctest</span><span class="w"> </span><span class="kn">import</span> <span class="n">DoctestItem</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.fixtures</span><span class="w"> </span><span class="kn">import</span> <span class="n">fixture</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.fixtures</span><span class="w"> </span><span class="kn">import</span> <span class="n">FixtureLookupError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.fixtures</span><span class="w"> </span><span class="kn">import</span> <span class="n">FixtureRequest</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.fixtures</span><span class="w"> </span><span class="kn">import</span> <span class="n">yield_fixture</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.freeze_support</span><span class="w"> </span><span class="kn">import</span> <span class="n">freeze_includes</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.legacypath</span><span class="w"> </span><span class="kn">import</span> <span class="n">TempdirFactory</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.legacypath</span><span class="w"> </span><span class="kn">import</span> <span class="n">Testdir</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.logging</span><span class="w"> </span><span class="kn">import</span> <span class="n">LogCaptureFixture</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.main</span><span class="w"> </span><span class="kn">import</span> <span class="n">Session</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.mark</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mark</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.mark</span><span class="w"> </span><span class="kn">import</span> <span class="n">MARK_GEN</span> <span class="k">as</span> <span class="n">mark</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.mark</span><span class="w"> </span><span class="kn">import</span> <span class="n">MarkDecorator</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.mark</span><span class="w"> </span><span class="kn">import</span> <span class="n">MarkGenerator</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.mark</span><span class="w"> </span><span class="kn">import</span> <span class="n">param</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.monkeypatch</span><span class="w"> </span><span class="kn">import</span> <span class="n">MonkeyPatch</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.nodes</span><span class="w"> </span><span class="kn">import</span> <span class="n">Collector</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.nodes</span><span class="w"> </span><span class="kn">import</span> <span class="n">File</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.nodes</span><span class="w"> </span><span class="kn">import</span> <span class="n">Item</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.outcomes</span><span class="w"> </span><span class="kn">import</span> <span class="n">exit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.outcomes</span><span class="w"> </span><span class="kn">import</span> <span class="n">fail</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.outcomes</span><span class="w"> </span><span class="kn">import</span> <span class="n">importorskip</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.outcomes</span><span class="w"> </span><span class="kn">import</span> <span class="n">skip</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.outcomes</span><span class="w"> </span><span class="kn">import</span> <span class="n">xfail</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.pytester</span><span class="w"> </span><span class="kn">import</span> <span class="n">HookRecorder</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.pytester</span><span class="w"> </span><span class="kn">import</span> <span class="n">LineMatcher</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.pytester</span><span class="w"> </span><span class="kn">import</span> <span class="n">Pytester</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.pytester</span><span class="w"> </span><span class="kn">import</span> <span class="n">RecordedHookCall</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.pytester</span><span class="w"> </span><span class="kn">import</span> <span class="n">RunResult</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.python</span><span class="w"> </span><span class="kn">import</span> <span class="n">Class</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.python</span><span class="w"> </span><span class="kn">import</span> <span class="n">Function</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.python</span><span class="w"> </span><span class="kn">import</span> <span class="n">Metafunc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.python</span><span class="w"> </span><span class="kn">import</span> <span class="n">Module</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.python</span><span class="w"> </span><span class="kn">import</span> <span class="n">Package</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.python_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">approx</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.python_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">raises</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.recwarn</span><span class="w"> </span><span class="kn">import</span> <span class="n">deprecated_call</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.recwarn</span><span class="w"> </span><span class="kn">import</span> <span class="n">WarningsRecorder</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.recwarn</span><span class="w"> </span><span class="kn">import</span> <span class="n">warns</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.reports</span><span class="w"> </span><span class="kn">import</span> <span class="n">CollectReport</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.reports</span><span class="w"> </span><span class="kn">import</span> <span class="n">TestReport</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.runner</span><span class="w"> </span><span class="kn">import</span> <span class="n">CallInfo</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.stash</span><span class="w"> </span><span class="kn">import</span> <span class="n">Stash</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.stash</span><span class="w"> </span><span class="kn">import</span> <span class="n">StashKey</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.terminal</span><span class="w"> </span><span class="kn">import</span> <span class="n">TestShortLogReport</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.tmpdir</span><span class="w"> </span><span class="kn">import</span> <span class="n">TempPathFactory</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.warning_types</span><span class="w"> </span><span class="kn">import</span> <span class="n">PytestAssertRewriteWarning</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.warning_types</span><span class="w"> </span><span class="kn">import</span> <span class="n">PytestCacheWarning</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.warning_types</span><span class="w"> </span><span class="kn">import</span> <span class="n">PytestCollectionWarning</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.warning_types</span><span class="w"> </span><span class="kn">import</span> <span class="n">PytestConfigWarning</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.warning_types</span><span class="w"> </span><span class="kn">import</span> <span class="n">PytestDeprecationWarning</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.warning_types</span><span class="w"> </span><span class="kn">import</span> <span class="n">PytestExperimentalApiWarning</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.warning_types</span><span class="w"> </span><span class="kn">import</span> <span class="n">PytestRemovedIn8Warning</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.warning_types</span><span class="w"> </span><span class="kn">import</span> <span class="n">PytestReturnNotNoneWarning</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.warning_types</span><span class="w"> </span><span class="kn">import</span> <span class="n">PytestUnhandledCoroutineWarning</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.warning_types</span><span class="w"> </span><span class="kn">import</span> <span class="n">PytestUnhandledThreadExceptionWarning</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.warning_types</span><span class="w"> </span><span class="kn">import</span> <span class="n">PytestUnknownMarkWarning</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.warning_types</span><span class="w"> </span><span class="kn">import</span> <span class="n">PytestUnraisableExceptionWarning</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.warning_types</span><span class="w"> </span><span class="kn">import</span> <span class="n">PytestWarning</span>
+
+<span class="n">set_trace</span> <span class="o">=</span> <span class="n">__pytestPDB</span><span class="o">.</span><span class="n">set_trace</span>
+
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;__version__&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;approx&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Cache&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;CallInfo&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;CaptureFixture&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Class&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;cmdline&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Collector&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;CollectReport&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Config&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;console_main&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;deprecated_call&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;DoctestItem&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;exit&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ExceptionInfo&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ExitCode&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;fail&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;File&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;fixture&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FixtureLookupError&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FixtureRequest&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;freeze_includes&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Function&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;hookimpl&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HookRecorder&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;hookspec&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;importorskip&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Item&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;LineMatcher&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;LogCaptureFixture&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;main&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;mark&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Mark&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;MarkDecorator&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;MarkGenerator&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Metafunc&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Module&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;MonkeyPatch&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;OptionGroup&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Package&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;param&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Parser&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;PytestAssertRewriteWarning&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;PytestCacheWarning&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;PytestCollectionWarning&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;PytestConfigWarning&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;PytestDeprecationWarning&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;PytestExperimentalApiWarning&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;PytestRemovedIn8Warning&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;PytestReturnNotNoneWarning&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Pytester&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;PytestPluginManager&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;PytestUnhandledCoroutineWarning&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;PytestUnhandledThreadExceptionWarning&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;PytestUnknownMarkWarning&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;PytestUnraisableExceptionWarning&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;PytestWarning&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;raises&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;RecordedHookCall&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;register_assert_rewrite&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;RunResult&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Session&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;set_trace&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;skip&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Stash&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;StashKey&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;version_tuple&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;TempdirFactory&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;TempPathFactory&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Testdir&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;TestReport&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;TestShortLogReport&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;UsageError&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;WarningsRecorder&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;warns&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;xfail&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;yield_fixture&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="fm">__getattr__</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">object</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;Instance&quot;</span><span class="p">:</span>
+        <span class="c1"># The import emits a deprecation warning.</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.python</span><span class="w"> </span><span class="kn">import</span> <span class="n">Instance</span>
+
+        <span class="k">return</span> <span class="n">Instance</span>
+    <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;module </span><span class="si">{</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> has no attribute </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+  <span id="sidebar-top"></span>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  
+    
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/pytest_logo_curves.svg" alt="Logo"/>
+            </a></p>
+  
+
+<div id="searchbox" style="display: none" role="search">
+  <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel"
+        placeholder="Search"/>
+      <input type="submit" value="前往" />
+    </form>
+  </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><h3>內容</h3>
+
+<ul>
+  <li><a href="../index.html">Home</a></li>
+
+  <li><a href="../getting-started.html">Get started</a></li>
+  <li><a href="../how-to/index.html">How-to guides</a></li>
+  <li><a href="../reference/index.html">Reference guides</a></li>
+  <li><a href="../explanation/index.html">Explanation</a></li>
+  <li><a href="../contents.html">Complete table of contents</a></li>
+  <li><a href="../example/index.html">Library of examples</a></li>
+</ul>
+
+<h3>About the project</h3>
+
+<ul>
+  <li><a href="../changelog.html">Changelog</a></li>
+  <li><a href="../contributing.html">Contributing</a></li>
+  <li><a href="../backwards-compatibility.html">Backwards Compatibility</a></li>
+  <li><a href="../sponsor.html">Sponsor</a></li>
+  <li><a href="../tidelift.html">pytest for Enterprise</a></li>
+  <li><a href="../license.html">License</a></li>
+  <li><a href="../contact.html">Contact Channels</a></li>
+</ul>
+
+<hr><h3>Related Topics</h3>
+<ul>
+  <li><a href="../contents.html">Documentation overview</a><ul>
+  <li><a href="index.html">模組原始碼</a><ul>
+  </ul></li>
+  </ul></li>
+</ul><h3>Useful Links</h3>
+<ul>
+  <li><a href="https://pypi.org/project/pytest/">pytest @ PyPI</a></li>
+  <li><a href="https://github.com/pytest-dev/pytest/">pytest @ GitHub</a></li>
+  <li><a href="https://github.com/pytest-dev/pytest/issues">議題追蹤器</a></li>
+  <li><a href="https://media.readthedocs.org/pdf/pytest/latest/pytest.pdf">PDF 文件</a></li>
+</ul>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  
+    <div class="footer" role="contentinfo">
+        &#169; 版權所有 2015, holger krekel and pytest-dev team。
+      使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0 建立。
+    </div>
+  <script src="../_static/version_warning_offset.js"></script>
+
+  </body>
+</html>

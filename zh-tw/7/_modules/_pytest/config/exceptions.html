@@ -1,0 +1,142 @@
+
+
+
+<!DOCTYPE html>
+
+<html lang="zh-TW">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>_pytest.config.exceptions &#8212; pytest documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/flask.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments_pytest.css" />
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/translations.js"></script>
+    <script data-project="pytest" data-version="7" src="../../../_static/describe_version.js"></script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/pytest-docs-l10n/_modules/_pytest/config/exceptions.html" />
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/>
+    <link rel="search" title="搜尋" href="../../../search.html" />
+
+  <script>DOCUMENTATION_OPTIONS.URL_ROOT = '';</script>
+   
+<script type="text/javascript" src="../../../ltd-provenance.js"></script>
+<script type="text/javascript" src="../../../ltd-current.js"></script>
+<script type="text/javascript" src="../../../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../../../ltd-flyout.js"></script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>瀏覽</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../py-modindex.html" title="Python 模組索引"
+             >模組</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../contents.html">pytest-7.4</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >模組原始碼</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../config.html" accesskey="U">_pytest.config</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">_pytest.config.exceptions</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>_pytest.config.exceptions 的原始碼</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.compat</span><span class="w"> </span><span class="kn">import</span> <span class="n">final</span>
+
+
+<div class="viewcode-block" id="UsageError"><a class="viewcode-back" href="../../../reference/reference.html#pytest.UsageError">[文件]</a><span class="nd">@final</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">UsageError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Error in pytest usage or invocation.&quot;&quot;&quot;</span></div>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">PrintHelp</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Raised when pytest should print its help to skip the rest of the</span>
+<span class="sd">    argument parsing and validation.&quot;&quot;&quot;</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+  <span id="sidebar-top"></span>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  
+    
+            <p class="logo"><a href="../../../contents.html">
+              <img class="logo" src="../../../_static/pytest_logo_curves.svg" alt="Logo"/>
+            </a></p>
+  
+
+<div id="searchbox" style="display: none" role="search">
+  <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel"
+        placeholder="Search"/>
+      <input type="submit" value="前往" />
+    </form>
+  </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><h3>內容</h3>
+
+<ul>
+  <li><a href="../../../index.html">Home</a></li>
+
+  <li><a href="../../../getting-started.html">Get started</a></li>
+  <li><a href="../../../how-to/index.html">How-to guides</a></li>
+  <li><a href="../../../reference/index.html">Reference guides</a></li>
+  <li><a href="../../../explanation/index.html">Explanation</a></li>
+  <li><a href="../../../contents.html">Complete table of contents</a></li>
+  <li><a href="../../../example/index.html">Library of examples</a></li>
+</ul>
+
+<h3>About the project</h3>
+
+<ul>
+  <li><a href="../../../changelog.html">Changelog</a></li>
+  <li><a href="../../../contributing.html">Contributing</a></li>
+  <li><a href="../../../backwards-compatibility.html">Backwards Compatibility</a></li>
+  <li><a href="../../../sponsor.html">Sponsor</a></li>
+  <li><a href="../../../tidelift.html">pytest for Enterprise</a></li>
+  <li><a href="../../../license.html">License</a></li>
+  <li><a href="../../../contact.html">Contact Channels</a></li>
+</ul>
+
+<hr><h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../contents.html">Documentation overview</a><ul>
+  <li><a href="../../index.html">模組原始碼</a><ul>
+  <li><a href="../config.html">_pytest.config</a><ul>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul><h3>Useful Links</h3>
+<ul>
+  <li><a href="https://pypi.org/project/pytest/">pytest @ PyPI</a></li>
+  <li><a href="https://github.com/pytest-dev/pytest/">pytest @ GitHub</a></li>
+  <li><a href="https://github.com/pytest-dev/pytest/issues">議題追蹤器</a></li>
+  <li><a href="https://media.readthedocs.org/pdf/pytest/latest/pytest.pdf">PDF 文件</a></li>
+</ul>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  
+    <div class="footer" role="contentinfo">
+        &#169; 版權所有 2015, holger krekel and pytest-dev team。
+      使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0 建立。
+    </div>
+  <script src="../../../_static/version_warning_offset.js"></script>
+
+  </body>
+</html>
