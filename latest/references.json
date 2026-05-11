@@ -37,9 +37,9 @@
     "branch" : "main",
     "commit" : 
     {
-      "date" : "2026-05-03 22:14:18 +0300",
-      "hash" : "8f81c76744daf72d4f77cfc8423f4bdc60733d78",
-      "title" : "Merge pull request #10546 from ykadowak/refactor_atexit"
+      "date" : "2026-05-10 06:39:14 +0000",
+      "hash" : "09f969fefcd3ccc29461b6a1b41211ff62c879e4",
+      "title" : "[automated] Update plugin list (#14455)"
     }
   },
   "type" : "branch",
