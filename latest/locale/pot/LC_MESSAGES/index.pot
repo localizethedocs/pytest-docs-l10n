@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-23 08:43+0000\n"
+"POT-Creation-Date: 2026-07-06 11:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,27 +17,27 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../../../doc/en/index.rst:21
+#: ../../../doc/en/index.rst:22
 msgid "About the project"
 msgstr ""
 
-#: ../../../doc/en/index.rst:33
+#: ../../../doc/en/index.rst:34
 msgid "pytest @ PyPI"
 msgstr ""
 
-#: ../../../doc/en/index.rst:33
+#: ../../../doc/en/index.rst:34
 msgid "pytest @ GitHub"
 msgstr ""
 
-#: ../../../doc/en/index.rst:33
+#: ../../../doc/en/index.rst:34
 msgid "Issue Tracker"
 msgstr ""
 
-#: ../../../doc/en/index.rst:33
+#: ../../../doc/en/index.rst:34
 msgid "PDF Documentation"
 msgstr ""
 
-#: ../../../doc/en/index.rst:33
+#: ../../../doc/en/index.rst:34
 msgid "Useful links"
 msgstr ""
 
@@ -47,36 +47,42 @@ msgstr ""
 
 #: ../../../doc/en/index.rst:5
 msgid ""
+"`pytest development sprint <https://github.com/pytest-dev/sprint>`_, **July "
+"20th -- 24th**, Klaus (AT), sign-up open until June 15th"
+msgstr ""
+
+#: ../../../doc/en/index.rst:6
+msgid ""
 "`Professional Testing with Python <https://python-academy.com/courses/"
 "python_course_testing.html>`_, via `Python Academy <https://www.python-"
 "academy.com/>`_ (3 day in-depth training), **March 9th -- 11th 2027**, "
 "Leipzig (DE) / Remote"
 msgstr ""
 
-#: ../../../doc/en/index.rst:7
+#: ../../../doc/en/index.rst:8
 msgid "Also see :doc:`previous talks and blogposts <talks>`"
 msgstr ""
 
-#: ../../../doc/en/index.rst:10
+#: ../../../doc/en/index.rst:11
 msgid "pytest: helps you write better programs"
 msgstr ""
 
-#: ../../../doc/en/index.rst:44
+#: ../../../doc/en/index.rst:45
 msgid ""
 "The ``pytest`` framework makes it easy to write small, readable tests, and "
 "can scale to support complex functional testing for applications and "
 "libraries."
 msgstr ""
 
-#: ../../../doc/en/index.rst:48
+#: ../../../doc/en/index.rst:49
 msgid "**PyPI package name**: :pypi:`pytest`"
 msgstr ""
 
-#: ../../../doc/en/index.rst:51
+#: ../../../doc/en/index.rst:52
 msgid "A quick example"
 msgstr ""
 
-#: ../../../doc/en/index.rst:53
+#: ../../../doc/en/index.rst:54
 msgid ""
 "# content of test_sample.py\n"
 "def inc(x):\n"
@@ -87,11 +93,11 @@ msgid ""
 "    assert inc(3) == 5"
 msgstr ""
 
-#: ../../../doc/en/index.rst:64
+#: ../../../doc/en/index.rst:65
 msgid "To execute it:"
 msgstr ""
 
-#: ../../../doc/en/index.rst:66
+#: ../../../doc/en/index.rst:67
 msgid ""
 "$ pytest\n"
 "=========================== test session starts "
@@ -119,117 +125,117 @@ msgid ""
 "============================ 1 failed in 0.12s ============================="
 msgstr ""
 
-#: ../../../doc/en/index.rst:89
+#: ../../../doc/en/index.rst:90
 msgid ""
 "Due to ``pytest``'s detailed assertion introspection, only plain ``assert`` "
 "statements are used. See :ref:`Get started <getstarted>` for a basic "
 "introduction to using pytest."
 msgstr ""
 
-#: ../../../doc/en/index.rst:94
+#: ../../../doc/en/index.rst:95
 msgid "Features"
 msgstr ""
 
-#: ../../../doc/en/index.rst:96
+#: ../../../doc/en/index.rst:97
 msgid ""
 "Detailed info on failing :ref:`assert statements <assert>` (no need to "
 "remember ``self.assert*`` names)"
 msgstr ""
 
-#: ../../../doc/en/index.rst:98
+#: ../../../doc/en/index.rst:99
 msgid ":ref:`Auto-discovery <test discovery>` of test modules and functions"
 msgstr ""
 
-#: ../../../doc/en/index.rst:100
+#: ../../../doc/en/index.rst:101
 msgid ""
 ":ref:`Modular fixtures <fixture>` for managing small or parametrized long-"
 "lived test resources"
 msgstr ""
 
-#: ../../../doc/en/index.rst:102
+#: ../../../doc/en/index.rst:103
 msgid ""
 "Can run :ref:`unittest <unittest>` (including trial) test suites out of the "
 "box"
 msgstr ""
 
-#: ../../../doc/en/index.rst:104
+#: ../../../doc/en/index.rst:105
 msgid "Python 3.10+ or PyPy 3"
 msgstr ""
 
-#: ../../../doc/en/index.rst:106
+#: ../../../doc/en/index.rst:107
 msgid ""
 "Rich plugin architecture, with over 1300+ :ref:`external plugins <plugin-"
 "list>` and thriving community"
 msgstr ""
 
-#: ../../../doc/en/index.rst:110
+#: ../../../doc/en/index.rst:111
 msgid "Documentation"
 msgstr ""
 
-#: ../../../doc/en/index.rst:112
+#: ../../../doc/en/index.rst:113
 msgid ""
 ":ref:`Get started <get-started>` - install pytest and grasp its basics in "
 "just twenty minutes"
 msgstr ""
 
-#: ../../../doc/en/index.rst:113
+#: ../../../doc/en/index.rst:114
 msgid ""
 ":ref:`How-to guides <how-to>` - step-by-step guides, covering a vast range "
 "of use-cases and needs"
 msgstr ""
 
-#: ../../../doc/en/index.rst:114
+#: ../../../doc/en/index.rst:115
 msgid ""
 ":ref:`Reference guides <reference>` - includes the complete pytest API "
 "reference, lists of plugins and more"
 msgstr ""
 
-#: ../../../doc/en/index.rst:115
+#: ../../../doc/en/index.rst:116
 msgid ""
 ":ref:`Explanation <explanation>` - background, discussion of key topics, "
 "answers to higher-level questions"
 msgstr ""
 
-#: ../../../doc/en/index.rst:119
+#: ../../../doc/en/index.rst:120
 msgid "Bugs/Requests"
 msgstr ""
 
-#: ../../../doc/en/index.rst:121
+#: ../../../doc/en/index.rst:122
 msgid ""
 "Please use the `GitHub issue tracker <https://github.com/pytest-dev/pytest/"
 "issues>`_ to submit bugs or request features."
 msgstr ""
 
-#: ../../../doc/en/index.rst:125
+#: ../../../doc/en/index.rst:126
 msgid "Support pytest"
 msgstr ""
 
-#: ../../../doc/en/index.rst:127
+#: ../../../doc/en/index.rst:128
 msgid ""
 "`Open Collective`_ is an online funding platform for open and transparent "
 "communities. It provides tools to raise money and share your finances in "
 "full transparency."
 msgstr ""
 
-#: ../../../doc/en/index.rst:130
+#: ../../../doc/en/index.rst:131
 msgid ""
 "It is the platform of choice for individuals and companies that want to make "
 "one-time or monthly donations directly to the project."
 msgstr ""
 
-#: ../../../doc/en/index.rst:133
+#: ../../../doc/en/index.rst:134
 msgid "See more details in the `pytest collective`_."
 msgstr ""
 
-#: ../../../doc/en/index.rst:140
+#: ../../../doc/en/index.rst:141
 msgid "pytest for enterprise"
 msgstr ""
 
-#: ../../../doc/en/index.rst:142
+#: ../../../doc/en/index.rst:143
 msgid "Available as part of the Tidelift Subscription."
 msgstr ""
 
-#: ../../../doc/en/index.rst:144
+#: ../../../doc/en/index.rst:145
 msgid ""
 "The maintainers of pytest and thousands of other packages are working with "
 "Tidelift to deliver commercial support and maintenance for the open source "
@@ -238,21 +244,20 @@ msgid ""
 "you use."
 msgstr ""
 
-#: ../../../doc/en/index.rst:148
+#: ../../../doc/en/index.rst:149
 msgid ""
 "`Learn more. <https://tidelift.com/subscription/pkg/pypi-pytest?"
 "utm_source=pypi-"
 "pytest&utm_medium=referral&utm_campaign=enterprise&utm_term=repo>`_"
 msgstr ""
 
-#: ../../../doc/en/index.rst:151
+#: ../../../doc/en/index.rst:152
 msgid "Security"
 msgstr ""
 
-#: ../../../doc/en/index.rst:153
+#: ../../../doc/en/index.rst:154
 msgid ""
-"pytest has never been associated with a security vulnerability, but in any "
-"case, to report a security vulnerability please use the `Tidelift security "
-"contact <https://tidelift.com/security>`_. Tidelift will coordinate the fix "
-"and disclosure."
+"If you have found an issue that you believe is a security vulnerability, "
+"please do not create an issue -- instead, report it via a `new security "
+"advisory <https://github.com/pytest-dev/pytest/security/advisories/new>`__."
 msgstr ""
