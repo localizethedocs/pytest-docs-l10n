@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-13 09:26+0000\n"
+"POT-Creation-Date: 2026-07-06 11:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1289,7 +1289,8 @@ msgid ""
 "\n"
 "class TestLandingPageSuccess:\n"
 "    @pytest.fixture(scope=\"class\", autouse=True)\n"
-"    def login(self, driver, base_url, user):\n"
+"    @classmethod\n"
+"    def login(cls, driver, base_url, user):\n"
 "        driver.get(urljoin(base_url, \"/login\"))\n"
 "        page = LoginPage(driver)\n"
 "        page.login(user)\n"
@@ -1307,7 +1308,7 @@ msgid ""
 "profile_href"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1067
+#: ../../../doc/en/how-to/fixtures.rst:1068
 msgid ""
 "Notice that the methods are only referencing ``self`` in the signature as a "
 "formality. No state is tied to the actual test class as it might be in the "
@@ -1315,7 +1316,7 @@ msgid ""
 "system."
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1072
+#: ../../../doc/en/how-to/fixtures.rst:1073
 msgid ""
 "Each method only has to request the fixtures that it actually needs without "
 "worrying about order. This is because the **act** fixture is an autouse "
@@ -1325,7 +1326,7 @@ msgid ""
 "stepping on the toes of the other tests."
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1079
+#: ../../../doc/en/how-to/fixtures.rst:1080
 msgid ""
 "The ``login`` fixture is defined inside the class as well, because not every "
 "one of the other tests in the module will be expecting a successful login, "
@@ -1335,11 +1336,12 @@ msgid ""
 "to the test file:"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1091
+#: ../../../doc/en/how-to/fixtures.rst:1092
 msgid ""
 "class TestLandingPageBadCredentials:\n"
 "    @pytest.fixture(scope=\"class\")\n"
-"    def faux_user(self, user):\n"
+"    @classmethod\n"
+"    def faux_user(cls, user):\n"
 "        _user = deepcopy(user)\n"
 "        _user.password = \"badpass\"\n"
 "        return _user\n"
@@ -1349,11 +1351,11 @@ msgid ""
 "            login_page.login(faux_user)"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1108
+#: ../../../doc/en/how-to/fixtures.rst:1110
 msgid "Fixtures can introspect the requesting test context"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1110
+#: ../../../doc/en/how-to/fixtures.rst:1112
 msgid ""
 "Fixture functions can accept the :py:class:`request <_pytest.fixtures."
 "FixtureRequest>` object to introspect the \"requesting\" test function, "
@@ -1362,7 +1364,7 @@ msgid ""
 "which uses our fixture:"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1115
+#: ../../../doc/en/how-to/fixtures.rst:1117
 msgid ""
 "# content of conftest.py\n"
 "import smtplib\n"
@@ -1379,14 +1381,14 @@ msgid ""
 "    smtp_connection.close()"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1131
+#: ../../../doc/en/how-to/fixtures.rst:1133
 msgid ""
 "We use the ``request.module`` attribute to optionally obtain an "
 "``smtpserver`` attribute from the test module.  If we just execute again, "
 "nothing much has changed:"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1135
+#: ../../../doc/en/how-to/fixtures.rst:1137
 msgid ""
 "$ pytest -s -q --tb=no test_module.py\n"
 "FFfinalizing <smtplib.SMTP object at 0xdeadbeef0002> (smtp.gmail.com)\n"
@@ -1398,13 +1400,13 @@ msgid ""
 "2 failed in 0.12s"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1145
+#: ../../../doc/en/how-to/fixtures.rst:1147
 msgid ""
 "Let's quickly create another test module that actually sets the server URL "
 "in its module namespace:"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1148
+#: ../../../doc/en/how-to/fixtures.rst:1150
 msgid ""
 "# content of test_anothersmtp.py\n"
 "\n"
@@ -1415,11 +1417,11 @@ msgid ""
 "    assert 0, smtp_connection.helo()"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1158
+#: ../../../doc/en/how-to/fixtures.rst:1160
 msgid "Running it:"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1160
+#: ../../../doc/en/how-to/fixtures.rst:1162
 msgid ""
 "$ pytest -qq --tb=short test_anothersmtp.py\n"
 "F                                                                    [100%]\n"
@@ -1439,24 +1441,24 @@ msgid ""
 "FAILED test_anothersmtp.py::test_showhelo - AssertionError: (250, b'mail...."
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1175
+#: ../../../doc/en/how-to/fixtures.rst:1177
 msgid ""
 "voila! The ``smtp_connection`` fixture function picked up our mail server "
 "name from the module namespace."
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1181
+#: ../../../doc/en/how-to/fixtures.rst:1183
 msgid "Using markers to pass data to fixtures"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1183
+#: ../../../doc/en/how-to/fixtures.rst:1185
 msgid ""
 "Using the :py:class:`request <_pytest.fixtures.FixtureRequest>` object, a "
 "fixture can also access markers which are applied to a test function. This "
 "can be useful to pass data into a fixture from a test:"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1187
+#: ../../../doc/en/how-to/fixtures.rst:1189
 msgid ""
 "import pytest\n"
 "\n"
@@ -1479,11 +1481,11 @@ msgid ""
 "    assert fixt == 42"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1212
+#: ../../../doc/en/how-to/fixtures.rst:1214
 msgid "Factories as fixtures"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1214
+#: ../../../doc/en/how-to/fixtures.rst:1216
 msgid ""
 "The \"factory as fixture\" pattern can help in situations where the result "
 "of a fixture is needed multiple times in a single test. Instead of returning "
@@ -1491,11 +1493,11 @@ msgid ""
 "data. This function can then be called multiple times in the test."
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1219
+#: ../../../doc/en/how-to/fixtures.rst:1221
 msgid "Factories can have parameters as needed:"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1221
+#: ../../../doc/en/how-to/fixtures.rst:1223
 msgid ""
 "@pytest.fixture\n"
 "def make_customer_record():\n"
@@ -1511,13 +1513,13 @@ msgid ""
 "    customer_3 = make_customer_record(\"Meredith\")"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1236
+#: ../../../doc/en/how-to/fixtures.rst:1238
 msgid ""
 "If the data created by the factory requires managing, the fixture can take "
 "care of that:"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1238
+#: ../../../doc/en/how-to/fixtures.rst:1240
 msgid ""
 "@pytest.fixture\n"
 "def make_customer_record():\n"
@@ -1540,11 +1542,11 @@ msgid ""
 "    customer_3 = make_customer_record(\"Meredith\")"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1264
+#: ../../../doc/en/how-to/fixtures.rst:1266
 msgid "Parametrizing fixtures"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1266
+#: ../../../doc/en/how-to/fixtures.rst:1268
 msgid ""
 "Fixture functions can be parametrized in which case they will be called "
 "multiple times, each time executing the set of dependent tests, i.e. the "
@@ -1554,7 +1556,7 @@ msgid ""
 "configured in multiple ways."
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1273
+#: ../../../doc/en/how-to/fixtures.rst:1275
 msgid ""
 "Extending the previous example, we can flag the fixture to create two "
 "``smtp_connection`` fixture instances which will cause all tests using the "
@@ -1562,7 +1564,7 @@ msgid ""
 "through the special :py:class:`request <pytest.FixtureRequest>` object:"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1278
+#: ../../../doc/en/how-to/fixtures.rst:1280
 msgid ""
 "# content of conftest.py\n"
 "import smtplib\n"
@@ -1579,7 +1581,7 @@ msgid ""
 "    smtp_connection.close()"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1293
+#: ../../../doc/en/how-to/fixtures.rst:1295
 msgid ""
 "The main change is the declaration of ``params`` with :py:func:`@pytest."
 "fixture <pytest.fixture>`, a list of values for each of which the fixture "
@@ -1587,7 +1589,7 @@ msgid ""
 "function code needs to change. So let's just do another run:"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1299
+#: ../../../doc/en/how-to/fixtures.rst:1301
 msgid ""
 "$ pytest -q test_module.py\n"
 "FFFF                                                                 [100%]\n"
@@ -1663,7 +1665,7 @@ msgid ""
 "4 failed in 0.12s"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1363
+#: ../../../doc/en/how-to/fixtures.rst:1365
 msgid ""
 "We see that our two test functions each ran twice, against the different "
 "``smtp_connection`` instances.  Note also, that with the ``mail.python.org`` "
@@ -1671,7 +1673,7 @@ msgid ""
 "string is expected than what arrived."
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1368
+#: ../../../doc/en/how-to/fixtures.rst:1370
 msgid ""
 "pytest will build a string that is the test ID for each fixture value in a "
 "parametrized fixture, e.g. ``test_ehlo[smtp.gmail.com]`` and "
@@ -1681,7 +1683,7 @@ msgid ""
 "`--collect-only` will show the generated IDs."
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1375
+#: ../../../doc/en/how-to/fixtures.rst:1377
 msgid ""
 "Numbers, strings, booleans and ``None`` will have their usual string "
 "representation used in the test ID. For other objects, pytest will make a "
@@ -1690,7 +1692,7 @@ msgid ""
 "argument:"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1381
+#: ../../../doc/en/how-to/fixtures.rst:1383
 msgid ""
 "# content of test_ids.py\n"
 "import pytest\n"
@@ -1721,7 +1723,7 @@ msgid ""
 "    pass"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1411
+#: ../../../doc/en/how-to/fixtures.rst:1413
 msgid ""
 "The above shows how ``ids`` can be either a list of strings to use or a "
 "function which will be called with the fixture value and then has to return "
@@ -1729,11 +1731,11 @@ msgid ""
 "pytest's auto-generated ID will be used."
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1416
+#: ../../../doc/en/how-to/fixtures.rst:1418
 msgid "Running the above tests results in the following test IDs being used:"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1418
+#: ../../../doc/en/how-to/fixtures.rst:1420
 msgid ""
 "$ pytest --collect-only\n"
 "=========================== test session starts "
@@ -1742,7 +1744,7 @@ msgid ""
 "rootdir: /home/sweet/project\n"
 "collected 12 items\n"
 "\n"
-"<Dir fixtures.rst-234>\n"
+"<Dir fixtures.rst-236>\n"
 "  <Module test_anothersmtp.py>\n"
 "    <Function test_showhelo[smtp.gmail.com]>\n"
 "    <Function test_showhelo[mail.python.org]>\n"
@@ -1764,22 +1766,22 @@ msgid ""
 "======================= 12 tests collected in 0.12s ========================"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1450
+#: ../../../doc/en/how-to/fixtures.rst:1452
 msgid "Using marks with parametrized fixtures"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1452
+#: ../../../doc/en/how-to/fixtures.rst:1454
 msgid ""
 ":func:`pytest.param` can be used to apply marks in values sets of "
 "parametrized fixtures in the same way that they can be used with :ref:"
 "`@pytest.mark.parametrize <@pytest.mark.parametrize>`."
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1455
+#: ../../../doc/en/how-to/fixtures.rst:1457
 msgid "Example:"
 msgstr "範例："
 
-#: ../../../doc/en/how-to/fixtures.rst:1457
+#: ../../../doc/en/how-to/fixtures.rst:1459
 msgid ""
 "# content of test_fixture_marks.py\n"
 "import pytest\n"
@@ -1794,13 +1796,13 @@ msgid ""
 "    pass"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1471
+#: ../../../doc/en/how-to/fixtures.rst:1473
 msgid ""
 "Running this test will *skip* the invocation of ``data_set`` with value "
 "``2``:"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1473
+#: ../../../doc/en/how-to/fixtures.rst:1475
 msgid ""
 "$ pytest test_fixture_marks.py -v\n"
 "=========================== test session starts "
@@ -1818,11 +1820,11 @@ msgid ""
 "======================= 2 passed, 1 skipped in 0.12s ======================="
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1491
+#: ../../../doc/en/how-to/fixtures.rst:1493
 msgid "Modularity: using fixtures from a fixture function"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1493
+#: ../../../doc/en/how-to/fixtures.rst:1495
 msgid ""
 "In addition to using fixtures in test functions, fixture functions can use "
 "other fixtures themselves.  This contributes to a modular design of your "
@@ -1832,7 +1834,7 @@ msgid ""
 "``smtp_connection`` resource into it:"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1500
+#: ../../../doc/en/how-to/fixtures.rst:1502
 msgid ""
 "# content of test_appsetup.py\n"
 "\n"
@@ -1853,14 +1855,14 @@ msgid ""
 "    assert app.smtp_connection"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1520
+#: ../../../doc/en/how-to/fixtures.rst:1522
 msgid ""
 "Here we declare an ``app`` fixture which receives the previously defined "
 "``smtp_connection`` fixture and instantiates an ``App`` object with it.  "
 "Let's run it:"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1523
+#: ../../../doc/en/how-to/fixtures.rst:1525
 msgid ""
 "$ pytest -v test_appsetup.py\n"
 "=========================== test session starts "
@@ -1878,7 +1880,7 @@ msgid ""
 "============================ 2 passed in 0.12s ============================="
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1537
+#: ../../../doc/en/how-to/fixtures.rst:1539
 msgid ""
 "Due to the parametrization of ``smtp_connection``, the test will run twice "
 "with two different ``App`` instances and respective smtp servers.  There is "
@@ -1887,7 +1889,7 @@ msgid ""
 "graph."
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1542
+#: ../../../doc/en/how-to/fixtures.rst:1544
 msgid ""
 "Note that the ``app`` fixture has a scope of ``module`` and uses a module-"
 "scoped ``smtp_connection`` fixture.  The example would still work if "
@@ -1896,11 +1898,11 @@ msgid ""
 "session-scoped fixture could not use a module-scoped one in a meaningful way."
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1553
+#: ../../../doc/en/how-to/fixtures.rst:1555
 msgid "Automatic grouping of tests by fixture instances"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1557
+#: ../../../doc/en/how-to/fixtures.rst:1559
 msgid ""
 "pytest minimizes the number of active fixtures during test runs. If you have "
 "a parametrized fixture, then all the tests using it will first execute with "
@@ -1909,14 +1911,14 @@ msgid ""
 "create and use global state."
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1563
+#: ../../../doc/en/how-to/fixtures.rst:1565
 msgid ""
 "The following example uses two parametrized fixtures, one of which is scoped "
 "on a per-module basis, and all the functions perform ``print`` calls to show "
 "the setup/teardown flow:"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1567
+#: ../../../doc/en/how-to/fixtures.rst:1569
 msgid ""
 "# content of test_module.py\n"
 "import pytest\n"
@@ -1950,12 +1952,12 @@ msgid ""
 "    print(f\"  RUN test2 with otherarg {otherarg} and modarg {modarg}\")"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1601
+#: ../../../doc/en/how-to/fixtures.rst:1603
 msgid ""
 "Let's run the tests in verbose mode and with looking at the print-output:"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1603
+#: ../../../doc/en/how-to/fixtures.rst:1605
 msgid ""
 "$ pytest -v -s test_module.py\n"
 "=========================== test session starts "
@@ -2002,7 +2004,7 @@ msgid ""
 "============================ 8 passed in 0.12s ============================="
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1647
+#: ../../../doc/en/how-to/fixtures.rst:1649
 msgid ""
 "You can see that the parametrized module-scoped ``modarg`` resource caused "
 "an ordering of test execution that led to the fewest possible \"active\" "
@@ -2010,24 +2012,24 @@ msgid ""
 "before the ``mod2`` resource was setup."
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1652
+#: ../../../doc/en/how-to/fixtures.rst:1654
 msgid ""
 "In particular notice that test_0 is completely independent and finishes "
 "first. Then test_1 is executed with ``mod1``, then test_2 with ``mod1``, "
 "then test_1 with ``mod2`` and finally test_2 with ``mod2``."
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1656
+#: ../../../doc/en/how-to/fixtures.rst:1658
 msgid ""
 "The ``otherarg`` parametrized resource (having function scope) was set up "
 "before and torn down after every test that used it."
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1663
+#: ../../../doc/en/how-to/fixtures.rst:1665
 msgid "Use fixtures in classes and modules with ``usefixtures``"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1667
+#: ../../../doc/en/how-to/fixtures.rst:1669
 msgid ""
 "Sometimes test functions do not directly need access to a fixture object. "
 "For example, tests may require to operate with an empty directory as the "
@@ -2037,7 +2039,7 @@ msgid ""
 "file:`conftest.py` file:"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1675
+#: ../../../doc/en/how-to/fixtures.rst:1677
 msgid ""
 "# content of conftest.py\n"
 "\n"
@@ -2056,11 +2058,11 @@ msgid ""
 "        os.chdir(old_cwd)"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1693
+#: ../../../doc/en/how-to/fixtures.rst:1695
 msgid "and declare its use in a test module via a ``usefixtures`` marker:"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1695
+#: ../../../doc/en/how-to/fixtures.rst:1697
 msgid ""
 "# content of test_setenv.py\n"
 "import os\n"
@@ -2079,7 +2081,7 @@ msgid ""
 "        assert os.listdir(os.getcwd()) == []"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1713
+#: ../../../doc/en/how-to/fixtures.rst:1715
 msgid ""
 "Due to the ``usefixtures`` marker, the ``cleandir`` fixture will be required "
 "for the execution of each test method, just as if you specified a "
@@ -2087,81 +2089,81 @@ msgid ""
 "fixture is activated and the tests pass:"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1718
+#: ../../../doc/en/how-to/fixtures.rst:1720
 msgid ""
 "$ pytest -q\n"
 "..                                                                   [100%]\n"
 "2 passed in 0.12s"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1724
+#: ../../../doc/en/how-to/fixtures.rst:1726
 msgid "You can specify multiple fixtures like this:"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1726
+#: ../../../doc/en/how-to/fixtures.rst:1728
 msgid ""
 "@pytest.mark.usefixtures(\"cleandir\", \"anotherfixture\")\n"
 "def test(): ..."
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1731
+#: ../../../doc/en/how-to/fixtures.rst:1733
 msgid ""
 "and you may specify fixture usage at the test module level using :globalvar:"
 "`pytestmark`:"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1733
+#: ../../../doc/en/how-to/fixtures.rst:1735
 msgid "pytestmark = pytest.mark.usefixtures(\"cleandir\")"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1738
+#: ../../../doc/en/how-to/fixtures.rst:1740
 msgid ""
 "It is also possible to put fixtures required by all tests in your project "
 "into a configuration file:"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1741
+#: ../../../doc/en/how-to/fixtures.rst:1743
 msgid ""
 "# content of pytest.toml\n"
 "[pytest]\n"
 "usefixtures = [\"cleandir\"]"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1749
+#: ../../../doc/en/how-to/fixtures.rst:1751
 msgid ""
 "``@pytest.mark.usefixtures`` cannot be used on **fixture functions**. For "
 "example, this is an error:"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1752
+#: ../../../doc/en/how-to/fixtures.rst:1754
 msgid ""
 "@pytest.mark.usefixtures(\"my_other_fixture\")\n"
 "@pytest.fixture\n"
 "def my_fixture_that_sadly_wont_use_my_other_fixture(): ..."
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1761
+#: ../../../doc/en/how-to/fixtures.rst:1763
 msgid "Overriding fixtures on various levels"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1763
+#: ../../../doc/en/how-to/fixtures.rst:1765
 msgid ""
 "In a relatively large test suite, you may want to *override* a fixture, to "
 "augment or change its behavior inside of certain test modules or directories."
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1767
+#: ../../../doc/en/how-to/fixtures.rst:1769
 msgid "Override a fixture on a directory (conftest) level"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1769
-#: ../../../doc/en/how-to/fixtures.rst:1808
-#: ../../../doc/en/how-to/fixtures.rst:1849
-#: ../../../doc/en/how-to/fixtures.rst:1885
+#: ../../../doc/en/how-to/fixtures.rst:1771
+#: ../../../doc/en/how-to/fixtures.rst:1810
+#: ../../../doc/en/how-to/fixtures.rst:1851
+#: ../../../doc/en/how-to/fixtures.rst:1887
 msgid "Given the tests file structure is:"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1773
+#: ../../../doc/en/how-to/fixtures.rst:1775
 msgid ""
 "tests/\n"
 "    conftest.py\n"
@@ -2192,18 +2194,18 @@ msgid ""
 "                assert username == 'overridden-username'"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1801
+#: ../../../doc/en/how-to/fixtures.rst:1803
 msgid ""
 "As you can see, a fixture with the same name can be overridden for a certain "
 "test directory level. Note that the ``base`` or ``super`` fixture can be "
 "accessed from the ``overriding`` fixture easily - used in the example above."
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1806
+#: ../../../doc/en/how-to/fixtures.rst:1808
 msgid "Override a fixture on a test module level"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1812
+#: ../../../doc/en/how-to/fixtures.rst:1814
 msgid ""
 "tests/\n"
 "    conftest.py\n"
@@ -2237,17 +2239,17 @@ msgid ""
 "            assert username == 'overridden-else-username'"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1843
+#: ../../../doc/en/how-to/fixtures.rst:1845
 msgid ""
 "In the example above, a fixture with the same name can be overridden for a "
 "certain test module."
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1847
+#: ../../../doc/en/how-to/fixtures.rst:1849
 msgid "Override a fixture with direct test parametrization"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1853
+#: ../../../doc/en/how-to/fixtures.rst:1855
 msgid ""
 "tests/\n"
 "    conftest.py\n"
@@ -2278,7 +2280,7 @@ msgid ""
 "other'"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1878
+#: ../../../doc/en/how-to/fixtures.rst:1880
 msgid ""
 "In the example above, a fixture value is overridden by the test parameter "
 "value. Note that the value of the fixture can be overridden this way even if "
@@ -2286,12 +2288,12 @@ msgid ""
 "prototype)."
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1883
+#: ../../../doc/en/how-to/fixtures.rst:1885
 msgid ""
 "Override a parametrized fixture with non-parametrized one and vice versa"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1889
+#: ../../../doc/en/how-to/fixtures.rst:1891
 msgid ""
 "tests/\n"
 "    conftest.py\n"
@@ -2333,7 +2335,7 @@ msgid ""
 "            assert non_parametrized_username == 'username'"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1928
+#: ../../../doc/en/how-to/fixtures.rst:1930
 msgid ""
 "In the example above, a parametrized fixture is overridden with a non-"
 "parametrized version, and a non-parametrized fixture is overridden with a "
@@ -2341,54 +2343,54 @@ msgid ""
 "directory level obviously."
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1934
+#: ../../../doc/en/how-to/fixtures.rst:1936
 msgid "Using fixtures from other projects"
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1936
+#: ../../../doc/en/how-to/fixtures.rst:1938
 msgid ""
 "Usually projects that provide pytest support will use :ref:`entry points "
 "<pip-installable plugins>`, so just installing those projects into an "
 "environment will make those fixtures available for use."
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1939
+#: ../../../doc/en/how-to/fixtures.rst:1941
 msgid ""
 "In case you want to use fixtures from a project that does not use entry "
 "points, you can define :globalvar:`pytest_plugins` in your top ``conftest."
 "py`` file to register that module as a plugin."
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1943
+#: ../../../doc/en/how-to/fixtures.rst:1945
 msgid ""
 "Suppose you have some fixtures in ``mylibrary.fixtures`` and you want to "
 "reuse them into your ``app/tests`` directory."
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1946
+#: ../../../doc/en/how-to/fixtures.rst:1948
 msgid ""
 "All you need to do is to define :globalvar:`pytest_plugins` in ``app/tests/"
 "conftest.py`` pointing to that module."
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1949
+#: ../../../doc/en/how-to/fixtures.rst:1951
 msgid "pytest_plugins = \"mylibrary.fixtures\""
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1953
+#: ../../../doc/en/how-to/fixtures.rst:1955
 msgid ""
 "This effectively registers ``mylibrary.fixtures`` as a plugin, making all "
 "its fixtures and hooks available to tests in ``app/tests``."
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1958
+#: ../../../doc/en/how-to/fixtures.rst:1960
 msgid ""
 "Sometimes users will *import* fixtures from other projects for use, however "
 "this is not recommended: importing fixtures into a module will register them "
 "in pytest as *defined* in that module."
 msgstr ""
 
-#: ../../../doc/en/how-to/fixtures.rst:1962
+#: ../../../doc/en/how-to/fixtures.rst:1964
 msgid ""
 "This has minor consequences, such as appearing multiple times in ``pytest --"
 "help``, but it is not **recommended** because this behavior might change/"

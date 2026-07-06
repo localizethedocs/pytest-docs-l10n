@@ -16,9 +16,9 @@
       "branch" : "main",
       "commit" : 
       {
-        "date" : "2026-05-03 22:14:18 +0300",
-        "hash" : "8f81c76744daf72d4f77cfc8423f4bdc60733d78",
-        "title" : "Merge pull request #10546 from ykadowak/refactor_atexit"
+        "date" : "2026-07-06 06:22:34 +0200",
+        "hash" : "83b022078855ea64c5c53bc50bd9299a5a1f1dc0",
+        "title" : "build(deps): Bump anyio in /testing/plugins_integration (#14679)"
       }
     },
     "zh_TW" : 
@@ -26,9 +26,9 @@
       "branch" : "main",
       "commit" : 
       {
-        "date" : "2026-05-03 22:14:18 +0300",
-        "hash" : "8f81c76744daf72d4f77cfc8423f4bdc60733d78",
-        "title" : "Merge pull request #10546 from ykadowak/refactor_atexit"
+        "date" : "2026-07-06 06:22:34 +0200",
+        "hash" : "83b022078855ea64c5c53bc50bd9299a5a1f1dc0",
+        "title" : "build(deps): Bump anyio in /testing/plugins_integration (#14679)"
       }
     }
   },

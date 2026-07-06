@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-23 08:43+0000\n"
+"POT-Creation-Date: 2026-07-06 11:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -147,24 +147,32 @@ msgid ""
 msgstr ""
 
 #: ../../../doc/en/backwards-compatibility.rst:47
-msgid ""
-"For the PR to mature from POC to acceptance, it must contain: * Setup of "
-"deprecation errors/warnings that help users fix and port their code. If it "
-"is possible to introduce a deprecation period under the current series, "
-"before the true breakage, it should be introduced in a separate PR and be "
-"part of the current release stream. * Detailed description of the rationale "
-"and examples on how to port code in ``doc/en/deprecations.rst``."
+msgid "For the PR to mature from POC to acceptance, it must contain:"
 msgstr ""
 
-#: ../../../doc/en/backwards-compatibility.rst:53
+#: ../../../doc/en/backwards-compatibility.rst:49
+msgid ""
+"Setup of deprecation errors/warnings that help users fix and port their "
+"code. If it is possible to introduce a deprecation period under the current "
+"series, before the true breakage, it should be introduced in a separate PR "
+"and be part of the current release stream."
+msgstr ""
+
+#: ../../../doc/en/backwards-compatibility.rst:50
+msgid ""
+"Detailed description of the rationale and examples on how to port code in "
+"``doc/en/deprecations.rst``."
+msgstr ""
+
+#: ../../../doc/en/backwards-compatibility.rst:54
 msgid "History"
 msgstr ""
 
-#: ../../../doc/en/backwards-compatibility.rst:57
+#: ../../../doc/en/backwards-compatibility.rst:58
 msgid "Focus primarily on smooth transition - stance (pre 6.0)"
 msgstr ""
 
-#: ../../../doc/en/backwards-compatibility.rst:59
+#: ../../../doc/en/backwards-compatibility.rst:60
 msgid ""
 "Keeping backwards compatibility has a very high priority in the pytest "
 "project. Although we have deprecated functionality over the years, most of "
@@ -176,7 +184,7 @@ msgstr ""
 "能，但其中大部分目前仍受支援。pytest 中所有的棄用措施，都是因為出現了更簡單或"
 "更有效率的方法來完成相同的任務，使得舊有的做法變得不再必要。"
 
-#: ../../../doc/en/backwards-compatibility.rst:61
+#: ../../../doc/en/backwards-compatibility.rst:62
 msgid ""
 "With the pytest 3.0 release, we introduced a clear communication scheme for "
 "when we will actually remove the old busted joint and politely ask you to "
@@ -188,7 +196,7 @@ msgstr ""
 "舊有的過時功能，並禮貌地請您改用新的替代方案。同時，這也為您留出足夠的時間來"
 "調整測試程式碼，或者在有正當理由需要保留已棄用功能時提出疑慮。"
 
-#: ../../../doc/en/backwards-compatibility.rst:63
+#: ../../../doc/en/backwards-compatibility.rst:64
 msgid ""
 "To communicate changes, we issue deprecation warnings using a custom warning "
 "hierarchy (see :ref:`internal-warnings`). These warnings may be suppressed "
@@ -197,7 +205,7 @@ msgid ""
 "to use these sparingly and temporarily, and heed the warnings when possible."
 msgstr ""
 
-#: ../../../doc/en/backwards-compatibility.rst:65
+#: ../../../doc/en/backwards-compatibility.rst:66
 msgid ""
 "We will only start the removal of deprecated functionality in major releases "
 "(e.g. if we deprecate something in 3.0, we will start to remove it in 4.0), "
@@ -206,7 +214,7 @@ msgid ""
 "not in 4.0)."
 msgstr ""
 
-#: ../../../doc/en/backwards-compatibility.rst:67
+#: ../../../doc/en/backwards-compatibility.rst:68
 msgid ""
 "When the deprecation expires (e.g. 4.0 is released), we won't remove the "
 "deprecated functionality immediately, but will use the standard warning "
@@ -217,17 +225,17 @@ msgid ""
 "will be effectively removed."
 msgstr ""
 
-#: ../../../doc/en/backwards-compatibility.rst:71
+#: ../../../doc/en/backwards-compatibility.rst:72
 msgid "Deprecation Roadmap"
 msgstr "棄用路線圖"
 
-#: ../../../doc/en/backwards-compatibility.rst:73
+#: ../../../doc/en/backwards-compatibility.rst:74
 msgid ""
 "Features currently deprecated and removed in previous releases can be found "
 "in :ref:`deprecations`."
 msgstr ""
 
-#: ../../../doc/en/backwards-compatibility.rst:75
+#: ../../../doc/en/backwards-compatibility.rst:76
 msgid ""
 "We track future deprecation and removal of features using milestones and the "
 "`deprecation <https://github.com/pytest-dev/pytest/issues?"
@@ -235,80 +243,80 @@ msgid ""
 "pytest-dev/pytest/labels/type%3A%20removal>`_ labels on GitHub."
 msgstr ""
 
-#: ../../../doc/en/backwards-compatibility.rst:79
+#: ../../../doc/en/backwards-compatibility.rst:80
 msgid "Python version support"
 msgstr "Python 版本支援"
 
-#: ../../../doc/en/backwards-compatibility.rst:81
+#: ../../../doc/en/backwards-compatibility.rst:82
 msgid ""
 "Released pytest versions support all Python versions that are actively "
 "maintained at the time of the release:"
 msgstr "發行的 pytest 版本支援在發行時所有仍處於主動維護狀態的 Python 版本："
 
-#: ../../../doc/en/backwards-compatibility.rst:84
+#: ../../../doc/en/backwards-compatibility.rst:85
 msgid "pytest version"
 msgstr "pytest 版本"
 
-#: ../../../doc/en/backwards-compatibility.rst:84
+#: ../../../doc/en/backwards-compatibility.rst:85
 msgid "min. Python version"
 msgstr "最低 Python 版本"
 
-#: ../../../doc/en/backwards-compatibility.rst:86
+#: ../../../doc/en/backwards-compatibility.rst:87
 msgid "9.0+"
 msgstr ""
 
-#: ../../../doc/en/backwards-compatibility.rst:86
+#: ../../../doc/en/backwards-compatibility.rst:87
 msgid "3.10+"
 msgstr ""
 
-#: ../../../doc/en/backwards-compatibility.rst:87
+#: ../../../doc/en/backwards-compatibility.rst:88
 msgid "8.4"
 msgstr ""
 
-#: ../../../doc/en/backwards-compatibility.rst:87
+#: ../../../doc/en/backwards-compatibility.rst:88
 msgid "3.9+"
 msgstr ""
 
-#: ../../../doc/en/backwards-compatibility.rst:88
+#: ../../../doc/en/backwards-compatibility.rst:89
 msgid "8.0 - 8.3"
 msgstr ""
 
-#: ../../../doc/en/backwards-compatibility.rst:88
+#: ../../../doc/en/backwards-compatibility.rst:89
 msgid "3.8+"
 msgstr ""
 
-#: ../../../doc/en/backwards-compatibility.rst:89
+#: ../../../doc/en/backwards-compatibility.rst:90
 msgid "7.1 - 7.4"
 msgstr ""
 
-#: ../../../doc/en/backwards-compatibility.rst:89
+#: ../../../doc/en/backwards-compatibility.rst:90
 msgid "3.7+"
 msgstr ""
 
-#: ../../../doc/en/backwards-compatibility.rst:90
+#: ../../../doc/en/backwards-compatibility.rst:91
 msgid "6.2 - 7.0"
 msgstr ""
 
-#: ../../../doc/en/backwards-compatibility.rst:90
+#: ../../../doc/en/backwards-compatibility.rst:91
 msgid "3.6+"
 msgstr ""
 
-#: ../../../doc/en/backwards-compatibility.rst:91
+#: ../../../doc/en/backwards-compatibility.rst:92
 msgid "5.0 - 6.1"
 msgstr ""
 
-#: ../../../doc/en/backwards-compatibility.rst:91
+#: ../../../doc/en/backwards-compatibility.rst:92
 msgid "3.5+"
 msgstr ""
 
-#: ../../../doc/en/backwards-compatibility.rst:92
+#: ../../../doc/en/backwards-compatibility.rst:93
 msgid "3.3 - 4.6"
 msgstr ""
 
-#: ../../../doc/en/backwards-compatibility.rst:92
+#: ../../../doc/en/backwards-compatibility.rst:93
 msgid "2.7, 3.4+"
 msgstr ""
 
-#: ../../../doc/en/backwards-compatibility.rst:95
+#: ../../../doc/en/backwards-compatibility.rst:96
 msgid "`Status of Python Versions <https://devguide.python.org/versions/>`__."
 msgstr "`Python 版本的狀態 <https://devguide.python.org/versions/>`__。"

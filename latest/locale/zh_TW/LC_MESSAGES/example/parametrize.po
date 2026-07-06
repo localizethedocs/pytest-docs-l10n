@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-13 09:26+0000\n"
+"POT-Creation-Date: 2026-07-06 11:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -223,7 +223,7 @@ msgid ""
 "rootdir: /home/sweet/project\n"
 "collected 8 items\n"
 "\n"
-"<Dir parametrize.rst-213>\n"
+"<Dir parametrize.rst-215>\n"
 "  <Module test_time.py>\n"
 "    <Function test_timedistance_v0[a0-b0-expected0]>\n"
 "    <Function test_timedistance_v0[a1-b1-expected1]>\n"
@@ -318,7 +318,7 @@ msgid ""
 "rootdir: /home/sweet/project\n"
 "collected 4 items\n"
 "\n"
-"<Dir parametrize.rst-213>\n"
+"<Dir parametrize.rst-215>\n"
 "  <Module test_scenarios.py>\n"
 "    <Class TestSampleWithScenarios>\n"
 "      <Function test_demo1[basic]>\n"
@@ -410,7 +410,7 @@ msgid ""
 "rootdir: /home/sweet/project\n"
 "collected 2 items\n"
 "\n"
-"<Dir parametrize.rst-213>\n"
+"<Dir parametrize.rst-215>\n"
 "  <Module test_backends.py>\n"
 "    <Function test_db_initialized[d1]>\n"
 "    <Function test_db_initialized[d2]>\n"
@@ -482,7 +482,7 @@ msgid ""
 "    assert len(fixt) == 3"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:373
+#: ../../../doc/en/example/parametrize.rst:374
 msgid ""
 "This can be used, for example, to do more expensive setup at test run time "
 "in the fixture, rather than having to run those setup steps at collection "
@@ -490,10 +490,22 @@ msgid ""
 msgstr ""
 
 #: ../../../doc/en/example/parametrize.rst:379
+msgid ""
+"The ``request`` argument used by the fixture is pytest's built-in :py:class:"
+"`FixtureRequest <pytest.FixtureRequest>` fixture. For indirect "
+"parametrization, the value supplied to the test parameter is passed to the "
+"fixture and made available as ``request.param``."
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:384
+msgid "For more information, see :ref:`fixture-parametrize`."
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:389
 msgid "Apply indirect on particular arguments"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:381
+#: ../../../doc/en/example/parametrize.rst:391
 msgid ""
 "Very often parametrization uses more than one argument name. There is "
 "opportunity to apply ``indirect`` parameter on particular arguments. It can "
@@ -505,7 +517,7 @@ msgid ""
 "function:"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:388
+#: ../../../doc/en/example/parametrize.rst:398
 msgid ""
 "# content of test_indirect_list.py\n"
 "\n"
@@ -528,11 +540,11 @@ msgid ""
 "    assert y == \"b\""
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:410
+#: ../../../doc/en/example/parametrize.rst:420
 msgid "The result of this test will be successful:"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:412
+#: ../../../doc/en/example/parametrize.rst:422
 msgid ""
 "$ pytest -v test_indirect_list.py\n"
 "=========================== test session starts "
@@ -560,18 +572,18 @@ msgstr ""
 "\n"
 "============================ 1 passed in 0.12s ============================="
 
-#: ../../../doc/en/example/parametrize.rst:428
+#: ../../../doc/en/example/parametrize.rst:438
 msgid "Parametrizing test methods through per-class configuration"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:433
+#: ../../../doc/en/example/parametrize.rst:443
 msgid ""
 "Here is an example ``pytest_generate_tests`` function implementing a "
 "parametrization scheme similar to Michael Foord's `unittest parametrizer`_ "
 "but in a lot less code:"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:437
+#: ../../../doc/en/example/parametrize.rst:447
 msgid ""
 "# content of ./test_parametrize.py\n"
 "import pytest\n"
@@ -602,13 +614,13 @@ msgid ""
 "            a / b"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:466
+#: ../../../doc/en/example/parametrize.rst:476
 msgid ""
 "Our test generator looks up a class-level definition which specifies which "
 "argument sets to use for each test function.  Let's run it:"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:469
+#: ../../../doc/en/example/parametrize.rst:479
 msgid ""
 "$ pytest -q\n"
 "F..                                                                  [100%]\n"
@@ -630,11 +642,11 @@ msgid ""
 "1 failed, 2 passed in 0.12s"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:488
+#: ../../../doc/en/example/parametrize.rst:498
 msgid "Parametrization with multiple fixtures"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:490
+#: ../../../doc/en/example/parametrize.rst:500
 msgid ""
 "Here is a stripped down real-life example of using parametrized testing for "
 "testing serialization of objects between different python interpreters.  We "
@@ -642,21 +654,21 @@ msgid ""
 "sets of arguments for its three arguments:"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:495
+#: ../../../doc/en/example/parametrize.rst:505
 msgid ""
 "``python1``: first python interpreter, run to pickle-dump an object to a file"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:496
+#: ../../../doc/en/example/parametrize.rst:506
 msgid ""
 "``python2``: second interpreter, run to pickle-load an object from a file"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:497
+#: ../../../doc/en/example/parametrize.rst:507
 msgid "``obj``: object to be dumped/loaded"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:499
+#: ../../../doc/en/example/parametrize.rst:509
 msgid ""
 "\"\"\"Module containing a parametrized tests testing cross-python "
 "serialization\n"
@@ -731,14 +743,14 @@ msgid ""
 "    python2.load_and_is_true(f\"obj == {obj}\")\n"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:501
+#: ../../../doc/en/example/parametrize.rst:511
 msgid ""
 "Running it results in some skips if we don't have all the python "
 "interpreters installed and otherwise runs all combinations (3 interpreters "
 "times 3 interpreters times 3 objects to serialize/deserialize):"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:503
+#: ../../../doc/en/example/parametrize.rst:513
 msgid ""
 ". $ pytest -rs -q multipython.py\n"
 "ssssssssssss......sss......                                          [100%]\n"
@@ -748,11 +760,11 @@ msgid ""
 "12 passed, 15 skipped in 0.12s"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:512
+#: ../../../doc/en/example/parametrize.rst:522
 msgid "Parametrization of optional implementations/imports"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:514
+#: ../../../doc/en/example/parametrize.rst:524
 msgid ""
 "If you want to compare the outcomes of several implementations of a given "
 "API, you can write test functions that receive the already imported "
@@ -761,7 +773,7 @@ msgid ""
 "(possibly optimized ones) need to provide similar results:"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:520
+#: ../../../doc/en/example/parametrize.rst:530
 msgid ""
 "# content of conftest.py\n"
 "\n"
@@ -778,33 +790,33 @@ msgid ""
 "    return pytest.importorskip(request.param)"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:536
+#: ../../../doc/en/example/parametrize.rst:546
 msgid "And then a base implementation of a simple function:"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:538
+#: ../../../doc/en/example/parametrize.rst:548
 msgid ""
 "# content of base.py\n"
 "def func1():\n"
 "    return 1"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:544
+#: ../../../doc/en/example/parametrize.rst:554
 msgid "And an optimized version:"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:546
+#: ../../../doc/en/example/parametrize.rst:556
 msgid ""
 "# content of opt1.py\n"
 "def func1():\n"
 "    return 1.0001"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:552
+#: ../../../doc/en/example/parametrize.rst:562
 msgid "And finally a little test module:"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:554
+#: ../../../doc/en/example/parametrize.rst:564
 msgid ""
 "# content of test_module.py\n"
 "\n"
@@ -813,11 +825,11 @@ msgid ""
 "    assert round(basemod.func1(), 3) == round(optmod.func1(), 3)"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:563
+#: ../../../doc/en/example/parametrize.rst:573
 msgid "If you run this with reporting for skips enabled:"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:565
+#: ../../../doc/en/example/parametrize.rst:575
 msgid ""
 "$ pytest -rs test_module.py\n"
 "=========================== test session starts "
@@ -849,42 +861,42 @@ msgstr ""
 "'opt2'\n"
 "======================= 1 passed, 1 skipped in 0.12s ======================="
 
-#: ../../../doc/en/example/parametrize.rst:579
+#: ../../../doc/en/example/parametrize.rst:589
 msgid ""
 "You'll see that we don't have an ``opt2`` module and thus the second test "
 "run of our ``test_func1`` was skipped.  A few notes:"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:582
+#: ../../../doc/en/example/parametrize.rst:592
 msgid ""
 "the fixture functions in the ``conftest.py`` file are \"session-scoped\" "
 "because we don't need to import more than once"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:585
+#: ../../../doc/en/example/parametrize.rst:595
 msgid ""
 "if you have multiple test functions and a skipped import, you will see the "
 "``[1]`` count increasing in the report"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:588
+#: ../../../doc/en/example/parametrize.rst:598
 msgid ""
 "you can put :ref:`@pytest.mark.parametrize <@pytest.mark.parametrize>` style "
 "parametrization on the test functions to parametrize input/output values as "
 "well."
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:594
+#: ../../../doc/en/example/parametrize.rst:604
 msgid "Set marks or test ID for individual parametrized test"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:596
+#: ../../../doc/en/example/parametrize.rst:606
 msgid ""
 "Use ``pytest.param`` to apply marks or set test ID to individual "
 "parametrized test. For example:"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:599
+#: ../../../doc/en/example/parametrize.rst:609
 msgid ""
 "# content of test_pytest_param_example.py\n"
 "import pytest\n"
@@ -907,7 +919,7 @@ msgid ""
 "    assert eval(test_input) == expected"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:619
+#: ../../../doc/en/example/parametrize.rst:629
 msgid ""
 "In this example, we have 4 parametrized tests. Except for the first test, we "
 "mark the rest three parametrized tests with the custom marker ``basic``, and "
@@ -915,12 +927,12 @@ msgid ""
 "test is expected to fail. For explicitness, we set test ids for some tests."
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:624
+#: ../../../doc/en/example/parametrize.rst:634
 msgid ""
 "Then run ``pytest`` with verbose mode and with only the ``basic`` marker:"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:626
+#: ../../../doc/en/example/parametrize.rst:636
 msgid ""
 "$ pytest -v -m basic\n"
 "=========================== test session starts "
@@ -938,48 +950,48 @@ msgid ""
 "=============== 2 passed, 21 deselected, 1 xfailed in 0.12s ================"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:641
+#: ../../../doc/en/example/parametrize.rst:651
 msgid "As the result:"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:643
+#: ../../../doc/en/example/parametrize.rst:653
 msgid "Four tests were collected"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:644
+#: ../../../doc/en/example/parametrize.rst:654
 msgid "One test was deselected because it doesn't have the ``basic`` mark."
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:645
+#: ../../../doc/en/example/parametrize.rst:655
 msgid "Three tests with the ``basic`` mark were selected."
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:646
+#: ../../../doc/en/example/parametrize.rst:656
 msgid ""
 "The test ``test_eval[1+7-8]`` passed, but the name is autogenerated and "
 "confusing."
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:647
+#: ../../../doc/en/example/parametrize.rst:657
 msgid "The test ``test_eval[basic_2+4]`` passed."
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:648
+#: ../../../doc/en/example/parametrize.rst:658
 msgid "The test ``test_eval[basic_6*9]`` was expected to fail and did fail."
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:653
+#: ../../../doc/en/example/parametrize.rst:663
 msgid "Parametrizing conditional raising"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:655
+#: ../../../doc/en/example/parametrize.rst:665
 msgid ""
 "Use :func:`pytest.raises` with the :ref:`pytest.mark.parametrize ref` "
 "decorator to write parametrized tests in which some tests raise exceptions "
 "and others do not."
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:659
+#: ../../../doc/en/example/parametrize.rst:669
 msgid ""
 "``contextlib.nullcontext`` can be used to test cases that are not expected "
 "to raise exceptions but that should result in some value. The value is given "
@@ -987,11 +999,11 @@ msgid ""
 "statement’s target (``e`` in the example below)."
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:664
+#: ../../../doc/en/example/parametrize.rst:674
 msgid "For example:"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:666
+#: ../../../doc/en/example/parametrize.rst:676
 msgid ""
 "from contextlib import nullcontext\n"
 "\n"
@@ -1013,7 +1025,7 @@ msgid ""
 "        assert (6 / example_input) == e"
 msgstr ""
 
-#: ../../../doc/en/example/parametrize.rst:687
+#: ../../../doc/en/example/parametrize.rst:697
 msgid ""
 "In the example above, the first three test cases should run without any "
 "exceptions, while the fourth should raise a ``ZeroDivisionError`` exception, "
