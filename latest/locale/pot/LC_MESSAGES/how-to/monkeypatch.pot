@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-23 08:43+0000\n"
+"POT-Creation-Date: 2026-07-06 11:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -368,12 +368,21 @@ msgstr ""
 #: ../../../doc/en/how-to/monkeypatch.rst:243
 msgid ""
 "Mind that patching ``stdlib`` functions and some third-party libraries used "
-"by pytest might break pytest itself, therefore in those cases it is "
-"recommended to use :meth:`MonkeyPatch.context` to limit the patching to the "
-"block you want tested:"
+"by pytest might break pytest itself. Prefer patching the reference that your "
+"code uses instead of patching the original object in the standard library. "
+"For example, if your module does ``from os import getcwd``, patch ``mymodule."
+"getcwd`` rather than ``os.getcwd``."
 msgstr ""
 
-#: ../../../doc/en/how-to/monkeypatch.rst:247
+#: ../../../doc/en/how-to/monkeypatch.rst:249
+msgid ""
+"For code that you control, a safer long-term pattern is to make dependencies "
+"explicit so they can be passed into the code under test instead of patched "
+"globally. When patching a stdlib object is unavoidable, use :meth:"
+"`MonkeyPatch.context` to limit the patching to the block you want tested:"
+msgstr ""
+
+#: ../../../doc/en/how-to/monkeypatch.rst:254
 msgid ""
 "import functools\n"
 "\n"
@@ -384,15 +393,15 @@ msgid ""
 "        assert functools.partial == 3"
 msgstr ""
 
-#: ../../../doc/en/how-to/monkeypatch.rst:257
+#: ../../../doc/en/how-to/monkeypatch.rst:264
 msgid "See :issue:`3290` for details."
 msgstr ""
 
-#: ../../../doc/en/how-to/monkeypatch.rst:261
+#: ../../../doc/en/how-to/monkeypatch.rst:268
 msgid "Monkeypatching environment variables"
 msgstr ""
 
-#: ../../../doc/en/how-to/monkeypatch.rst:263
+#: ../../../doc/en/how-to/monkeypatch.rst:270
 msgid ""
 "If you are working with environment variables you often need to safely "
 "change the values or delete them from the system for testing purposes. "
@@ -400,7 +409,7 @@ msgid ""
 "``delenv`` method. Our example code to test:"
 msgstr ""
 
-#: ../../../doc/en/how-to/monkeypatch.rst:267
+#: ../../../doc/en/how-to/monkeypatch.rst:274
 msgid ""
 "# contents of our original code file e.g. code.py\n"
 "import os\n"
@@ -417,7 +426,7 @@ msgid ""
 "    return username.lower()"
 msgstr ""
 
-#: ../../../doc/en/how-to/monkeypatch.rst:283
+#: ../../../doc/en/how-to/monkeypatch.rst:290
 msgid ""
 "There are two potential paths. First, the ``USER`` environment variable is "
 "set to a value. Second, the ``USER`` environment variable does not exist. "
@@ -425,7 +434,7 @@ msgid ""
 "running environment:"
 msgstr ""
 
-#: ../../../doc/en/how-to/monkeypatch.rst:287
+#: ../../../doc/en/how-to/monkeypatch.rst:294
 msgid ""
 "# contents of our test file e.g. test_code.py\n"
 "import pytest\n"
@@ -445,13 +454,13 @@ msgid ""
 "        _ = get_os_user_lower()"
 msgstr ""
 
-#: ../../../doc/en/how-to/monkeypatch.rst:306
+#: ../../../doc/en/how-to/monkeypatch.rst:313
 msgid ""
 "This behavior can be moved into ``fixture`` structures and shared across "
 "tests:"
 msgstr ""
 
-#: ../../../doc/en/how-to/monkeypatch.rst:308
+#: ../../../doc/en/how-to/monkeypatch.rst:315
 msgid ""
 "# contents of our test file e.g. test_code.py\n"
 "import pytest\n"
@@ -477,18 +486,18 @@ msgid ""
 "        _ = get_os_user_lower()"
 msgstr ""
 
-#: ../../../doc/en/how-to/monkeypatch.rst:335
+#: ../../../doc/en/how-to/monkeypatch.rst:342
 msgid "Monkeypatching dictionaries"
 msgstr ""
 
-#: ../../../doc/en/how-to/monkeypatch.rst:337
+#: ../../../doc/en/how-to/monkeypatch.rst:344
 msgid ""
 ":py:meth:`monkeypatch.setitem <MonkeyPatch.setitem>` can be used to safely "
 "set the values of dictionaries to specific values during tests. Take this "
 "simplified connection string example:"
 msgstr ""
 
-#: ../../../doc/en/how-to/monkeypatch.rst:340
+#: ../../../doc/en/how-to/monkeypatch.rst:347
 msgid ""
 "# contents of app.py to generate a simple connection string\n"
 "DEFAULT_CONFIG = {\"user\": \"user1\", \"database\": \"db1\"}\n"
@@ -500,13 +509,13 @@ msgid ""
 "    return f\"User Id={config['user']}; Location={config['database']};\""
 msgstr ""
 
-#: ../../../doc/en/how-to/monkeypatch.rst:351
+#: ../../../doc/en/how-to/monkeypatch.rst:358
 msgid ""
 "For testing purposes we can patch the ``DEFAULT_CONFIG`` dictionary to "
 "specific values."
 msgstr ""
 
-#: ../../../doc/en/how-to/monkeypatch.rst:353
+#: ../../../doc/en/how-to/monkeypatch.rst:360
 msgid ""
 "# contents of test_app.py\n"
 "# app.py with the connection string function (prior code block)\n"
@@ -527,13 +536,13 @@ msgid ""
 "    assert result == expected"
 msgstr ""
 
-#: ../../../doc/en/how-to/monkeypatch.rst:373
+#: ../../../doc/en/how-to/monkeypatch.rst:380
 msgid ""
 "You can use the :py:meth:`monkeypatch.delitem <MonkeyPatch.delitem>` to "
 "remove values."
 msgstr ""
 
-#: ../../../doc/en/how-to/monkeypatch.rst:375
+#: ../../../doc/en/how-to/monkeypatch.rst:382
 msgid ""
 "# contents of test_app.py\n"
 "import pytest\n"
@@ -552,13 +561,13 @@ msgid ""
 "        _ = app.create_connection_string()"
 msgstr ""
 
-#: ../../../doc/en/how-to/monkeypatch.rst:394
+#: ../../../doc/en/how-to/monkeypatch.rst:401
 msgid ""
 "The modularity of fixtures gives you the flexibility to define separate "
 "fixtures for each potential mock and reference them in the needed tests."
 msgstr ""
 
-#: ../../../doc/en/how-to/monkeypatch.rst:397
+#: ../../../doc/en/how-to/monkeypatch.rst:404
 msgid ""
 "# contents of test_app.py\n"
 "import pytest\n"
@@ -599,10 +608,10 @@ msgid ""
 "        _ = app.create_connection_string()"
 msgstr ""
 
-#: ../../../doc/en/how-to/monkeypatch.rst:441
+#: ../../../doc/en/how-to/monkeypatch.rst:448
 msgid "API Reference"
 msgstr ""
 
-#: ../../../doc/en/how-to/monkeypatch.rst:443
+#: ../../../doc/en/how-to/monkeypatch.rst:450
 msgid "Consult the docs for the :class:`MonkeyPatch` class."
 msgstr ""

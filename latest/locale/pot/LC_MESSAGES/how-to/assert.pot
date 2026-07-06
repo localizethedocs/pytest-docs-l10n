@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-13 09:26+0000\n"
+"POT-Creation-Date: 2026-07-06 11:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -103,18 +103,18 @@ msgid ""
 "See :ref:`assert-details` for more information on assertion introspection."
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:70
+#: ../../../doc/en/how-to/assert.rst:68
 msgid "Assertions about approximate equality"
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:72
+#: ../../../doc/en/how-to/assert.rst:70
 msgid ""
 "When comparing floating point values (or arrays of floats), small rounding "
 "errors are common. Instead of using ``assert abs(a - b) < tol`` or ``numpy."
 "isclose``, you can use :func:`pytest.approx`:"
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:76
+#: ../../../doc/en/how-to/assert.rst:74
 msgid ""
 "import pytest\n"
 "import numpy as np\n"
@@ -130,13 +130,13 @@ msgid ""
 "    assert a == pytest.approx(b)"
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:91
+#: ../../../doc/en/how-to/assert.rst:89
 msgid ""
 "``pytest.approx`` works with scalars, lists, dictionaries, and NumPy arrays. "
 "It also supports comparisons involving NaNs."
 msgstr ""
 
-#: ../../../doc/en/how-to/assert.rst:94
+#: ../../../doc/en/how-to/assert.rst:92
 msgid "See :func:`pytest.approx` for details."
 msgstr ""
 
