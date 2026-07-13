@@ -3477,7 +3477,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:90
 msgid "pytest>=7; python_version >= \"3.10\""
-msgstr "pytest>=7; python_version >= \"3.10\""
+msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:91
 #: ../../../doc/en/reference/plugin_list.rst:2165
@@ -3588,7 +3588,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:97
 #: ../../../doc/en/reference/plugin_list.rst:2207
 msgid ":pypi:`pytest-api-framework`"
-msgstr ":pypi:`pytest-api-framework`"
+msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:97
 #: ../../../doc/en/reference/plugin_list.rst:2212
@@ -3609,7 +3609,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:98
 #: ../../../doc/en/reference/plugin_list.rst:2214
 msgid ":pypi:`pytest-api-framework-alpha`"
-msgstr ":pypi:`pytest-api-framework-alpha`"
+msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:98
 #: ../../../doc/en/reference/plugin_list.rst:121
@@ -5433,7 +5433,7 @@ msgstr ""
 #: ../../../doc/en/reference/plugin_list.rst:202
 #: ../../../doc/en/reference/plugin_list.rst:2942
 msgid ":pypi:`pytest-boardfarm3`"
-msgstr ":pypi:`pytest-boardfarm3`"
+msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:202
 #: ../../../doc/en/reference/plugin_list.rst:2947
