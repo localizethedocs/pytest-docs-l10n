@@ -3281,7 +3281,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:87
 msgid "pytest>=7; python_version >= \"3.10\""
-msgstr "pytest>=7; python_version >= \"3.10\""
+msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:88
 #: ../../../doc/en/reference/plugin_list.rst:2040
