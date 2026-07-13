@@ -40651,15 +40651,3 @@ msgid ""
 "*last release*: Mar 02, 2026, *status*: 5 - Production/Stable, *requires*: "
 "pytest>=8.3.5"
 msgstr ""
-
-#~ msgid "pytest>=7; python_version >= \"3.10\""
-#~ msgstr "pytest>=7; python_version >= \"3.10\""
-
-#~ msgid ":pypi:`pytest-api-framework`"
-#~ msgstr ":pypi:`pytest-api-framework`"
-
-#~ msgid ":pypi:`pytest-api-framework-alpha`"
-#~ msgstr ":pypi:`pytest-api-framework-alpha`"
-
-#~ msgid ":pypi:`pytest-boardfarm3`"
-#~ msgstr ":pypi:`pytest-boardfarm3`"

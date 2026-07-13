@@ -49,7 +49,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-9.1.0.rst:17
 msgid "pip install -U pytest"
-msgstr ""
+msgstr "pip install -U pytest"
 
 #: ../../../doc/en/announce/release-9.1.0.rst:19
 msgid "Thanks to all of the contributors to this release:"
@@ -81,7 +81,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-9.1.0.rst:27
 msgid "Bruno Oliveira"
-msgstr ""
+msgstr "Bruno Oliveira"
 
 #: ../../../doc/en/announce/release-9.1.0.rst:28
 msgid "Bubble-Interface"
@@ -125,7 +125,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-9.1.0.rst:38
 msgid "Freya Bruhin"
-msgstr ""
+msgstr "Freya Bruhin"
 
 #: ../../../doc/en/announce/release-9.1.0.rst:39
 msgid "Fridayworks"
@@ -149,7 +149,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-9.1.0.rst:44
 msgid "John Litborn"
-msgstr ""
+msgstr "John Litborn"
 
 #: ../../../doc/en/announce/release-9.1.0.rst:45
 msgid "Julia Knaak"
@@ -169,7 +169,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-9.1.0.rst:49
 msgid "Liam DeVoe"
-msgstr ""
+msgstr "Liam DeVoe"
 
 #: ../../../doc/en/announce/release-9.1.0.rst:50
 msgid "Lily Wu"
@@ -229,7 +229,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-9.1.0.rst:64
 msgid "Ran Benita"
-msgstr ""
+msgstr "Ran Benita"
 
 #: ../../../doc/en/announce/release-9.1.0.rst:65
 msgid "Randy Döring"
@@ -241,7 +241,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-9.1.0.rst:67
 msgid "Ronny Pfannschmidt"
-msgstr ""
+msgstr "Ronny Pfannschmidt"
 
 #: ../../../doc/en/announce/release-9.1.0.rst:68
 msgid "Samuel Newbold"
