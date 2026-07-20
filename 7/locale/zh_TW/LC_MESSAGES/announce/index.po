@@ -19,4 +19,4 @@ msgstr ""
 
 #: ../../../doc/en/announce/index.rst:3
 msgid "Release announcements"
-msgstr ""
+msgstr "版本發布公告"
