@@ -1,0 +1,243 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/explanation/pythonpath.rst:4
+msgid "pytest import mechanisms and ``sys.path``/``PYTHONPATH``"
+msgstr ""
+
+#: ../../../doc/en/explanation/pythonpath.rst:9
+msgid "Import modes"
+msgstr ""
+
+#: ../../../doc/en/explanation/pythonpath.rst:11
+msgid ""
+"pytest as a testing framework needs to import test modules and ``conftest."
+"py`` files for execution."
+msgstr ""
+
+#: ../../../doc/en/explanation/pythonpath.rst:13
+msgid ""
+"Importing files in Python (at least until recently) is a non-trivial "
+"processes, often requiring changing :data:`sys.path`. Some aspects of the "
+"import process can be controlled through the ``--import-mode`` command-line "
+"flag, which can assume these values:"
+msgstr ""
+
+#: ../../../doc/en/explanation/pythonpath.rst:18
+msgid ""
+"``prepend`` (default): the directory path containing each module will be "
+"inserted into the *beginning* of :py:data:`sys.path` if not already there, "
+"and then imported with the :func:`importlib.import_module <importlib."
+"import_module>` function."
+msgstr ""
+
+#: ../../../doc/en/explanation/pythonpath.rst:21
+msgid ""
+"This requires test module names to be unique when the test directory tree is "
+"not arranged in packages, because the modules will put in :py:data:`sys."
+"modules` after importing."
+msgstr ""
+
+#: ../../../doc/en/explanation/pythonpath.rst:24
+msgid ""
+"This is the classic mechanism, dating back from the time Python 2 was still "
+"supported."
+msgstr ""
+
+#: ../../../doc/en/explanation/pythonpath.rst:26
+msgid ""
+"``append``: the directory containing each module is appended to the end of :"
+"py:data:`sys.path` if not already there, and imported with :func:`importlib."
+"import_module <importlib.import_module>`."
+msgstr ""
+
+#: ../../../doc/en/explanation/pythonpath.rst:29
+msgid ""
+"This better allows to run test modules against installed versions of a "
+"package even if the package under test has the same import root. For example:"
+msgstr ""
+
+#: ../../../doc/en/explanation/pythonpath.rst:34
+msgid ""
+"testing/__init__.py\n"
+"testing/test_pkg_under_test.py\n"
+"pkg_under_test/"
+msgstr ""
+
+#: ../../../doc/en/explanation/pythonpath.rst:38
+msgid ""
+"the tests will run against the installed version of ``pkg_under_test`` when "
+"``--import-mode=append`` is used whereas with ``prepend`` they would pick up "
+"the local version. This kind of confusion is why we advocate for using :ref:"
+"`src <src-layout>` layouts."
+msgstr ""
+
+#: ../../../doc/en/explanation/pythonpath.rst:43
+msgid ""
+"Same as ``prepend``, requires test module names to be unique when the test "
+"directory tree is not arranged in packages, because the modules will put in :"
+"py:data:`sys.modules` after importing."
+msgstr ""
+
+#: ../../../doc/en/explanation/pythonpath.rst:46
+msgid ""
+"``importlib``: new in pytest-6.0, this mode uses more fine control "
+"mechanisms provided by :mod:`importlib` to import test modules. This gives "
+"full control over the import process, and doesn't require changing :py:data:"
+"`sys.path`."
+msgstr ""
+
+#: ../../../doc/en/explanation/pythonpath.rst:48
+msgid "For this reason this doesn't require test module names to be unique."
+msgstr ""
+
+#: ../../../doc/en/explanation/pythonpath.rst:50
+msgid ""
+"One drawback however is that test modules are non-importable by each other. "
+"Also,  utility modules in the tests directories are not automatically "
+"importable because the tests directory is no longer added to :py:data:`sys."
+"path`."
+msgstr ""
+
+#: ../../../doc/en/explanation/pythonpath.rst:54
+msgid ""
+"Initially we intended to make ``importlib`` the default in future releases, "
+"however it is clear now that it has its own set of drawbacks so the default "
+"will remain ``prepend`` for the foreseeable future."
+msgstr ""
+
+#: ../../../doc/en/explanation/pythonpath.rst:59
+msgid "The :confval:`pythonpath` configuration variable."
+msgstr ""
+
+#: ../../../doc/en/explanation/pythonpath.rst:63
+msgid "``prepend`` and ``append`` import modes scenarios"
+msgstr ""
+
+#: ../../../doc/en/explanation/pythonpath.rst:65
+msgid ""
+"Here's a list of scenarios when using ``prepend`` or ``append`` import modes "
+"where pytest needs to change ``sys.path`` in order to import test modules or "
+"``conftest.py`` files, and the issues users might encounter because of that."
+msgstr ""
+
+#: ../../../doc/en/explanation/pythonpath.rst:70
+msgid "Test modules / ``conftest.py`` files inside packages"
+msgstr ""
+
+#: ../../../doc/en/explanation/pythonpath.rst:72
+#: ../../../doc/en/explanation/pythonpath.rst:107
+msgid "Consider this file and directory layout::"
+msgstr ""
+
+#: ../../../doc/en/explanation/pythonpath.rst:74
+msgid ""
+"root/\n"
+"|- foo/\n"
+"   |- __init__.py\n"
+"   |- conftest.py\n"
+"   |- bar/\n"
+"      |- __init__.py\n"
+"      |- tests/\n"
+"         |- __init__.py\n"
+"         |- test_foo.py"
+msgstr ""
+
+#: ../../../doc/en/explanation/pythonpath.rst:85
+#: ../../../doc/en/explanation/pythonpath.rst:117
+msgid "When executing:"
+msgstr ""
+
+#: ../../../doc/en/explanation/pythonpath.rst:87
+#: ../../../doc/en/explanation/pythonpath.rst:119
+msgid "pytest root/"
+msgstr ""
+
+#: ../../../doc/en/explanation/pythonpath.rst:91
+msgid ""
+"pytest will find ``foo/bar/tests/test_foo.py`` and realize it is part of a "
+"package given that there's an ``__init__.py`` file in the same folder. It "
+"will then search upwards until it can find the last folder which still "
+"contains an ``__init__.py`` file in order to find the package *root* (in "
+"this case ``foo/``). To load the module, it will insert ``root/``  to the "
+"front of ``sys.path`` (if not there already) in order to load ``test_foo."
+"py`` as the *module* ``foo.bar.tests.test_foo``."
+msgstr ""
+
+#: ../../../doc/en/explanation/pythonpath.rst:98
+msgid ""
+"The same logic applies to the ``conftest.py`` file: it will be imported as "
+"``foo.conftest`` module."
+msgstr ""
+
+#: ../../../doc/en/explanation/pythonpath.rst:100
+msgid ""
+"Preserving the full package name is important when tests live in a package "
+"to avoid problems and allow test modules to have duplicated names. This is "
+"also discussed in details in :ref:`test discovery`."
+msgstr ""
+
+#: ../../../doc/en/explanation/pythonpath.rst:105
+msgid "Standalone test modules / ``conftest.py`` files"
+msgstr ""
+
+#: ../../../doc/en/explanation/pythonpath.rst:109
+msgid ""
+"root/\n"
+"|- foo/\n"
+"   |- conftest.py\n"
+"   |- bar/\n"
+"      |- tests/\n"
+"         |- test_foo.py"
+msgstr ""
+
+#: ../../../doc/en/explanation/pythonpath.rst:123
+msgid ""
+"pytest will find ``foo/bar/tests/test_foo.py`` and realize it is NOT part of "
+"a package given that there's no ``__init__.py`` file in the same folder. It "
+"will then add ``root/foo/bar/tests`` to ``sys.path`` in order to import "
+"``test_foo.py`` as the *module* ``test_foo``. The same is done with the "
+"``conftest.py`` file by adding ``root/foo`` to ``sys.path`` to import it as "
+"``conftest``."
+msgstr ""
+
+#: ../../../doc/en/explanation/pythonpath.rst:128
+msgid ""
+"For this reason this layout cannot have test modules with the same name, as "
+"they all will be imported in the global import namespace."
+msgstr ""
+
+#: ../../../doc/en/explanation/pythonpath.rst:131
+msgid "This is also discussed in details in :ref:`test discovery`."
+msgstr ""
+
+#: ../../../doc/en/explanation/pythonpath.rst:136
+msgid "Invoking ``pytest`` versus ``python -m pytest``"
+msgstr ""
+
+#: ../../../doc/en/explanation/pythonpath.rst:138
+msgid ""
+"Running pytest with ``pytest [...]`` instead of ``python -m pytest [...]`` "
+"yields nearly equivalent behaviour, except that the latter will add the "
+"current directory to ``sys.path``, which is standard ``python`` behavior."
+msgstr ""
+
+#: ../../../doc/en/explanation/pythonpath.rst:142
+msgid "See also :ref:`invoke-python`."
+msgstr ""
