@@ -1,0 +1,367 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/getting-started.rst:2
+msgid "Installation and Getting Started"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:4
+msgid "**Pythons**: Python 2.6,2.7,3.3,3.4,3.5, Jython, PyPy-2.3"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:6
+msgid "**Platforms**: Unix/Posix and Windows"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:8
+msgid "**PyPI package name**: `pytest <http://pypi.python.org/pypi/pytest>`_"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:10
+msgid ""
+"**dependencies**: `py <http://pypi.python.org/pypi/py>`_, `colorama "
+"(Windows) <http://pypi.python.org/pypi/colorama>`_, `argparse (py26) <http://"
+"pypi.python.org/pypi/argparse>`_."
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:14
+msgid ""
+"**documentation as PDF**: `download latest <http://pytest.org/latest/pytest."
+"pdf>`_"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:20
+msgid "Installation"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:22
+msgid "Installation options::"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:24
+msgid ""
+"pip install -U pytest # or\n"
+"easy_install -U pytest"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:27
+msgid "To check your installation has installed the correct version::"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:29
+msgid ""
+"$ py.test --version\n"
+"This is pytest version 2.9.2, imported from $PYTHON_PREFIX/lib/python3.5/"
+"site-packages/pytest.py"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:32
+msgid "If you get an error checkout :ref:`installation issues`."
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:37
+msgid "Our first test run"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:39
+msgid "Let's create a first test file with a simple test function::"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:41
+msgid ""
+"# content of test_sample.py\n"
+"def func(x):\n"
+"    return x + 1\n"
+"\n"
+"def test_answer():\n"
+"    assert func(3) == 5"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:48
+msgid "That's it. You can execute the test function now::"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:50
+msgid ""
+"$ py.test\n"
+"======= test session starts ========\n"
+"platform linux -- Python 3.5.1, pytest-2.9.2, py-1.4.31, pluggy-0.3.1\n"
+"rootdir: $REGENDOC_TMPDIR, inifile:\n"
+"collected 1 items\n"
+"\n"
+"test_sample.py F\n"
+"\n"
+"======= FAILURES ========\n"
+"_______ test_answer ________\n"
+"\n"
+"    def test_answer():\n"
+">       assert func(3) == 5\n"
+"E       assert 4 == 5\n"
+"E        +  where 4 = func(3)\n"
+"\n"
+"test_sample.py:5: AssertionError\n"
+"======= 1 failed in 0.12 seconds ========"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:69
+msgid ""
+"We got a failure report because our little ``func(3)`` call did not return "
+"``5``."
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:73
+msgid ""
+"You can simply use the ``assert`` statement for asserting test "
+"expectations.  pytest's :ref:`assert introspection` will intelligently "
+"report intermediate values of the assert expression freeing you from the "
+"need to learn the many names of `JUnit legacy methods`_."
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:83
+msgid "Running multiple tests"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:85
+msgid ""
+"``pytest`` will run all files in the current directory and its "
+"subdirectories of the form test_*.py or \\*_test.py. More generally, it "
+"follows :ref:`standard test discovery rules <test discovery>`."
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:89
+msgid "Asserting that a certain exception is raised"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:91
+msgid ""
+"If you want to assert that some code raises an exception you can use the "
+"``raises`` helper::"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:94
+msgid ""
+"# content of test_sysexit.py\n"
+"import pytest\n"
+"def f():\n"
+"    raise SystemExit(1)\n"
+"\n"
+"def test_mytest():\n"
+"    with pytest.raises(SystemExit):\n"
+"        f()"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:103
+msgid "Running it with, this time in \"quiet\" reporting mode::"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:105
+msgid ""
+"$ py.test -q test_sysexit.py\n"
+".\n"
+"1 passed in 0.12 seconds"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:110
+msgid "Grouping multiple tests in a class"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:112
+msgid ""
+"Once you start to have more than a few tests it often makes sense to group "
+"tests logically, in classes and modules.  Let's write a class containing two "
+"tests::"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:116
+msgid ""
+"# content of test_class.py\n"
+"class TestClass:\n"
+"    def test_one(self):\n"
+"        x = \"this\"\n"
+"        assert 'h' in x\n"
+"\n"
+"    def test_two(self):\n"
+"        x = \"hello\"\n"
+"        assert hasattr(x, 'check')"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:126
+msgid ""
+"The two tests are found because of the standard :ref:`test discovery`. There "
+"is no need to subclass anything.  We can simply run the module by passing "
+"its filename::"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:130
+msgid ""
+"$ py.test -q test_class.py\n"
+".F\n"
+"======= FAILURES ========\n"
+"_______ TestClass.test_two ________\n"
+"\n"
+"self = <test_class.TestClass object at 0xdeadbeef>\n"
+"\n"
+"    def test_two(self):\n"
+"        x = \"hello\"\n"
+">       assert hasattr(x, 'check')\n"
+"E       assert hasattr('hello', 'check')\n"
+"\n"
+"test_class.py:8: AssertionError\n"
+"1 failed, 1 passed in 0.12 seconds"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:145
+msgid ""
+"The first test passed, the second failed. Again we can easily see the "
+"intermediate values used in the assertion, helping us to understand the "
+"reason for the failure."
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:150
+msgid "Going functional: requesting a unique temporary directory"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:152
+msgid ""
+"For functional tests one often needs to create some files and pass them to "
+"application objects.  pytest provides :ref:`builtinfixtures` which allow to "
+"request arbitrary resources, for example a unique temporary directory::"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:157
+msgid ""
+"# content of test_tmpdir.py\n"
+"def test_needsfiles(tmpdir):\n"
+"    print (tmpdir)\n"
+"    assert 0"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:162
+msgid ""
+"We list the name ``tmpdir`` in the test function signature and ``pytest`` "
+"will lookup and call a fixture factory to create the resource before "
+"performing the test function call.  Let's just run it::"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:166
+msgid ""
+"$ py.test -q test_tmpdir.py\n"
+"F\n"
+"======= FAILURES ========\n"
+"_______ test_needsfiles ________\n"
+"\n"
+"tmpdir = local('PYTEST_TMPDIR/test_needsfiles0')\n"
+"\n"
+"    def test_needsfiles(tmpdir):\n"
+"        print (tmpdir)\n"
+">       assert 0\n"
+"E       assert 0\n"
+"\n"
+"test_tmpdir.py:3: AssertionError\n"
+"--------------------------- Captured stdout call "
+"---------------------------\n"
+"PYTEST_TMPDIR/test_needsfiles0\n"
+"1 failed in 0.12 seconds"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:183
+msgid ""
+"Before the test runs, a unique-per-test-invocation temporary directory was "
+"created.  More info at :ref:`tmpdir handling`."
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:186
+msgid "You can find out what kind of builtin :ref:`fixtures` exist by typing::"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:188
+msgid "py.test --fixtures   # shows builtin and custom fixtures"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:191
+msgid "Where to go next"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:193
+msgid "Here are a few suggestions where to go next:"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:195
+msgid ":ref:`cmdline` for command line invocation examples"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:196
+msgid ""
+":ref:`good practices <goodpractices>` for virtualenv, test layout, genscript "
+"support"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:197
+msgid ":ref:`fixtures` for providing a functional baseline to your tests"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:198
+msgid ":ref:`apiref` for documentation and examples on using ``pytest``"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:199
+msgid ":ref:`plugins` managing and writing plugins"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:204
+msgid "Known Installation issues"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:207
+msgid "easy_install or pip not found?"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:211
+msgid "`Install pip`_ for a state of the art python package installer."
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:213
+msgid ""
+"Install `setuptools`_ to get ``easy_install`` which allows to install ``."
+"egg`` binary format packages in addition to source-based ones."
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:217
+msgid "py.test not found on Windows despite installation?"
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:221
+msgid ""
+"**Windows**: If \"easy_install\" or \"py.test\" are not found you need to "
+"add the Python script path to your ``PATH``, see here: `Python for "
+"Windows`_.  You may alternatively use an `ActivePython install`_ which does "
+"this for you automatically."
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:230
+msgid ""
+"**Jython2.5.1 on Windows XP**: `Jython does not create command line "
+"launchers`_ so ``py.test`` will not work correctly.  You may install py.test "
+"on CPython and type ``py.test --genscript=mytest`` and then use ``jython "
+"mytest`` to run your tests with Jython using ``pytest``."
+msgstr ""
+
+#: ../../../doc/en/getting-started.rst:235
+msgid ":ref:`examples` for more complex examples"
+msgstr ""

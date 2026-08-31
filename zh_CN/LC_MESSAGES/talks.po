@@ -1,0 +1,236 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/talks.rst:3
+msgid "Talks and Tutorials"
+msgstr ""
+
+#: ../../../doc/en/talks.rst:None
+msgid "Next Open Trainings"
+msgstr ""
+
+#: ../../../doc/en/talks.rst:7
+msgid ""
+"`professional testing with pytest and tox <http://www.python-academy.com/"
+"courses/specialtopics/python_course_testing.html>`_, 27-29th June 2016, "
+"Freiburg, Germany"
+msgstr ""
+
+#: ../../../doc/en/talks.rst:12
+msgid "Talks and blog postings"
+msgstr ""
+
+#: ../../../doc/en/talks.rst:17
+msgid ""
+"`pytest - Rapid Simple Testing, Florian Bruhin, Swiss Python Summit 2016 "
+"<https://www.youtube.com/watch?v=rCBHkQ_LVIs>`_."
+msgstr ""
+
+#: ../../../doc/en/talks.rst:20
+msgid ""
+"`Improve your testing with Pytest and Mock, Gabe Hollombe, PyCon SG 2015 "
+"<https://www.youtube.com/watch?v=RcN26hznmk4>`_."
+msgstr ""
+
+#: ../../../doc/en/talks.rst:23
+msgid ""
+"`Introduction to pytest, Andreas Pelme, EuroPython 2014 <https://www.youtube."
+"com/watch?v=LdVJj65ikRY>`_."
+msgstr ""
+
+#: ../../../doc/en/talks.rst:26
+msgid ""
+"`Advanced Uses of py.test Fixtures, Floris Bruynooghe, EuroPython 2014 "
+"<https://www.youtube.com/watch?v=IBC_dxr-4ps>`_."
+msgstr ""
+
+#: ../../../doc/en/talks.rst:29
+msgid ""
+"`Why i use py.test and maybe you should too, Andy Todd, Pycon AU 2013 "
+"<https://www.youtube.com/watch?v=P-AhpukDIik>`_"
+msgstr ""
+
+#: ../../../doc/en/talks.rst:32
+msgid ""
+"`3-part blog series about pytest from @pydanny alias Daniel Greenfeld "
+"(January 2014) <http://pydanny.com/pytest-no-boilerplate-testing.html>`_"
+msgstr ""
+
+#: ../../../doc/en/talks.rst:35
+msgid ""
+"`pytest: helps you write better Django apps, Andreas Pelme, DjangoCon Europe "
+"2014 <https://www.youtube.com/watch?v=aaArYVh6XSM>`_."
+msgstr ""
+
+#: ../../../doc/en/talks.rst:38
+msgid ":ref:`fixtures`"
+msgstr ""
+
+#: ../../../doc/en/talks.rst:40
+msgid ""
+"`Testing Django Applications with pytest, Andreas Pelme, EuroPython 2013 "
+"<https://www.youtube.com/watch?v=aUf8Fkb7TaY>`_."
+msgstr ""
+
+#: ../../../doc/en/talks.rst:43
+msgid ""
+"`Testes pythonics com py.test, Vinicius Belchior Assef Neto, Plone Conf "
+"2013, Brazil <https://www.youtube.com/watch?v=QUKoq2K7bis>`_."
+msgstr ""
+
+#: ../../../doc/en/talks.rst:46
+msgid ""
+"`Introduction to py.test fixtures, FOSDEM 2013, Floris Bruynooghe <https://"
+"www.youtube.com/watch?v=bJhRW4eZMco>`_."
+msgstr ""
+
+#: ../../../doc/en/talks.rst:49
+msgid ""
+"`pytest feature and release highlights, Holger Krekel (GERMAN, October 2013) "
+"<http://pyvideo.org/video/2429/pytest-feature-and-new-release-highlights>`_"
+msgstr ""
+
+#: ../../../doc/en/talks.rst:52
+msgid ""
+"`pytest introduction from Brian Okken (January 2013) <http://pythontesting."
+"net/framework/pytest-introduction/>`_"
+msgstr ""
+
+#: ../../../doc/en/talks.rst:55
+msgid ""
+"`monkey patching done right`_ (blog post, consult `monkeypatch plugin`_ for "
+"up-to-date API)"
+msgstr ""
+
+#: ../../../doc/en/talks.rst:58
+msgid "Test parametrization:"
+msgstr ""
+
+#: ../../../doc/en/talks.rst:60
+msgid ""
+"`generating parametrized tests with funcargs`_ (uses deprecated "
+"``addcall()`` API."
+msgstr ""
+
+#: ../../../doc/en/talks.rst:61
+msgid "`test generators and cached setup`_"
+msgstr ""
+
+#: ../../../doc/en/talks.rst:62
+msgid "`parametrizing tests, generalized`_ (blog post)"
+msgstr ""
+
+#: ../../../doc/en/talks.rst:63
+msgid "`putting test-hooks into local or global plugins`_ (blog post)"
+msgstr ""
+
+#: ../../../doc/en/talks.rst:65
+msgid "Assertion introspection:"
+msgstr ""
+
+#: ../../../doc/en/talks.rst:67
+msgid ""
+"`(07/2011) Behind the scenes of pytest's new assertion rewriting <http://"
+"pybites.blogspot.com/2011/07/behind-scenes-of-pytests-new-assertion.html>`_"
+msgstr ""
+
+#: ../../../doc/en/talks.rst:70
+msgid "Distributed testing:"
+msgstr ""
+
+#: ../../../doc/en/talks.rst:72
+msgid "`simultaneously test your code on all platforms`_ (blog entry)"
+msgstr ""
+
+#: ../../../doc/en/talks.rst:74
+msgid "Plugin specific examples:"
+msgstr ""
+
+#: ../../../doc/en/talks.rst:76
+msgid "`skipping slow tests by default in pytest`_ (blog entry)"
+msgstr ""
+
+#: ../../../doc/en/talks.rst:78
+msgid "`many examples in the docs for plugins`_"
+msgstr ""
+
+#: ../../../doc/en/talks.rst:92
+msgid "Older conference talks and tutorials"
+msgstr ""
+
+#: ../../../doc/en/talks.rst:94
+msgid ""
+"`pycon australia 2012 pytest talk from Brianna Laugher <http://2012.pycon-au."
+"org/schedule/52/view_talk?day=sunday>`_ (`video <http://www.youtube.com/"
+"watch?v=DTNejE9EraI>`_, `slides <http://www.slideshare.net/pfctdayelise/"
+"funcargs-other-fun-with-pytest>`_, `code <https://gist.github.com/3386951>`_)"
+msgstr ""
+
+#: ../../../doc/en/talks.rst:96
+msgid ""
+"`pycon 2012 US talk video from Holger Krekel <http://www.youtube.com/watch?"
+"v=9LVqBQcFmyw>`_"
+msgstr ""
+
+#: ../../../doc/en/talks.rst:97
+msgid "`pycon 2010 tutorial PDF`_ and `tutorial1 repository`_"
+msgstr ""
+
+#: ../../../doc/en/talks.rst:99
+msgid "`ep2009-rapidtesting.pdf`_ tutorial slides (July 2009):"
+msgstr ""
+
+#: ../../../doc/en/talks.rst:101
+msgid "testing terminology"
+msgstr ""
+
+#: ../../../doc/en/talks.rst:102
+msgid "basic pytest usage, file system layout"
+msgstr ""
+
+#: ../../../doc/en/talks.rst:103
+msgid "test function arguments (funcargs_) and test fixtures"
+msgstr ""
+
+#: ../../../doc/en/talks.rst:104
+msgid "existing plugins"
+msgstr ""
+
+#: ../../../doc/en/talks.rst:105
+msgid "distributed testing"
+msgstr ""
+
+#: ../../../doc/en/talks.rst:107
+msgid ""
+"`ep2009-pytest.pdf`_ 60 minute pytest talk, highlighting unique features and "
+"a roadmap (July 2009)"
+msgstr ""
+
+#: ../../../doc/en/talks.rst:109
+msgid ""
+"`pycon2009-pytest-introduction.zip`_ slides and files, extended version of "
+"pytest basic introduction, discusses more options, also introduces old-style "
+"xUnit setup, looponfailing and other features."
+msgstr ""
+
+#: ../../../doc/en/talks.rst:111
+msgid ""
+"`pycon2009-pytest-advanced.pdf`_ contain a slightly older version of "
+"funcargs and distributed testing, compared to the EuroPython 2009 slides."
+msgstr ""
