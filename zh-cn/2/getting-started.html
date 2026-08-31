@@ -1,0 +1,363 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Installation and Getting Started &#8212; pytest documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/flasky.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/translations.js"></script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/pytest-docs-l10n/getting-started.html" />
+    <link rel="shortcut icon" href="_static/pytest1favi.ico"/>
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="Usage and Invocations" href="usage.html" />
+    <link rel="prev" title="Getting started basics" href="overview.html" />
+
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+<script type="text/javascript" src="ltd-provenance.js"></script>
+<script type="text/javascript" src="ltd-current.js"></script>
+<script type="text/javascript" src="../../ltd-config.js"></script>
+<script type="text/javascript" src="../../ltd-flyout.js"></script>
+
+  </head><body>
+  
+  
+  
+
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="usage.html" title="Usage and Invocations"
+             accesskey="N">下一页</a></li>
+        <li class="right" >
+          <a href="overview.html" title="Getting started basics"
+             accesskey="P">上一页</a> |</li>
+        <li class="nav-item nav-item-0"><a href="contents.html">pytest-2.9.2</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="overview.html" accesskey="U">Getting started basics</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Installation and Getting Started</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="installation-and-getting-started">
+<h1>Installation and Getting Started<a class="headerlink" href="#installation-and-getting-started" title="永久链接至标题">¶</a></h1>
+<p><strong>Pythons</strong>: Python 2.6,2.7,3.3,3.4,3.5, Jython, PyPy-2.3</p>
+<p><strong>Platforms</strong>: Unix/Posix and Windows</p>
+<p><strong>PyPI package name</strong>: <a class="reference external" href="http://pypi.python.org/pypi/pytest">pytest</a></p>
+<p><strong>dependencies</strong>: <a class="reference external" href="http://pypi.python.org/pypi/py">py</a>,
+<a class="reference external" href="http://pypi.python.org/pypi/colorama">colorama (Windows)</a>,
+<a class="reference external" href="http://pypi.python.org/pypi/argparse">argparse (py26)</a>.</p>
+<p><strong>documentation as PDF</strong>: <a class="reference external" href="http://pytest.org/latest/pytest.pdf">download latest</a></p>
+<div class="section" id="installation">
+<span id="getstarted"></span><span id="id1"></span><h2>Installation<a class="headerlink" href="#installation" title="永久链接至标题">¶</a></h2>
+<p>Installation options:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">pytest</span> <span class="c1"># or</span>
+<span class="n">easy_install</span> <span class="o">-</span><span class="n">U</span> <span class="n">pytest</span>
+</pre></div>
+</div>
+<p>To check your installation has installed the correct version:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ py.test --version
+This is pytest version 2.9.2, imported from $PYTHON_PREFIX/lib/python3.5/site-packages/pytest.py
+</pre></div>
+</div>
+<p>If you get an error checkout <a class="reference internal" href="#installation-issues"><span class="std std-ref">Known Installation issues</span></a>.</p>
+</div>
+<div class="section" id="our-first-test-run">
+<span id="simpletest"></span><h2>Our first test run<a class="headerlink" href="#our-first-test-run" title="永久链接至标题">¶</a></h2>
+<p>Let’s create a first test file with a simple test function:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># content of test_sample.py</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">test_answer</span><span class="p">():</span>
+    <span class="k">assert</span> <span class="n">func</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span>
+</pre></div>
+</div>
+<p>That’s it. You can execute the test function now:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ py.test
+======= test session starts ========
+platform linux -- Python 3.5.1, pytest-2.9.2, py-1.4.31, pluggy-0.3.1
+rootdir: $REGENDOC_TMPDIR, inifile:
+collected 1 items
+
+test_sample.py F
+
+======= FAILURES ========
+_______ test_answer ________
+
+    def test_answer():
+&gt;       assert func(3) == 5
+E       assert 4 == 5
+E        +  where 4 = func(3)
+
+test_sample.py:5: AssertionError
+======= 1 failed in 0.12 seconds ========
+</pre></div>
+</div>
+<p>We got a failure report because our little <code class="docutils literal notranslate"><span class="pre">func(3)</span></code> call did not return <code class="docutils literal notranslate"><span class="pre">5</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>You can simply use the <code class="docutils literal notranslate"><span class="pre">assert</span></code> statement for asserting test
+expectations.  pytest’s <a class="reference internal" href="assert.html#assert-introspection"><span class="std std-ref">Advanced assertion introspection</span></a> will intelligently
+report intermediate values of the assert expression freeing
+you from the need to learn the many names of <a class="reference external" href="http://docs.python.org/library/unittest.html#test-cases">JUnit legacy methods</a>.</p>
+</div>
+</div>
+<div class="section" id="running-multiple-tests">
+<h2>Running multiple tests<a class="headerlink" href="#running-multiple-tests" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">pytest</span></code> will run all files in the current directory and its subdirectories of the form test_*.py or *_test.py. More generally, it follows <a class="reference internal" href="goodpractices.html#test-discovery"><span class="std std-ref">standard test discovery rules</span></a>.</p>
+</div>
+<div class="section" id="asserting-that-a-certain-exception-is-raised">
+<h2>Asserting that a certain exception is raised<a class="headerlink" href="#asserting-that-a-certain-exception-is-raised" title="永久链接至标题">¶</a></h2>
+<p>If you want to assert that some code raises an exception you can
+use the <code class="docutils literal notranslate"><span class="pre">raises</span></code> helper:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># content of test_sysexit.py</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">():</span>
+    <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">test_mytest</span><span class="p">():</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">SystemExit</span><span class="p">):</span>
+        <span class="n">f</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Running it with, this time in “quiet” reporting mode:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ py.test -q test_sysexit.py
+.
+1 passed in 0.12 seconds
+</pre></div>
+</div>
+</div>
+<div class="section" id="grouping-multiple-tests-in-a-class">
+<h2>Grouping multiple tests in a class<a class="headerlink" href="#grouping-multiple-tests-in-a-class" title="永久链接至标题">¶</a></h2>
+<p>Once you start to have more than a few tests it often makes sense
+to group tests logically, in classes and modules.  Let’s write a class
+containing two tests:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># content of test_class.py</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">TestClass</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_one</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;this&quot;</span>
+        <span class="k">assert</span> <span class="s1">&#39;h&#39;</span> <span class="ow">in</span> <span class="n">x</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_two</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span>
+        <span class="k">assert</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;check&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The two tests are found because of the standard <a class="reference internal" href="goodpractices.html#test-discovery"><span class="std std-ref">Conventions for Python test discovery</span></a>.
+There is no need to subclass anything.  We can simply
+run the module by passing its filename:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ py.test -q test_class.py
+.F
+======= FAILURES ========
+_______ TestClass.test_two ________
+
+self = &lt;test_class.TestClass object at 0xdeadbeef&gt;
+
+    def test_two(self):
+        x = &quot;hello&quot;
+&gt;       assert hasattr(x, &#39;check&#39;)
+E       assert hasattr(&#39;hello&#39;, &#39;check&#39;)
+
+test_class.py:8: AssertionError
+1 failed, 1 passed in 0.12 seconds
+</pre></div>
+</div>
+<p>The first test passed, the second failed. Again we can easily see
+the intermediate values used in the assertion, helping us to
+understand the reason for the failure.</p>
+</div>
+<div class="section" id="going-functional-requesting-a-unique-temporary-directory">
+<h2>Going functional: requesting a unique temporary directory<a class="headerlink" href="#going-functional-requesting-a-unique-temporary-directory" title="永久链接至标题">¶</a></h2>
+<p>For functional tests one often needs to create some files
+and pass them to application objects.  pytest provides
+<a class="reference internal" href="builtin.html#builtinfixtures"><span class="std std-ref">Builtin fixtures/function arguments</span></a> which allow to request arbitrary
+resources, for example a unique temporary directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># content of test_tmpdir.py</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_needsfiles</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">tmpdir</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>We list the name <code class="docutils literal notranslate"><span class="pre">tmpdir</span></code> in the test function signature and
+<code class="docutils literal notranslate"><span class="pre">pytest</span></code> will lookup and call a fixture factory to create the resource
+before performing the test function call.  Let’s just run it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ py.test -q test_tmpdir.py
+F
+======= FAILURES ========
+_______ test_needsfiles ________
+
+tmpdir = local(&#39;PYTEST_TMPDIR/test_needsfiles0&#39;)
+
+    def test_needsfiles(tmpdir):
+        print (tmpdir)
+&gt;       assert 0
+E       assert 0
+
+test_tmpdir.py:3: AssertionError
+--------------------------- Captured stdout call ---------------------------
+PYTEST_TMPDIR/test_needsfiles0
+1 failed in 0.12 seconds
+</pre></div>
+</div>
+<p>Before the test runs, a unique-per-test-invocation temporary directory
+was created.  More info at <a class="reference internal" href="tmpdir.html#tmpdir-handling"><span class="std std-ref">Temporary directories and files</span></a>.</p>
+<p>You can find out what kind of builtin <a class="reference internal" href="fixture.html#fixtures"><span class="std std-ref">pytest fixtures: explicit, modular, scalable</span></a> exist by typing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">py</span><span class="o">.</span><span class="n">test</span> <span class="o">--</span><span class="n">fixtures</span>   <span class="c1"># shows builtin and custom fixtures</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="where-to-go-next">
+<h2>Where to go next<a class="headerlink" href="#where-to-go-next" title="永久链接至标题">¶</a></h2>
+<p>Here are a few suggestions where to go next:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="usage.html#cmdline"><span class="std std-ref">Calling pytest through python -m pytest</span></a> for command line invocation examples</p></li>
+<li><p><a class="reference internal" href="goodpractices.html#goodpractices"><span class="std std-ref">good practices</span></a> for virtualenv, test layout, genscript support</p></li>
+<li><p><a class="reference internal" href="fixture.html#fixtures"><span class="std std-ref">pytest fixtures: explicit, modular, scalable</span></a> for providing a functional baseline to your tests</p></li>
+<li><p><span class="xref std std-ref">apiref</span> for documentation and examples on using <code class="docutils literal notranslate"><span class="pre">pytest</span></code></p></li>
+<li><p><a class="reference internal" href="writing_plugins.html#plugins"><span class="std std-ref">Writing plugins</span></a> managing and writing plugins</p></li>
+</ul>
+</div>
+<div class="section" id="known-installation-issues">
+<span id="installation-issues"></span><h2>Known Installation issues<a class="headerlink" href="#known-installation-issues" title="永久链接至标题">¶</a></h2>
+<div class="section" id="easy-install-or-pip-not-found">
+<h3>easy_install or pip not found?<a class="headerlink" href="#easy-install-or-pip-not-found" title="永久链接至标题">¶</a></h3>
+<p><a class="reference external" href="http://www.pip-installer.org/en/latest/index.html">Install pip</a> for a state of the art python package installer.</p>
+<p>Install <a class="reference external" href="http://pypi.python.org/pypi/setuptools">setuptools</a> to get <code class="docutils literal notranslate"><span class="pre">easy_install</span></code> which allows to install
+<code class="docutils literal notranslate"><span class="pre">.egg</span></code> binary format packages in addition to source-based ones.</p>
+</div>
+<div class="section" id="py-test-not-found-on-windows-despite-installation">
+<h3>py.test not found on Windows despite installation?<a class="headerlink" href="#py-test-not-found-on-windows-despite-installation" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Windows</strong>: If “easy_install” or “py.test” are not found
+you need to add the Python script path to your <code class="docutils literal notranslate"><span class="pre">PATH</span></code>, see here:
+<a class="reference external" href="http://www.imladris.com/Scripts/PythonForWindows.html">Python for Windows</a>.  You may alternatively use an <a class="reference external" href="http://www.activestate.com/activepython/downloads">ActivePython install</a>
+which does this for you automatically.</p></li>
+</ul>
+<ul class="simple">
+<li><p><strong>Jython2.5.1 on Windows XP</strong>: <a class="reference external" href="http://bugs.jython.org/issue1491">Jython does not create command line launchers</a>
+so <code class="docutils literal notranslate"><span class="pre">py.test</span></code> will not work correctly.  You may install py.test on
+CPython and type <code class="docutils literal notranslate"><span class="pre">py.test</span> <span class="pre">--genscript=mytest</span></code> and then use
+<code class="docutils literal notranslate"><span class="pre">jython</span> <span class="pre">mytest</span></code> to run your tests with Jython using <code class="docutils literal notranslate"><span class="pre">pytest</span></code>.</p></li>
+</ul>
+<blockquote>
+<div><p><a class="reference internal" href="example/index.html#examples"><span class="std std-ref">Usages and Examples</span></a> for more complex examples</p>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="contents.html">
+              <img class="logo" src="_static/pytest1.png" alt="Logo"/>
+            </a></p><h3><a href="contents.html">Table Of Contents</a></h3>
+
+<ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="contents.html">目录</a></li>
+  <li><a href="#">Install</a></li>
+  <li><a href="example/index.html">实际案例</a></li>
+  <li><a href="customize.html">Customize</a></li>
+  <li><a href="contact.html">Contact</a></li>
+  <li><a href="talks.html">Talks/Posts</a></li>
+  <li><a href="changelog.html">Changelog</a></li>
+  <li><a href="license.html">License</a></li>
+</ul>
+  <hr>
+  <ul>
+<li><a class="reference internal" href="#">Installation and Getting Started</a><ul>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#our-first-test-run">Our first test run</a></li>
+<li><a class="reference internal" href="#running-multiple-tests">Running multiple tests</a></li>
+<li><a class="reference internal" href="#asserting-that-a-certain-exception-is-raised">Asserting that a certain exception is raised</a></li>
+<li><a class="reference internal" href="#grouping-multiple-tests-in-a-class">Grouping multiple tests in a class</a></li>
+<li><a class="reference internal" href="#going-functional-requesting-a-unique-temporary-directory">Going functional: requesting a unique temporary directory</a></li>
+<li><a class="reference internal" href="#where-to-go-next">Where to go next</a></li>
+<li><a class="reference internal" href="#known-installation-issues">Known Installation issues</a><ul>
+<li><a class="reference internal" href="#easy-install-or-pip-not-found">easy_install or pip not found?</a></li>
+<li><a class="reference internal" href="#py-test-not-found-on-windows-despite-installation">py.test not found on Windows despite installation?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="contents.html">Documentation overview</a><ul>
+  <li><a href="overview.html">Getting started basics</a><ul>
+      <li>Previous: <a href="overview.html" title="上一章">Getting started basics</a></li>
+      <li>Next: <a href="usage.html" title="下一章">Usage and Invocations</a></li>
+  </ul></li>
+  </ul></li>
+</ul><h3>Useful Links</h3>
+<ul>
+  <li>
+    <a href="https://www.indiegogo.com/projects/python-testing-sprint-mid-2016#/">
+      <b>Sprint funding campaign</b>
+    </a>
+  </li>
+  <li><a href="index.html">The pytest Website</a></li>
+  <li><a href="contributing.html">Contribution Guide</a></li>
+  <li><a href="https://pypi.python.org/pypi/pytest">pytest @ PyPI</a></li>
+  <li><a href="https://github.com/pytest-dev/pytest/">pytest @ GitHub</a></li>
+  <li><a href="http://plugincompat.herokuapp.com/">3rd party plugins</a></li>
+  <li><a href="https://github.com/pytest-dev/pytest/issues">Issue Tracker</a></li>
+  <li><a href="http://pytest.org/latest/pytest.pdf">PDF Documentation</a>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">快速搜索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="转向" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+  <div class="footer">
+    &copy; Copyright 2015, holger krekel and pytest-dev team.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-7597274-13']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+  </body>
+</html>
