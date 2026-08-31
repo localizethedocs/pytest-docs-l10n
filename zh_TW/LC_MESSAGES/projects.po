@@ -1,0 +1,303 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015–2018 , holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/projects.rst:21
+msgid "Project examples"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:23
+msgid ""
+"Here are some examples of projects using ``pytest`` (please send notes via :"
+"ref:`contact`):"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:25
+msgid ""
+"`PyPy <http://pypy.org>`_, Python with a JIT compiler, running over `21000 "
+"tests <http://buildbot.pypy.org/summary?branch=%3Ctrunk%3E>`_"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:27
+msgid "the `MoinMoin <http://moinmo.in>`_ Wiki Engine"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:28
+msgid ""
+"`sentry <https://getsentry.com/welcome/>`_, realtime app-maintenance and "
+"exception tracking"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:29
+msgid ""
+"`Astropy <http://www.astropy.org/>`_ and `affiliated packages <http://www."
+"astropy.org/affiliated/index.html>`_"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:30
+msgid "`tox <http://testrun.org/tox>`_, virtualenv/Hudson integration tool"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:31
+msgid "`PIDA <http://pida.co.uk>`_ framework for integrated development"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:32
+msgid ""
+"`PyPM <http://code.activestate.com/pypm/>`_ ActiveState's package manager"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:33
+msgid ""
+"`Fom <http://packages.python.org/Fom/>`_ a fluid object mapper for FluidDB"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:34
+msgid ""
+"`applib <https://github.com/ActiveState/applib>`_ cross-platform utilities"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:35
+msgid ""
+"`six <https://pypi.org/project/six/>`_ Python 2 and 3 compatibility utilities"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:36
+msgid "`pediapress <http://code.pediapress.com/wiki/wiki>`_ MediaWiki articles"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:37
+msgid ""
+"`mwlib <https://pypi.org/project/mwlib/>`_ mediawiki parser and utility "
+"library"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:38
+msgid ""
+"`The Translate Toolkit <http://translate.sourceforge.net/wiki/toolkit/"
+"index>`_ for localization and conversion"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:39
+msgid "`execnet <http://codespeak.net/execnet>`_ rapid multi-Python deployment"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:40
+msgid ""
+"`pylib <https://py.readthedocs.io>`_ cross-platform path, IO, dynamic code "
+"library"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:41
+msgid ""
+"`Pacha <http://pacha.cafepais.com/>`_ configuration management in five "
+"minutes"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:42
+msgid ""
+"`bbfreeze <https://pypi.org/project/bbfreeze/>`_ create standalone "
+"executables from Python scripts"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:43
+msgid "`pdb++ <http://bitbucket.org/antocuni/pdb>`_ a fancier version of PDB"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:44
+msgid ""
+"`py-s3fuse <http://code.google.com/p/py-s3fuse/>`_ Amazon S3 FUSE based "
+"filesystem"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:45
+msgid "`waskr <http://code.google.com/p/waskr/>`_ WSGI Stats Middleware"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:46
+msgid ""
+"`guachi <http://code.google.com/p/guachi/>`_ global persistent configs for "
+"Python modules"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:47
+msgid ""
+"`Circuits <https://pypi.org/project/circuits/>`_ lightweight Event Driven "
+"Framework"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:48
+msgid ""
+"`pygtk-helpers <http://bitbucket.org/aafshar/pygtkhelpers-main/>`_ easy "
+"interaction with PyGTK"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:49
+msgid ""
+"`QuantumCore <http://quantumcore.org/>`_ statusmessage and repoze openid "
+"plugin"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:50
+msgid ""
+"`pydataportability <http://pydataportability.net/>`_ libraries for managing "
+"the open web"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:51
+msgid ""
+"`XIST <http://www.livinglogic.de/Python/xist/>`_ extensible HTML/XML "
+"generator"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:52
+msgid ""
+"`tiddlyweb <https://pypi.org/project/tiddlyweb/>`_ optionally headless, "
+"extensible RESTful datastore"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:53
+msgid ""
+"`fancycompleter <http://bitbucket.org/antocuni/fancycompleter/src>`_ for "
+"colorful tab-completion"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:54
+msgid ""
+"`Paludis <http://paludis.exherbo.org/>`_ tools for Gentoo Paludis package "
+"manager"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:55
+msgid "`Gerald <http://halfcooked.com/code/gerald/>`_ schema comparison tool"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:56
+msgid ""
+"`abjad <http://code.google.com/p/abjad/>`_ Python API for Formalized Score "
+"control"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:57
+msgid "`bu <http://packages.python.org/bu/>`_ a microscopic build system"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:58
+msgid ""
+"`katcp <https://bitbucket.org/hodgestar/katcp>`_ Telescope communication "
+"protocol over Twisted"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:59
+msgid "`kss plugin timer <https://pypi.org/project/kss.plugin.timer/>`_"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:60
+msgid ""
+"`pyudev <https://pyudev.readthedocs.io/en/latest/tests/plugins.html>`_ a "
+"pure Python binding to the Linux library libudev"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:61
+msgid ""
+"`pytest-localserver <https://bitbucket.org/pytest-dev/pytest-localserver/>`_ "
+"a plugin for pytest that provides an httpserver and smtpserver"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:62
+msgid ""
+"`pytest-monkeyplus <https://pypi.org/project/pytest-monkeyplus/>`_ a plugin "
+"that extends monkeypatch"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:64
+msgid "These projects help integrate ``pytest`` into other Python frameworks:"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:66
+msgid "`pytest-django <https://pypi.org/project/pytest-django/>`_ for Django"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:67
+msgid ""
+"`zope.pytest <http://packages.python.org/zope.pytest/>`_ for Zope and Grok"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:68
+msgid ""
+"`pytest_gae <https://pypi.org/project/pytest_gae/0.2.1/>`_ for Google App "
+"Engine"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:69
+msgid ""
+"There is `some work <https://github.com/Kotti/Kotti/blob/master/kotti/"
+"testing.py>`_ underway for Kotti, a CMS built in Pyramid/Pylons"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:73
+msgid "Some organisations using pytest"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:75
+msgid "`Square Kilometre Array, Cape Town <http://ska.ac.za/>`_"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:76
+msgid ""
+"`Some Mozilla QA people <http://www.theautomatedtester.co.uk/blog/2011/"
+"pytest_and_xdist_plugin.html>`_ use pytest to distribute their Selenium tests"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:77
+msgid "`Tandberg <http://www.tandberg.com/>`_"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:78
+msgid "`Shootq <http://web.shootq.com/>`_"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:79
+msgid ""
+"`Stups department of Heinrich Heine University Duesseldorf <http://www.stups."
+"uni-duesseldorf.de/projects.php>`_"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:80
+msgid "`cellzome <http://www.cellzome.com/>`_"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:81
+msgid "`Open End, Gothenborg <http://www.openend.se>`_"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:82
+msgid "`Laboratory of Bioinformatics, Warsaw <http://genesilico.pl/>`_"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:83
+msgid "`merlinux, Germany <http://merlinux.eu>`_"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:84
+msgid "`ESSS, Brazil <http://www.esss.com.br>`_"
+msgstr ""
+
+#: ../../../doc/en/projects.rst:85
+msgid "many more ... (please be so kind to send a note via :ref:`contact`)"
+msgstr ""
