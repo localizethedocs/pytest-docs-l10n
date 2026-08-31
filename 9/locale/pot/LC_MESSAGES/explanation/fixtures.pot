@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest 9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-13 09:55+0000\n"
+"POT-Creation-Date: 2026-08-31 16:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -231,9 +231,9 @@ msgstr ""
 
 #: ../../../doc/en/explanation/fixtures.rst:155
 msgid ""
-"Another good approach is by adding the data files in the ``tests`` folder. "
-"There are also community plugins available to help to manage this aspect of "
-"testing, e.g. :pypi:`pytest-datadir` and :pypi:`pytest-datafiles`."
+"Another good approach is by adding the data files in the ``tests`` "
+"directory. There are also community plugins available to help to manage this "
+"aspect of testing, e.g. :pypi:`pytest-datadir` and :pypi:`pytest-datafiles`."
 msgstr ""
 
 #: ../../../doc/en/explanation/fixtures.rst:162

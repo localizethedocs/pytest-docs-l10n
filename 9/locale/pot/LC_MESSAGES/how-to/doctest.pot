@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest 9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-13 09:55+0000\n"
+"POT-Creation-Date: 2026-08-31 16:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -80,7 +80,8 @@ msgstr ""
 #: ../../../doc/en/how-to/doctest.rst:44
 msgid ""
 "In addition to text files, you can also execute doctests directly from "
-"docstrings of your classes and functions, including from test modules:"
+"docstrings of your classes and functions, including from test modules, using "
+"the :option:`--doctest-modules` option:"
 msgstr ""
 
 #: ../../../doc/en/how-to/doctest.rst:47
@@ -325,24 +326,39 @@ msgid ""
 "`autouse <autouse>` are supported when executing text doctest files."
 msgstr ""
 
-#: ../../../doc/en/how-to/doctest.rst:231
+#: ../../../doc/en/how-to/doctest.rst:227
+msgid ""
+"Python doctest modules are collected independently from Python test files. "
+"Fixture scope is not shared between the two."
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:230
+msgid ""
+"Doctests do not support fixtures that depend on parametrization, because "
+"doctest collection does not perform the same test generation as normal test "
+"functions. This includes parametrized autouse fixtures. If you need to run "
+"doctests against multiple backends or configurations, consider moving those "
+"checks into normal test functions or a dedicated doctest plugin."
+msgstr ""
+
+#: ../../../doc/en/how-to/doctest.rst:240
 msgid "'doctest_namespace' fixture"
 msgstr ""
 
-#: ../../../doc/en/how-to/doctest.rst:233
+#: ../../../doc/en/how-to/doctest.rst:242
 msgid ""
 "The ``doctest_namespace`` fixture can be used to inject items into the "
 "namespace in which your doctests run. It is intended to be used within your "
 "own fixtures to provide the tests that use them with context."
 msgstr ""
 
-#: ../../../doc/en/how-to/doctest.rst:237
+#: ../../../doc/en/how-to/doctest.rst:246
 msgid ""
 "``doctest_namespace`` is a standard ``dict`` object into which you place the "
 "objects you want to appear in the doctest namespace:"
 msgstr ""
 
-#: ../../../doc/en/how-to/doctest.rst:240
+#: ../../../doc/en/how-to/doctest.rst:249
 msgid ""
 "# content of conftest.py\n"
 "import pytest\n"
@@ -354,11 +370,11 @@ msgid ""
 "    doctest_namespace[\"np\"] = numpy"
 msgstr ""
 
-#: ../../../doc/en/how-to/doctest.rst:251
+#: ../../../doc/en/how-to/doctest.rst:260
 msgid "which can then be used in your doctests directly:"
 msgstr ""
 
-#: ../../../doc/en/how-to/doctest.rst:253
+#: ../../../doc/en/how-to/doctest.rst:262
 msgid ""
 "# content of numpy.py\n"
 "def arange():\n"
@@ -369,7 +385,7 @@ msgid ""
 "    \"\"\""
 msgstr ""
 
-#: ../../../doc/en/how-to/doctest.rst:263
+#: ../../../doc/en/how-to/doctest.rst:272
 msgid ""
 "Note that like the normal ``conftest.py``, the fixtures are discovered in "
 "the directory tree conftest is in. Meaning that if you put your doctest with "
@@ -377,23 +393,23 @@ msgid ""
 "tree. Fixtures will not be discovered in a sibling directory tree!"
 msgstr ""
 
-#: ../../../doc/en/how-to/doctest.rst:268
+#: ../../../doc/en/how-to/doctest.rst:277
 msgid "Skipping tests"
 msgstr ""
 
-#: ../../../doc/en/how-to/doctest.rst:270
+#: ../../../doc/en/how-to/doctest.rst:279
 msgid ""
 "For the same reasons one might want to skip normal tests, it is also "
 "possible to skip tests inside doctests."
 msgstr ""
 
-#: ../../../doc/en/how-to/doctest.rst:273
+#: ../../../doc/en/how-to/doctest.rst:282
 msgid ""
 "To skip a single check inside a doctest you can use the standard :data:"
 "`doctest.SKIP` directive:"
 msgstr ""
 
-#: ../../../doc/en/how-to/doctest.rst:276
+#: ../../../doc/en/how-to/doctest.rst:285
 msgid ""
 "def test_random(y):\n"
 "    \"\"\"\n"
@@ -405,18 +421,18 @@ msgid ""
 "    \"\"\""
 msgstr ""
 
-#: ../../../doc/en/how-to/doctest.rst:287
+#: ../../../doc/en/how-to/doctest.rst:296
 msgid "This will skip the first check, but not the second."
 msgstr ""
 
-#: ../../../doc/en/how-to/doctest.rst:289
+#: ../../../doc/en/how-to/doctest.rst:298
 msgid ""
 "pytest also allows using the standard pytest functions :func:`pytest.skip` "
 "and :func:`pytest.xfail` inside doctests, which might be useful because you "
 "can then skip/xfail tests based on external conditions:"
 msgstr ""
 
-#: ../../../doc/en/how-to/doctest.rst:294
+#: ../../../doc/en/how-to/doctest.rst:303
 msgid ""
 ">>> import sys, pytest\n"
 ">>> if sys.platform.startswith('win'):\n"
@@ -426,36 +442,36 @@ msgid ""
 ">>> ..."
 msgstr ""
 
-#: ../../../doc/en/how-to/doctest.rst:303
+#: ../../../doc/en/how-to/doctest.rst:312
 msgid ""
 "However using those functions is discouraged because it reduces the "
 "readability of the docstring."
 msgstr ""
 
-#: ../../../doc/en/how-to/doctest.rst:308
+#: ../../../doc/en/how-to/doctest.rst:317
 msgid ""
 ":func:`pytest.skip` and :func:`pytest.xfail` behave differently depending if "
 "the doctests are in a Python file (in docstrings) or a text file containing "
 "doctests intermingled with text:"
 msgstr ""
 
-#: ../../../doc/en/how-to/doctest.rst:312
+#: ../../../doc/en/how-to/doctest.rst:321
 msgid ""
 "Python modules (docstrings): the functions only act in that specific "
 "docstring, letting the other docstrings in the same module execute as normal."
 msgstr ""
 
-#: ../../../doc/en/how-to/doctest.rst:315
+#: ../../../doc/en/how-to/doctest.rst:324
 msgid ""
 "Text files: the functions will skip/xfail the checks for the rest of the "
 "entire file."
 msgstr ""
 
-#: ../../../doc/en/how-to/doctest.rst:320
+#: ../../../doc/en/how-to/doctest.rst:329
 msgid "Alternatives"
 msgstr ""
 
-#: ../../../doc/en/how-to/doctest.rst:322
+#: ../../../doc/en/how-to/doctest.rst:331
 msgid ""
 "While the built-in pytest support provides a good set of functionalities for "
 "using doctests, if you use them extensively you might be interested in those "
@@ -463,14 +479,14 @@ msgid ""
 "integration:"
 msgstr ""
 
-#: ../../../doc/en/how-to/doctest.rst:326
+#: ../../../doc/en/how-to/doctest.rst:335
 msgid ""
 "`pytest-doctestplus <https://github.com/scientific-python/pytest-"
 "doctestplus>`__: provides advanced doctest support and enables the testing "
 "of reStructuredText (\".rst\") files."
 msgstr ""
 
-#: ../../../doc/en/how-to/doctest.rst:329
+#: ../../../doc/en/how-to/doctest.rst:338
 msgid ""
 "`Sybil <https://sybil.readthedocs.io>`__: provides a way to test examples in "
 "your documentation by parsing them from the documentation source and "
