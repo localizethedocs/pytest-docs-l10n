@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest 9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-13 09:55+0000\n"
+"POT-Creation-Date: 2026-08-31 16:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -238,18 +238,29 @@ msgid ""
 "which case it will influence the ordering of hook wrappers among each other."
 msgstr ""
 
-#: ../../../doc/en/how-to/writing_hook_functions.rst:167
+#: ../../../doc/en/how-to/writing_hook_functions.rst:166
+msgid ""
+"pytest only searches for hook implementations whose names start with "
+"``pytest_``.  The ``specname`` argument to ``@pytest.hookimpl`` can be used "
+"to give an implementation a different suffix, for example "
+"``pytest_collection_modifyitems_tryfirst``, but the function name still "
+"needs to start with ``pytest_``.  A hook implementation named "
+"``my_collection_modifyitems`` is ignored even if it is decorated with "
+"``@pytest.hookimpl(specname=\"pytest_collection_modifyitems\")``."
+msgstr ""
+
+#: ../../../doc/en/how-to/writing_hook_functions.rst:177
 msgid "Declaring new hooks"
 msgstr ""
 
-#: ../../../doc/en/how-to/writing_hook_functions.rst:171
+#: ../../../doc/en/how-to/writing_hook_functions.rst:181
 msgid ""
 "This is a quick overview on how to add new hooks and how they work in "
 "general, but a more complete overview can be found in `the pluggy "
 "documentation <https://pluggy.readthedocs.io/en/latest/>`__."
 msgstr ""
 
-#: ../../../doc/en/how-to/writing_hook_functions.rst:174
+#: ../../../doc/en/how-to/writing_hook_functions.rst:184
 msgid ""
 "Plugins and ``conftest.py`` files may declare new hooks that can then be "
 "implemented by other plugins in order to alter behaviour or interact with "
@@ -264,7 +275,8 @@ msgid ""
 "PytestPluginManager.add_hookspecs>`."
 msgstr ""
 
-#: ../../../doc/en/how-to/writing_hook_functions.rst:0
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_addhooks:0
 msgid "Parameters"
 msgstr ""
 
@@ -290,7 +302,7 @@ msgid ""
 "when the conftest is registered."
 msgstr ""
 
-#: ../../../doc/en/how-to/writing_hook_functions.rst:181
+#: ../../../doc/en/how-to/writing_hook_functions.rst:191
 msgid ""
 "Hooks are usually declared as do-nothing functions that contain only "
 "documentation describing when the hook will be called and what return values "
@@ -298,13 +310,13 @@ msgid ""
 "pytest won't recognize them."
 msgstr ""
 
-#: ../../../doc/en/how-to/writing_hook_functions.rst:185
+#: ../../../doc/en/how-to/writing_hook_functions.rst:195
 msgid ""
 "Here's an example. Let's assume this code is in the ``sample_hook.py`` "
 "module."
 msgstr ""
 
-#: ../../../doc/en/how-to/writing_hook_functions.rst:187
+#: ../../../doc/en/how-to/writing_hook_functions.rst:197
 msgid ""
 "def pytest_my_hook(config):\n"
 "    \"\"\"\n"
@@ -312,7 +324,7 @@ msgid ""
 "    \"\"\""
 msgstr ""
 
-#: ../../../doc/en/how-to/writing_hook_functions.rst:194
+#: ../../../doc/en/how-to/writing_hook_functions.rst:204
 msgid ""
 "To register the hooks with pytest they need to be structured in their own "
 "module or class. This class or module can then be passed to the "
@@ -320,7 +332,7 @@ msgid ""
 "hook exposed by pytest)."
 msgstr ""
 
-#: ../../../doc/en/how-to/writing_hook_functions.rst:198
+#: ../../../doc/en/how-to/writing_hook_functions.rst:208
 msgid ""
 "def pytest_addhooks(pluginmanager):\n"
 "    \"\"\"This example assumes the hooks are grouped in the 'sample_hook' "
@@ -330,13 +342,13 @@ msgid ""
 "    pluginmanager.add_hookspecs(sample_hook)"
 msgstr ""
 
-#: ../../../doc/en/how-to/writing_hook_functions.rst:206
+#: ../../../doc/en/how-to/writing_hook_functions.rst:216
 msgid ""
 "For a real world example, see `newhooks.py`_ from `xdist <https://github.com/"
 "pytest-dev/pytest-xdist>`_."
 msgstr ""
 
-#: ../../../doc/en/how-to/writing_hook_functions.rst:210
+#: ../../../doc/en/how-to/writing_hook_functions.rst:220
 msgid ""
 "Hooks may be called both from fixtures or from other hooks. In both cases, "
 "hooks are called through the ``hook`` object, available in the ``config`` "
@@ -344,7 +356,7 @@ msgid ""
 "use the ``pytestconfig`` fixture which provides the same object."
 msgstr ""
 
-#: ../../../doc/en/how-to/writing_hook_functions.rst:214
+#: ../../../doc/en/how-to/writing_hook_functions.rst:224
 msgid ""
 "@pytest.fixture()\n"
 "def my_fixture(pytestconfig):\n"
@@ -354,22 +366,22 @@ msgid ""
 "    result = pytestconfig.hook.pytest_my_hook(config=pytestconfig)"
 msgstr ""
 
-#: ../../../doc/en/how-to/writing_hook_functions.rst:223
+#: ../../../doc/en/how-to/writing_hook_functions.rst:233
 msgid "Hooks receive parameters using only keyword arguments."
 msgstr ""
 
-#: ../../../doc/en/how-to/writing_hook_functions.rst:225
+#: ../../../doc/en/how-to/writing_hook_functions.rst:235
 msgid ""
 "Now your hook is ready to be used. To register a function at the hook, other "
 "plugins or users must now simply define the function ``pytest_my_hook`` with "
 "the correct signature in their ``conftest.py``."
 msgstr ""
 
-#: ../../../doc/en/how-to/writing_hook_functions.rst:228
+#: ../../../doc/en/how-to/writing_hook_functions.rst:238
 msgid "Example:"
 msgstr ""
 
-#: ../../../doc/en/how-to/writing_hook_functions.rst:230
+#: ../../../doc/en/how-to/writing_hook_functions.rst:240
 msgid ""
 "def pytest_my_hook(config):\n"
 "    \"\"\"\n"
@@ -378,7 +390,7 @@ msgid ""
 "    print(config.hook)"
 msgstr ""
 
-#: ../../../doc/en/how-to/writing_hook_functions.rst:240
+#: ../../../doc/en/how-to/writing_hook_functions.rst:250
 msgid ""
 "Unlike other hooks, the :hook:`pytest_generate_tests` hook is also "
 "discovered when defined inside a test module or test class. Other hooks must "
@@ -386,11 +398,11 @@ msgid ""
 "ref:`parametrize-basics` and the :ref:`hook-reference`."
 msgstr ""
 
-#: ../../../doc/en/how-to/writing_hook_functions.rst:249
+#: ../../../doc/en/how-to/writing_hook_functions.rst:259
 msgid "Using hooks in pytest_addoption"
 msgstr ""
 
-#: ../../../doc/en/how-to/writing_hook_functions.rst:251
+#: ../../../doc/en/how-to/writing_hook_functions.rst:261
 msgid ""
 "Occasionally, it is necessary to change the way in which command line "
 "options are defined by one plugin based on hooks in another plugin. For "
@@ -400,7 +412,7 @@ msgid ""
 "and use pytest_addoption as follows:"
 msgstr ""
 
-#: ../../../doc/en/how-to/writing_hook_functions.rst:258
+#: ../../../doc/en/how-to/writing_hook_functions.rst:268
 msgid ""
 "# contents of hooks.py\n"
 "\n"
@@ -433,23 +445,71 @@ msgid ""
 "    )"
 msgstr ""
 
-#: ../../../doc/en/how-to/writing_hook_functions.rst:288
+#: ../../../doc/en/how-to/writing_hook_functions.rst:298
 msgid ""
-"The conftest.py that is using myplugin would simply define the hook as "
-"follows:"
+"Another plugin (installed via setuptools entry points, or via the ``-p`` "
+"command-line option) could then define the hook implementation to provide "
+"the default value:"
 msgstr ""
 
-#: ../../../doc/en/how-to/writing_hook_functions.rst:290
+#: ../../../doc/en/how-to/writing_hook_functions.rst:301
 msgid ""
+"# contents of third_party_plugin.py\n"
+"\n"
+"\n"
 "def pytest_config_file_default_value():\n"
 "    return \"config.yaml\""
 msgstr ""
 
-#: ../../../doc/en/how-to/writing_hook_functions.rst:297
+#: ../../../doc/en/how-to/writing_hook_functions.rst:311
+msgid ""
+"**Hook implementations in conftest.py files are not available to other "
+"plugins during** **their** ``pytest_addoption()`` **execution**. This is "
+"because conftest.py files are discovered and loaded *after* builtin plugins, "
+"third-party plugins, and command-line plugins have already been initialized "
+"(including the execution of their ``pytest_addoption()`` hooks)."
+msgstr ""
+
+#: ../../../doc/en/how-to/writing_hook_functions.rst:317
+msgid ""
+"However, :ref:`initial conftest files <pluginorder>` themselves *can* "
+"implement ``pytest_addoption()`` to add their own command-line options. When "
+"an initial conftest is loaded, its ``pytest_addoption()`` hook will be "
+"called immediately."
+msgstr ""
+
+#: ../../../doc/en/how-to/writing_hook_functions.rst:321
+msgid ""
+"During a plugin's ``pytest_addoption()`` execution, only hook "
+"implementations from plugins that were loaded earlier will be available. "
+"These include:"
+msgstr ""
+
+#: ../../../doc/en/how-to/writing_hook_functions.rst:324
+msgid "builtin plugins"
+msgstr ""
+
+#: ../../../doc/en/how-to/writing_hook_functions.rst:325
+msgid "plugins explicitly loaded with ``-p`` on the command line"
+msgstr ""
+
+#: ../../../doc/en/how-to/writing_hook_functions.rst:326
+msgid "installed third-party plugins (via setuptools entry points)"
+msgstr ""
+
+#: ../../../doc/en/how-to/writing_hook_functions.rst:327
+msgid "plugins specified via the ``PYTEST_PLUGINS`` environment variable"
+msgstr ""
+
+#: ../../../doc/en/how-to/writing_hook_functions.rst:329
+msgid "See :ref:`pluginorder` for the complete plugin discovery order."
+msgstr ""
+
+#: ../../../doc/en/how-to/writing_hook_functions.rst:333
 msgid "Optionally using hooks from 3rd party plugins"
 msgstr ""
 
-#: ../../../doc/en/how-to/writing_hook_functions.rst:299
+#: ../../../doc/en/how-to/writing_hook_functions.rst:335
 msgid ""
 "Using new hooks from plugins as explained above might be a little tricky "
 "because of the standard :ref:`validation mechanism <validation>`: if you "
@@ -457,13 +517,13 @@ msgid ""
 "message will not make much sense to your users."
 msgstr ""
 
-#: ../../../doc/en/how-to/writing_hook_functions.rst:304
+#: ../../../doc/en/how-to/writing_hook_functions.rst:340
 msgid ""
 "One approach is to defer the hook implementation to a new plugin instead of "
 "declaring the hook functions directly in your plugin module, for example:"
 msgstr ""
 
-#: ../../../doc/en/how-to/writing_hook_functions.rst:307
+#: ../../../doc/en/how-to/writing_hook_functions.rst:343
 msgid ""
 "# contents of myplugin.py\n"
 "\n"
@@ -480,17 +540,17 @@ msgid ""
 "        config.pluginmanager.register(DeferPlugin())"
 msgstr ""
 
-#: ../../../doc/en/how-to/writing_hook_functions.rst:323
+#: ../../../doc/en/how-to/writing_hook_functions.rst:359
 msgid ""
 "This has the added benefit of allowing you to conditionally install hooks "
 "depending on which plugins are installed."
 msgstr ""
 
-#: ../../../doc/en/how-to/writing_hook_functions.rst:329
+#: ../../../doc/en/how-to/writing_hook_functions.rst:365
 msgid "Storing data on items across hook functions"
 msgstr ""
 
-#: ../../../doc/en/how-to/writing_hook_functions.rst:331
+#: ../../../doc/en/how-to/writing_hook_functions.rst:367
 msgid ""
 "Plugins often need to store data on :class:`~pytest.Item`\\s in one hook "
 "implementation, and access it in another. One common solution is to just "
@@ -500,34 +560,34 @@ msgid ""
 "stash>`."
 msgstr ""
 
-#: ../../../doc/en/how-to/writing_hook_functions.rst:337
+#: ../../../doc/en/how-to/writing_hook_functions.rst:373
 msgid ""
 "To use the \"stash\" in your plugins, first create \"stash keys\" somewhere "
 "at the top level of your plugin:"
 msgstr ""
 
-#: ../../../doc/en/how-to/writing_hook_functions.rst:340
+#: ../../../doc/en/how-to/writing_hook_functions.rst:376
 msgid ""
 "been_there_key = pytest.StashKey[bool]()\n"
 "done_that_key = pytest.StashKey[str]()"
 msgstr ""
 
-#: ../../../doc/en/how-to/writing_hook_functions.rst:345
+#: ../../../doc/en/how-to/writing_hook_functions.rst:381
 msgid "then use the keys to stash your data at some point:"
 msgstr ""
 
-#: ../../../doc/en/how-to/writing_hook_functions.rst:347
+#: ../../../doc/en/how-to/writing_hook_functions.rst:383
 msgid ""
 "def pytest_runtest_setup(item: pytest.Item) -> None:\n"
 "    item.stash[been_there_key] = True\n"
 "    item.stash[done_that_key] = \"no\""
 msgstr ""
 
-#: ../../../doc/en/how-to/writing_hook_functions.rst:353
+#: ../../../doc/en/how-to/writing_hook_functions.rst:389
 msgid "and retrieve them at another point:"
 msgstr ""
 
-#: ../../../doc/en/how-to/writing_hook_functions.rst:355
+#: ../../../doc/en/how-to/writing_hook_functions.rst:391
 msgid ""
 "def pytest_runtest_teardown(item: pytest.Item) -> None:\n"
 "    if not item.stash[been_there_key]:\n"
@@ -535,7 +595,7 @@ msgid ""
 "    item.stash[done_that_key] = \"yes!\""
 msgstr ""
 
-#: ../../../doc/en/how-to/writing_hook_functions.rst:362
+#: ../../../doc/en/how-to/writing_hook_functions.rst:398
 msgid ""
 "Stashes are available on all node types (like :class:`~pytest.Class`, :class:"
 "`~pytest.Session`) and also on :class:`~pytest.Config`, if needed."
