@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-04 10:06+0000\n"
+"POT-Creation-Date: 2026-08-31 15:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,7 +54,9 @@ msgid "Exit code 3"
 msgstr ""
 
 #: ../../../doc/en/reference/exit-codes.rst:11
-msgid "Internal error happened while executing tests"
+msgid ""
+"Internal error happened while executing tests, or a plugin raised while "
+"importing"
 msgstr ""
 
 #: ../../../doc/en/reference/exit-codes.rst:0
@@ -62,7 +64,9 @@ msgid "Exit code 4"
 msgstr ""
 
 #: ../../../doc/en/reference/exit-codes.rst:12
-msgid "pytest command line usage error"
+msgid ""
+"pytest command line usage error, including a plugin that cannot be found or "
+"a ``conftest.py`` that fails to import"
 msgstr ""
 
 #: ../../../doc/en/reference/exit-codes.rst:0
