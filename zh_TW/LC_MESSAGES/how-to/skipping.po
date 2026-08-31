@@ -1,0 +1,768 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-23 08:43+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/how-to/skipping.rst:6
+msgid "How to use skip and xfail to deal with tests that cannot succeed"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:8
+msgid ""
+"You can mark test functions that cannot be run on certain platforms or that "
+"you expect to fail so pytest can deal with them accordingly and present a "
+"summary of the test session, while keeping the test suite *green*."
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:12
+msgid ""
+"A **skip** means that you expect your test to pass only if some conditions "
+"are met, otherwise pytest should skip running the test altogether. Common "
+"examples are skipping windows-only tests on non-windows platforms, or "
+"skipping tests that depend on an external resource which is not available at "
+"the moment (for example a database)."
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:17
+msgid ""
+"An **xfail** means that you expect a test to fail for some reason. A common "
+"example is a test for a feature not yet implemented, or a bug not yet fixed. "
+"When a test passes despite being expected to fail (marked with ``pytest.mark."
+"xfail``), it's an **xpass** and will be reported in the test summary."
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:22
+msgid ""
+"``pytest`` counts and lists *skip* and *xfail* tests separately. Detailed "
+"information about skipped/xfailed tests is not shown by default to avoid "
+"cluttering the output.  You can use the :option:`-r` option to see details "
+"corresponding to the \"short\" letters shown in the test progress:"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:27
+msgid "pytest -rxXs  # show extra info on xfailed, xpassed, and skipped tests"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:31
+msgid ""
+"More details on the :option:`-r` option can be found by running ``pytest -"
+"h``."
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:33
+msgid "(See :ref:`how to change command line options defaults`)"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:40
+msgid "Skipping test functions"
+msgstr "略過測試函式"
+
+#: ../../../doc/en/how-to/skipping.rst:44
+msgid ""
+"The simplest way to skip a test function is to mark it with the ``skip`` "
+"decorator which may be passed an optional ``reason``:"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:47
+msgid ""
+"@pytest.mark.skip(reason=\"no way of currently testing this\")\n"
+"def test_the_unknown(): ..."
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:53
+msgid ""
+"Alternatively, it is also possible to skip imperatively during test "
+"execution or setup by calling the ``pytest.skip(reason)`` function:"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:56
+msgid ""
+"def test_function():\n"
+"    if not valid_config():\n"
+"        pytest.skip(\"unsupported configuration\")"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:62
+msgid ""
+"The imperative method is useful when it is not possible to evaluate the skip "
+"condition during import time."
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:65
+msgid ""
+"It is also possible to skip the whole module using ``pytest.skip(reason, "
+"allow_module_level=True)`` at the module level:"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:68
+msgid ""
+"import sys\n"
+"\n"
+"import pytest\n"
+"\n"
+"if not sys.platform.startswith(\"win\"):\n"
+"    pytest.skip(\"skipping windows-only tests\", allow_module_level=True)"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:78
+msgid "**Reference**: :ref:`pytest.mark.skip ref`"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:81
+msgid "``skipif``"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:85
+msgid ""
+"If you wish to skip something conditionally then you can use ``skipif`` "
+"instead. Here is an example of marking a test function to be skipped when "
+"run on an interpreter earlier than Python3.13:"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:89
+msgid ""
+"import sys\n"
+"\n"
+"\n"
+"@pytest.mark.skipif(sys.version_info < (3, 13), reason=\"requires python3.13 "
+"or higher\")\n"
+"def test_function(): ..."
+msgstr ""
+"import sys\n"
+"\n"
+"\n"
+"@pytest.mark.skipif(sys.version_info < (3, 13), reason=\"requires python3.13 "
+"or higher\")\n"
+"def test_function(): ..."
+
+#: ../../../doc/en/how-to/skipping.rst:97
+msgid ""
+"If the condition evaluates to ``True`` during collection, the test function "
+"will be skipped, with the specified reason appearing in the summary when "
+"using ``-rs``."
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:100
+msgid ""
+"You can share ``skipif`` markers between modules.  Consider this test module:"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:102
+msgid ""
+"# content of test_mymodule.py\n"
+"import mymodule\n"
+"\n"
+"minversion = pytest.mark.skipif(\n"
+"    mymodule.__versioninfo__ < (1, 1), reason=\"at least mymodule-1.1 "
+"required\"\n"
+")\n"
+"\n"
+"\n"
+"@minversion\n"
+"def test_function(): ..."
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:115
+msgid "You can import the marker and reuse it in another test module:"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:117
+msgid ""
+"# test_myothermodule.py\n"
+"from test_mymodule import minversion\n"
+"\n"
+"\n"
+"@minversion\n"
+"def test_anotherfunction(): ..."
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:126
+msgid ""
+"For larger test suites it's usually a good idea to have one file where you "
+"define the markers which you then consistently apply throughout your test "
+"suite."
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:130
+msgid ""
+"Alternatively, you can use :ref:`condition strings <string conditions>` "
+"instead of booleans, but they can't be shared between modules easily so they "
+"are supported mainly for backward compatibility reasons."
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:134
+msgid "**Reference**: :ref:`pytest.mark.skipif ref`"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:138
+msgid "Skip all test functions of a class or module"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:140
+msgid "You can use the ``skipif`` marker (as any other marker) on classes:"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:142
+msgid ""
+"@pytest.mark.skipif(sys.platform == \"win32\", reason=\"does not run on "
+"windows\")\n"
+"class TestPosixCalls:\n"
+"    def test_function(self):\n"
+"        \"will not be setup or run under 'win32' platform\""
+msgstr ""
+"@pytest.mark.skipif(sys.platform == \"win32\", reason=\"does not run on "
+"windows\")\n"
+"class TestPosixCalls:\n"
+"    def test_function(self):\n"
+"        \"will not be setup or run under 'win32' platform\""
+
+#: ../../../doc/en/how-to/skipping.rst:149
+msgid ""
+"If the condition is ``True``, this marker will produce a skip result for "
+"each of the test methods of that class."
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:152
+msgid ""
+"If you want to skip all test functions of a module, you may use the :"
+"globalvar:`pytestmark` global:"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:155
+msgid ""
+"# test_module.py\n"
+"pytestmark = pytest.mark.skipif(...)"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:160
+msgid ""
+"If multiple ``skipif`` decorators are applied to a test function, it will be "
+"skipped if any of the skip conditions is true."
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:167
+msgid "Skipping files or directories"
+msgstr "略過檔案或目錄"
+
+#: ../../../doc/en/how-to/skipping.rst:169
+msgid ""
+"Sometimes you may need to skip an entire file or directory, for example if "
+"the tests rely on Python version-specific features or contain code that you "
+"do not wish pytest to run. In this case, you must exclude the files and "
+"directories from collection. Refer to :ref:`customizing-test-collection` for "
+"more information."
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:177
+msgid "Skipping on a missing import dependency"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:179
+msgid ""
+"You can skip tests on a missing import by using :ref:`pytest.importorskip "
+"ref` at module level, within a test, or test setup function."
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:182
+msgid "docutils = pytest.importorskip(\"docutils\")"
+msgstr "docutils = pytest.importorskip(\"docutils\")"
+
+#: ../../../doc/en/how-to/skipping.rst:186
+msgid ""
+"If ``docutils`` cannot be imported here, this will lead to a skip outcome of "
+"the test. You can also skip based on the version number of a library:"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:189
+msgid "docutils = pytest.importorskip(\"docutils\", minversion=\"0.3\")"
+msgstr "docutils = pytest.importorskip(\"docutils\", minversion=\"0.3\")"
+
+#: ../../../doc/en/how-to/skipping.rst:193
+msgid ""
+"The version will be read from the specified module's ``__version__`` "
+"attribute."
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:197
+msgid "Summary"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:199
+msgid ""
+"Here's a quick guide on how to skip tests in a module in different "
+"situations:"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:201
+msgid "Skip all tests in a module unconditionally:"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:203
+msgid "pytestmark = pytest.mark.skip(\"all tests still WIP\")"
+msgstr "pytestmark = pytest.mark.skip(\"all tests still WIP\")"
+
+#: ../../../doc/en/how-to/skipping.rst:207
+msgid "Skip all tests in a module based on some condition:"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:209
+msgid ""
+"pytestmark = pytest.mark.skipif(sys.platform == \"win32\", reason=\"tests "
+"for linux only\")"
+msgstr ""
+"pytestmark = pytest.mark.skipif(sys.platform == \"win32\", reason=\"tests "
+"for linux only\")"
+
+#: ../../../doc/en/how-to/skipping.rst:213
+msgid "Skip all tests in a module if some import is missing:"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:215
+msgid "pexpect = pytest.importorskip(\"pexpect\")"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:223
+msgid "XFail: mark test functions as expected to fail"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:225
+msgid ""
+"You can use the ``xfail`` marker to indicate that you expect a test to fail:"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:228
+msgid ""
+"@pytest.mark.xfail\n"
+"def test_function(): ..."
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:233
+msgid ""
+"This test will run but no traceback will be reported when it fails. Instead, "
+"terminal reporting will list it in the \"expected to fail\" (``XFAIL``) or "
+"\"unexpectedly passing\" (``XPASS``) sections."
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:237
+msgid ""
+"Alternatively, you can also mark a test as ``XFAIL`` from within the test or "
+"its setup function imperatively:"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:240
+msgid ""
+"def test_function():\n"
+"    if not valid_config():\n"
+"        pytest.xfail(\"failing configuration (but should work)\")"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:246
+msgid ""
+"def test_function2():\n"
+"    import slow_module\n"
+"\n"
+"    if slow_module.slow_function():\n"
+"        pytest.xfail(\"slow_module taking too long\")"
+msgstr ""
+"def test_function2():\n"
+"    import slow_module\n"
+"\n"
+"    if slow_module.slow_function():\n"
+"        pytest.xfail(\"slow_module taking too long\")"
+
+#: ../../../doc/en/how-to/skipping.rst:254
+msgid ""
+"These two examples illustrate situations where you don't want to check for a "
+"condition at the module level, which is when a condition would otherwise be "
+"evaluated for marks."
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:257
+msgid ""
+"This will make ``test_function`` ``XFAIL``. Note that no other code is "
+"executed after the :func:`pytest.xfail` call, differently from the marker. "
+"That's because it is implemented internally by raising a known exception."
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:261
+msgid "**Reference**: :ref:`pytest.mark.xfail ref`"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:265
+msgid "``condition`` parameter"
+msgstr "``condition`` 參數"
+
+#: ../../../doc/en/how-to/skipping.rst:267
+msgid ""
+"If a test is only expected to fail under a certain condition, you can pass "
+"that condition as the first parameter:"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:270
+msgid ""
+"@pytest.mark.xfail(sys.platform == \"win32\", reason=\"bug in a 3rd party "
+"library\")\n"
+"def test_function(): ..."
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:275
+msgid ""
+"Note that you have to pass a reason as well (see the parameter description "
+"at :ref:`pytest.mark.xfail ref`)."
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:279
+msgid "``reason`` parameter"
+msgstr "``reason`` 參數"
+
+#: ../../../doc/en/how-to/skipping.rst:281
+msgid ""
+"You can specify the motive of an expected failure with the ``reason`` "
+"parameter:"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:283
+msgid ""
+"@pytest.mark.xfail(reason=\"known parser issue\")\n"
+"def test_function(): ..."
+msgstr ""
+"@pytest.mark.xfail(reason=\"known parser issue\")\n"
+"def test_function(): ..."
+
+#: ../../../doc/en/how-to/skipping.rst:290
+msgid "``raises`` parameter"
+msgstr "``raises`` 參數"
+
+#: ../../../doc/en/how-to/skipping.rst:292
+msgid ""
+"If you want to be more specific as to why the test is failing, you can "
+"specify a single exception, or a tuple of exceptions, in the ``raises`` "
+"argument."
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:295
+msgid ""
+"@pytest.mark.xfail(raises=RuntimeError)\n"
+"def test_function(): ..."
+msgstr ""
+"@pytest.mark.xfail(raises=RuntimeError)\n"
+"def test_function(): ..."
+
+#: ../../../doc/en/how-to/skipping.rst:300
+msgid ""
+"Then the test will be reported as a regular failure if it fails with an "
+"exception not mentioned in ``raises``."
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:304
+msgid "``run`` parameter"
+msgstr "``run`` 參數"
+
+#: ../../../doc/en/how-to/skipping.rst:306
+msgid ""
+"If a test should be marked as xfail and reported as such but should not be "
+"even executed, use the ``run`` parameter as ``False``:"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:309
+msgid ""
+"@pytest.mark.xfail(run=False)\n"
+"def test_function(): ..."
+msgstr ""
+"@pytest.mark.xfail(run=False)\n"
+"def test_function(): ..."
+
+#: ../../../doc/en/how-to/skipping.rst:314
+msgid ""
+"This is particularly useful for xfailing tests that are crashing the "
+"interpreter and should be investigated later."
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:320
+msgid "``strict`` parameter"
+msgstr "``strict`` 參數"
+
+#: ../../../doc/en/how-to/skipping.rst:322
+msgid ""
+"Both ``XFAIL`` and ``XPASS`` don't fail the test suite by default. You can "
+"change this by setting the ``strict`` keyword-only parameter to ``True``:"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:325
+msgid ""
+"@pytest.mark.xfail(strict=True)\n"
+"def test_function(): ..."
+msgstr ""
+"@pytest.mark.xfail(strict=True)\n"
+"def test_function(): ..."
+
+#: ../../../doc/en/how-to/skipping.rst:331
+msgid ""
+"This will make ``XPASS`` (\"unexpectedly passing\") results from this test "
+"to fail the test suite."
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:333
+msgid ""
+"You can change the default value of the ``strict`` parameter using the "
+"``strict_xfail`` ini option:"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:338
+msgid ""
+"[pytest]\n"
+"xfail_strict = true"
+msgstr ""
+"[pytest]\n"
+"xfail_strict = true"
+
+#: ../../../doc/en/how-to/skipping.rst:345
+msgid ""
+"[pytest]\n"
+"strict_xfail = true"
+msgstr ""
+"[pytest]\n"
+"strict_xfail = true"
+
+#: ../../../doc/en/how-to/skipping.rst:352
+msgid "Ignoring xfail"
+msgstr "忽略 xfail"
+
+#: ../../../doc/en/how-to/skipping.rst:354
+msgid "By specifying on the commandline:"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:356
+msgid "pytest --runxfail"
+msgstr "pytest --runxfail"
+
+#: ../../../doc/en/how-to/skipping.rst:360
+msgid ""
+"you can force the running and reporting of an ``xfail`` marked test as if it "
+"weren't marked at all. This also causes :func:`pytest.xfail` to produce no "
+"effect."
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:364
+msgid "Examples"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:366
+msgid "Here is a simple test file with the several usages:"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:368
+msgid ""
+"from __future__ import annotations\n"
+"\n"
+"import pytest\n"
+"\n"
+"\n"
+"xfail = pytest.mark.xfail\n"
+"\n"
+"\n"
+"@xfail\n"
+"def test_hello():\n"
+"    assert 0\n"
+"\n"
+"\n"
+"@xfail(run=False)\n"
+"def test_hello2():\n"
+"    assert 0\n"
+"\n"
+"\n"
+"@xfail(\"hasattr(os, 'sep')\")\n"
+"def test_hello3():\n"
+"    assert 0\n"
+"\n"
+"\n"
+"@xfail(reason=\"bug 110\")\n"
+"def test_hello4():\n"
+"    assert 0\n"
+"\n"
+"\n"
+"@xfail('pytest.__version__[0] != \"17\"')\n"
+"def test_hello5():\n"
+"    assert 0\n"
+"\n"
+"\n"
+"def test_hello6():\n"
+"    pytest.xfail(\"reason\")\n"
+"\n"
+"\n"
+"@xfail(raises=IndexError)\n"
+"def test_hello7():\n"
+"    x = []\n"
+"    x[1] = 1\n"
+msgstr ""
+"from __future__ import annotations\n"
+"\n"
+"import pytest\n"
+"\n"
+"\n"
+"xfail = pytest.mark.xfail\n"
+"\n"
+"\n"
+"@xfail\n"
+"def test_hello():\n"
+"    assert 0\n"
+"\n"
+"\n"
+"@xfail(run=False)\n"
+"def test_hello2():\n"
+"    assert 0\n"
+"\n"
+"\n"
+"@xfail(\"hasattr(os, 'sep')\")\n"
+"def test_hello3():\n"
+"    assert 0\n"
+"\n"
+"\n"
+"@xfail(reason=\"bug 110\")\n"
+"def test_hello4():\n"
+"    assert 0\n"
+"\n"
+"\n"
+"@xfail('pytest.__version__[0] != \"17\"')\n"
+"def test_hello5():\n"
+"    assert 0\n"
+"\n"
+"\n"
+"def test_hello6():\n"
+"    pytest.xfail(\"reason\")\n"
+"\n"
+"\n"
+"@xfail(raises=IndexError)\n"
+"def test_hello7():\n"
+"    x = []\n"
+"    x[1] = 1\n"
+
+#: ../../../doc/en/how-to/skipping.rst:370
+msgid "Running it with the report-on-xfail option gives this output:"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:375
+msgid ""
+"! pytest -rx xfail_demo.py\n"
+"=========================== test session starts "
+"============================\n"
+"platform linux -- Python 3.x.y, pytest-6.x.y, py-1.x.y, pluggy-1.x.y\n"
+"cachedir: $PYTHON_PREFIX/.pytest_cache\n"
+"rootdir: $REGENDOC_TMPDIR/example\n"
+"collected 7 items\n"
+"\n"
+"xfail_demo.py xxxxxxx                                                [100%]\n"
+"\n"
+"========================= short test summary info "
+"==========================\n"
+"XFAIL xfail_demo.py::test_hello\n"
+"XFAIL xfail_demo.py::test_hello2\n"
+"  reason: [NOTRUN]\n"
+"XFAIL xfail_demo.py::test_hello3\n"
+"  condition: hasattr(os, 'sep')\n"
+"XFAIL xfail_demo.py::test_hello4\n"
+"  bug 110\n"
+"XFAIL xfail_demo.py::test_hello5\n"
+"  condition: pytest.__version__[0] != \"17\"\n"
+"XFAIL xfail_demo.py::test_hello6\n"
+"  reason: reason\n"
+"XFAIL xfail_demo.py::test_hello7\n"
+"============================ 7 xfailed in 0.12s ============================"
+msgstr ""
+"! pytest -rx xfail_demo.py\n"
+"=========================== test session starts "
+"============================\n"
+"platform linux -- Python 3.x.y, pytest-6.x.y, py-1.x.y, pluggy-1.x.y\n"
+"cachedir: $PYTHON_PREFIX/.pytest_cache\n"
+"rootdir: $REGENDOC_TMPDIR/example\n"
+"collected 7 items\n"
+"\n"
+"xfail_demo.py xxxxxxx                                                [100%]\n"
+"\n"
+"========================= short test summary info "
+"==========================\n"
+"XFAIL xfail_demo.py::test_hello\n"
+"XFAIL xfail_demo.py::test_hello2\n"
+"  reason: [NOTRUN]\n"
+"XFAIL xfail_demo.py::test_hello3\n"
+"  condition: hasattr(os, 'sep')\n"
+"XFAIL xfail_demo.py::test_hello4\n"
+"  bug 110\n"
+"XFAIL xfail_demo.py::test_hello5\n"
+"  condition: pytest.__version__[0] != \"17\"\n"
+"XFAIL xfail_demo.py::test_hello6\n"
+"  reason: reason\n"
+"XFAIL xfail_demo.py::test_hello7\n"
+"============================ 7 xfailed in 0.12s ============================"
+
+#: ../../../doc/en/how-to/skipping.rst:404
+msgid "Skip/xfail with parametrize"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:406
+msgid ""
+"It is possible to apply markers like skip and xfail to individual test "
+"instances when using parametrize:"
+msgstr ""
+
+#: ../../../doc/en/how-to/skipping.rst:409
+msgid ""
+"import sys\n"
+"\n"
+"import pytest\n"
+"\n"
+"\n"
+"@pytest.mark.parametrize(\n"
+"    (\"n\", \"expected\"),\n"
+"    [\n"
+"        (1, 2),\n"
+"        pytest.param(1, 0, marks=pytest.mark.xfail),\n"
+"        pytest.param(1, 3, marks=pytest.mark.xfail(reason=\"some bug\")),\n"
+"        (2, 3),\n"
+"        (3, 4),\n"
+"        (4, 5),\n"
+"        pytest.param(\n"
+"            10, 11, marks=pytest.mark.skipif(sys.version_info >= (3, 0), "
+"reason=\"py2k\")\n"
+"        ),\n"
+"    ],\n"
+")\n"
+"def test_increment(n, expected):\n"
+"    assert n + 1 == expected"
+msgstr ""
+"import sys\n"
+"\n"
+"import pytest\n"
+"\n"
+"\n"
+"@pytest.mark.parametrize(\n"
+"    (\"n\", \"expected\"),\n"
+"    [\n"
+"        (1, 2),\n"
+"        pytest.param(1, 0, marks=pytest.mark.xfail),\n"
+"        pytest.param(1, 3, marks=pytest.mark.xfail(reason=\"some bug\")),\n"
+"        (2, 3),\n"
+"        (3, 4),\n"
+"        (4, 5),\n"
+"        pytest.param(\n"
+"            10, 11, marks=pytest.mark.skipif(sys.version_info >= (3, 0), "
+"reason=\"py2k\")\n"
+"        ),\n"
+"    ],\n"
+")\n"
+"def test_increment(n, expected):\n"
+"    assert n + 1 == expected"
