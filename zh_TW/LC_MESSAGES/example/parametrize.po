@@ -1,0 +1,983 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015–2020, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/example/parametrize.rst:5
+msgid "Parametrizing tests"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:9
+msgid ""
+"``pytest`` allows to easily parametrize test functions. For basic docs, see :"
+"ref:`parametrize-basics`."
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:12
+msgid "In the following we provide some examples using the builtin mechanisms."
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:16
+msgid "Generating parameters combinations, depending on command line"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:20
+msgid ""
+"Let's say we want to execute a test with different computation parameters "
+"and the parameter range shall be determined by a command line argument.  "
+"Let's first write a simple (do-nothing) computation test:"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:24
+msgid ""
+"# content of test_compute.py\n"
+"\n"
+"\n"
+"def test_compute(param1):\n"
+"    assert param1 < 4"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:32
+msgid "Now we add a test configuration like this:"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:34
+msgid ""
+"# content of conftest.py\n"
+"\n"
+"\n"
+"def pytest_addoption(parser):\n"
+"    parser.addoption(\"--all\", action=\"store_true\", help=\"run all "
+"combinations\")\n"
+"\n"
+"\n"
+"def pytest_generate_tests(metafunc):\n"
+"    if \"param1\" in metafunc.fixturenames:\n"
+"        if metafunc.config.getoption(\"all\"):\n"
+"            end = 5\n"
+"        else:\n"
+"            end = 2\n"
+"        metafunc.parametrize(\"param1\", range(end))"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:51
+msgid "This means that we only run 2 tests if we do not pass ``--all``:"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:53
+msgid ""
+"$ pytest -q test_compute.py\n"
+"..                                                                   [100%]\n"
+"2 passed in 0.12s"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:59
+msgid ""
+"We run only two computations, so we see two dots. let's run the full monty:"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:62
+msgid ""
+"$ pytest -q --all\n"
+"....F                                                                [100%]\n"
+"================================= FAILURES "
+"=================================\n"
+"_____________________________ test_compute[4] "
+"______________________________\n"
+"\n"
+"param1 = 4\n"
+"\n"
+"    def test_compute(param1):\n"
+">       assert param1 < 4\n"
+"E       assert 4 < 4\n"
+"\n"
+"test_compute.py:4: AssertionError\n"
+"========================= short test summary info "
+"==========================\n"
+"FAILED test_compute.py::test_compute[4] - assert 4 < 4\n"
+"1 failed, 4 passed in 0.12s"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:80
+msgid ""
+"As expected when running the full range of ``param1`` values we'll get an "
+"error on the last one."
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:85
+msgid "Different options for test IDs"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:87
+msgid ""
+"pytest will build a string that is the test ID for each set of values in a "
+"parametrized test. These IDs can be used with ``-k`` to select specific "
+"cases to run, and they will also identify the specific case when one is "
+"failing. Running pytest with ``--collect-only`` will show the generated IDs."
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:92
+msgid ""
+"Numbers, strings, booleans and None will have their usual string "
+"representation used in the test ID. For other objects, pytest will make a "
+"string based on the argument name:"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:96
+msgid ""
+"# content of test_time.py\n"
+"\n"
+"import pytest\n"
+"\n"
+"from datetime import datetime, timedelta\n"
+"\n"
+"testdata = [\n"
+"    (datetime(2001, 12, 12), datetime(2001, 12, 11), timedelta(1)),\n"
+"    (datetime(2001, 12, 11), datetime(2001, 12, 12), timedelta(-1)),\n"
+"]\n"
+"\n"
+"\n"
+"@pytest.mark.parametrize(\"a,b,expected\", testdata)\n"
+"def test_timedistance_v0(a, b, expected):\n"
+"    diff = a - b\n"
+"    assert diff == expected\n"
+"\n"
+"\n"
+"@pytest.mark.parametrize(\"a,b,expected\", testdata, ids=[\"forward\", "
+"\"backward\"])\n"
+"def test_timedistance_v1(a, b, expected):\n"
+"    diff = a - b\n"
+"    assert diff == expected\n"
+"\n"
+"\n"
+"def idfn(val):\n"
+"    if isinstance(val, (datetime,)):\n"
+"        # note this wouldn't show any hours/minutes/seconds\n"
+"        return val.strftime(\"%Y%m%d\")\n"
+"\n"
+"\n"
+"@pytest.mark.parametrize(\"a,b,expected\", testdata, ids=idfn)\n"
+"def test_timedistance_v2(a, b, expected):\n"
+"    diff = a - b\n"
+"    assert diff == expected\n"
+"\n"
+"\n"
+"@pytest.mark.parametrize(\n"
+"    \"a,b,expected\",\n"
+"    [\n"
+"        pytest.param(\n"
+"            datetime(2001, 12, 12), datetime(2001, 12, 11), timedelta(1), "
+"id=\"forward\"\n"
+"        ),\n"
+"        pytest.param(\n"
+"            datetime(2001, 12, 11), datetime(2001, 12, 12), timedelta(-1), "
+"id=\"backward\"\n"
+"        ),\n"
+"    ],\n"
+")\n"
+"def test_timedistance_v3(a, b, expected):\n"
+"    diff = a - b\n"
+"    assert diff == expected"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:149
+msgid "In ``test_timedistance_v0``, we let pytest generate the test IDs."
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:151
+msgid ""
+"In ``test_timedistance_v1``, we specified ``ids`` as a list of strings which "
+"were used as the test IDs. These are succinct, but can be a pain to maintain."
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:154
+msgid ""
+"In ``test_timedistance_v2``, we specified ``ids`` as a function that can "
+"generate a string representation to make part of the test ID. So our "
+"``datetime`` values use the label generated by ``idfn``, but because we "
+"didn't generate a label for ``timedelta`` objects, they are still using the "
+"default pytest representation:"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:159
+msgid ""
+"$ pytest test_time.py --collect-only\n"
+"=========================== test session starts "
+"============================\n"
+"platform linux -- Python 3.x.y, pytest-5.x.y, py-1.x.y, pluggy-0.x.y\n"
+"cachedir: $PYTHON_PREFIX/.pytest_cache\n"
+"rootdir: $REGENDOC_TMPDIR\n"
+"collected 8 items\n"
+"<Module test_time.py>\n"
+"  <Function test_timedistance_v0[a0-b0-expected0]>\n"
+"  <Function test_timedistance_v0[a1-b1-expected1]>\n"
+"  <Function test_timedistance_v1[forward]>\n"
+"  <Function test_timedistance_v1[backward]>\n"
+"  <Function test_timedistance_v2[20011212-20011211-expected0]>\n"
+"  <Function test_timedistance_v2[20011211-20011212-expected1]>\n"
+"  <Function test_timedistance_v3[forward]>\n"
+"  <Function test_timedistance_v3[backward]>\n"
+"\n"
+"========================== no tests ran in 0.12s ==========================="
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:179
+msgid ""
+"In ``test_timedistance_v3``, we used ``pytest.param`` to specify the test "
+"IDs together with the actual data, instead of listing them separately."
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:183
+msgid "A quick port of \"testscenarios\""
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:187
+msgid ""
+"Here is a quick port to run tests configured with `test scenarios`_, an add-"
+"on from Robert Collins for the standard unittest framework. We only have to "
+"work a bit to construct the correct arguments for pytest's :py:func:"
+"`Metafunc.parametrize`:"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:192
+msgid ""
+"# content of test_scenarios.py\n"
+"\n"
+"\n"
+"def pytest_generate_tests(metafunc):\n"
+"    idlist = []\n"
+"    argvalues = []\n"
+"    for scenario in metafunc.cls.scenarios:\n"
+"        idlist.append(scenario[0])\n"
+"        items = scenario[1].items()\n"
+"        argnames = [x[0] for x in items]\n"
+"        argvalues.append([x[1] for x in items])\n"
+"    metafunc.parametrize(argnames, argvalues, ids=idlist, scope=\"class\")\n"
+"\n"
+"\n"
+"scenario1 = (\"basic\", {\"attribute\": \"value\"})\n"
+"scenario2 = (\"advanced\", {\"attribute\": \"value2\"})\n"
+"\n"
+"\n"
+"class TestSampleWithScenarios:\n"
+"    scenarios = [scenario1, scenario2]\n"
+"\n"
+"    def test_demo1(self, attribute):\n"
+"        assert isinstance(attribute, str)\n"
+"\n"
+"    def test_demo2(self, attribute):\n"
+"        assert isinstance(attribute, str)"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:221
+msgid "this is a fully self-contained example which you can run with:"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:223
+msgid ""
+"$ pytest test_scenarios.py\n"
+"=========================== test session starts "
+"============================\n"
+"platform linux -- Python 3.x.y, pytest-5.x.y, py-1.x.y, pluggy-0.x.y\n"
+"cachedir: $PYTHON_PREFIX/.pytest_cache\n"
+"rootdir: $REGENDOC_TMPDIR\n"
+"collected 4 items\n"
+"\n"
+"test_scenarios.py ....                                               [100%]\n"
+"\n"
+"============================ 4 passed in 0.12s ============================="
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:236
+msgid ""
+"If you just collect tests you'll also nicely see 'advanced' and 'basic' as "
+"variants for the test function:"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:238
+msgid ""
+"$ pytest --collect-only test_scenarios.py\n"
+"=========================== test session starts "
+"============================\n"
+"platform linux -- Python 3.x.y, pytest-5.x.y, py-1.x.y, pluggy-0.x.y\n"
+"cachedir: $PYTHON_PREFIX/.pytest_cache\n"
+"rootdir: $REGENDOC_TMPDIR\n"
+"collected 4 items\n"
+"<Module test_scenarios.py>\n"
+"  <Class TestSampleWithScenarios>\n"
+"      <Function test_demo1[basic]>\n"
+"      <Function test_demo2[basic]>\n"
+"      <Function test_demo1[advanced]>\n"
+"      <Function test_demo2[advanced]>\n"
+"\n"
+"========================== no tests ran in 0.12s ==========================="
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:255
+msgid ""
+"Note that we told ``metafunc.parametrize()`` that your scenario values "
+"should be considered class-scoped.  With pytest-2.3 this leads to a resource-"
+"based ordering."
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:260
+msgid "Deferring the setup of parametrized resources"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:264
+msgid ""
+"The parametrization of test functions happens at collection time.  It is a "
+"good idea to setup expensive resources like DB connections or subprocess "
+"only when the actual test is run. Here is a simple example how you can "
+"achieve that. This test requires a ``db`` object fixture:"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:270
+msgid ""
+"# content of test_backends.py\n"
+"\n"
+"import pytest\n"
+"\n"
+"\n"
+"def test_db_initialized(db):\n"
+"    # a dummy test\n"
+"    if db.__class__.__name__ == \"DB2\":\n"
+"        pytest.fail(\"deliberately failing for demo purposes\")"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:282
+msgid ""
+"We can now add a test configuration that generates two invocations of the "
+"``test_db_initialized`` function and also implements a factory that creates "
+"a database object for the actual test invocations:"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:286
+msgid ""
+"# content of conftest.py\n"
+"import pytest\n"
+"\n"
+"\n"
+"def pytest_generate_tests(metafunc):\n"
+"    if \"db\" in metafunc.fixturenames:\n"
+"        metafunc.parametrize(\"db\", [\"d1\", \"d2\"], indirect=True)\n"
+"\n"
+"\n"
+"class DB1:\n"
+"    \"one database object\"\n"
+"\n"
+"\n"
+"class DB2:\n"
+"    \"alternative database object\"\n"
+"\n"
+"\n"
+"@pytest.fixture\n"
+"def db(request):\n"
+"    if request.param == \"d1\":\n"
+"        return DB1()\n"
+"    elif request.param == \"d2\":\n"
+"        return DB2()\n"
+"    else:\n"
+"        raise ValueError(\"invalid internal test config\")"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:314
+msgid "Let's first see how it looks like at collection time:"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:316
+msgid ""
+"$ pytest test_backends.py --collect-only\n"
+"=========================== test session starts "
+"============================\n"
+"platform linux -- Python 3.x.y, pytest-5.x.y, py-1.x.y, pluggy-0.x.y\n"
+"cachedir: $PYTHON_PREFIX/.pytest_cache\n"
+"rootdir: $REGENDOC_TMPDIR\n"
+"collected 2 items\n"
+"<Module test_backends.py>\n"
+"  <Function test_db_initialized[d1]>\n"
+"  <Function test_db_initialized[d2]>\n"
+"\n"
+"========================== no tests ran in 0.12s ==========================="
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:330
+msgid "And then when we run the test:"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:332
+msgid ""
+"$ pytest -q test_backends.py\n"
+".F                                                                   [100%]\n"
+"================================= FAILURES "
+"=================================\n"
+"_________________________ test_db_initialized[d2] "
+"__________________________\n"
+"\n"
+"db = <conftest.DB2 object at 0xdeadbeef>\n"
+"\n"
+"    def test_db_initialized(db):\n"
+"        # a dummy test\n"
+"        if db.__class__.__name__ == \"DB2\":\n"
+">           pytest.fail(\"deliberately failing for demo purposes\")\n"
+"E           Failed: deliberately failing for demo purposes\n"
+"\n"
+"test_backends.py:8: Failed\n"
+"========================= short test summary info "
+"==========================\n"
+"FAILED test_backends.py::test_db_initialized[d2] - Failed: deliberately "
+"f...\n"
+"1 failed, 1 passed in 0.12s"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:352
+msgid ""
+"The first invocation with ``db == \"DB1\"`` passed while the second with "
+"``db == \"DB2\"`` failed.  Our ``db`` fixture function has instantiated each "
+"of the DB values during the setup phase while the ``pytest_generate_tests`` "
+"generated two according calls to the ``test_db_initialized`` during the "
+"collection phase."
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:357
+msgid "Apply indirect on particular arguments"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:359
+msgid ""
+"Very often parametrization uses more than one argument name. There is "
+"opportunity to apply ``indirect`` parameter on particular arguments. It can "
+"be done by passing list or tuple of arguments' names to ``indirect``. In the "
+"example below there is a function ``test_indirect`` which uses two fixtures: "
+"``x`` and ``y``. Here we give to indirect the list, which contains the name "
+"of the fixture ``x``. The indirect parameter will be applied to this "
+"argument only, and the value ``a`` will be passed to respective fixture "
+"function:"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:366
+msgid ""
+"# content of test_indirect_list.py\n"
+"\n"
+"import pytest\n"
+"\n"
+"\n"
+"@pytest.fixture(scope=\"function\")\n"
+"def x(request):\n"
+"    return request.param * 3\n"
+"\n"
+"\n"
+"@pytest.fixture(scope=\"function\")\n"
+"def y(request):\n"
+"    return request.param * 2\n"
+"\n"
+"\n"
+"@pytest.mark.parametrize(\"x, y\", [(\"a\", \"b\")], indirect=[\"x\"])\n"
+"def test_indirect(x, y):\n"
+"    assert x == \"aaa\"\n"
+"    assert y == \"b\""
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:388
+msgid "The result of this test will be successful:"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:390
+msgid ""
+"$ pytest test_indirect_list.py --collect-only\n"
+"=========================== test session starts "
+"============================\n"
+"platform linux -- Python 3.x.y, pytest-5.x.y, py-1.x.y, pluggy-0.x.y\n"
+"cachedir: $PYTHON_PREFIX/.pytest_cache\n"
+"rootdir: $REGENDOC_TMPDIR\n"
+"collected 1 item\n"
+"<Module test_indirect_list.py>\n"
+"  <Function test_indirect[a-b]>\n"
+"\n"
+"========================== no tests ran in 0.12s ==========================="
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:406
+msgid "Parametrizing test methods through per-class configuration"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:411
+msgid ""
+"Here is an example ``pytest_generate_tests`` function implementing a "
+"parametrization scheme similar to Michael Foord's `unittest parametrizer`_ "
+"but in a lot less code:"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:415
+msgid ""
+"# content of ./test_parametrize.py\n"
+"import pytest\n"
+"\n"
+"\n"
+"def pytest_generate_tests(metafunc):\n"
+"    # called once per each test function\n"
+"    funcarglist = metafunc.cls.params[metafunc.function.__name__]\n"
+"    argnames = sorted(funcarglist[0])\n"
+"    metafunc.parametrize(\n"
+"        argnames, [[funcargs[name] for name in argnames] for funcargs in "
+"funcarglist]\n"
+"    )\n"
+"\n"
+"\n"
+"class TestClass:\n"
+"    # a map specifying multiple argument sets for a test method\n"
+"    params = {\n"
+"        \"test_equals\": [dict(a=1, b=2), dict(a=3, b=3)],\n"
+"        \"test_zerodivision\": [dict(a=1, b=0)],\n"
+"    }\n"
+"\n"
+"    def test_equals(self, a, b):\n"
+"        assert a == b\n"
+"\n"
+"    def test_zerodivision(self, a, b):\n"
+"        with pytest.raises(ZeroDivisionError):\n"
+"            a / b"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:444
+msgid ""
+"Our test generator looks up a class-level definition which specifies which "
+"argument sets to use for each test function.  Let's run it:"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:447
+msgid ""
+"$ pytest -q\n"
+"F..                                                                  [100%]\n"
+"================================= FAILURES "
+"=================================\n"
+"________________________ TestClass.test_equals[1-2] "
+"________________________\n"
+"\n"
+"self = <test_parametrize.TestClass object at 0xdeadbeef>, a = 1, b = 2\n"
+"\n"
+"    def test_equals(self, a, b):\n"
+">       assert a == b\n"
+"E       assert 1 == 2\n"
+"\n"
+"test_parametrize.py:21: AssertionError\n"
+"========================= short test summary info "
+"==========================\n"
+"FAILED test_parametrize.py::TestClass::test_equals[1-2] - assert 1 == 2\n"
+"1 failed, 2 passed in 0.12s"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:466
+msgid "Indirect parametrization with multiple fixtures"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:468
+msgid ""
+"Here is a stripped down real-life example of using parametrized testing for "
+"testing serialization of objects between different python interpreters.  We "
+"define a ``test_basic_objects`` function which is to be run with different "
+"sets of arguments for its three arguments:"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:473
+msgid ""
+"``python1``: first python interpreter, run to pickle-dump an object to a file"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:474
+msgid ""
+"``python2``: second interpreter, run to pickle-load an object from a file"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:475
+msgid "``obj``: object to be dumped/loaded"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:477
+msgid ""
+"\"\"\"\n"
+"module containing a parametrized tests testing cross-python\n"
+"serialization via the pickle module.\n"
+"\"\"\"\n"
+"import shutil\n"
+"import subprocess\n"
+"import textwrap\n"
+"\n"
+"import pytest\n"
+"\n"
+"pythonlist = [\"python3.5\", \"python3.6\", \"python3.7\"]\n"
+"\n"
+"\n"
+"@pytest.fixture(params=pythonlist)\n"
+"def python1(request, tmpdir):\n"
+"    picklefile = tmpdir.join(\"data.pickle\")\n"
+"    return Python(request.param, picklefile)\n"
+"\n"
+"\n"
+"@pytest.fixture(params=pythonlist)\n"
+"def python2(request, python1):\n"
+"    return Python(request.param, python1.picklefile)\n"
+"\n"
+"\n"
+"class Python:\n"
+"    def __init__(self, version, picklefile):\n"
+"        self.pythonpath = shutil.which(version)\n"
+"        if not self.pythonpath:\n"
+"            pytest.skip(\"{!r} not found\".format(version))\n"
+"        self.picklefile = picklefile\n"
+"\n"
+"    def dumps(self, obj):\n"
+"        dumpfile = self.picklefile.dirpath(\"dump.py\")\n"
+"        dumpfile.write(\n"
+"            textwrap.dedent(\n"
+"                r\"\"\"\n"
+"                import pickle\n"
+"                f = open({!r}, 'wb')\n"
+"                s = pickle.dump({!r}, f, protocol=2)\n"
+"                f.close()\n"
+"                \"\"\".format(\n"
+"                    str(self.picklefile), obj\n"
+"                )\n"
+"            )\n"
+"        )\n"
+"        subprocess.check_call((self.pythonpath, str(dumpfile)))\n"
+"\n"
+"    def load_and_is_true(self, expression):\n"
+"        loadfile = self.picklefile.dirpath(\"load.py\")\n"
+"        loadfile.write(\n"
+"            textwrap.dedent(\n"
+"                r\"\"\"\n"
+"                import pickle\n"
+"                f = open({!r}, 'rb')\n"
+"                obj = pickle.load(f)\n"
+"                f.close()\n"
+"                res = eval({!r})\n"
+"                if not res:\n"
+"                    raise SystemExit(1)\n"
+"                \"\"\".format(\n"
+"                    str(self.picklefile), expression\n"
+"                )\n"
+"            )\n"
+"        )\n"
+"        print(loadfile)\n"
+"        subprocess.check_call((self.pythonpath, str(loadfile)))\n"
+"\n"
+"\n"
+"@pytest.mark.parametrize(\"obj\", [42, {}, {1: 3}])\n"
+"def test_basic_objects(python1, python2, obj):\n"
+"    python1.dumps(obj)\n"
+"    python2.load_and_is_true(\"obj == {}\".format(obj))\n"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:479
+msgid ""
+"Running it results in some skips if we don't have all the python "
+"interpreters installed and otherwise runs all combinations (3 interpreters "
+"times 3 interpreters times 3 objects to serialize/deserialize):"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:481
+msgid ""
+". $ pytest -rs -q multipython.py\n"
+"ssssssssssss......sss......                                          [100%]\n"
+"========================= short test summary info "
+"==========================\n"
+"SKIPPED [15] $REGENDOC_TMPDIR/CWD/multipython.py:29: 'python3.5' not found\n"
+"12 passed, 15 skipped in 0.12s"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:490
+msgid "Indirect parametrization of optional implementations/imports"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:492
+msgid ""
+"If you want to compare the outcomes of several implementations of a given "
+"API, you can write test functions that receive the already imported "
+"implementations and get skipped in case the implementation is not importable/"
+"available.  Let's say we have a \"base\" implementation and the other "
+"(possibly optimized ones) need to provide similar results:"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:498
+msgid ""
+"# content of conftest.py\n"
+"\n"
+"import pytest\n"
+"\n"
+"\n"
+"@pytest.fixture(scope=\"session\")\n"
+"def basemod(request):\n"
+"    return pytest.importorskip(\"base\")\n"
+"\n"
+"\n"
+"@pytest.fixture(scope=\"session\", params=[\"opt1\", \"opt2\"])\n"
+"def optmod(request):\n"
+"    return pytest.importorskip(request.param)"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:514
+msgid "And then a base implementation of a simple function:"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:516
+msgid ""
+"# content of base.py\n"
+"def func1():\n"
+"    return 1"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:522
+msgid "And an optimized version:"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:524
+msgid ""
+"# content of opt1.py\n"
+"def func1():\n"
+"    return 1.0001"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:530
+msgid "And finally a little test module:"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:532
+msgid ""
+"# content of test_module.py\n"
+"\n"
+"\n"
+"def test_func1(basemod, optmod):\n"
+"    assert round(basemod.func1(), 3) == round(optmod.func1(), 3)"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:541
+msgid "If you run this with reporting for skips enabled:"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:543
+msgid ""
+"$ pytest -rs test_module.py\n"
+"=========================== test session starts "
+"============================\n"
+"platform linux -- Python 3.x.y, pytest-5.x.y, py-1.x.y, pluggy-0.x.y\n"
+"cachedir: $PYTHON_PREFIX/.pytest_cache\n"
+"rootdir: $REGENDOC_TMPDIR\n"
+"collected 2 items\n"
+"\n"
+"test_module.py .s                                                    [100%]\n"
+"\n"
+"========================= short test summary info "
+"==========================\n"
+"SKIPPED [1] $REGENDOC_TMPDIR/conftest.py:12: could not import 'opt2': No "
+"module named 'opt2'\n"
+"======================= 1 passed, 1 skipped in 0.12s ======================="
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:558
+msgid ""
+"You'll see that we don't have an ``opt2`` module and thus the second test "
+"run of our ``test_func1`` was skipped.  A few notes:"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:561
+msgid ""
+"the fixture functions in the ``conftest.py`` file are \"session-scoped\" "
+"because we don't need to import more than once"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:564
+msgid ""
+"if you have multiple test functions and a skipped import, you will see the "
+"``[1]`` count increasing in the report"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:567
+msgid ""
+"you can put :ref:`@pytest.mark.parametrize <@pytest.mark.parametrize>` style "
+"parametrization on the test functions to parametrize input/output values as "
+"well."
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:573
+msgid "Set marks or test ID for individual parametrized test"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:575
+msgid ""
+"Use ``pytest.param`` to apply marks or set test ID to individual "
+"parametrized test. For example:"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:578
+msgid ""
+"# content of test_pytest_param_example.py\n"
+"import pytest\n"
+"\n"
+"\n"
+"@pytest.mark.parametrize(\n"
+"    \"test_input,expected\",\n"
+"    [\n"
+"        (\"3+5\", 8),\n"
+"        pytest.param(\"1+7\", 8, marks=pytest.mark.basic),\n"
+"        pytest.param(\"2+4\", 6, marks=pytest.mark.basic, "
+"id=\"basic_2+4\"),\n"
+"        pytest.param(\n"
+"            \"6*9\", 42, marks=[pytest.mark.basic, pytest.mark.xfail], "
+"id=\"basic_6*9\"\n"
+"        ),\n"
+"    ],\n"
+")\n"
+"def test_eval(test_input, expected):\n"
+"    assert eval(test_input) == expected"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:598
+msgid ""
+"In this example, we have 4 parametrized tests. Except for the first test, we "
+"mark the rest three parametrized tests with the custom marker ``basic``, and "
+"for the fourth test we also use the built-in mark ``xfail`` to indicate this "
+"test is expected to fail. For explicitness, we set test ids for some tests."
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:603
+msgid ""
+"Then run ``pytest`` with verbose mode and with only the ``basic`` marker:"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:605
+msgid ""
+"$ pytest -v -m basic\n"
+"=========================== test session starts "
+"============================\n"
+"platform linux -- Python 3.x.y, pytest-5.x.y, py-1.x.y, pluggy-0.x.y -- "
+"$PYTHON_PREFIX/bin/python\n"
+"cachedir: $PYTHON_PREFIX/.pytest_cache\n"
+"rootdir: $REGENDOC_TMPDIR\n"
+"collecting ... collected 14 items / 11 deselected / 3 selected\n"
+"\n"
+"test_pytest_param_example.py::test_eval[1+7-8] PASSED                [ 33%]\n"
+"test_pytest_param_example.py::test_eval[basic_2+4] PASSED            [ 66%]\n"
+"test_pytest_param_example.py::test_eval[basic_6*9] XFAIL             [100%]\n"
+"\n"
+"=============== 2 passed, 11 deselected, 1 xfailed in 0.12s ================"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:620
+msgid "As the result:"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:622
+msgid "Four tests were collected"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:623
+msgid "One test was deselected because it doesn't have the ``basic`` mark."
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:624
+msgid "Three tests with the ``basic`` mark was selected."
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:625
+msgid ""
+"The test ``test_eval[1+7-8]`` passed, but the name is autogenerated and "
+"confusing."
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:626
+msgid "The test ``test_eval[basic_2+4]`` passed."
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:627
+msgid "The test ``test_eval[basic_6*9]`` was expected to fail and did fail."
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:632
+msgid "Parametrizing conditional raising"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:634
+msgid ""
+"Use :func:`pytest.raises` with the :ref:`pytest.mark.parametrize ref` "
+"decorator to write parametrized tests in which some tests raise exceptions "
+"and others do not."
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:638
+msgid ""
+"It is helpful to define a no-op context manager ``does_not_raise`` to serve "
+"as a complement to ``raises``. For example:"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:641
+msgid ""
+"from contextlib import contextmanager\n"
+"import pytest\n"
+"\n"
+"\n"
+"@contextmanager\n"
+"def does_not_raise():\n"
+"    yield\n"
+"\n"
+"\n"
+"@pytest.mark.parametrize(\n"
+"    \"example_input,expectation\",\n"
+"    [\n"
+"        (3, does_not_raise()),\n"
+"        (2, does_not_raise()),\n"
+"        (1, does_not_raise()),\n"
+"        (0, pytest.raises(ZeroDivisionError)),\n"
+"    ],\n"
+")\n"
+"def test_division(example_input, expectation):\n"
+"    \"\"\"Test how much I know division.\"\"\"\n"
+"    with expectation:\n"
+"        assert (6 / example_input) is not None"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:666
+msgid ""
+"In the example above, the first three test cases should run unexceptionally, "
+"while the fourth should raise ``ZeroDivisionError``."
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:669
+msgid ""
+"If you're only supporting Python 3.7+, you can simply use ``nullcontext`` to "
+"define ``does_not_raise``:"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:672
+msgid "from contextlib import nullcontext as does_not_raise"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:676
+msgid "Or, if you're supporting Python 3.3+ you can use:"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:678
+msgid "from contextlib import ExitStack as does_not_raise"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:682
+msgid "Or, if desired, you can ``pip install contextlib2`` and use:"
+msgstr ""
+
+#: ../../../doc/en/example/parametrize.rst:684
+msgid "from contextlib2 import nullcontext as does_not_raise"
+msgstr ""
