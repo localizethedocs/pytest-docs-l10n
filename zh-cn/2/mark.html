@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marking test functions with attributes &#8212; pytest documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/flasky.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/translations.js"></script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/pytest-docs-l10n/mark.html" />
+    <link rel="shortcut icon" href="_static/pytest1favi.ico"/>
+    <link rel="search" title="搜索" href="search.html" />
+
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+<script type="text/javascript" src="ltd-provenance.js"></script>
+<script type="text/javascript" src="ltd-current.js"></script>
+<script type="text/javascript" src="../../ltd-config.js"></script>
+<script type="text/javascript" src="../../ltd-flyout.js"></script>
+
+  </head><body>
+  
+  
+  
+
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="nav-item nav-item-0"><a href="contents.html">pytest-2.9.2</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Marking test functions with attributes</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="marking-test-functions-with-attributes">
+<span id="mark"></span><h1>Marking test functions with attributes<a class="headerlink" href="#marking-test-functions-with-attributes" title="永久链接至标题">¶</a></h1>
+<p>By using the <code class="docutils literal notranslate"><span class="pre">pytest.mark</span></code> helper you can easily set
+metadata on your test functions. There are
+some builtin markers, for example:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="skipping.html#skipif"><span class="std std-ref">skipif</span></a> - skip a test function if a certain condition is met</p></li>
+<li><p><a class="reference internal" href="skipping.html#xfail"><span class="std std-ref">xfail</span></a> - produce an “expected failure” outcome if a certain
+condition is met</p></li>
+<li><p><a class="reference internal" href="parametrize.html#parametrizemark"><span class="std std-ref">parametrize</span></a> to perform multiple calls
+to the same test function.</p></li>
+</ul>
+<p>It’s easy to create custom markers or to apply markers
+to whole test classes or modules. See <a class="reference internal" href="example/markers.html#mark-examples"><span class="std std-ref">Working with custom markers</span></a> for examples
+which also serve as documentation.</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>Marks can only be applied to tests, having no effect on
+<a class="reference internal" href="fixture.html#fixtures"><span class="std std-ref">fixtures</span></a>.</p>
+</div>
+<div class="section" id="api-reference-for-mark-related-objects">
+<h2>API reference for mark related objects<a class="headerlink" href="#api-reference-for-mark-related-objects" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt id="pytest.mark.MarkGenerator">
+<span id="_pytest.mark.MarkGenerator"></span><em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">MarkGenerator</span></code><a class="reference internal" href="_modules/_pytest/mark.html#MarkGenerator"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.mark.MarkGenerator" title="永久链接至目标">¶</a></dt>
+<dd><p>Factory for <a class="reference internal" href="#pytest.mark.MarkDecorator" title="_pytest.mark.MarkDecorator"><code class="xref py py-class docutils literal notranslate"><span class="pre">MarkDecorator</span></code></a> objects - exposed as
+a <code class="docutils literal notranslate"><span class="pre">pytest.mark</span></code> singleton instance.  Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span>
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">slowtest</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_function</span><span class="p">():</span>
+   <span class="k">pass</span>
+</pre></div>
+</div>
+<p>will set a ‘slowtest’ <a class="reference internal" href="#pytest.mark.MarkInfo" title="_pytest.mark.MarkInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">MarkInfo</span></code></a> object
+on the <code class="docutils literal notranslate"><span class="pre">test_function</span></code> object.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="pytest.mark.MarkDecorator">
+<span id="_pytest.mark.MarkDecorator"></span><em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">MarkDecorator</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/mark.html#MarkDecorator"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.mark.MarkDecorator" title="永久链接至目标">¶</a></dt>
+<dd><p>A decorator for test functions and test classes.  When applied
+it will create <a class="reference internal" href="#pytest.mark.MarkInfo" title="_pytest.mark.MarkInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">MarkInfo</span></code></a> objects which may be
+<a class="reference internal" href="example/simple.html#excontrolskip"><span class="std std-ref">retrieved by hooks as item keywords</span></a>.
+MarkDecorator instances are often created like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mark1</span> <span class="o">=</span> <span class="n">pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">NAME</span>              <span class="c1"># simple MarkDecorator</span>
+<span class="n">mark2</span> <span class="o">=</span> <span class="n">pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">NAME</span><span class="p">(</span><span class="n">name1</span><span class="o">=</span><span class="n">value</span><span class="p">)</span> <span class="c1"># parametrized MarkDecorator</span>
+</pre></div>
+</div>
+<p>and can then be applied as decorators to test functions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@mark2</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_function</span><span class="p">():</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>When a MarkDecorator instance is called it does the following:</dt><dd><ol class="arabic simple">
+<li><p>If called with a single class as its only positional argument and no
+additional keyword arguments, it attaches itself to the class so it
+gets applied automatically to all test cases found in that class.</p></li>
+<li><p>If called with a single function as its only positional argument and
+no additional keyword arguments, it attaches a MarkInfo object to the
+function, containing all the arguments already stored internally in
+the MarkDecorator.</p></li>
+<li><p>When called in any other case, it performs a ‘fake construction’ call,
+i.e. it returns a new MarkDecorator instance with the original
+MarkDecorator’s content updated with the arguments passed to this
+call.</p></li>
+</ol>
+</dd>
+</dl>
+<p>Note: The rules above prevent MarkDecorator objects from storing only a
+single function or class reference as their positional argument with no
+additional keyword or positional arguments.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="pytest.mark.MarkInfo">
+<span id="_pytest.mark.MarkInfo"></span><em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">MarkInfo</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/mark.html#MarkInfo"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.mark.MarkInfo" title="永久链接至目标">¶</a></dt>
+<dd><p>Marking object created by <a class="reference internal" href="#pytest.mark.MarkDecorator" title="_pytest.mark.MarkDecorator"><code class="xref py py-class docutils literal notranslate"><span class="pre">MarkDecorator</span></code></a> instances.</p>
+<dl class="py attribute">
+<dt id="pytest.mark.MarkInfo.name">
+<span id="_pytest.mark.MarkInfo.name"></span><code class="sig-name descname"><span class="pre">name</span></code><a class="headerlink" href="#pytest.mark.MarkInfo.name" title="永久链接至目标">¶</a></dt>
+<dd><p>name of attribute</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pytest.mark.MarkInfo.args">
+<span id="_pytest.mark.MarkInfo.args"></span><code class="sig-name descname"><span class="pre">args</span></code><a class="headerlink" href="#pytest.mark.MarkInfo.args" title="永久链接至目标">¶</a></dt>
+<dd><p>positional argument list, empty if none specified</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pytest.mark.MarkInfo.kwargs">
+<span id="_pytest.mark.MarkInfo.kwargs"></span><code class="sig-name descname"><span class="pre">kwargs</span></code><a class="headerlink" href="#pytest.mark.MarkInfo.kwargs" title="永久链接至目标">¶</a></dt>
+<dd><p>keyword argument dictionary, empty if nothing specified</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.mark.MarkInfo.add">
+<span id="_pytest.mark.MarkInfo.add"></span><code class="sig-name descname"><span class="pre">add</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/mark.html#MarkInfo.add"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.mark.MarkInfo.add" title="永久链接至目标">¶</a></dt>
+<dd><p>add a MarkInfo with the given args and kwargs.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="contents.html">
+              <img class="logo" src="_static/pytest1.png" alt="Logo"/>
+            </a></p><h3><a href="contents.html">Table Of Contents</a></h3>
+
+<ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="contents.html">目录</a></li>
+  <li><a href="getting-started.html">Install</a></li>
+  <li><a href="example/index.html">实际案例</a></li>
+  <li><a href="customize.html">Customize</a></li>
+  <li><a href="contact.html">Contact</a></li>
+  <li><a href="talks.html">Talks/Posts</a></li>
+  <li><a href="changelog.html">Changelog</a></li>
+  <li><a href="license.html">License</a></li>
+</ul>
+  <hr>
+  <ul>
+<li><a class="reference internal" href="#">Marking test functions with attributes</a><ul>
+<li><a class="reference internal" href="#api-reference-for-mark-related-objects">API reference for mark related objects</a></li>
+</ul>
+</li>
+</ul>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="contents.html">Documentation overview</a><ul>
+  </ul></li>
+</ul><h3>Useful Links</h3>
+<ul>
+  <li>
+    <a href="https://www.indiegogo.com/projects/python-testing-sprint-mid-2016#/">
+      <b>Sprint funding campaign</b>
+    </a>
+  </li>
+  <li><a href="index.html">The pytest Website</a></li>
+  <li><a href="contributing.html">Contribution Guide</a></li>
+  <li><a href="https://pypi.python.org/pypi/pytest">pytest @ PyPI</a></li>
+  <li><a href="https://github.com/pytest-dev/pytest/">pytest @ GitHub</a></li>
+  <li><a href="http://plugincompat.herokuapp.com/">3rd party plugins</a></li>
+  <li><a href="https://github.com/pytest-dev/pytest/issues">Issue Tracker</a></li>
+  <li><a href="http://pytest.org/latest/pytest.pdf">PDF Documentation</a>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">快速搜索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="转向" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+  <div class="footer">
+    &copy; Copyright 2015, holger krekel and pytest-dev team.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-7597274-13']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+  </body>
+</html>
