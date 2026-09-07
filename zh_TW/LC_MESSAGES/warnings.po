@@ -1,0 +1,542 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015–2020, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/warnings.rst:4
+msgid "Warnings Capture"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:8
+msgid ""
+"Starting from version ``3.1``, pytest now automatically catches warnings "
+"during test execution and displays them at the end of the session:"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:11
+msgid ""
+"# content of test_show_warnings.py\n"
+"import warnings\n"
+"\n"
+"\n"
+"def api_v1():\n"
+"    warnings.warn(UserWarning(\"api v1, should use functions from v2\"))\n"
+"    return 1\n"
+"\n"
+"\n"
+"def test_one():\n"
+"    assert api_v1() == 1"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:25
+msgid "Running pytest now produces this output:"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:27
+msgid ""
+"$ pytest test_show_warnings.py\n"
+"=========================== test session starts "
+"============================\n"
+"platform linux -- Python 3.x.y, pytest-6.x.y, py-1.x.y, pluggy-1.x.y\n"
+"cachedir: $PYTHON_PREFIX/.pytest_cache\n"
+"rootdir: $REGENDOC_TMPDIR\n"
+"collected 1 item\n"
+"\n"
+"test_show_warnings.py .                                              [100%]\n"
+"\n"
+"============================= warnings summary "
+"=============================\n"
+"test_show_warnings.py::test_one\n"
+"  $REGENDOC_TMPDIR/test_show_warnings.py:5: UserWarning: api v1, should use "
+"functions from v2\n"
+"    warnings.warn(UserWarning(\"api v1, should use functions from v2\"))\n"
+"\n"
+"-- Docs: https://docs.pytest.org/en/stable/warnings.html\n"
+"======================= 1 passed, 1 warning in 0.12s ======================="
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:46
+msgid ""
+"The ``-W`` flag can be passed to control which warnings will be displayed or "
+"even turn them into errors:"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:49
+msgid ""
+"$ pytest -q test_show_warnings.py -W error::UserWarning\n"
+"F                                                                    [100%]\n"
+"================================= FAILURES "
+"=================================\n"
+"_________________________________ test_one "
+"_________________________________\n"
+"\n"
+"    def test_one():\n"
+">       assert api_v1() == 1\n"
+"\n"
+"test_show_warnings.py:10:\n"
+"_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n"
+"\n"
+"    def api_v1():\n"
+">       warnings.warn(UserWarning(\"api v1, should use functions from "
+"v2\"))\n"
+"E       UserWarning: api v1, should use functions from v2\n"
+"\n"
+"test_show_warnings.py:5: UserWarning\n"
+"========================= short test summary info "
+"==========================\n"
+"FAILED test_show_warnings.py::test_one - UserWarning: api v1, should "
+"use ...\n"
+"1 failed in 0.12s"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:71
+msgid ""
+"The same option can be set in the ``pytest.ini`` or ``pyproject.toml`` file "
+"using the ``filterwarnings`` ini option. For example, the configuration "
+"below will ignore all user warnings and specific deprecation warnings "
+"matching a regex, but will transform all other warnings into errors."
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:76
+msgid ""
+"# pytest.ini\n"
+"[pytest]\n"
+"filterwarnings =\n"
+"    error\n"
+"    ignore::UserWarning\n"
+"    ignore:function ham\\(\\) is deprecated:DeprecationWarning"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:85
+msgid ""
+"# pyproject.toml\n"
+"[tool.pytest.ini_options]\n"
+"filterwarnings = [\n"
+"    \"error\",\n"
+"    \"ignore::UserWarning\",\n"
+"    # note the use of single quote below to denote \"raw\" strings in TOML\n"
+"    'ignore:function ham\\(\\) is deprecated:DeprecationWarning',\n"
+"]"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:97
+msgid ""
+"When a warning matches more than one option in the list, the action for the "
+"last matching option is performed."
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:100
+msgid ""
+"Both ``-W`` command-line option and ``filterwarnings`` ini option are based "
+"on Python's own `-W option`_ and `warnings.simplefilter`_, so please refer "
+"to those sections in the Python documentation for other examples and "
+"advanced usage."
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:107
+msgid "``@pytest.mark.filterwarnings``"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:111
+msgid ""
+"You can use the ``@pytest.mark.filterwarnings`` to add warning filters to "
+"specific test items, allowing you to have finer control of which warnings "
+"should be captured at test, class or even module level:"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:115
+msgid ""
+"import warnings\n"
+"\n"
+"\n"
+"def api_v1():\n"
+"    warnings.warn(UserWarning(\"api v1, should use functions from v2\"))\n"
+"    return 1\n"
+"\n"
+"\n"
+"@pytest.mark.filterwarnings(\"ignore:api v1\")\n"
+"def test_one():\n"
+"    assert api_v1() == 1"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:130
+msgid ""
+"Filters applied using a mark take precedence over filters passed on the "
+"command line or configured by the ``filterwarnings`` ini option."
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:133
+msgid ""
+"You may apply a filter to all tests of a class by using the "
+"``filterwarnings`` mark as a class decorator or to all tests in a module by "
+"setting the :globalvar:`pytestmark` variable:"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:136
+msgid ""
+"# turns all warnings into errors for this module\n"
+"pytestmark = pytest.mark.filterwarnings(\"error\")"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:143
+msgid ""
+"*Credits go to Florian Schulze for the reference implementation in the* "
+"`pytest-warnings`_ *plugin.*"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:151
+msgid "Disabling warnings summary"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:153
+msgid ""
+"Although not recommended, you can use the ``--disable-warnings`` command-"
+"line option to suppress the warning summary entirely from the test run "
+"output."
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:157
+msgid "Disabling warning capture entirely"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:159
+msgid ""
+"This plugin is enabled by default but can be disabled entirely in your "
+"``pytest.ini`` file with:"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:161
+msgid ""
+"[pytest]\n"
+"addopts = -p no:warnings"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:166
+msgid ""
+"Or passing ``-p no:warnings`` in the command-line. This might be useful if "
+"your test suites handles warnings using an external system."
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:173
+msgid "DeprecationWarning and PendingDeprecationWarning"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:176
+msgid ""
+"By default pytest will display ``DeprecationWarning`` and "
+"``PendingDeprecationWarning`` warnings from user code and third-party "
+"libraries, as recommended by `PEP-0565 <https://www.python.org/dev/peps/"
+"pep-0565>`_. This helps users keep their code modern and avoid breakages "
+"when deprecated warnings are effectively removed."
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:180
+msgid ""
+"Sometimes it is useful to hide some specific deprecation warnings that "
+"happen in code that you have no control over (such as third-party "
+"libraries), in which case you might use the warning filters options (ini or "
+"marks) to ignore those warnings."
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:184
+msgid "For example:"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:186
+msgid ""
+"[pytest]\n"
+"filterwarnings =\n"
+"    ignore:.*U.*mode is deprecated:DeprecationWarning"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:193
+msgid ""
+"This will ignore all warnings of type ``DeprecationWarning`` where the start "
+"of the message matches the regular expression ``\".*U.*mode is "
+"deprecated\"``."
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:198
+msgid ""
+"If warnings are configured at the interpreter level, using the "
+"`PYTHONWARNINGS <https://docs.python.org/3/using/cmdline.html#envvar-"
+"PYTHONWARNINGS>`_ environment variable or the ``-W`` command-line option, "
+"pytest will not configure any filters by default."
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:202
+msgid ""
+"Also pytest doesn't follow ``PEP-0506`` suggestion of resetting all warning "
+"filters because it might break test suites that configure warning filters "
+"themselves by calling ``warnings.simplefilter`` (see issue `#2430 <https://"
+"github.com/pytest-dev/pytest/issues/2430>`_ for an example of that)."
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:213
+msgid "Ensuring code triggers a deprecation warning"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:215
+msgid ""
+"You can also use :func:`pytest.deprecated_call` for checking that a certain "
+"function call triggers a ``DeprecationWarning`` or "
+"``PendingDeprecationWarning``:"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:219
+msgid ""
+"import pytest\n"
+"\n"
+"\n"
+"def test_myfunction_deprecated():\n"
+"    with pytest.deprecated_call():\n"
+"        myfunction(17)"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:228
+msgid ""
+"This test will fail if ``myfunction`` does not issue a deprecation warning "
+"when called with a ``17`` argument."
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:243
+msgid "Asserting warnings with the warns function"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:247
+msgid ""
+"You can check that code raises a particular warning using func:`pytest."
+"warns`, which works in a similar manner to :ref:`raises <assertraises>`:"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:250
+msgid ""
+"import warnings\n"
+"import pytest\n"
+"\n"
+"\n"
+"def test_warning():\n"
+"    with pytest.warns(UserWarning):\n"
+"        warnings.warn(\"my warning\", UserWarning)"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:260
+msgid ""
+"The test will fail if the warning in question is not raised. The keyword "
+"argument ``match`` to assert that the exception matches a text or regex::"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:263
+msgid ""
+">>> with warns(UserWarning, match='must be 0 or None'):\n"
+"...     warnings.warn(\"value must be 0 or None\", UserWarning)\n"
+"\n"
+">>> with warns(UserWarning, match=r'must be \\d+$'):\n"
+"...     warnings.warn(\"value must be 42\", UserWarning)\n"
+"\n"
+">>> with warns(UserWarning, match=r'must be \\d+$'):\n"
+"...     warnings.warn(\"this is not here\", UserWarning)\n"
+"Traceback (most recent call last):\n"
+"  ...\n"
+"Failed: DID NOT WARN. No warnings of type ...UserWarning... was emitted..."
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:275
+msgid "You can also call func:`pytest.warns` on a function or code string:"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:277
+msgid ""
+"pytest.warns(expected_warning, func, *args, **kwargs)\n"
+"pytest.warns(expected_warning, \"func(*args, **kwargs)\")"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:282
+msgid ""
+"The function also returns a list of all raised warnings (as ``warnings."
+"WarningMessage`` objects), which you can query for additional information:"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:286
+msgid ""
+"with pytest.warns(RuntimeWarning) as record:\n"
+"    warnings.warn(\"another warning\", RuntimeWarning)\n"
+"\n"
+"# check that only one warning was raised\n"
+"assert len(record) == 1\n"
+"# check that the message matches\n"
+"assert record[0].message.args[0] == \"another warning\""
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:296
+msgid ""
+"Alternatively, you can examine raised warnings in detail using the :ref:"
+"`recwarn <recwarn>` fixture (see below)."
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:300
+msgid ""
+"The :ref:`recwarn <recwarn>` fixture automatically ensures to reset the "
+"warnings filter at the end of the test, so no global state is leaked."
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:308
+msgid "Recording warnings"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:310
+msgid ""
+"You can record raised warnings either using func:`pytest.warns` or with the "
+"``recwarn`` fixture."
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:313
+msgid ""
+"To record with func:`pytest.warns` without asserting anything about the "
+"warnings, pass ``None`` as the expected warning type:"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:316
+msgid ""
+"with pytest.warns(None) as record:\n"
+"    warnings.warn(\"user\", UserWarning)\n"
+"    warnings.warn(\"runtime\", RuntimeWarning)\n"
+"\n"
+"assert len(record) == 2\n"
+"assert str(record[0].message) == \"user\"\n"
+"assert str(record[1].message) == \"runtime\""
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:326
+msgid "The ``recwarn`` fixture will record warnings for the whole function:"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:328
+msgid ""
+"import warnings\n"
+"\n"
+"\n"
+"def test_hello(recwarn):\n"
+"    warnings.warn(\"hello\", UserWarning)\n"
+"    assert len(recwarn) == 1\n"
+"    w = recwarn.pop(UserWarning)\n"
+"    assert issubclass(w.category, UserWarning)\n"
+"    assert str(w.message) == \"hello\"\n"
+"    assert w.filename\n"
+"    assert w.lineno"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:342
+msgid ""
+"Both ``recwarn`` and func:`pytest.warns` return the same interface for "
+"recorded warnings: a WarningsRecorder instance. To view the recorded "
+"warnings, you can iterate over this instance, call ``len`` on it to get the "
+"number of recorded warnings, or index into it to get a particular recorded "
+"warning."
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:349
+msgid "Full API: :class:`~_pytest.recwarn.WarningsRecorder`."
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:354
+msgid "Custom failure messages"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:356
+msgid ""
+"Recording warnings provides an opportunity to produce custom test failure "
+"messages for when no warnings are issued or other conditions are met."
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:360
+msgid ""
+"def test():\n"
+"    with pytest.warns(Warning) as record:\n"
+"        f()\n"
+"        if not record:\n"
+"            pytest.fail(\"Expected a warning!\")"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:368
+msgid ""
+"If no warnings are issued when calling ``f``, then ``not record`` will "
+"evaluate to ``True``.  You can then call :func:`pytest.fail` with a custom "
+"error message."
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:375
+msgid "Internal pytest warnings"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:377
+msgid ""
+"pytest may generate its own warnings in some situations, such as improper "
+"usage or deprecated features."
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:379
+msgid ""
+"For example, pytest will emit a warning if it encounters a class that "
+"matches :confval:`python_classes` but also defines an ``__init__`` "
+"constructor, as this prevents the class from being instantiated:"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:382
+msgid ""
+"# content of test_pytest_warnings.py\n"
+"class Test:\n"
+"    def __init__(self):\n"
+"        pass\n"
+"\n"
+"    def test_foo(self):\n"
+"        assert 1 == 1"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:392
+msgid ""
+"$ pytest test_pytest_warnings.py -q\n"
+"\n"
+"============================= warnings summary "
+"=============================\n"
+"test_pytest_warnings.py:1\n"
+"  $REGENDOC_TMPDIR/test_pytest_warnings.py:1: PytestCollectionWarning: "
+"cannot collect test class 'Test' because it has a __init__ constructor "
+"(from: test_pytest_warnings.py)\n"
+"    class Test:\n"
+"\n"
+"-- Docs: https://docs.pytest.org/en/stable/warnings.html\n"
+"1 warning in 0.12s"
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:404
+msgid ""
+"These warnings might be filtered using the same builtin mechanisms used to "
+"filter other types of warnings."
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:406
+msgid ""
+"Please read our :ref:`backwards-compatibility` to learn how we proceed about "
+"deprecating and eventually removing features."
+msgstr ""
+
+#: ../../../doc/en/warnings.rst:409
+msgid ""
+"The full list of warnings is listed in :ref:`the reference documentation "
+"<warnings ref>`."
+msgstr ""
