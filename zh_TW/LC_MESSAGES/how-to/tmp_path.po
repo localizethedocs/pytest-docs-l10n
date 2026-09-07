@@ -1,0 +1,272 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-13 09:55+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/how-to/tmp_path.rst:6
+msgid "How to use temporary directories and files in tests"
+msgstr ""
+
+#: ../../../doc/en/how-to/tmp_path.rst:9
+msgid "The ``tmp_path`` fixture"
+msgstr ""
+
+#: ../../../doc/en/how-to/tmp_path.rst:11
+msgid ""
+"You can use the ``tmp_path`` fixture which will provide a temporary "
+"directory unique to each test function."
+msgstr ""
+
+#: ../../../doc/en/how-to/tmp_path.rst:14
+msgid ""
+"``tmp_path`` is a :class:`pathlib.Path` object. Here is an example test "
+"usage:"
+msgstr ""
+
+#: ../../../doc/en/how-to/tmp_path.rst:16
+msgid ""
+"# content of test_tmp_path.py\n"
+"CONTENT = \"content\"\n"
+"\n"
+"\n"
+"def test_create_file(tmp_path):\n"
+"    d = tmp_path / \"sub\"\n"
+"    d.mkdir()\n"
+"    p = d / \"hello.txt\"\n"
+"    p.write_text(CONTENT, encoding=\"utf-8\")\n"
+"    assert p.read_text(encoding=\"utf-8\") == CONTENT\n"
+"    assert len(list(tmp_path.iterdir())) == 1\n"
+"    assert 0"
+msgstr ""
+
+#: ../../../doc/en/how-to/tmp_path.rst:31
+msgid ""
+"Running this would result in a passed test except for the last ``assert 0`` "
+"line which we use to look at values:"
+msgstr ""
+
+#: ../../../doc/en/how-to/tmp_path.rst:34
+msgid ""
+"$ pytest test_tmp_path.py\n"
+"=========================== test session starts "
+"============================\n"
+"platform linux -- Python 3.x.y, pytest-9.x.y, pluggy-1.x.y\n"
+"rootdir: /home/sweet/project\n"
+"collected 1 item\n"
+"\n"
+"test_tmp_path.py F                                                   [100%]\n"
+"\n"
+"================================= FAILURES "
+"=================================\n"
+"_____________________________ test_create_file "
+"_____________________________\n"
+"\n"
+"tmp_path = PosixPath('PYTEST_TMPDIR/test_create_file0')\n"
+"\n"
+"    def test_create_file(tmp_path):\n"
+"        d = tmp_path / \"sub\"\n"
+"        d.mkdir()\n"
+"        p = d / \"hello.txt\"\n"
+"        p.write_text(CONTENT, encoding=\"utf-8\")\n"
+"        assert p.read_text(encoding=\"utf-8\") == CONTENT\n"
+"        assert len(list(tmp_path.iterdir())) == 1\n"
+">       assert 0\n"
+"E       assert 0\n"
+"\n"
+"test_tmp_path.py:11: AssertionError\n"
+"========================= short test summary info "
+"==========================\n"
+"FAILED test_tmp_path.py::test_create_file - assert 0\n"
+"============================ 1 failed in 0.12s ============================="
+msgstr ""
+
+#: ../../../doc/en/how-to/tmp_path.rst:64
+msgid ""
+"By default, ``pytest`` retains the temporary directory for the last 3 "
+"``pytest`` invocations. Concurrent invocations of the same test function are "
+"supported by configuring the base temporary directory to be unique for each "
+"concurrent run. See `temporary directory location and retention`_ for "
+"details."
+msgstr ""
+
+#: ../../../doc/en/how-to/tmp_path.rst:72
+msgid "The ``tmp_path_factory`` fixture"
+msgstr ""
+
+#: ../../../doc/en/how-to/tmp_path.rst:74
+msgid ""
+"The ``tmp_path_factory`` is a session-scoped fixture which can be used to "
+"create arbitrary temporary directories from any other fixture or test."
+msgstr ""
+
+#: ../../../doc/en/how-to/tmp_path.rst:77
+msgid ""
+"For example, suppose your test suite needs a large image on disk, which is "
+"generated procedurally. Instead of computing the same image for each test "
+"that uses it into its own ``tmp_path``, you can generate it once per-session "
+"to save time:"
+msgstr ""
+
+#: ../../../doc/en/how-to/tmp_path.rst:82
+msgid ""
+"# contents of conftest.py\n"
+"import pytest\n"
+"\n"
+"\n"
+"@pytest.fixture(scope=\"session\")\n"
+"def image_file(tmp_path_factory):\n"
+"    img = compute_expensive_image()\n"
+"    fn = tmp_path_factory.mktemp(\"data\") / \"img.png\"\n"
+"    img.save(fn)\n"
+"    return fn\n"
+"\n"
+"\n"
+"# contents of test_image.py\n"
+"def test_histogram(image_file):\n"
+"    img = load_image(image_file)\n"
+"    # compute and test histogram"
+msgstr ""
+
+#: ../../../doc/en/how-to/tmp_path.rst:101
+msgid ""
+"See :ref:`tmp_path_factory API <tmp_path_factory factory api>` for details."
+msgstr ""
+
+#: ../../../doc/en/how-to/tmp_path.rst:107
+msgid "The ``tmpdir`` and ``tmpdir_factory`` fixtures"
+msgstr "``tmpdir`` 和 ``tmpdir_factory`` 夾具"
+
+#: ../../../doc/en/how-to/tmp_path.rst:109
+msgid ""
+"The ``tmpdir`` and ``tmpdir_factory`` fixtures are similar to ``tmp_path`` "
+"and ``tmp_path_factory``, but use/return legacy `py.path.local`_ objects "
+"rather than standard :class:`pathlib.Path` objects."
+msgstr ""
+
+#: ../../../doc/en/how-to/tmp_path.rst:114
+msgid ""
+"These days, it is preferred to use ``tmp_path`` and ``tmp_path_factory``."
+msgstr ""
+
+#: ../../../doc/en/how-to/tmp_path.rst:116
+msgid ""
+"In order to help modernize old code bases, one can run pytest with the "
+"legacypath plugin disabled:"
+msgstr ""
+
+#: ../../../doc/en/how-to/tmp_path.rst:119
+msgid "pytest -p no:legacypath"
+msgstr ""
+
+#: ../../../doc/en/how-to/tmp_path.rst:123
+msgid ""
+"This will trigger errors on tests using the legacy paths. It can also be "
+"permanently set as part of the :confval:`addopts` parameter in the config "
+"file."
+msgstr ""
+
+#: ../../../doc/en/how-to/tmp_path.rst:127
+msgid ""
+"See :fixture:`tmpdir <tmpdir>` :fixture:`tmpdir_factory <tmpdir_factory>` "
+"API for details."
+msgstr ""
+
+#: ../../../doc/en/how-to/tmp_path.rst:134
+msgid "Temporary directory location and retention"
+msgstr ""
+
+#: ../../../doc/en/how-to/tmp_path.rst:136
+msgid ""
+"The temporary directories, as returned by the :fixture:`tmp_path` and (now "
+"deprecated) :fixture:`tmpdir` fixtures, are automatically created under a "
+"base temporary directory, in a structure that depends on the :option:`--"
+"basetemp` option:"
+msgstr ""
+
+#: ../../../doc/en/how-to/tmp_path.rst:141
+msgid ""
+"By default (when the :option:`--basetemp` option is not set), the temporary "
+"directories will follow this template:"
+msgstr ""
+
+#: ../../../doc/en/how-to/tmp_path.rst:144
+msgid "{temproot}/pytest-of-{user}/pytest-{num}/{testname}/"
+msgstr ""
+
+#: ../../../doc/en/how-to/tmp_path.rst:148
+msgid "where:"
+msgstr ""
+
+#: ../../../doc/en/how-to/tmp_path.rst:150
+msgid ""
+"``{temproot}`` is the system temporary directory as determined by :py:func:"
+"`tempfile.gettempdir`. It can be overridden by the :envvar:"
+"`PYTEST_DEBUG_TEMPROOT` environment variable."
+msgstr ""
+
+#: ../../../doc/en/how-to/tmp_path.rst:153
+msgid "``{user}`` is the user name running the tests,"
+msgstr ""
+
+#: ../../../doc/en/how-to/tmp_path.rst:154
+msgid "``{num}`` is a number that is incremented with each test suite run"
+msgstr ""
+
+#: ../../../doc/en/how-to/tmp_path.rst:155
+msgid ""
+"``{testname}`` is a sanitized version of :py:attr:`the name of the current "
+"test <_pytest.nodes.Node.name>`."
+msgstr ""
+
+#: ../../../doc/en/how-to/tmp_path.rst:157
+msgid ""
+"The auto-incrementing ``{num}`` placeholder provides a basic retention "
+"feature and avoids that existing results of previous test runs are blindly "
+"removed. By default, the last 3 temporary directories are kept, but this "
+"behavior can be configured with :confval:`tmp_path_retention_count` and :"
+"confval:`tmp_path_retention_policy`."
+msgstr ""
+
+#: ../../../doc/en/how-to/tmp_path.rst:163
+msgid ""
+"When the :option:`--basetemp` option is used (e.g. ``pytest --"
+"basetemp=mydir``), it will be used directly as base temporary directory:"
+msgstr ""
+
+#: ../../../doc/en/how-to/tmp_path.rst:166
+msgid "{basetemp}/{testname}/"
+msgstr ""
+
+#: ../../../doc/en/how-to/tmp_path.rst:170
+msgid ""
+"Note that there is no retention feature in this case: only the results of "
+"the most recent run will be kept."
+msgstr ""
+
+#: ../../../doc/en/how-to/tmp_path.rst:175
+msgid ""
+"The directory given to :option:`--basetemp` will be cleared blindly before "
+"each test run, so make sure to use a directory for that purpose only."
+msgstr ""
+
+#: ../../../doc/en/how-to/tmp_path.rst:178
+msgid ""
+"When distributing tests on the local machine using ``pytest-xdist``, care is "
+"taken to automatically configure a `basetemp` directory for the sub "
+"processes such that all temporary data lands below a single per-test run "
+"temporary directory."
+msgstr ""
