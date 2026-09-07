@@ -1,0 +1,403 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/goodpractices.rst:5
+msgid "Good Integration Practices"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:12
+msgid "Conventions for Python test discovery"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:14
+msgid "``pytest`` implements the following standard test discovery:"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:16
+msgid ""
+"If no arguments are specified then collection starts from :confval:"
+"`testpaths` (if configured) or the current directory. Alternatively, command "
+"line arguments can be used in any combination of directories, file names or "
+"node ids."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:19
+msgid "recurse into directories, unless they match :confval:`norecursedirs`"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:20
+msgid ""
+"``test_*.py`` or ``*_test.py`` files, imported by their `test package name`_."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:21
+msgid "``Test`` prefixed test classes (without an ``__init__`` method)"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:22
+msgid "``test_`` prefixed test functions or methods are test items"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:24
+msgid ""
+"For examples of how to customize your test discovery :doc:`example/"
+"pythoncollection`."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:26
+msgid ""
+"Within Python modules, ``pytest`` also discovers tests using the standard :"
+"ref:`unittest.TestCase <unittest.TestCase>` subclassing technique."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:31
+msgid "Choosing a test layout / import rules"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:33
+msgid "``pytest`` supports two common test layouts:"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:35
+msgid ""
+"putting tests into an extra directory outside your actual application code, "
+"useful if you have many functional tests or for other reasons want to keep "
+"tests separate from actual application code (often a good idea)::"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:40
+msgid ""
+"setup.py   # your setuptools Python package metadata\n"
+"mypkg/\n"
+"    __init__.py\n"
+"    appmodule.py\n"
+"tests/\n"
+"    test_app.py\n"
+"    ..."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:49
+msgid ""
+"inlining test directories into your application package, useful if you have "
+"direct relation between (unit-)test and application modules and want to "
+"distribute your tests along with your application::"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:53
+msgid ""
+"setup.py   # your setuptools Python package metadata\n"
+"mypkg/\n"
+"    __init__.py\n"
+"    appmodule.py\n"
+"    ...\n"
+"    test/\n"
+"        test_app.py\n"
+"        ..."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:62
+msgid "Important notes relating to both schemes:"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:64
+msgid ""
+"**make sure that \"mypkg\" is importable**, for example by typing once::"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:66
+msgid "pip install -e .   # install package using setup.py in editable mode"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:68
+msgid ""
+"**avoid \"__init__.py\" files in your test directories**. This way your "
+"tests can run easily against an installed version of ``mypkg``, "
+"independently from the installed package if it contains the tests or not."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:73
+msgid ""
+"With inlined tests you might put ``__init__.py`` into test directories and "
+"make them installable as part of your application. Using the ``py.test --"
+"pyargs mypkg`` invocation pytest will discover where mypkg is installed and "
+"collect tests from there. With the \"external\" test you can still "
+"distribute tests but they will not be installed or become importable."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:80
+msgid ""
+"Typically you can run tests by pointing to test directories or modules::"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:82
+msgid ""
+"py.test tests/test_app.py       # for external test dirs\n"
+"py.test mypkg/test/test_app.py  # for inlined test dirs\n"
+"py.test mypkg                   # run tests in all below test directories\n"
+"py.test                         # run all tests below current dir\n"
+"..."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:88
+msgid ""
+"Because of the above ``editable install`` mode you can change your source "
+"code (both tests and the app) and rerun tests at will. Once you are done "
+"with your work, you can `use tox`_ to make sure that the package is really "
+"correct and tests pass in all required configurations."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:96
+msgid ""
+"You can use Python3 namespace packages (PEP420) for your application but "
+"pytest will still perform `test package name`_ discovery based on the "
+"presence of ``__init__.py`` files.  If you use one of the two recommended "
+"file system layouts above but leave away the ``__init__.py`` files from your "
+"directories it should just work on Python3.3 and above.  From \"inlined "
+"tests\", however, you will need to use absolute imports for getting at your "
+"application code."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:108
+msgid ""
+"If ``pytest`` finds a \"a/b/test_module.py\" test file while recursing into "
+"the filesystem it determines the import name as follows:"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:112
+msgid ""
+"determine ``basedir``: this is the first \"upward\" (towards the root) "
+"directory not containing an ``__init__.py``.  If e.g. both ``a`` and ``b`` "
+"contain an ``__init__.py`` file then the parent directory of ``a`` will "
+"become the ``basedir``."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:117
+msgid ""
+"perform ``sys.path.insert(0, basedir)`` to make the test module importable "
+"under the fully qualified import name."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:120
+msgid ""
+"``import a.b.test_module`` where the path is determined by converting path "
+"separators ``/`` into \".\" characters.  This means you must follow the "
+"convention of having directory and file names map directly to the import "
+"names."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:125
+msgid ""
+"The reason for this somewhat evolved importing technique is that in larger "
+"projects multiple test modules might import from each other and thus "
+"deriving a canonical import name helps to avoid surprises such as a test "
+"modules getting imported twice."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:138
+msgid "Tox"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:140
+msgid ""
+"For development, we recommend to use virtualenv_ environments and pip_ for "
+"installing your application and any dependencies as well as the ``pytest`` "
+"package itself. This ensures your code and dependencies are isolated from "
+"the system Python installation."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:145
+msgid ""
+"If you frequently release code and want to make sure that your actual "
+"package passes all tests you may want to look into `tox`_, the virtualenv "
+"test automation tool and its `pytest support <http://testrun.org/tox/latest/"
+"example/pytest.html>`_. Tox helps you to setup virtualenv environments with "
+"pre-defined dependencies and then executing a pre-configured test command "
+"with options.  It will run tests against the installed package and not "
+"against your source code checkout, helping to detect packaging glitches."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:155
+msgid ""
+"Continuous integration services such as Jenkins_ can make use of the ``--"
+"junitxml=PATH`` option to create a JUnitXML file and generate reports (e.g. "
+"by publishing the results in a nice format with the `Jenkins xUnit Plugin "
+"<https://wiki.jenkins-ci.org/display/JENKINS/xUnit+Plugin>`_)."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:162
+msgid ""
+"Integrating with setuptools / ``python setup.py test`` / ``pytest-runner``"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:164
+msgid ""
+"You can integrate test runs into your setuptools based project with the "
+"`pytest-runner <https://pypi.python.org/pypi/pytest-runner>`_ plugin."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:167
+msgid "Add this to ``setup.py`` file:"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:169
+msgid ""
+"from setuptools import setup\n"
+"\n"
+"setup(\n"
+"    #...,\n"
+"    setup_requires=['pytest-runner', ...],\n"
+"    tests_require=['pytest', ...],\n"
+"    #...,\n"
+")"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:181
+msgid "And create an alias into ``setup.cfg`` file:"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:184
+msgid ""
+"[aliases]\n"
+"test=pytest"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:189
+msgid "If you now type::"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:191 ../../../doc/en/goodpractices.rst:235
+msgid "python setup.py test"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:193
+msgid ""
+"this will execute your tests using ``pytest-runner``. As this is a "
+"standalone version of ``pytest`` no prior installation whatsoever is "
+"required for calling the test command. You can also pass additional "
+"arguments to py.test such as your test directory or other options using ``--"
+"addopts``."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:201
+msgid "Manual Integration"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:203
+msgid ""
+"If for some reason you don't want/can't use ``pytest-runner``, you can write "
+"your own setuptools Test command for invoking pytest."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:206
+msgid ""
+"import sys\n"
+"\n"
+"from setuptools.command.test import test as TestCommand\n"
+"\n"
+"\n"
+"class PyTest(TestCommand):\n"
+"    user_options = [('pytest-args=', 'a', \"Arguments to pass to py."
+"test\")]\n"
+"\n"
+"    def initialize_options(self):\n"
+"        TestCommand.initialize_options(self)\n"
+"        self.pytest_args = []\n"
+"\n"
+"    def run_tests(self):\n"
+"        #import here, cause outside the eggs aren't loaded\n"
+"        import pytest\n"
+"        errno = pytest.main(self.pytest_args)\n"
+"        sys.exit(errno)\n"
+"\n"
+"\n"
+"setup(\n"
+"    #...,\n"
+"    tests_require=['pytest'],\n"
+"    cmdclass = {'test': PyTest},\n"
+"    )"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:233
+msgid "Now if you run::"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:237
+msgid ""
+"this will download ``pytest`` if needed and then run your tests as you would "
+"expect it to. You can pass a single string of arguments using the ``--pytest-"
+"args`` or ``-a`` command-line option. For example::"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:241
+msgid "python setup.py test -a \"--durations=5\""
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:243
+msgid "is equivalent to running ``py.test --durations=5``."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:250
+msgid "(deprecated) Create a pytest standalone script"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:256
+msgid "``genscript`` has been deprecated because:"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:258
+msgid "It cannot support plugins, rendering its usefulness extremely limited;"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:259
+msgid "Tooling has become much better since ``genscript`` was introduced;"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:260
+msgid ""
+"It is possible to build a zipped ``pytest`` application without the "
+"shortcomings above."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:263
+msgid ""
+"There's no planned version in which this command will be removed at the "
+"moment of this writing, but its use is discouraged for new applications."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:267
+msgid ""
+"If you are a maintainer or application developer and want people who don't "
+"deal with python much to easily run tests you may generate a standalone "
+"``pytest`` script::"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:271
+msgid "py.test --genscript=runtests.py"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:273
+msgid ""
+"This generates a ``runtests.py`` script which is a fully functional basic "
+"``pytest`` script, running unchanged under Python2 and Python3. You can tell "
+"people to download the script and then e.g.  run it like this::"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:277
+msgid "python runtests.py"
+msgstr ""
