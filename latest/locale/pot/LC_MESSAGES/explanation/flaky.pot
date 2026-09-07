@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-23 08:43+0000\n"
+"POT-Creation-Date: 2026-09-07 13:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -188,8 +188,8 @@ msgstr ""
 #: ../../../doc/en/explanation/flaky.rst:70
 msgid ""
 "`pytest-flakefinder <https://github.com/dropbox/pytest-flakefinder>`_ - "
-"`blog post <https://blogs.dropbox.com/tech/2016/03/open-sourcing-pytest-"
-"tools/>`_"
+"`blog post <https://web.archive.org/web/20200313031602/https://blogs.dropbox."
+"com/tech/2016/03/open-sourcing-pytest-tools/>`_"
 msgstr ""
 
 #: ../../../doc/en/explanation/flaky.rst:72
@@ -369,8 +369,9 @@ msgstr ""
 
 #: ../../../doc/en/explanation/flaky.rst:132
 msgid ""
-"`Test and Code Podcast: Flaky Tests and How to Deal with Them <https://"
-"testandcode.com/50>`_ by Brian Okken and Anthony Shaw, 2018"
+"`Test and Code Podcast: Flaky Tests and How to Deal with Them <https://web."
+"archive.org/web/20221201011103/https://testandcode.com/50>`_ by Brian Okken "
+"and Anthony Shaw, 2018"
 msgstr ""
 
 #: ../../../doc/en/explanation/flaky.rst:133

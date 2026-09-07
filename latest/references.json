@@ -37,9 +37,9 @@
     "branch" : "main",
     "commit" : 
     {
-      "date" : "2026-07-06 06:22:34 +0200",
-      "hash" : "83b022078855ea64c5c53bc50bd9299a5a1f1dc0",
-      "title" : "build(deps): Bump anyio in /testing/plugins_integration (#14679)"
+      "date" : "2026-09-06 10:17:53 -0300",
+      "hash" : "431f3e1f5fd70b9b0f8afa2d20a10421542e5c6a",
+      "title" : "Replace string nodeids with a structured NodeId internally (#14758)"
     }
   },
   "type" : "branch",
