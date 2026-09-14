@@ -37,9 +37,9 @@
     "branch" : "main",
     "commit" : 
     {
-      "date" : "2026-07-06 06:22:34 +0200",
-      "hash" : "83b022078855ea64c5c53bc50bd9299a5a1f1dc0",
-      "title" : "build(deps): Bump anyio in /testing/plugins_integration (#14679)"
+      "date" : "2026-09-14 11:24:52 +0300",
+      "hash" : "aceb21ab2fa19f91282adfdb978a6ae252b3b020",
+      "title" : "Merge pull request #14984 from bluetech/arg2node2fixturedef"
     }
   },
   "type" : "branch",
