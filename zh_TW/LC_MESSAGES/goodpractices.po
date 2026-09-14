@@ -1,0 +1,490 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015–2020, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/goodpractices.rst:5
+msgid "Good Integration Practices"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:8
+msgid "Install package with pip"
+msgstr "使用 pip 安裝軟體包"
+
+#: ../../../doc/en/goodpractices.rst:10
+msgid ""
+"For development, we recommend you use venv_ for virtual environments (or "
+"virtualenv_ for Python 2.7) and pip_ for installing your application and any "
+"dependencies, as well as the ``pytest`` package itself. This ensures your "
+"code and dependencies are isolated from your system Python installation."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:16
+msgid ""
+"Next, place a ``setup.py`` file in the root of your package with the "
+"following minimum content::"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:18
+msgid ""
+"from setuptools import setup, find_packages\n"
+"\n"
+"setup(name=\"PACKAGENAME\", packages=find_packages())"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:22
+msgid ""
+"Where ``PACKAGENAME`` is the name of your package. You can then install your "
+"package in \"editable\" mode by running from the same directory::"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:24
+msgid "pip install -e ."
+msgstr "pip install -e ."
+
+#: ../../../doc/en/goodpractices.rst:26
+msgid ""
+"which lets you change your source code (both tests and application) and "
+"rerun tests at will. This is similar to running ``python setup.py develop`` "
+"or ``conda develop`` in that it installs your package using a symlink to "
+"your development code."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:34
+msgid "Conventions for Python test discovery"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:36
+msgid "``pytest`` implements the following standard test discovery:"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:38
+msgid ""
+"If no arguments are specified then collection starts from :confval:"
+"`testpaths` (if configured) or the current directory. Alternatively, command "
+"line arguments can be used in any combination of directories, file names or "
+"node ids."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:41
+msgid "Recurse into directories, unless they match :confval:`norecursedirs`."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:42
+msgid ""
+"In those directories, search for ``test_*.py`` or ``*_test.py`` files, "
+"imported by their `test package name`_."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:43
+msgid "From those files, collect test items:"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:45
+msgid "``test`` prefixed test functions or methods outside of class"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:46
+msgid ""
+"``test`` prefixed test functions or methods inside ``Test`` prefixed test "
+"classes (without an ``__init__`` method)"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:48
+msgid ""
+"For examples of how to customize your test discovery :doc:`example/"
+"pythoncollection`."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:50
+msgid ""
+"Within Python modules, ``pytest`` also discovers tests using the standard :"
+"ref:`unittest.TestCase <unittest.TestCase>` subclassing technique."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:55
+msgid "Choosing a test layout / import rules"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:57
+msgid "``pytest`` supports two common test layouts:"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:60
+msgid "Tests outside application code"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:62
+msgid ""
+"Putting tests into an extra directory outside your actual application code "
+"might be useful if you have many functional tests or for other reasons want "
+"to keep tests separate from actual application code (often a good idea)::"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:66
+msgid ""
+"setup.py\n"
+"mypkg/\n"
+"    __init__.py\n"
+"    app.py\n"
+"    view.py\n"
+"tests/\n"
+"    test_app.py\n"
+"    test_view.py\n"
+"    ..."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:76
+msgid "This has the following benefits:"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:78
+msgid ""
+"Your tests can run against an installed version after executing ``pip "
+"install .``."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:79
+msgid ""
+"Your tests can run against the local copy with an editable install after "
+"executing ``pip install --editable .``."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:80
+msgid ""
+"If you don't have a ``setup.py`` file and are relying on the fact that "
+"Python by default puts the current directory in ``sys.path`` to import your "
+"package, you can execute ``python -m pytest`` to execute the tests against "
+"the local copy directly, without using ``pip``."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:86
+msgid ""
+"See :ref:`pythonpath` for more information about the difference between "
+"calling ``pytest`` and ``python -m pytest``."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:89
+msgid ""
+"Note that using this scheme your test files must have **unique names**, "
+"because ``pytest`` will import them as *top-level* modules since there are "
+"no packages to derive a full package name from. In other words, the test "
+"files in the example above will be imported as ``test_app`` and "
+"``test_view`` top-level modules by adding ``tests/`` to ``sys.path``."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:95
+msgid ""
+"If you need to have test modules with the same name, you might add "
+"``__init__.py`` files to your ``tests`` folder and subfolders, changing them "
+"to packages::"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:98
+msgid ""
+"setup.py\n"
+"mypkg/\n"
+"    ...\n"
+"tests/\n"
+"    __init__.py\n"
+"    foo/\n"
+"        __init__.py\n"
+"        test_view.py\n"
+"    bar/\n"
+"        __init__.py\n"
+"        test_view.py"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:110
+msgid ""
+"Now pytest will load the modules as ``tests.foo.test_view`` and ``tests.bar."
+"test_view``, allowing you to have modules with the same name. But now this "
+"introduces a subtle problem: in order to load the test modules from the "
+"``tests`` directory, pytest prepends the root of the repository to ``sys."
+"path``, which adds the side-effect that now ``mypkg`` is also importable. "
+"This is problematic if you are using a tool like `tox`_ to test your package "
+"in a virtual environment, because you want to test the *installed* version "
+"of your package, not the local code from the repository."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:117
+msgid ""
+"In this situation, it is **strongly** suggested to use a ``src`` layout "
+"where application root package resides in a sub-directory of your root::"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:120
+msgid ""
+"setup.py\n"
+"src/\n"
+"    mypkg/\n"
+"        __init__.py\n"
+"        app.py\n"
+"        view.py\n"
+"tests/\n"
+"    __init__.py\n"
+"    foo/\n"
+"        __init__.py\n"
+"        test_view.py\n"
+"    bar/\n"
+"        __init__.py\n"
+"        test_view.py"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:136
+msgid ""
+"This layout prevents a lot of common pitfalls and has many benefits, which "
+"are better explained in this excellent `blog post by Ionel Cristian Mărieș "
+"<https://blog.ionelmc.ro/2014/05/25/python-packaging/#the-structure>`_."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:140
+msgid "Tests as part of application code"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:142
+msgid ""
+"Inlining test directories into your application package is useful if you "
+"have direct relation between tests and application modules and want to "
+"distribute them along with your application::"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:146
+msgid ""
+"setup.py\n"
+"mypkg/\n"
+"    __init__.py\n"
+"    app.py\n"
+"    view.py\n"
+"    test/\n"
+"        __init__.py\n"
+"        test_app.py\n"
+"        test_view.py\n"
+"        ..."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:157
+msgid ""
+"In this scheme, it is easy to run your tests using the ``--pyargs`` option::"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:159
+msgid "pytest --pyargs mypkg"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:161
+msgid ""
+"``pytest`` will discover where ``mypkg`` is installed and collect tests from "
+"there."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:163
+msgid ""
+"Note that this layout also works in conjunction with the ``src`` layout "
+"mentioned in the previous section."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:168
+msgid ""
+"You can use Python3 namespace packages (PEP420) for your application but "
+"pytest will still perform `test package name`_ discovery based on the "
+"presence of ``__init__.py`` files.  If you use one of the two recommended "
+"file system layouts above but leave away the ``__init__.py`` files from your "
+"directories it should just work on Python3.3 and above.  From \"inlined "
+"tests\", however, you will need to use absolute imports for getting at your "
+"application code."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:180
+msgid ""
+"If ``pytest`` finds an \"a/b/test_module.py\" test file while recursing into "
+"the filesystem it determines the import name as follows:"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:184
+msgid ""
+"determine ``basedir``: this is the first \"upward\" (towards the root) "
+"directory not containing an ``__init__.py``.  If e.g. both ``a`` and ``b`` "
+"contain an ``__init__.py`` file then the parent directory of ``a`` will "
+"become the ``basedir``."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:189
+msgid ""
+"perform ``sys.path.insert(0, basedir)`` to make the test module importable "
+"under the fully qualified import name."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:192
+msgid ""
+"``import a.b.test_module`` where the path is determined by converting path "
+"separators ``/`` into \".\" characters.  This means you must follow the "
+"convention of having directory and file names map directly to the import "
+"names."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:197
+msgid ""
+"The reason for this somewhat evolved importing technique is that in larger "
+"projects multiple test modules might import from each other and thus "
+"deriving a canonical import name helps to avoid surprises such as a test "
+"module getting imported twice."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:210
+msgid "tox"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:212
+msgid ""
+"Once you are done with your work and want to make sure that your actual "
+"package passes all tests you may want to look into `tox`_, the virtualenv "
+"test automation tool and its `pytest support <https://tox.readthedocs.io/en/"
+"latest/example/pytest.html>`_. tox helps you to setup virtualenv "
+"environments with pre-defined dependencies and then executing a pre-"
+"configured test command with options.  It will run tests against the "
+"installed package and not against your source code checkout, helping to "
+"detect packaging glitches."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:224
+msgid ""
+"Integrating with setuptools / ``python setup.py test`` / ``pytest-runner``"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:226
+msgid ""
+"You can integrate test runs into your setuptools based project with the "
+"`pytest-runner <https://pypi.org/project/pytest-runner/>`_ plugin."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:229
+msgid "Add this to ``setup.py`` file:"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:231
+msgid ""
+"from setuptools import setup\n"
+"\n"
+"setup(\n"
+"    # ...,\n"
+"    setup_requires=[\"pytest-runner\", ...],\n"
+"    tests_require=[\"pytest\", ...],\n"
+"    # ...,\n"
+")"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:243
+msgid "And create an alias into ``setup.cfg`` file:"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:246
+msgid ""
+"[aliases]\n"
+"test=pytest"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:251
+msgid "If you now type::"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:253 ../../../doc/en/goodpractices.rst:309
+msgid "python setup.py test"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:255
+msgid ""
+"this will execute your tests using ``pytest-runner``. As this is a "
+"standalone version of ``pytest`` no prior installation whatsoever is "
+"required for calling the test command. You can also pass additional "
+"arguments to pytest such as your test directory or other options using ``--"
+"addopts``."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:261
+msgid ""
+"You can also specify other pytest-ini options in your ``setup.cfg`` file by "
+"putting them into a ``[tool:pytest]`` section:"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:264
+msgid ""
+"[tool:pytest]\n"
+"addopts = --verbose\n"
+"python_files = testing/*/*.py"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:272
+msgid "Manual Integration"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:274
+msgid ""
+"If for some reason you don't want/can't use ``pytest-runner``, you can write "
+"your own setuptools Test command for invoking pytest."
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:277
+msgid ""
+"import sys\n"
+"\n"
+"from setuptools.command.test import test as TestCommand\n"
+"\n"
+"\n"
+"class PyTest(TestCommand):\n"
+"    user_options = [(\"pytest-args=\", \"a\", \"Arguments to pass to "
+"pytest\")]\n"
+"\n"
+"    def initialize_options(self):\n"
+"        TestCommand.initialize_options(self)\n"
+"        self.pytest_args = \"\"\n"
+"\n"
+"    def run_tests(self):\n"
+"        import shlex\n"
+"\n"
+"        # import here, cause outside the eggs aren't loaded\n"
+"        import pytest\n"
+"\n"
+"        errno = pytest.main(shlex.split(self.pytest_args))\n"
+"        sys.exit(errno)\n"
+"\n"
+"\n"
+"setup(\n"
+"    # ...,\n"
+"    tests_require=[\"pytest\"],\n"
+"    cmdclass={\"pytest\": PyTest},\n"
+")"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:307
+msgid "Now if you run::"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:311
+msgid ""
+"this will download ``pytest`` if needed and then run your tests as you would "
+"expect it to. You can pass a single string of arguments using the ``--pytest-"
+"args`` or ``-a`` command-line option. For example::"
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:315
+msgid "python setup.py test -a \"--durations=5\""
+msgstr ""
+
+#: ../../../doc/en/goodpractices.rst:317
+msgid "is equivalent to running ``pytest --durations=5``."
+msgstr ""

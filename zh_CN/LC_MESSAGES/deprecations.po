@@ -1,0 +1,720 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015–2020, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/deprecations.rst:4
+msgid "Deprecations and Removals"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:6
+msgid ""
+"This page lists all pytest features that are currently deprecated or have "
+"been removed in past major releases. The objective is to give users a clear "
+"rationale why a certain feature has been removed, and what alternatives "
+"should be used instead."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:16
+msgid "Deprecated Features"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:18
+msgid ""
+"Below is a complete list of all pytest features which are considered "
+"deprecated. Using those features will issue :class:`_pytest.warning_types."
+"PytestWarning` or subclasses, which can be filtered using :ref:`standard "
+"warning filters <warnings>`."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:25
+msgid "``\"message\"`` parameter of ``pytest.raises``"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:29
+msgid ""
+"It is a common mistake to think this parameter will match the exception "
+"message, while in fact it only serves to provide a custom message in case "
+"the ``pytest.raises`` check fails. To prevent users from making this "
+"mistake, and because it is believed to be little used, pytest is deprecating "
+"it without providing an alternative for the moment."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:34
+msgid ""
+"If you have a valid use case for this parameter, consider that to obtain the "
+"same results you can just call ``pytest.fail`` manually at the end of the "
+"``with`` statement."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:37 ../../../doc/en/deprecations.rst:362
+msgid "For example:"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:39
+msgid ""
+"with pytest.raises(TimeoutError, message=\"Client got unexpected "
+"message\"):\n"
+"    wait_for(websocket.recv(), 0.5)"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:45 ../../../doc/en/deprecations.rst:88
+#: ../../../doc/en/deprecations.rst:233 ../../../doc/en/deprecations.rst:297
+msgid "Becomes:"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:47
+msgid ""
+"with pytest.raises(TimeoutError):\n"
+"    wait_for(websocket.recv(), 0.5)\n"
+"    pytest.fail(\"Client got unexpected message\")"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:54
+msgid ""
+"If you still have concerns about this deprecation and future removal, please "
+"comment on `issue #3974 <https://github.com/pytest-dev/pytest/"
+"issues/3974>`__."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:59
+msgid "``pytest.config`` global"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:63
+msgid ""
+"The ``pytest.config`` global object is deprecated.  Instead use ``request."
+"config`` (via the ``request`` fixture) or if you are a plugin author use the "
+"``pytest_configure(config)`` hook. Note that many hooks can also access the "
+"``config`` object indirectly, through ``session.config`` or ``item.config`` "
+"for example."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:71
+msgid "``raises`` / ``warns`` with a string as the second argument"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:75
+msgid ""
+"Use the context manager form of these instead.  When necessary, invoke "
+"``exec`` directly."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:78 ../../../doc/en/deprecations.rst:225
+#: ../../../doc/en/deprecations.rst:248
+msgid "Example:"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:80
+msgid ""
+"pytest.raises(ZeroDivisionError, \"1 / 0\")\n"
+"pytest.raises(SyntaxError, \"a $ b\")\n"
+"\n"
+"pytest.warns(DeprecationWarning, \"my_function()\")\n"
+"pytest.warns(SyntaxWarning, \"assert(1, 2)\")"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:90
+msgid ""
+"with pytest.raises(ZeroDivisionError):\n"
+"    1 / 0\n"
+"with pytest.raises(SyntaxError):\n"
+"    exec(\"a $ b\")  # exec is required for invalid syntax\n"
+"\n"
+"with pytest.warns(DeprecationWarning):\n"
+"    my_function()\n"
+"with pytest.warns(SyntaxWarning):\n"
+"    exec(\"assert(1, 2)\")  # exec is used to avoid a top-level warning"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:108
+msgid "Result log (``--result-log``)"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:112
+msgid ""
+"The ``--resultlog`` command line option has been deprecated: it is little "
+"used and there are more modern and better alternatives, for example `pytest-"
+"tap <https://tappy.readthedocs.io/en/latest/>`_."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:115
+msgid ""
+"This feature will be effectively removed in pytest 4.0 as the team intends "
+"to include a better alternative in the core."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:117
+msgid ""
+"If you have any concerns, please don't hesitate to `open an issue <https://"
+"github.com/pytest-dev/pytest/issues>`__."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:120
+msgid "Removed Features"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:122
+msgid ""
+"As stated in our :ref:`backwards-compatibility` policy, deprecated features "
+"are removed only in major releases after an appropriate period of "
+"deprecation has passed."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:126
+msgid "Using ``Class`` in custom Collectors"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:130
+msgid ""
+"Using objects named ``\"Class\"`` as a way to customize the type of nodes "
+"that are collected in ``Collector`` subclasses has been deprecated. Users "
+"instead should use ``pytest_pycollect_makeitem`` to customize node types "
+"during collection."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:134
+msgid ""
+"This issue should affect only advanced plugins who create new collection "
+"types, so if you see this warning message please contact the authors so they "
+"can change the code."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:139
+msgid "marks in ``pytest.mark.parametrize``"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:143
+msgid ""
+"Applying marks to values of a ``pytest.mark.parametrize`` call is now "
+"deprecated. For example:"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:145
+msgid ""
+"@pytest.mark.parametrize(\n"
+"    \"a, b\",\n"
+"    [\n"
+"        (3, 9),\n"
+"        pytest.mark.xfail(reason=\"flaky\")(6, 36),\n"
+"        (10, 100),\n"
+"        (20, 200),\n"
+"        (40, 400),\n"
+"        (50, 500),\n"
+"    ],\n"
+")\n"
+"def test_foo(a, b):\n"
+"    ..."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:161
+msgid ""
+"This code applies the ``pytest.mark.xfail(reason=\"flaky\")`` mark to the "
+"``(6, 36)`` value of the above parametrization call."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:164
+msgid ""
+"This was considered hard to read and understand, and also its implementation "
+"presented problems to the code preventing further internal improvements in "
+"the marks architecture."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:167
+msgid "To update the code, use ``pytest.param``:"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:169
+msgid ""
+"@pytest.mark.parametrize(\n"
+"    \"a, b\",\n"
+"    [\n"
+"        (3, 9),\n"
+"        pytest.param(6, 36, marks=pytest.mark.xfail(reason=\"flaky\")),\n"
+"        (10, 100),\n"
+"        (20, 200),\n"
+"        (40, 400),\n"
+"        (50, 500),\n"
+"    ],\n"
+")\n"
+"def test_foo(a, b):\n"
+"    ..."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:187
+msgid "``pytest_funcarg__`` prefix"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:191
+msgid ""
+"In very early pytest versions fixtures could be defined using the "
+"``pytest_funcarg__`` prefix:"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:193
+msgid ""
+"def pytest_funcarg__data():\n"
+"    return SomeData()"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:198
+msgid "Switch over to the ``@pytest.fixture`` decorator:"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:200
+msgid ""
+"@pytest.fixture\n"
+"def data():\n"
+"    return SomeData()"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:209
+msgid "[pytest] section in setup.cfg files"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:213
+msgid ""
+"``[pytest]`` sections in ``setup.cfg`` files should now be named ``[tool:"
+"pytest]`` to avoid conflicts with other distutils commands."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:218
+msgid "Metafunc.addcall"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:222
+msgid ""
+":meth:`_pytest.python.Metafunc.addcall` was a precursor to the current "
+"parametrized mechanism. Users should use :meth:`_pytest.python.Metafunc."
+"parametrize` instead."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:227
+msgid ""
+"def pytest_generate_tests(metafunc):\n"
+"    metafunc.addcall({\"i\": 1}, id=\"1\")\n"
+"    metafunc.addcall({\"i\": 2}, id=\"2\")"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:235
+msgid ""
+"def pytest_generate_tests(metafunc):\n"
+"    metafunc.parametrize(\"i\", [1, 2], ids=[\"1\", \"2\"])"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:242
+msgid "``cached_setup``"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:246
+msgid ""
+"``request.cached_setup`` was the precursor of the setup/teardown mechanism "
+"available to fixtures."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:250
+msgid ""
+"@pytest.fixture\n"
+"def db_session():\n"
+"    return request.cached_setup(\n"
+"        setup=Session.create, teardown=lambda session: session.close(), "
+"scope=\"module\"\n"
+"    )"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:258
+msgid "This should be updated to make use of standard fixture mechanisms:"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:260
+msgid ""
+"@pytest.fixture(scope=\"module\")\n"
+"def db_session():\n"
+"    session = Session.create()\n"
+"    yield session\n"
+"    session.close()"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:269
+msgid ""
+"You can consult `funcarg comparison section in the docs <https://docs.pytest."
+"org/en/latest/funcarg_compare.html>`_ for more information."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:274
+msgid "pytest_plugins in non-top-level conftest files"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:278
+msgid ""
+"Defining ``pytest_plugins`` is now deprecated in non-top-level conftest.py "
+"files because they will activate referenced plugins *globally*, which is "
+"surprising because for all other pytest features ``conftest.py`` files are "
+"only *active* for tests at or below it."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:284
+msgid "``Config.warn`` and ``Node.warn``"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:288
+msgid ""
+"Those methods were part of the internal pytest warnings system, but since "
+"``3.8`` pytest is using the builtin warning system for its own warnings, so "
+"those two functions are now deprecated."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:291
+msgid ""
+"``Config.warn`` should be replaced by calls to the standard ``warnings."
+"warn``, example:"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:293
+msgid "config.warn(\"C1\", \"some warning\")"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:299
+msgid "warnings.warn(pytest.PytestWarning(\"some warning\"))"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:303
+msgid "``Node.warn`` now supports two signatures:"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:305
+msgid ""
+"``node.warn(PytestWarning(\"some message\"))``: is now the **recommended** "
+"way to call this function. The warning instance must be a PytestWarning or "
+"subclass."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:308
+msgid ""
+"``node.warn(\"CI\", \"some message\")``: this code/message form has been "
+"**removed** and should be converted to the warning instance form above."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:311
+msgid "record_xml_property"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:315
+msgid ""
+"The ``record_xml_property`` fixture is now deprecated in favor of the more "
+"generic ``record_property``, which can be used by other consumers (for "
+"example ``pytest-html``) to obtain custom information about the test run."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:318
+msgid "This is just a matter of renaming the fixture as the API is the same:"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:320
+msgid ""
+"def test_foo(record_xml_property):\n"
+"    ..."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:325
+msgid "Change to:"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:327
+msgid ""
+"def test_foo(record_property):\n"
+"    ..."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:334
+msgid "Passing command-line string to ``pytest.main()``"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:338
+msgid "Passing a command-line string to ``pytest.main()`` is deprecated:"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:340
+msgid "pytest.main(\"-v -s\")"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:344
+msgid "Pass a list instead:"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:346
+msgid "pytest.main([\"-v\", \"-s\"])"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:351
+msgid ""
+"By passing a string, users expect that pytest will interpret that command-"
+"line using the shell rules they are working on (for example ``bash`` or "
+"``Powershell``), but this is very hard/impossible to do in a portable way."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:356
+msgid "Calling fixtures directly"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:360
+msgid ""
+"Calling a fixture function directly, as opposed to request them in a test "
+"function, is deprecated."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:364
+msgid ""
+"@pytest.fixture\n"
+"def cell():\n"
+"    return ...\n"
+"\n"
+"\n"
+"@pytest.fixture\n"
+"def full_cell():\n"
+"    cell = cell()\n"
+"    cell.make_full()\n"
+"    return cell"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:377
+msgid ""
+"This is a great source of confusion to new users, which will often call the "
+"fixture functions and request them from test functions interchangeably, "
+"which breaks the fixture resolution model."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:379
+msgid ""
+"In those cases just request the function directly in the dependent fixture:"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:381
+msgid ""
+"@pytest.fixture\n"
+"def cell():\n"
+"    return ...\n"
+"\n"
+"\n"
+"@pytest.fixture\n"
+"def full_cell(cell):\n"
+"    cell.make_full()\n"
+"    return cell"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:393
+msgid ""
+"Alternatively if the fixture function is called multiple times inside a test "
+"(making it hard to apply the above pattern) or if you would like to make "
+"minimal changes to the code, you can create a fixture which calls the "
+"original function together with the ``name`` parameter:"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:397
+msgid ""
+"def cell():\n"
+"    return ...\n"
+"\n"
+"\n"
+"@pytest.fixture(name=\"cell\")\n"
+"def cell_fixture():\n"
+"    return cell()"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:409
+msgid "``yield`` tests"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:413
+msgid ""
+"pytest supported ``yield``-style tests, where a test function actually "
+"``yield`` functions and values that are then turned into proper test "
+"methods. Example:"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:416
+msgid ""
+"def check(x, y):\n"
+"    assert x ** x == y\n"
+"\n"
+"\n"
+"def test_squared():\n"
+"    yield check, 2, 4\n"
+"    yield check, 3, 9"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:426
+msgid "This would result into two actual test functions being generated."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:428
+msgid ""
+"This form of test function doesn't support fixtures properly, and users "
+"should switch to ``pytest.mark.parametrize``:"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:430
+msgid ""
+"@pytest.mark.parametrize(\"x, y\", [(2, 4), (3, 9)])\n"
+"def test_squared(x, y):\n"
+"    assert x ** x == y"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:437
+msgid "Internal classes accessed through ``Node``"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:441
+msgid ""
+"Access of ``Module``, ``Function``, ``Class``, ``Instance``, ``File`` and "
+"``Item`` through ``Node`` instances now issue this warning::"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:444
+msgid ""
+"usage of Function.Module is deprecated, please use pytest.Module instead"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:446
+msgid ""
+"Users should just ``import pytest`` and access those objects using the "
+"``pytest`` module."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:448
+msgid ""
+"This has been documented as deprecated for years, but only now we are "
+"actually emitting deprecation warnings."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:451
+msgid "``Node.get_marker``"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:455
+msgid ""
+"As part of a large :ref:`marker-revamp`, :meth:`_pytest.nodes.Node."
+"get_marker` is deprecated. See :ref:`the documentation <update marker code>` "
+"on tips on how to update your code."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:460
+msgid "``somefunction.markname``"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:464
+msgid ""
+"As part of a large :ref:`marker-revamp` we already deprecated using "
+"``MarkInfo`` the only correct way to get markers of an element is via ``node."
+"iter_markers(name)``."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:469
+msgid "``pytest_namespace``"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:473
+msgid ""
+"This hook is deprecated because it greatly complicates the pytest internals "
+"regarding configuration and initialization, making some bug fixes and "
+"refactorings impossible."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:476
+msgid "Example of usage:"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:478
+msgid ""
+"class MySymbol:\n"
+"    ...\n"
+"\n"
+"\n"
+"def pytest_namespace():\n"
+"    return {\"my_symbol\": MySymbol()}"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:488
+msgid ""
+"Plugin authors relying on this hook should instead require that users now "
+"import the plugin modules directly (with an appropriate public API)."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:490
+msgid ""
+"As a stopgap measure, plugin authors may still inject their names into "
+"pytest's namespace, usually during ``pytest_configure``:"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:492
+msgid ""
+"import pytest\n"
+"\n"
+"\n"
+"def pytest_configure():\n"
+"    pytest.my_symbol = MySymbol()"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:504
+msgid "Reinterpretation mode (``--assert=reinterp``)"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:508
+msgid ""
+"Reinterpretation mode has now been removed and only plain and rewrite mode "
+"are available, consequently the ``--assert=reinterp`` option is no longer "
+"available.  This also means files imported from plugins or ``conftest.py`` "
+"will not benefit from improved assertions by default, you should use "
+"``pytest.register_assert_rewrite()`` to explicitly turn on assertion "
+"rewriting for those files."
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:516
+msgid "Removed command-line options"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:520
+msgid "The following deprecated commandline options were removed:"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:522
+msgid "``--genscript``: no longer supported;"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:523
+msgid "``--no-assert``: use ``--assert=plain`` instead;"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:524
+msgid "``--nomagic``: use ``--assert=plain`` instead;"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:525
+msgid "``--report``: use ``-r`` instead;"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:528
+msgid "py.test-X* entry points"
+msgstr ""
+
+#: ../../../doc/en/deprecations.rst:532
+msgid ""
+"Removed all ``py.test-X*`` entry points. The versioned, suffixed entry "
+"points were never documented and a leftover from a pre-virtualenv era. These "
+"entry points also created broken entry points in wheels, so removing them "
+"also removes a source of confusion for users."
+msgstr ""
