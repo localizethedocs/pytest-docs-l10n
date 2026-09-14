@@ -1,0 +1,1066 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015–2020, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/writing_plugins.rst:5
+msgid "Writing plugins"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:7
+msgid ""
+"It is easy to implement `local conftest plugins`_ for your own project or "
+"`pip-installable plugins`_ that can be used throughout many projects, "
+"including third party projects.  Please refer to :ref:`using plugins` if you "
+"only want to use but not write plugins."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:12
+msgid ""
+"A plugin contains one or multiple hook functions. :ref:`Writing hooks "
+"<writinghooks>` explains the basics and details of how you can write a hook "
+"function yourself. ``pytest`` implements all aspects of configuration, "
+"collection, running and reporting by calling :ref:`well specified hooks "
+"<hook-reference>` of the following plugins:"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:17
+msgid "builtin plugins: loaded from pytest's internal ``_pytest`` directory."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:19
+msgid ""
+":ref:`external plugins <extplugins>`: modules discovered through `setuptools "
+"entry points`_"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:22
+msgid "`conftest.py plugins`_: modules auto-discovered in test directories"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:24
+msgid ""
+"In principle, each hook call is a ``1:N`` Python function call where ``N`` "
+"is the number of registered implementation functions for a given "
+"specification. All specifications and implementations follow the ``pytest_`` "
+"prefix naming convention, making them easy to distinguish and find."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:32
+msgid "Plugin discovery order at tool startup"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:34
+msgid "``pytest`` loads plugin modules at tool startup in the following way:"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:36
+msgid "by loading all builtin plugins"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:38
+msgid "by loading all plugins registered through `setuptools entry points`_."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:40
+msgid ""
+"by pre-scanning the command line for the ``-p name`` option and loading the "
+"specified plugin before actual command line parsing."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:43
+msgid ""
+"by loading all :file:`conftest.py` files as inferred by the command line "
+"invocation:"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:46
+msgid "if no test paths are specified use current dir as a test path"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:47
+msgid ""
+"if exists, load ``conftest.py`` and ``test*/conftest.py`` relative to the "
+"directory part of the first test path."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:50
+msgid ""
+"Note that pytest does not find ``conftest.py`` files in deeper nested sub "
+"directories at tool startup.  It is usually a good idea to keep your "
+"``conftest.py`` file in the top level test or project root directory."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:54
+msgid ""
+"by recursively loading all plugins specified by the ``pytest_plugins`` "
+"variable in ``conftest.py`` files"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:64
+msgid "conftest.py: local per-directory plugins"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:66
+msgid ""
+"Local ``conftest.py`` plugins contain directory-specific hook "
+"implementations.  Hook Session and test running activities will invoke all "
+"hooks defined in ``conftest.py`` files closer to the root of the "
+"filesystem.  Example of implementing the ``pytest_runtest_setup`` hook so "
+"that is called for tests in the ``a`` sub directory but not for other "
+"directories::"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:73
+msgid ""
+"a/conftest.py:\n"
+"    def pytest_runtest_setup(item):\n"
+"        # called for running each test in 'a' directory\n"
+"        print(\"setting up\", item)\n"
+"\n"
+"a/test_sub.py:\n"
+"    def test_sub():\n"
+"        pass\n"
+"\n"
+"test_flat.py:\n"
+"    def test_flat():\n"
+"        pass"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:86
+msgid "Here is how you might run it::"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:88
+msgid ""
+"pytest test_flat.py --capture=no  # will not show \"setting up\"\n"
+"pytest a/test_sub.py --capture=no  # will show \"setting up\""
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:92
+msgid ""
+"If you have ``conftest.py`` files which do not reside in a python package "
+"directory (i.e. one containing an ``__init__.py``) then \"import conftest\" "
+"can be ambiguous because there might be other ``conftest.py`` files as well "
+"on your ``PYTHONPATH`` or ``sys.path``. It is thus good practice for "
+"projects to either put ``conftest.py`` under a package scope or to never "
+"import anything from a ``conftest.py`` file."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:100
+msgid "See also: :ref:`pythonpath`."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:104
+msgid "Writing your own plugin"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:108
+msgid ""
+"If you want to write a plugin, there are many real-life examples you can "
+"copy from:"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:111
+msgid "a custom collection example plugin: :ref:`yaml plugin`"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:112
+msgid "builtin plugins which provide pytest's own functionality"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:113
+msgid ""
+"many `external plugins <http://plugincompat.herokuapp.com>`_ providing "
+"additional features"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:115
+msgid ""
+"All of these plugins implement :ref:`hooks <hook-reference>` and/or :ref:"
+"`fixtures <fixture>` to extend and add functionality."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:119
+msgid ""
+"Make sure to check out the excellent `cookiecutter-pytest-plugin <https://"
+"github.com/pytest-dev/cookiecutter-pytest-plugin>`_ project, which is a "
+"`cookiecutter template <https://github.com/audreyr/cookiecutter>`_ for "
+"authoring plugins."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:124
+msgid ""
+"The template provides an excellent starting point with a working plugin, "
+"tests running with tox, a comprehensive README file as well as a pre-"
+"configured entry-point."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:128
+msgid ""
+"Also consider :ref:`contributing your plugin to pytest-dev<submitplugin>` "
+"once it has some happy users other than yourself."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:136
+msgid "Making your plugin installable by others"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:138
+msgid ""
+"If you want to make your plugin externally available, you may define a so-"
+"called entry point for your distribution so that ``pytest`` finds your "
+"plugin module.  Entry points are a feature that is provided by "
+"`setuptools`_. pytest looks up the ``pytest11`` entrypoint to discover its "
+"plugins and you can thus make your plugin available by defining it in your "
+"setuptools-invocation:"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:146
+msgid ""
+"# sample ./setup.py file\n"
+"from setuptools import setup\n"
+"\n"
+"setup(\n"
+"    name=\"myproject\",\n"
+"    packages=[\"myproject\"],\n"
+"    # the following makes a plugin available to pytest\n"
+"    entry_points={\"pytest11\": [\"name_of_plugin = myproject."
+"pluginmodule\"]},\n"
+"    # custom PyPI classifier for pytest plugins\n"
+"    classifiers=[\"Framework :: Pytest\"],\n"
+")"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:160
+msgid ""
+"If a package is installed this way, ``pytest`` will load ``myproject."
+"pluginmodule`` as a plugin which can define :ref:`hooks <hook-reference>`."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:166
+msgid ""
+"Make sure to include ``Framework :: Pytest`` in your list of `PyPI "
+"classifiers <https://pypi.org/classifiers/>`_ to make it easy for users to "
+"find your plugin."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:174
+msgid "Assertion Rewriting"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:176
+msgid ""
+"One of the main features of ``pytest`` is the use of plain assert statements "
+"and the detailed introspection of expressions upon assertion failures.  This "
+"is provided by \"assertion rewriting\" which modifies the parsed AST before "
+"it gets compiled to bytecode.  This is done via a :pep:`302` import hook "
+"which gets installed early on when ``pytest`` starts up and will perform "
+"this rewriting when modules get imported.  However, since we do not want to "
+"test different bytecode from what you will run in production, this hook only "
+"rewrites test modules themselves (as defined by the :confval:`python_files` "
+"configuration option), and any modules which are part of plugins. Any other "
+"imported module will not be rewritten and normal assertion behaviour will "
+"happen."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:189
+msgid ""
+"If you have assertion helpers in other modules where you would need "
+"assertion rewriting to be enabled you need to ask ``pytest`` explicitly to "
+"rewrite this module before it gets imported."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/assertion/__init__.py:docstring
+#: of _pytest.assertion.register_assert_rewrite:1
+msgid "Register one or more module names to be rewritten on import."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/assertion/__init__.py:docstring
+#: of _pytest.assertion.register_assert_rewrite:3
+msgid ""
+"This function will make sure that this module or all modules inside the "
+"package will get their assert statements rewritten. Thus you should make "
+"sure to call this before the module is actually imported, usually in your "
+"__init__.py if you are a plugin using a package."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/assertion/__init__.py:docstring
+#: of _pytest.assertion.register_assert_rewrite:0
+msgid "Raises"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/assertion/__init__.py:docstring
+#: of _pytest.assertion.register_assert_rewrite:9
+msgid "if the given module names are not strings."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:196
+msgid ""
+"This is especially important when you write a pytest plugin which is created "
+"using a package.  The import hook only treats ``conftest.py`` files and any "
+"modules which are listed in the ``pytest11`` entrypoint as plugins.  As an "
+"example consider the following package::"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:201
+msgid ""
+"pytest_foo/__init__.py\n"
+"pytest_foo/plugin.py\n"
+"pytest_foo/helper.py"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:205
+msgid "With the following typical ``setup.py`` extract:"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:207
+msgid ""
+"setup(..., entry_points={\"pytest11\": [\"foo = pytest_foo.plugin\"]}, ...)"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:211
+msgid ""
+"In this case only ``pytest_foo/plugin.py`` will be rewritten.  If the helper "
+"module also contains assert statements which need to be rewritten it needs "
+"to be marked as such, before it gets imported. This is easiest by marking it "
+"for rewriting inside the ``__init__.py`` module, which will always be "
+"imported first when a module inside a package is imported.  This way "
+"``plugin.py`` can still import ``helper.py`` normally.  The contents of "
+"``pytest_foo/__init__.py`` will then need to look like this:"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:220
+msgid ""
+"import pytest\n"
+"\n"
+"pytest.register_assert_rewrite(\"pytest_foo.helper\")"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:228
+msgid "Requiring/Loading plugins in a test module or conftest file"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:230
+msgid ""
+"You can require plugins in a test module or a ``conftest.py`` file like this:"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:232
+msgid "pytest_plugins = [\"name1\", \"name2\"]"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:236
+msgid ""
+"When the test module or conftest plugin is loaded the specified plugins will "
+"be loaded as well. Any module can be blessed as a plugin, including internal "
+"application modules:"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:240
+msgid "pytest_plugins = \"myapp.testsupport.myplugin\""
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:244
+msgid ""
+"``pytest_plugins`` variables are processed recursively, so note that in the "
+"example above if ``myapp.testsupport.myplugin`` also declares "
+"``pytest_plugins``, the contents of the variable will also be loaded as "
+"plugins, and so on."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:251
+msgid ""
+"Requiring plugins using a ``pytest_plugins`` variable in non-root ``conftest."
+"py`` files is deprecated."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:254
+msgid ""
+"This is important because ``conftest.py`` files implement per-directory hook "
+"implementations, but once a plugin is imported, it will affect the entire "
+"directory tree. In order to avoid confusion, defining ``pytest_plugins`` in "
+"any ``conftest.py`` file which is not located in the tests root directory is "
+"deprecated, and will raise a warning."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:260
+msgid ""
+"This mechanism makes it easy to share fixtures within applications or even "
+"external applications without the need to create external plugins using the "
+"``setuptools``'s entry point technique."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:264
+msgid ""
+"Plugins imported by ``pytest_plugins`` will also automatically be marked for "
+"assertion rewriting (see :func:`pytest.register_assert_rewrite`). However "
+"for this to have any effect the module must not be imported already; if it "
+"was already imported at the time the ``pytest_plugins`` statement is "
+"processed, a warning will result and assertions inside the plugin will not "
+"be rewritten.  To fix this you can either call :func:`pytest."
+"register_assert_rewrite` yourself before the module is imported, or you can "
+"arrange the code to delay the importing until after the plugin is registered."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:276
+msgid "Accessing another plugin by name"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:278
+msgid ""
+"If a plugin wants to collaborate with code from another plugin it can obtain "
+"a reference through the plugin manager like this:"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:282
+msgid "plugin = config.pluginmanager.get_plugin(\"name_of_plugin\")"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:286
+msgid ""
+"If you want to look at the names of existing plugins, use the ``--trace-"
+"config`` option."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:293
+msgid "Registering custom markers"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:295
+msgid ""
+"If your plugin uses any markers, you should register them so that they "
+"appear in pytest's help text and do not :ref:`cause spurious warnings "
+"<unknown-marks>`. For example, the following plugin would register "
+"``cool_marker`` and ``mark_with`` for all users:"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:300
+msgid ""
+"def pytest_configure(config):\n"
+"    config.addinivalue_line(\"markers\", \"cool_marker: this one is for cool "
+"tests.\")\n"
+"    config.addinivalue_line(\n"
+"        \"markers\", \"mark_with(arg, arg2): this marker takes arguments.\"\n"
+"    )"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:310
+msgid "Testing plugins"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:312
+msgid ""
+"pytest comes with a plugin named ``pytester`` that helps you write tests for "
+"your plugin code. The plugin is disabled by default, so you will have to "
+"enable it before you can use it."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:316
+msgid ""
+"You can do so by adding the following line to a ``conftest.py`` file in your "
+"testing directory:"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:319
+msgid ""
+"# content of conftest.py\n"
+"\n"
+"pytest_plugins = [\"pytester\"]"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:325
+msgid ""
+"Alternatively you can invoke pytest with the ``-p pytester`` command line "
+"option."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:328
+msgid ""
+"This will allow you to use the :py:class:`testdir <_pytest.pytester."
+"Testdir>` fixture for testing your plugin code."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:331
+msgid ""
+"Let's demonstrate what you can do with the plugin with an example. Imagine "
+"we developed a plugin that provides a fixture ``hello`` which yields a "
+"function and we can invoke this function with one optional parameter. It "
+"will return a string value of ``Hello World!`` if we do not supply a value "
+"or ``Hello {value}!`` if we do supply a string value."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:337
+msgid ""
+"import pytest\n"
+"\n"
+"\n"
+"def pytest_addoption(parser):\n"
+"    group = parser.getgroup(\"helloworld\")\n"
+"    group.addoption(\n"
+"        \"--name\",\n"
+"        action=\"store\",\n"
+"        dest=\"name\",\n"
+"        default=\"World\",\n"
+"        help='Default \"name\" for hello().',\n"
+"    )\n"
+"\n"
+"\n"
+"@pytest.fixture\n"
+"def hello(request):\n"
+"    name = request.config.getoption(\"name\")\n"
+"\n"
+"    def _hello(name=None):\n"
+"        if not name:\n"
+"            name = request.config.getoption(\"name\")\n"
+"        return \"Hello {name}!\".format(name=name)\n"
+"\n"
+"    return _hello"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:365
+msgid ""
+"Now the ``testdir`` fixture provides a convenient API for creating temporary "
+"``conftest.py`` files and test files. It also allows us to run the tests and "
+"return a result object, with which we can assert the tests' outcomes."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:369
+msgid ""
+"def test_hello(testdir):\n"
+"    \"\"\"Make sure that our plugin works.\"\"\"\n"
+"\n"
+"    # create a temporary conftest.py file\n"
+"    testdir.makeconftest(\n"
+"        \"\"\"\n"
+"        import pytest\n"
+"\n"
+"        @pytest.fixture(params=[\n"
+"            \"Brianna\",\n"
+"            \"Andreas\",\n"
+"            \"Floris\",\n"
+"        ])\n"
+"        def name(request):\n"
+"            return request.param\n"
+"    \"\"\"\n"
+"    )\n"
+"\n"
+"    # create a temporary pytest test file\n"
+"    testdir.makepyfile(\n"
+"        \"\"\"\n"
+"        def test_hello_default(hello):\n"
+"            assert hello() == \"Hello World!\"\n"
+"\n"
+"        def test_hello_name(hello, name):\n"
+"            assert hello(name) == \"Hello {0}!\".format(name)\n"
+"    \"\"\"\n"
+"    )\n"
+"\n"
+"    # run all tests with pytest\n"
+"    result = testdir.runpytest()\n"
+"\n"
+"    # check that all 4 tests passed\n"
+"    result.assert_outcomes(passed=4)"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:407
+msgid ""
+"additionally it is possible to copy examples for an example folder before "
+"running pytest on it"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:409
+msgid ""
+"# content of pytest.ini\n"
+"[pytest]\n"
+"pytester_example_dir = ."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:416
+msgid ""
+"# content of test_example.py\n"
+"\n"
+"\n"
+"def test_plugin(testdir):\n"
+"    testdir.copy_example(\"test_example.py\")\n"
+"    testdir.runpytest(\"-k\", \"test_example\")\n"
+"\n"
+"\n"
+"def test_example():\n"
+"    pass"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:429
+msgid ""
+"$ pytest\n"
+"=========================== test session starts "
+"============================\n"
+"platform linux -- Python 3.x.y, pytest-5.x.y, py-1.x.y, pluggy-0.x.y\n"
+"cachedir: $PYTHON_PREFIX/.pytest_cache\n"
+"rootdir: $REGENDOC_TMPDIR, inifile: pytest.ini\n"
+"collected 2 items\n"
+"\n"
+"test_example.py ..                                                   [100%]\n"
+"\n"
+"============================= warnings summary "
+"=============================\n"
+"test_example.py::test_plugin\n"
+"  $REGENDOC_TMPDIR/test_example.py:4: PytestExperimentalApiWarning: testdir."
+"copy_example is an experimental api that may change over time\n"
+"    testdir.copy_example(\"test_example.py\")\n"
+"\n"
+"test_example.py::test_plugin\n"
+"  $PYTHON_PREFIX/lib/python3.8/site-packages/_pytest/compat.py:333: "
+"PytestDeprecationWarning: The TerminalReporter.writer attribute is "
+"deprecated, use TerminalReporter._tw instead at your own risk.\n"
+"  See https://docs.pytest.org/en/latest/deprecations.html#terminalreporter-"
+"writer for more information.\n"
+"    return getattr(object, name, default)\n"
+"\n"
+"-- Docs: https://docs.pytest.org/en/latest/warnings.html\n"
+"====================== 2 passed, 2 warnings in 0.12s ======================="
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:453
+msgid ""
+"For more information about the result object that ``runpytest()`` returns, "
+"and the methods that it provides please check out the :py:class:`RunResult "
+"<_pytest.pytester.RunResult>` documentation."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:463
+msgid "Writing hook functions"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:469
+msgid "hook function validation and execution"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:471
+msgid ""
+"pytest calls hook functions from registered plugins for any given hook "
+"specification.  Let's look at a typical hook function for the "
+"``pytest_collection_modifyitems(session, config, items)`` hook which pytest "
+"calls after collection of all test items is completed."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:477
+msgid ""
+"When we implement a ``pytest_collection_modifyitems`` function in our plugin "
+"pytest will during registration verify that you use argument names which "
+"match the specification and bail out if not."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:481
+msgid "Let's look at a possible implementation:"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:483
+msgid ""
+"def pytest_collection_modifyitems(config, items):\n"
+"    # called after collection is completed\n"
+"    # you can modify the ``items`` list\n"
+"    ..."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:490
+msgid ""
+"Here, ``pytest`` will pass in ``config`` (the pytest config object) and "
+"``items`` (the list of collected test items) but will not pass in the "
+"``session`` argument because we didn't list it in the function signature.  "
+"This dynamic \"pruning\" of arguments allows ``pytest`` to be \"future-"
+"compatible\": we can introduce new hook named parameters without breaking "
+"the signatures of existing hook implementations.  It is one of the reasons "
+"for the general long-lived compatibility of pytest plugins."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:498
+msgid ""
+"Note that hook functions other than ``pytest_runtest_*`` are not allowed to "
+"raise exceptions.  Doing so will break the pytest run."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:506
+msgid "firstresult: stop at first non-None result"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:508
+msgid ""
+"Most calls to ``pytest`` hooks result in a **list of results** which "
+"contains all non-None results of the called hook functions."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:511
+msgid ""
+"Some hook specifications use the ``firstresult=True`` option so that the "
+"hook call only executes until the first of N registered functions returns a "
+"non-None result which is then taken as result of the overall hook call. The "
+"remaining hook functions will not be called in this case."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:518
+msgid "hookwrapper: executing around other hooks"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:524
+msgid ""
+"pytest plugins can implement hook wrappers which wrap the execution of other "
+"hook implementations.  A hook wrapper is a generator function which yields "
+"exactly once. When pytest invokes hooks it first executes hook wrappers and "
+"passes the same arguments as to the regular hooks."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:529
+msgid ""
+"At the yield point of the hook wrapper pytest will execute the next hook "
+"implementations and return their result to the yield point in the form of a :"
+"py:class:`Result <pluggy._Result>` instance which encapsulates a result or "
+"exception info.  The yield point itself will thus typically not raise "
+"exceptions (unless there are bugs)."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:535
+msgid "Here is an example definition of a hook wrapper:"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:537
+msgid ""
+"import pytest\n"
+"\n"
+"\n"
+"@pytest.hookimpl(hookwrapper=True)\n"
+"def pytest_pyfunc_call(pyfuncitem):\n"
+"    do_something_before_next_hook_executes()\n"
+"\n"
+"    outcome = yield\n"
+"    # outcome.excinfo may be None or a (cls, val, tb) tuple\n"
+"\n"
+"    res = outcome.get_result()  # will raise if outcome was exception\n"
+"\n"
+"    post_process_result(res)\n"
+"\n"
+"    outcome.force_result(new_res)  # to override the return value to the "
+"plugin system"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:555
+msgid ""
+"Note that hook wrappers don't return results themselves, they merely perform "
+"tracing or other side effects around the actual hook implementations. If the "
+"result of the underlying hook is a mutable object, they may modify that "
+"result but it's probably better to avoid it."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:560
+msgid ""
+"For more information, consult the `pluggy documentation <http://pluggy."
+"readthedocs.io/en/latest/#wrappers>`_."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:564
+msgid "Hook function ordering / call example"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:566
+msgid ""
+"For any given hook specification there may be more than one implementation "
+"and we thus generally view ``hook`` execution as a ``1:N`` function call "
+"where ``N`` is the number of registered functions. There are ways to "
+"influence if a hook implementation comes before or after others, i.e.  the "
+"position in the ``N``-sized list of functions:"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:572
+msgid ""
+"# Plugin 1\n"
+"@pytest.hookimpl(tryfirst=True)\n"
+"def pytest_collection_modifyitems(items):\n"
+"    # will execute as early as possible\n"
+"    ...\n"
+"\n"
+"\n"
+"# Plugin 2\n"
+"@pytest.hookimpl(trylast=True)\n"
+"def pytest_collection_modifyitems(items):\n"
+"    # will execute as late as possible\n"
+"    ...\n"
+"\n"
+"\n"
+"# Plugin 3\n"
+"@pytest.hookimpl(hookwrapper=True)\n"
+"def pytest_collection_modifyitems(items):\n"
+"    # will execute even before the tryfirst one above!\n"
+"    outcome = yield\n"
+"    # will execute after all non-hookwrappers executed"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:595
+msgid "Here is the order of execution:"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:597
+msgid ""
+"Plugin3's pytest_collection_modifyitems called until the yield point because "
+"it is a hook wrapper."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:600
+msgid ""
+"Plugin1's pytest_collection_modifyitems is called because it is marked with "
+"``tryfirst=True``."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:603
+msgid ""
+"Plugin2's pytest_collection_modifyitems is called because it is marked with "
+"``trylast=True`` (but even without this mark it would come after Plugin1)."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:607
+msgid ""
+"Plugin3's pytest_collection_modifyitems then executing the code after the "
+"yield point.  The yield receives a :py:class:`Result <pluggy._Result>` "
+"instance which encapsulates the result from calling the non-wrappers.  "
+"Wrappers shall not modify the result."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:611
+msgid ""
+"It's possible to use ``tryfirst`` and ``trylast`` also in conjunction with "
+"``hookwrapper=True`` in which case it will influence the ordering of "
+"hookwrappers among each other."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:617
+msgid "Declaring new hooks"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:621
+msgid ""
+"Plugins and ``conftest.py`` files may declare new hooks that can then be "
+"implemented by other plugins in order to alter behaviour or interact with "
+"the new plugin:"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_addhooks:1
+msgid ""
+"called at plugin registration time to allow adding new hooks via a call to "
+"``pluginmanager.add_hookspecs(module_or_class, prefix)``."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_addhooks:0
+msgid "Parameters"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_addhooks:5
+msgid "pytest plugin manager"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
+#: of _pytest.hookspec.pytest_addhooks:8
+msgid "This hook is incompatible with ``hookwrapper=True``."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:628
+msgid ""
+"Hooks are usually declared as do-nothing functions that contain only "
+"documentation describing when the hook will be called and what return values "
+"are expected. The names of the functions must start with `pytest_` otherwise "
+"pytest won't recognize them."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:632
+msgid ""
+"Here's an example. Let's assume this code is in the ``hooks.py`` module."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:634
+msgid ""
+"def pytest_my_hook(config):\n"
+"    \"\"\"\n"
+"    Receives the pytest config and does things with it\n"
+"    \"\"\""
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:641
+msgid ""
+"To register the hooks with pytest they need to be structured in their own "
+"module or class. This class or module can then be passed to the "
+"``pluginmanager`` using the ``pytest_addhooks`` function (which itself is a "
+"hook exposed by pytest)."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:645
+msgid ""
+"def pytest_addhooks(pluginmanager):\n"
+"    \"\"\" This example assumes the hooks are grouped in the 'hooks' module. "
+"\"\"\"\n"
+"    from my_app.tests import hooks\n"
+"\n"
+"    pluginmanager.add_hookspecs(hooks)"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:653
+msgid ""
+"For a real world example, see `newhooks.py`_ from `xdist <https://github.com/"
+"pytest-dev/pytest-xdist>`_."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:657
+msgid ""
+"Hooks may be called both from fixtures or from other hooks. In both cases, "
+"hooks are called through the ``hook`` object, available in the ``config`` "
+"object. Most hooks receive a ``config`` object directly, while fixtures may "
+"use the ``pytestconfig`` fixture which provides the same object."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:661
+msgid ""
+"@pytest.fixture()\n"
+"def my_fixture(pytestconfig):\n"
+"    # call the hook called \"pytest_my_hook\"\n"
+"    # 'result' will be a list of return values from all registered "
+"functions.\n"
+"    result = pytestconfig.hook.pytest_my_hook(config=pytestconfig)"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:670
+msgid "Hooks receive parameters using only keyword arguments."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:672
+msgid ""
+"Now your hook is ready to be used. To register a function at the hook, other "
+"plugins or users must now simply define the function ``pytest_my_hook`` with "
+"the correct signature in their ``conftest.py``."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:675
+msgid "Example:"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:677
+msgid ""
+"def pytest_my_hook(config):\n"
+"    \"\"\"\n"
+"    Print all active hooks to the screen.\n"
+"    \"\"\"\n"
+"    print(config.hook)"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:690
+msgid "Using hooks in pytest_addoption"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:692
+msgid ""
+"Occasionally, it is necessary to change the way in which command line "
+"options are defined by one plugin based on hooks in another plugin. For "
+"example, a plugin may expose a command line option for which another plugin "
+"needs to define the default value. The pluginmanager can be used to install "
+"and use hooks to accomplish this. The plugin would define and add the hooks "
+"and use pytest_addoption as follows:"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:699
+msgid ""
+"# contents of hooks.py\n"
+"\n"
+"# Use firstresult=True because we only want one plugin to define this\n"
+"# default value\n"
+"@hookspec(firstresult=True)\n"
+"def pytest_config_file_default_value():\n"
+"    \"\"\" Return the default value for the config file command line option. "
+"\"\"\"\n"
+"\n"
+"\n"
+"# contents of myplugin.py\n"
+"\n"
+"\n"
+"def pytest_addhooks(pluginmanager):\n"
+"    \"\"\" This example assumes the hooks are grouped in the 'hooks' module. "
+"\"\"\"\n"
+"    from . import hook\n"
+"\n"
+"    pluginmanager.add_hookspecs(hook)\n"
+"\n"
+"\n"
+"def pytest_addoption(parser, pluginmanager):\n"
+"    default_value = pluginmanager.hook.pytest_config_file_default_value()\n"
+"    parser.addoption(\n"
+"        \"--config-file\",\n"
+"        help=\"Config file to use, defaults to %(default)s\",\n"
+"        default=default_value,\n"
+"    )"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:728
+msgid ""
+"The conftest.py that is using myplugin would simply define the hook as "
+"follows:"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:730
+msgid ""
+"def pytest_config_file_default_value():\n"
+"    return \"config.yaml\""
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:737
+msgid "Optionally using hooks from 3rd party plugins"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:739
+msgid ""
+"Using new hooks from plugins as explained above might be a little tricky "
+"because of the standard :ref:`validation mechanism <validation>`: if you "
+"depend on a plugin that is not installed, validation will fail and the error "
+"message will not make much sense to your users."
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:744
+msgid ""
+"One approach is to defer the hook implementation to a new plugin instead of "
+"declaring the hook functions directly in your plugin module, for example:"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:747
+msgid ""
+"# contents of myplugin.py\n"
+"\n"
+"\n"
+"class DeferPlugin:\n"
+"    \"\"\"Simple plugin to defer pytest-xdist hook functions.\"\"\"\n"
+"\n"
+"    def pytest_testnodedown(self, node, error):\n"
+"        \"\"\"standard xdist hook function.\n"
+"        \"\"\"\n"
+"\n"
+"\n"
+"def pytest_configure(config):\n"
+"    if config.pluginmanager.hasplugin(\"xdist\"):\n"
+"        config.pluginmanager.register(DeferPlugin())"
+msgstr ""
+
+#: ../../../doc/en/writing_plugins.rst:764
+msgid ""
+"This has the added benefit of allowing you to conditionally install hooks "
+"depending on which plugins are installed."
+msgstr ""
