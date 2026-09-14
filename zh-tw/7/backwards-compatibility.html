@@ -1,0 +1,229 @@
+
+
+
+<!DOCTYPE html>
+
+<html lang="zh-TW">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>向後相容性方針 &#8212; pytest documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/flask.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments_pytest.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/translations.js"></script>
+    <script data-project="pytest" data-version="7" src="_static/describe_version.js"></script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/pytest-docs-l10n/backwards-compatibility.html" />
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+    <link rel="search" title="搜尋" href="search.html" />
+    <link rel="next" title="Deprecations and Removals" href="deprecations.html" />
+    <link rel="prev" title="Working with non-python tests" href="example/nonpython.html" />
+
+  <script>DOCUMENTATION_OPTIONS.URL_ROOT = '';</script>
+   
+<script type="text/javascript" src="ltd-provenance.js"></script>
+<script type="text/javascript" src="ltd-current.js"></script>
+<script type="text/javascript" src="../../ltd-config.js"></script>
+<script type="text/javascript" src="../../ltd-flyout.js"></script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>瀏覽</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="py-modindex.html" title="Python 模組索引"
+             >模組</a></li>
+        <li class="right" >
+          <a href="deprecations.html" title="Deprecations and Removals"
+             accesskey="N">下一頁</a> |</li>
+        <li class="right" >
+          <a href="example/nonpython.html" title="Working with non-python tests"
+             accesskey="P">上一頁</a> |</li>
+        <li class="nav-item nav-item-0"><a href="contents.html">pytest-7.4</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">向後相容性方針</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="backwards-compatibility-policy">
+<span id="backwards-compatibility"></span><h1>向後相容性方針<a class="headerlink" href="#backwards-compatibility-policy" title="本標頭的永久連結">¶</a></h1>
+<p>pytest is actively evolving and is a project that has been decades in the making,
+we keep learning about new and better structures to express different details about testing.</p>
+<p>While we implement those modifications we try to ensure an easy transition and don’t want to impose unnecessary churn on our users and community/plugin authors.</p>
+<p>As of now, pytest considers multiple types of backward compatibility transitions:</p>
+<ol class="loweralpha">
+<li><p>trivial: APIs which trivially translate to the new mechanism,
+and do not cause problematic changes.</p>
+<p>We try to support those indefinitely while encouraging users to switch to newer/better mechanisms through documentation.</p>
+</li>
+<li><p>transitional: the old and new API don’t conflict
+and we can help users transition by using warnings, while supporting both for a prolonged time.</p>
+<p>We will only start the removal of deprecated functionality in major releases (e.g. if we deprecate something in 3.0 we will start to remove it in 4.0), and keep it around for at least two minor releases (e.g. if we deprecate something in 3.9 and 4.0 is the next release, we start to remove it in 5.0, not in 4.0).</p>
+<p>A deprecated feature scheduled to be removed in major version X will use the warning class <code class="docutils literal notranslate"><span class="pre">PytestRemovedInXWarning</span></code> (a subclass of <code class="xref py py-class docutils literal notranslate"><span class="pre">PytestDeprecationwarning</span></code>).</p>
+<p>When the deprecation expires (e.g. 4.0 is released), we won’t remove the deprecated functionality immediately, but will use the standard warning filters to turn <code class="docutils literal notranslate"><span class="pre">PytestRemovedInXWarning</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">PytestRemovedIn4Warning</span></code>) into <strong>errors</strong> by default. This approach makes it explicit that removal is imminent, and still gives you time to turn the deprecated feature into a warning instead of an error so it can be dealt with in your own time. In the next minor release (e.g. 4.1), the feature will be effectively removed.</p>
+</li>
+<li><p>true breakage: should only be considered when normal transition is unreasonably unsustainable and would offset important development/features by years.
+In addition, they should be limited to APIs where the number of actual users is very small (for example only impacting some plugins), and can be coordinated with the community in advance.</p>
+<p>Examples for such upcoming changes:</p>
+<ul class="simple">
+<li><p>removal of <code class="docutils literal notranslate"><span class="pre">pytest_runtest_protocol/nextitem</span></code> - <a class="reference external" href="https://github.com/pytest-dev/pytest/issues/895">issue #895</a></p></li>
+<li><p>rearranging of the node tree to include <code class="docutils literal notranslate"><span class="pre">FunctionDefinition</span></code></p></li>
+<li><p>rearranging of <code class="docutils literal notranslate"><span class="pre">SetupState</span></code> <a class="reference external" href="https://github.com/pytest-dev/pytest/issues/895">issue #895</a></p></li>
+</ul>
+<p>True breakages must be announced first in an issue containing:</p>
+<ul class="simple">
+<li><p>Detailed description of the change</p></li>
+<li><p>Rationale</p></li>
+<li><p>Expected impact on users and plugin authors (example in <a class="reference external" href="https://github.com/pytest-dev/pytest/issues/895">issue #895</a>)</p></li>
+</ul>
+<p>After there’s no hard <em>-1</em> on the issue it should be followed up by an initial proof-of-concept Pull Request.</p>
+<p>This POC serves as both a coordination point to assess impact and potential inspiration to come up with a transitional solution after all.</p>
+<p>After a reasonable amount of time the PR can be merged to base a new major release.</p>
+<p>For the PR to mature from POC to acceptance, it must contain:
+* Setup of deprecation errors/warnings that help users fix and port their code. If it is possible to introduce a deprecation period under the current series, before the true breakage, it should be introduced in a separate PR and be part of the current release stream.
+* Detailed description of the rationale and examples on how to port code in <code class="docutils literal notranslate"><span class="pre">doc/en/deprecations.rst</span></code>.</p>
+</li>
+</ol>
+</section>
+<section id="history">
+<h1>History<a class="headerlink" href="#history" title="本標頭的永久連結">¶</a></h1>
+<section id="focus-primary-on-smooth-transition-stance-pre-6-0">
+<h2>Focus primary on smooth transition - stance (pre 6.0)<a class="headerlink" href="#focus-primary-on-smooth-transition-stance-pre-6-0" title="本標頭的永久連結">¶</a></h2>
+<p>在 pytest 專案中，保持向後相容性具有極高的優先級。雖然多年來我們棄用了一些功能，但其中大部分目前仍受支援。pytest 中所有的棄用措施，都是因為出現了更簡單或更有效率的方法來完成相同的任務，使得舊有的做法變得不再必要。</p>
+<p>With the pytest 3.0 release we introduced a clear communication scheme for when we will actually remove the old busted joint and politely ask you to use the new hotness instead, while giving you enough time to adjust your tests or raise concerns if there are valid reasons to keep deprecated functionality around.</p>
+<p>To communicate changes we issue deprecation warnings using a custom warning hierarchy (see <a class="reference internal" href="how-to/capture-warnings.html#internal-warnings"><span class="std std-ref">Internal pytest warnings</span></a>). These warnings may be suppressed using the standard means: <code class="docutils literal notranslate"><span class="pre">-W</span></code> command-line flag or <code class="docutils literal notranslate"><span class="pre">filterwarnings</span></code> ini options (see <a class="reference internal" href="how-to/capture-warnings.html#warnings"><span class="std std-ref">How to capture warnings</span></a>), but we suggest to use these sparingly and temporarily, and heed the warnings when possible.</p>
+<p>We will only start the removal of deprecated functionality in major releases (e.g. if we deprecate something in 3.0 we will start to remove it in 4.0), and keep it around for at least two minor releases (e.g. if we deprecate something in 3.9 and 4.0 is the next release, we start to remove it in 5.0, not in 4.0).</p>
+<p>When the deprecation expires (e.g. 4.0 is released), we won’t remove the deprecated functionality immediately, but will use the standard warning filters to turn them into <strong>errors</strong> by default. This approach makes it explicit that removal is imminent, and still gives you time to turn the deprecated feature into a warning instead of an error so it can be dealt with in your own time. In the next minor release (e.g. 4.1), the feature will be effectively removed.</p>
+<section id="deprecation-roadmap">
+<h3>棄用路線圖<a class="headerlink" href="#deprecation-roadmap" title="本標頭的永久連結">¶</a></h3>
+<p>Features currently deprecated and removed in previous releases can be found in <a class="reference internal" href="deprecations.html#deprecations"><span class="std std-ref">Deprecations and Removals</span></a>.</p>
+<p>We track future deprecation and removal of features using milestones and the <a class="reference external" href="https://github.com/pytest-dev/pytest/issues?q=label%3A%22type%3A+deprecation%22">deprecation</a> and <a class="reference external" href="https://github.com/pytest-dev/pytest/labels/type%3A%20removal">removal</a> labels on GitHub.</p>
+</section>
+</section>
+</section>
+<section id="python-version-support">
+<h1>Python 版本支援<a class="headerlink" href="#python-version-support" title="本標頭的永久連結">¶</a></h1>
+<p>發行的 pytest 版本支援在發行時所有仍處於主動維護狀態的 Python 版本：</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>pytest 版本</p></th>
+<th class="head"><p>最低 Python 版本</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>7.1+</p></td>
+<td><p>3.7+</p></td>
+</tr>
+<tr class="row-odd"><td><p>6.2 - 7.0</p></td>
+<td><p>3.6+</p></td>
+</tr>
+<tr class="row-even"><td><p>5.0 - 6.1</p></td>
+<td><p>3.5+</p></td>
+</tr>
+<tr class="row-odd"><td><p>3.3 - 4.6</p></td>
+<td><p>2.7, 3.4+</p></td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference external" href="https://devguide.python.org/versions/">Python 版本的狀態</a>。</p>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+  <span id="sidebar-top"></span>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  
+    
+            <p class="logo"><a href="contents.html">
+              <img class="logo" src="_static/pytest_logo_curves.svg" alt="Logo"/>
+            </a></p>
+  
+
+<div id="searchbox" style="display: none" role="search">
+  <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel"
+        placeholder="Search"/>
+      <input type="submit" value="前往" />
+    </form>
+  </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><h3>內容</h3>
+
+<ul>
+  <li><a href="index.html">Home</a></li>
+
+  <li><a href="getting-started.html">Get started</a></li>
+  <li><a href="how-to/index.html">How-to guides</a></li>
+  <li><a href="reference/index.html">Reference guides</a></li>
+  <li><a href="explanation/index.html">Explanation</a></li>
+  <li><a href="contents.html">Complete table of contents</a></li>
+  <li><a href="example/index.html">Library of examples</a></li>
+</ul>
+
+<h3>About the project</h3>
+
+<ul>
+  <li><a href="changelog.html">Changelog</a></li>
+  <li><a href="contributing.html">Contributing</a></li>
+  <li><a href="#">Backwards Compatibility</a></li>
+  <li><a href="sponsor.html">Sponsor</a></li>
+  <li><a href="tidelift.html">pytest for Enterprise</a></li>
+  <li><a href="license.html">License</a></li>
+  <li><a href="contact.html">Contact Channels</a></li>
+</ul>
+  <hr>
+  <ul>
+<li><a class="reference internal" href="#">向後相容性方針</a></li>
+<li><a class="reference internal" href="#history">History</a><ul>
+<li><a class="reference internal" href="#focus-primary-on-smooth-transition-stance-pre-6-0">Focus primary on smooth transition - stance (pre 6.0)</a><ul>
+<li><a class="reference internal" href="#deprecation-roadmap">棄用路線圖</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#python-version-support">Python 版本支援</a></li>
+</ul>
+
+
+<hr><h3>Related Topics</h3>
+<ul>
+  <li><a href="contents.html">Documentation overview</a><ul>
+      <li>Previous: <a href="example/nonpython.html" title="上一章">Working with non-python tests</a></li>
+      <li>Next: <a href="deprecations.html" title="下一章">Deprecations and Removals</a></li>
+  </ul></li>
+</ul><h3>Useful Links</h3>
+<ul>
+  <li><a href="https://pypi.org/project/pytest/">pytest @ PyPI</a></li>
+  <li><a href="https://github.com/pytest-dev/pytest/">pytest @ GitHub</a></li>
+  <li><a href="https://github.com/pytest-dev/pytest/issues">議題追蹤器</a></li>
+  <li><a href="https://media.readthedocs.org/pdf/pytest/latest/pytest.pdf">PDF 文件</a></li>
+</ul>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  
+    <div class="footer" role="contentinfo">
+        &#169; 版權所有 2015, holger krekel and pytest-dev team。
+      使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0 建立。
+    </div>
+  <script src="_static/version_warning_offset.js"></script>
+
+  </body>
+</html>
