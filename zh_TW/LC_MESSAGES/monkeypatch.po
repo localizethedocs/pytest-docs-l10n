@@ -1,0 +1,132 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015–2018 , holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/monkeypatch.rst:3
+msgid "Monkeypatching/mocking modules and environments"
+msgstr ""
+
+#: ../../../doc/en/monkeypatch.rst:7
+msgid ""
+"Sometimes tests need to invoke functionality which depends on global "
+"settings or which invokes code which cannot be easily tested such as network "
+"access.  The ``monkeypatch`` fixture helps you to safely set/delete an "
+"attribute, dictionary item or environment variable or to modify ``sys.path`` "
+"for importing. See the `monkeypatch blog post`_ for some introduction "
+"material and a discussion of its motivation."
+msgstr ""
+
+#: ../../../doc/en/monkeypatch.rst:19
+msgid "Simple example: monkeypatching functions"
+msgstr ""
+
+#: ../../../doc/en/monkeypatch.rst:21
+msgid ""
+"If you want to pretend that ``os.expanduser`` returns a certain directory, "
+"you can use the :py:meth:`monkeypatch.setattr` method to patch this function "
+"before calling into a function which uses it::"
+msgstr ""
+
+#: ../../../doc/en/monkeypatch.rst:25
+msgid ""
+"# content of test_module.py\n"
+"import os.path\n"
+"def getssh(): # pseudo application code\n"
+"    return os.path.join(os.path.expanduser(\"~admin\"), '.ssh')\n"
+"\n"
+"def test_mytest(monkeypatch):\n"
+"    def mockreturn(path):\n"
+"        return '/abc'\n"
+"    monkeypatch.setattr(os.path, 'expanduser', mockreturn)\n"
+"    x = getssh()\n"
+"    assert x == '/abc/.ssh'"
+msgstr ""
+
+#: ../../../doc/en/monkeypatch.rst:37
+msgid ""
+"Here our test function monkeypatches ``os.path.expanduser`` and then calls "
+"into a function that calls it.  After the test function finishes the ``os."
+"path.expanduser`` modification will be undone."
+msgstr ""
+
+#: ../../../doc/en/monkeypatch.rst:42
+msgid "example: preventing \"requests\" from remote operations"
+msgstr ""
+
+#: ../../../doc/en/monkeypatch.rst:44
+msgid ""
+"If you want to prevent the \"requests\" library from performing http "
+"requests in all your tests, you can do::"
+msgstr ""
+
+#: ../../../doc/en/monkeypatch.rst:47
+msgid ""
+"# content of conftest.py\n"
+"import pytest\n"
+"@pytest.fixture(autouse=True)\n"
+"def no_requests(monkeypatch):\n"
+"    monkeypatch.delattr(\"requests.sessions.Session.request\")"
+msgstr ""
+
+#: ../../../doc/en/monkeypatch.rst:53
+msgid ""
+"This autouse fixture will be executed for each test function and it will "
+"delete the method ``request.session.Session.request`` so that any attempts "
+"within tests to create http requests will fail."
+msgstr ""
+
+#: ../../../doc/en/monkeypatch.rst:60
+msgid ""
+"Be advised that it is not recommended to patch builtin functions such as "
+"``open``, ``compile``, etc., because it might break pytest's internals. If "
+"that's unavoidable, passing ``--tb=native``, ``--assert=plain`` and ``--"
+"capture=no`` might help although there's no guarantee."
+msgstr ""
+
+#: ../../../doc/en/monkeypatch.rst:67
+msgid ""
+"Mind that patching ``stdlib`` functions and some third-party libraries used "
+"by pytest might break pytest itself, therefore in those cases it is "
+"recommended to use :meth:`MonkeyPatch.context` to limit the patching to the "
+"block you want tested:"
+msgstr ""
+
+#: ../../../doc/en/monkeypatch.rst:71
+msgid ""
+"import functools\n"
+"\n"
+"\n"
+"def test_partial(monkeypatch):\n"
+"    with monkeypatch.context() as m:\n"
+"        m.setattr(functools, \"partial\", 3)\n"
+"        assert functools.partial == 3"
+msgstr ""
+
+#: ../../../doc/en/monkeypatch.rst:81
+msgid ""
+"See issue `#3290 <https://github.com/pytest-dev/pytest/issues/3290>`_ for "
+"details."
+msgstr ""
+
+#: ../../../doc/en/monkeypatch.rst:87
+msgid "API Reference"
+msgstr "API 參考"
+
+#: ../../../doc/en/monkeypatch.rst:89
+msgid "Consult the docs for the :class:`MonkeyPatch` class."
+msgstr ""
