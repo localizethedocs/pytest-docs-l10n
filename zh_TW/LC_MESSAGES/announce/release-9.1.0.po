@@ -1,0 +1,356 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-06 11:54+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/announce/release-9.1.0.rst:2
+msgid "pytest-9.1.0"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:4
+msgid "The pytest team is proud to announce the 9.1.0 release!"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:6
+msgid ""
+"This release contains new features, improvements, and bug fixes, the full "
+"list of changes is available in the changelog:"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:9
+msgid "https://docs.pytest.org/en/stable/changelog.html"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:11
+msgid "For complete documentation, please visit:"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:13
+msgid "https://docs.pytest.org/en/stable/"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:15
+msgid "As usual, you can upgrade from PyPI via:"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:17
+msgid "pip install -U pytest"
+msgstr "pip install -U pytest"
+
+#: ../../../doc/en/announce/release-9.1.0.rst:19
+msgid "Thanks to all of the contributors to this release:"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:21
+msgid "1Utkarsh1"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:22
+msgid "Aditya Giri"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:23
+msgid "Alejandro Villate"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:24
+msgid "Alex Waygood"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:25
+msgid "Anton Zhilin"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:26
+msgid "Antonis Gardi"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:27
+msgid "Bruno Oliveira"
+msgstr "Bruno Oliveira"
+
+#: ../../../doc/en/announce/release-9.1.0.rst:28
+msgid "Bubble-Interface"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:29
+msgid "Charles-Meldhine Madi Mnemoi"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:30
+msgid "DavidAG"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:31
+msgid "Denis Cherednichenko"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:32
+msgid "DetachHead"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:33
+msgid "Dhruva Kumar"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:34
+msgid "Dr Alex Mitre"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:35
+msgid "EternalRights"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:36
+msgid "Fazeel Usmani"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:37
+msgid "Florian Bruhin"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:38
+msgid "Freya Bruhin"
+msgstr "Freya Bruhin"
+
+#: ../../../doc/en/announce/release-9.1.0.rst:39
+msgid "Fridayworks"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:40
+msgid "Garion Milazzo"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:41
+msgid "Hamza Mobeen"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:42
+msgid "Hugo van Kemenade"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:43
+msgid "Ilya Manafi"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:44
+msgid "John Litborn"
+msgstr "John Litborn"
+
+#: ../../../doc/en/announce/release-9.1.0.rst:45
+msgid "Julia Knaak"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:46
+msgid "Junhao Liao"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:47
+msgid "Kadir Can Ozden"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:48
+msgid "Lai Jia Yang"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:49
+msgid "Liam DeVoe"
+msgstr "Liam DeVoe"
+
+#: ../../../doc/en/announce/release-9.1.0.rst:50
+msgid "Lily Wu"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:51
+msgid "Marco Edward Gorelli"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:52
+msgid "Maxime Grenu"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:53
+msgid "Mike Fiedler"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:54
+msgid "Mikhail Golikov"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:55
+msgid "Mukunda Rao Katta"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:56
+msgid "NIYONSHUTI Emmanuel"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:57
+msgid "Nikesh Chavhan"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:58
+msgid "Noa Levi"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:59
+msgid "Paul Zuradzki"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:60
+msgid "Philipp A."
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:61
+msgid "Pierre Sassoulas"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:62
+msgid "Praneeth Kodumagulla"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:63
+msgid "Puneet Dixit"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:64
+msgid "Ran Benita"
+msgstr "Ran Benita"
+
+#: ../../../doc/en/announce/release-9.1.0.rst:65
+msgid "Randy Döring"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:66
+msgid "Ronald Eddy Jr"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:67
+msgid "Ronny Pfannschmidt"
+msgstr "Ronny Pfannschmidt"
+
+#: ../../../doc/en/announce/release-9.1.0.rst:68
+msgid "Samuel Newbold"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:69
+msgid "Stanis Trendelenburg"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:70
+msgid "Sviatoslav Sydorenko"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:71
+msgid "Sylvain MARIE"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:72
+msgid "Syncrain"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:73
+msgid "Sóla Lusøt"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:74
+msgid "Tejas Verma"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:75
+msgid "Tobias Deiminger"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:76
+msgid "Tom Most"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:77
+msgid "V1SHAL421"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:78
+msgid "Varun Chawla"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:79
+msgid "Vladimir"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:80
+msgid "Warren"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:81
+msgid "Will Toohey"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:82
+msgid "Yast"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:83
+msgid "Yusuke Kadowaki"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:84
+msgid "arya rizky"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:85
+msgid "dariomesic"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:86
+msgid "isra17"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:87
+msgid "jakkdl"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:88
+msgid "jiayang lai"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:89
+msgid "jxramos"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:90
+msgid "minbang930"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:91
+msgid "morning-verlu"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:92
+msgid "ron"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:93
+msgid "사재혁"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:94
+msgid "🇺🇦 Sviatoslav Sydorenko (Святослав Сидоренко)"
+msgstr ""
+
+#: ../../../doc/en/announce/release-9.1.0.rst:97
+msgid "Happy testing, The pytest Development Team"
+msgstr ""
