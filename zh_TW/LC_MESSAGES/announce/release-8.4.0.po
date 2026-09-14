@@ -1,0 +1,388 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-23 08:43+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/announce/release-8.4.0.rst:2
+msgid "pytest-8.4.0"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:4
+msgid "The pytest team is proud to announce the 8.4.0 release!"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:6
+msgid ""
+"This release contains new features, improvements, and bug fixes, the full "
+"list of changes is available in the changelog:"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:9
+msgid "https://docs.pytest.org/en/stable/changelog.html"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:11
+msgid "For complete documentation, please visit:"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:13
+msgid "https://docs.pytest.org/en/stable/"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:15
+msgid "As usual, you can upgrade from PyPI via:"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:17
+msgid "pip install -U pytest"
+msgstr "pip install -U pytest"
+
+#: ../../../doc/en/announce/release-8.4.0.rst:19
+msgid "Thanks to all of the contributors to this release:"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:21
+msgid "Adam Johnson"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:22
+msgid "Ammar Askar"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:23
+msgid "Andrew Pikul"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:24
+msgid "Andy Freeland"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:25
+msgid "Anthony Sottile"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:26
+msgid "Anton Zhilin"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:27
+msgid "Arpit Gupta"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:28
+msgid "Ashley Whetter"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:29
+msgid "Avasam"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:30
+msgid "Bahram Farahmand"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:31
+msgid "Brigitta Sipőcz"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:32
+msgid "Bruno Oliveira"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:33
+msgid "Callum Scott"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:34
+msgid "Christian Clauss"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:35
+msgid "Christopher Head"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:36
+msgid "Daara"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:37
+msgid "Daniel Miller"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:38
+msgid "Deysha Rivera"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:39
+msgid "Emil Hjelm"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:40
+msgid "Eugene Mwangi"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:41
+msgid "Freya Bruhin"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:42
+msgid "Frank Hoffmann"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:43
+msgid "GTowers1"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:44
+msgid "Guillaume Gauvrit"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:45
+msgid "Gupta Arpit"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:46
+msgid "Harmin Parra Rueda"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:47
+msgid "Jakob van Santen"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:48
+msgid "Jason N. White"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:49
+msgid "Jiajun Xu"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:50
+msgid "John Litborn"
+msgstr "John Litborn"
+
+#: ../../../doc/en/announce/release-8.4.0.rst:51
+msgid "Julian Valentin"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:52
+msgid "JulianJvn"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:53
+msgid "Kenny Y"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:54
+msgid "Leonardus Chen"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:55
+msgid "Marcelo Duarte Trevisani"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:56
+msgid "Marcin Augustynów"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:57
+msgid "Natalia Mokeeva"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:58
+msgid "Nathan Rousseau"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:59
+msgid "Nauman Ahmed"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:60
+msgid "Nick Murphy"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:61
+msgid "Oleksandr Zavertniev"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:62
+msgid "Pavel Zhukov"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:63
+msgid "Peter Gessler"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:64
+msgid "Pierre Sassoulas"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:65
+msgid "Pradeep Kumar"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:66
+msgid "Ran Benita"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:67
+msgid "Reagan Lee"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:68
+msgid "Rob Arrow"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:69
+msgid "Ronny Pfannschmidt"
+msgstr "Ronny Pfannschmidt"
+
+#: ../../../doc/en/announce/release-8.4.0.rst:70
+msgid "Sadra Barikbin"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:71
+msgid "Sam Bull"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:72
+msgid "Samuel Bronson"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:73
+msgid "Sashko"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:74
+msgid "Serge Smertin"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:75
+msgid "Shaygan Hooshyari"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:76
+msgid "Stefaan Lippens"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:77
+msgid "Stefan Zimmermann"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:78
+msgid "Stephen McDowell"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:79
+msgid "Sviatoslav Sydorenko"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:80
+msgid "Sviatoslav Sydorenko (Святослав Сидоренко)"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:81
+msgid "Thomas Grainger"
+msgstr "Thomas Grainger"
+
+#: ../../../doc/en/announce/release-8.4.0.rst:82
+msgid "TobiMcNamobi"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:83
+msgid "Tobias Alex-Petersen"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:84
+msgid "Tony Narlock"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:85
+msgid "Vincent (Wen Yu) Ge"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:86
+msgid "Virendra Patil"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:87
+msgid "Will Riley"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:88
+msgid "Yann Dirson"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:89
+msgid "Zac Hatfield-Dodds"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:90
+msgid "delta87"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:91
+msgid "dongfangtianyu"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:92
+msgid "eitanwass"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:93
+msgid "fazeelghafoor"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:94
+msgid "ikappaki"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:95
+msgid "jakkdl"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:96
+msgid "maugu"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:97
+msgid "moajo"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:98
+msgid "mwychung"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:99
+msgid "polkapolka"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:100
+msgid "suspe"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:101
+msgid "sven"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:102
+msgid "🇺🇦 Sviatoslav Sydorenko (Святослав Сидоренко)"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.4.0.rst:105
+msgid "Happy testing, The pytest Development Team"
+msgstr ""
