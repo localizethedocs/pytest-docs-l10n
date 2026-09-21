@@ -1,0 +1,151 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/yieldfixture.rst:4
+msgid "Fixture functions using \"yield\" / context manager integration"
+msgstr ""
+
+#: ../../../doc/en/yieldfixture.rst:10
+msgid ""
+"pytest-2.4 allows fixture functions to seamlessly use a ``yield`` instead of "
+"a ``return`` statement to provide a fixture value while otherwise fully "
+"supporting all other fixture features."
+msgstr ""
+
+#: ../../../doc/en/yieldfixture.rst:14
+msgid "Let's look at a simple standalone-example using the ``yield`` syntax::"
+msgstr ""
+
+#: ../../../doc/en/yieldfixture.rst:16
+msgid ""
+"# content of test_yield.py\n"
+"\n"
+"import pytest\n"
+"\n"
+"@pytest.yield_fixture\n"
+"def passwd():\n"
+"    print (\"\\nsetup before yield\")\n"
+"    f = open(\"/etc/passwd\")\n"
+"    yield f.readlines()\n"
+"    print (\"teardown after yield\")\n"
+"    f.close()\n"
+"\n"
+"def test_has_lines(passwd):\n"
+"    print (\"test called\")\n"
+"    assert passwd"
+msgstr ""
+
+#: ../../../doc/en/yieldfixture.rst:32
+msgid ""
+"In contrast to :ref:`finalization through registering callbacks "
+"<finalization>`, our fixture function used a ``yield`` statement to provide "
+"the lines of the ``/etc/passwd`` file. The code after the ``yield`` "
+"statement serves as the teardown code, avoiding the indirection of "
+"registering a teardown callback function."
+msgstr ""
+
+#: ../../../doc/en/yieldfixture.rst:38
+msgid "Let's run it with output capturing disabled::"
+msgstr ""
+
+#: ../../../doc/en/yieldfixture.rst:40
+msgid ""
+"$ py.test -q -s test_yield.py\n"
+"\n"
+"setup before yield\n"
+"test called\n"
+".teardown after yield\n"
+"\n"
+"1 passed in 0.12 seconds"
+msgstr ""
+
+#: ../../../doc/en/yieldfixture.rst:48
+msgid ""
+"We can also seamlessly use the new syntax with ``with`` statements. Let's "
+"simplify the above ``passwd`` fixture::"
+msgstr ""
+
+#: ../../../doc/en/yieldfixture.rst:51
+msgid ""
+"# content of test_yield2.py\n"
+"\n"
+"import pytest\n"
+"\n"
+"@pytest.yield_fixture\n"
+"def passwd():\n"
+"    with open(\"/etc/passwd\") as f:\n"
+"        yield f.readlines()\n"
+"\n"
+"def test_has_lines(passwd):\n"
+"    assert len(passwd) >= 1"
+msgstr ""
+
+#: ../../../doc/en/yieldfixture.rst:63
+msgid ""
+"The file ``f`` will be closed after the test finished execution because the "
+"Python ``file`` object supports finalization when the ``with`` statement "
+"ends."
+msgstr ""
+
+#: ../../../doc/en/yieldfixture.rst:67
+msgid ""
+"Note that the yield fixture form supports all other fixture features such as "
+"``scope``, ``params``, etc., thus changing existing fixture functions to use "
+"``yield`` is straightforward."
+msgstr ""
+
+#: ../../../doc/en/yieldfixture.rst:73
+msgid ""
+"While the ``yield`` syntax is similar to what :py:func:`contextlib."
+"contextmanager` decorated functions provide, with pytest fixture functions "
+"the part after the \"yield\" will always be invoked, independently from the "
+"exception status of the test function which uses the fixture. This behaviour "
+"makes sense if you consider that many different test functions might use a "
+"module or session scoped fixture."
+msgstr ""
+
+#: ../../../doc/en/yieldfixture.rst:83
+msgid "Discussion and future considerations / feedback"
+msgstr ""
+
+#: ../../../doc/en/yieldfixture.rst:85
+msgid "There are some topics that are worth mentioning:"
+msgstr ""
+
+#: ../../../doc/en/yieldfixture.rst:87
+msgid ""
+"usually ``yield`` is used for producing multiple values. But fixture "
+"functions can only yield exactly one value. Yielding a second fixture value "
+"will get you an error. It's possible we can evolve pytest to allow for "
+"producing multiple values as an alternative to current parametrization. For "
+"now, you can just use the normal :ref:`fixture parametrization <fixture-"
+"parametrize>` mechanisms together with ``yield``-style fixtures."
+msgstr ""
+
+#: ../../../doc/en/yieldfixture.rst:96
+msgid ""
+"lastly ``yield`` introduces more than one way to write fixture functions, so "
+"what's the obvious way to a newcomer?"
+msgstr ""
+
+#: ../../../doc/en/yieldfixture.rst:99
+msgid ""
+"If you want to feedback or participate in discussion of the above topics, "
+"please join our :ref:`contact channels`, you are most welcome."
+msgstr ""
