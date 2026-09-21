@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-23 08:43+0000\n"
+"POT-Creation-Date: 2026-09-21 14:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -188,8 +188,8 @@ msgstr ""
 #: ../../../doc/en/explanation/flaky.rst:70
 msgid ""
 "`pytest-flakefinder <https://github.com/dropbox/pytest-flakefinder>`_ - "
-"`blog post <https://blogs.dropbox.com/tech/2016/03/open-sourcing-pytest-"
-"tools/>`_"
+"`blog post <https://web.archive.org/web/20200313031602/https://blogs.dropbox."
+"com/tech/2016/03/open-sourcing-pytest-tools/>`_"
 msgstr ""
 
 #: ../../../doc/en/explanation/flaky.rst:72
@@ -206,15 +206,24 @@ msgstr ""
 msgid "`pytest-randomly <https://github.com/pytest-dev/pytest-randomly>`_"
 msgstr ""
 
+#: ../../../doc/en/explanation/flaky.rst:77
+msgid "Plugins to classify test failures as genuine or flaky:"
+msgstr ""
+
 #: ../../../doc/en/explanation/flaky.rst:79
+msgid ""
+"`pytest-flakefighters <https://github.com/test-flare/pytest-flakefighters>`_"
+msgstr ""
+
+#: ../../../doc/en/explanation/flaky.rst:83
 msgid "Other general strategies"
 msgstr ""
 
-#: ../../../doc/en/explanation/flaky.rst:82
+#: ../../../doc/en/explanation/flaky.rst:86
 msgid "Split up test suites"
 msgstr ""
 
-#: ../../../doc/en/explanation/flaky.rst:84
+#: ../../../doc/en/explanation/flaky.rst:88
 msgid ""
 "It can be common to split a single test suite into two, such as unit vs "
 "integration, and only use the unit test suite as a CI gate. This also helps "
@@ -224,11 +233,11 @@ msgid ""
 "results."
 msgstr ""
 
-#: ../../../doc/en/explanation/flaky.rst:88
+#: ../../../doc/en/explanation/flaky.rst:92
 msgid "Video/screenshot on failure"
 msgstr ""
 
-#: ../../../doc/en/explanation/flaky.rst:90
+#: ../../../doc/en/explanation/flaky.rst:94
 msgid ""
 "For UI tests these are important for understanding what the state of the UI "
 "was when the test failed. pytest-splinter can be used with plugins like "
@@ -237,32 +246,32 @@ msgid ""
 "which can help to isolate the cause."
 msgstr ""
 
-#: ../../../doc/en/explanation/flaky.rst:94
+#: ../../../doc/en/explanation/flaky.rst:98
 msgid "Delete or rewrite the test"
 msgstr ""
 
-#: ../../../doc/en/explanation/flaky.rst:96
+#: ../../../doc/en/explanation/flaky.rst:100
 msgid ""
 "If the functionality is covered by other tests, perhaps the test can be "
 "removed. If not, perhaps it can be rewritten at a lower level which will "
 "remove the flakiness or make its source more apparent."
 msgstr ""
 
-#: ../../../doc/en/explanation/flaky.rst:100
+#: ../../../doc/en/explanation/flaky.rst:104
 msgid "Quarantine"
 msgstr ""
 
-#: ../../../doc/en/explanation/flaky.rst:102
+#: ../../../doc/en/explanation/flaky.rst:106
 msgid ""
 "Mark Lapierre discusses the `Pros and Cons of Quarantined Tests <https://dev."
 "to/mlapierre/pros-and-cons-of-quarantined-tests-2emj>`_ in a post from 2018."
 msgstr ""
 
-#: ../../../doc/en/explanation/flaky.rst:107
+#: ../../../doc/en/explanation/flaky.rst:111
 msgid "CI tools that rerun on failure"
 msgstr ""
 
-#: ../../../doc/en/explanation/flaky.rst:109
+#: ../../../doc/en/explanation/flaky.rst:113
 msgid ""
 "Azure Pipelines (the Azure cloud CI/CD tool, formerly Visual Studio Team "
 "Services or VSTS) has a feature to `identify flaky tests <https://docs."
@@ -270,16 +279,16 @@ msgid ""
 "view=tfs-2017#identify-flaky-tests>`_ and rerun failed tests."
 msgstr ""
 
-#: ../../../doc/en/explanation/flaky.rst:114
+#: ../../../doc/en/explanation/flaky.rst:118
 msgid "Research"
 msgstr ""
 
-#: ../../../doc/en/explanation/flaky.rst:116
+#: ../../../doc/en/explanation/flaky.rst:120
 msgid ""
 "This is a limited list, please submit an issue or pull request to expand it!"
 msgstr ""
 
-#: ../../../doc/en/explanation/flaky.rst:118
+#: ../../../doc/en/explanation/flaky.rst:122
 msgid ""
 "Gao, Zebao, Yalan Liang, Myra B. Cohen, Atif M. Memon, and Zhen Wang. "
 "\"Making system user interactive tests repeatable: When and what should we "
@@ -288,7 +297,7 @@ msgid ""
 "www.cs.umd.edu/~atif/pubs/gao-icse15.pdf>`__"
 msgstr ""
 
-#: ../../../doc/en/explanation/flaky.rst:119
+#: ../../../doc/en/explanation/flaky.rst:123
 msgid ""
 "Palomba, Fabio, and Andy Zaidman. \"Does refactoring of test smells induce "
 "fixing flaky tests?.\" In *Software Maintenance and Evolution (ICSME), 2017 "
@@ -297,7 +306,7 @@ msgid ""
 "view>`__"
 msgstr ""
 
-#: ../../../doc/en/explanation/flaky.rst:120
+#: ../../../doc/en/explanation/flaky.rst:124
 msgid ""
 "Bell, Jonathan, Owolabi Legunsen, Michael Hilton, Lamyaa Eloussi, Tifany "
 "Yung, and Darko Marinov. \"DeFlaker: Automatically detecting flaky tests.\" "
@@ -306,7 +315,7 @@ msgid ""
 "pdf#section-Research>`__"
 msgstr ""
 
-#: ../../../doc/en/explanation/flaky.rst:121
+#: ../../../doc/en/explanation/flaky.rst:125
 msgid ""
 "Dutta, Saikat and Shi, August and Choudhary, Rutvik and Zhang, Zhekun and "
 "Jain, Aryaman and Misailovic, Sasa. \"Detecting flaky tests in probabilistic "
@@ -316,7 +325,7 @@ msgid ""
 "issta20.pdf>`__"
 msgstr ""
 
-#: ../../../doc/en/explanation/flaky.rst:122
+#: ../../../doc/en/explanation/flaky.rst:126
 msgid ""
 "Habchi, Sarra and Haben, Guillaume and Sohn, Jeongju and Franci, Adriano and "
 "Papadakis, Mike and Cordy, Maxime and Le Traon, Yves. \"What Made This Test "
@@ -325,7 +334,7 @@ msgid ""
 "Evolution (ICSME), IEEE, 2022. `PDF <https://arxiv.org/abs/2207.10143>`__"
 msgstr ""
 
-#: ../../../doc/en/explanation/flaky.rst:123
+#: ../../../doc/en/explanation/flaky.rst:127
 msgid ""
 "Lamprou, Sokrates. \"Non-deterministic tests and where to find them: "
 "Empirically investigating the relationship between flaky tests and test "
@@ -335,7 +344,7 @@ msgid ""
 "FULLTEXT01.pdf>`__"
 msgstr ""
 
-#: ../../../doc/en/explanation/flaky.rst:124
+#: ../../../doc/en/explanation/flaky.rst:128
 msgid ""
 "Leinen, Fabian and Elsner, Daniel and Pretschner, Alexander and Stahlbauer, "
 "Andreas and Sailer, Michael and Jürgens, Elmar. \"Cost of Flaky Tests in "
@@ -344,71 +353,142 @@ msgid ""
 "de/doc/1730194/1730194.pdf>`__"
 msgstr ""
 
-#: ../../../doc/en/explanation/flaky.rst:127
+#: ../../../doc/en/explanation/flaky.rst:129
+msgid ""
+"Parry, Owain and Kapfhammer, Gregory M. and Hilton, Michael and McMinn, "
+"Phil. \"A Survey of Flaky Tests.\" In *Transactions on Software Engineering "
+"and Methodology (TOSEM).* vol. 31, issue 1. ACM, 2021. `PDF <https://eprints."
+"whiterose.ac.uk/id/eprint/230095/1/parry2021.pdf>`__"
+msgstr ""
+
+#: ../../../doc/en/explanation/flaky.rst:130
+msgid ""
+"Parry, Owain and Kapfhammer, Gregory M. and Hilton, Michael and McMinn, "
+"Phil. \"Evaluating Features for Machine Learning Detection of Order- and Non-"
+"Order-Dependent Flaky Tests.\" In *2022 IEEE Conference on Software Testing, "
+"Verification and Validation (ICST)*. 2022. `PDF <https://eprints.whiterose."
+"ac.uk/id/eprint/230092/1/parry2022b.pdf>`__"
+msgstr ""
+
+#: ../../../doc/en/explanation/flaky.rst:131
+msgid ""
+"Parry, Owain and Kapfhammer, Gregory M. and Hilton, Michael and McMinn, "
+"Phil. \"What do developer-repaired Flaky tests tell us about the "
+"effectiveness of automated Flaky test detection?\" In *Proceedings of the "
+"3rd ACM/IEEE International Conference on Automation of Software Test (AST).* "
+"2022. `PDF <https://philmcminn.com/publications/parry2022.pdf>`__"
+msgstr ""
+
+#: ../../../doc/en/explanation/flaky.rst:132
+msgid ""
+"Parry, Owain and Kapfhammer, Gregory M. and Hilton, Michael and McMinn, "
+"Phil. \"Surveying the developer experience of flaky tests.\" In *Proceedings "
+"of the 44th International Conference on Software Engineering (ICSE).* 2022. "
+"`PDF <https://dl.acm.org/doi/pdf/10.1145/3510457.3513037>`__"
+msgstr ""
+
+#: ../../../doc/en/explanation/flaky.rst:133
+msgid ""
+"Parry, Owain and Kapfhammer, Gregory M. and Hilton, Michael and McMinn, "
+"Phil. \"Empirically evaluating flaky test detection techniques combining "
+"test case rerunning and machine learning models.\" In *Empirical Software "
+"Engineering*.  vol. 28, issue 3. Springer, 2023. `PDF <https://eprints."
+"whiterose.ac.uk/id/eprint/198846/1/s10664-023-10307-w.pdf>`__"
+msgstr ""
+
+#: ../../../doc/en/explanation/flaky.rst:134
+msgid ""
+"Gruber, Martin and Roslan, Muhammad Firhard and Parry, Owain and Scharnb\\"
+"\"{o}ck, Fabian and McMinn, Phil and Fraser, Gordon. \"Do Automatic Test "
+"Generation Tools Generate Flaky Tests?\" In *Proceedings of the 46th IEEE/"
+"ACM International Conference on Software Engineering (ICSE)*. 2024. `PDF "
+"<https://arxiv.org/pdf/2310.05223>`__"
+msgstr ""
+
+#: ../../../doc/en/explanation/flaky.rst:135
+msgid ""
+"Parry, Owain and Kapfhammer, Gregory and Hilton, Michael and McMinn, Phil. "
+"\"Systemic Flakiness: An Empirical Analysis of Co-Occurring Flaky Test "
+"Failures.\" In *Proceedings of the 29th International Conference on "
+"Evaluation and Assessment in Software Engineering (EASE)*. 2025. `PDF "
+"<https://arxiv.org/pdf/2504.16777>`__"
+msgstr ""
+
+#: ../../../doc/en/explanation/flaky.rst:136
+msgid ""
+"Parry, Owain and Kapfhammer, Gregory M. and Hilton, Michael and McMinn, "
+"Phil. \"Test flimsiness: Characterizing flakiness induced by mutation to the "
+"code under test.\" In *Proceedings of 2026 IEEE/ACM 48th International "
+"Conference on Software Engineering (ICSE)*. 2026. `PDF <https://eprints."
+"whiterose.ac.uk/id/eprint/236716/>`__"
+msgstr ""
+
+#: ../../../doc/en/explanation/flaky.rst:139
 msgid "Resources"
 msgstr ""
 
-#: ../../../doc/en/explanation/flaky.rst:129
+#: ../../../doc/en/explanation/flaky.rst:141
 msgid ""
 "`Eradicating Non-Determinism in Tests <https://martinfowler.com/articles/"
 "nonDeterminism.html>`_ by Martin Fowler, 2011"
 msgstr ""
 
-#: ../../../doc/en/explanation/flaky.rst:130
+#: ../../../doc/en/explanation/flaky.rst:142
 msgid ""
 "`No more flaky tests on the Go team <https://www.thoughtworks.com/insights/"
 "blog/no-more-flaky-tests-go-team>`_ by Pavan Sudarshan, 2012"
 msgstr ""
 
-#: ../../../doc/en/explanation/flaky.rst:131
+#: ../../../doc/en/explanation/flaky.rst:143
 msgid ""
 "`The Build That Cried Broken: Building Trust in your Continuous Integration "
 "Tests <https://www.youtube.com/embed/VotJqV4n8ig>`_ talk (video) by `Angie "
 "Jones <https://angiejones.tech/>`_ at SeleniumConf Austin 2017"
 msgstr ""
 
-#: ../../../doc/en/explanation/flaky.rst:132
+#: ../../../doc/en/explanation/flaky.rst:144
 msgid ""
-"`Test and Code Podcast: Flaky Tests and How to Deal with Them <https://"
-"testandcode.com/50>`_ by Brian Okken and Anthony Shaw, 2018"
+"`Test and Code Podcast: Flaky Tests and How to Deal with Them <https://web."
+"archive.org/web/20221201011103/https://testandcode.com/50>`_ by Brian Okken "
+"and Anthony Shaw, 2018"
 msgstr ""
 
-#: ../../../doc/en/explanation/flaky.rst:133
+#: ../../../doc/en/explanation/flaky.rst:145
 msgid "Microsoft:"
 msgstr ""
 
-#: ../../../doc/en/explanation/flaky.rst:135
+#: ../../../doc/en/explanation/flaky.rst:147
 msgid ""
 "`How we approach testing VSTS to enable continuous delivery <https://blogs."
 "msdn.microsoft.com/bharry/2017/06/28/testing-in-a-cloud-delivery-cadence/>`_ "
 "by Brian Harry MS, 2017"
 msgstr ""
 
-#: ../../../doc/en/explanation/flaky.rst:136
+#: ../../../doc/en/explanation/flaky.rst:148
 msgid ""
 "`Eliminating Flaky Tests <https://docs.microsoft.com/en-us/azure/devops/"
 "learn/devops-at-microsoft/eliminating-flaky-tests>`_ blog and talk (video) "
 "by Munil Shah, 2017"
 msgstr ""
 
-#: ../../../doc/en/explanation/flaky.rst:138
+#: ../../../doc/en/explanation/flaky.rst:150
 msgid "Google:"
 msgstr ""
 
-#: ../../../doc/en/explanation/flaky.rst:140
+#: ../../../doc/en/explanation/flaky.rst:152
 msgid ""
 "`Flaky Tests at Google and How We Mitigate Them <https://testing.googleblog."
 "com/2016/05/flaky-tests-at-google-and-how-we.html>`_ by John Micco, 2016"
 msgstr ""
 
-#: ../../../doc/en/explanation/flaky.rst:141
+#: ../../../doc/en/explanation/flaky.rst:153
 msgid ""
 "`Where do Google's flaky tests come from? <https://testing.googleblog."
 "com/2017/04/where-do-our-flaky-tests-come-from.html>`_  by Jeff Listfield, "
 "2017"
 msgstr ""
 
-#: ../../../doc/en/explanation/flaky.rst:143
+#: ../../../doc/en/explanation/flaky.rst:155
 msgid ""
 "Dropbox: * `Athena: Our automated build health management system <https://"
 "dropbox.tech/infrastructure/athena-our-automated-build-health-management-"
@@ -417,7 +497,7 @@ msgid ""
 "2025"
 msgstr ""
 
-#: ../../../doc/en/explanation/flaky.rst:147
+#: ../../../doc/en/explanation/flaky.rst:159
 msgid ""
 "Uber: * `Handling Flaky Unit Tests in Java <https://www.uber.com/blog/"
 "handling-flaky-tests-java/>`_ by Uber Engineering, 2021 * `Flaky Tests "

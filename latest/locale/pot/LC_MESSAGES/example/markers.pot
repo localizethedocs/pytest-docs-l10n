@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-23 08:43+0000\n"
+"POT-Creation-Date: 2026-09-21 14:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -221,23 +221,22 @@ msgid ""
 "from the output of ``pytest --collect-only``."
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:166
-msgid "Using ``-k expr`` to select tests based on their name"
+#: ../../../doc/en/example/markers.rst:168
+msgid "Using ``-k expr`` to select tests by keyword"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:170
+#: ../../../doc/en/example/markers.rst:172
 msgid ""
 "You can use the :option:`-k` command line option to specify an expression "
-"which implements a substring match on the test names instead of the exact "
-"match on markers that :option:`-m` provides.  This makes it easy to select "
-"tests based on their names:"
+"which implements a substring match on the test's *keywords*, instead of the "
+"exact match on markers that :option:`-m` provides."
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:177
+#: ../../../doc/en/example/markers.rst:178
 msgid "The expression matching is now case-insensitive."
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:179
+#: ../../../doc/en/example/markers.rst:180
 msgid ""
 "$ pytest -v -k http  # running with the above defined example module\n"
 "=========================== test session starts "
@@ -253,11 +252,11 @@ msgid ""
 "===================== 1 passed, 3 deselected in 0.12s ======================"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:192
+#: ../../../doc/en/example/markers.rst:193
 msgid "And you can also run all tests except the ones that match the keyword:"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:194
+#: ../../../doc/en/example/markers.rst:195
 msgid ""
 "$ pytest -k \"not send_http\" -v\n"
 "=========================== test session starts "
@@ -275,11 +274,11 @@ msgid ""
 "===================== 3 passed, 1 deselected in 0.12s ======================"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:209
+#: ../../../doc/en/example/markers.rst:210
 msgid "Or to select \"http\" and \"quick\" tests:"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:211
+#: ../../../doc/en/example/markers.rst:212
 msgid ""
 "$ pytest -k \"http or quick\" -v\n"
 "=========================== test session starts "
@@ -296,28 +295,77 @@ msgid ""
 "===================== 2 passed, 2 deselected in 0.12s ======================"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:225
+#: ../../../doc/en/example/markers.rst:226
 msgid "You can use ``and``, ``or``, ``not`` and parentheses."
 msgstr ""
 
 #: ../../../doc/en/example/markers.rst:228
+msgid "A test's own name is only one of its keywords.  The others are:"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:230
 msgid ""
-"In addition to the test's name, :option:`-k` also matches the names of the "
-"test's parents (usually, the name of the file and class it's in), attributes "
-"set on the test function, markers applied to it or its parents and any :attr:"
-"`extra keywords <_pytest.nodes.Node.extra_keyword_matches>` explicitly added "
-"to it or its parents."
+"the names of the test's parents, usually the file and class it is in "
+"(``test_server.py``, ``TestClass``);"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:232
+msgid ""
+"the names of the markers applied to it or to its parents (``webtest``, "
+"``device``);"
 msgstr ""
 
 #: ../../../doc/en/example/markers.rst:234
-msgid "Registering markers"
+msgid ""
+"attributes set on the test function, as in the legacy ``test_func.slow = "
+"True`` style;"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:240
-msgid "Registering markers for your test suite is simple:"
+#: ../../../doc/en/example/markers.rst:236
+msgid ""
+"any :attr:`extra keywords <_pytest.nodes.Node.extra_keyword_matches>` "
+"explicitly added to it or to its parents."
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:239
+msgid ""
+"Marker names being keywords is why ``-k webtest`` selects "
+"``test_send_http``, whose name contains no ``webtest`` at all:"
 msgstr ""
 
 #: ../../../doc/en/example/markers.rst:242
+msgid ""
+"$ pytest -v -k webtest\n"
+"=========================== test session starts "
+"============================\n"
+"platform linux -- Python 3.x.y, pytest-9.x.y, pluggy-1.x.y -- $PYTHON_PREFIX/"
+"bin/python\n"
+"cachedir: .pytest_cache\n"
+"rootdir: /home/sweet/project\n"
+"collecting ... collected 4 items / 3 deselected / 1 selected\n"
+"\n"
+"test_server.py::test_send_http PASSED                                [100%]\n"
+"\n"
+"===================== 1 passed, 3 deselected in 0.12s ======================"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:255
+msgid ""
+"A marker's arguments are not keywords, though, and the match is a substring "
+"one: ``-k device`` selects both ``device`` tests, where :ref:`the -m "
+"expression above <marker_keyword_expression_example>` selects only the one.  "
+"Use :option:`-m` when you want markers and nothing else."
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:262
+msgid "Registering markers"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:268
+msgid "Registering markers for your test suite is simple:"
+msgstr ""
+
+#: ../../../doc/en/example/markers.rst:270
 msgid ""
 "# content of pytest.toml\n"
 "[pytest]\n"
@@ -325,19 +373,19 @@ msgid ""
 "\"]"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:248
+#: ../../../doc/en/example/markers.rst:276
 msgid ""
 "Multiple custom markers can be registered, by defining each one in its own "
 "line, as shown in above example."
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:250
+#: ../../../doc/en/example/markers.rst:278
 msgid ""
 "You can ask which markers exist for your test suite - the list includes our "
 "just defined ``webtest`` and ``slow`` markers:"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:252
+#: ../../../doc/en/example/markers.rst:280
 msgid ""
 "$ pytest --markers\n"
 "@pytest.mark.webtest: mark a test as a webtest.\n"
@@ -388,41 +436,41 @@ msgid ""
 "use @pytest.hookimpl(trylast=True) instead."
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:276
+#: ../../../doc/en/example/markers.rst:304
 msgid ""
 "For an example on how to add and work with markers from a plugin, see :ref:"
 "`adding a custom marker from a plugin`."
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:281
+#: ../../../doc/en/example/markers.rst:309
 msgid "It is recommended to explicitly register markers so that:"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:283
+#: ../../../doc/en/example/markers.rst:311
 msgid "There is one place in your test suite defining your markers"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:285
+#: ../../../doc/en/example/markers.rst:313
 msgid "Asking for existing markers via ``pytest --markers`` gives good output"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:287
+#: ../../../doc/en/example/markers.rst:315
 msgid ""
 "Typos in function markers are treated as an error if you use the :confval:"
 "`strict_markers` configuration option."
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:292
+#: ../../../doc/en/example/markers.rst:320
 msgid "Marking whole classes or modules"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:294
+#: ../../../doc/en/example/markers.rst:322
 msgid ""
 "You may use ``pytest.mark`` decorators with classes to apply markers to all "
 "of its test methods:"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:297
+#: ../../../doc/en/example/markers.rst:325
 msgid ""
 "# content of test_mark_classlevel.py\n"
 "import pytest\n"
@@ -437,40 +485,40 @@ msgid ""
 "        pass"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:311
+#: ../../../doc/en/example/markers.rst:339
 msgid ""
 "This is equivalent to directly applying the decorator to the two test "
 "functions."
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:314
+#: ../../../doc/en/example/markers.rst:342
 msgid ""
 "To apply marks at the module level, use the :globalvar:`pytestmark` global "
 "variable::"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:316
+#: ../../../doc/en/example/markers.rst:344
 msgid ""
 "import pytest\n"
 "pytestmark = pytest.mark.webtest"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:319
+#: ../../../doc/en/example/markers.rst:347
 msgid "or multiple markers::"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:321
+#: ../../../doc/en/example/markers.rst:349
 msgid "pytestmark = [pytest.mark.webtest, pytest.mark.slowtest]"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:324
+#: ../../../doc/en/example/markers.rst:352
 msgid ""
 "Due to legacy reasons, before class decorators were introduced, it is "
 "possible to set the :globalvar:`pytestmark` attribute on a test class like "
 "this:"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:327
+#: ../../../doc/en/example/markers.rst:355
 msgid ""
 "import pytest\n"
 "\n"
@@ -479,18 +527,18 @@ msgid ""
 "    pytestmark = pytest.mark.webtest"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:338
+#: ../../../doc/en/example/markers.rst:366
 msgid "Marking individual tests when using parametrize"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:340
+#: ../../../doc/en/example/markers.rst:368
 msgid ""
 "When using parametrize, applying a mark will make it apply to each "
 "individual test. However it is also possible to apply a marker to an "
 "individual test instance:"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:344
+#: ../../../doc/en/example/markers.rst:372
 msgid ""
 "import pytest\n"
 "\n"
@@ -504,7 +552,7 @@ msgid ""
 "    assert n + 1 == expected"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:356
+#: ../../../doc/en/example/markers.rst:384
 msgid ""
 "In this example the mark \"foo\" will apply to each of the three tests, "
 "whereas the \"bar\" mark is only applied to the second test. Skip and xfail "
@@ -512,11 +560,11 @@ msgid ""
 "parametrize`."
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:363
+#: ../../../doc/en/example/markers.rst:391
 msgid "Custom marker and command line option to control test runs"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:367
+#: ../../../doc/en/example/markers.rst:395
 msgid ""
 "Plugins can provide custom markers and implement specific behaviour based on "
 "it. This is a self-contained example which adds a command line option and a "
@@ -524,7 +572,7 @@ msgid ""
 "environments:"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:372
+#: ../../../doc/en/example/markers.rst:400
 msgid ""
 "# content of conftest.py\n"
 "\n"
@@ -555,11 +603,11 @@ msgid ""
 "            pytest.skip(f\"test requires env in {envnames!r}\")"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:401
+#: ../../../doc/en/example/markers.rst:429
 msgid "A test file using this local plugin:"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:403
+#: ../../../doc/en/example/markers.rst:431
 msgid ""
 "# content of test_someenv.py\n"
 "\n"
@@ -571,13 +619,13 @@ msgid ""
 "    pass"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:414
+#: ../../../doc/en/example/markers.rst:442
 msgid ""
 "and an example invocation specifying a different environment than what the "
 "test needs:"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:417
+#: ../../../doc/en/example/markers.rst:445
 msgid ""
 "$ pytest -E stage2\n"
 "=========================== test session starts "
@@ -591,11 +639,11 @@ msgid ""
 "============================ 1 skipped in 0.12s ============================"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:429
+#: ../../../doc/en/example/markers.rst:457
 msgid "and here is one that specifies exactly the environment needed:"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:431
+#: ../../../doc/en/example/markers.rst:459
 msgid ""
 "$ pytest -E stage1\n"
 "=========================== test session starts "
@@ -609,12 +657,12 @@ msgid ""
 "============================ 1 passed in 0.12s ============================="
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:443
+#: ../../../doc/en/example/markers.rst:471
 msgid ""
 "The :option:`--markers` option always gives you a list of available markers:"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:445
+#: ../../../doc/en/example/markers.rst:473
 msgid ""
 "$ pytest --markers\n"
 "@pytest.mark.env(name): mark test to run only on named environment\n"
@@ -663,15 +711,15 @@ msgid ""
 "use @pytest.hookimpl(trylast=True) instead."
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:470
+#: ../../../doc/en/example/markers.rst:498
 msgid "Passing a callable to custom markers"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:474
+#: ../../../doc/en/example/markers.rst:502
 msgid "Below is the config file that will be used in the next examples:"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:476
+#: ../../../doc/en/example/markers.rst:504
 msgid ""
 "# content of conftest.py\n"
 "import sys\n"
@@ -683,7 +731,7 @@ msgid ""
 "        sys.stdout.flush()"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:487
+#: ../../../doc/en/example/markers.rst:515
 msgid ""
 "A custom marker can have its argument set, i.e. ``args`` and ``kwargs`` "
 "properties, defined by either invoking it as a callable or using ``pytest."
@@ -691,7 +739,7 @@ msgid ""
 "of the time."
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:489
+#: ../../../doc/en/example/markers.rst:517
 msgid ""
 "However, if there is a callable as the single positional argument with no "
 "keyword arguments, using the ``pytest.mark.MARKER_NAME(c)`` will not pass "
@@ -700,7 +748,7 @@ msgid ""
 "with_args`` comes to the rescue:"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:491
+#: ../../../doc/en/example/markers.rst:519
 msgid ""
 "# content of test_custom_marker.py\n"
 "import pytest\n"
@@ -715,11 +763,11 @@ msgid ""
 "    pass"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:505
+#: ../../../doc/en/example/markers.rst:533
 msgid "The output is as follows:"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:507
+#: ../../../doc/en/example/markers.rst:535
 msgid ""
 "$ pytest -q -s\n"
 "Mark(name='my_marker', args=(<function hello_world at 0xdeadbeef0001>,), "
@@ -728,7 +776,7 @@ msgid ""
 "1 passed in 0.12s"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:514
+#: ../../../doc/en/example/markers.rst:542
 msgid ""
 "We can see that the custom marker has its argument set extended with the "
 "function ``hello_world``. This is the key difference between creating a "
@@ -736,18 +784,18 @@ msgid ""
 "and using ``with_args``."
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:518
+#: ../../../doc/en/example/markers.rst:546
 msgid "Reading markers which were set from multiple places"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:524
+#: ../../../doc/en/example/markers.rst:552
 msgid ""
 "If you are heavily using markers in your test suite you may encounter the "
 "case where a marker is applied several times to a test function.  From "
 "plugin code you can read over all such settings.  Example:"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:527
+#: ../../../doc/en/example/markers.rst:555
 msgid ""
 "# content of test_mark_three_times.py\n"
 "import pytest\n"
@@ -762,13 +810,13 @@ msgid ""
 "        pass"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:541
+#: ../../../doc/en/example/markers.rst:569
 msgid ""
 "Here we have the marker \"glob\" applied three times to the same test "
 "function.  From a conftest file we can read it like this:"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:544
+#: ../../../doc/en/example/markers.rst:572
 msgid ""
 "# content of conftest.py\n"
 "import sys\n"
@@ -780,11 +828,11 @@ msgid ""
 "        sys.stdout.flush()"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:555
+#: ../../../doc/en/example/markers.rst:583
 msgid "Let's run this without capturing output and see what we get:"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:557
+#: ../../../doc/en/example/markers.rst:585
 msgid ""
 "$ pytest -q -s\n"
 "glob args=('function',) kwargs={'x': 3}\n"
@@ -794,11 +842,11 @@ msgid ""
 "1 passed in 0.12s"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:567
+#: ../../../doc/en/example/markers.rst:595
 msgid "Marking platform specific tests with pytest"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:571
+#: ../../../doc/en/example/markers.rst:599
 msgid ""
 "Consider you have a test suite which marks tests for particular platforms, "
 "namely ``pytest.mark.darwin``, ``pytest.mark.win32`` etc. and you also have "
@@ -807,7 +855,7 @@ msgid ""
 "could use the following plugin:"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:577
+#: ../../../doc/en/example/markers.rst:605
 msgid ""
 "# content of conftest.py\n"
 "#\n"
@@ -826,13 +874,13 @@ msgid ""
 "        pytest.skip(f\"cannot run on platform {plat}\")"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:594
+#: ../../../doc/en/example/markers.rst:622
 msgid ""
 "then tests will be skipped if they were specified for a different platform. "
 "Let's do a little test file to show how this looks like:"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:597
+#: ../../../doc/en/example/markers.rst:625
 msgid ""
 "# content of test_plat.py\n"
 "\n"
@@ -858,11 +906,11 @@ msgid ""
 "    pass"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:622
+#: ../../../doc/en/example/markers.rst:650
 msgid "then you will see two tests skipped and two executed tests as expected:"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:624
+#: ../../../doc/en/example/markers.rst:652
 msgid ""
 "$ pytest -rs # this option reports skip reasons\n"
 "=========================== test session starts "
@@ -879,13 +927,13 @@ msgid ""
 "======================= 2 passed, 2 skipped in 0.12s ======================="
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:638
+#: ../../../doc/en/example/markers.rst:666
 msgid ""
 "Note that if you specify a platform via the marker-command line option like "
 "this:"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:640
+#: ../../../doc/en/example/markers.rst:668
 msgid ""
 "$ pytest -m linux\n"
 "=========================== test session starts "
@@ -899,24 +947,24 @@ msgid ""
 "===================== 1 passed, 3 deselected in 0.12s ======================"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:652
+#: ../../../doc/en/example/markers.rst:680
 msgid ""
 "then the unmarked-tests will not be run.  It is thus a way to restrict the "
 "run to the specific tests."
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:655
+#: ../../../doc/en/example/markers.rst:683
 msgid "Automatically adding markers based on test names"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:659
+#: ../../../doc/en/example/markers.rst:687
 msgid ""
 "If you have a test suite where test function names indicate a certain type "
 "of test, you can implement a hook that automatically defines markers so that "
 "you can use the :option:`-m` option with it. Let's look at this test module:"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:664
+#: ../../../doc/en/example/markers.rst:692
 msgid ""
 "# content of test_module.py\n"
 "\n"
@@ -937,13 +985,13 @@ msgid ""
 "    assert 0"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:684
+#: ../../../doc/en/example/markers.rst:712
 msgid ""
 "We want to dynamically define two markers and can do it in a ``conftest.py`` "
 "plugin:"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:687
+#: ../../../doc/en/example/markers.rst:715
 msgid ""
 "# content of conftest.py\n"
 "\n"
@@ -958,11 +1006,11 @@ msgid ""
 "            item.add_marker(pytest.mark.event)"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:701
+#: ../../../doc/en/example/markers.rst:729
 msgid "We can now use the ``-m option`` to select one set:"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:703
+#: ../../../doc/en/example/markers.rst:731
 msgid ""
 "$ pytest -m interface --tb=short\n"
 "=========================== test session starts "
@@ -992,11 +1040,11 @@ msgid ""
 "===================== 2 failed, 2 deselected in 0.12s ======================"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:727
+#: ../../../doc/en/example/markers.rst:755
 msgid "or to select both \"event\" and \"interface\" tests:"
 msgstr ""
 
-#: ../../../doc/en/example/markers.rst:729
+#: ../../../doc/en/example/markers.rst:757
 msgid ""
 "$ pytest -m \"interface or event\" --tb=short\n"
 "=========================== test session starts "

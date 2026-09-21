@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-23 08:43+0000\n"
+"POT-Creation-Date: 2026-09-21 14:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -72,116 +72,116 @@ msgstr ""
 
 #: ../../../doc/en/how-to/usage.rst:41
 msgid ""
-"This will run tests which contain names that match the given *string "
-"expression* (case-insensitive), which can include Python operators that use "
-"filenames, class names and function names as variables. The example above "
-"will run ``TestMyClass.test_something``  but not ``TestMyClass."
-"test_method_simple``. Use ``\"\"`` instead of ``''`` in expression when "
-"running this on Windows"
+"This will run tests whose *keywords* match the given expression (case-"
+"insensitive). A test's keywords are its own name, the names of the file and "
+"class it is in, the names of its markers, and :ref:`a few more <keyword "
+"expressions>`. The example above will run ``TestMyClass.test_something``  "
+"but not ``TestMyClass.test_method_simple``. Use ``\"\"`` instead of ``''`` "
+"in expression when running this on Windows"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:48
+#: ../../../doc/en/how-to/usage.rst:49
 msgid "**Run tests by collection arguments**"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:50
+#: ../../../doc/en/how-to/usage.rst:51
 msgid ""
 "Pass the module filename relative to the working directory, followed by "
 "specifiers like the class name and function name separated by ``::`` "
 "characters, and parameters from parameterization enclosed in ``[]``."
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:53
+#: ../../../doc/en/how-to/usage.rst:54
 msgid "To run a specific test within a module:"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:55
+#: ../../../doc/en/how-to/usage.rst:56
 msgid "pytest tests/test_mod.py::test_func"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:59
+#: ../../../doc/en/how-to/usage.rst:60
 msgid "To run all tests in a class:"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:61
+#: ../../../doc/en/how-to/usage.rst:62
 msgid "pytest tests/test_mod.py::TestClass"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:65
+#: ../../../doc/en/how-to/usage.rst:66
 msgid "Specifying a specific test method:"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:67
+#: ../../../doc/en/how-to/usage.rst:68
 msgid "pytest tests/test_mod.py::TestClass::test_method"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:71
+#: ../../../doc/en/how-to/usage.rst:72
 msgid "Specifying a specific parametrization of a test:"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:73
+#: ../../../doc/en/how-to/usage.rst:74
 msgid "pytest tests/test_mod.py::test_func[x1,y2]"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:77
+#: ../../../doc/en/how-to/usage.rst:78
 msgid "**Run tests by marker expressions**"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:79
+#: ../../../doc/en/how-to/usage.rst:80
 msgid ""
 "To run all tests which are decorated with the ``@pytest.mark.slow`` "
 "decorator:"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:81
+#: ../../../doc/en/how-to/usage.rst:82
 msgid "pytest -m slow"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:86
+#: ../../../doc/en/how-to/usage.rst:87
 msgid ""
 "To run all tests which are decorated with the annotated ``@pytest.mark."
 "slow(phase=1)`` decorator, with the ``phase`` keyword argument set to ``1``:"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:89
+#: ../../../doc/en/how-to/usage.rst:90
 msgid "pytest -m \"slow(phase=1)\""
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:93
+#: ../../../doc/en/how-to/usage.rst:94
 msgid "For more information see :ref:`marks <mark>`."
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:95
+#: ../../../doc/en/how-to/usage.rst:96
 msgid "**Run tests from packages**"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:97
+#: ../../../doc/en/how-to/usage.rst:98
 msgid "pytest --pyargs pkg.testing"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:101
+#: ../../../doc/en/how-to/usage.rst:102
 msgid ""
 "This will import ``pkg.testing`` and use its filesystem location to find and "
 "run tests from."
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:105
+#: ../../../doc/en/how-to/usage.rst:106
 msgid "**Read arguments from file**"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:109
+#: ../../../doc/en/how-to/usage.rst:110
 msgid "All of the above can be read from a file using the ``@`` prefix:"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:111
+#: ../../../doc/en/how-to/usage.rst:112
 msgid "pytest @tests_to_run.txt"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:115
+#: ../../../doc/en/how-to/usage.rst:116
 msgid "where ``tests_to_run.txt`` contains an entry per line, e.g.:"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:117
+#: ../../../doc/en/how-to/usage.rst:118
 msgid ""
 "tests/test_file.py\n"
 "tests/test_mod.py::test_func[x1,y2]\n"
@@ -189,137 +189,137 @@ msgid ""
 "-m slow"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:124
+#: ../../../doc/en/how-to/usage.rst:125
 msgid ""
 "This file can also be generated using ``pytest --collect-only -q`` and "
 "modified as needed."
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:127
+#: ../../../doc/en/how-to/usage.rst:128
 msgid "Getting help on version, option names, environment variables"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:129
+#: ../../../doc/en/how-to/usage.rst:130
 msgid ""
 "pytest --version   # shows where pytest was imported from\n"
 "pytest --fixtures  # show available builtin function arguments\n"
 "pytest -h | --help # show help on command line and config file options"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:139
+#: ../../../doc/en/how-to/usage.rst:140
 msgid "Profiling test execution duration"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:143
+#: ../../../doc/en/how-to/usage.rst:144
 msgid "To get a list of the slowest 10 test durations over 1.0s long:"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:145
+#: ../../../doc/en/how-to/usage.rst:146
 msgid "pytest --durations=10 --durations-min=1.0"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:149
+#: ../../../doc/en/how-to/usage.rst:150
 msgid ""
 "By default, pytest will not show test durations that are too small (<0.005s) "
 "unless ``-vv`` is passed on the command-line."
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:153
+#: ../../../doc/en/how-to/usage.rst:154
 msgid "Managing loading of plugins"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:156
+#: ../../../doc/en/how-to/usage.rst:157
 msgid "Early loading plugins"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:158
+#: ../../../doc/en/how-to/usage.rst:159
 msgid ""
 "You can early-load plugins (internal and external) explicitly in the command-"
 "line with the :option:`-p` option::"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:160
+#: ../../../doc/en/how-to/usage.rst:161
 msgid "pytest -p mypluginmodule"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:162
+#: ../../../doc/en/how-to/usage.rst:163
 msgid "The option receives a ``name`` parameter, which can be:"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:164
+#: ../../../doc/en/how-to/usage.rst:165
 msgid ""
 "A full module dotted name, for example ``myproject.plugins``. This dotted "
 "name must be importable."
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:165
+#: ../../../doc/en/how-to/usage.rst:166
 msgid ""
 "The entry-point name of a plugin. This is the name passed to ``importlib`` "
 "when the plugin is registered. For example to early-load the :pypi:`pytest-"
 "cov` plugin you can use::"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:168
+#: ../../../doc/en/how-to/usage.rst:169
 msgid "pytest -p pytest_cov"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:172
+#: ../../../doc/en/how-to/usage.rst:173
 msgid "Disabling plugins"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:174
+#: ../../../doc/en/how-to/usage.rst:175
 msgid ""
 "To disable loading specific plugins at invocation time, use the :option:`-p` "
 "option together with the prefix ``no:``."
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:177
+#: ../../../doc/en/how-to/usage.rst:178
 msgid ""
 "Example: to disable loading the plugin ``doctest``, which is responsible for "
 "executing doctest tests from text files, invoke pytest like this:"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:180
+#: ../../../doc/en/how-to/usage.rst:181
 msgid "pytest -p no:doctest"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:188
+#: ../../../doc/en/how-to/usage.rst:189
 msgid "Other ways of calling pytest"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:193
+#: ../../../doc/en/how-to/usage.rst:194
 msgid "Calling pytest through ``python -m pytest``"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:195
+#: ../../../doc/en/how-to/usage.rst:196
 msgid ""
 "You can invoke testing through the Python interpreter from the command line:"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:197
+#: ../../../doc/en/how-to/usage.rst:198
 msgid "python -m pytest [...]"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:201
+#: ../../../doc/en/how-to/usage.rst:202
 msgid ""
 "This is almost equivalent to invoking the command line script ``pytest "
 "[...]`` directly, except that calling via ``python`` will also add the "
 "current directory to ``sys.path``."
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:208
+#: ../../../doc/en/how-to/usage.rst:209
 msgid "Calling pytest from Python code"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:210
+#: ../../../doc/en/how-to/usage.rst:211
 msgid "You can invoke ``pytest`` from Python code directly:"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:212
+#: ../../../doc/en/how-to/usage.rst:213
 msgid "retcode = pytest.main()"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:216
+#: ../../../doc/en/how-to/usage.rst:217
 msgid ""
 "this acts as if you would call \"pytest\" from the command line. It will not "
 "raise :class:`SystemExit` but return the :ref:`exit code <exit-codes>` "
@@ -328,15 +328,15 @@ msgid ""
 "be undesirable. You can pass in options and arguments explicitly:"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:221
+#: ../../../doc/en/how-to/usage.rst:222
 msgid "retcode = pytest.main([\"-x\", \"mytestdir\"])"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:225
+#: ../../../doc/en/how-to/usage.rst:226
 msgid "You can specify additional plugins to ``pytest.main``:"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:227
+#: ../../../doc/en/how-to/usage.rst:228
 msgid ""
 "# content of myinvoke.py\n"
 "import sys\n"
@@ -353,18 +353,18 @@ msgid ""
 "    sys.exit(pytest.main([\"-qq\"], plugins=[MyPlugin()]))"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:243
+#: ../../../doc/en/how-to/usage.rst:244
 msgid ""
 "Running it will show that ``MyPlugin`` was added and its hook was invoked:"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:246
+#: ../../../doc/en/how-to/usage.rst:247
 msgid ""
 "$ python myinvoke.py\n"
 "*** test run reporting finishing"
 msgstr ""
 
-#: ../../../doc/en/how-to/usage.rst:254
+#: ../../../doc/en/how-to/usage.rst:255
 msgid ""
 "Calling ``pytest.main()`` will result in importing your tests and any "
 "modules that they import. Due to the caching mechanism of python's import "
