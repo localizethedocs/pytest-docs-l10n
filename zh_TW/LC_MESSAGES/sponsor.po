@@ -1,0 +1,60 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015–2020, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/sponsor.rst:2
+msgid "Sponsor"
+msgstr "贊助者"
+
+#: ../../../doc/en/sponsor.rst:4
+msgid ""
+"pytest is maintained by a team of volunteers from all around the world in "
+"their free time. While we work on pytest because we love the project and use "
+"it daily at our daily jobs, monetary compensation when possible is welcome "
+"to justify time away from friends, family and personal time."
+msgstr ""
+
+#: ../../../doc/en/sponsor.rst:8
+msgid ""
+"Money is also used to fund local sprints, merchandising (stickers to "
+"distribute in conferences for example) and every few years a large sprint "
+"involving all members."
+msgstr ""
+"資金亦用於資助當地的衝刺活動、商品製作（例如在會議上分發的貼紙），以及每隔幾"
+"年舉辦一次大型衝刺活動，匯集所有成員參加。"
+
+#: ../../../doc/en/sponsor.rst:12
+msgid "OpenCollective"
+msgstr "OpenCollective"
+
+#: ../../../doc/en/sponsor.rst:14
+msgid ""
+"`Open Collective`_ is an online funding platform for open and transparent "
+"communities. It provide tools to raise money and share your finances in full "
+"transparency."
+msgstr ""
+
+#: ../../../doc/en/sponsor.rst:17
+msgid ""
+"It is the platform of choice for individuals and companies that want to make "
+"one-time or monthly donations directly to the project."
+msgstr ""
+
+#: ../../../doc/en/sponsor.rst:20
+msgid "See more details in the `pytest collective`_."
+msgstr ""
