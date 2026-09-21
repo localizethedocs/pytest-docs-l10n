@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_TW">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pytest-2.9.1 &#8212; pytest documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/flasky.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/pytest-docs-l10n/announce/release-2.9.2.html" />
+    <link rel="shortcut icon" href="../_static/pytest1favi.ico"/>
+    <link rel="search" title="搜尋" href="../search.html" />
+
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+<script type="text/javascript" src="../ltd-provenance.js"></script>
+<script type="text/javascript" src="../ltd-current.js"></script>
+<script type="text/javascript" src="../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../ltd-flyout.js"></script>
+
+  </head><body>
+  
+  
+  
+
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>瀏覽</h3>
+      <ul>
+        <li class="nav-item nav-item-0"><a href="../contents.html">pytest-2.9.2</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pytest-2.9.1</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="pytest-2-9-1">
+<h1>pytest-2.9.1<a class="headerlink" href="#pytest-2-9-1" title="本標題的永久連結">¶</a></h1>
+<p>pytest is a mature Python testing tool with more than a 1100 tests
+against itself, passing on many different interpreters and platforms.</p>
+<p>See below for the changes and see docs at:</p>
+<blockquote>
+<div><p><a class="reference external" href="http://pytest.org">http://pytest.org</a></p>
+</div></blockquote>
+<p>As usual, you can upgrade from pypi via:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">pytest</span>
+</pre></div>
+</div>
+<p>Thanks to all who contributed to this release, among them:</p>
+<blockquote>
+<div><p>Adam Chainz
+Benjamin Dopplinger
+Bruno Oliveira
+Florian Bruhin
+John Towler
+Martin Prusse
+Meng Jue
+MengJueM
+Omar Kohl
+Quentin Pradet
+Ronny Pfannschmidt
+Thomas Güttler
+TomV
+Tyler Goodlet</p>
+</div></blockquote>
+<p>Happy testing,
+The py.test Development Team</p>
+<div class="section" id="compared-to-2-9-1">
+<h2>2.9.2 (compared to 2.9.1)<a class="headerlink" href="#compared-to-2-9-1" title="本標題的永久連結">¶</a></h2>
+<p><strong>Bug Fixes</strong></p>
+<ul class="simple">
+<li><p>fix <a class="reference external" href="https://github.com/pytest-dev/pytest/issues/510">#510</a>: skip tests where one parameterize dimension was empty
+thanks Alex Stapleton for the Report and <a href="#id5"><span class="problematic" id="id6">`&#64;RonnyPfannschmidt`_</span></a> for the PR</p></li>
+<li><p>Fix Xfail does not work with condition keyword argument.
+Thanks <a class="reference external" href="https://github.com/astraw38">&#64;astraw38</a> for reporting the issue (<a class="reference external" href="https://github.com/pytest-dev/pytest/issue/1496">#1496</a>) and <a href="#id7"><span class="problematic" id="id8">`&#64;tomviner`_</span></a>
+for PR the (<a class="reference external" href="https://github.com/pytest-dev/pytest/issue/1524">#1524</a>).</p></li>
+<li><p>Fix win32 path issue when puttinging custom config file with absolute path
+in <code class="docutils literal notranslate"><span class="pre">pytest.main(&quot;-c</span> <span class="pre">your_absolute_path&quot;)</span></code>.</p></li>
+<li><p>Fix maximum recursion depth detection when raised error class is not aware
+of unicode/encoded bytes.
+Thanks <a class="reference external" href="https://github.com/prusse-martin">&#64;prusse-martin</a> for the PR (<a class="reference external" href="https://github.com/pytest-dev/pytest/pull/1506">#1506</a>).</p></li>
+<li><p>Fix <code class="docutils literal notranslate"><span class="pre">pytest.mark.skip</span></code> mark when used in strict mode.
+Thanks <a href="#id9"><span class="problematic" id="id10">`&#64;pquentin`_</span></a> for the PR and <a href="#id11"><span class="problematic" id="id12">`&#64;RonnyPfannschmidt`_</span></a> for
+showing how to fix the bug.</p></li>
+<li><p>Minor improvements and fixes to the documentation.
+Thanks <a href="#id13"><span class="problematic" id="id14">`&#64;omarkohl`_</span></a> for the PR.</p></li>
+<li><p>Fix <code class="docutils literal notranslate"><span class="pre">--fixtures</span></code> to show all fixture definitions as opposed to just
+one per fixture name.
+Thanks to <a href="#id15"><span class="problematic" id="id16">`&#64;hackebrot`_</span></a> for the PR.</p></li>
+</ul>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/pytest1.png" alt="Logo"/>
+            </a></p><h3><a href="../contents.html">Table Of Contents</a></h3>
+
+<ul>
+  <li><a href="../index.html">Home</a></li>
+  <li><a href="../contents.html">內容</a></li>
+  <li><a href="../getting-started.html">Install</a></li>
+  <li><a href="../example/index.html">实际案例</a></li>
+  <li><a href="../customize.html">Customize</a></li>
+  <li><a href="../contact.html">Contact</a></li>
+  <li><a href="../talks.html">Talks/Posts</a></li>
+  <li><a href="../changelog.html">Changelog</a></li>
+  <li><a href="../license.html">License</a></li>
+</ul>
+  <hr>
+  <ul>
+<li><a class="reference internal" href="#">pytest-2.9.1</a><ul>
+<li><a class="reference internal" href="#compared-to-2-9-1">2.9.2 (compared to 2.9.1)</a></li>
+</ul>
+</li>
+</ul>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../contents.html">Documentation overview</a><ul>
+  </ul></li>
+</ul><h3>Useful Links</h3>
+<ul>
+  <li>
+    <a href="https://www.indiegogo.com/projects/python-testing-sprint-mid-2016#/">
+      <b>Sprint funding campaign</b>
+    </a>
+  </li>
+  <li><a href="../index.html">The pytest Website</a></li>
+  <li><a href="../contributing.html">Contribution Guide</a></li>
+  <li><a href="https://pypi.python.org/pypi/pytest">pytest @ PyPI</a></li>
+  <li><a href="https://github.com/pytest-dev/pytest/">pytest @ GitHub</a></li>
+  <li><a href="http://plugincompat.herokuapp.com/">3rd party plugins</a></li>
+  <li><a href="https://github.com/pytest-dev/pytest/issues">議題追蹤器</a></li>
+  <li><a href="http://pytest.org/latest/pytest.pdf">PDF 文件</a>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">快速搜尋</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="搜" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+  <div class="footer">
+    &copy; Copyright 2015, holger krekel and pytest-dev team.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-7597274-13']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+  </body>
+</html>
