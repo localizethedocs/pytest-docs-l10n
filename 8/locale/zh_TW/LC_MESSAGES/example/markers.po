@@ -415,7 +415,7 @@ msgstr ""
 
 #: ../../../doc/en/example/markers.rst:295
 msgid "Marking whole classes or modules"
-msgstr ""
+msgstr "標註整個類別或模組"
 
 #: ../../../doc/en/example/markers.rst:297
 msgid ""
@@ -482,7 +482,7 @@ msgstr ""
 
 #: ../../../doc/en/example/markers.rst:341
 msgid "Marking individual tests when using parametrize"
-msgstr ""
+msgstr "使用 parametrize 時標註個別測試"
 
 #: ../../../doc/en/example/markers.rst:343
 msgid ""
@@ -796,7 +796,7 @@ msgstr ""
 
 #: ../../../doc/en/example/markers.rst:570
 msgid "Marking platform specific tests with pytest"
-msgstr ""
+msgstr "使用 pytest 標註平臺專屬測試"
 
 #: ../../../doc/en/example/markers.rst:574
 msgid ""

@@ -389,7 +389,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/customize.rst:250
 msgid "Syntax highlighting theme customization"
-msgstr ""
+msgstr "語法標明主題客製化"
 
 #: ../../../doc/en/reference/customize.rst:252
 msgid ""
