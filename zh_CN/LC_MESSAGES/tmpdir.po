@@ -1,0 +1,238 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015–2018 , holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/tmpdir.rst:6
+msgid "Temporary directories and files"
+msgstr ""
+
+#: ../../../doc/en/tmpdir.rst:9
+msgid "The ``tmp_path`` fixture"
+msgstr ""
+
+#: ../../../doc/en/tmpdir.rst:14
+msgid ""
+"You can use the ``tmp_path`` fixture which will provide a temporary "
+"directory unique to the test invocation, created in the `base temporary "
+"directory`_."
+msgstr ""
+
+#: ../../../doc/en/tmpdir.rst:18
+msgid ""
+"``tmp_path`` is a ``pathlib/pathlib2.Path`` object. Here is an example test "
+"usage:"
+msgstr ""
+
+#: ../../../doc/en/tmpdir.rst:20
+msgid ""
+"# content of test_tmp_path.py\n"
+"import os\n"
+"\n"
+"CONTENT = u\"content\"\n"
+"\n"
+"\n"
+"def test_create_file(tmp_path):\n"
+"    d = tmp_path / \"sub\"\n"
+"    d.mkdir()\n"
+"    p = d / \"hello.txt\"\n"
+"    p.write_text(CONTENT)\n"
+"    assert p.read_text() == CONTENT\n"
+"    assert len(list(tmp_path.iterdir())) == 1\n"
+"    assert 0"
+msgstr ""
+
+#: ../../../doc/en/tmpdir.rst:37 ../../../doc/en/tmpdir.rst:97
+msgid ""
+"Running this would result in a passed test except for the last ``assert 0`` "
+"line which we use to look at values::"
+msgstr ""
+
+#: ../../../doc/en/tmpdir.rst:40
+msgid ""
+"$ pytest test_tmp_path.py\n"
+"=========================== test session starts "
+"============================\n"
+"platform linux -- Python 3.x.y, pytest-3.x.y, py-1.x.y, pluggy-0.x.y\n"
+"rootdir: $REGENDOC_TMPDIR, inifile:\n"
+"collected 1 item\n"
+"\n"
+"test_tmp_path.py F                                                   [100%]\n"
+"\n"
+"================================= FAILURES "
+"=================================\n"
+"_____________________________ test_create_file "
+"_____________________________\n"
+"\n"
+"tmp_path = PosixPath('PYTEST_TMPDIR/test_create_file0')\n"
+"\n"
+"    def test_create_file(tmp_path):\n"
+"        d = tmp_path / \"sub\"\n"
+"        d.mkdir()\n"
+"        p = d / \"hello.txt\"\n"
+"        p.write_text(CONTENT)\n"
+"        assert p.read_text() == CONTENT\n"
+"        assert len(list(tmp_path.iterdir())) == 1\n"
+">       assert 0\n"
+"E       assert 0\n"
+"\n"
+"test_tmp_path.py:13: AssertionError\n"
+"========================= 1 failed in 0.12 seconds ========================="
+msgstr ""
+
+#: ../../../doc/en/tmpdir.rst:67
+msgid "The ``tmp_path_factory`` fixture"
+msgstr ""
+
+#: ../../../doc/en/tmpdir.rst:72
+msgid ""
+"The ``tmp_path_factory`` is a session-scoped fixture which can be used to "
+"create arbitrary temporary directories from any other fixture or test."
+msgstr ""
+
+#: ../../../doc/en/tmpdir.rst:75
+msgid ""
+"It is intended to replace ``tmpdir_factory``, and returns :class:`pathlib."
+"Path` instances."
+msgstr ""
+
+#: ../../../doc/en/tmpdir.rst:79
+msgid "The 'tmpdir' fixture"
+msgstr ""
+
+#: ../../../doc/en/tmpdir.rst:81
+msgid ""
+"You can use the ``tmpdir`` fixture which will provide a temporary directory "
+"unique to the test invocation, created in the `base temporary directory`_."
+msgstr ""
+
+#: ../../../doc/en/tmpdir.rst:85
+msgid ""
+"``tmpdir`` is a `py.path.local`_ object which offers ``os.path`` methods and "
+"more.  Here is an example test usage::"
+msgstr ""
+
+#: ../../../doc/en/tmpdir.rst:88
+msgid ""
+"# content of test_tmpdir.py\n"
+"import os\n"
+"def test_create_file(tmpdir):\n"
+"    p = tmpdir.mkdir(\"sub\").join(\"hello.txt\")\n"
+"    p.write(\"content\")\n"
+"    assert p.read() == \"content\"\n"
+"    assert len(tmpdir.listdir()) == 1\n"
+"    assert 0"
+msgstr ""
+
+#: ../../../doc/en/tmpdir.rst:100
+msgid ""
+"$ pytest test_tmpdir.py\n"
+"=========================== test session starts "
+"============================\n"
+"platform linux -- Python 3.x.y, pytest-3.x.y, py-1.x.y, pluggy-0.x.y\n"
+"rootdir: $REGENDOC_TMPDIR, inifile:\n"
+"collected 1 item\n"
+"\n"
+"test_tmpdir.py F                                                     [100%]\n"
+"\n"
+"================================= FAILURES "
+"=================================\n"
+"_____________________________ test_create_file "
+"_____________________________\n"
+"\n"
+"tmpdir = local('PYTEST_TMPDIR/test_create_file0')\n"
+"\n"
+"    def test_create_file(tmpdir):\n"
+"        p = tmpdir.mkdir(\"sub\").join(\"hello.txt\")\n"
+"        p.write(\"content\")\n"
+"        assert p.read() == \"content\"\n"
+"        assert len(tmpdir.listdir()) == 1\n"
+">       assert 0\n"
+"E       assert 0\n"
+"\n"
+"test_tmpdir.py:7: AssertionError\n"
+"========================= 1 failed in 0.12 seconds ========================="
+msgstr ""
+
+#: ../../../doc/en/tmpdir.rst:127
+msgid "The 'tmpdir_factory' fixture"
+msgstr ""
+
+#: ../../../doc/en/tmpdir.rst:131
+msgid ""
+"The ``tmpdir_factory`` is a session-scoped fixture which can be used to "
+"create arbitrary temporary directories from any other fixture or test."
+msgstr ""
+
+#: ../../../doc/en/tmpdir.rst:134
+msgid ""
+"For example, suppose your test suite needs a large image on disk, which is "
+"generated procedurally. Instead of computing the same image for each test "
+"that uses it into its own ``tmpdir``, you can generate it once per-session "
+"to save time:"
+msgstr ""
+
+#: ../../../doc/en/tmpdir.rst:139
+msgid ""
+"# contents of conftest.py\n"
+"import pytest\n"
+"\n"
+"\n"
+"@pytest.fixture(scope=\"session\")\n"
+"def image_file(tmpdir_factory):\n"
+"    img = compute_expensive_image()\n"
+"    fn = tmpdir_factory.mktemp(\"data\").join(\"img.png\")\n"
+"    img.save(str(fn))\n"
+"    return fn\n"
+"\n"
+"\n"
+"# contents of test_image.py\n"
+"def test_histogram(image_file):\n"
+"    img = load_image(image_file)\n"
+"    # compute and test histogram"
+msgstr ""
+
+#: ../../../doc/en/tmpdir.rst:158
+msgid "See :ref:`tmpdir_factory API <tmpdir factory api>` for details."
+msgstr ""
+
+#: ../../../doc/en/tmpdir.rst:164
+msgid "The default base temporary directory"
+msgstr ""
+
+#: ../../../doc/en/tmpdir.rst:166
+msgid ""
+"Temporary directories are by default created as sub-directories of the "
+"system temporary directory.  The base name will be ``pytest-NUM`` where "
+"``NUM`` will be incremented with each test run.  Moreover, entries older "
+"than 3 temporary directories will be removed."
+msgstr ""
+
+#: ../../../doc/en/tmpdir.rst:171
+msgid "You can override the default temporary directory setting like this::"
+msgstr ""
+
+#: ../../../doc/en/tmpdir.rst:173
+msgid "pytest --basetemp=mydir"
+msgstr ""
+
+#: ../../../doc/en/tmpdir.rst:175
+msgid ""
+"When distributing tests on the local machine, ``pytest`` takes care to "
+"configure a basetemp directory for the sub processes such that all temporary "
+"data lands below a single per-test run basetemp directory."
+msgstr ""

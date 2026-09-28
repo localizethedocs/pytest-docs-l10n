@@ -1,0 +1,35 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015–2018 , holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/yieldfixture.rst:6
+msgid "\"yield_fixture\" functions"
+msgstr ""
+
+#: ../../../doc/en/yieldfixture.rst:13
+msgid ""
+"Since pytest-3.0, fixtures using the normal ``fixture`` decorator can use a "
+"``yield`` statement to provide fixture values and execute teardown code, "
+"exactly like ``yield_fixture`` in previous versions."
+msgstr ""
+
+#: ../../../doc/en/yieldfixture.rst:17
+msgid ""
+"Marking functions as ``yield_fixture`` is still supported, but deprecated "
+"and should not be used in new code."
+msgstr ""
