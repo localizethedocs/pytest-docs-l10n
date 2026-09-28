@@ -206,7 +206,7 @@ msgstr ""
 
 #: ../../../doc/en/customize.rst:125
 msgid "How to change command line options defaults"
-msgstr ""
+msgstr "如何變更命令行選項的默認值"
 
 #: ../../../doc/en/customize.rst:127
 msgid ""

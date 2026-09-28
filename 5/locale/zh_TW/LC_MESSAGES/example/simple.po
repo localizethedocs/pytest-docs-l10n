@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../doc/en/example/simple.rst:4
 msgid "Basic patterns and examples"
-msgstr ""
+msgstr "基本模式與範例"
 
 #: ../../../doc/en/example/simple.rst:9
 msgid ""
@@ -143,7 +143,7 @@ msgstr ""
 
 #: ../../../doc/en/example/simple.rst:104
 msgid "Dynamically adding command line options"
-msgstr ""
+msgstr "動態增添命令行選項"
 
 #: ../../../doc/en/example/simple.rst:108
 msgid ""
@@ -190,7 +190,7 @@ msgstr ""
 
 #: ../../../doc/en/example/simple.rst:144
 msgid "Control skipping of tests according to command line option"
-msgstr ""
+msgstr "根據命令行選項控制是否略過測試"
 
 #: ../../../doc/en/example/simple.rst:148
 msgid ""
@@ -289,7 +289,7 @@ msgstr ""
 
 #: ../../../doc/en/example/simple.rst:226
 msgid "Writing well integrated assertion helpers"
-msgstr ""
+msgstr "撰寫整合良好的斷言輔助函數"
 
 #: ../../../doc/en/example/simple.rst:230
 msgid ""
@@ -425,7 +425,7 @@ msgstr ""
 
 #: ../../../doc/en/example/simple.rst:338
 msgid "Adding info to test report header"
-msgstr ""
+msgstr "在測試報告標頭中增添資訊"
 
 #: ../../../doc/en/example/simple.rst:342
 msgid "It's easy to present extra information in a ``pytest`` run:"
