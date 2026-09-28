@@ -245,7 +245,7 @@ msgstr ""
 msgid ""
 "It is the platform of choice for individuals and companies that want to make "
 "one-time or monthly donations directly to the project."
-msgstr ""
+msgstr "這是個人和公司直接向專案捐款（單次或每月定期捐款）的首選平台。"
 
 #: ../../../doc/en/index.rst:133
 msgid "See more details in the `pytest collective`_."
