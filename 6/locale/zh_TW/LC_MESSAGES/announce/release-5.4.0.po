@@ -47,7 +47,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-5.4.0.rst:16
 msgid "https://docs.pytest.org/en/stable/"
-msgstr ""
+msgstr "https://docs.pytest.org/en/stable/"
 
 #: ../../../doc/en/announce/release-5.4.0.rst:18
 msgid "As usual, you can upgrade from PyPI via:"

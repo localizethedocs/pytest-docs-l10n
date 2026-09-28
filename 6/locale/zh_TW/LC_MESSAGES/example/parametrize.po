@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../doc/en/example/parametrize.rst:5
 msgid "Parametrizing tests"
-msgstr ""
+msgstr "參數化測試"
 
 #: ../../../doc/en/example/parametrize.rst:9
 msgid ""
@@ -120,7 +120,7 @@ msgstr ""
 
 #: ../../../doc/en/example/parametrize.rst:85
 msgid "Different options for test IDs"
-msgstr ""
+msgstr "測試 ID 的不同選項"
 
 #: ../../../doc/en/example/parametrize.rst:87
 msgid ""
@@ -338,7 +338,7 @@ msgstr ""
 
 #: ../../../doc/en/example/parametrize.rst:262
 msgid "Deferring the setup of parametrized resources"
-msgstr ""
+msgstr "延後設定參數化資源"
 
 #: ../../../doc/en/example/parametrize.rst:266
 msgid ""
@@ -458,7 +458,7 @@ msgstr ""
 
 #: ../../../doc/en/example/parametrize.rst:358
 msgid "Indirect parametrization"
-msgstr ""
+msgstr "間接參數化"
 
 #: ../../../doc/en/example/parametrize.rst:360
 msgid ""
