@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../doc/en/example/index.rst:5
 msgid "Examples and customization tricks"
-msgstr ""
+msgstr "範例與客製化技巧"
 
 #: ../../../doc/en/example/index.rst:7
 msgid ""
