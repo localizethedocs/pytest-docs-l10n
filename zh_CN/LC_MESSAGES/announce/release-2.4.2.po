@@ -1,0 +1,84 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-23 08:43+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/announce/release-2.4.2.rst:2
+msgid "pytest-2.4.2: colorama on windows, plugin/tmpdir fixes"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.4.2.rst:4
+msgid "pytest-2.4.2 is another bug-fixing release:"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.4.2.rst:6
+msgid ""
+"on Windows require colorama and a newer py lib so that py.io."
+"TerminalWriter() now uses colorama instead of its own ctypes hacks. (fixes "
+"issue365) thanks Paul Moore for bringing it up."
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.4.2.rst:10
+msgid ""
+"fix \"-k\" matching of tests where \"repr\" and \"attr\" and other names "
+"would cause wrong matches because of an internal implementation quirk (don't "
+"ask) which is now properly implemented. fixes issue345."
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.4.2.rst:14
+msgid ""
+"avoid tmpdir fixture to create too long filenames especially when "
+"parametrization is used (issue354)"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.4.2.rst:17
+msgid ""
+"fix pytest-pep8 and pytest-flakes / pytest interactions (collection names in "
+"mark plugin was assuming an item always has a function which is not true for "
+"those plugins etc.) Thanks Andi Zeidler."
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.4.2.rst:22
+msgid ""
+"introduce node.get_marker/node.add_marker API for plugins like pytest-pep8 "
+"and pytest-flakes to avoid the messy details of the node.keywords  pseudo-"
+"dicts.  Adapted docs."
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.4.2.rst:27
+msgid ""
+"remove attempt to \"dup\" stdout at startup as it's icky. the normal "
+"capturing should catch enough possibilities of tests messing up standard FDs."
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.4.2.rst:31
+msgid ""
+"add pluginmanager.do_configure(config) as a link to config.do_configure() "
+"for plugin-compatibility"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.4.2.rst:34
+msgid "as usual, docs at http://pytest.org and upgrades via::"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.4.2.rst:36
+msgid "pip install -U pytest"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.4.2.rst:38
+msgid "have fun, holger krekel"
+msgstr ""
