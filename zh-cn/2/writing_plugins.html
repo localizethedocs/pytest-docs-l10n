@@ -1,0 +1,1317 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Writing plugins &#8212; pytest documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/flasky.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/translations.js"></script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/pytest-docs-l10n/writing_plugins.html" />
+    <link rel="shortcut icon" href="_static/pytest1favi.ico"/>
+    <link rel="search" title="搜索" href="search.html" />
+
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+<script type="text/javascript" src="ltd-provenance.js"></script>
+<script type="text/javascript" src="ltd-current.js"></script>
+<script type="text/javascript" src="../../ltd-config.js"></script>
+<script type="text/javascript" src="../../ltd-flyout.js"></script>
+
+  </head><body>
+  
+  
+  
+
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="nav-item nav-item-0"><a href="contents.html">pytest-2.9.2</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Writing plugins</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="writing-plugins">
+<span id="plugins"></span><span id="id1"></span><h1>Writing plugins<a class="headerlink" href="#writing-plugins" title="永久链接至标题">¶</a></h1>
+<p>It is easy to implement <a class="reference internal" href="#local-conftest-plugins">local conftest plugins</a> for your own project
+or <a class="reference internal" href="#pip-installable-plugins">pip-installable plugins</a> that can be used throughout many projects,
+including third party projects.  Please refer to <a class="reference internal" href="plugins.html#using-plugins"><span class="std std-ref">Installing and Using plugins</span></a> if you
+only want to use but not write plugins.</p>
+<p>A plugin contains one or multiple hook functions. <a class="reference internal" href="#writinghooks"><span class="std std-ref">Writing hooks</span></a>
+explains the basics and details of how you can write a hook function yourself.
+<code class="docutils literal notranslate"><span class="pre">pytest</span></code> implements all aspects of configuration, collection, running and
+reporting by calling <a class="reference internal" href="#well-specified-hooks">well specified hooks</a> of the following plugins:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="plugins.html#builtin-plugins"><span class="std std-ref">Pytest default plugin reference</span></a>: loaded from pytest’s internal <code class="docutils literal notranslate"><span class="pre">_pytest</span></code> directory.</p></li>
+<li><p><a class="reference internal" href="plugins.html#extplugins"><span class="std std-ref">external plugins</span></a>: modules discovered through
+<a class="reference internal" href="#setuptools-entry-points">setuptools entry points</a></p></li>
+<li><p><a class="reference internal" href="#conftest-py-plugins">conftest.py plugins</a>: modules auto-discovered in test directories</p></li>
+</ul>
+<p>In principle, each hook call is a <code class="docutils literal notranslate"><span class="pre">1:N</span></code> Python function call where <code class="docutils literal notranslate"><span class="pre">N</span></code> is the
+number of registered implementation functions for a given specification.
+All specifications and implementations follow the <code class="docutils literal notranslate"><span class="pre">pytest_</span></code> prefix
+naming convention, making them easy to distinguish and find.</p>
+<div class="section" id="plugin-discovery-order-at-tool-startup">
+<span id="pluginorder"></span><h2>Plugin discovery order at tool startup<a class="headerlink" href="#plugin-discovery-order-at-tool-startup" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">pytest</span></code> loads plugin modules at tool startup in the following way:</p>
+<ul>
+<li><p>by loading all builtin plugins</p></li>
+<li><p>by loading all plugins registered through <a class="reference internal" href="#setuptools-entry-points">setuptools entry points</a>.</p></li>
+<li><p>by pre-scanning the command line for the <code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">name</span></code> option
+and loading the specified plugin before actual command line parsing.</p></li>
+<li><p>by loading all <code class="file docutils literal notranslate"><span class="pre">conftest.py</span></code> files as inferred by the command line
+invocation:</p>
+<ul class="simple">
+<li><p>if no test paths are specified use current dir as a test path</p></li>
+<li><p>if exists, load <code class="docutils literal notranslate"><span class="pre">conftest.py</span></code> and <code class="docutils literal notranslate"><span class="pre">test*/conftest.py</span></code> relative
+to the directory part of the first test path.</p></li>
+</ul>
+<p>Note that pytest does not find <code class="docutils literal notranslate"><span class="pre">conftest.py</span></code> files in deeper nested
+sub directories at tool startup.  It is usually a good idea to keep
+your conftest.py file in the top level test or project root directory.</p>
+</li>
+<li><p>by recursively loading all plugins specified by the
+<code class="docutils literal notranslate"><span class="pre">pytest_plugins</span></code> variable in <code class="docutils literal notranslate"><span class="pre">conftest.py</span></code> files</p></li>
+</ul>
+</div>
+<div class="section" id="conftest-py-local-per-directory-plugins">
+<span id="local-conftest-plugins"></span><span id="conftest"></span><span id="localplugin"></span><span id="conftest-py"></span><span id="conftest-py-plugins"></span><h2>conftest.py: local per-directory plugins<a class="headerlink" href="#conftest-py-local-per-directory-plugins" title="永久链接至标题">¶</a></h2>
+<p>Local <code class="docutils literal notranslate"><span class="pre">conftest.py</span></code> plugins contain directory-specific hook
+implementations.  Hook Session and test running activities will
+invoke all hooks defined in <code class="docutils literal notranslate"><span class="pre">conftest.py</span></code> files closer to the
+root of the filesystem.  Example of implementing the
+<code class="docutils literal notranslate"><span class="pre">pytest_runtest_setup</span></code> hook so that is called for tests in the <code class="docutils literal notranslate"><span class="pre">a</span></code>
+sub directory but not for other directories:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">/</span><span class="n">conftest</span><span class="o">.</span><span class="n">py</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">pytest_runtest_setup</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+        <span class="c1"># called for running each test in &#39;a&#39; directory</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;setting up&quot;</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+
+<span class="n">a</span><span class="o">/</span><span class="n">test_sub</span><span class="o">.</span><span class="n">py</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_sub</span><span class="p">():</span>
+        <span class="k">pass</span>
+
+<span class="n">test_flat</span><span class="o">.</span><span class="n">py</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_flat</span><span class="p">():</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+<p>Here is how you might run it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">py</span><span class="o">.</span><span class="n">test</span> <span class="n">test_flat</span><span class="o">.</span><span class="n">py</span>   <span class="c1"># will not show &quot;setting up&quot;</span>
+<span class="n">py</span><span class="o">.</span><span class="n">test</span> <span class="n">a</span><span class="o">/</span><span class="n">test_sub</span><span class="o">.</span><span class="n">py</span>  <span class="c1"># will show &quot;setting up&quot;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>If you have <code class="docutils literal notranslate"><span class="pre">conftest.py</span></code> files which do not reside in a
+python package directory (i.e. one containing an <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>) then
+“import conftest” can be ambiguous because there might be other
+<code class="docutils literal notranslate"><span class="pre">conftest.py</span></code> files as well on your PYTHONPATH or <code class="docutils literal notranslate"><span class="pre">sys.path</span></code>.
+It is thus good practice for projects to either put <code class="docutils literal notranslate"><span class="pre">conftest.py</span></code>
+under a package scope or to never import anything from a
+conftest.py file.</p>
+</div>
+</div>
+<div class="section" id="writing-your-own-plugin">
+<h2>Writing your own plugin<a class="headerlink" href="#writing-your-own-plugin" title="永久链接至标题">¶</a></h2>
+<p>If you want to write a plugin, there are many real-life examples
+you can copy from:</p>
+<ul class="simple">
+<li><p>a custom collection example plugin: <a class="reference internal" href="example/nonpython.html#yaml-plugin"><span class="std std-ref">A basic example for specifying tests in Yaml files</span></a></p></li>
+<li><p>around 20 <a class="reference internal" href="plugins.html#builtin-plugins"><span class="std std-ref">Pytest default plugin reference</span></a> which provide pytest’s own functionality</p></li>
+<li><p>many <a class="reference external" href="http://plugincompat.herokuapp.com">external plugins</a> providing additional features</p></li>
+</ul>
+<p>All of these plugins implement the documented <a class="reference internal" href="#well-specified-hooks">well specified hooks</a>
+to extend and add functionality.</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>Make sure to check out the excellent
+<a class="reference external" href="https://github.com/pytest-dev/cookiecutter-pytest-plugin">cookiecutter-pytest-plugin</a>
+project, which is a <a class="reference external" href="https://github.com/audreyr/cookiecutter">cookiecutter template</a>
+for authoring plugins.</p>
+<p>The template provides an excellent starting point with a working plugin,
+tests running with tox, comprehensive README and
+entry-pointy already pre-configured.</p>
+</div>
+<p>Also consider <a class="reference internal" href="contributing.html#submitplugin"><span class="std std-ref">contributing your plugin to pytest-dev</span></a>
+once it has some happy users other than yourself.</p>
+</div>
+<div class="section" id="making-your-plugin-installable-by-others">
+<span id="pip-installable-plugins"></span><span id="setuptools-entry-points"></span><h2>Making your plugin installable by others<a class="headerlink" href="#making-your-plugin-installable-by-others" title="永久链接至标题">¶</a></h2>
+<p>If you want to make your plugin externally available, you
+may define a so-called entry point for your distribution so
+that <code class="docutils literal notranslate"><span class="pre">pytest</span></code> finds your plugin module.  Entry points are
+a feature that is provided by <a class="reference external" href="http://pypi.python.org/pypi/setuptools">setuptools</a>. pytest looks up
+the <code class="docutils literal notranslate"><span class="pre">pytest11</span></code> entrypoint to discover its
+plugins and you can thus make your plugin available by defining
+it in your setuptools-invocation:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># sample ./setup.py file</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">setuptools</span><span class="w"> </span><span class="kn">import</span> <span class="n">setup</span>
+
+<span class="n">setup</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;myproject&quot;</span><span class="p">,</span>
+    <span class="n">packages</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;myproject&#39;</span><span class="p">]</span>
+
+    <span class="c1"># the following makes a plugin available to pytest</span>
+    <span class="n">entry_points</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;pytest11&#39;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s1">&#39;name_of_plugin = myproject.pluginmodule&#39;</span><span class="p">,</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+
+    <span class="c1"># custom PyPI classifier for pytest plugins</span>
+    <span class="n">classifiers</span><span class="o">=</span><span class="p">[</span>
+        <span class="s2">&quot;Framework :: Pytest&quot;</span><span class="p">,</span>
+    <span class="p">],</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>If a package is installed this way, <code class="docutils literal notranslate"><span class="pre">pytest</span></code> will load
+<code class="docutils literal notranslate"><span class="pre">myproject.pluginmodule</span></code> as a plugin which can define
+<a class="reference internal" href="#well-specified-hooks">well specified hooks</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>Make sure to include <code class="docutils literal notranslate"><span class="pre">Framework</span> <span class="pre">::</span> <span class="pre">Pytest</span></code> in your list of
+<a class="reference external" href="https://python-packaging-user-guide.readthedocs.io/en/latest/distributing/#classifiers">PyPI classifiers</a>
+to make it easy for users to find your plugin.</p>
+</div>
+</div>
+<div class="section" id="requiring-loading-plugins-in-a-test-module-or-conftest-file">
+<h2>Requiring/Loading plugins in a test module or conftest file<a class="headerlink" href="#requiring-loading-plugins-in-a-test-module-or-conftest-file" title="永久链接至标题">¶</a></h2>
+<p>You can require plugins in a test module or a conftest file like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pytest_plugins</span> <span class="o">=</span> <span class="s2">&quot;name1&quot;</span><span class="p">,</span> <span class="s2">&quot;name2&quot;</span><span class="p">,</span>
+</pre></div>
+</div>
+<p>When the test module or conftest plugin is loaded the specified plugins
+will be loaded as well.  You can also use dotted path like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pytest_plugins</span> <span class="o">=</span> <span class="s2">&quot;myapp.testsupport.myplugin&quot;</span>
+</pre></div>
+</div>
+<p>which will import the specified module as a <code class="docutils literal notranslate"><span class="pre">pytest</span></code> plugin.</p>
+</div>
+<div class="section" id="accessing-another-plugin-by-name">
+<h2>Accessing another plugin by name<a class="headerlink" href="#accessing-another-plugin-by-name" title="永久链接至标题">¶</a></h2>
+<p>If a plugin wants to collaborate with code from
+another plugin it can obtain a reference through
+the plugin manager like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plugin</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">pluginmanager</span><span class="o">.</span><span class="n">getplugin</span><span class="p">(</span><span class="s2">&quot;name_of_plugin&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If you want to look at the names of existing plugins, use
+the <code class="docutils literal notranslate"><span class="pre">--trace-config</span></code> option.</p>
+</div>
+<div class="section" id="testing-plugins">
+<h2>Testing plugins<a class="headerlink" href="#testing-plugins" title="永久链接至标题">¶</a></h2>
+<p>pytest comes with some facilities that you can enable for testing your
+plugin.  Given that you have an installed plugin you can enable the
+<a class="reference internal" href="#pytest.pytester.Testdir" title="_pytest.pytester.Testdir"><code class="xref py py-class docutils literal notranslate"><span class="pre">testdir</span></code></a> fixture via specifying a
+command line option to include the pytester plugin (<code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">pytester</span></code>) or
+by putting <code class="docutils literal notranslate"><span class="pre">pytest_plugins</span> <span class="pre">=</span> <span class="pre">&quot;pytester&quot;</span></code> into your test or
+<code class="docutils literal notranslate"><span class="pre">conftest.py</span></code> file.  You then will have a <code class="docutils literal notranslate"><span class="pre">testdir</span></code> fixture which you
+can use like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># content of test_myplugin.py</span>
+
+<span class="n">pytest_plugins</span> <span class="o">=</span> <span class="s2">&quot;pytester&quot;</span>  <span class="c1"># to get testdir fixture</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">test_myplugin</span><span class="p">(</span><span class="n">testdir</span><span class="p">):</span>
+    <span class="n">testdir</span><span class="o">.</span><span class="n">makepyfile</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        def test_example():</span>
+<span class="s2">            pass</span>
+<span class="s2">    &quot;&quot;&quot;</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">testdir</span><span class="o">.</span><span class="n">runpytest</span><span class="p">(</span><span class="s2">&quot;--verbose&quot;</span><span class="p">)</span>
+    <span class="n">result</span><span class="o">.</span><span class="n">fnmatch_lines</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        test_example*</span>
+<span class="s2">    &quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that by default <code class="docutils literal notranslate"><span class="pre">testdir.runpytest()</span></code> will perform a pytest
+in-process.  You can pass the command line option <code class="docutils literal notranslate"><span class="pre">--runpytest=subprocess</span></code>
+to have it happen in a subprocess.</p>
+<p>Also see the <a class="reference internal" href="#pytest.pytester.RunResult" title="_pytest.pytester.RunResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">RunResult</span></code></a> for more
+methods of the result object that you get from a call to <code class="docutils literal notranslate"><span class="pre">runpytest</span></code>.</p>
+</div>
+</div>
+<div class="section" id="writing-hook-functions">
+<span id="writinghooks"></span><h1>Writing hook functions<a class="headerlink" href="#writing-hook-functions" title="永久链接至标题">¶</a></h1>
+<div class="section" id="hook-function-validation-and-execution">
+<span id="validation"></span><h2>hook function validation and execution<a class="headerlink" href="#hook-function-validation-and-execution" title="永久链接至标题">¶</a></h2>
+<p>pytest calls hook functions from registered plugins for any
+given hook specification.  Let’s look at a typical hook function
+for the <code class="docutils literal notranslate"><span class="pre">pytest_collection_modifyitems(session,</span> <span class="pre">config,</span>
+<span class="pre">items)</span></code> hook which pytest calls after collection of all test items is
+completed.</p>
+<p>When we implement a <code class="docutils literal notranslate"><span class="pre">pytest_collection_modifyitems</span></code> function in our plugin
+pytest will during registration verify that you use argument
+names which match the specification and bail out if not.</p>
+<p>Let’s look at a possible implementation:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pytest_collection_modifyitems</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">items</span><span class="p">):</span>
+    <span class="c1"># called after collection is completed</span>
+    <span class="c1"># you can modify the ``items`` list</span>
+</pre></div>
+</div>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">pytest</span></code> will pass in <code class="docutils literal notranslate"><span class="pre">config</span></code> (the pytest config object)
+and <code class="docutils literal notranslate"><span class="pre">items</span></code> (the list of collected test items) but will not pass
+in the <code class="docutils literal notranslate"><span class="pre">session</span></code> argument because we didn’t list it in the function
+signature.  This dynamic “pruning” of arguments allows <code class="docutils literal notranslate"><span class="pre">pytest</span></code> to
+be “future-compatible”: we can introduce new hook named parameters without
+breaking the signatures of existing hook implementations.  It is one of
+the reasons for the general long-lived compatibility of pytest plugins.</p>
+<p>Note that hook functions other than <code class="docutils literal notranslate"><span class="pre">pytest_runtest_*</span></code> are not
+allowed to raise exceptions.  Doing so will break the pytest run.</p>
+</div>
+<div class="section" id="firstresult-stop-at-first-non-none-result">
+<h2>firstresult: stop at first non-None result<a class="headerlink" href="#firstresult-stop-at-first-non-none-result" title="永久链接至标题">¶</a></h2>
+<p>Most calls to <code class="docutils literal notranslate"><span class="pre">pytest</span></code> hooks result in a <strong>list of results</strong> which contains
+all non-None results of the called hook functions.</p>
+<p>Some hook specifications use the <code class="docutils literal notranslate"><span class="pre">firstresult=True</span></code> option so that the hook
+call only executes until the first of N registered functions returns a
+non-None result which is then taken as result of the overall hook call.
+The remaining hook functions will not be called in this case.</p>
+</div>
+<div class="section" id="hookwrapper-executing-around-other-hooks">
+<h2>hookwrapper: executing around other hooks<a class="headerlink" href="#hookwrapper-executing-around-other-hooks" title="永久链接至标题">¶</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">2.7 新版功能.</span></p>
+</div>
+<p>pytest plugins can implement hook wrappers which wrap the execution
+of other hook implementations.  A hook wrapper is a generator function
+which yields exactly once. When pytest invokes hooks it first executes
+hook wrappers and passes the same arguments as to the regular hooks.</p>
+<p>At the yield point of the hook wrapper pytest will execute the next hook
+implementations and return their result to the yield point in the form of
+a <code class="xref py py-class docutils literal notranslate"><span class="pre">CallOutcome</span></code> instance which encapsulates a result or
+exception info.  The yield point itself will thus typically not raise
+exceptions (unless there are bugs).</p>
+<p>Here is an example definition of a hook wrapper:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span>
+
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">hookimpl</span><span class="p">(</span><span class="n">hookwrapper</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">pytest_pyfunc_call</span><span class="p">(</span><span class="n">pyfuncitem</span><span class="p">):</span>
+    <span class="c1"># do whatever you want before the next hook executes</span>
+
+    <span class="n">outcome</span> <span class="o">=</span> <span class="k">yield</span>
+    <span class="c1"># outcome.excinfo may be None or a (cls, val, tb) tuple</span>
+
+    <span class="n">res</span> <span class="o">=</span> <span class="n">outcome</span><span class="o">.</span><span class="n">get_result</span><span class="p">()</span>  <span class="c1"># will raise if outcome was exception</span>
+    <span class="c1"># postprocess result</span>
+</pre></div>
+</div>
+<p>Note that hook wrappers don’t return results themselves, they merely
+perform tracing or other side effects around the actual hook implementations.
+If the result of the underlying hook is a mutable object, they may modify
+that result but it’s probably better to avoid it.</p>
+</div>
+<div class="section" id="hook-function-ordering-call-example">
+<h2>Hook function ordering / call example<a class="headerlink" href="#hook-function-ordering-call-example" title="永久链接至标题">¶</a></h2>
+<p>For any given hook specification there may be more than one
+implementation and we thus generally view <code class="docutils literal notranslate"><span class="pre">hook</span></code> execution as a
+<code class="docutils literal notranslate"><span class="pre">1:N</span></code> function call where <code class="docutils literal notranslate"><span class="pre">N</span></code> is the number of registered functions.
+There are ways to influence if a hook implementation comes before or
+after others, i.e.  the position in the <code class="docutils literal notranslate"><span class="pre">N</span></code>-sized list of functions:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plugin 1</span>
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">hookimpl</span><span class="p">(</span><span class="n">tryfirst</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">pytest_collection_modifyitems</span><span class="p">(</span><span class="n">items</span><span class="p">):</span>
+    <span class="c1"># will execute as early as possible</span>
+
+<span class="c1"># Plugin 2</span>
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">hookimpl</span><span class="p">(</span><span class="n">trylast</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">pytest_collection_modifyitems</span><span class="p">(</span><span class="n">items</span><span class="p">):</span>
+    <span class="c1"># will execute as late as possible</span>
+
+<span class="c1"># Plugin 3</span>
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">hookimpl</span><span class="p">(</span><span class="n">hookwrapper</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">pytest_collection_modifyitems</span><span class="p">(</span><span class="n">items</span><span class="p">):</span>
+    <span class="c1"># will execute even before the tryfirst one above!</span>
+    <span class="n">outcome</span> <span class="o">=</span> <span class="k">yield</span>
+    <span class="c1"># will execute after all non-hookwrappers executed</span>
+</pre></div>
+</div>
+<p>Here is the order of execution:</p>
+<ol class="arabic simple">
+<li><p>Plugin3’s pytest_collection_modifyitems called until the yield point
+because it is a hook wrapper.</p></li>
+<li><p>Plugin1’s pytest_collection_modifyitems is called because it is marked
+with <code class="docutils literal notranslate"><span class="pre">tryfirst=True</span></code>.</p></li>
+<li><p>Plugin2’s pytest_collection_modifyitems is called because it is marked
+with <code class="docutils literal notranslate"><span class="pre">trylast=True</span></code> (but even without this mark it would come after
+Plugin1).</p></li>
+<li><p>Plugin3’s pytest_collection_modifyitems then executing the code after the yield
+point.  The yield receives a <code class="xref py py-class docutils literal notranslate"><span class="pre">CallOutcome</span></code> instance which encapsulates
+the result from calling the non-wrappers.  Wrappers shall not modify the result.</p></li>
+</ol>
+<p>It’s possible to use <code class="docutils literal notranslate"><span class="pre">tryfirst</span></code> and <code class="docutils literal notranslate"><span class="pre">trylast</span></code> also in conjunction with
+<code class="docutils literal notranslate"><span class="pre">hookwrapper=True</span></code> in which case it will influence the ordering of hookwrappers
+among each other.</p>
+</div>
+<div class="section" id="declaring-new-hooks">
+<h2>Declaring new hooks<a class="headerlink" href="#declaring-new-hooks" title="永久链接至标题">¶</a></h2>
+<p>Plugins and <code class="docutils literal notranslate"><span class="pre">conftest.py</span></code> files may declare new hooks that can then be
+implemented by other plugins in order to alter behaviour or interact with
+the new plugin:</p>
+<dl class="py function">
+<dt id="pytest.hookspec.pytest_addhooks">
+<span id="_pytest.hookspec.pytest_addhooks"></span><code class="sig-name descname"><span class="pre">pytest_addhooks</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pluginmanager</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/hookspec.html#pytest_addhooks"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.hookspec.pytest_addhooks" title="永久链接至目标">¶</a></dt>
+<dd><p>called at plugin registration time to allow adding new hooks via a call to
+pluginmanager.add_hookspecs(module_or_class, prefix).</p>
+</dd></dl>
+
+<p>Hooks are usually declared as do-nothing functions that contain only
+documentation describing when the hook will be called and what return values
+are expected.</p>
+<p>For an example, see <a class="reference external" href="https://github.com/pytest-dev/pytest-xdist/blob/974bd566c599dc6a9ea291838c6f226197208b46/xdist/newhooks.py">newhooks.py</a> from <a class="reference internal" href="xdist.html#xdist"><span class="std std-ref">xdist: pytest distributed testing plugin</span></a>.</p>
+</div>
+<div class="section" id="optionally-using-hooks-from-3rd-party-plugins">
+<h2>Optionally using hooks from 3rd party plugins<a class="headerlink" href="#optionally-using-hooks-from-3rd-party-plugins" title="永久链接至标题">¶</a></h2>
+<p>Using new hooks from plugins as explained above might be a little tricky
+because of the standard <a class="reference internal" href="#validation"><span class="std std-ref">validation mechanism</span></a>:
+if you depend on a plugin that is not installed, validation will fail and
+the error message will not make much sense to your users.</p>
+<p>One approach is to defer the hook implementation to a new plugin instead of
+declaring the hook functions directly in your plugin module, for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># contents of myplugin.py</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">DeferPlugin</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Simple plugin to defer pytest-xdist hook functions.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">pytest_testnodedown</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">error</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;standard xdist hook function.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">pytest_configure</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">config</span><span class="o">.</span><span class="n">pluginmanager</span><span class="o">.</span><span class="n">hasplugin</span><span class="p">(</span><span class="s1">&#39;xdist&#39;</span><span class="p">):</span>
+        <span class="n">config</span><span class="o">.</span><span class="n">pluginmanager</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">DeferPlugin</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>This has the added benefit of allowing you to conditionally install hooks
+depending on which plugins are installed.</p>
+</div>
+</div>
+<div class="section" id="pytest-hook-reference">
+<span id="well-specified-hooks"></span><h1>pytest hook reference<a class="headerlink" href="#pytest-hook-reference" title="永久链接至标题">¶</a></h1>
+<div class="section" id="initialization-command-line-and-configuration-hooks">
+<h2>Initialization, command line and configuration hooks<a class="headerlink" href="#initialization-command-line-and-configuration-hooks" title="永久链接至标题">¶</a></h2>
+<dl class="py function">
+<dt id="pytest.hookspec.pytest_load_initial_conftests">
+<span id="_pytest.hookspec.pytest_load_initial_conftests"></span><code class="sig-name descname"><span class="pre">pytest_load_initial_conftests</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">early_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parser</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/hookspec.html#pytest_load_initial_conftests"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.hookspec.pytest_load_initial_conftests" title="永久链接至目标">¶</a></dt>
+<dd><p>implements the loading of initial conftest files ahead
+of command line option parsing.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pytest.hookspec.pytest_cmdline_preparse">
+<span id="_pytest.hookspec.pytest_cmdline_preparse"></span><code class="sig-name descname"><span class="pre">pytest_cmdline_preparse</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/hookspec.html#pytest_cmdline_preparse"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.hookspec.pytest_cmdline_preparse" title="永久链接至目标">¶</a></dt>
+<dd><p>(deprecated) modify command line arguments before option parsing.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pytest.hookspec.pytest_cmdline_parse">
+<span id="_pytest.hookspec.pytest_cmdline_parse"></span><code class="sig-name descname"><span class="pre">pytest_cmdline_parse</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pluginmanager</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/hookspec.html#pytest_cmdline_parse"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.hookspec.pytest_cmdline_parse" title="永久链接至目标">¶</a></dt>
+<dd><p>return initialized config object, parsing the specified args.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pytest.hookspec.pytest_namespace">
+<span id="_pytest.hookspec.pytest_namespace"></span><code class="sig-name descname"><span class="pre">pytest_namespace</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/hookspec.html#pytest_namespace"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.hookspec.pytest_namespace" title="永久链接至目标">¶</a></dt>
+<dd><p>return dict of name-&gt;object to be made globally available in
+the pytest namespace.  This hook is called at plugin registration
+time.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pytest.hookspec.pytest_addoption">
+<span id="_pytest.hookspec.pytest_addoption"></span><code class="sig-name descname"><span class="pre">pytest_addoption</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parser</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/hookspec.html#pytest_addoption"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.hookspec.pytest_addoption" title="永久链接至目标">¶</a></dt>
+<dd><p>register argparse-style options and ini-style config values,
+called once at the beginning of a test run.</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>This function should be implemented only in plugins or <code class="docutils literal notranslate"><span class="pre">conftest.py</span></code>
+files situated at the tests root directory due to how py.test
+<a class="reference internal" href="#pluginorder"><span class="std std-ref">discovers plugins during startup</span></a>.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>parser</strong> – To add command line options, call
+<a class="reference internal" href="#pytest.config.Parser.addoption" title="_pytest.config.Parser.addoption"><code class="xref py py-func docutils literal notranslate"><span class="pre">parser.addoption(...)</span></code></a>.
+To add ini-file values call <a class="reference internal" href="#pytest.config.Parser.addini" title="_pytest.config.Parser.addini"><code class="xref py py-func docutils literal notranslate"><span class="pre">parser.addini(...)</span></code></a>.</p>
+</dd>
+</dl>
+<p>Options can later be accessed through the
+<a class="reference internal" href="#pytest.config.Config" title="_pytest.config.Config"><code class="xref py py-class docutils literal notranslate"><span class="pre">config</span></code></a> object, respectively:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#pytest.config.Config.getoption" title="_pytest.config.Config.getoption"><code class="xref py py-func docutils literal notranslate"><span class="pre">config.getoption(name)</span></code></a> to
+retrieve the value of a command line option.</p></li>
+<li><p><a class="reference internal" href="#pytest.config.Config.getini" title="_pytest.config.Config.getini"><code class="xref py py-func docutils literal notranslate"><span class="pre">config.getini(name)</span></code></a> to retrieve
+a value read from an ini-style file.</p></li>
+</ul>
+<p>The config object is passed around on many internal objects via the <code class="docutils literal notranslate"><span class="pre">.config</span></code>
+attribute or can be retrieved as the <code class="docutils literal notranslate"><span class="pre">pytestconfig</span></code> fixture or accessed
+via (deprecated) <code class="docutils literal notranslate"><span class="pre">pytest.config</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pytest.hookspec.pytest_cmdline_main">
+<span id="_pytest.hookspec.pytest_cmdline_main"></span><code class="sig-name descname"><span class="pre">pytest_cmdline_main</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/hookspec.html#pytest_cmdline_main"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.hookspec.pytest_cmdline_main" title="永久链接至目标">¶</a></dt>
+<dd><p>called for performing the main command line action. The default
+implementation will invoke the configure hooks and runtest_mainloop.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pytest.hookspec.pytest_configure">
+<span id="_pytest.hookspec.pytest_configure"></span><code class="sig-name descname"><span class="pre">pytest_configure</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/hookspec.html#pytest_configure"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.hookspec.pytest_configure" title="永久链接至目标">¶</a></dt>
+<dd><p>called after command line options have been parsed
+and all plugins and initial conftest files been loaded.
+This hook is called for every plugin.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pytest.hookspec.pytest_unconfigure">
+<span id="_pytest.hookspec.pytest_unconfigure"></span><code class="sig-name descname"><span class="pre">pytest_unconfigure</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/hookspec.html#pytest_unconfigure"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.hookspec.pytest_unconfigure" title="永久链接至目标">¶</a></dt>
+<dd><p>called before test process is exited.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="generic-runtest-hooks">
+<h2>Generic “runtest” hooks<a class="headerlink" href="#generic-runtest-hooks" title="永久链接至标题">¶</a></h2>
+<p>All runtest related hooks receive a <code class="xref py py-class docutils literal notranslate"><span class="pre">pytest.Item</span></code> object.</p>
+<dl class="py function">
+<dt id="pytest.hookspec.pytest_runtest_protocol">
+<span id="_pytest.hookspec.pytest_runtest_protocol"></span><code class="sig-name descname"><span class="pre">pytest_runtest_protocol</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nextitem</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/hookspec.html#pytest_runtest_protocol"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.hookspec.pytest_runtest_protocol" title="永久链接至目标">¶</a></dt>
+<dd><p>implements the runtest_setup/call/teardown protocol for
+the given test item, including capturing exceptions and calling
+reporting hooks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>item</strong> – test item for which the runtest protocol is performed.</p></li>
+<li><p><strong>nextitem</strong> – the scheduled-to-be-next test item (or None if this
+is the end my friend).  This argument is passed on to
+<a class="reference internal" href="#pytest.hookspec.pytest_runtest_teardown" title="_pytest.hookspec.pytest_runtest_teardown"><code class="xref py py-func docutils literal notranslate"><span class="pre">pytest_runtest_teardown()</span></code></a>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return boolean</dt>
+<dd class="field-even"><p>True if no further hook implementations should be invoked.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pytest.hookspec.pytest_runtest_setup">
+<span id="_pytest.hookspec.pytest_runtest_setup"></span><code class="sig-name descname"><span class="pre">pytest_runtest_setup</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/hookspec.html#pytest_runtest_setup"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.hookspec.pytest_runtest_setup" title="永久链接至目标">¶</a></dt>
+<dd><p>called before <code class="docutils literal notranslate"><span class="pre">pytest_runtest_call(item)</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pytest.hookspec.pytest_runtest_call">
+<span id="_pytest.hookspec.pytest_runtest_call"></span><code class="sig-name descname"><span class="pre">pytest_runtest_call</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/hookspec.html#pytest_runtest_call"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.hookspec.pytest_runtest_call" title="永久链接至目标">¶</a></dt>
+<dd><p>called to execute the test <code class="docutils literal notranslate"><span class="pre">item</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pytest.hookspec.pytest_runtest_teardown">
+<span id="_pytest.hookspec.pytest_runtest_teardown"></span><code class="sig-name descname"><span class="pre">pytest_runtest_teardown</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nextitem</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/hookspec.html#pytest_runtest_teardown"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.hookspec.pytest_runtest_teardown" title="永久链接至目标">¶</a></dt>
+<dd><p>called after <code class="docutils literal notranslate"><span class="pre">pytest_runtest_call</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>nextitem</strong> – the scheduled-to-be-next test item (None if no further
+test item is scheduled).  This argument can be used to
+perform exact teardowns, i.e. calling just enough finalizers
+so that nextitem only needs to call setup-functions.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pytest.hookspec.pytest_runtest_makereport">
+<span id="_pytest.hookspec.pytest_runtest_makereport"></span><code class="sig-name descname"><span class="pre">pytest_runtest_makereport</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">call</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/hookspec.html#pytest_runtest_makereport"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.hookspec.pytest_runtest_makereport" title="永久链接至目标">¶</a></dt>
+<dd><p>return a <a class="reference internal" href="#pytest.runner.TestReport" title="_pytest.runner.TestReport"><code class="xref py py-class docutils literal notranslate"><span class="pre">_pytest.runner.TestReport</span></code></a> object
+for the given <code class="xref py py-class docutils literal notranslate"><span class="pre">pytest.Item</span></code> and
+<a class="reference internal" href="#pytest.runner.CallInfo" title="_pytest.runner.CallInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">_pytest.runner.CallInfo</span></code></a>.</p>
+</dd></dl>
+
+<p>For deeper understanding you may look at the default implementation of
+these hooks in <code class="xref py py-mod docutils literal notranslate"><span class="pre">_pytest.runner</span></code> and maybe also
+in <code class="xref py py-mod docutils literal notranslate"><span class="pre">_pytest.pdb</span></code> which interacts with <code class="xref py py-mod docutils literal notranslate"><span class="pre">_pytest.capture</span></code>
+and its input/output capturing in order to immediately drop
+into interactive debugging when a test failure occurs.</p>
+<p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">_pytest.terminal</span></code> reported specifically uses
+the reporting hook to print information about a test run.</p>
+</div>
+<div class="section" id="collection-hooks">
+<h2>Collection hooks<a class="headerlink" href="#collection-hooks" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">pytest</span></code> calls the following hooks for collecting files and directories:</p>
+<dl class="py function">
+<dt id="pytest.hookspec.pytest_ignore_collect">
+<span id="_pytest.hookspec.pytest_ignore_collect"></span><code class="sig-name descname"><span class="pre">pytest_ignore_collect</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/hookspec.html#pytest_ignore_collect"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.hookspec.pytest_ignore_collect" title="永久链接至目标">¶</a></dt>
+<dd><p>return True to prevent considering this path for collection.
+This hook is consulted for all files and directories prior to calling
+more specific hooks.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pytest.hookspec.pytest_collect_directory">
+<span id="_pytest.hookspec.pytest_collect_directory"></span><code class="sig-name descname"><span class="pre">pytest_collect_directory</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/hookspec.html#pytest_collect_directory"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.hookspec.pytest_collect_directory" title="永久链接至目标">¶</a></dt>
+<dd><p>called before traversing a directory for collection files.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pytest.hookspec.pytest_collect_file">
+<span id="_pytest.hookspec.pytest_collect_file"></span><code class="sig-name descname"><span class="pre">pytest_collect_file</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/hookspec.html#pytest_collect_file"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.hookspec.pytest_collect_file" title="永久链接至目标">¶</a></dt>
+<dd><p>return collection Node or None for the given path. Any new node
+needs to have the specified <code class="docutils literal notranslate"><span class="pre">parent</span></code> as a parent.</p>
+</dd></dl>
+
+<p>For influencing the collection of objects in Python modules
+you can use the following hook:</p>
+<dl class="py function">
+<dt id="pytest.hookspec.pytest_pycollect_makeitem">
+<span id="_pytest.hookspec.pytest_pycollect_makeitem"></span><code class="sig-name descname"><span class="pre">pytest_pycollect_makeitem</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">collector</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/hookspec.html#pytest_pycollect_makeitem"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.hookspec.pytest_pycollect_makeitem" title="永久链接至目标">¶</a></dt>
+<dd><p>return custom item/collector for a python object in a module, or None.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pytest.hookspec.pytest_generate_tests">
+<span id="_pytest.hookspec.pytest_generate_tests"></span><code class="sig-name descname"><span class="pre">pytest_generate_tests</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metafunc</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/hookspec.html#pytest_generate_tests"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.hookspec.pytest_generate_tests" title="永久链接至目标">¶</a></dt>
+<dd><p>generate (multiple) parametrized calls to a test function.</p>
+</dd></dl>
+
+<p>After collection is complete, you can modify the order of
+items, delete or otherwise amend the test items:</p>
+<dl class="py function">
+<dt id="pytest.hookspec.pytest_collection_modifyitems">
+<span id="_pytest.hookspec.pytest_collection_modifyitems"></span><code class="sig-name descname"><span class="pre">pytest_collection_modifyitems</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">items</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/hookspec.html#pytest_collection_modifyitems"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.hookspec.pytest_collection_modifyitems" title="永久链接至目标">¶</a></dt>
+<dd><p>called after collection has been performed, may filter or re-order
+the items in-place.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="reporting-hooks">
+<h2>Reporting hooks<a class="headerlink" href="#reporting-hooks" title="永久链接至标题">¶</a></h2>
+<p>Session related reporting hooks:</p>
+<dl class="py function">
+<dt id="pytest.hookspec.pytest_collectstart">
+<span id="_pytest.hookspec.pytest_collectstart"></span><code class="sig-name descname"><span class="pre">pytest_collectstart</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">collector</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/hookspec.html#pytest_collectstart"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.hookspec.pytest_collectstart" title="永久链接至目标">¶</a></dt>
+<dd><p>collector starts collecting.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pytest.hookspec.pytest_itemcollected">
+<span id="_pytest.hookspec.pytest_itemcollected"></span><code class="sig-name descname"><span class="pre">pytest_itemcollected</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/hookspec.html#pytest_itemcollected"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.hookspec.pytest_itemcollected" title="永久链接至目标">¶</a></dt>
+<dd><p>we just collected a test item.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pytest.hookspec.pytest_collectreport">
+<span id="_pytest.hookspec.pytest_collectreport"></span><code class="sig-name descname"><span class="pre">pytest_collectreport</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">report</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/hookspec.html#pytest_collectreport"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.hookspec.pytest_collectreport" title="永久链接至目标">¶</a></dt>
+<dd><p>collector finished collecting.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pytest.hookspec.pytest_deselected">
+<span id="_pytest.hookspec.pytest_deselected"></span><code class="sig-name descname"><span class="pre">pytest_deselected</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">items</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/hookspec.html#pytest_deselected"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.hookspec.pytest_deselected" title="永久链接至目标">¶</a></dt>
+<dd><p>called for test items deselected by keyword.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pytest.hookspec.pytest_report_header">
+<span id="_pytest.hookspec.pytest_report_header"></span><code class="sig-name descname"><span class="pre">pytest_report_header</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">startdir</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/hookspec.html#pytest_report_header"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.hookspec.pytest_report_header" title="永久链接至目标">¶</a></dt>
+<dd><p>return a string to be displayed as header info for terminal reporting.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pytest.hookspec.pytest_report_teststatus">
+<span id="_pytest.hookspec.pytest_report_teststatus"></span><code class="sig-name descname"><span class="pre">pytest_report_teststatus</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">report</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/hookspec.html#pytest_report_teststatus"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.hookspec.pytest_report_teststatus" title="永久链接至目标">¶</a></dt>
+<dd><p>return result-category, shortletter and verbose word for reporting.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pytest.hookspec.pytest_terminal_summary">
+<span id="_pytest.hookspec.pytest_terminal_summary"></span><code class="sig-name descname"><span class="pre">pytest_terminal_summary</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminalreporter</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/hookspec.html#pytest_terminal_summary"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.hookspec.pytest_terminal_summary" title="永久链接至目标">¶</a></dt>
+<dd><p>add additional section in terminal summary reporting.</p>
+</dd></dl>
+
+<p>And here is the central hook for reporting about
+test execution:</p>
+<dl class="py function">
+<dt id="pytest.hookspec.pytest_runtest_logreport">
+<span id="_pytest.hookspec.pytest_runtest_logreport"></span><code class="sig-name descname"><span class="pre">pytest_runtest_logreport</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">report</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/hookspec.html#pytest_runtest_logreport"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.hookspec.pytest_runtest_logreport" title="永久链接至目标">¶</a></dt>
+<dd><p>process a test setup/call/teardown report relating to
+the respective phase of executing a test.</p>
+</dd></dl>
+
+<p>You can also use this hook to customize assertion representation for some
+types:</p>
+<dl class="py function">
+<dt id="pytest.hookspec.pytest_assertrepr_compare">
+<span id="_pytest.hookspec.pytest_assertrepr_compare"></span><code class="sig-name descname"><span class="pre">pytest_assertrepr_compare</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">left</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/hookspec.html#pytest_assertrepr_compare"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.hookspec.pytest_assertrepr_compare" title="永久链接至目标">¶</a></dt>
+<dd><p>return explanation for comparisons in failing assert expressions.</p>
+<p>Return None for no custom explanation, otherwise return a list
+of strings.  The strings will be joined by newlines but any newlines
+<em>in</em> a string will be escaped.  Note that all but the first line will
+be indented sligthly, the intention is for the first line to be a summary.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="debugging-interaction-hooks">
+<h2>Debugging/Interaction hooks<a class="headerlink" href="#debugging-interaction-hooks" title="永久链接至标题">¶</a></h2>
+<p>There are few hooks which can be used for special
+reporting or interaction with exceptions:</p>
+<dl class="py function">
+<dt id="pytest.hookspec.pytest_internalerror">
+<span id="_pytest.hookspec.pytest_internalerror"></span><code class="sig-name descname"><span class="pre">pytest_internalerror</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">excrepr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">excinfo</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/hookspec.html#pytest_internalerror"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.hookspec.pytest_internalerror" title="永久链接至目标">¶</a></dt>
+<dd><p>called for internal errors.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pytest.hookspec.pytest_keyboard_interrupt">
+<span id="_pytest.hookspec.pytest_keyboard_interrupt"></span><code class="sig-name descname"><span class="pre">pytest_keyboard_interrupt</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">excinfo</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/hookspec.html#pytest_keyboard_interrupt"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.hookspec.pytest_keyboard_interrupt" title="永久链接至目标">¶</a></dt>
+<dd><p>called for keyboard interrupt.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pytest.hookspec.pytest_exception_interact">
+<span id="_pytest.hookspec.pytest_exception_interact"></span><code class="sig-name descname"><span class="pre">pytest_exception_interact</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">call</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">report</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/hookspec.html#pytest_exception_interact"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.hookspec.pytest_exception_interact" title="永久链接至目标">¶</a></dt>
+<dd><p>called when an exception was raised which can potentially be
+interactively handled.</p>
+<p>This hook is only called if an exception was raised
+that is not an internal exception like <code class="docutils literal notranslate"><span class="pre">skip.Exception</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pytest.hookspec.pytest_enter_pdb">
+<span id="_pytest.hookspec.pytest_enter_pdb"></span><code class="sig-name descname"><span class="pre">pytest_enter_pdb</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/hookspec.html#pytest_enter_pdb"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.hookspec.pytest_enter_pdb" title="永久链接至目标">¶</a></dt>
+<dd><p>called upon pdb.set_trace(), can be used by plugins to take special
+action just before the python debugger enters in interactive mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>config</strong> (<a class="reference internal" href="#pytest.config.Config" title="_pytest.config.Config"><em>_pytest.config.Config</em></a>) – pytest config object</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="reference-of-objects-involved-in-hooks">
+<h1>Reference of objects involved in hooks<a class="headerlink" href="#reference-of-objects-involved-in-hooks" title="永久链接至标题">¶</a></h1>
+<dl class="py class">
+<dt id="pytest.config.Config">
+<span id="_pytest.config.Config"></span><em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">Config</span></code><a class="reference internal" href="_modules/_pytest/config.html#Config"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.config.Config" title="永久链接至目标">¶</a></dt>
+<dd><p>access to configuration values, pluginmanager and plugin hooks.</p>
+<dl class="py attribute">
+<dt id="pytest.config.Config.option">
+<span id="_pytest.config.Config.option"></span><code class="sig-name descname"><span class="pre">option</span></code><a class="headerlink" href="#pytest.config.Config.option" title="永久链接至目标">¶</a></dt>
+<dd><p>access to command line option as attributes.
+(deprecated), use <a class="reference internal" href="#pytest.config.Config.getoption" title="_pytest.config.Config.getoption"><code class="xref py py-func docutils literal notranslate"><span class="pre">getoption()</span></code></a> instead</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pytest.config.Config.pluginmanager">
+<span id="_pytest.config.Config.pluginmanager"></span><code class="sig-name descname"><span class="pre">pluginmanager</span></code><a class="headerlink" href="#pytest.config.Config.pluginmanager" title="永久链接至目标">¶</a></dt>
+<dd><p>a pluginmanager instance</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.config.Config.add_cleanup">
+<span id="_pytest.config.Config.add_cleanup"></span><code class="sig-name descname"><span class="pre">add_cleanup</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/config.html#Config.add_cleanup"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.config.Config.add_cleanup" title="永久链接至目标">¶</a></dt>
+<dd><p>Add a function to be called when the config object gets out of
+use (usually coninciding with pytest_unconfigure).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.config.Config.warn">
+<span id="_pytest.config.Config.warn"></span><code class="sig-name descname"><span class="pre">warn</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fslocation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/config.html#Config.warn"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.config.Config.warn" title="永久链接至目标">¶</a></dt>
+<dd><p>generate a warning for this test session.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.config.Config.fromdictargs">
+<span id="_pytest.config.Config.fromdictargs"></span><em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">fromdictargs</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">option_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/config.html#Config.fromdictargs"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.config.Config.fromdictargs" title="永久链接至目标">¶</a></dt>
+<dd><p>constructor useable for subprocesses.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.config.Config.addinivalue_line">
+<span id="_pytest.config.Config.addinivalue_line"></span><code class="sig-name descname"><span class="pre">addinivalue_line</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/config.html#Config.addinivalue_line"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.config.Config.addinivalue_line" title="永久链接至目标">¶</a></dt>
+<dd><p>add a line to an ini-file option. The option must have been
+declared but might not yet be set in which case the line becomes the
+the first line in its value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.config.Config.getini">
+<span id="_pytest.config.Config.getini"></span><code class="sig-name descname"><span class="pre">getini</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/config.html#Config.getini"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.config.Config.getini" title="永久链接至目标">¶</a></dt>
+<dd><p>return configuration value from an <a class="reference internal" href="customize.html#inifiles"><span class="std std-ref">ini file</span></a>. If the
+specified name hasn’t been registered through a prior
+<code class="xref py py-func docutils literal notranslate"><span class="pre">parser.addini</span></code>
+call (usually from a plugin), a ValueError is raised.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.config.Config.getoption">
+<span id="_pytest.config.Config.getoption"></span><code class="sig-name descname"><span class="pre">getoption</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">default=&lt;NOTSET&gt;</span></em>, <em class="sig-param"><span class="pre">skip=False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/config.html#Config.getoption"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.config.Config.getoption" title="永久链接至目标">¶</a></dt>
+<dd><p>return command line option value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – name of the option.  You may also specify
+the literal <code class="docutils literal notranslate"><span class="pre">--OPT</span></code> option instead of the “dest” option name.</p></li>
+<li><p><strong>default</strong> – default value if no option of that name exists.</p></li>
+<li><p><strong>skip</strong> – if True raise pytest.skip if option does not exists
+or has a None value.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.config.Config.getvalue">
+<span id="_pytest.config.Config.getvalue"></span><code class="sig-name descname"><span class="pre">getvalue</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/config.html#Config.getvalue"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.config.Config.getvalue" title="永久链接至目标">¶</a></dt>
+<dd><p>(deprecated, use getoption())</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.config.Config.getvalueorskip">
+<span id="_pytest.config.Config.getvalueorskip"></span><code class="sig-name descname"><span class="pre">getvalueorskip</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/config.html#Config.getvalueorskip"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.config.Config.getvalueorskip" title="永久链接至目标">¶</a></dt>
+<dd><p>(deprecated, use getoption(skip=True))</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pytest.config.Parser">
+<span id="_pytest.config.Parser"></span><em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">Parser</span></code><a class="reference internal" href="_modules/_pytest/config.html#Parser"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.config.Parser" title="永久链接至目标">¶</a></dt>
+<dd><p>Parser for command line arguments and ini-file values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">变量</dt>
+<dd class="field-odd"><p><strong>extra_info</strong> – dict of generic param -&gt; value to display in case
+there’s an error processing the command line arguments.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="pytest.config.Parser.getgroup">
+<span id="_pytest.config.Parser.getgroup"></span><code class="sig-name descname"><span class="pre">getgroup</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">after</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/config.html#Parser.getgroup"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.config.Parser.getgroup" title="永久链接至目标">¶</a></dt>
+<dd><p>get (or create) a named option Group.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Name</dt>
+<dd class="field-odd"><p>name of the option group.</p>
+</dd>
+<dt class="field-even">Description</dt>
+<dd class="field-even"><p>long description for –help output.</p>
+</dd>
+<dt class="field-odd">After</dt>
+<dd class="field-odd"><p>name of other group, used for ordering –help output.</p>
+</dd>
+</dl>
+<p>The returned group object has an <code class="docutils literal notranslate"><span class="pre">addoption</span></code> method with the same
+signature as <a class="reference internal" href="#pytest.config.Parser.addoption" title="_pytest.config.Parser.addoption"><code class="xref py py-func docutils literal notranslate"><span class="pre">parser.addoption</span></code></a> but will be shown in the
+respective group in the output of <code class="docutils literal notranslate"><span class="pre">pytest.</span> <span class="pre">--help</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.config.Parser.addoption">
+<span id="_pytest.config.Parser.addoption"></span><code class="sig-name descname"><span class="pre">addoption</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">opts</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">attrs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/config.html#Parser.addoption"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.config.Parser.addoption" title="永久链接至目标">¶</a></dt>
+<dd><p>register a command line option.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Opts</dt>
+<dd class="field-odd"><p>option names, can be short or long options.</p>
+</dd>
+<dt class="field-even">Attrs</dt>
+<dd class="field-even"><p>same attributes which the <code class="docutils literal notranslate"><span class="pre">add_option()</span></code> function of the
+<a class="reference external" href="http://docs.python.org/2/library/argparse.html">argparse library</a>
+accepts.</p>
+</dd>
+</dl>
+<p>After command line parsing options are available on the pytest config
+object via <code class="docutils literal notranslate"><span class="pre">config.option.NAME</span></code> where <code class="docutils literal notranslate"><span class="pre">NAME</span></code> is usually set
+by passing a <code class="docutils literal notranslate"><span class="pre">dest</span></code> attribute, for example
+<code class="docutils literal notranslate"><span class="pre">addoption(&quot;--long&quot;,</span> <span class="pre">dest=&quot;NAME&quot;,</span> <span class="pre">...)</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.config.Parser.parse_known_args">
+<span id="_pytest.config.Parser.parse_known_args"></span><code class="sig-name descname"><span class="pre">parse_known_args</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namespace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/config.html#Parser.parse_known_args"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.config.Parser.parse_known_args" title="永久链接至目标">¶</a></dt>
+<dd><p>parses and returns a namespace object with known arguments at this
+point.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.config.Parser.parse_known_and_unknown_args">
+<span id="_pytest.config.Parser.parse_known_and_unknown_args"></span><code class="sig-name descname"><span class="pre">parse_known_and_unknown_args</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namespace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/config.html#Parser.parse_known_and_unknown_args"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.config.Parser.parse_known_and_unknown_args" title="永久链接至目标">¶</a></dt>
+<dd><p>parses and returns a namespace object with known arguments, and
+the remaining arguments unknown at this point.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.config.Parser.addini">
+<span id="_pytest.config.Parser.addini"></span><code class="sig-name descname"><span class="pre">addini</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">help</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/config.html#Parser.addini"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.config.Parser.addini" title="永久链接至目标">¶</a></dt>
+<dd><p>register an ini-file option.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Name</dt>
+<dd class="field-odd"><p>name of the ini-variable</p>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>type of the variable, can be <code class="docutils literal notranslate"><span class="pre">pathlist</span></code>, <code class="docutils literal notranslate"><span class="pre">args</span></code>, <code class="docutils literal notranslate"><span class="pre">linelist</span></code>
+or <code class="docutils literal notranslate"><span class="pre">bool</span></code>.</p>
+</dd>
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>default value if no ini-file option exists but is queried.</p>
+</dd>
+</dl>
+<p>The value of ini-variables can be retrieved via a call to
+<a class="reference internal" href="#pytest.config.Config.getini" title="_pytest.config.Config.getini"><code class="xref py py-func docutils literal notranslate"><span class="pre">config.getini(name)</span></code></a>.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pytest.runner.CallInfo">
+<span id="_pytest.runner.CallInfo"></span><em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">CallInfo</span></code><a class="reference internal" href="_modules/_pytest/runner.html#CallInfo"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.runner.CallInfo" title="永久链接至目标">¶</a></dt>
+<dd><p>Result/Exception info a function invocation.</p>
+<dl class="py attribute">
+<dt id="pytest.runner.CallInfo.excinfo">
+<span id="_pytest.runner.CallInfo.excinfo"></span><code class="sig-name descname"><span class="pre">excinfo</span></code><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#pytest.runner.CallInfo.excinfo" title="永久链接至目标">¶</a></dt>
+<dd><p>None or ExceptionInfo object.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pytest.runner.CallInfo.when">
+<span id="_pytest.runner.CallInfo.when"></span><code class="sig-name descname"><span class="pre">when</span></code><a class="headerlink" href="#pytest.runner.CallInfo.when" title="永久链接至目标">¶</a></dt>
+<dd><p>context of invocation: one of “setup”, “call”,
+“teardown”, “memocollect”</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pytest.runner.TestReport">
+<span id="_pytest.runner.TestReport"></span><em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">TestReport</span></code><a class="reference internal" href="_modules/_pytest/runner.html#TestReport"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.runner.TestReport" title="永久链接至目标">¶</a></dt>
+<dd><p>Basic test report object (also used for setup and teardown calls if
+they fail).</p>
+<dl class="py attribute">
+<dt id="pytest.runner.TestReport.nodeid">
+<span id="_pytest.runner.TestReport.nodeid"></span><code class="sig-name descname"><span class="pre">nodeid</span></code><a class="headerlink" href="#pytest.runner.TestReport.nodeid" title="永久链接至目标">¶</a></dt>
+<dd><p>normalized collection node id</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pytest.runner.TestReport.location">
+<span id="_pytest.runner.TestReport.location"></span><code class="sig-name descname"><span class="pre">location</span></code><a class="headerlink" href="#pytest.runner.TestReport.location" title="永久链接至目标">¶</a></dt>
+<dd><p>a (filesystempath, lineno, domaininfo) tuple indicating the
+actual location of a test item - it might be different from the
+collected one e.g. if a method is inherited from a different module.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pytest.runner.TestReport.keywords">
+<span id="_pytest.runner.TestReport.keywords"></span><code class="sig-name descname"><span class="pre">keywords</span></code><a class="headerlink" href="#pytest.runner.TestReport.keywords" title="永久链接至目标">¶</a></dt>
+<dd><p>a name -&gt; value dictionary containing all keywords and
+markers associated with a test invocation.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pytest.runner.TestReport.outcome">
+<span id="_pytest.runner.TestReport.outcome"></span><code class="sig-name descname"><span class="pre">outcome</span></code><a class="headerlink" href="#pytest.runner.TestReport.outcome" title="永久链接至目标">¶</a></dt>
+<dd><p>test outcome, always one of “passed”, “failed”, “skipped”.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pytest.runner.TestReport.longrepr">
+<span id="_pytest.runner.TestReport.longrepr"></span><code class="sig-name descname"><span class="pre">longrepr</span></code><a class="headerlink" href="#pytest.runner.TestReport.longrepr" title="永久链接至目标">¶</a></dt>
+<dd><p>None or a failure representation.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pytest.runner.TestReport.when">
+<span id="_pytest.runner.TestReport.when"></span><code class="sig-name descname"><span class="pre">when</span></code><a class="headerlink" href="#pytest.runner.TestReport.when" title="永久链接至目标">¶</a></dt>
+<dd><p>one of ‘setup’, ‘call’, ‘teardown’ to indicate runtest phase.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pytest.runner.TestReport.sections">
+<span id="_pytest.runner.TestReport.sections"></span><code class="sig-name descname"><span class="pre">sections</span></code><a class="headerlink" href="#pytest.runner.TestReport.sections" title="永久链接至目标">¶</a></dt>
+<dd><p>list of (secname, data) extra information which needs to
+marshallable</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pytest.runner.TestReport.duration">
+<span id="_pytest.runner.TestReport.duration"></span><code class="sig-name descname"><span class="pre">duration</span></code><a class="headerlink" href="#pytest.runner.TestReport.duration" title="永久链接至目标">¶</a></dt>
+<dd><p>time it took to run just the test</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pytest.vendored_packages.pluggy._CallOutcome">
+<span id="_pytest.vendored_packages.pluggy._CallOutcome"></span><em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">_CallOutcome</span></code><a class="reference internal" href="_modules/_pytest/vendored_packages/pluggy.html#_CallOutcome"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.vendored_packages.pluggy._CallOutcome" title="永久链接至目标">¶</a></dt>
+<dd><p>Outcome of a function call, either an exception or a proper result.
+Calling the <code class="docutils literal notranslate"><span class="pre">get_result</span></code> method will return the result or reraise
+the exception raised when the function was called.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pytest.config.get_plugin_manager">
+<span id="_pytest.config.get_plugin_manager"></span><code class="sig-name descname"><span class="pre">get_plugin_manager</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/config.html#get_plugin_manager"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.config.get_plugin_manager" title="永久链接至目标">¶</a></dt>
+<dd><p>Obtain a new instance of the
+<a class="reference internal" href="#pytest.config.PytestPluginManager" title="_pytest.config.PytestPluginManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">_pytest.config.PytestPluginManager</span></code></a>, with default plugins
+already loaded.</p>
+<p>This function can be used by integration with other tools, like hooking
+into pytest to run tests into an IDE.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="pytest.config.PytestPluginManager">
+<span id="_pytest.config.PytestPluginManager"></span><em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">PytestPluginManager</span></code><a class="reference internal" href="_modules/_pytest/config.html#PytestPluginManager"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.config.PytestPluginManager" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">_pytest.vendored_packages.pluggy.PluginManager</span></code></p>
+<p>Overwrites <code class="xref py py-class docutils literal notranslate"><span class="pre">pluggy.PluginManager</span></code> to add pytest-specific
+functionality:</p>
+<ul class="simple">
+<li><p>loading plugins from the command line, <code class="docutils literal notranslate"><span class="pre">PYTEST_PLUGIN</span></code> env variable and
+<code class="docutils literal notranslate"><span class="pre">pytest_plugins</span></code> global variables found in plugins being loaded;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">conftest.py</span></code> loading during start-up;</p></li>
+</ul>
+<dl class="py method">
+<dt id="pytest.config.PytestPluginManager.addhooks">
+<span id="_pytest.config.PytestPluginManager.addhooks"></span><code class="sig-name descname"><span class="pre">addhooks</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_or_class</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/config.html#PytestPluginManager.addhooks"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.config.PytestPluginManager.addhooks" title="永久链接至目标">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">2.8 版后已移除.</span></p>
+</div>
+<p>Use <code class="xref py py-meth docutils literal notranslate"><span class="pre">pluggy.PluginManager.add_hookspecs()</span></code> instead.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.config.PytestPluginManager.parse_hookimpl_opts">
+<span id="_pytest.config.PytestPluginManager.parse_hookimpl_opts"></span><code class="sig-name descname"><span class="pre">parse_hookimpl_opts</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plugin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/config.html#PytestPluginManager.parse_hookimpl_opts"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.config.PytestPluginManager.parse_hookimpl_opts" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pytest.config.PytestPluginManager.parse_hookspec_opts">
+<span id="_pytest.config.PytestPluginManager.parse_hookspec_opts"></span><code class="sig-name descname"><span class="pre">parse_hookspec_opts</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_or_class</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/config.html#PytestPluginManager.parse_hookspec_opts"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.config.PytestPluginManager.parse_hookspec_opts" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pytest.config.PytestPluginManager.register">
+<span id="_pytest.config.PytestPluginManager.register"></span><code class="sig-name descname"><span class="pre">register</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plugin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/config.html#PytestPluginManager.register"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.config.PytestPluginManager.register" title="永久链接至目标">¶</a></dt>
+<dd><p>Register a plugin and return its canonical name or None if the name
+is blocked from registering.  Raise a ValueError if the plugin is already
+registered.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.config.PytestPluginManager.getplugin">
+<span id="_pytest.config.PytestPluginManager.getplugin"></span><code class="sig-name descname"><span class="pre">getplugin</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/config.html#PytestPluginManager.getplugin"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.config.PytestPluginManager.getplugin" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pytest.config.PytestPluginManager.hasplugin">
+<span id="_pytest.config.PytestPluginManager.hasplugin"></span><code class="sig-name descname"><span class="pre">hasplugin</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/config.html#PytestPluginManager.hasplugin"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.config.PytestPluginManager.hasplugin" title="永久链接至目标">¶</a></dt>
+<dd><p>Return True if the plugin with the given name is registered.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.config.PytestPluginManager.pytest_configure">
+<span id="_pytest.config.PytestPluginManager.pytest_configure"></span><code class="sig-name descname"><span class="pre">pytest_configure</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/config.html#PytestPluginManager.pytest_configure"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.config.PytestPluginManager.pytest_configure" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pytest.config.PytestPluginManager.consider_preparse">
+<span id="_pytest.config.PytestPluginManager.consider_preparse"></span><code class="sig-name descname"><span class="pre">consider_preparse</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/config.html#PytestPluginManager.consider_preparse"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.config.PytestPluginManager.consider_preparse" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pytest.config.PytestPluginManager.consider_pluginarg">
+<span id="_pytest.config.PytestPluginManager.consider_pluginarg"></span><code class="sig-name descname"><span class="pre">consider_pluginarg</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/config.html#PytestPluginManager.consider_pluginarg"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.config.PytestPluginManager.consider_pluginarg" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pytest.config.PytestPluginManager.consider_conftest">
+<span id="_pytest.config.PytestPluginManager.consider_conftest"></span><code class="sig-name descname"><span class="pre">consider_conftest</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conftestmodule</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/config.html#PytestPluginManager.consider_conftest"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.config.PytestPluginManager.consider_conftest" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pytest.config.PytestPluginManager.consider_env">
+<span id="_pytest.config.PytestPluginManager.consider_env"></span><code class="sig-name descname"><span class="pre">consider_env</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/config.html#PytestPluginManager.consider_env"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.config.PytestPluginManager.consider_env" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pytest.config.PytestPluginManager.consider_module">
+<span id="_pytest.config.PytestPluginManager.consider_module"></span><code class="sig-name descname"><span class="pre">consider_module</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mod</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/config.html#PytestPluginManager.consider_module"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.config.PytestPluginManager.consider_module" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pytest.config.PytestPluginManager.import_plugin">
+<span id="_pytest.config.PytestPluginManager.import_plugin"></span><code class="sig-name descname"><span class="pre">import_plugin</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">modname</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/config.html#PytestPluginManager.import_plugin"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.config.PytestPluginManager.import_plugin" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pytest.pytester.Testdir">
+<span id="_pytest.pytester.Testdir"></span><em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">Testdir</span></code><a class="reference internal" href="_modules/_pytest/pytester.html#Testdir"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.pytester.Testdir" title="永久链接至目标">¶</a></dt>
+<dd><p>Temporary test directory with tools to test/run py.test itself.</p>
+<p>This is based on the <code class="docutils literal notranslate"><span class="pre">tmpdir</span></code> fixture but provides a number of
+methods which aid with testing py.test itself.  Unless
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">chdir()</span></code> is used all methods will use <code class="xref py py-attr docutils literal notranslate"><span class="pre">tmpdir</span></code> as
+current working directory.</p>
+<p>Attributes:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Tmpdir</dt>
+<dd class="field-odd"><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">py.path.local</span></code> instance of the temporary
+directory.</p>
+</dd>
+<dt class="field-even">Plugins</dt>
+<dd class="field-even"><p>A list of plugins to use with <code class="xref py py-meth docutils literal notranslate"><span class="pre">parseconfig()</span></code> and
+<a class="reference internal" href="#pytest.pytester.Testdir.runpytest" title="_pytest.pytester.Testdir.runpytest"><code class="xref py py-meth docutils literal notranslate"><span class="pre">runpytest()</span></code></a>.  Initially this is an empty list but
+plugins can be added to the list.  The type of items to add to
+the list depend on the method which uses them so refer to them
+for details.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="pytest.pytester.Testdir.makeconftest">
+<span id="_pytest.pytester.Testdir.makeconftest"></span><code class="sig-name descname"><span class="pre">makeconftest</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/pytester.html#Testdir.makeconftest"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.pytester.Testdir.makeconftest" title="永久链接至目标">¶</a></dt>
+<dd><p>Write a contest.py file with ‘source’ as contents.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.pytester.Testdir.makepyfile">
+<span id="_pytest.pytester.Testdir.makepyfile"></span><code class="sig-name descname"><span class="pre">makepyfile</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/pytester.html#Testdir.makepyfile"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.pytester.Testdir.makepyfile" title="永久链接至目标">¶</a></dt>
+<dd><p>Shortcut for .makefile() with a .py extension.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.pytester.Testdir.runpytest_inprocess">
+<span id="_pytest.pytester.Testdir.runpytest_inprocess"></span><code class="sig-name descname"><span class="pre">runpytest_inprocess</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/pytester.html#Testdir.runpytest_inprocess"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.pytester.Testdir.runpytest_inprocess" title="永久链接至目标">¶</a></dt>
+<dd><p>Return result of running pytest in-process, providing a similar
+interface to what self.runpytest() provides.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.pytester.Testdir.runpytest">
+<span id="_pytest.pytester.Testdir.runpytest"></span><code class="sig-name descname"><span class="pre">runpytest</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/pytester.html#Testdir.runpytest"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.pytester.Testdir.runpytest" title="永久链接至目标">¶</a></dt>
+<dd><p>Run pytest inline or in a subprocess, depending on the command line
+option “–runpytest” and return a <a class="reference internal" href="#pytest.pytester.RunResult" title="_pytest.pytester.RunResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">RunResult</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.pytester.Testdir.runpytest_subprocess">
+<span id="_pytest.pytester.Testdir.runpytest_subprocess"></span><code class="sig-name descname"><span class="pre">runpytest_subprocess</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/pytester.html#Testdir.runpytest_subprocess"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.pytester.Testdir.runpytest_subprocess" title="永久链接至目标">¶</a></dt>
+<dd><p>Run py.test as a subprocess with given arguments.</p>
+<p>Any plugins added to the <code class="xref py py-attr docutils literal notranslate"><span class="pre">plugins</span></code> list will added
+using the <code class="docutils literal notranslate"><span class="pre">-p</span></code> command line option.  Addtionally
+<code class="docutils literal notranslate"><span class="pre">--basetemp</span></code> is used put any temporary files and directories
+in a numbered directory prefixed with “runpytest-” so they do
+not conflict with the normal numberd pytest location for
+temporary files and directories.</p>
+<p>Returns a <a class="reference internal" href="#pytest.pytester.RunResult" title="_pytest.pytester.RunResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">RunResult</span></code></a>.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pytest.pytester.RunResult">
+<span id="_pytest.pytester.RunResult"></span><em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">RunResult</span></code><a class="reference internal" href="_modules/_pytest/pytester.html#RunResult"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.pytester.RunResult" title="永久链接至目标">¶</a></dt>
+<dd><p>The result of running a command.</p>
+<p>Attributes:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Ret</dt>
+<dd class="field-odd"><p>The return value.</p>
+</dd>
+<dt class="field-even">Outlines</dt>
+<dd class="field-even"><p>List of lines captured from stdout.</p>
+</dd>
+<dt class="field-odd">Errlines</dt>
+<dd class="field-odd"><p>List of lines captures from stderr.</p>
+</dd>
+<dt class="field-even">Stdout</dt>
+<dd class="field-even"><p><a class="reference internal" href="#pytest.pytester.LineMatcher" title="_pytest.pytester.LineMatcher"><code class="xref py py-class docutils literal notranslate"><span class="pre">LineMatcher</span></code></a> of stdout, use <code class="docutils literal notranslate"><span class="pre">stdout.str()</span></code> to
+reconstruct stdout or the commonly used
+<code class="docutils literal notranslate"><span class="pre">stdout.fnmatch_lines()</span></code> method.</p>
+</dd>
+<dt class="field-odd">Stderrr</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pytest.pytester.LineMatcher" title="_pytest.pytester.LineMatcher"><code class="xref py py-class docutils literal notranslate"><span class="pre">LineMatcher</span></code></a> of stderr.</p>
+</dd>
+<dt class="field-even">Duration</dt>
+<dd class="field-even"><p>Duration in seconds.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="pytest.pytester.RunResult.parseoutcomes">
+<span id="_pytest.pytester.RunResult.parseoutcomes"></span><code class="sig-name descname"><span class="pre">parseoutcomes</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/pytester.html#RunResult.parseoutcomes"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.pytester.RunResult.parseoutcomes" title="永久链接至目标">¶</a></dt>
+<dd><p>Return a dictionary of outcomestring-&gt;num from parsing
+the terminal output that the test process produced.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.pytester.RunResult.assert_outcomes">
+<span id="_pytest.pytester.RunResult.assert_outcomes"></span><code class="sig-name descname"><span class="pre">assert_outcomes</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">passed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skipped</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">failed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/pytester.html#RunResult.assert_outcomes"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.pytester.RunResult.assert_outcomes" title="永久链接至目标">¶</a></dt>
+<dd><p>assert that the specified outcomes appear with the respective
+numbers (0 means it didn’t occur) in the text output from a test run.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pytest.pytester.LineMatcher">
+<span id="_pytest.pytester.LineMatcher"></span><em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">LineMatcher</span></code><a class="reference internal" href="_modules/_pytest/pytester.html#LineMatcher"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.pytester.LineMatcher" title="永久链接至目标">¶</a></dt>
+<dd><p>Flexible matching of text.</p>
+<p>This is a convenience class to test large texts like the output of
+commands.</p>
+<p>The constructor takes a list of lines without their trailing
+newlines, i.e. <code class="docutils literal notranslate"><span class="pre">text.splitlines()</span></code>.</p>
+<dl class="py method">
+<dt id="pytest.pytester.LineMatcher.str">
+<span id="_pytest.pytester.LineMatcher.str"></span><code class="sig-name descname"><span class="pre">str</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/pytester.html#LineMatcher.str"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.pytester.LineMatcher.str" title="永久链接至目标">¶</a></dt>
+<dd><p>Return the entire original text.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.pytester.LineMatcher.fnmatch_lines_random">
+<span id="_pytest.pytester.LineMatcher.fnmatch_lines_random"></span><code class="sig-name descname"><span class="pre">fnmatch_lines_random</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lines2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/pytester.html#LineMatcher.fnmatch_lines_random"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.pytester.LineMatcher.fnmatch_lines_random" title="永久链接至目标">¶</a></dt>
+<dd><p>Check lines exist in the output.</p>
+<p>The argument is a list of lines which have to occur in the
+output, in any order.  Each line can contain glob whildcards.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.pytester.LineMatcher.get_lines_after">
+<span id="_pytest.pytester.LineMatcher.get_lines_after"></span><code class="sig-name descname"><span class="pre">get_lines_after</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fnline</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/pytester.html#LineMatcher.get_lines_after"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.pytester.LineMatcher.get_lines_after" title="永久链接至目标">¶</a></dt>
+<dd><p>Return all lines following the given line in the text.</p>
+<p>The given line can contain glob wildcards.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.pytester.LineMatcher.fnmatch_lines">
+<span id="_pytest.pytester.LineMatcher.fnmatch_lines"></span><code class="sig-name descname"><span class="pre">fnmatch_lines</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lines2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/pytester.html#LineMatcher.fnmatch_lines"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.pytester.LineMatcher.fnmatch_lines" title="永久链接至目标">¶</a></dt>
+<dd><p>Search the text for matching lines.</p>
+<p>The argument is a list of lines which have to match and can
+use glob wildcards.  If they do not match an pytest.fail() is
+called.  The matches and non-matches are also printed on
+stdout.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="contents.html">
+              <img class="logo" src="_static/pytest1.png" alt="Logo"/>
+            </a></p><h3><a href="contents.html">Table Of Contents</a></h3>
+
+<ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="contents.html">目录</a></li>
+  <li><a href="getting-started.html">Install</a></li>
+  <li><a href="example/index.html">实际案例</a></li>
+  <li><a href="customize.html">Customize</a></li>
+  <li><a href="contact.html">Contact</a></li>
+  <li><a href="talks.html">Talks/Posts</a></li>
+  <li><a href="changelog.html">Changelog</a></li>
+  <li><a href="license.html">License</a></li>
+</ul>
+  <hr>
+  <ul>
+<li><a class="reference internal" href="#">Writing plugins</a><ul>
+<li><a class="reference internal" href="#plugin-discovery-order-at-tool-startup">Plugin discovery order at tool startup</a></li>
+<li><a class="reference internal" href="#conftest-py-local-per-directory-plugins">conftest.py: local per-directory plugins</a></li>
+<li><a class="reference internal" href="#writing-your-own-plugin">Writing your own plugin</a></li>
+<li><a class="reference internal" href="#making-your-plugin-installable-by-others">Making your plugin installable by others</a></li>
+<li><a class="reference internal" href="#requiring-loading-plugins-in-a-test-module-or-conftest-file">Requiring/Loading plugins in a test module or conftest file</a></li>
+<li><a class="reference internal" href="#accessing-another-plugin-by-name">Accessing another plugin by name</a></li>
+<li><a class="reference internal" href="#testing-plugins">Testing plugins</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#writing-hook-functions">Writing hook functions</a><ul>
+<li><a class="reference internal" href="#hook-function-validation-and-execution">hook function validation and execution</a></li>
+<li><a class="reference internal" href="#firstresult-stop-at-first-non-none-result">firstresult: stop at first non-None result</a></li>
+<li><a class="reference internal" href="#hookwrapper-executing-around-other-hooks">hookwrapper: executing around other hooks</a></li>
+<li><a class="reference internal" href="#hook-function-ordering-call-example">Hook function ordering / call example</a></li>
+<li><a class="reference internal" href="#declaring-new-hooks">Declaring new hooks</a></li>
+<li><a class="reference internal" href="#optionally-using-hooks-from-3rd-party-plugins">Optionally using hooks from 3rd party plugins</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pytest-hook-reference">pytest hook reference</a><ul>
+<li><a class="reference internal" href="#initialization-command-line-and-configuration-hooks">Initialization, command line and configuration hooks</a></li>
+<li><a class="reference internal" href="#generic-runtest-hooks">Generic “runtest” hooks</a></li>
+<li><a class="reference internal" href="#collection-hooks">Collection hooks</a></li>
+<li><a class="reference internal" href="#reporting-hooks">Reporting hooks</a></li>
+<li><a class="reference internal" href="#debugging-interaction-hooks">Debugging/Interaction hooks</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#reference-of-objects-involved-in-hooks">Reference of objects involved in hooks</a></li>
+</ul>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="contents.html">Documentation overview</a><ul>
+  </ul></li>
+</ul><h3>Useful Links</h3>
+<ul>
+  <li>
+    <a href="https://www.indiegogo.com/projects/python-testing-sprint-mid-2016#/">
+      <b>Sprint funding campaign</b>
+    </a>
+  </li>
+  <li><a href="index.html">The pytest Website</a></li>
+  <li><a href="contributing.html">Contribution Guide</a></li>
+  <li><a href="https://pypi.python.org/pypi/pytest">pytest @ PyPI</a></li>
+  <li><a href="https://github.com/pytest-dev/pytest/">pytest @ GitHub</a></li>
+  <li><a href="http://plugincompat.herokuapp.com/">3rd party plugins</a></li>
+  <li><a href="https://github.com/pytest-dev/pytest/issues">Issue Tracker</a></li>
+  <li><a href="http://pytest.org/latest/pytest.pdf">PDF Documentation</a>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">快速搜索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="转向" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+  <div class="footer">
+    &copy; Copyright 2015, holger krekel and pytest-dev team.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-7597274-13']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+  </body>
+</html>
