@@ -359,7 +359,7 @@ msgstr ""
 
 #: ../../../doc/en/example/markers.rst:237
 msgid "Marking whole classes or modules"
-msgstr ""
+msgstr "標註整個類別或模組"
 
 #: ../../../doc/en/example/markers.rst:239
 msgid ""
@@ -429,7 +429,7 @@ msgstr ""
 
 #: ../../../doc/en/example/markers.rst:280
 msgid "Marking individual tests when using parametrize"
-msgstr ""
+msgstr "使用 parametrize 時標註個別測試"
 
 #: ../../../doc/en/example/markers.rst:282
 msgid ""

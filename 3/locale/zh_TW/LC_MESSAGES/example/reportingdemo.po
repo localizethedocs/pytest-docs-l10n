@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../doc/en/example/reportingdemo.rst:5
 msgid "Demo of Python failure reports with pytest"
-msgstr ""
+msgstr "使用 pytest 示範 Python 失敗報告"
 
 #: ../../../doc/en/example/reportingdemo.rst:7
 msgid ""
