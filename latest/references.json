@@ -37,9 +37,9 @@
     "branch" : "main",
     "commit" : 
     {
-      "date" : "2026-07-06 06:22:34 +0200",
-      "hash" : "83b022078855ea64c5c53bc50bd9299a5a1f1dc0",
-      "title" : "build(deps): Bump anyio in /testing/plugins_integration (#14679)"
+      "date" : "2026-10-05 08:42:19 -0400",
+      "hash" : "fd17fdfea252260bb7db5c9144f04b881e11d5d7",
+      "title" : "build(deps): Bump pytest-mock in /testing/plugins_integration (#15131)"
     }
   },
   "type" : "branch",
