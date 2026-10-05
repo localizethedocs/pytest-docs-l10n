@@ -1,0 +1,621 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/builtin.rst:5
+msgid "Pytest API and builtin fixtures"
+msgstr ""
+
+#: ../../../doc/en/builtin.rst:7
+msgid "This is a list of ``pytest.*`` API functions and fixtures."
+msgstr ""
+
+#: ../../../doc/en/builtin.rst:9
+msgid "For information on plugin hooks and objects, see :ref:`plugins`."
+msgstr ""
+
+#: ../../../doc/en/builtin.rst:11
+msgid "For information on the ``pytest.mark`` mechanism, see :ref:`mark`."
+msgstr ""
+
+#: ../../../doc/en/builtin.rst:13
+msgid ""
+"For the below objects, you can also interactively ask for help, e.g. by "
+"typing on the Python interactive prompt something like::"
+msgstr ""
+
+#: ../../../doc/en/builtin.rst:16
+msgid ""
+"import pytest\n"
+"help(pytest)"
+msgstr ""
+
+#: ../../../doc/en/builtin.rst:22
+msgid "Invoking pytest interactively"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.main:1
+msgid "return exit code, after performing an in-process test run."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.main:0
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/runner.py:docstring
+#: _pytest.runner.fail:0
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: _pytest.python.fixture:0 _pytest.python.FixtureRequest.applymarker:0
+#: _pytest.python.FixtureRequest.cached_setup:0
+msgid "Parameters"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.main:3
+msgid "list of command line arguments."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
+#: of _pytest.config.main:5
+msgid "list of plugin objects to be auto-registered during initialization."
+msgstr ""
+
+#: ../../../doc/en/builtin.rst:26
+msgid "More examples at :ref:`pytest.main-usage`"
+msgstr ""
+
+#: ../../../doc/en/builtin.rst:30
+msgid "Helpers for assertions about Exceptions/Warnings"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.raises:1
+msgid ""
+"assert that a code block/function call raises ``expected_exception`` and "
+"raise a failure exception otherwise."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.raises:4
+msgid "This helper produces a ``ExceptionInfo()`` object (see below)."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.raises:6
+msgid ""
+"If using Python 2.5 or above, you may use this function as a context "
+"manager::"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.raises:9
+msgid ""
+">>> with raises(ZeroDivisionError):\n"
+"...    1/0"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.raises:14
+msgid ""
+"When using ``pytest.raises`` as a context manager, it's worthwhile to note "
+"that normal context manager rules apply and that the exception raised *must* "
+"be the final line in the scope of the context manager. Lines of code after "
+"that, within the scope of the context manager will not be executed. For "
+"example::"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.raises:20
+msgid ""
+">>> with raises(OSError) as exc_info:\n"
+"        assert 1 == 1  # this will execute as expected\n"
+"        raise OSError(errno.EEXISTS, 'directory exists')\n"
+"        assert exc_info.value.errno == errno.EEXISTS  # this will not execute"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.raises:25
+msgid ""
+"Instead, the following approach must be taken (note the difference in "
+"scope)::"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.raises:28
+msgid ""
+">>> with raises(OSError) as exc_info:\n"
+"        assert 1 == 1  # this will execute as expected\n"
+"        raise OSError(errno.EEXISTS, 'directory exists')\n"
+"\n"
+"    assert exc_info.value.errno == errno.EEXISTS  # this will now execute"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.raises:34
+msgid "Or you can specify a callable by passing a to-be-called lambda::"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.raises:36
+msgid ""
+">>> raises(ZeroDivisionError, lambda: 1/0)\n"
+"<ExceptionInfo ...>"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.raises:39
+msgid "or you can specify an arbitrary callable with arguments::"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.raises:41
+msgid ""
+">>> def f(x): return 1/x\n"
+"...\n"
+">>> raises(ZeroDivisionError, f, 0)\n"
+"<ExceptionInfo ...>\n"
+">>> raises(ZeroDivisionError, f, x=0)\n"
+"<ExceptionInfo ...>"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.raises:48
+msgid "A third possibility is to use a string to be executed::"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.raises:50
+msgid ""
+">>> raises(ZeroDivisionError, \"f(0)\")\n"
+"<ExceptionInfo ...>"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/_code/code.py:docstring
+#: of _pytest._code.code.ExceptionInfo:1
+msgid ""
+"wraps sys.exc_info() objects and offers help for navigating the traceback."
+msgstr ""
+
+#: ../../../doc/docstring of _pytest._code.ExceptionInfo.type:1
+msgid "the exception class"
+msgstr ""
+
+#: ../../../doc/docstring of _pytest._code.ExceptionInfo.value:1
+msgid "the exception instance"
+msgstr ""
+
+#: ../../../doc/docstring of _pytest._code.ExceptionInfo.tb:1
+msgid "the exception raw traceback"
+msgstr ""
+
+#: ../../../doc/docstring of _pytest._code.ExceptionInfo.typename:1
+msgid "the exception type name"
+msgstr ""
+
+#: ../../../doc/docstring of _pytest._code.ExceptionInfo.traceback:1
+msgid "the exception traceback (_pytest._code.Traceback instance)"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/_code/code.py:docstring
+#: of _pytest._code.code.ExceptionInfo.exconly:1
+msgid "return the exception as a string"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/_code/code.py:docstring
+#: of _pytest._code.code.ExceptionInfo.exconly:3
+msgid ""
+"when 'tryshort' resolves to True, and the exception is a _pytest._code."
+"_AssertionError, only the actual exception part of the exception "
+"representation is returned (so 'AssertionError: ' is removed from the "
+"beginning)"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/_code/code.py:docstring
+#: of _pytest._code.code.ExceptionInfo.errisinstance:1
+msgid "return True if the exception is an instance of exc"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/_code/code.py:docstring
+#: of _pytest._code.code.ExceptionInfo.getrepr:1
+msgid ""
+"return str()able representation of this exception info. showlocals: show "
+"locals per traceback entry style: long|short|no|native traceback style "
+"tbfilter: hide entries (where __tracebackhide__ is true)"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/_code/code.py:docstring
+#: of _pytest._code.code.ExceptionInfo.getrepr:6
+msgid "in case of style==native, tbfilter and showlocals is ignored."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.raises:57
+msgid ""
+"Similar to caught exception objects in Python, explicitly clearing local "
+"references to returned ``ExceptionInfo`` objects can help the Python "
+"interpreter speed up its garbage collection."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.raises:61
+msgid ""
+"Clearing those references breaks a reference cycle (``ExceptionInfo`` --> "
+"caught exception --> frame stack raising the exception --> current frame "
+"stack --> local variables --> ``ExceptionInfo``) which makes Python keep all "
+"objects referenced from that cycle (including all local variables in the "
+"current frame) alive until the next cyclic garbage collection run. See the "
+"official Python ``try`` statement documentation for more detailed "
+"information."
+msgstr ""
+
+#: ../../../doc/en/builtin.rst:34
+msgid "Examples at :ref:`assertraises`."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/recwarn.py:docstring
+#: of _pytest.recwarn.deprecated_call:1
+msgid ""
+"assert that calling ``func(*args, **kwargs)`` triggers a "
+"``DeprecationWarning`` or ``PendingDeprecationWarning``."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/recwarn.py:docstring
+#: of _pytest.recwarn.deprecated_call:4
+msgid "This function can be used as a context manager::"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/recwarn.py:docstring
+#: of _pytest.recwarn.deprecated_call:6
+msgid ""
+">>> with deprecated_call():\n"
+"...    myobject.deprecated_method()"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/recwarn.py:docstring
+#: of _pytest.recwarn.deprecated_call:9
+msgid ""
+"Note: we cannot use WarningsRecorder here because it is still subject to the "
+"mechanism that prevents warnings of the same type from being triggered twice "
+"for the same module. See #1190."
+msgstr ""
+
+#: ../../../doc/en/builtin.rst:39
+msgid "Raising a specific test outcome"
+msgstr ""
+
+#: ../../../doc/en/builtin.rst:41
+msgid ""
+"You can use the following functions in your test, fixture or setup functions "
+"to force a certain test outcome.  Note that most often you can rather use "
+"declarative marks, see :ref:`skipping`."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/runner.py:docstring
+#: of _pytest.runner.fail:1
+msgid "explicitly fail an currently-executing test with the given Message."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/runner.py:docstring
+#: of _pytest.runner.fail:3
+msgid ""
+"if false the msg represents the full failure information and no python "
+"traceback will be reported."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/runner.py:docstring
+#: of _pytest.runner.skip:1
+msgid ""
+"skip an executing test with the given message.  Note: it's usually better to "
+"use the pytest.mark.skipif marker to declare a test to be skipped under "
+"certain conditions like mismatching platforms or dependencies.  See the "
+"pytest_skipping plugin for details."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/runner.py:docstring
+#: of _pytest.runner.importorskip:1
+msgid ""
+"return imported module if it has at least \"minversion\" as its __version__ "
+"attribute.  If no minversion is specified the a skip is only triggered if "
+"the module can not be imported."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/skipping.py:docstring
+#: of _pytest.skipping.xfail:1
+msgid "xfail an executing test or setup functions with the given reason."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/runner.py:docstring
+#: of _pytest.runner.exit:1
+msgid "exit testing process as if KeyboardInterrupt was triggered."
+msgstr ""
+
+#: ../../../doc/en/builtin.rst:52
+msgid "fixtures and requests"
+msgstr ""
+
+#: ../../../doc/en/builtin.rst:54
+msgid "To mark a fixture function:"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.fixture:1
+msgid "(return a) decorator to mark a fixture factory function."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.fixture:3
+msgid ""
+"This decorator can be used (with or or without parameters) to define a "
+"fixture function.  The name of the fixture function can later be referenced "
+"to cause its invocation ahead of running tests: test modules or classes can "
+"use the pytest.mark.usefixtures(fixturename) marker.  Test functions can "
+"directly use fixture names as input arguments in which case the fixture "
+"instance returned from the fixture function will be injected."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.fixture:11
+msgid ""
+"the scope for which this fixture is shared, one of \"function\" (default), "
+"\"class\", \"module\", \"session\"."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.fixture:14
+msgid ""
+"an optional list of parameters which will cause multiple invocations of the "
+"fixture function and all of the tests using it."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.fixture:18
+msgid ""
+"if True, the fixture func is activated for all tests that can see it.  If "
+"False (the default) then an explicit reference is needed to activate the "
+"fixture."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.fixture:22
+msgid ""
+"list of string ids each corresponding to the params so that they are part of "
+"the test id. If no ids are provided they will be generated automatically "
+"from the params."
+msgstr ""
+
+#: ../../../doc/en/builtin.rst:58
+msgid "Tutorial at :ref:`fixtures`."
+msgstr ""
+
+#: ../../../doc/en/builtin.rst:60
+msgid "The ``request`` object that can be used from fixture functions."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.FixtureRequest:1
+msgid "A request for a fixture from a test or fixture function."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.FixtureRequest:3
+msgid ""
+"A request object gives access to the requesting test context and has an "
+"optional ``param`` attribute in case the fixture is parametrized indirectly."
+msgstr ""
+
+#: ../../../doc/docstring of _pytest.python.FixtureRequest.fixturename:1
+msgid "fixture for which this request is being performed"
+msgstr ""
+
+#: ../../../doc/docstring of _pytest.python.FixtureRequest.scope:1
+msgid "Scope string, one of \"function\", \"class\", \"module\", \"session\""
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.FixtureRequest.node:1
+msgid "underlying collection node (depends on current request scope)"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.FixtureRequest.config:1
+msgid "the pytest config object associated with this request."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.FixtureRequest.function:1
+msgid "test function object if the request has a per-function scope."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.FixtureRequest.cls:1
+msgid "class (can be None) where the test function was collected."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.FixtureRequest.instance:1
+msgid "instance (can be None) on which test function was collected."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.FixtureRequest.module:1
+msgid "python module object where the test function was collected."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.FixtureRequest.fspath:1
+msgid "the file system path of the test module which collected this test."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.FixtureRequest.keywords:1
+msgid "keywords/markers dictionary for the underlying node."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.FixtureRequest.session:1
+msgid "pytest session object."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.FixtureRequest.addfinalizer:1
+msgid ""
+"add finalizer/teardown function to be called after the last test within the "
+"requesting test context finished execution."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.FixtureRequest.applymarker:1
+msgid ""
+"Apply a marker to a single test function invocation. This method is useful "
+"if you don't want to have a keyword/marker on all function invocations."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.FixtureRequest.applymarker:5
+msgid ""
+"a :py:class:`_pytest.mark.MarkDecorator` object created by a call to "
+"``pytest.mark.NAME(...)``."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.FixtureRequest.raiseerror:1
+msgid "raise a FixtureLookupError with the given message."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.FixtureRequest.cached_setup:1
+msgid ""
+"(deprecated) Return a testing resource managed by ``setup`` & ``teardown`` "
+"calls.  ``scope`` and ``extrakey`` determine when the ``teardown`` function "
+"will be called so that subsequent calls to ``setup`` would recreate the "
+"resource.  With pytest-2.3 you often do not need ``cached_setup()`` as you "
+"can directly declare a scope on a fixture function and register a finalizer "
+"through ``request.addfinalizer()``."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.FixtureRequest.cached_setup:9
+msgid "function receiving a previously setup resource."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.FixtureRequest.cached_setup:10
+msgid "a no-argument function creating a resource."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.FixtureRequest.cached_setup:11
+msgid ""
+"a string value out of ``function``, ``class``, ``module`` or ``session`` "
+"indicating the caching lifecycle of the resource."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.FixtureRequest.cached_setup:13
+msgid "added to internal caching key of (funcargname, scope)."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.FixtureRequest.getfuncargvalue:1
+msgid "Dynamically retrieve a named fixture function argument."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
+#: of _pytest.python.FixtureRequest.getfuncargvalue:3
+msgid ""
+"As of pytest-2.3, it is easier and usually better to access other fixture "
+"values by stating it as an input argument in the fixture function.  If you "
+"only can decide about using another fixture at test setup time, you may use "
+"this function to retrieve it inside a fixture function body."
+msgstr ""
+
+#: ../../../doc/en/builtin.rst:70
+msgid "Builtin fixtures/function arguments"
+msgstr ""
+
+#: ../../../doc/en/builtin.rst:72
+msgid ""
+"You can ask for available builtin or project-custom :ref:`fixtures "
+"<fixtures>` by typing::"
+msgstr ""
+
+#: ../../../doc/en/builtin.rst:75
+msgid ""
+"$ py.test -q --fixtures\n"
+"cache\n"
+"    Return a cache object that can persist state between testing sessions.\n"
+"\n"
+"    cache.get(key, default)\n"
+"    cache.set(key, value)\n"
+"\n"
+"    Keys must be a ``/`` separated value, where the first part is usually "
+"the\n"
+"    name of your plugin or application to avoid clashes with other cache "
+"users.\n"
+"\n"
+"    Values can be any object handled by the json stdlib module.\n"
+"capsys\n"
+"    enables capturing of writes to sys.stdout/sys.stderr and makes\n"
+"    captured output available via ``capsys.readouterr()`` method calls\n"
+"    which return a ``(out, err)`` tuple.\n"
+"capfd\n"
+"    enables capturing of writes to file descriptors 1 and 2 and makes\n"
+"    captured output available via ``capfd.readouterr()`` method calls\n"
+"    which return a ``(out, err)`` tuple.\n"
+"record_xml_property\n"
+"    Fixture that adds extra xml properties to the tag for the calling test.\n"
+"    The fixture is callable with (name, value), with value being "
+"automatically\n"
+"    xml-encoded.\n"
+"monkeypatch\n"
+"    The returned ``monkeypatch`` funcarg provides these\n"
+"    helper methods to modify objects, dictionaries or os.environ::\n"
+"\n"
+"    monkeypatch.setattr(obj, name, value, raising=True)\n"
+"    monkeypatch.delattr(obj, name, raising=True)\n"
+"    monkeypatch.setitem(mapping, name, value)\n"
+"    monkeypatch.delitem(obj, name, raising=True)\n"
+"    monkeypatch.setenv(name, value, prepend=False)\n"
+"    monkeypatch.delenv(name, value, raising=True)\n"
+"    monkeypatch.syspath_prepend(path)\n"
+"    monkeypatch.chdir(path)\n"
+"\n"
+"    All modifications will be undone after the requesting\n"
+"    test function has finished. The ``raising``\n"
+"    parameter determines if a KeyError or AttributeError\n"
+"    will be raised if the set/deletion operation has no target.\n"
+"pytestconfig\n"
+"    the pytest config object with access to command line opts.\n"
+"recwarn\n"
+"    Return a WarningsRecorder instance that provides these methods:\n"
+"\n"
+"    * ``pop(category=None)``: return last warning matching the category.\n"
+"    * ``clear()``: clear list of warnings\n"
+"\n"
+"    See http://docs.python.org/library/warnings.html for information\n"
+"    on warning categories.\n"
+"tmpdir_factory\n"
+"    Return a TempdirFactory instance for the test session.\n"
+"tmpdir\n"
+"    return a temporary directory path object\n"
+"    which is unique to each test function invocation,\n"
+"    created as a sub directory of the base temporary\n"
+"    directory.  The returned object is a `py.path.local`_\n"
+"    path object.\n"
+"\n"
+"no tests ran in 0.12 seconds"
+msgstr ""
