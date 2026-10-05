@@ -1,0 +1,172 @@
+
+
+
+<!DOCTYPE html>
+
+<html lang="zh-TW">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Anatomy of a test &#8212; pytest documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/flask.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments_pytest.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script data-project="pytest" data-version="7" src="../_static/describe_version.js"></script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/pytest-docs-l10n/explanation/anatomy.html" />
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="search" title="搜尋" href="../search.html" />
+    <link rel="next" title="About fixtures" href="fixtures.html" />
+    <link rel="prev" title="API 參考" href="../reference/reference.html" />
+
+  <script>DOCUMENTATION_OPTIONS.URL_ROOT = '';</script>
+   
+<script type="text/javascript" src="../ltd-provenance.js"></script>
+<script type="text/javascript" src="../ltd-current.js"></script>
+<script type="text/javascript" src="../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../ltd-flyout.js"></script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>瀏覽</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../py-modindex.html" title="Python 模組索引"
+             >模組</a></li>
+        <li class="right" >
+          <a href="fixtures.html" title="About fixtures"
+             accesskey="N">下一頁</a> |</li>
+        <li class="right" >
+          <a href="../reference/reference.html" title="API 參考"
+             accesskey="P">上一頁</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">pytest-7.4</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Anatomy of a test</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="anatomy-of-a-test">
+<span id="test-anatomy"></span><h1>Anatomy of a test<a class="headerlink" href="#anatomy-of-a-test" title="本標頭的永久連結">¶</a></h1>
+<p>In the simplest terms, a test is meant to look at the result of a particular
+behavior, and make sure that result aligns with what you would expect.
+Behavior is not something that can be empirically measured, which is why writing
+tests can be challenging.</p>
+<p>「Behavior」 is the way in which some system <strong>acts in response</strong> to a particular
+situation and/or stimuli. But exactly <em>how</em> or <em>why</em> something is done is not
+quite as important as <em>what</em> was done.</p>
+<p>You can think of a test as being broken down into four steps:</p>
+<ol class="arabic simple">
+<li><p><strong>Arrange</strong></p></li>
+<li><p><strong>Act</strong></p></li>
+<li><p><strong>Assert</strong></p></li>
+<li><p><strong>Cleanup</strong></p></li>
+</ol>
+<p><strong>Arrange</strong> is where we prepare everything for our test. This means pretty
+much everything except for the 「<strong>act</strong>」. It’s lining up the dominoes so that
+the <strong>act</strong> can do its thing in one, state-changing step. This can mean
+preparing objects, starting/killing services, entering records into a database,
+or even things like defining a URL to query, generating some credentials for a
+user that doesn’t exist yet, or just waiting for some process to finish.</p>
+<p><strong>Act</strong> is the singular, state-changing action that kicks off the <strong>behavior</strong>
+we want to test. This behavior is what carries out the changing of the state of
+the system under test (SUT), and it’s the resulting changed state that we can
+look at to make a judgement about the behavior. This typically takes the form of
+a function/method call.</p>
+<p><strong>Assert</strong> is where we look at that resulting state and check if it looks how
+we’d expect after the dust has settled. It’s where we gather evidence to say the
+behavior does or does not aligns with what we expect. The <code class="docutils literal notranslate"><span class="pre">assert</span></code> in our test
+is where we take that measurement/observation and apply our judgement to it. If
+something should be green, we’d say <code class="docutils literal notranslate"><span class="pre">assert</span> <span class="pre">thing</span> <span class="pre">==</span> <span class="pre">&quot;green&quot;</span></code>.</p>
+<p><strong>Cleanup</strong> is where the test picks up after itself, so other tests aren’t being
+accidentally influenced by it.</p>
+<p>At its core, the test is ultimately the <strong>act</strong> and <strong>assert</strong> steps, with the
+<strong>arrange</strong> step only providing the context. <strong>Behavior</strong> exists between <strong>act</strong>
+and <strong>assert</strong>.</p>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+  <span id="sidebar-top"></span>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  
+    
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/pytest_logo_curves.svg" alt="Logo"/>
+            </a></p>
+  
+
+<div id="searchbox" style="display: none" role="search">
+  <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel"
+        placeholder="Search"/>
+      <input type="submit" value="前往" />
+    </form>
+  </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><h3>內容</h3>
+
+<ul>
+  <li><a href="../index.html">Home</a></li>
+
+  <li><a href="../getting-started.html">Get started</a></li>
+  <li><a href="../how-to/index.html">How-to guides</a></li>
+  <li><a href="../reference/index.html">Reference guides</a></li>
+  <li><a href="index.html">Explanation</a></li>
+  <li><a href="../contents.html">Complete table of contents</a></li>
+  <li><a href="../example/index.html">Library of examples</a></li>
+</ul>
+
+<h3>About the project</h3>
+
+<ul>
+  <li><a href="../changelog.html">Changelog</a></li>
+  <li><a href="../contributing.html">Contributing</a></li>
+  <li><a href="../backwards-compatibility.html">Backwards Compatibility</a></li>
+  <li><a href="../sponsor.html">Sponsor</a></li>
+  <li><a href="../tidelift.html">pytest for Enterprise</a></li>
+  <li><a href="../license.html">License</a></li>
+  <li><a href="../contact.html">Contact Channels</a></li>
+</ul>
+
+<hr><h3>Related Topics</h3>
+<ul>
+  <li><a href="../contents.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../reference/reference.html" title="上一章">API 參考</a></li>
+      <li>Next: <a href="fixtures.html" title="下一章">About fixtures</a></li>
+  </ul></li>
+</ul><h3>Useful Links</h3>
+<ul>
+  <li><a href="https://pypi.org/project/pytest/">pytest @ PyPI</a></li>
+  <li><a href="https://github.com/pytest-dev/pytest/">pytest @ GitHub</a></li>
+  <li><a href="https://github.com/pytest-dev/pytest/issues">議題追蹤器</a></li>
+  <li><a href="https://media.readthedocs.org/pdf/pytest/latest/pytest.pdf">PDF 文件</a></li>
+</ul>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  
+    <div class="footer" role="contentinfo">
+        &#169; 版權所有 2015, holger krekel and pytest-dev team。
+      使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0 建立。
+    </div>
+  <script src="../_static/version_warning_offset.js"></script>
+
+  </body>
+</html>

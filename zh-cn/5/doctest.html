@@ -1,0 +1,362 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doctest integration for modules and test files &#8212; pytest documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/flasky.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments_pytest.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/translations.js"></script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/pytest-docs-l10n/doctest.html" />
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="Skip and xfail: dealing with tests that cannot succeed" href="skipping.html" />
+    <link rel="prev" title="Warnings Capture" href="warnings.html" />
+
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+<script type="text/javascript" src="ltd-provenance.js"></script>
+<script type="text/javascript" src="ltd-current.js"></script>
+<script type="text/javascript" src="../../ltd-config.js"></script>
+<script type="text/javascript" src="../../ltd-flyout.js"></script>
+
+  </head><body>
+  
+  
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="skipping.html" title="Skip and xfail: dealing with tests that cannot succeed"
+             accesskey="N">下一页</a> |</li>
+        <li class="right" >
+          <a href="warnings.html" title="Warnings Capture"
+             accesskey="P">上一页</a> |</li>
+        <li class="nav-item nav-item-0"><a href="contents.html">pytest-5.4</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Doctest integration for modules and test files</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="doctest-integration-for-modules-and-test-files">
+<h1>Doctest integration for modules and test files<a class="headerlink" href="#doctest-integration-for-modules-and-test-files" title="永久链接至标题">¶</a></h1>
+<p>By default all files matching the <code class="docutils literal notranslate"><span class="pre">test*.txt</span></code> pattern will
+be run through the python standard <code class="docutils literal notranslate"><span class="pre">doctest</span></code> module.  You
+can change the pattern by issuing:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest<span class="w"> </span>--doctest-glob<span class="o">=</span><span class="s1">&#39;*.rst&#39;</span>
+</pre></div>
+</div>
+<p>on the command line. <code class="docutils literal notranslate"><span class="pre">--doctest-glob</span></code> can be given multiple times in the command-line.</p>
+<p>If you then have a text file like this:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># content of test_example.txt
+
+hello this is a doctest
+&gt;&gt;&gt; x = 3
+&gt;&gt;&gt; x
+3
+</pre></div>
+</div>
+<p>then you can just invoke <code class="docutils literal notranslate"><span class="pre">pytest</span></code> directly:</p>
+<div class="highlight-pytest notranslate"><div class="highlight"><pre><span></span>$ pytest
+<span class=" -Color -Color-Bold">=========================== test session starts ============================</span>
+platform linux -- Python 3.x.y, pytest-5.x.y, py-1.x.y, pluggy-0.x.y
+cachedir: $PYTHON_PREFIX/.pytest_cache
+rootdir: $REGENDOC_TMPDIR
+collected 1 item
+
+test_example.txt <span class=" -Color -Color-Green">.</span>                                                   <span class=" -Color -Color-Green">[100%]</span>
+
+<span class=" -Color -Color-Green">============================ </span><span class=" -Color -Color-Bold -Color-Bold-Green">1 passed</span><span class=" -Color -Color-Green"> in 0.12s =============================</span>
+</pre></div>
+</div>
+<p>By default, pytest will collect <code class="docutils literal notranslate"><span class="pre">test*.txt</span></code> files looking for doctest directives, but you
+can pass additional globs using the <code class="docutils literal notranslate"><span class="pre">--doctest-glob</span></code> option (multi-allowed).</p>
+<p>In addition to text files, you can also execute doctests directly from docstrings of your classes
+and functions, including from test modules:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># content of mymodule.py</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">something</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; a doctest in a docstring</span>
+<span class="sd">    &gt;&gt;&gt; something()</span>
+<span class="sd">    42</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="mi">42</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pytest<span class="w"> </span>--doctest-modules
+<span class="o">===========================</span><span class="w"> </span><span class="nb">test</span><span class="w"> </span>session<span class="w"> </span><span class="nv">starts</span><span class="w"> </span><span class="o">============================</span>
+platform<span class="w"> </span>linux<span class="w"> </span>--<span class="w"> </span>Python<span class="w"> </span><span class="m">3</span>.x.y,<span class="w"> </span>pytest-5.x.y,<span class="w"> </span>py-1.x.y,<span class="w"> </span>pluggy-0.x.y
+cachedir:<span class="w"> </span><span class="nv">$PYTHON_PREFIX</span>/.pytest_cache
+rootdir:<span class="w"> </span><span class="nv">$REGENDOC_TMPDIR</span>
+collected<span class="w"> </span><span class="m">2</span><span class="w"> </span>items
+
+mymodule.py<span class="w"> </span>.<span class="w">                                                        </span><span class="o">[</span><span class="w"> </span><span class="m">50</span>%<span class="o">]</span>
+test_example.txt<span class="w"> </span>.<span class="w">                                                   </span><span class="o">[</span><span class="m">100</span>%<span class="o">]</span>
+
+<span class="o">============================</span><span class="w"> </span><span class="m">2</span><span class="w"> </span>passed<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.12s<span class="w"> </span><span class="o">=============================</span>
+</pre></div>
+</div>
+<p>You can make these changes permanent in your project by
+putting them into a pytest.ini file like this:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="c1"># content of pytest.ini</span>
+<span class="k">[pytest]</span>
+<span class="na">addopts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">--doctest-modules</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>The builtin pytest doctest supports only <code class="docutils literal notranslate"><span class="pre">doctest</span></code> blocks, but if you are looking
+for more advanced checking over <em>all</em> your documentation,
+including doctests, <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">codeblock::</span> <span class="pre">python</span></code> Sphinx directive support,
+and any other examples your documentation may include, you may wish to
+consider <a class="reference external" href="https://sybil.readthedocs.io/en/latest/index.html">Sybil</a>.
+It provides pytest integration out of the box.</p>
+</div>
+<div class="section" id="encoding">
+<h2>Encoding<a class="headerlink" href="#encoding" title="永久链接至标题">¶</a></h2>
+<p>The default encoding is <strong>UTF-8</strong>, but you can specify the encoding
+that will be used for those doctest files using the
+<code class="docutils literal notranslate"><span class="pre">doctest_encoding</span></code> ini option:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="c1"># content of pytest.ini</span>
+<span class="k">[pytest]</span>
+<span class="na">doctest_encoding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">latin1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-doctest-options">
+<h2>Using ‘doctest’ options<a class="headerlink" href="#using-doctest-options" title="永久链接至标题">¶</a></h2>
+<p>Python’s standard <code class="docutils literal notranslate"><span class="pre">doctest</span></code> module provides some <a class="reference external" href="https://docs.python.org/3/library/doctest.html#option-flags">options</a>
+to configure the strictness of doctest tests. In pytest, you can enable those flags using the
+configuration file.</p>
+<p>For example, to make pytest ignore trailing whitespaces and ignore
+lengthy exception stack traces you can just write:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[pytest]</span>
+<span class="na">doctest_optionflags</span><span class="o">=</span><span class="w"> </span><span class="s">NORMALIZE_WHITESPACE IGNORE_EXCEPTION_DETAIL</span>
+</pre></div>
+</div>
+<p>Alternatively, options can be enabled by an inline comment in the doc test
+itself:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; something_that_raises()  # doctest: +IGNORE_EXCEPTION_DETAIL
+Traceback (most recent call last):
+ValueError: ...
+</pre></div>
+</div>
+<p>pytest also introduces new options:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">ALLOW_UNICODE</span></code>: when enabled, the <code class="docutils literal notranslate"><span class="pre">u</span></code> prefix is stripped from unicode
+strings in expected doctest output. This allows doctests to run in Python 2
+and Python 3 unchanged.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ALLOW_BYTES</span></code>: similarly, the <code class="docutils literal notranslate"><span class="pre">b</span></code> prefix is stripped from byte strings
+in expected doctest output.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NUMBER</span></code>: when enabled, floating-point numbers only need to match as far as
+the precision you have written in the expected doctest output. For example,
+the following output would only need to match to 2 decimal places:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+<span class="go">3.14</span>
+</pre></div>
+</div>
+<p>If you wrote <code class="docutils literal notranslate"><span class="pre">3.1416</span></code> then the actual output would need to match to 4
+decimal places; and so on.</p>
+<p>This avoids false positives caused by limited floating-point precision, like
+this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Expected</span><span class="p">:</span>
+    <span class="mf">0.233</span>
+<span class="n">Got</span><span class="p">:</span>
+    <span class="mf">0.23300000000000001</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">NUMBER</span></code> also supports lists of floating-point numbers – in fact, it
+matches floating-point numbers appearing anywhere in the output, even inside
+a string! This means that it may not be appropriate to enable globally in
+<code class="docutils literal notranslate"><span class="pre">doctest_optionflags</span></code> in your configuration file.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">5.1 新版功能.</span></p>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="continue-on-failure">
+<h2>Continue on failure<a class="headerlink" href="#continue-on-failure" title="永久链接至标题">¶</a></h2>
+<p>By default, pytest would report only the first failure for a given doctest. If
+you want to continue the test even when you have failures, do:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest<span class="w"> </span>--doctest-modules<span class="w"> </span>--doctest-continue-on-failure
+</pre></div>
+</div>
+</div>
+<div class="section" id="output-format">
+<h2>Output format<a class="headerlink" href="#output-format" title="永久链接至标题">¶</a></h2>
+<p>You can change the diff output format on failure for your doctests
+by using one of standard doctest modules format in options
+(see <a class="reference external" href="https://docs.python.org/3/library/doctest.html#doctest.REPORT_UDIFF" title="(在 Python v3.14)"><code class="docutils literal notranslate"><span class="pre">doctest.REPORT_UDIFF</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/doctest.html#doctest.REPORT_CDIFF" title="(在 Python v3.14)"><code class="docutils literal notranslate"><span class="pre">doctest.REPORT_CDIFF</span></code></a>,
+<a class="reference external" href="https://docs.python.org/3/library/doctest.html#doctest.REPORT_NDIFF" title="(在 Python v3.14)"><code class="docutils literal notranslate"><span class="pre">doctest.REPORT_NDIFF</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/doctest.html#doctest.REPORT_ONLY_FIRST_FAILURE" title="(在 Python v3.14)"><code class="docutils literal notranslate"><span class="pre">doctest.REPORT_ONLY_FIRST_FAILURE</span></code></a>):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest<span class="w"> </span>--doctest-modules<span class="w"> </span>--doctest-report<span class="w"> </span>none
+pytest<span class="w"> </span>--doctest-modules<span class="w"> </span>--doctest-report<span class="w"> </span>udiff
+pytest<span class="w"> </span>--doctest-modules<span class="w"> </span>--doctest-report<span class="w"> </span>cdiff
+pytest<span class="w"> </span>--doctest-modules<span class="w"> </span>--doctest-report<span class="w"> </span>ndiff
+pytest<span class="w"> </span>--doctest-modules<span class="w"> </span>--doctest-report<span class="w"> </span>only_first_failure
+</pre></div>
+</div>
+</div>
+<div class="section" id="pytest-specific-features">
+<h2>pytest-specific features<a class="headerlink" href="#pytest-specific-features" title="永久链接至标题">¶</a></h2>
+<p>Some features are provided to make writing doctests easier or with better integration with
+your existing test suite. Keep in mind however that by using those features you will make
+your doctests incompatible with the standard <code class="docutils literal notranslate"><span class="pre">doctests</span></code> module.</p>
+<div class="section" id="using-fixtures">
+<h3>Using fixtures<a class="headerlink" href="#using-fixtures" title="永久链接至标题">¶</a></h3>
+<p>It is possible to use fixtures using the <code class="docutils literal notranslate"><span class="pre">getfixture</span></code> helper:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># content of example.rst
+&gt;&gt;&gt; tmp = getfixture(&#39;tmpdir&#39;)
+&gt;&gt;&gt; ...
+&gt;&gt;&gt;
+</pre></div>
+</div>
+<p>Also, <a class="reference internal" href="fixture.html#usefixtures"><span class="std std-ref">Using fixtures from classes, modules or projects</span></a> and <a class="reference internal" href="fixture.html#autouse"><span class="std std-ref">Autouse fixtures (xUnit setup on steroids)</span></a> fixtures are supported
+when executing text doctest files.</p>
+</div>
+<div class="section" id="doctest-namespace-fixture">
+<span id="doctest-namespace"></span><h3>‘doctest_namespace’ fixture<a class="headerlink" href="#doctest-namespace-fixture" title="永久链接至标题">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">doctest_namespace</span></code> fixture can be used to inject items into the
+namespace in which your doctests run. It is intended to be used within
+your own fixtures to provide the tests that use them with context.</p>
+<p><code class="docutils literal notranslate"><span class="pre">doctest_namespace</span></code> is a standard <code class="docutils literal notranslate"><span class="pre">dict</span></code> object into which you
+place the objects you want to appear in the doctest namespace:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># content of conftest.py</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span>
+
+
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">autouse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">add_np</span><span class="p">(</span><span class="n">doctest_namespace</span><span class="p">):</span>
+    <span class="n">doctest_namespace</span><span class="p">[</span><span class="s2">&quot;np&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">numpy</span>
+</pre></div>
+</div>
+<p>which can then be used in your doctests directly:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># content of numpy.py</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">arange</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    &gt;&gt;&gt; a = np.arange(10)</span>
+<span class="sd">    &gt;&gt;&gt; len(a)</span>
+<span class="sd">    10</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>Note that like the normal <code class="docutils literal notranslate"><span class="pre">conftest.py</span></code>, the fixtures are discovered in the directory tree conftest is in.
+Meaning that if you put your doctest with your source code, the relevant conftest.py needs to be in the same directory tree.
+Fixtures will not be discovered in a sibling directory tree!</p>
+</div>
+<div class="section" id="skipping-tests-dynamically">
+<h3>Skipping tests dynamically<a class="headerlink" href="#skipping-tests-dynamically" title="永久链接至标题">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">4.4 新版功能.</span></p>
+</div>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">pytest.skip</span></code> to dynamically skip doctests. For example:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; import sys, pytest
+&gt;&gt;&gt; if sys.platform.startswith(&#39;win&#39;):
+...     pytest.skip(&#39;this doctest does not work on Windows&#39;)
+...
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="contents.html">
+              <img class="logo" src="_static/pytest1.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel"
+        placeholder="Search"/>
+      <input type="submit" value="转向" />
+    </form>
+  </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><h3><a href="contents.html">Table Of Contents</a></h3>
+
+<ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="getting-started.html">Install</a></li>
+  <li><a href="contents.html">目录</a></li>
+  <li><a href="reference.html">API Reference</a></li>
+  <li><a href="example/index.html">实际案例</a></li>
+  <li><a href="customize.html">Customize</a></li>
+  <li><a href="changelog.html">Changelog</a></li>
+  <li><a href="contributing.html">Contributing</a></li>
+  <li><a href="backwards-compatibility.html">Backwards Compatibility</a></li>
+  <li><a href="py27-py34-deprecation.html">Python 2.7 and 3.4 Support</a></li>
+  <li><a href="sponsor.html">Sponsor</a></li>
+  <li><a href="tidelift.html">pytest for Enterprise</a></li>
+  <li><a href="license.html">License</a></li>
+  <li><a href="contact.html">Contact Channels</a></li>
+</ul>
+  <hr>
+  <ul>
+<li><a class="reference internal" href="#">Doctest integration for modules and test files</a><ul>
+<li><a class="reference internal" href="#encoding">Encoding</a></li>
+<li><a class="reference internal" href="#using-doctest-options">Using ‘doctest’ options</a></li>
+<li><a class="reference internal" href="#continue-on-failure">Continue on failure</a></li>
+<li><a class="reference internal" href="#output-format">Output format</a></li>
+<li><a class="reference internal" href="#pytest-specific-features">pytest-specific features</a><ul>
+<li><a class="reference internal" href="#using-fixtures">Using fixtures</a></li>
+<li><a class="reference internal" href="#doctest-namespace-fixture">‘doctest_namespace’ fixture</a></li>
+<li><a class="reference internal" href="#skipping-tests-dynamically">Skipping tests dynamically</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<hr>
+<a href="genindex.html">索引</a>
+<hr><h3>Related Topics</h3>
+<ul>
+  <li><a href="contents.html">Documentation overview</a><ul>
+      <li>Previous: <a href="warnings.html" title="上一章">Warnings Capture</a></li>
+      <li>Next: <a href="skipping.html" title="下一章">Skip and xfail: dealing with tests that cannot succeed</a></li>
+  </ul></li>
+</ul><h3>Useful Links</h3>
+<ul>
+  <li><a href="https://pypi.org/project/pytest/">pytest @ PyPI</a></li>
+  <li><a href="https://github.com/pytest-dev/pytest/">pytest @ GitHub</a></li>
+  <li><a href="http://plugincompat.herokuapp.com/">3rd party plugins</a></li>
+  <li><a href="https://github.com/pytest-dev/pytest/issues">Issue Tracker</a></li>
+  <li><a href="https://media.readthedocs.org/pdf/pytest/latest/pytest.pdf">PDF Documentation</a></li>
+</ul>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="footer">
+    &copy; Copyright 2015–2020, holger krekel and pytest-dev team.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+  </div>
+  
+  </body>
+</html>
