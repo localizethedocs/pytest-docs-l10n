@@ -1,0 +1,62 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015–2020, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/bash-completion.rst:5
+msgid "Setting up bash completion"
+msgstr ""
+
+#: ../../../doc/en/bash-completion.rst:7
+msgid ""
+"When using bash as your shell, ``pytest`` can use argcomplete (https://"
+"argcomplete.readthedocs.io/) for auto-completion. For this ``argcomplete`` "
+"needs to be installed **and** enabled."
+msgstr ""
+
+#: ../../../doc/en/bash-completion.rst:11
+msgid "Install argcomplete using:"
+msgstr ""
+
+#: ../../../doc/en/bash-completion.rst:13
+msgid "sudo pip install 'argcomplete>=0.5.7'"
+msgstr ""
+
+#: ../../../doc/en/bash-completion.rst:17
+msgid ""
+"For global activation of all argcomplete enabled python applications run:"
+msgstr ""
+
+#: ../../../doc/en/bash-completion.rst:19
+msgid "sudo activate-global-python-argcomplete"
+msgstr ""
+
+#: ../../../doc/en/bash-completion.rst:23
+msgid "For permanent (but not global) ``pytest`` activation, use:"
+msgstr ""
+
+#: ../../../doc/en/bash-completion.rst:25
+msgid "register-python-argcomplete pytest >> ~/.bashrc"
+msgstr ""
+
+#: ../../../doc/en/bash-completion.rst:29
+msgid "For one-time activation of argcomplete for ``pytest`` only, use:"
+msgstr ""
+
+#: ../../../doc/en/bash-completion.rst:31
+msgid "eval \"$(register-python-argcomplete pytest)\""
+msgstr ""
