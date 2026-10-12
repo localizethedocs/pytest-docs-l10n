@@ -1,0 +1,112 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-13 09:26+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/announce/release-2.9.2.rst:2
+msgid "pytest-2.9.2"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.9.2.rst:4
+msgid ""
+"pytest is a mature Python testing tool with more than 1100 tests against "
+"itself, passing on many different interpreters and platforms."
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.9.2.rst:7
+msgid "See below for the changes and see docs at:"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.9.2.rst:9
+msgid "http://pytest.org"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.9.2.rst:11
+msgid "As usual, you can upgrade from pypi via::"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.9.2.rst:13
+msgid "pip install -U pytest"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.9.2.rst:15
+msgid "Thanks to all who contributed to this release, among them:"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.9.2.rst:17
+msgid ""
+"Adam Chainz Benjamin Dopplinger Bruno Oliveira Freya Bruhin John Towler "
+"Martin Prusse Meng Jue MengJueM Omar Kohl Quentin Pradet Ronny Pfannschmidt "
+"Thomas Güttler TomV Tyler Goodlet"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.9.2.rst:33
+msgid "Happy testing, The py.test Development Team"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.9.2.rst:38
+msgid "2.9.2 (compared to 2.9.1)"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.9.2.rst:40
+msgid "**Bug Fixes**"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.9.2.rst:42
+msgid ""
+"fix :issue:`510`: skip tests where one parameterize dimension was empty "
+"thanks Alex Stapleton for the Report and :user:`RonnyPfannschmidt` for the PR"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.9.2.rst:45
+msgid ""
+"Fix Xfail does not work with condition keyword argument. Thanks :user:"
+"`astraw38` for reporting the issue (:issue:`1496`) and :user:`tomviner` for "
+"PR the (:pr:`1524`)."
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.9.2.rst:49
+msgid ""
+"Fix win32 path issue when putting custom config file with absolute path in "
+"``pytest.main(\"-c your_absolute_path\")``."
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.9.2.rst:52
+msgid ""
+"Fix maximum recursion depth detection when raised error class is not aware "
+"of unicode/encoded bytes. Thanks :user:`prusse-martin` for the PR (:pr:"
+"`1506`)."
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.9.2.rst:56
+msgid ""
+"Fix ``pytest.mark.skip`` mark when used in strict mode. Thanks :user:"
+"`pquentin` for the PR and :user:`RonnyPfannschmidt` for showing how to fix "
+"the bug."
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.9.2.rst:60
+msgid ""
+"Minor improvements and fixes to the documentation. Thanks :user:`omarkohl` "
+"for the PR."
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.9.2.rst:63
+msgid ""
+"Fix ``--fixtures`` to show all fixture definitions as opposed to just one "
+"per fixture name. Thanks to :user:`hackebrot` for the PR."
+msgstr ""
