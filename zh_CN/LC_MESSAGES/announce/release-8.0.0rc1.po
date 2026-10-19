@@ -1,0 +1,292 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-13 09:55+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:2
+msgid "pytest-8.0.0rc1"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:4
+msgid "The pytest team is proud to announce the 8.0.0rc1 release!"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:6
+msgid ""
+"This release contains new features, improvements, bug fixes, and breaking "
+"changes, so users are encouraged to take a look at the CHANGELOG carefully:"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:9
+msgid "https://docs.pytest.org/en/stable/changelog.html"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:11
+msgid "For complete documentation, please visit:"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:13
+msgid "https://docs.pytest.org/en/stable/"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:15
+msgid "As usual, you can upgrade from PyPI via:"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:17
+msgid "pip install -U pytest"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:19
+msgid "Thanks to all of the contributors to this release:"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:21
+msgid "Akhilesh Ramakrishnan"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:22
+msgid "Aleksandr Brodin"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:23
+msgid "Anthony Sottile"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:24
+msgid "Arthur Richard"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:25
+msgid "Avasam"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:26
+msgid "Benjamin Schubert"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:27
+msgid "Bruno Oliveira"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:28
+msgid "Carsten Grohmann"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:29
+msgid "Cheukting"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:30
+msgid "Chris Mahoney"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:31
+msgid "Christoph Anton Mitterer"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:32
+msgid "DetachHead"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:33
+msgid "Erik Hasse"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:34
+msgid "Freya Bruhin"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:35
+msgid "Fraser Stark"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:36
+msgid "Ha Pam"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:37
+msgid "Hugo van Kemenade"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:38
+msgid "Isaac Virshup"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:39
+msgid "Israel Fruchter"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:40
+msgid "Jens Tröger"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:41
+msgid "Jon Parise"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:42
+msgid "Kenny Y"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:43
+msgid "Lesnek"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:44
+msgid "Marc Mueller"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:45
+msgid "Michał Górny"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:46
+msgid "Mihail Milushev"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:47
+msgid "Milan Lesnek"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:48
+msgid "Miro Hrončok"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:49
+msgid "Patrick Lannigan"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:50
+msgid "Ran Benita"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:51
+msgid "Reagan Lee"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:52
+msgid "Ronny Pfannschmidt"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:53
+msgid "Sadra Barikbin"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:54
+msgid "Sean Malloy"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:55
+msgid "Sean Patrick Malloy"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:56
+msgid "Sharad Nair"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:57
+msgid "Simon Blanchard"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:58
+msgid "Sourabh Beniwal"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:59
+msgid "Stefaan Lippens"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:60
+msgid "Tanya Agarwal"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:61
+msgid "Thomas Grainger"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:62
+msgid "Tom Mortimer-Jones"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:63
+msgid "Tushar Sadhwani"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:64
+msgid "Tyler Smart"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:65
+msgid "Uday Kumar"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:66
+msgid "Warren Markham"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:67
+msgid "WarrenTheRabbit"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:68
+msgid "Zac Hatfield-Dodds"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:69
+msgid "Ziad Kermadi"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:70
+msgid "akhilramkee"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:71
+msgid "antosikv"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:72
+msgid "bowugit"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:73
+msgid "mickeypash"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:74
+msgid "neilmartin2000"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:75
+msgid "pomponchik"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:76
+msgid "ryanpudd"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:77
+msgid "touilleWoman"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:78
+msgid "ubaumann"
+msgstr ""
+
+#: ../../../doc/en/announce/release-8.0.0rc1.rst:81
+msgid "Happy testing, The pytest Development Team"
+msgstr ""
