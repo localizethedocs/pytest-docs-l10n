@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 11:54+0000\n"
+"POT-Creation-Date: 2026-10-19 15:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -239,8 +239,8 @@ msgstr ""
 
 #: ../../../doc/en/example/parametrize.rst:178
 msgid ""
-"In ``test_timedistance_v3``, we used ``pytest.param`` to specify the test "
-"IDs together with the actual data, instead of listing them separately."
+"In ``test_timedistance_v3``, we used :func:`pytest.param` to specify the "
+"test IDs together with the actual data, instead of listing them separately."
 msgstr ""
 
 #: ../../../doc/en/example/parametrize.rst:182
