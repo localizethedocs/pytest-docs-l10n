@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 11:54+0000\n"
+"POT-Creation-Date: 2026-10-26 14:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -65,7 +65,7 @@ msgid ""
 msgstr ""
 
 #: ../../../doc/en/getting-started.rst:42
-msgid "The test"
+msgid "Run the test:"
 msgstr ""
 
 #: ../../../doc/en/getting-started.rst:44
@@ -105,10 +105,10 @@ msgstr ""
 
 #: ../../../doc/en/getting-started.rst:71
 msgid ""
-"You can use the ``assert`` statement to verify test expectations. pytest’s :"
-"ref:`Advanced assertion introspection <python:assert>` will intelligently "
-"report intermediate values of the assert expression so you can avoid the "
-"many names :ref:`of JUnit legacy methods <testcase-objects>`."
+"You can use the ``assert`` statement to verify test expectations. "
+"pytest’s :ref:`Advanced assertion introspection <python:assert>` will "
+"intelligently report intermediate values of the assert expression so you can "
+"avoid the many names :ref:`of JUnit legacy methods <testcase-objects>`."
 msgstr ""
 
 #: ../../../doc/en/getting-started.rst:74
@@ -118,8 +118,8 @@ msgstr ""
 #: ../../../doc/en/getting-started.rst:76
 msgid ""
 "``pytest`` will run all files of the form ``test_*.py`` or ``*_test.py`` in "
-"the current directory and its subdirectories. More generally, it follows :"
-"ref:`standard test discovery rules <test discovery>`."
+"the current directory and its subdirectories. More generally, it "
+"follows :ref:`standard test discovery rules <test discovery>`."
 msgstr ""
 
 #: ../../../doc/en/getting-started.rst:80
@@ -400,8 +400,8 @@ msgstr ""
 
 #: ../../../doc/en/getting-started.rst:265
 msgid ""
-"Note that this command omits fixtures with leading ``_`` unless the :option:"
-"`-v` option is added."
+"Note that this command omits fixtures with leading ``_`` unless "
+"the :option:`-v` option is added."
 msgstr ""
 
 #: ../../../doc/en/getting-started.rst:268

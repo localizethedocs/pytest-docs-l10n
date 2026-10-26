@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 11:54+0000\n"
+"POT-Creation-Date: 2026-10-26 14:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -239,8 +239,8 @@ msgstr ""
 
 #: ../../../doc/en/example/parametrize.rst:178
 msgid ""
-"In ``test_timedistance_v3``, we used ``pytest.param`` to specify the test "
-"IDs together with the actual data, instead of listing them separately."
+"In ``test_timedistance_v3``, we used :func:`pytest.param` to specify the "
+"test IDs together with the actual data, instead of listing them separately."
 msgstr ""
 
 #: ../../../doc/en/example/parametrize.rst:182
@@ -251,8 +251,8 @@ msgstr ""
 msgid ""
 "Here is a quick port to run tests configured with :pypi:`testscenarios`, an "
 "add-on from Robert Collins for the standard unittest framework. We only have "
-"to work a bit to construct the correct arguments for pytest's :py:func:"
-"`Metafunc.parametrize <pytest.Metafunc.parametrize>`:"
+"to work a bit to construct the correct arguments for "
+"pytest's :py:func:`Metafunc.parametrize <pytest.Metafunc.parametrize>`:"
 msgstr ""
 
 #: ../../../doc/en/example/parametrize.rst:189
@@ -491,8 +491,8 @@ msgstr ""
 
 #: ../../../doc/en/example/parametrize.rst:379
 msgid ""
-"The ``request`` argument used by the fixture is pytest's built-in :py:class:"
-"`FixtureRequest <pytest.FixtureRequest>` fixture. For indirect "
+"The ``request`` argument used by the fixture is pytest's built-"
+"in :py:class:`FixtureRequest <pytest.FixtureRequest>` fixture. For indirect "
 "parametrization, the value supplied to the test parameter is passed to the "
 "fixture and made available as ``request.param``."
 msgstr ""

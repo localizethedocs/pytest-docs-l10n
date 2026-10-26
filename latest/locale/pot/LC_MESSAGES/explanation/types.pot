@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-23 08:43+0000\n"
+"POT-Creation-Date: 2026-10-26 14:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,8 +29,8 @@ msgstr ""
 
 #: ../../../doc/en/explanation/types.rst:9
 msgid ""
-"For more information, refer to `Python's Typing Documentation <https://docs."
-"python.org/3/library/typing.html>`_."
+"For more information, refer to `Python's Typing Documentation <https://"
+"docs.python.org/3/library/typing.html>`_."
 msgstr ""
 
 #: ../../../doc/en/explanation/types.rst:12
@@ -129,8 +129,8 @@ msgstr ""
 
 #: ../../../doc/en/explanation/types.rst:66
 msgid ""
-"The same logic applies to :ref:`@pytest.mark.parametrize <@pytest.mark."
-"parametrize>`:"
+"The same logic applies to :ref:`@pytest.mark.parametrize "
+"<@pytest.mark.parametrize>`:"
 msgstr ""
 
 #: ../../../doc/en/explanation/types.rst:68
@@ -154,11 +154,41 @@ msgid ""
 "    monkeypatch.setenv(\"USER\", \"TestingUser\")"
 msgstr ""
 
-#: ../../../doc/en/explanation/types.rst:86
-msgid "Conclusion"
+#: ../../../doc/en/explanation/types.rst:84
+msgid ""
+"For a fixture that uses ``yield``, annotate the fixture function with the "
+"type of its generator. Annotate a test or another fixture that requests it "
+"with the type of the value yielded:"
 msgstr ""
 
 #: ../../../doc/en/explanation/types.rst:88
+msgid ""
+"from collections.abc import Generator\n"
+"\n"
+"import pytest\n"
+"\n"
+"\n"
+"@pytest.fixture\n"
+"def sample_yield_fixture() -> Generator[int]:\n"
+"    yield 38\n"
+"\n"
+"\n"
+"def test_sample_yield_fixture(sample_yield_fixture: int) -> None:\n"
+"    assert sample_yield_fixture == 38"
+msgstr ""
+
+#: ../../../doc/en/explanation/types.rst:103
+msgid ""
+"The test receives the yielded ``int``, not the generator object. "
+"See :ref:`How to use fixtures <how-to-fixtures>` for more information about "
+"``yield`` fixtures and teardown."
+msgstr ""
+
+#: ../../../doc/en/explanation/types.rst:107
+msgid "Conclusion"
+msgstr ""
+
+#: ../../../doc/en/explanation/types.rst:109
 msgid ""
 "Incorporating typing into pytest tests enhances **clarity**, improves "
 "**debugging** and **maintenance**, and ensures **type safety**. These "

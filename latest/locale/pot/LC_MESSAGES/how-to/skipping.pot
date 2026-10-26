@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-23 08:43+0000\n"
+"POT-Creation-Date: 2026-10-26 14:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,8 +41,9 @@ msgstr ""
 msgid ""
 "An **xfail** means that you expect a test to fail for some reason. A common "
 "example is a test for a feature not yet implemented, or a bug not yet fixed. "
-"When a test passes despite being expected to fail (marked with ``pytest.mark."
-"xfail``), it's an **xpass** and will be reported in the test summary."
+"When a test passes despite being expected to fail (marked with "
+"``pytest.mark.xfail``), it's an **xpass** and will be reported in the test "
+"summary."
 msgstr ""
 
 #: ../../../doc/en/how-to/skipping.rst:22
@@ -59,8 +60,8 @@ msgstr ""
 
 #: ../../../doc/en/how-to/skipping.rst:31
 msgid ""
-"More details on the :option:`-r` option can be found by running ``pytest -"
-"h``."
+"More details on the :option:`-r` option can be found by running ``pytest "
+"-h``."
 msgstr ""
 
 #: ../../../doc/en/how-to/skipping.rst:33
@@ -227,8 +228,8 @@ msgstr ""
 
 #: ../../../doc/en/how-to/skipping.rst:152
 msgid ""
-"If you want to skip all test functions of a module, you may use the :"
-"globalvar:`pytestmark` global:"
+"If you want to skip all test functions of a module, you may use "
+"the :globalvar:`pytestmark` global:"
 msgstr ""
 
 #: ../../../doc/en/how-to/skipping.rst:155
@@ -452,8 +453,8 @@ msgstr ""
 
 #: ../../../doc/en/how-to/skipping.rst:306
 msgid ""
-"If a test should be marked as xfail and reported as such but should not be "
-"even executed, use the ``run`` parameter as ``False``:"
+"If a test should be marked as xfail and reported as such but should not even "
+"be executed, use the ``run`` parameter as ``False``:"
 msgstr ""
 
 #: ../../../doc/en/how-to/skipping.rst:309
