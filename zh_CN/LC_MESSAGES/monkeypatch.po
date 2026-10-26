@@ -1,0 +1,251 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/monkeypatch.rst:3
+msgid "Monkeypatching/mocking modules and environments"
+msgstr ""
+
+#: ../../../doc/en/monkeypatch.rst:7
+msgid ""
+"Sometimes tests need to invoke functionality which depends on global "
+"settings or which invokes code which cannot be easily tested such as network "
+"access.  The ``monkeypatch`` function argument helps you to safely set/"
+"delete an attribute, dictionary item or environment variable or to modify "
+"``sys.path`` for importing. See the `monkeypatch blog post`_ for some "
+"introduction material and a discussion of its motivation."
+msgstr ""
+
+#: ../../../doc/en/monkeypatch.rst:18
+msgid "Simple example: monkeypatching functions"
+msgstr ""
+
+#: ../../../doc/en/monkeypatch.rst:20
+msgid ""
+"If you want to pretend that ``os.expanduser`` returns a certain directory, "
+"you can use the :py:meth:`monkeypatch.setattr` method to patch this function "
+"before calling into a function which uses it::"
+msgstr ""
+
+#: ../../../doc/en/monkeypatch.rst:24
+msgid ""
+"# content of test_module.py\n"
+"import os.path\n"
+"def getssh(): # pseudo application code\n"
+"    return os.path.join(os.path.expanduser(\"~admin\"), '.ssh')\n"
+"\n"
+"def test_mytest(monkeypatch):\n"
+"    def mockreturn(path):\n"
+"        return '/abc'\n"
+"    monkeypatch.setattr(os.path, 'expanduser', mockreturn)\n"
+"    x = getssh()\n"
+"    assert x == '/abc/.ssh'"
+msgstr ""
+
+#: ../../../doc/en/monkeypatch.rst:36
+msgid ""
+"Here our test function monkeypatches ``os.path.expanduser`` and then calls "
+"into an function that calls it.  After the test function finishes the ``os."
+"path.expanduser`` modification will be undone."
+msgstr ""
+
+#: ../../../doc/en/monkeypatch.rst:41
+msgid "example: preventing \"requests\" from remote operations"
+msgstr ""
+
+#: ../../../doc/en/monkeypatch.rst:43
+msgid ""
+"If you want to prevent the \"requests\" library from performing http "
+"requests in all your tests, you can do::"
+msgstr ""
+
+#: ../../../doc/en/monkeypatch.rst:46
+msgid ""
+"# content of conftest.py\n"
+"import pytest\n"
+"@pytest.fixture(autouse=True)\n"
+"def no_requests(monkeypatch):\n"
+"    monkeypatch.delattr(\"requests.sessions.Session.request\")"
+msgstr ""
+
+#: ../../../doc/en/monkeypatch.rst:52
+msgid ""
+"This autouse fixture will be executed for each test function and it will "
+"delete the method ``request.session.Session.request`` so that any attempts "
+"within tests to create http requests will fail."
+msgstr ""
+
+#: ../../../doc/en/monkeypatch.rst:57
+msgid "example: setting an attribute on some class"
+msgstr ""
+
+#: ../../../doc/en/monkeypatch.rst:59
+msgid ""
+"If you need to patch out ``os.getcwd()`` to return an artificial value::"
+msgstr ""
+
+#: ../../../doc/en/monkeypatch.rst:62
+msgid ""
+"def test_some_interaction(monkeypatch):\n"
+"    monkeypatch.setattr(\"os.getcwd\", lambda: \"/\")"
+msgstr ""
+
+#: ../../../doc/en/monkeypatch.rst:65
+msgid "which is equivalent to the long form::"
+msgstr ""
+
+#: ../../../doc/en/monkeypatch.rst:67
+msgid ""
+"def test_some_interaction(monkeypatch):\n"
+"    import os\n"
+"    monkeypatch.setattr(os, \"getcwd\", lambda: \"/\")"
+msgstr ""
+
+#: ../../../doc/en/monkeypatch.rst:74
+msgid "Method reference of the monkeypatch function argument"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/monkeypatch.py:docstring
+#: of _pytest.monkeypatch.monkeypatch:1
+msgid "Object keeping a record of setattr/item/env/syspath changes."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/monkeypatch.py:docstring
+#: of _pytest.monkeypatch.monkeypatch.setattr:1
+msgid ""
+"Set attribute value on target, memorizing the old value. By default raise "
+"AttributeError if the attribute did not exist."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/monkeypatch.py:docstring
+#: of _pytest.monkeypatch.monkeypatch.setattr:4
+msgid ""
+"For convenience you can specify a string as ``target`` which will be "
+"interpreted as a dotted import path, with the last part being the attribute "
+"name.  Example: ``monkeypatch.setattr(\"os.getcwd\", lambda x: \"/\")`` "
+"would set the ``getcwd`` function of the ``os`` module."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/monkeypatch.py:docstring
+#: of _pytest.monkeypatch.monkeypatch.setattr:10
+msgid ""
+"The ``raising`` value determines if the setattr should fail if the attribute "
+"is not already present (defaults to True which means it will raise)."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/monkeypatch.py:docstring
+#: of _pytest.monkeypatch.monkeypatch.delattr:1
+msgid ""
+"Delete attribute ``name`` from ``target``, by default raise AttributeError "
+"it the attribute did not previously exist."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/monkeypatch.py:docstring
+#: of _pytest.monkeypatch.monkeypatch.delattr:4
+msgid ""
+"If no ``name`` is specified and ``target`` is a string it will be "
+"interpreted as a dotted import path with the last part being the attribute "
+"name."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/monkeypatch.py:docstring
+#: of _pytest.monkeypatch.monkeypatch.delattr:8
+msgid ""
+"If ``raising`` is set to False, no exception will be raised if the attribute "
+"is missing."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/monkeypatch.py:docstring
+#: of _pytest.monkeypatch.monkeypatch.setitem:1
+msgid "Set dictionary entry ``name`` to value."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/monkeypatch.py:docstring
+#: of _pytest.monkeypatch.monkeypatch.delitem:1
+msgid "Delete ``name`` from dict. Raise KeyError if it doesn't exist."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/monkeypatch.py:docstring
+#: of _pytest.monkeypatch.monkeypatch.delitem:3
+msgid ""
+"If ``raising`` is set to False, no exception will be raised if the key is "
+"missing."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/monkeypatch.py:docstring
+#: of _pytest.monkeypatch.monkeypatch.setenv:1
+msgid ""
+"Set environment variable ``name`` to ``value``.  If ``prepend`` is a "
+"character, read the current environment variable value and prepend the "
+"``value`` adjoined with the ``prepend`` character."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/monkeypatch.py:docstring
+#: of _pytest.monkeypatch.monkeypatch.delenv:1
+msgid "Delete ``name`` from the environment. Raise KeyError it does not exist."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/monkeypatch.py:docstring
+#: of _pytest.monkeypatch.monkeypatch.delenv:4
+msgid ""
+"If ``raising`` is set to False, no exception will be raised if the "
+"environment variable is missing."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/monkeypatch.py:docstring
+#: of _pytest.monkeypatch.monkeypatch.syspath_prepend:1
+msgid "Prepend ``path`` to ``sys.path`` list of import locations."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/monkeypatch.py:docstring
+#: of _pytest.monkeypatch.monkeypatch.chdir:1
+msgid ""
+"Change the current working directory to the specified path. Path can be a "
+"string or a py.path.local object."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/monkeypatch.py:docstring
+#: of _pytest.monkeypatch.monkeypatch.undo:1
+msgid ""
+"Undo previous changes.  This call consumes the undo stack. Calling it a "
+"second time has no effect unless you do more monkeypatching after the undo "
+"call."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/monkeypatch.py:docstring
+#: of _pytest.monkeypatch.monkeypatch.undo:5
+msgid ""
+"There is generally no need to call `undo()`, since it is called "
+"automatically during tear-down."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/monkeypatch.py:docstring
+#: of _pytest.monkeypatch.monkeypatch.undo:8
+msgid ""
+"Note that the same `monkeypatch` fixture is used across a single test "
+"function invocation. If `monkeypatch` is used both by the test function "
+"itself and one of the test fixtures, calling `undo()` will undo all of the "
+"changes made in both functions."
+msgstr ""
+
+#: ../../../doc/en/monkeypatch.rst:79
+msgid ""
+"``monkeypatch.setattr/delattr/delitem/delenv()`` all by default raise an "
+"Exception if the target does not exist. Pass ``raising=False`` if you want "
+"to skip this check."
+msgstr ""
