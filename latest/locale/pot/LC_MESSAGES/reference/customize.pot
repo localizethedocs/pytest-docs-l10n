@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-23 08:43+0000\n"
+"POT-Creation-Date: 2026-10-26 14:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -86,8 +86,8 @@ msgstr ""
 
 #: ../../../doc/en/reference/customize.rst:51
 msgid ""
-"``pytest.ini`` files take precedence over other files (except ``pytest."
-"toml`` and ``.pytest.toml``), even when empty."
+"``pytest.ini`` files take precedence over other files (except "
+"``pytest.toml`` and ``.pytest.toml``), even when empty."
 msgstr ""
 
 #: ../../../doc/en/reference/customize.rst:53
@@ -152,7 +152,7 @@ msgstr ""
 #: ../../../doc/en/reference/customize.rst:106
 msgid ""
 "For projects that still run pytest versions older than 6.0, keep "
-"``minversion`` in ``pytest.ini`` or ``setup.cfg`` too. Those versions do not "
+"``minversion`` in ``pytest.ini`` or ``tox.ini`` too. Those versions do not "
 "read ``pyproject.toml``."
 msgstr ""
 
@@ -162,8 +162,8 @@ msgstr ""
 
 #: ../../../doc/en/reference/customize.rst:113
 msgid ""
-"``tox.ini`` files are the configuration files of the `tox <https://tox."
-"readthedocs.io>`__ project, and can also be used to hold pytest "
+"``tox.ini`` files are the configuration files of the `tox <https://"
+"tox.readthedocs.io>`__ project, and can also be used to hold pytest "
 "configuration if they have a ``[pytest]`` section."
 msgstr ""
 
@@ -185,9 +185,9 @@ msgstr ""
 #: ../../../doc/en/reference/customize.rst:132
 msgid ""
 "``setup.cfg`` files are general purpose configuration files, used originally "
-"by ``distutils`` (now deprecated) and :std:doc:`setuptools <setuptools:"
-"userguide/declarative_config>`, and can also be used to hold pytest "
-"configuration if they have a ``[tool:pytest]`` section."
+"by ``distutils`` (now deprecated) and :std:doc:`setuptools "
+"<setuptools:userguide/declarative_config>`, and can also be used to hold "
+"pytest configuration if they have a ``[tool:pytest]`` section."
 msgstr ""
 
 #: ../../../doc/en/reference/customize.rst:137
@@ -331,8 +331,8 @@ msgstr ""
 
 #: ../../../doc/en/reference/customize.rst:218
 msgid ""
-"``pyproject.toml``: contains a ``[tool.pytest]`` or ``[tool.pytest."
-"ini_options]`` table."
+"``pyproject.toml``: contains a ``[tool.pytest]`` or "
+"``[tool.pytest.ini_options]`` table."
 msgstr ""
 
 #: ../../../doc/en/reference/customize.rst:219
@@ -346,9 +346,9 @@ msgstr ""
 #: ../../../doc/en/reference/customize.rst:222
 msgid ""
 "Finally, a ``pyproject.toml`` file will be considered the ``configfile`` if "
-"no other match was found, in this case even if it does not contain a ``[tool."
-"pytest]`` table (since version ``9.0``) or a ``[tool.pytest.ini_options]`` "
-"table (since version ``8.1``)."
+"no other match was found, in this case even if it does not contain a "
+"``[tool.pytest]`` table (since version ``9.0``) or a "
+"``[tool.pytest.ini_options]`` table (since version ``8.1``)."
 msgstr ""
 
 #: ../../../doc/en/reference/customize.rst:226
@@ -385,10 +385,10 @@ msgstr ""
 
 #: ../../../doc/en/reference/customize.rst:241
 msgid ""
-"The ``config.rootpath`` and ``config.inipath`` properties. They are :class:"
-"`pathlib.Path` versions of the older ``config.rootdir`` and ``config."
-"inifile``, which have type ``py.path.local``, and still exist for backward "
-"compatibility."
+"The ``config.rootpath`` and ``config.inipath`` properties. They "
+"are :class:`pathlib.Path` versions of the older ``config.rootdir`` and "
+"``config.inifile``, which have type ``py.path.local``, and still exist for "
+"backward compatibility."
 msgstr ""
 
 #: ../../../doc/en/reference/customize.rst:248
