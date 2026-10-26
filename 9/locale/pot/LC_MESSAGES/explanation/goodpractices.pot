@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest 9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-13 09:55+0000\n"
+"POT-Creation-Date: 2026-10-26 15:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -83,10 +83,10 @@ msgstr ""
 
 #: ../../../doc/en/explanation/goodpractices.rst:47
 msgid ""
-"If no arguments are specified then collection starts from :confval:"
-"`testpaths` (if configured) or the current directory. Alternatively, command "
-"line arguments can be used in any combination of directories, file names or "
-"node ids."
+"If no arguments are specified then collection starts "
+"from :confval:`testpaths` (if configured) or the current directory. "
+"Alternatively, command line arguments can be used in any combination of "
+"directories, file names or node ids."
 msgstr ""
 
 #: ../../../doc/en/explanation/goodpractices.rst:50
@@ -122,8 +122,8 @@ msgstr ""
 
 #: ../../../doc/en/explanation/goodpractices.rst:59
 msgid ""
-"Within Python modules, ``pytest`` also discovers tests using the standard :"
-"ref:`unittest.TestCase <unittest.TestCase>` subclassing technique."
+"Within Python modules, ``pytest`` also discovers tests using the "
+"standard :ref:`unittest.TestCase <unittest.TestCase>` subclassing technique."
 msgstr ""
 
 #: ../../../doc/en/explanation/goodpractices.rst:66
@@ -388,8 +388,8 @@ msgstr ""
 #: ../../../doc/en/explanation/goodpractices.rst:247
 msgid ""
 "If you need to have test modules with the same name, as a workaround you "
-"might add ``__init__.py`` files to your ``tests`` folder and subfolders, "
-"changing them to packages:"
+"might add ``__init__.py`` files to your ``tests`` directory and "
+"subdirectories, changing them to packages:"
 msgstr ""
 
 #: ../../../doc/en/explanation/goodpractices.rst:251
@@ -409,11 +409,12 @@ msgstr ""
 
 #: ../../../doc/en/explanation/goodpractices.rst:265
 msgid ""
-"Now pytest will load the modules as ``tests.foo.test_view`` and ``tests.bar."
-"test_view``, allowing you to have modules with the same name. But now this "
-"introduces a subtle problem: in order to load the test modules from the "
-"``tests`` directory, pytest prepends the root of the repository to ``sys."
-"path``, which adds the side-effect that now ``mypkg`` is also importable."
+"Now pytest will load the modules as ``tests.foo.test_view`` and "
+"``tests.bar.test_view``, allowing you to have modules with the same name. "
+"But now this introduces a subtle problem: in order to load the test modules "
+"from the ``tests`` directory, pytest prepends the root of the repository to "
+"``sys.path``, which adds the side-effect that now ``mypkg`` is also "
+"importable."
 msgstr ""
 
 #: ../../../doc/en/explanation/goodpractices.rst:272
@@ -518,8 +519,8 @@ msgstr ""
 
 #: ../../../doc/en/explanation/goodpractices.rst:341
 msgid ""
-"You can enable all of the strictness options at once by setting the :confval:"
-"`strict` configuration option:"
+"You can enable all of the strictness options at once by setting "
+"the :confval:`strict` configuration option:"
 msgstr ""
 
 #: ../../../doc/en/explanation/goodpractices.rst:345
