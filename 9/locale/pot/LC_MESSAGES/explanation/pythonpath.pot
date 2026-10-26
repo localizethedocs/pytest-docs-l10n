@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest 9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-13 09:55+0000\n"
+"POT-Creation-Date: 2026-10-26 15:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,8 +27,8 @@ msgstr ""
 
 #: ../../../doc/en/explanation/pythonpath.rst:11
 msgid ""
-"pytest as a testing framework needs to import test modules and ``conftest."
-"py`` files for execution."
+"pytest as a testing framework needs to import test modules and "
+"``conftest.py`` files for execution."
 msgstr ""
 
 #: ../../../doc/en/explanation/pythonpath.rst:13
@@ -42,8 +42,8 @@ msgstr ""
 msgid ""
 "``prepend`` (default): The directory path containing each module will be "
 "inserted into the *beginning* of :py:data:`sys.path` if not already there, "
-"and then imported with the :func:`importlib.import_module <importlib."
-"import_module>` function."
+"and then imported with the :func:`importlib.import_module "
+"<importlib.import_module>` function."
 msgstr ""
 
 #: ../../../doc/en/explanation/pythonpath.rst:23
@@ -70,9 +70,9 @@ msgstr ""
 
 #: ../../../doc/en/explanation/pythonpath.rst:34
 msgid ""
-"``append``: the directory containing each module is appended to the end of :"
-"py:data:`sys.path` if not already there, and imported with :func:`importlib."
-"import_module <importlib.import_module>`."
+"``append``: the directory containing each module is appended to the end "
+"of :py:data:`sys.path` if not already there, and imported "
+"with :func:`importlib.import_module <importlib.import_module>`."
 msgstr ""
 
 #: ../../../doc/en/explanation/pythonpath.rst:37
@@ -90,10 +90,10 @@ msgstr ""
 
 #: ../../../doc/en/explanation/pythonpath.rst:46
 msgid ""
-"the tests will run against the installed version of ``pkg_under_test`` when :"
-"option:`--import-mode=append` is used whereas with ``prepend``, they would "
-"pick up the local version. This kind of confusion is why we advocate for "
-"using :ref:`src-layouts <src-layout>`."
+"the tests will run against the installed version of ``pkg_under_test`` "
+"when :option:`--import-mode=append` is used whereas with ``prepend``, they "
+"would pick up the local version. This kind of confusion is why we advocate "
+"for using :ref:`src-layouts <src-layout>`."
 msgstr ""
 
 #: ../../../doc/en/explanation/pythonpath.rst:51
@@ -105,8 +105,9 @@ msgstr ""
 
 #: ../../../doc/en/explanation/pythonpath.rst:56
 msgid ""
-"``importlib``: this mode uses more fine control mechanisms provided by :mod:"
-"`importlib` to import test modules, without changing :py:data:`sys.path`."
+"``importlib``: this mode uses more fine control mechanisms provided "
+"by :mod:`importlib` to import test modules, without "
+"changing :py:data:`sys.path`."
 msgstr ""
 
 #: ../../../doc/en/explanation/pythonpath.rst:58
@@ -133,11 +134,11 @@ msgstr ""
 
 #: ../../../doc/en/explanation/pythonpath.rst:66
 msgid ""
-"Testing utility modules in the tests directories (for example a ``tests."
-"helpers`` module containing test-related functions/classes) are not "
+"Testing utility modules in the tests directories (for example a "
+"``tests.helpers`` module containing test-related functions/classes) are not "
 "importable. The recommendation in this case is to place testing utility "
-"modules together with the application/library code, for example ``app."
-"testing.helpers``."
+"modules together with the application/library code, for example "
+"``app.testing.helpers``."
 msgstr ""
 
 #: ../../../doc/en/explanation/pythonpath.rst:70
@@ -161,10 +162,10 @@ msgstr ""
 
 #: ../../../doc/en/explanation/pythonpath.rst:79
 msgid ""
-"For non-test modules, this will work if they are accessible via :py:data:"
-"`sys.path`. So for example, ``.env/lib/site-packages/app/core.py`` will be "
-"importable as ``app.core``. This happens when plugins import non-test "
-"modules (for example doctesting)."
+"For non-test modules, this will work if they are accessible "
+"via :py:data:`sys.path`. So for example, ``.env/lib/site-packages/app/"
+"core.py`` will be importable as ``app.core``. This happens when plugins "
+"import non-test modules (for example doctesting)."
 msgstr ""
 
 #: ../../../doc/en/explanation/pythonpath.rst:83
@@ -180,15 +181,16 @@ msgstr ""
 #: ../../../doc/en/explanation/pythonpath.rst:87
 msgid ""
 "If the previous step fails, we import the module directly using "
-"``importlib`` facilities, which lets us import it without changing :py:data:"
-"`sys.path`."
+"``importlib`` facilities, which lets us import it without "
+"changing :py:data:`sys.path`."
 msgstr ""
 
 #: ../../../doc/en/explanation/pythonpath.rst:90
 msgid ""
-"Because Python requires the module to also be available in :py:data:`sys."
-"modules`, pytest derives a unique name for it based on its relative location "
-"from the ``rootdir``, and adds the module to :py:data:`sys.modules`."
+"Because Python requires the module to also be available "
+"in :py:data:`sys.modules`, pytest derives a unique name for it based on its "
+"relative location from the ``rootdir``, and adds the module "
+"to :py:data:`sys.modules`."
 msgstr ""
 
 #: ../../../doc/en/explanation/pythonpath.rst:93
@@ -207,8 +209,8 @@ msgstr ""
 #: ../../../doc/en/explanation/pythonpath.rst:104
 msgid ""
 "By default, pytest will not attempt to resolve namespace packages "
-"automatically, but that can be changed via the :confval:"
-"`consider_namespace_packages` configuration variable."
+"automatically, but that can be changed via "
+"the :confval:`consider_namespace_packages` configuration variable."
 msgstr ""
 
 #: ../../../doc/en/explanation/pythonpath.rst:109
@@ -270,8 +272,8 @@ msgstr ""
 #: ../../../doc/en/explanation/pythonpath.rst:145
 msgid ""
 "pytest will find ``foo/bar/tests/test_foo.py`` and realize it is part of a "
-"package given that there's an ``__init__.py`` file in the same folder. It "
-"will then search upwards until it can find the last folder which still "
+"package given that there's an ``__init__.py`` file in the same directory. It "
+"will then search upwards until it can find the last directory which still "
 "contains an ``__init__.py`` file in order to find the package *root* (in "
 "this case ``foo/``). To load the module, it will insert ``root/``  to the "
 "front of :py:data:`sys.path` (if not there already) in order to load "
@@ -308,8 +310,8 @@ msgstr ""
 #: ../../../doc/en/explanation/pythonpath.rst:177
 msgid ""
 "pytest will find ``foo/bar/tests/test_foo.py`` and realize it is NOT part of "
-"a package given that there's no ``__init__.py`` file in the same folder. It "
-"will then add ``root/foo/bar/tests`` to :py:data:`sys.path` in order to "
+"a package given that there's no ``__init__.py`` file in the same directory. "
+"It will then add ``root/foo/bar/tests`` to :py:data:`sys.path` in order to "
 "import ``test_foo.py`` as the *module* ``test_foo``. The same is done with "
 "the ``conftest.py`` file by adding ``root/foo`` to :py:data:`sys.path` to "
 "import it as ``conftest``."
