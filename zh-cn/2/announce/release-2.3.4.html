@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pytest-2.3.4: stabilization, more flexible selection via “-k expr” &#8212; pytest documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/flasky.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/pytest-docs-l10n/announce/release-2.3.4.html" />
+    <link rel="shortcut icon" href="../_static/pytest1favi.ico"/>
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="pytest-2.3.3: integration fixes, py24 suport, */** shown in traceback" href="release-2.3.3.html" />
+    <link rel="prev" title="pytest-2.3.5: bug fixes and little improvements" href="release-2.3.5.html" />
+
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+<script type="text/javascript" src="../ltd-provenance.js"></script>
+<script type="text/javascript" src="../ltd-current.js"></script>
+<script type="text/javascript" src="../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../ltd-flyout.js"></script>
+
+  </head><body>
+  
+  
+  
+
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="release-2.3.3.html" title="pytest-2.3.3: integration fixes, py24 suport, */** shown in traceback"
+             accesskey="N">下一页</a></li>
+        <li class="right" >
+          <a href="release-2.3.5.html" title="pytest-2.3.5: bug fixes and little improvements"
+             accesskey="P">上一页</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">pytest-2.9.2</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Release announcements</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pytest-2.3.4: stabilization, more flexible selection via “-k expr”</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="pytest-2-3-4-stabilization-more-flexible-selection-via-k-expr">
+<h1>pytest-2.3.4: stabilization, more flexible selection via “-k expr”<a class="headerlink" href="#pytest-2-3-4-stabilization-more-flexible-selection-via-k-expr" title="永久链接至标题">¶</a></h1>
+<p>pytest-2.3.4 is a small stabilization release of the py.test tool
+which offers uebersimple assertions, scalable fixture mechanisms
+and deep customization for testing with Python.  This release
+comes with the following fixes and features:</p>
+<ul class="simple">
+<li><p>make “-k” option accept an expressions the same as with “-m” so that one
+can write: -k “name1 or name2” etc.  This is a slight usage incompatibility
+if you used special syntax like “TestClass.test_method” which you now
+need to write as -k “TestClass and test_method” to match a certain
+method in a certain test class.</p></li>
+<li><p>allow to dynamically define markers via
+item.keywords[…]=assignment integrating with “-m” option</p></li>
+<li><p>yielded test functions will now have autouse-fixtures active but
+cannot accept fixtures as funcargs - it’s anyway recommended to
+rather use the post-2.0 parametrize features instead of yield, see:
+<a class="reference external" href="http://pytest.org/latest/example/parametrize.html">http://pytest.org/latest/example/parametrize.html</a></p></li>
+<li><p>fix autouse-issue where autouse-fixtures would not be discovered
+if defined in a a/conftest.py file and tests in a/tests/test_some.py</p></li>
+<li><p>fix issue226 - LIFO ordering for fixture teardowns</p></li>
+<li><p>fix issue224 - invocations with &gt;256 char arguments now work</p></li>
+<li><p>fix issue91 - add/discuss package/directory level setups in example</p></li>
+<li><p>fixes related to autouse discovery and calling</p></li>
+</ul>
+<p>Thanks in particular to Thomas Waldmann for spotting and reporting issues.</p>
+<p>See</p>
+<blockquote>
+<div><p><a class="reference external" href="http://pytest.org/">http://pytest.org/</a></p>
+</div></blockquote>
+<p>for general information.  To install or upgrade pytest:</p>
+<blockquote>
+<div><p>pip install -U pytest # or
+easy_install -U pytest</p>
+</div></blockquote>
+<p>best,
+holger krekel</p>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/pytest1.png" alt="Logo"/>
+            </a></p><h3><a href="../contents.html">Table Of Contents</a></h3>
+
+<ul>
+  <li><a href="../index.html">Home</a></li>
+  <li><a href="../contents.html">目录</a></li>
+  <li><a href="../getting-started.html">Install</a></li>
+  <li><a href="../example/index.html">实际案例</a></li>
+  <li><a href="../customize.html">Customize</a></li>
+  <li><a href="../contact.html">Contact</a></li>
+  <li><a href="../talks.html">Talks/Posts</a></li>
+  <li><a href="../changelog.html">Changelog</a></li>
+  <li><a href="../license.html">License</a></li>
+</ul><h3>Related Topics</h3>
+<ul>
+  <li><a href="../contents.html">Documentation overview</a><ul>
+  <li><a href="index.html">Release announcements</a><ul>
+      <li>Previous: <a href="release-2.3.5.html" title="上一章">pytest-2.3.5: bug fixes and little improvements</a></li>
+      <li>Next: <a href="release-2.3.3.html" title="下一章">pytest-2.3.3: integration fixes, py24 suport, <code class="docutils literal notranslate"><span class="pre">*/**</span></code> shown in traceback</a></li>
+  </ul></li>
+  </ul></li>
+</ul><h3>Useful Links</h3>
+<ul>
+  <li>
+    <a href="https://www.indiegogo.com/projects/python-testing-sprint-mid-2016#/">
+      <b>Sprint funding campaign</b>
+    </a>
+  </li>
+  <li><a href="../index.html">The pytest Website</a></li>
+  <li><a href="../contributing.html">Contribution Guide</a></li>
+  <li><a href="https://pypi.python.org/pypi/pytest">pytest @ PyPI</a></li>
+  <li><a href="https://github.com/pytest-dev/pytest/">pytest @ GitHub</a></li>
+  <li><a href="http://plugincompat.herokuapp.com/">3rd party plugins</a></li>
+  <li><a href="https://github.com/pytest-dev/pytest/issues">Issue Tracker</a></li>
+  <li><a href="http://pytest.org/latest/pytest.pdf">PDF Documentation</a>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">快速搜索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="转向" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+  <div class="footer">
+    &copy; Copyright 2015, holger krekel and pytest-dev team.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-7597274-13']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+  </body>
+</html>
