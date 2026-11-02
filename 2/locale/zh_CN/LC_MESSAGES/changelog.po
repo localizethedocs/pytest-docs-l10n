@@ -84,9 +84,9 @@ msgstr ""
 
 #: ../../../CHANGELOG.rst:48
 msgid ""
-"Fix (`#1178 <https://github.com/pytest-dev/pytest/issues/1178>`_): ``pytest."
-"fail`` with non-ascii characters raises an internal pytest error. Thanks "
-"`@nicoddemus`_ for the PR."
+"Fix (`#1178 <https://github.com/pytest-dev/pytest/issues/1178>`_): "
+"``pytest.fail`` with non-ascii characters raises an internal pytest error. "
+"Thanks `@nicoddemus`_ for the PR."
 msgstr ""
 
 #: ../../../CHANGELOG.rst:52
@@ -243,9 +243,9 @@ msgstr ""
 
 #: ../../../CHANGELOG.rst:148
 msgid ""
-"The ``-s`` and ``-c`` options should now work under ``xdist``; ``Config."
-"fromdictargs`` now represents its input much more faithfully. Thanks to "
-"`@bukzor`_ for the complete PR (`#680`_)."
+"The ``-s`` and ``-c`` options should now work under ``xdist``; "
+"``Config.fromdictargs`` now represents its input much more faithfully. "
+"Thanks to `@bukzor`_ for the complete PR (`#680`_)."
 msgstr ""
 
 #: ../../../CHANGELOG.rst:152
@@ -473,8 +473,8 @@ msgstr ""
 
 #: ../../../CHANGELOG.rst:304
 msgid ""
-"fix #1087: handling SystemError when passing empty byte strings to pytest."
-"parametrize in Python 3. Thanks Paul Kehrer for the report and Bruno "
+"fix #1087: handling SystemError when passing empty byte strings to "
+"pytest.parametrize in Python 3. Thanks Paul Kehrer for the report and Bruno "
 "Oliveira for the PR."
 msgstr ""
 
@@ -687,8 +687,8 @@ msgid ""
 "added ``tmpdir_factory``, a session-scoped fixture that can be used to "
 "create directories under the base temporary directory. Previously this "
 "object was installed as a ``_tmpdirhandler`` attribute of the ``config`` "
-"object, but now it is part of the official API and using ``config."
-"_tmpdirhandler`` is deprecated. Thanks Bruno Oliveira for the PR."
+"object, but now it is part of the official API and using "
+"``config._tmpdirhandler`` is deprecated. Thanks Bruno Oliveira for the PR."
 msgstr ""
 
 #: ../../../CHANGELOG.rst:429
@@ -938,9 +938,9 @@ msgstr ""
 
 #: ../../../CHANGELOG.rst:579
 msgid ""
-"fix issue854: autouse yield_fixtures defined as class members of unittest."
-"TestCase subclasses now work as expected. Thannks xmo-odoo for the report "
-"and Bruno Oliveira for the PR."
+"fix issue854: autouse yield_fixtures defined as class members of "
+"unittest.TestCase subclasses now work as expected. Thannks xmo-odoo for the "
+"report and Bruno Oliveira for the PR."
 msgstr ""
 
 #: ../../../CHANGELOG.rst:583
@@ -1122,8 +1122,8 @@ msgstr ""
 
 #: ../../../CHANGELOG.rst:689
 msgid ""
-"fix issue655: work around different ways that cause python2/3 to leak sys."
-"exc_info into fixtures/tests causing failures in 3rd party code"
+"fix issue655: work around different ways that cause python2/3 to leak "
+"sys.exc_info into fixtures/tests causing failures in 3rd party code"
 msgstr ""
 
 #: ../../../CHANGELOG.rst:692
@@ -1190,8 +1190,8 @@ msgstr ""
 
 #: ../../../CHANGELOG.rst:725
 msgid ""
-"On failure, the ``sys.last_value``, ``sys.last_type`` and ``sys."
-"last_traceback`` are set, so that a user can inspect the error via "
+"On failure, the ``sys.last_value``, ``sys.last_type`` and "
+"``sys.last_traceback`` are set, so that a user can inspect the error via "
 "postmortem debugging (almarklein)."
 msgstr ""
 
@@ -1539,8 +1539,8 @@ msgstr ""
 #: ../../../CHANGELOG.rst:921
 msgid ""
 "simplified internal capturing mechanism and made it more robust against "
-"tests or setups changing FD1/FD2, also better integrated now with pytest."
-"pdb() in single tests."
+"tests or setups changing FD1/FD2, also better integrated now with "
+"pytest.pdb() in single tests."
 msgstr ""
 
 #: ../../../CHANGELOG.rst:925
@@ -1919,9 +1919,9 @@ msgstr ""
 
 #: ../../../CHANGELOG.rst:1139
 msgid ""
-"on Windows require colorama and a newer py lib so that py.io."
-"TerminalWriter() now uses colorama instead of its own ctypes hacks. (fixes "
-"issue365) thanks Paul Moore for bringing it up."
+"on Windows require colorama and a newer py lib so that "
+"py.io.TerminalWriter() now uses colorama instead of its own ctypes hacks. "
+"(fixes issue365) thanks Paul Moore for bringing it up."
 msgstr ""
 
 #: ../../../CHANGELOG.rst:1143
@@ -2025,8 +2025,8 @@ msgid ""
 "anymore.  This change might be reversed in 2.4.1 if it causes unforeseen "
 "real-life issues.  However, you can always write and return an inner "
 "function/generator and change the fixture consumer to iterate over the "
-"returned generator.  This change was done in lieu of the new ``pytest."
-"yield_fixture`` decorator, see below."
+"returned generator.  This change was done in lieu of the new "
+"``pytest.yield_fixture`` decorator, see below."
 msgstr ""
 
 #: ../../../CHANGELOG.rst:1206
@@ -2106,9 +2106,10 @@ msgstr ""
 #: ../../../CHANGELOG.rst:1252
 msgid ""
 "simplify pytest.mark.parametrize() signature: allow to pass a CSV-separated "
-"string to specify argnames.  For example: ``pytest.mark.parametrize(\"input,"
-"expected\",  [(1,2), (2,3)])`` works as well as the previous: ``pytest.mark."
-"parametrize((\"input\", \"expected\"), ...)``."
+"string to specify argnames.  For example: "
+"``pytest.mark.parametrize(\"input,expected\",  [(1,2), (2,3)])`` works as "
+"well as the previous: ``pytest.mark.parametrize((\"input\", "
+"\"expected\"), ...)``."
 msgstr ""
 
 #: ../../../CHANGELOG.rst:1258
@@ -2191,8 +2192,8 @@ msgstr ""
 
 #: ../../../CHANGELOG.rst:1300
 msgid ""
-"fix issue335: document py.code.ExceptionInfo() object returned from pytest."
-"raises(), thanks Mathieu Agopian."
+"fix issue335: document py.code.ExceptionInfo() object returned from "
+"pytest.raises(), thanks Mathieu Agopian."
 msgstr ""
 
 #: ../../../CHANGELOG.rst:1303
@@ -2257,8 +2258,8 @@ msgstr ""
 
 #: ../../../CHANGELOG.rst:1335
 msgid ""
-"fix issue245 by depending on the released py-1.4.14 which fixes py.io."
-"dupfile to work with files with no mode. Thanks Jason R. Coombs."
+"fix issue245 by depending on the released py-1.4.14 which fixes "
+"py.io.dupfile to work with files with no mode. Thanks Jason R. Coombs."
 msgstr ""
 
 #: ../../../CHANGELOG.rst:1339
@@ -2283,9 +2284,9 @@ msgstr ""
 
 #: ../../../CHANGELOG.rst:1348
 msgid ""
-"pytest_terminal_summary(terminalreporter) hooks can now use \"."
-"section(title)\" and \".line(msg)\" methods to print extra information at "
-"the end of a test run."
+"pytest_terminal_summary(terminalreporter) hooks can now use \".section(title)"
+"\" and \".line(msg)\" methods to print extra information at the end of a "
+"test run."
 msgstr ""
 
 #: ../../../CHANGELOG.rst:1353
@@ -2604,8 +2605,8 @@ msgstr ""
 
 #: ../../../CHANGELOG.rst:1512
 msgid ""
-"link to web pages from --markers output which provides help for pytest.mark."
-"* usage."
+"link to web pages from --markers output which provides help for "
+"pytest.mark.* usage."
 msgstr ""
 
 #: ../../../CHANGELOG.rst:1516
@@ -2682,9 +2683,9 @@ msgstr ""
 msgid ""
 "fix xfail/skip confusion: a skip-mark or an imperative pytest.skip will now "
 "take precedence before xfail-markers because we can't determine xfail/xpass "
-"status in case of a skip. see also: http://stackoverflow.com/"
-"questions/11105828/in-py-test-when-i-explicitly-skip-a-test-that-is-marked-"
-"as-xfail-how-can-i-get"
+"status in case of a skip. see also: http://stackoverflow.com/questions/"
+"11105828/in-py-test-when-i-explicitly-skip-a-test-that-is-marked-as-xfail-"
+"how-can-i-get"
 msgstr ""
 
 #: ../../../CHANGELOG.rst:1544
@@ -2968,8 +2969,8 @@ msgid ""
 "introduce registration for \"pytest.mark.*\" helpers via ini-files or "
 "through plugin hooks.  Also introduce a \"--strict\" option which will treat "
 "unregistered markers as errors allowing to avoid typos and maintain a well "
-"described set of markers for your test suite.  See exaples at http://pytest."
-"org/latest/mark.html and its links."
+"described set of markers for your test suite.  See exaples at http://"
+"pytest.org/latest/mark.html and its links."
 msgstr ""
 
 #: ../../../CHANGELOG.rst:1671
@@ -3371,9 +3372,9 @@ msgstr ""
 #: ../../../CHANGELOG.rst:1835
 msgid ""
 "introduce a pytest_cmdline_processargs(args) hook to allow dynamic "
-"computation of command line arguments. This fixes a regression because py."
-"test prior to 2.0 allowed to set command line options from conftest.py files "
-"which so far pytest-2.0 only allowed from ini-files now."
+"computation of command line arguments. This fixes a regression because "
+"py.test prior to 2.0 allowed to set command line options from conftest.py "
+"files which so far pytest-2.0 only allowed from ini-files now."
 msgstr ""
 
 #: ../../../CHANGELOG.rst:1840
@@ -3757,8 +3758,8 @@ msgstr ""
 
 #: ../../../CHANGELOG.rst:1992
 msgid ""
-"make path.bestrelpath(path) return \".\", note that when calling X."
-"bestrelpath the assumption is that X is a directory."
+"make path.bestrelpath(path) return \".\", note that when calling "
+"X.bestrelpath the assumption is that X is a directory."
 msgstr ""
 
 #: ../../../CHANGELOG.rst:1994
@@ -3794,8 +3795,9 @@ msgid ""
 "issue91: introduce new py.test.xfail(reason) helper to imperatively mark a "
 "test as expected to fail. Can be used from within setup and test functions. "
 "This is useful especially for parametrized tests when certain configurations "
-"are expected-to-fail.  In this case the declarative approach with the @py."
-"test.mark.xfail cannot be used as it would mark all configurations as xfail."
+"are expected-to-fail.  In this case the declarative approach with the "
+"@py.test.mark.xfail cannot be used as it would mark all configurations as "
+"xfail."
 msgstr ""
 
 #: ../../../CHANGELOG.rst:2016
@@ -3884,12 +3886,13 @@ msgstr ""
 
 #: ../../../CHANGELOG.rst:2076
 msgid ""
-"deprecate --report option in favour of a new shorter and easier to remember -"
-"r option: it takes a string argument consisting of any combination of 'xfsX' "
-"characters.  They relate to the single chars you see during the dotted "
-"progress printing and will print an extra line per test at the end of the "
-"test run.  This extra line indicates the exact position or test ID that you "
-"directly paste to the py.test cmdline in order to re-run a particular test."
+"deprecate --report option in favour of a new shorter and easier to remember "
+"-r option: it takes a string argument consisting of any combination of "
+"'xfsX' characters.  They relate to the single chars you see during the "
+"dotted progress printing and will print an extra line per test at the end of "
+"the test run.  This extra line indicates the exact position or test ID that "
+"you directly paste to the py.test cmdline in order to re-run a particular "
+"test."
 msgstr ""
 
 #: ../../../CHANGELOG.rst:2084
@@ -3932,17 +3935,17 @@ msgstr ""
 
 #: ../../../CHANGELOG.rst:2107
 msgid ""
-"expose (previously internal) commonly useful methods: py.io."
-"get_terminal_with() -> return terminal width py.io.ansi_print(...) -> print "
-"colored/bold text on linux/win32 py.io.saferepr(obj) -> return limited "
+"expose (previously internal) commonly useful methods: "
+"py.io.get_terminal_with() -> return terminal width py.io.ansi_print(...) -> "
+"print colored/bold text on linux/win32 py.io.saferepr(obj) -> return limited "
 "representation string"
 msgstr ""
 
 #: ../../../CHANGELOG.rst:2112
 msgid ""
-"expose test outcome related exceptions as py.test.skip.Exception, py.test."
-"raises.Exception etc., useful mostly for plugins doing special outcome "
-"interpretation/tweaking"
+"expose test outcome related exceptions as py.test.skip.Exception, "
+"py.test.raises.Exception etc., useful mostly for plugins doing special "
+"outcome interpretation/tweaking"
 msgstr ""
 
 #: ../../../CHANGELOG.rst:2116
@@ -3956,8 +3959,8 @@ msgstr ""
 #: ../../../CHANGELOG.rst:2120
 msgid ""
 "fixes for making the jython/win32 combination work, note however: "
-"jython2.5.1/win32 does not provide a command line launcher, see http://bugs."
-"jython.org/issue1491 . See pylib install documentation for how to work "
+"jython2.5.1/win32 does not provide a command line launcher, see http://"
+"bugs.jython.org/issue1491 . See pylib install documentation for how to work "
 "around."
 msgstr ""
 
@@ -4379,8 +4382,8 @@ msgstr ""
 #: ../../../CHANGELOG.rst:2343
 msgid ""
 "move pytest assertion handling to py/code and a pytest_assertion plugin, add "
-"\"--no-assert\" option, deprecate py.magic namespaces in favour of (less) py."
-"code ones."
+"\"--no-assert\" option, deprecate py.magic namespaces in favour of (less) "
+"py.code ones."
 msgstr ""
 
 #: ../../../CHANGELOG.rst:2347
@@ -4408,9 +4411,9 @@ msgstr ""
 
 #: ../../../CHANGELOG.rst:2359
 msgid ""
-"make py.unittest_convert helper script available which converts \"unittest."
-"py\" style files into the simpler assert/direct-test-classes py.test/"
-"nosetests style.  The script was written by Laura Creighton."
+"make py.unittest_convert helper script available which converts "
+"\"unittest.py\" style files into the simpler assert/direct-test-classes "
+"py.test/nosetests style.  The script was written by Laura Creighton."
 msgstr ""
 
 #: ../../../CHANGELOG.rst:2363
@@ -4632,8 +4635,8 @@ msgstr ""
 
 #: ../../../CHANGELOG.rst:2485
 msgid ""
-"remove scope-argument from request.addfinalizer() because request."
-"cached_setup has the scope arg. TOOWTDI."
+"remove scope-argument from request.addfinalizer() because "
+"request.cached_setup has the scope arg. TOOWTDI."
 msgstr ""
 
 #: ../../../CHANGELOG.rst:2488
@@ -4757,8 +4760,8 @@ msgstr ""
 
 #: ../../../CHANGELOG.rst:2563
 msgid ""
-"py.test's traceback is better parseable from editors (follows the filenames:"
-"LINENO: MSG convention) (thanks to Osmo Salomaa)"
+"py.test's traceback is better parseable from editors (follows the "
+"filenames:LINENO: MSG convention) (thanks to Osmo Salomaa)"
 msgstr ""
 
 #: ../../../CHANGELOG.rst:2567
@@ -4769,8 +4772,8 @@ msgstr ""
 
 #: ../../../CHANGELOG.rst:2570
 msgid ""
-"removed previously accidentally added py.test.broken and py.test."
-"notimplemented helpers."
+"removed previously accidentally added py.test.broken and "
+"py.test.notimplemented helpers."
 msgstr ""
 
 #: ../../../CHANGELOG.rst:2573
@@ -4812,8 +4815,8 @@ msgstr ""
 
 #: ../../../CHANGELOG.rst:2587
 msgid ""
-"fixed problem with calling .remove() on wcpaths of non-versioned files in py."
-"path [44248]"
+"fixed problem with calling .remove() on wcpaths of non-versioned files in "
+"py.path [44248]"
 msgstr ""
 
 #: ../../../CHANGELOG.rst:2589

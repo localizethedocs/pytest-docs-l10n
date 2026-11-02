@@ -218,10 +218,10 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/_code/code.py:docstring
 #: of _pytest._code.code.ExceptionInfo.exconly:3
 msgid ""
-"when 'tryshort' resolves to True, and the exception is a _pytest._code."
-"_AssertionError, only the actual exception part of the exception "
-"representation is returned (so 'AssertionError: ' is removed from the "
-"beginning)"
+"when 'tryshort' resolves to True, and the exception is a "
+"_pytest._code._AssertionError, only the actual exception part of the "
+"exception representation is returned (so 'AssertionError: ' is removed from "
+"the beginning)"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/_code/code.py:docstring

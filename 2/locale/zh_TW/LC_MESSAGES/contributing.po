@@ -356,8 +356,8 @@ msgstr ""
 
 #: ../../../CONTRIBUTING.rst:198
 msgid ""
-"If you need some help with Git, follow this quick start guide: https://git."
-"wiki.kernel.org/index.php/QuickStart"
+"If you need some help with Git, follow this quick start guide: https://"
+"git.wiki.kernel.org/index.php/QuickStart"
 msgstr ""
 
 #: ../../../CONTRIBUTING.rst:201

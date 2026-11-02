@@ -30,8 +30,8 @@ msgstr ""
 
 #: ../../../doc/en/skipping.rst:12
 msgid ""
-"A *skip* means that you expect your test to pass unless the environment (e."
-"g. wrong Python interpreter, missing dependency) prevents it to run. And "
+"A *skip* means that you expect your test to pass unless the environment "
+"(e.g. wrong Python interpreter, missing dependency) prevents it to run. And "
 "*xfail* means that your test can run but you expect it to fail because there "
 "is an implementation problem."
 msgstr ""
@@ -210,8 +210,8 @@ msgstr ""
 #: ../../../doc/en/skipping.rst:134
 msgid ""
 "This test will be run but no traceback will be reported when it fails. "
-"Instead terminal reporting will list it in the \"expected to "
-"fail\" (``XFAIL``) or \"unexpectedly passing\" (``XPASS``) sections."
+"Instead terminal reporting will list it in the \"expected to fail\" "
+"(``XFAIL``) or \"unexpectedly passing\" (``XPASS``) sections."
 msgstr ""
 
 #: ../../../doc/en/skipping.rst:139
@@ -544,9 +544,10 @@ msgstr ""
 
 #: ../../../doc/en/skipping.rst:344
 msgid ""
-"The evaluation of a condition string in ``pytest.mark."
-"skipif(conditionstring)`` or ``pytest.mark.xfail(conditionstring)`` takes "
-"place in a namespace dictionary which is constructed as follows:"
+"The evaluation of a condition string in "
+"``pytest.mark.skipif(conditionstring)`` or "
+"``pytest.mark.xfail(conditionstring)`` takes place in a namespace dictionary "
+"which is constructed as follows:"
 msgstr ""
 
 #: ../../../doc/en/skipping.rst:348
@@ -588,8 +589,8 @@ msgstr ""
 
 #: ../../../doc/en/skipping.rst:370
 msgid ""
-"You cannot use ``pytest.config.getvalue()`` in code imported before py."
-"test's argument parsing takes place.  For example, ``conftest.py`` files are "
-"imported before command line parsing and thus ``config.getvalue()`` will not "
-"execute correctly."
+"You cannot use ``pytest.config.getvalue()`` in code imported before "
+"py.test's argument parsing takes place.  For example, ``conftest.py`` files "
+"are imported before command line parsing and thus ``config.getvalue()`` will "
+"not execute correctly."
 msgstr ""

@@ -70,12 +70,12 @@ msgstr ""
 #: ../../../doc/en/funcarg_compare.rst:42
 msgid ""
 "parametrizing the \"db\" resource is not straight forward: you need to apply "
-"a \"parametrize\" decorator or implement a :py:func:`~hookspec."
-"pytest_generate_tests` hook calling :py:func:`~python.Metafunc.parametrize` "
-"which performs parametrization at the places where the resource is used.  "
-"Moreover, you need to modify the factory to use an ``extrakey`` parameter "
-"containing ``request.param`` to the :py:func:`~python.Request.cached_setup` "
-"call."
+"a \"parametrize\" decorator or implement "
+"a :py:func:`~hookspec.pytest_generate_tests` hook "
+"calling :py:func:`~python.Metafunc.parametrize` which performs "
+"parametrization at the places where the resource is used.  Moreover, you "
+"need to modify the factory to use an ``extrakey`` parameter containing "
+"``request.param`` to the :py:func:`~python.Request.cached_setup` call."
 msgstr ""
 
 #: ../../../doc/en/funcarg_compare.rst:51
@@ -99,8 +99,8 @@ msgstr ""
 
 #: ../../../doc/en/funcarg_compare.rst:61
 msgid ""
-"All of these limitations are addressed with pytest-2.3 and its improved :ref:"
-"`fixture mechanism <fixture>`."
+"All of these limitations are addressed with pytest-2.3 and its "
+"improved :ref:`fixture mechanism <fixture>`."
 msgstr ""
 
 #: ../../../doc/en/funcarg_compare.rst:66
@@ -109,8 +109,9 @@ msgstr ""
 
 #: ../../../doc/en/funcarg_compare.rst:68
 msgid ""
-"Instead of calling cached_setup() with a cache scope, you can use the :ref:"
-"`@pytest.fixture <pytest.fixture>` decorator and directly state the scope::"
+"Instead of calling cached_setup() with a cache scope, you can use "
+"the :ref:`@pytest.fixture <pytest.fixture>` decorator and directly state the "
+"scope::"
 msgstr ""
 
 #: ../../../doc/en/funcarg_compare.rst:72
@@ -126,9 +127,9 @@ msgstr ""
 #: ../../../doc/en/funcarg_compare.rst:79
 msgid ""
 "This factory implementation does not need to call ``cached_setup()`` anymore "
-"because it will only be invoked once per session.  Moreover, the ``request."
-"addfinalizer()`` registers a finalizer according to the specified resource "
-"scope on which the factory function is operating."
+"because it will only be invoked once per session.  Moreover, the "
+"``request.addfinalizer()`` registers a finalizer according to the specified "
+"resource scope on which the factory function is operating."
 msgstr ""
 
 #: ../../../doc/en/funcarg_compare.rst:86
@@ -163,8 +164,8 @@ msgstr ""
 msgid ""
 "This new way of parametrizing funcarg factories should in many cases allow "
 "to re-use already written factories because effectively ``request.param`` "
-"was already used when test functions/classes were parametrized via :py:func:"
-"`~_pytest.python.Metafunc.parametrize(indirect=True)` calls."
+"was already used when test functions/classes were parametrized "
+"via :py:func:`~_pytest.python.Metafunc.parametrize(indirect=True)` calls."
 msgstr ""
 
 #: ../../../doc/en/funcarg_compare.rst:109
@@ -274,9 +275,9 @@ msgstr ""
 msgid ""
 "It follows that pytest_configure/session/runtest_setup are often not "
 "appropriate for implementing common fixture needs.  Therefore, pytest-2.3 "
-"introduces :ref:`autouse fixtures` which fully integrate with the generic :"
-"ref:`fixture mechanism <fixture>` and obsolete many prior uses of pytest "
-"hooks."
+"introduces :ref:`autouse fixtures` which fully integrate with the "
+"generic :ref:`fixture mechanism <fixture>` and obsolete many prior uses of "
+"pytest hooks."
 msgstr ""
 
 #: ../../../doc/en/funcarg_compare.rst:181
@@ -314,9 +315,9 @@ msgid ""
 "Factories received a ``request`` object which managed caching through "
 "``request.cached_setup()`` calls and allowed using other funcargs via "
 "``request.getfuncargvalue()`` calls.  These intricate APIs made it hard to "
-"do proper parametrization and implement resource caching. The new :py:func:"
-"`pytest.fixture` decorator allows to declare the scope and let pytest figure "
-"things out for you."
+"do proper parametrization and implement resource caching. The "
+"new :py:func:`pytest.fixture` decorator allows to declare the scope and let "
+"pytest figure things out for you."
 msgstr ""
 
 #: ../../../doc/en/funcarg_compare.rst:211

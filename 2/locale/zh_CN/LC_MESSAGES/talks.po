@@ -50,8 +50,8 @@ msgstr ""
 
 #: ../../../doc/en/talks.rst:23
 msgid ""
-"`Introduction to pytest, Andreas Pelme, EuroPython 2014 <https://www.youtube."
-"com/watch?v=LdVJj65ikRY>`_."
+"`Introduction to pytest, Andreas Pelme, EuroPython 2014 <https://"
+"www.youtube.com/watch?v=LdVJj65ikRY>`_."
 msgstr ""
 
 #: ../../../doc/en/talks.rst:26
@@ -108,8 +108,8 @@ msgstr ""
 
 #: ../../../doc/en/talks.rst:52
 msgid ""
-"`pytest introduction from Brian Okken (January 2013) <http://pythontesting."
-"net/framework/pytest-introduction/>`_"
+"`pytest introduction from Brian Okken (January 2013) <http://"
+"pythontesting.net/framework/pytest-introduction/>`_"
 msgstr ""
 
 #: ../../../doc/en/talks.rst:55
@@ -176,8 +176,8 @@ msgstr ""
 
 #: ../../../doc/en/talks.rst:94
 msgid ""
-"`pycon australia 2012 pytest talk from Brianna Laugher <http://2012.pycon-au."
-"org/schedule/52/view_talk?day=sunday>`_ (`video <http://www.youtube.com/"
+"`pycon australia 2012 pytest talk from Brianna Laugher <http://2012.pycon-"
+"au.org/schedule/52/view_talk?day=sunday>`_ (`video <http://www.youtube.com/"
 "watch?v=DTNejE9EraI>`_, `slides <http://www.slideshare.net/pfctdayelise/"
 "funcargs-other-fun-with-pytest>`_, `code <https://gist.github.com/3386951>`_)"
 msgstr ""

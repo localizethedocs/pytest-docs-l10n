@@ -42,8 +42,8 @@ msgstr ""
 
 #: ../../../doc/en/getting-started.rst:14
 msgid ""
-"**documentation as PDF**: `download latest <http://pytest.org/latest/pytest."
-"pdf>`_"
+"**documentation as PDF**: `download latest <http://pytest.org/latest/"
+"pytest.pdf>`_"
 msgstr ""
 
 #: ../../../doc/en/getting-started.rst:20
@@ -338,8 +338,8 @@ msgstr ""
 
 #: ../../../doc/en/getting-started.rst:213
 msgid ""
-"Install `setuptools`_ to get ``easy_install`` which allows to install ``."
-"egg`` binary format packages in addition to source-based ones."
+"Install `setuptools`_ to get ``easy_install`` which allows to install "
+"``.egg`` binary format packages in addition to source-based ones."
 msgstr ""
 
 #: ../../../doc/en/getting-started.rst:217

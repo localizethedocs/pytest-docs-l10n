@@ -102,9 +102,9 @@ msgstr ""
 
 #: ../../../doc/en/example/pythoncollection.rst:59
 msgid ""
-"You can configure different naming conventions by setting the :confval:"
-"`python_files`, :confval:`python_classes` and :confval:`python_functions` "
-"configuration options.  Example::"
+"You can configure different naming conventions by setting "
+"the :confval:`python_files`, :confval:`python_classes` "
+"and :confval:`python_functions` configuration options.  Example::"
 msgstr ""
 
 #: ../../../doc/en/example/pythoncollection.rst:63
@@ -119,9 +119,9 @@ msgstr ""
 
 #: ../../../doc/en/example/pythoncollection.rst:70
 msgid ""
-"This would make ``pytest`` look for tests in files that match the ``check_* ."
-"py`` glob-pattern, ``Check`` prefixes in classes, and functions and methods "
-"that match ``*_check``.  For example, if we have::"
+"This would make ``pytest`` look for tests in files that match the "
+"``check_* .py`` glob-pattern, ``Check`` prefixes in classes, and functions "
+"and methods that match ``*_check``.  For example, if we have::"
 msgstr ""
 
 #: ../../../doc/en/example/pythoncollection.rst:74

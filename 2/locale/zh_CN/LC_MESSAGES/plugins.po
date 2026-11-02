@@ -210,8 +210,8 @@ msgstr ""
 #: ../../../doc/en/plugins.rst:119
 msgid ""
 "Alternatively to disable it only in certain environments (for example in a "
-"CI server), you can set ``PYTEST_ADDOPTS`` environment variable to ``-p no:"
-"name``."
+"CI server), you can set ``PYTEST_ADDOPTS`` environment variable to ``-p "
+"no:name``."
 msgstr ""
 
 #: ../../../doc/en/plugins.rst:123

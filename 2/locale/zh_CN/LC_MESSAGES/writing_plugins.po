@@ -253,8 +253,9 @@ msgstr ""
 
 #: ../../../doc/en/writing_plugins.rst:168
 msgid ""
-"If a package is installed this way, ``pytest`` will load ``myproject."
-"pluginmodule`` as a plugin which can define `well specified hooks`_."
+"If a package is installed this way, ``pytest`` will load "
+"``myproject.pluginmodule`` as a plugin which can define `well specified "
+"hooks`_."
 msgstr ""
 
 #: ../../../doc/en/writing_plugins.rst:174
@@ -317,11 +318,11 @@ msgstr ""
 #: ../../../doc/en/writing_plugins.rst:211
 msgid ""
 "pytest comes with some facilities that you can enable for testing your "
-"plugin.  Given that you have an installed plugin you can enable the :py:"
-"class:`testdir <_pytest.pytester.Testdir>` fixture via specifying a command "
-"line option to include the pytester plugin (``-p pytester``) or by putting "
-"``pytest_plugins = \"pytester\"`` into your test or ``conftest.py`` file.  "
-"You then will have a ``testdir`` fixture which you can use like this::"
+"plugin.  Given that you have an installed plugin you can enable "
+"the :py:class:`testdir <_pytest.pytester.Testdir>` fixture via specifying a "
+"command line option to include the pytester plugin (``-p pytester``) or by "
+"putting ``pytest_plugins = \"pytester\"`` into your test or ``conftest.py`` "
+"file.  You then will have a ``testdir`` fixture which you can use like this::"
 msgstr ""
 
 #: ../../../doc/en/writing_plugins.rst:219
@@ -438,8 +439,8 @@ msgstr ""
 #: ../../../doc/en/writing_plugins.rst:306
 msgid ""
 "At the yield point of the hook wrapper pytest will execute the next hook "
-"implementations and return their result to the yield point in the form of a :"
-"py:class:`CallOutcome` instance which encapsulates a result or exception "
+"implementations and return their result to the yield point in the form of "
+"a :py:class:`CallOutcome` instance which encapsulates a result or exception "
 "info.  The yield point itself will thus typically not raise exceptions "
 "(unless there are bugs)."
 msgstr ""
@@ -670,16 +671,16 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
 #: of _pytest.hookspec.pytest_addoption:10
 msgid ""
-"To add command line options, call :py:func:`parser.addoption(...) <_pytest."
-"config.Parser.addoption>`. To add ini-file values call :py:func:`parser."
-"addini(...) <_pytest.config.Parser.addini>`."
+"To add command line options, call :py:func:`parser.addoption(...) "
+"<_pytest.config.Parser.addoption>`. To add ini-file values "
+"call :py:func:`parser.addini(...) <_pytest.config.Parser.addini>`."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
 #: of _pytest.hookspec.pytest_addoption:15
 msgid ""
-"Options can later be accessed through the :py:class:`config <_pytest.config."
-"Config>` object, respectively:"
+"Options can later be accessed through the :py:class:`config "
+"<_pytest.config.Config>` object, respectively:"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
@@ -699,8 +700,8 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
 #: of _pytest.hookspec.pytest_addoption:24
 msgid ""
-"The config object is passed around on many internal objects via the ``."
-"config`` attribute or can be retrieved as the ``pytestconfig`` fixture or "
+"The config object is passed around on many internal objects via the "
+"``.config`` attribute or can be retrieved as the ``pytestconfig`` fixture or "
 "accessed via (deprecated) ``pytest.config``."
 msgstr ""
 
@@ -787,8 +788,8 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
 #: of _pytest.hookspec.pytest_runtest_makereport:1
 msgid ""
-"return a :py:class:`_pytest.runner.TestReport` object for the given :py:"
-"class:`pytest.Item` and :py:class:`_pytest.runner.CallInfo`."
+"return a :py:class:`_pytest.runner.TestReport` object for the "
+"given :py:class:`pytest.Item` and :py:class:`_pytest.runner.CallInfo`."
 msgstr ""
 
 #: ../../../doc/en/writing_plugins.rst:459
@@ -994,8 +995,8 @@ msgstr ""
 
 #: ../../../doc/docstring of _pytest.config.Config.option:1
 msgid ""
-"access to command line option as attributes. (deprecated), use :py:func:"
-"`getoption() <_pytest.config.Config.getoption>` instead"
+"access to command line option as attributes. (deprecated), "
+"use :py:func:`getoption() <_pytest.config.Config.getoption>` instead"
 msgstr ""
 
 #: ../../../doc/docstring of _pytest.config.Config.pluginmanager:1
@@ -1031,9 +1032,9 @@ msgstr ""
 #: of _pytest.config.Config.getini:1
 msgid ""
 "return configuration value from an :ref:`ini file <inifiles>`. If the "
-"specified name hasn't been registered through a prior :py:func:`parser."
-"addini <pytest.config.Parser.addini>` call (usually from a plugin), a "
-"ValueError is raised."
+"specified name hasn't been registered through a "
+"prior :py:func:`parser.addini <pytest.config.Parser.addini>` call (usually "
+"from a plugin), a ValueError is raised."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
@@ -1214,8 +1215,8 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config.py:docstring
 #: of _pytest.config.Parser.addini:8
 msgid ""
-"The value of ini-variables can be retrieved via a call to :py:func:`config."
-"getini(name) <_pytest.config.Config.getini>`."
+"The value of ini-variables can be retrieved via a call "
+"to :py:func:`config.getini(name) <_pytest.config.Config.getini>`."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/runner.py:docstring
@@ -1377,10 +1378,10 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
 #: of _pytest.pytester.Testdir:13
 msgid ""
-"A list of plugins to use with :py:meth:`parseconfig` and :py:meth:"
-"`runpytest`.  Initially this is an empty list but plugins can be added to "
-"the list.  The type of items to add to the list depend on the method which "
-"uses them so refer to them for details."
+"A list of plugins to use with :py:meth:`parseconfig` "
+"and :py:meth:`runpytest`.  Initially this is an empty list but plugins can "
+"be added to the list.  The type of items to add to the list depend on the "
+"method which uses them so refer to them for details."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring

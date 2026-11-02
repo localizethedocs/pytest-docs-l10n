@@ -112,12 +112,12 @@ msgstr ""
 
 #: ../../../doc/en/yieldfixture.rst:73
 msgid ""
-"While the ``yield`` syntax is similar to what :py:func:`contextlib."
-"contextmanager` decorated functions provide, with pytest fixture functions "
-"the part after the \"yield\" will always be invoked, independently from the "
-"exception status of the test function which uses the fixture. This behaviour "
-"makes sense if you consider that many different test functions might use a "
-"module or session scoped fixture."
+"While the ``yield`` syntax is similar to "
+"what :py:func:`contextlib.contextmanager` decorated functions provide, with "
+"pytest fixture functions the part after the \"yield\" will always be "
+"invoked, independently from the exception status of the test function which "
+"uses the fixture. This behaviour makes sense if you consider that many "
+"different test functions might use a module or session scoped fixture."
 msgstr ""
 
 #: ../../../doc/en/yieldfixture.rst:83

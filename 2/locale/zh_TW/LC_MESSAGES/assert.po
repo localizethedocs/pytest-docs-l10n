@@ -104,8 +104,8 @@ msgstr ""
 
 #: ../../../doc/en/assert.rst:66
 msgid ""
-"In order to write assertions about raised exceptions, you can use ``pytest."
-"raises`` as a context manager like this::"
+"In order to write assertions about raised exceptions, you can use "
+"``pytest.raises`` as a context manager like this::"
 msgstr ""
 
 #: ../../../doc/en/assert.rst:69
@@ -135,8 +135,8 @@ msgstr ""
 #: ../../../doc/en/assert.rst:84
 msgid ""
 "``excinfo`` is a ``ExceptionInfo`` instance, which is a wrapper around the "
-"actual exception raised.  The main attributes of interest are ``.type``, ``."
-"value`` and ``.traceback``."
+"actual exception raised.  The main attributes of interest are ``.type``, "
+"``.value`` and ``.traceback``."
 msgstr ""
 
 #: ../../../doc/en/assert.rst:88
@@ -161,9 +161,9 @@ msgstr ""
 
 #: ../../../doc/en/assert.rst:99
 msgid ""
-"Note that it is also possible to specify a \"raises\" argument to ``pytest."
-"mark.xfail``, which checks that the test is failing in a more specific way "
-"than just having any exception raised::"
+"Note that it is also possible to specify a \"raises\" argument to "
+"``pytest.mark.xfail``, which checks that the test is failing in a more "
+"specific way than just having any exception raised::"
 msgstr ""
 
 #: ../../../doc/en/assert.rst:103

@@ -160,10 +160,11 @@ msgstr ""
 
 #: ../../../doc/en/usage.rst:102
 msgid ""
-"Note that on any failure the exception information is stored on ``sys."
-"last_value``, ``sys.last_type`` and ``sys.last_traceback``. In interactive "
-"use, this allows one to drop into postmortem debugging with any debug tool. "
-"One can also manually access the exception information, for example::"
+"Note that on any failure the exception information is stored on "
+"``sys.last_value``, ``sys.last_type`` and ``sys.last_traceback``. In "
+"interactive use, this allows one to drop into postmortem debugging with any "
+"debug tool. One can also manually access the exception information, for "
+"example::"
 msgstr ""
 
 #: ../../../doc/en/usage.rst:108
@@ -221,8 +222,8 @@ msgstr ""
 
 #: ../../../doc/en/usage.rst:141
 msgid ""
-"Since pytest version 2.4.0 you can also use the native Python ``import pdb;"
-"pdb.set_trace()`` call to enter PDB_ tracing without having to use the "
+"Since pytest version 2.4.0 you can also use the native Python ``import "
+"pdb;pdb.set_trace()`` call to enter PDB_ tracing without having to use the "
 "``pytest.set_trace()`` wrapper or explicitly disable pytest's output "
 "capturing via ``py.test -s``."
 msgstr ""

@@ -312,9 +312,9 @@ msgstr ""
 
 #: ../../../doc/en/customize.rst:212
 msgid ""
-"Note that this has no effect on methods that live on a ``unittest ."
-"TestCase`` derived class, as ``unittest``'s own collection framework is used "
-"to collect those tests."
+"Note that this has no effect on methods that live on a "
+"``unittest .TestCase`` derived class, as ``unittest``'s own collection "
+"framework is used to collect those tests."
 msgstr ""
 
 #: ../../../doc/en/customize.rst:216
@@ -323,8 +323,8 @@ msgstr ""
 
 #: ../../../doc/en/customize.rst:220
 msgid ""
-"One or more doctest flag names from the standard ``doctest`` module. :doc:"
-"`See how py.test handles doctests <doctest>`."
+"One or more doctest flag names from the standard ``doctest`` "
+"module. :doc:`See how py.test handles doctests <doctest>`."
 msgstr ""
 
 #: ../../../doc/en/customize.rst:225

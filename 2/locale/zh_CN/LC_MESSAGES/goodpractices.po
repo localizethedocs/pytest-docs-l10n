@@ -31,10 +31,10 @@ msgstr ""
 
 #: ../../../doc/en/goodpractices.rst:16
 msgid ""
-"If no arguments are specified then collection starts from :confval:"
-"`testpaths` (if configured) or the current directory. Alternatively, command "
-"line arguments can be used in any combination of directories, file names or "
-"node ids."
+"If no arguments are specified then collection starts "
+"from :confval:`testpaths` (if configured) or the current directory. "
+"Alternatively, command line arguments can be used in any combination of "
+"directories, file names or node ids."
 msgstr ""
 
 #: ../../../doc/en/goodpractices.rst:19
@@ -62,8 +62,8 @@ msgstr ""
 
 #: ../../../doc/en/goodpractices.rst:26
 msgid ""
-"Within Python modules, ``pytest`` also discovers tests using the standard :"
-"ref:`unittest.TestCase <unittest.TestCase>` subclassing technique."
+"Within Python modules, ``pytest`` also discovers tests using the "
+"standard :ref:`unittest.TestCase <unittest.TestCase>` subclassing technique."
 msgstr ""
 
 #: ../../../doc/en/goodpractices.rst:31
@@ -312,8 +312,8 @@ msgid ""
 "\n"
 "\n"
 "class PyTest(TestCommand):\n"
-"    user_options = [('pytest-args=', 'a', \"Arguments to pass to py."
-"test\")]\n"
+"    user_options = [('pytest-args=', 'a', \"Arguments to pass to "
+"py.test\")]\n"
 "\n"
 "    def initialize_options(self):\n"
 "        TestCommand.initialize_options(self)\n"
