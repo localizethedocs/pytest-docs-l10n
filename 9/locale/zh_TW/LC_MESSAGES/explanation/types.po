@@ -29,8 +29,8 @@ msgstr ""
 
 #: ../../../doc/en/explanation/types.rst:9
 msgid ""
-"For more information, refer to `Python's Typing Documentation <https://docs."
-"python.org/3/library/typing.html>`_."
+"For more information, refer to `Python's Typing Documentation <https://"
+"docs.python.org/3/library/typing.html>`_."
 msgstr ""
 
 #: ../../../doc/en/explanation/types.rst:12
@@ -143,8 +143,8 @@ msgstr ""
 
 #: ../../../doc/en/explanation/types.rst:66
 msgid ""
-"The same logic applies to :ref:`@pytest.mark.parametrize <@pytest.mark."
-"parametrize>`:"
+"The same logic applies to :ref:`@pytest.mark.parametrize "
+"<@pytest.mark.parametrize>`:"
 msgstr ""
 
 #: ../../../doc/en/explanation/types.rst:68

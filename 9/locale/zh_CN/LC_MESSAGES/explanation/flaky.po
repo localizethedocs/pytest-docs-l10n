@@ -126,8 +126,9 @@ msgstr ""
 
 #: ../../../doc/en/explanation/flaky.rst:43
 msgid ""
-"Avoid using primitives provided by pytest (:func:`pytest.warns`, :func:"
-"`pytest.raises`, etc) from multiple threads, as they are not thread-safe."
+"Avoid using primitives provided by pytest "
+"(:func:`pytest.warns`, :func:`pytest.raises`, etc) from multiple threads, as "
+"they are not thread-safe."
 msgstr ""
 
 #: ../../../doc/en/explanation/flaky.rst:45
@@ -254,8 +255,9 @@ msgstr ""
 
 #: ../../../doc/en/explanation/flaky.rst:102
 msgid ""
-"Mark Lapierre discusses the `Pros and Cons of Quarantined Tests <https://dev."
-"to/mlapierre/pros-and-cons-of-quarantined-tests-2emj>`_ in a post from 2018."
+"Mark Lapierre discusses the `Pros and Cons of Quarantined Tests <https://"
+"dev.to/mlapierre/pros-and-cons-of-quarantined-tests-2emj>`_ in a post from "
+"2018."
 msgstr ""
 
 #: ../../../doc/en/explanation/flaky.rst:107
@@ -265,8 +267,8 @@ msgstr ""
 #: ../../../doc/en/explanation/flaky.rst:109
 msgid ""
 "Azure Pipelines (the Azure cloud CI/CD tool, formerly Visual Studio Team "
-"Services or VSTS) has a feature to `identify flaky tests <https://docs."
-"microsoft.com/en-us/previous-versions/azure/devops/2017/dec-11-vsts?"
+"Services or VSTS) has a feature to `identify flaky tests <https://"
+"docs.microsoft.com/en-us/previous-versions/azure/devops/2017/dec-11-vsts?"
 "view=tfs-2017#identify-flaky-tests>`_ and rerun failed tests."
 msgstr ""
 
@@ -302,8 +304,8 @@ msgid ""
 "Bell, Jonathan, Owolabi Legunsen, Michael Hilton, Lamyaa Eloussi, Tifany "
 "Yung, and Darko Marinov. \"DeFlaker: Automatically detecting flaky tests.\" "
 "In *Proceedings of the 2018 International Conference on Software "
-"Engineering*. 2018. `PDF <https://www.jonbell.net/icse18-deflaker."
-"pdf#section-Research>`__"
+"Engineering*. 2018. `PDF <https://www.jonbell.net/icse18-"
+"deflaker.pdf#section-Research>`__"
 msgstr ""
 
 #: ../../../doc/en/explanation/flaky.rst:121
@@ -340,8 +342,8 @@ msgid ""
 "Leinen, Fabian and Elsner, Daniel and Pretschner, Alexander and Stahlbauer, "
 "Andreas and Sailer, Michael and Jürgens, Elmar. \"Cost of Flaky Tests in "
 "Continuous Integration: An Industrial Case Study.\" Technical University of "
-"Munich and CQSE GmbH, Munich, Germany, 2023. `PDF <https://mediatum.ub.tum."
-"de/doc/1730194/1730194.pdf>`__"
+"Munich and CQSE GmbH, Munich, Germany, 2023. `PDF <https://"
+"mediatum.ub.tum.de/doc/1730194/1730194.pdf>`__"
 msgstr ""
 
 #: ../../../doc/en/explanation/flaky.rst:127
@@ -379,9 +381,9 @@ msgstr ""
 
 #: ../../../doc/en/explanation/flaky.rst:135
 msgid ""
-"`How we approach testing VSTS to enable continuous delivery <https://blogs."
-"msdn.microsoft.com/bharry/2017/06/28/testing-in-a-cloud-delivery-cadence/>`_ "
-"by Brian Harry MS, 2017"
+"`How we approach testing VSTS to enable continuous delivery <https://"
+"blogs.msdn.microsoft.com/bharry/2017/06/28/testing-in-a-cloud-delivery-"
+"cadence/>`_ by Brian Harry MS, 2017"
 msgstr ""
 
 #: ../../../doc/en/explanation/flaky.rst:136
@@ -397,15 +399,15 @@ msgstr ""
 
 #: ../../../doc/en/explanation/flaky.rst:140
 msgid ""
-"`Flaky Tests at Google and How We Mitigate Them <https://testing.googleblog."
-"com/2016/05/flaky-tests-at-google-and-how-we.html>`_ by John Micco, 2016"
+"`Flaky Tests at Google and How We Mitigate Them <https://"
+"testing.googleblog.com/2016/05/flaky-tests-at-google-and-how-we.html>`_ by "
+"John Micco, 2016"
 msgstr ""
 
 #: ../../../doc/en/explanation/flaky.rst:141
 msgid ""
-"`Where do Google's flaky tests come from? <https://testing.googleblog."
-"com/2017/04/where-do-our-flaky-tests-come-from.html>`_  by Jeff Listfield, "
-"2017"
+"`Where do Google's flaky tests come from? <https://testing.googleblog.com/"
+"2017/04/where-do-our-flaky-tests-come-from.html>`_  by Jeff Listfield, 2017"
 msgstr ""
 
 #: ../../../doc/en/explanation/flaky.rst:143

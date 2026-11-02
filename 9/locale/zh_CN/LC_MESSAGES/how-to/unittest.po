@@ -57,8 +57,7 @@ msgid ":meth:`unittest.TestCase.setUp`/:meth:`unittest.TestCase.tearDown`"
 msgstr ""
 
 #: ../../../doc/en/how-to/unittest.rst:27
-msgid ""
-":meth:`unittest.TestCase.setUpClass`/:meth:`unittest.TestCase.tearDownClass`"
+msgid ":meth:`unittest.TestCase.setUpClass`/:meth:`unittest.TestCase.tearDownClass`"
 msgstr ""
 
 #: ../../../doc/en/how-to/unittest.rst:28
@@ -98,8 +97,8 @@ msgstr ""
 
 #: ../../../doc/en/how-to/unittest.rst:45
 msgid ""
-":ref:`Test selection options <select-tests>` using :option:`-k` and :option:"
-"`-m` flags;"
+":ref:`Test selection options <select-tests>` using :option:`-k` "
+"and :option:`-m` flags;"
 msgstr ""
 
 #: ../../../doc/en/how-to/unittest.rst:46
@@ -315,9 +314,9 @@ msgid ""
 "define the fixture function in the context where you want it used. Let's "
 "look at an ``initdir`` fixture which makes all test methods of a "
 "``TestCase`` class execute in a temporary directory with a pre-initialized "
-"``samplefile.ini``.  Our ``initdir`` fixture itself uses the pytest builtin :"
-"fixture:`tmp_path` fixture to delegate the creation of a per-test temporary "
-"directory:"
+"``samplefile.ini``.  Our ``initdir`` fixture itself uses the pytest "
+"builtin :fixture:`tmp_path` fixture to delegate the creation of a per-test "
+"temporary directory:"
 msgstr ""
 
 #: ../../../doc/en/how-to/unittest.rst:197

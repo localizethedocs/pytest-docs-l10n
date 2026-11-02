@@ -195,8 +195,8 @@ msgstr ""
 
 #: ../../../doc/en/how-to/logging.rst:135
 msgid ""
-"For all the available attributes of the log records see the ``logging."
-"LogRecord`` class."
+"For all the available attributes of the log records see the "
+"``logging.LogRecord`` class."
 msgstr ""
 
 #: ../../../doc/en/how-to/logging.rst:138
@@ -266,10 +266,10 @@ msgstr ""
 #: ../../../doc/en/how-to/logging.rst:187
 msgid ""
 "The ``caplog`` fixture adds a handler to the root logger to capture logs. If "
-"the root logger is modified during a test, for example with ``logging.config."
-"dictConfig``, this handler may be removed and cause no logs to be captured. "
-"To avoid this, ensure that any root logger configuration only adds to the "
-"existing handlers."
+"the root logger is modified during a test, for example with "
+"``logging.config.dictConfig``, this handler may be removed and cause no logs "
+"to be captured. To avoid this, ensure that any root logger configuration "
+"only adds to the existing handlers."
 msgstr ""
 
 #: ../../../doc/en/how-to/logging.rst:196
@@ -286,15 +286,15 @@ msgstr ""
 msgid ""
 "You can specify the logging level for which log records with equal or higher "
 "level are printed to the console by passing :option:`--log-cli-level`. This "
-"setting accepts the logging level names or numeric values as seen in :ref:"
-"`logging's documentation <python:levels>`."
+"setting accepts the logging level names or numeric values as seen "
+"in :ref:`logging's documentation <python:levels>`."
 msgstr ""
 
 #: ../../../doc/en/how-to/logging.rst:206
 msgid ""
 "Additionally, you can also specify :option:`--log-cli-format` and :option:`--"
-"log-cli-date-format` which mirror and default to :option:`--log-format` and :"
-"option:`--log-date-format` if not provided, but are applied only to the "
+"log-cli-date-format` which mirror and default to :option:`--log-format` "
+"and :option:`--log-date-format` if not provided, but are applied only to the "
 "console logging handler."
 msgstr ""
 
@@ -329,16 +329,18 @@ msgstr ""
 
 #: ../../../doc/en/how-to/logging.rst:225
 msgid ""
-"You can also specify the logging level for the log file by passing :option:"
-"`--log-file-level`. This setting accepts the logging level names or numeric "
-"values as seen in :ref:`logging's documentation <python:levels>`."
+"You can also specify the logging level for the log file by "
+"passing :option:`--log-file-level`. This setting accepts the logging level "
+"names or numeric values as seen in :ref:`logging's documentation "
+"<python:levels>`."
 msgstr ""
 
 #: ../../../doc/en/how-to/logging.rst:229
 msgid ""
-"Additionally, you can also specify :option:`--log-file-format` and :option:"
-"`--log-file-date-format` which are equal to ``--log-format`` and :option:`--"
-"log-date-format` but are applied to the log file logging handler."
+"Additionally, you can also specify :option:`--log-file-format` "
+"and :option:`--log-file-date-format` which are equal to ``--log-format`` "
+"and :option:`--log-date-format` but are applied to the log file logging "
+"handler."
 msgstr ""
 
 #: ../../../doc/en/how-to/logging.rst:233
@@ -445,12 +447,13 @@ msgstr ""
 
 #: ../../../doc/en/how-to/logging.rst:304
 msgid ""
-"Log levels are no longer changed unless explicitly requested by the :confval:"
-"`log_level` configuration or :option:`--log-level` command-line options. "
-"This allows users to configure logger objects themselves. Setting :confval:"
-"`log_level` will set the level that is captured globally so if a specific "
-"test requires a lower level than this, use the ``caplog.set_level()`` "
-"functionality otherwise that test will be prone to failure."
+"Log levels are no longer changed unless explicitly requested by "
+"the :confval:`log_level` configuration or :option:`--log-level` command-line "
+"options. This allows users to configure logger objects themselves. "
+"Setting :confval:`log_level` will set the level that is captured globally so "
+"if a specific test requires a lower level than this, use the "
+"``caplog.set_level()`` functionality otherwise that test will be prone to "
+"failure."
 msgstr ""
 
 #: ../../../doc/en/how-to/logging.rst:309
@@ -488,6 +491,6 @@ msgstr ""
 
 #: ../../../doc/en/how-to/logging.rst:334
 msgid ""
-"More details about the discussion that led to these changes can be read in :"
-"issue:`3013`."
+"More details about the discussion that led to these changes can be read "
+"in :issue:`3013`."
 msgstr ""
