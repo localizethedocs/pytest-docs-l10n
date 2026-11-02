@@ -1,0 +1,268 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/announce/release-6.2.0.rst:2
+msgid "pytest-6.2.0"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:4
+msgid "The pytest team is proud to announce the 6.2.0 release!"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:6
+msgid ""
+"This release contains new features, improvements, bug fixes, and breaking "
+"changes, so users are encouraged to take a look at the CHANGELOG carefully:"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:9
+msgid "https://docs.pytest.org/en/stable/changelog.html"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:11
+msgid "For complete documentation, please visit:"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:13
+msgid "https://docs.pytest.org/en/stable/"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:15
+msgid "As usual, you can upgrade from PyPI via:"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:17
+msgid "pip install -U pytest"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:19
+msgid "Thanks to all of the contributors to this release:"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:21
+msgid "Adam Johnson"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:22
+msgid "Albert Villanova del Moral"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:23
+msgid "Anthony Sottile"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:24
+msgid "Anton"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:25
+msgid "Ariel Pillemer"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:26
+msgid "Bruno Oliveira"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:27
+msgid "Charles Aracil"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:28
+msgid "Christine M"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:29
+msgid "Christine Mecklenborg"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:30
+msgid "Cserna Zsolt"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:31
+msgid "Dominic Mortlock"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:32
+msgid "Emiel van de Laar"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:33
+msgid "Florian Bruhin"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:34
+msgid "Garvit Shubham"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:35
+msgid "Gustavo Camargo"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:36
+msgid "Hugo Martins"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:37
+msgid "Hugo van Kemenade"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:38
+msgid "Jakob van Santen"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:39
+msgid "Josias Aurel"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:40
+msgid "Jürgen Gmach"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:41
+msgid "Karthikeyan Singaravelan"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:42
+msgid "Katarzyna"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:43
+msgid "Kyle Altendorf"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:44
+msgid "Manuel Mariñez"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:45
+msgid "Matthew Hughes"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:46
+msgid "Matthias Gabriel"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:47
+msgid "Max Voitko"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:48
+msgid "Maximilian Cosmo Sitter"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:49
+msgid "Mikhail Fesenko"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:50
+msgid "Nimesh Vashistha"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:51
+msgid "Pedro Algarvio"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:52
+msgid "Petter Strandmark"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:53
+msgid "Prakhar Gurunani"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:54
+msgid "Prashant Sharma"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:55
+msgid "Ran Benita"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:56
+msgid "Ronny Pfannschmidt"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:57
+msgid "Sanket Duthade"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:58
+msgid "Shubham Adep"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:59
+msgid "Simon K"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:60
+msgid "Tanvi Mehta"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:61
+msgid "Thomas Grainger"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:62
+msgid "Tim Hoffmann"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:63
+msgid "Vasilis Gerakaris"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:64
+msgid "William Jamir Silva"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:65
+msgid "Zac Hatfield-Dodds"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:66
+msgid "crricks"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:67
+msgid "dependabot[bot]"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:68
+msgid "duthades"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:69
+msgid "frankgerhardt"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:70
+msgid "kwgchi"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:71
+msgid "mickeypash"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:72
+msgid "symonk"
+msgstr ""
+
+#: ../../../doc/en/announce/release-6.2.0.rst:75
+msgid "Happy testing, The pytest Development Team"
+msgstr ""
