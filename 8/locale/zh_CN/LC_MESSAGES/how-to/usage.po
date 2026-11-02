@@ -27,11 +27,12 @@ msgstr ""
 
 #: ../../../doc/en/how-to/usage.rst:9
 msgid ""
-"In general, pytest is invoked with the command ``pytest`` (see below for :"
-"ref:`other ways to invoke pytest <invoke-other>`). This will execute all "
-"tests in all files whose names follow the form ``test_*.py`` or ``\\*_test."
-"py`` in the current directory and its subdirectories. More generally, pytest "
-"follows :ref:`standard test discovery rules <test discovery>`."
+"In general, pytest is invoked with the command ``pytest`` (see below "
+"for :ref:`other ways to invoke pytest <invoke-other>`). This will execute "
+"all tests in all files whose names follow the form ``test_*.py`` or "
+"``\\*_test.py`` in the current directory and its subdirectories. More "
+"generally, pytest follows :ref:`standard test discovery rules <test "
+"discovery>`."
 msgstr ""
 
 #: ../../../doc/en/how-to/usage.rst:18
@@ -74,9 +75,9 @@ msgid ""
 "This will run tests which contain names that match the given *string "
 "expression* (case-insensitive), which can include Python operators that use "
 "filenames, class names and function names as variables. The example above "
-"will run ``TestMyClass.test_something``  but not ``TestMyClass."
-"test_method_simple``. Use ``\"\"`` instead of ``''`` in expression when "
-"running this on Windows"
+"will run ``TestMyClass.test_something``  but not "
+"``TestMyClass.test_method_simple``. Use ``\"\"`` instead of ``''`` in "
+"expression when running this on Windows"
 msgstr ""
 
 #: ../../../doc/en/how-to/usage.rst:48
@@ -138,8 +139,9 @@ msgstr ""
 
 #: ../../../doc/en/how-to/usage.rst:86
 msgid ""
-"To run all tests which are decorated with the annotated ``@pytest.mark."
-"slow(phase=1)`` decorator, with the ``phase`` keyword argument set to ``1``:"
+"To run all tests which are decorated with the annotated "
+"``@pytest.mark.slow(phase=1)`` decorator, with the ``phase`` keyword "
+"argument set to ``1``:"
 msgstr ""
 
 #: ../../../doc/en/how-to/usage.rst:89

@@ -109,10 +109,10 @@ msgstr ""
 
 #: ../../../doc/en/getting-started.rst:73
 msgid ""
-"You can use the ``assert`` statement to verify test expectations. pytest’s :"
-"ref:`Advanced assertion introspection <python:assert>` will intelligently "
-"report intermediate values of the assert expression so you can avoid the "
-"many names :ref:`of JUnit legacy methods <testcase-objects>`."
+"You can use the ``assert`` statement to verify test expectations. "
+"pytest’s :ref:`Advanced assertion introspection <python:assert>` will "
+"intelligently report intermediate values of the assert expression so you can "
+"avoid the many names :ref:`of JUnit legacy methods <testcase-objects>`."
 msgstr ""
 
 #: ../../../doc/en/getting-started.rst:76
@@ -122,8 +122,8 @@ msgstr ""
 #: ../../../doc/en/getting-started.rst:78
 msgid ""
 "``pytest`` will run all files of the form test_*.py or \\*_test.py in the "
-"current directory and its subdirectories. More generally, it follows :ref:"
-"`standard test discovery rules <test discovery>`."
+"current directory and its subdirectories. More generally, it "
+"follows :ref:`standard test discovery rules <test discovery>`."
 msgstr ""
 
 #: ../../../doc/en/getting-started.rst:82

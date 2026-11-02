@@ -193,8 +193,8 @@ msgstr ""
 
 #: ../../../doc/en/how-to/output.rst:140
 msgid ""
-"Each test inside the file is shown by a single character in the output: ``."
-"`` for passing, ``F`` for failure."
+"Each test inside the file is shown by a single character in the output: "
+"``.`` for passing, ``F`` for failure."
 msgstr ""
 
 #: ../../../doc/en/how-to/output.rst:141
@@ -812,10 +812,10 @@ msgstr ""
 
 #: ../../../doc/en/how-to/output.rst:571
 msgid ""
-"Setting both :confval:`truncation_limit_lines` and :confval:"
-"`truncation_limit_chars` to ``0`` will disable the truncation. However, "
-"setting only one of those values will disable one truncation mode, but will "
-"leave the other one intact."
+"Setting both :confval:`truncation_limit_lines` "
+"and :confval:`truncation_limit_chars` to ``0`` will disable the truncation. "
+"However, setting only one of those values will disable one truncation mode, "
+"but will leave the other one intact."
 msgstr ""
 
 #: ../../../doc/en/how-to/output.rst:576
@@ -853,10 +853,11 @@ msgid ""
 "JUnit XML specification seems to indicate that ``\"time\"`` attribute should "
 "report total test execution times, including setup and teardown (`1 <http://"
 "windyroad.com.au/dl/Open%20Source/JUnit.xsd>`_, `2 <https://www.ibm.com/"
-"support/knowledgecenter/en/SSQ2R2_14.1.0/com.ibm.rsar.analysis.codereview."
-"cobol.doc/topics/cac_useresults_junit.html>`_). It is the default pytest "
-"behavior. To report just call durations instead, configure the "
-"``junit_duration_report`` option like this:"
+"support/knowledgecenter/en/SSQ2R2_14.1.0/"
+"com.ibm.rsar.analysis.codereview.cobol.doc/topics/"
+"cac_useresults_junit.html>`_). It is the default pytest behavior. To report "
+"just call durations instead, configure the ``junit_duration_report`` option "
+"like this:"
 msgstr ""
 
 #: ../../../doc/en/how-to/output.rst:605

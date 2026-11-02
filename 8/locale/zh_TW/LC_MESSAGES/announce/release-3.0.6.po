@@ -35,8 +35,8 @@ msgstr "pip install --upgrade pytest"
 
 #: ../../../doc/en/announce/release-3.0.6.rst:10
 msgid ""
-"The full changelog is available at http://doc.pytest.org/en/stable/changelog."
-"html."
+"The full changelog is available at http://doc.pytest.org/en/stable/"
+"changelog.html."
 msgstr ""
 
 #: ../../../doc/en/announce/release-3.0.6.rst:13

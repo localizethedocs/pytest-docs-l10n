@@ -170,9 +170,9 @@ msgstr ""
 
 #: ../../../doc/en/how-to/capture-stdout-stderr.rst:115
 msgid ""
-"The :fixture:`capsys`, :fixture:`capteesys`, :fixture:`capsysbinary`, :"
-"fixture:`capfd`, and :fixture:`capfdbinary` fixtures allow access to "
-"``stdout``/``stderr`` output created during test execution."
+"The :fixture:`capsys`, :fixture:`capteesys`, :fixture:`capsysbinary`, :fixture:`capfd`, "
+"and :fixture:`capfdbinary` fixtures allow access to ``stdout``/``stderr`` "
+"output created during test execution."
 msgstr ""
 
 #: ../../../doc/en/how-to/capture-stdout-stderr.rst:118
@@ -217,12 +217,12 @@ msgstr ""
 
 #: ../../../doc/en/how-to/capture-stdout-stderr.rst:146
 msgid ""
-"If you want to capture at the file descriptor level you can use the :fixture:"
-"`capfd` fixture which offers the exact same interface but allows to also "
-"capture output from libraries or subprocesses that directly write to "
-"operating system level output streams (FD1 and FD2). Similarly to :fixture:"
-"`capsysbinary`, :fixture:`capfdbinary` can be used to capture ``bytes`` at "
-"the file descriptor level."
+"If you want to capture at the file descriptor level you can use "
+"the :fixture:`capfd` fixture which offers the exact same interface but "
+"allows to also capture output from libraries or subprocesses that directly "
+"write to operating system level output streams (FD1 and FD2). Similarly "
+"to :fixture:`capsysbinary`, :fixture:`capfdbinary` can be used to capture "
+"``bytes`` at the file descriptor level."
 msgstr ""
 
 #: ../../../doc/en/how-to/capture-stdout-stderr.rst:154

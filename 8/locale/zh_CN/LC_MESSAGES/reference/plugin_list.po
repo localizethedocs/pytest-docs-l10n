@@ -25528,8 +25528,8 @@ msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:1971
 msgid ""
-"*last release*: Feb 21, 2024, *status*: N/A, *requires*: pytest <8.0.0,"
-">=7.3.1"
+"*last release*: Feb 21, 2024, *status*: N/A, *requires*: pytest "
+"<8.0.0,>=7.3.1"
 msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:1978
@@ -25800,8 +25800,8 @@ msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:2363
 msgid ""
-"*last release*: May 15, 2022, *status*: N/A, *requires*: pytest (<7.2,"
-">=7.1.2)"
+"*last release*: May 15, 2022, *status*: N/A, *requires*: pytest "
+"(<7.2,>=7.1.2)"
 msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:2370
@@ -26555,8 +26555,8 @@ msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:3483
 msgid ""
-"*last release*: Aug 17, 2021, *status*: N/A, *requires*: pytest (<7.0.0,"
-">=6.2.4)"
+"*last release*: Aug 17, 2021, *status*: N/A, *requires*: pytest "
+"(<7.0.0,>=6.2.4)"
 msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:3490
@@ -27431,8 +27431,8 @@ msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:4778
 msgid ""
-"*last release*: May 01, 2021, *status*: 4 - Beta, *requires*: pytest (<5.0.0,"
-">=4.3.1) ; python_version < \"3.5\""
+"*last release*: May 01, 2021, *status*: 4 - Beta, *requires*: pytest "
+"(<5.0.0,>=4.3.1) ; python_version < \"3.5\""
 msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:4785
@@ -27550,8 +27550,8 @@ msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:4981
 msgid ""
-"*last release*: Mar 28, 2024, *status*: 3 - Alpha, *requires*: pytest<9.0.0,"
-">=8.1.1"
+"*last release*: Mar 28, 2024, *status*: 3 - Alpha, *requires*: "
+"pytest<9.0.0,>=8.1.1"
 msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:4988
@@ -27653,8 +27653,8 @@ msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:5128
 msgid ""
-"*last release*: Sep 23, 2024, *status*: 4 - Beta, *requires*: pytest<9.0.0,"
-">=8.1.1"
+"*last release*: Sep 23, 2024, *status*: 4 - Beta, *requires*: "
+"pytest<9.0.0,>=8.1.1"
 msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:5135
@@ -28385,8 +28385,8 @@ msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:6213
 msgid ""
-"*last release*: Apr 01, 2024, *status*: 4 - Beta, *requires*: pytest<9.0.0,"
-">=8.0.0"
+"*last release*: Apr 01, 2024, *status*: 4 - Beta, *requires*: "
+"pytest<9.0.0,>=8.0.0"
 msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:6220
@@ -28403,8 +28403,8 @@ msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:6234
 msgid ""
-"*last release*: Oct 31, 2024, *status*: 4 - Beta, *requires*: pytest<9.0.0,"
-">=8.0.0"
+"*last release*: Oct 31, 2024, *status*: 4 - Beta, *requires*: "
+"pytest<9.0.0,>=8.0.0"
 msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:6241
@@ -28726,8 +28726,8 @@ msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:6703
 msgid ""
-"*last release*: Oct 24, 2024, *status*: 4 - Beta, *requires*: pytest<9.0,"
-">=7.0"
+"*last release*: Oct 24, 2024, *status*: 4 - Beta, *requires*: "
+"pytest<9.0,>=7.0"
 msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:6710
@@ -28840,8 +28840,8 @@ msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:6871
 msgid ""
-"*last release*: May 15, 2025, *status*: 4 - Beta, *requires*: pytest<9.0.0,"
-">=7.4.0"
+"*last release*: May 15, 2025, *status*: 4 - Beta, *requires*: "
+"pytest<9.0.0,>=7.4.0"
 msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:6878
@@ -29680,8 +29680,8 @@ msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:8082
 msgid ""
-"*last release*: Feb 04, 2025, *status*: 1 - Planning, *requires*: pytest<9,"
-">=8.3; extra == \"pytest\""
+"*last release*: Feb 04, 2025, *status*: 1 - Planning, *requires*: "
+"pytest<9,>=8.3; extra == \"pytest\""
 msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:8089
@@ -29754,8 +29754,8 @@ msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:8194
 msgid ""
-"*last release*: Aug 20, 2019, *status*: 4 - Beta, *requires*: pytest (<4.7,"
-">=2.8) ; python_version < \"3.5\""
+"*last release*: Aug 20, 2019, *status*: 4 - Beta, *requires*: pytest "
+"(<4.7,>=2.8) ; python_version < \"3.5\""
 msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:8201
@@ -29787,8 +29787,8 @@ msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:8243
 msgid ""
-"*last release*: Dec 10, 2018, *status*: 4 - Beta, *requires*: pytest (<5.0.0,"
-">=3.0.0)"
+"*last release*: Dec 10, 2018, *status*: 4 - Beta, *requires*: pytest "
+"(<5.0.0,>=3.0.0)"
 msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:8250
@@ -31591,8 +31591,8 @@ msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:11008
 msgid ""
-"*last release*: May 23, 2025, *status*: 4 - Beta, *requires*: pytest<9,"
-">=7.0.0"
+"*last release*: May 23, 2025, *status*: 4 - Beta, *requires*: "
+"pytest<9,>=7.0.0"
 msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:11015
@@ -31672,8 +31672,8 @@ msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:11120
 msgid ""
-"*last release*: Jan 15, 2022, *status*: 1 - Planning, *requires*: pytest (<7,"
-">=6.0.1) ; extra == 'tests'"
+"*last release*: Jan 15, 2022, *status*: 1 - Planning, *requires*: pytest "
+"(<7,>=6.0.1) ; extra == 'tests'"
 msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:11127
@@ -31834,8 +31834,8 @@ msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:11358
 msgid ""
-"*last release*: May 25, 2025, *status*: 3 - Alpha, *requires*: pytest<8.0.0,"
-">=7.4.3"
+"*last release*: May 25, 2025, *status*: 3 - Alpha, *requires*: "
+"pytest<8.0.0,>=7.4.3"
 msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:11365
@@ -32136,8 +32136,8 @@ msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:11841
 msgid ""
-"*last release*: Feb 10, 2023, *status*: N/A, *requires*: pytest (<8.0,"
-">=7.2.0)"
+"*last release*: Feb 10, 2023, *status*: N/A, *requires*: pytest "
+"(<8.0,>=7.2.0)"
 msgstr ""
 
 #: ../../../doc/en/reference/plugin_list.rst:11855

@@ -169,10 +169,10 @@ msgstr ""
 
 #: ../../../doc/en/how-to/capture-warnings.rst:132
 msgid ""
-"You can use the :ref:`@pytest.mark.filterwarnings <pytest.mark."
-"filterwarnings ref>` mark to add warning filters to specific test items, "
-"allowing you to have finer control of which warnings should be captured at "
-"test, class or even module level:"
+"You can use the :ref:`@pytest.mark.filterwarnings "
+"<pytest.mark.filterwarnings ref>` mark to add warning filters to specific "
+"test items, allowing you to have finer control of which warnings should be "
+"captured at test, class or even module level:"
 msgstr ""
 
 #: ../../../doc/en/how-to/capture-warnings.rst:136
@@ -207,11 +207,12 @@ msgstr ""
 msgid ""
 "Regarding decorator order and filter precedence: it's important to remember "
 "that decorators are evaluated in reverse order, so you have to list the "
-"warning filters in the reverse order compared to traditional :py:func:"
-"`warnings.filterwarnings` and :option:`-W option <python:-W>` usage. This "
-"means in practice that filters from earlier :ref:`@pytest.mark."
-"filterwarnings <pytest.mark.filterwarnings ref>` decorators take precedence "
-"over filters from later decorators, as illustrated in the example above."
+"warning filters in the reverse order compared to "
+"traditional :py:func:`warnings.filterwarnings` and :option:`-W option "
+"<python:-W>` usage. This means in practice that filters from "
+"earlier :ref:`@pytest.mark.filterwarnings <pytest.mark.filterwarnings ref>` "
+"decorators take precedence over filters from later decorators, as "
+"illustrated in the example above."
 msgstr ""
 
 #: ../../../doc/en/how-to/capture-warnings.rst:171
@@ -222,9 +223,10 @@ msgstr ""
 
 #: ../../../doc/en/how-to/capture-warnings.rst:174
 msgid ""
-"You may apply a filter to all tests of a class by using the :ref:"
-"`filterwarnings <pytest.mark.filterwarnings ref>` mark as a class decorator "
-"or to all tests in a module by setting the :globalvar:`pytestmark` variable:"
+"You may apply a filter to all tests of a class by using "
+"the :ref:`filterwarnings <pytest.mark.filterwarnings ref>` mark as a class "
+"decorator or to all tests in a module by setting the :globalvar:`pytestmark` "
+"variable:"
 msgstr ""
 
 #: ../../../doc/en/how-to/capture-warnings.rst:177
@@ -235,11 +237,12 @@ msgstr ""
 
 #: ../../../doc/en/how-to/capture-warnings.rst:185
 msgid ""
-"If you want to apply multiple filters (by assigning a list of :ref:"
-"`filterwarnings <pytest.mark.filterwarnings ref>` mark to :globalvar:"
-"`pytestmark`), you must use the traditional :py:func:`warnings."
-"filterwarnings` ordering approach (later filters take precedence), which is "
-"the reverse of the decorator approach mentioned above."
+"If you want to apply multiple filters (by assigning a list "
+"of :ref:`filterwarnings <pytest.mark.filterwarnings ref>` mark "
+"to :globalvar:`pytestmark`), you must use the "
+"traditional :py:func:`warnings.filterwarnings` ordering approach (later "
+"filters take precedence), which is the reverse of the decorator approach "
+"mentioned above."
 msgstr ""
 
 #: ../../../doc/en/how-to/capture-warnings.rst:191
@@ -328,15 +331,15 @@ msgstr ""
 
 #: ../../../doc/en/how-to/capture-warnings.rst:245
 msgid ""
-"See :ref:`@pytest.mark.filterwarnings <filterwarnings>` and :ref:"
-"`Controlling warnings <controlling-warnings>` for more examples."
+"See :ref:`@pytest.mark.filterwarnings <filterwarnings>` "
+"and :ref:`Controlling warnings <controlling-warnings>` for more examples."
 msgstr ""
 
 #: ../../../doc/en/how-to/capture-warnings.rst:250
 msgid ""
-"If warnings are configured at the interpreter level, using the :envvar:"
-"`python:PYTHONWARNINGS` environment variable or the ``-W`` command-line "
-"option, pytest will not configure any filters by default."
+"If warnings are configured at the interpreter level, using "
+"the :envvar:`python:PYTHONWARNINGS` environment variable or the ``-W`` "
+"command-line option, pytest will not configure any filters by default."
 msgstr ""
 
 #: ../../../doc/en/how-to/capture-warnings.rst:254
@@ -380,10 +383,10 @@ msgstr ""
 
 #: ../../../doc/en/how-to/capture-warnings.rst:296
 msgid ""
-"You can check that code raises a particular warning using :func:`pytest."
-"warns`, which works in a similar manner to :ref:`raises <assertraises>` "
-"(except that :ref:`raises <assertraises>` does not capture all exceptions, "
-"only the ``expected_exception``):"
+"You can check that code raises a particular warning "
+"using :func:`pytest.warns`, which works in a similar manner to :ref:`raises "
+"<assertraises>` (except that :ref:`raises <assertraises>` does not capture "
+"all exceptions, only the ``expected_exception``):"
 msgstr ""
 
 #: ../../../doc/en/how-to/capture-warnings.rst:301
@@ -444,8 +447,9 @@ msgstr ""
 
 #: ../../../doc/en/how-to/capture-warnings.rst:348
 msgid ""
-"The function also returns a list of all raised warnings (as ``warnings."
-"WarningMessage`` objects), which you can query for additional information:"
+"The function also returns a list of all raised warnings (as "
+"``warnings.WarningMessage`` objects), which you can query for additional "
+"information:"
 msgstr ""
 
 #: ../../../doc/en/how-to/capture-warnings.rst:352
@@ -461,8 +465,8 @@ msgstr ""
 
 #: ../../../doc/en/how-to/capture-warnings.rst:362
 msgid ""
-"Alternatively, you can examine raised warnings in detail using the :fixture:"
-"`recwarn` fixture (see :ref:`below <recwarn>`)."
+"Alternatively, you can examine raised warnings in detail using "
+"the :fixture:`recwarn` fixture (see :ref:`below <recwarn>`)."
 msgstr ""
 
 #: ../../../doc/en/how-to/capture-warnings.rst:366
@@ -522,10 +526,11 @@ msgstr ""
 #: ../../../doc/en/how-to/capture-warnings.rst:408
 msgid ""
 "Both the :fixture:`recwarn` fixture and the :func:`pytest.warns` context "
-"manager return the same interface for recorded warnings: a :class:`~_pytest."
-"recwarn.WarningsRecorder` instance. To view the recorded warnings, you can "
-"iterate over this instance, call ``len`` on it to get the number of recorded "
-"warnings, or index into it to get a particular recorded warning."
+"manager return the same interface for recorded warnings: "
+"a :class:`~_pytest.recwarn.WarningsRecorder` instance. To view the recorded "
+"warnings, you can iterate over this instance, call ``len`` on it to get the "
+"number of recorded warnings, or index into it to get a particular recorded "
+"warning."
 msgstr ""
 
 #: ../../../doc/en/how-to/capture-warnings.rst:417
@@ -693,6 +698,7 @@ msgstr ""
 
 #: ../../../doc/en/how-to/capture-warnings.rst:529
 msgid ""
-"For more information, consult the `Python Development Mode <https://docs."
-"python.org/3/library/devmode.html>`__ section in the Python documentation."
+"For more information, consult the `Python Development Mode <https://"
+"docs.python.org/3/library/devmode.html>`__ section in the Python "
+"documentation."
 msgstr ""

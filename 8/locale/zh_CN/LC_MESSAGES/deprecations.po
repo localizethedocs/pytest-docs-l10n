@@ -116,23 +116,23 @@ msgstr ""
 
 #: ../../../doc/en/deprecations.rst:74
 msgid ""
-"If a user has an async fixture with ``autouse=True`` in their ``conftest."
-"py``, or in a file containing both synchronous tests and the fixture, they "
-"will receive this warning. Unless you're using a plugin that specifically "
-"handles async fixtures with synchronous tests, we strongly recommend against "
-"this practice. It can lead to unpredictable behavior (with larger scopes, it "
-"may appear to \"work\" if an async test is the first to request the fixture, "
-"due to value caching) and will generate unawaited-coroutine runtime warnings "
-"(but only for non-yield fixtures). Additionally, it creates ambiguity for "
-"other developers about whether the fixture is intended to perform setup for "
-"synchronous tests."
+"If a user has an async fixture with ``autouse=True`` in their "
+"``conftest.py``, or in a file containing both synchronous tests and the "
+"fixture, they will receive this warning. Unless you're using a plugin that "
+"specifically handles async fixtures with synchronous tests, we strongly "
+"recommend against this practice. It can lead to unpredictable behavior (with "
+"larger scopes, it may appear to \"work\" if an async test is the first to "
+"request the fixture, due to value caching) and will generate unawaited-"
+"coroutine runtime warnings (but only for non-yield fixtures). Additionally, "
+"it creates ambiguity for other developers about whether the fixture is "
+"intended to perform setup for synchronous tests."
 msgstr ""
 
 #: ../../../doc/en/deprecations.rst:84
 msgid ""
-"The `anyio pytest plugin <https://anyio.readthedocs.io/en/stable/testing."
-"html>`_ supports synchronous tests with async fixtures, though certain "
-"limitations apply."
+"The `anyio pytest plugin <https://anyio.readthedocs.io/en/stable/"
+"testing.html>`_ supports synchronous tests with async fixtures, though "
+"certain limitations apply."
 msgstr ""
 
 #: ../../../doc/en/deprecations.rst:91
@@ -193,10 +193,11 @@ msgstr ""
 
 #: ../../../doc/en/deprecations.rst:118
 msgid ""
-"In ``9.0``, the warning will turn into an error, and in ``9.1`` :func:"
-"`pytest.importorskip` will only capture :class:`ModuleNotFoundError` by "
-"default and no warnings will be issued anymore -- but users can still "
-"capture :class:`ImportError` by passing it to ``exc_type``."
+"In ``9.0``, the warning will turn into an error, and in "
+"``9.1`` :func:`pytest.importorskip` will only "
+"capture :class:`ModuleNotFoundError` by default and no warnings will be "
+"issued anymore -- but users can still capture :class:`ImportError` by "
+"passing it to ``exc_type``."
 msgstr ""
 
 #: ../../../doc/en/deprecations.rst:126
@@ -207,15 +208,15 @@ msgstr ""
 #: ../../../doc/en/deprecations.rst:130
 msgid ""
 "In order to support the transition from ``py.path.local`` to :mod:`pathlib`, "
-"the ``fspath`` argument to :class:`~_pytest.nodes.Node` constructors like :"
-"func:`pytest.Function.from_parent()` and :func:`pytest.Class.from_parent()` "
-"is now deprecated."
+"the ``fspath`` argument to :class:`~_pytest.nodes.Node` constructors "
+"like :func:`pytest.Function.from_parent()` "
+"and :func:`pytest.Class.from_parent()` is now deprecated."
 msgstr ""
 
 #: ../../../doc/en/deprecations.rst:135
 msgid ""
-"Plugins which construct nodes should pass the ``path`` argument, of type :"
-"class:`pathlib.Path`, instead of the ``fspath`` argument."
+"Plugins which construct nodes should pass the ``path`` argument, of "
+"type :class:`pathlib.Path`, instead of the ``fspath`` argument."
 msgstr ""
 
 #: ../../../doc/en/deprecations.rst:138
@@ -378,10 +379,10 @@ msgstr ""
 
 #: ../../../doc/en/deprecations.rst:222
 msgid ""
-"The name of the :class:`~_pytest.nodes.Node` arguments and attributes, :ref:"
-"`outlined above <node-ctor-fspath-deprecation>` (the new attribute being "
-"``path``) is **the opposite** of the situation for hooks (the old argument "
-"being ``path``)."
+"The name of the :class:`~_pytest.nodes.Node` arguments and "
+"attributes, :ref:`outlined above <node-ctor-fspath-deprecation>` (the new "
+"attribute being ``path``) is **the opposite** of the situation for hooks "
+"(the old argument being ``path``)."
 msgstr ""
 
 #: ../../../doc/en/deprecations.rst:232
@@ -436,8 +437,8 @@ msgstr ""
 
 #: ../../../doc/en/deprecations.rst:253
 msgid ""
-"Diamond inheritance between :class:`pytest.Collector` and :class:`pytest."
-"Item`"
+"Diamond inheritance between :class:`pytest.Collector` "
+"and :class:`pytest.Item`"
 msgstr ""
 
 #: ../../../doc/en/deprecations.rst:257
@@ -489,8 +490,8 @@ msgstr ""
 
 #: ../../../doc/en/deprecations.rst:293
 msgid ""
-"to avoid hard-coding the arguments pytest can pass to the superclass. See :"
-"ref:`non-python tests` for a full example."
+"to avoid hard-coding the arguments pytest can pass to the superclass. "
+"See :ref:`non-python tests` for a full example."
 msgstr ""
 
 #: ../../../doc/en/deprecations.rst:296
@@ -650,8 +651,8 @@ msgstr ""
 
 #: ../../../doc/en/deprecations.rst:408
 msgid ""
-"Native pytest support uses ``setup_method`` and ``teardown_method`` (see :"
-"ref:`xunit-method-setup`), so the above should be changed to:"
+"Native pytest support uses ``setup_method`` and ``teardown_method`` "
+"(see :ref:`xunit-method-setup`), so the above should be changed to:"
 msgstr ""
 
 #: ../../../doc/en/deprecations.rst:410
@@ -739,11 +740,11 @@ msgstr ""
 
 #: ../../../doc/en/deprecations.rst:485
 msgid ""
-"Passing the keyword argument ``msg`` to :func:`pytest.skip`, :func:`pytest."
-"fail` or :func:`pytest.exit` is now deprecated and ``reason`` should be used "
-"instead.  This change is to bring consistency between these functions and "
-"the ``@pytest.mark.skip`` and ``@pytest.mark.xfail`` markers which already "
-"accept a ``reason`` argument."
+"Passing the keyword argument ``msg`` "
+"to :func:`pytest.skip`, :func:`pytest.fail` or :func:`pytest.exit` is now "
+"deprecated and ``reason`` should be used instead.  This change is to bring "
+"consistency between these functions and the ``@pytest.mark.skip`` and "
+"``@pytest.mark.xfail`` markers which already accept a ``reason`` argument."
 msgstr ""
 
 #: ../../../doc/en/deprecations.rst:489
@@ -802,8 +803,8 @@ msgstr ""
 msgid ""
 ":func:`pytest.warns(None) <pytest.warns>` is now deprecated because it was "
 "frequently misused. Its correct usage was checking that the code emits at "
-"least one warning of any type - like ``pytest.warns()`` or ``pytest."
-"warns(Warning)``."
+"least one warning of any type - like ``pytest.warns()`` or "
+"``pytest.warns(Warning)``."
 msgstr ""
 
 #: ../../../doc/en/deprecations.rst:541
@@ -886,9 +887,9 @@ msgstr ""
 
 #: ../../../doc/en/deprecations.rst:601
 msgid ""
-"Changed :class:`pytest.Package` to be a subclass of :class:`pytest."
-"Directory`. A ``Package`` represents a filesystem directory which is a "
-"Python package, i.e. contains an ``__init__.py`` file."
+"Changed :class:`pytest.Package` to be a subclass "
+"of :class:`pytest.Directory`. A ``Package`` represents a filesystem "
+"directory which is a Python package, i.e. contains an ``__init__.py`` file."
 msgstr ""
 
 #: ../../../doc/en/deprecations.rst:605
@@ -902,17 +903,18 @@ msgstr ""
 #: ../../../doc/en/deprecations.rst:608
 msgid ""
 ":attr:`session.name <pytest.Session.name>` is now ``\"\"``; previously it "
-"was the rootdir directory name. This matches :attr:`session.nodeid <_pytest."
-"nodes.Node.nodeid>` which has always been `\"\"`."
+"was the rootdir directory name. This matches :attr:`session.nodeid "
+"<_pytest.nodes.Node.nodeid>` which has always been `\"\"`."
 msgstr ""
 
 #: ../../../doc/en/deprecations.rst:611
 msgid ""
-"Added a new :class:`pytest.Dir` concrete collection node, a subclass of :"
-"class:`pytest.Directory`. This node represents a filesystem directory, which "
-"is not a :class:`pytest.Package`, i.e. does not contain an ``__init__.py`` "
-"file. Similarly to ``Package``, it only collects the files in its own "
-"directory, while collecting sub-directories as sub-collector nodes."
+"Added a new :class:`pytest.Dir` concrete collection node, a subclass "
+"of :class:`pytest.Directory`. This node represents a filesystem directory, "
+"which is not a :class:`pytest.Package`, i.e. does not contain an "
+"``__init__.py`` file. Similarly to ``Package``, it only collects the files "
+"in its own directory, while collecting sub-directories as sub-collector "
+"nodes."
 msgstr ""
 
 #: ../../../doc/en/deprecations.rst:617
@@ -924,11 +926,11 @@ msgstr ""
 
 #: ../../../doc/en/deprecations.rst:620
 msgid ""
-"The collection tree now contains directories/packages up to the :ref:"
-"`rootdir <rootdir>`, for initial arguments that are found within the "
-"rootdir. For files outside the rootdir, only the immediate directory/package "
-"is collected -- note however that collecting from outside the rootdir is "
-"discouraged."
+"The collection tree now contains directories/packages up to "
+"the :ref:`rootdir <rootdir>`, for initial arguments that are found within "
+"the rootdir. For files outside the rootdir, only the immediate directory/"
+"package is collected -- note however that collecting from outside the "
+"rootdir is discouraged."
 msgstr ""
 
 #: ../../../doc/en/deprecations.rst:625
@@ -1008,8 +1010,8 @@ msgstr ""
 
 #: ../../../doc/en/deprecations.rst:681
 msgid ""
-":class:`pytest.Package` is no longer a :class:`pytest.Module` or :class:"
-"`pytest.File`"
+":class:`pytest.Package` is no longer a :class:`pytest.Module` "
+"or :class:`pytest.File`"
 msgstr ""
 
 #: ../../../doc/en/deprecations.rst:685
@@ -1017,8 +1019,8 @@ msgid ""
 "The ``Package`` collector node designates a Python package, that is, a "
 "directory with an `__init__.py` file. Previously ``Package`` was a subtype "
 "of ``pytest.Module`` (which represents a single Python module), the module "
-"being the `__init__.py` file. This has been deemed a design mistake (see :"
-"issue:`11137` and :issue:`7777` for details)."
+"being the `__init__.py` file. This has been deemed a design mistake "
+"(see :issue:`11137` and :issue:`7777` for details)."
 msgstr ""
 
 #: ../../../doc/en/deprecations.rst:690
@@ -1043,8 +1045,8 @@ msgid ""
 "Running `pytest pkg/__init__.py` now collects the `pkg/__init__.py` file "
 "(module) only. Previously, it collected the entire `pkg` package, including "
 "other test files in the directory, but excluding tests in the `__init__.py` "
-"file itself (unless :confval:`python_files` was changed to allow `__init__."
-"py` file)."
+"file itself (unless :confval:`python_files` was changed to allow "
+"`__init__.py` file)."
 msgstr ""
 
 #: ../../../doc/en/deprecations.rst:705
@@ -1142,8 +1144,8 @@ msgstr ""
 #: ../../../doc/en/deprecations.rst:782
 msgid ""
 "The ``pytest_collect_directory`` hook has not worked properly for years (it "
-"was called but the results were ignored). Users may consider using :hook:"
-"`pytest_collection_modifyitems` instead."
+"was called but the results were ignored). Users may consider "
+"using :hook:`pytest_collection_modifyitems` instead."
 msgstr ""
 
 #: ../../../doc/en/deprecations.rst:786
@@ -1222,8 +1224,8 @@ msgstr ""
 
 #: ../../../doc/en/deprecations.rst:835
 msgid ""
-"`Jenkins <https://www.jenkins.io/>`__ with the `JUnit <https://plugins."
-"jenkins.io/junit>`__ plugin."
+"`Jenkins <https://www.jenkins.io/>`__ with the `JUnit <https://"
+"plugins.jenkins.io/junit>`__ plugin."
 msgstr ""
 
 #: ../../../doc/en/deprecations.rst:836
@@ -1299,8 +1301,8 @@ msgid ""
 "Prior to pytest 2.3, this attribute was named ``funcargnames``, and we have "
 "kept that as an alias since.  It is finally due for removal, as it is often "
 "confusing in places where we or plugin authors must distinguish between "
-"fixture names and names supplied by non-fixture things such as ``pytest.mark."
-"parametrize``."
+"fixture names and names supplied by non-fixture things such as "
+"``pytest.mark.parametrize``."
 msgstr ""
 
 #: ../../../doc/en/deprecations.rst:889
@@ -1309,11 +1311,11 @@ msgstr ""
 
 #: ../../../doc/en/deprecations.rst:893
 msgid ""
-"The ``pytest.config`` global object is deprecated.  Instead use ``request."
-"config`` (via the ``request`` fixture) or if you are a plugin author use the "
-"``pytest_configure(config)`` hook. Note that many hooks can also access the "
-"``config`` object indirectly, through ``session.config`` or ``item.config`` "
-"for example."
+"The ``pytest.config`` global object is deprecated.  Instead use "
+"``request.config`` (via the ``request`` fixture) or if you are a plugin "
+"author use the ``pytest_configure(config)`` hook. Note that many hooks can "
+"also access the ``config`` object indirectly, through ``session.config`` or "
+"``item.config`` for example."
 msgstr ""
 
 #: ../../../doc/en/deprecations.rst:902
@@ -1513,8 +1515,8 @@ msgstr ""
 
 #: ../../../doc/en/deprecations.rst:1062
 msgid ""
-"``[pytest]`` sections in ``setup.cfg`` files should now be named ``[tool:"
-"pytest]`` to avoid conflicts with other distutils commands."
+"``[pytest]`` sections in ``setup.cfg`` files should now be named "
+"``[tool:pytest]`` to avoid conflicts with other distutils commands."
 msgstr ""
 
 #: ../../../doc/en/deprecations.rst:1069
@@ -1604,8 +1606,8 @@ msgstr ""
 
 #: ../../../doc/en/deprecations.rst:1148
 msgid ""
-"``Config.warn`` should be replaced by calls to the standard ``warnings."
-"warn``, example:"
+"``Config.warn`` should be replaced by calls to the standard "
+"``warnings.warn``, example:"
 msgstr ""
 
 #: ../../../doc/en/deprecations.rst:1150
@@ -1800,8 +1802,8 @@ msgstr ""
 #: ../../../doc/en/deprecations.rst:1301
 msgid ""
 "As part of a large :ref:`marker-revamp` we already deprecated using "
-"``MarkInfo`` the only correct way to get markers of an element is via ``node."
-"iter_markers(name)``."
+"``MarkInfo`` the only correct way to get markers of an element is via "
+"``node.iter_markers(name)``."
 msgstr ""
 
 #: ../../../doc/en/deprecations.rst:1308

@@ -55,8 +55,9 @@ msgstr ""
 
 #: ../../../doc/en/how-to/cache.rst:28
 msgid ""
-"This plugin is enabled by default, but can be disabled if needed: see :ref:"
-"`cmdunregister` (the internal name for this plugin is ``cacheprovider``)."
+"This plugin is enabled by default, but can be disabled if needed: "
+"see :ref:`cmdunregister` (the internal name for this plugin is "
+"``cacheprovider``)."
 msgstr ""
 
 #: ../../../doc/en/how-to/cache.rst:34
@@ -313,9 +314,9 @@ msgstr ""
 #: ../../../doc/en/how-to/cache.rst:200
 msgid ""
 "Plugins or conftest.py support code can get a cached value using the pytest "
-"``config`` object.  Here is a basic example plugin which implements a :ref:"
-"`fixture <fixture>` which reuses previously created state across pytest "
-"invocations:"
+"``config`` object.  Here is a basic example plugin which implements "
+"a :ref:`fixture <fixture>` which reuses previously created state across "
+"pytest invocations:"
 msgstr ""
 
 #: ../../../doc/en/how-to/cache.rst:205

@@ -146,9 +146,9 @@ msgstr ""
 
 #: ../../../doc/en/how-to/doctest.rst:98
 msgid ""
-"Python's standard :mod:`doctest` module provides some :ref:`options <python:"
-"option-flags-and-directives>` to configure the strictness of doctest tests. "
-"In pytest, you can enable those flags using the configuration file."
+"Python's standard :mod:`doctest` module provides some :ref:`options "
+"<python:option-flags-and-directives>` to configure the strictness of doctest "
+"tests. In pytest, you can enable those flags using the configuration file."
 msgstr ""
 
 #: ../../../doc/en/how-to/doctest.rst:102
@@ -199,8 +199,8 @@ msgid ""
 "as the precision you have written in the expected doctest output. The "
 "numbers are compared using :func:`pytest.approx` with relative tolerance "
 "equal to the precision. For example, the following output would only need to "
-"match to 2 decimal places when comparing ``3.14`` to ``pytest.approx(math."
-"pi, rel=10**-2)``::"
+"match to 2 decimal places when comparing ``3.14`` to "
+"``pytest.approx(math.pi, rel=10**-2)``::"
 msgstr ""
 
 #: ../../../doc/en/how-to/doctest.rst:135
@@ -258,9 +258,8 @@ msgstr ""
 #: ../../../doc/en/how-to/doctest.rst:171
 msgid ""
 "You can change the diff output format on failure for your doctests by using "
-"one of standard doctest modules format in options (see :data:`python:doctest."
-"REPORT_UDIFF`, :data:`python:doctest.REPORT_CDIFF`, :data:`python:doctest."
-"REPORT_NDIFF`, :data:`python:doctest.REPORT_ONLY_FIRST_FAILURE`):"
+"one of standard doctest modules format in options "
+"(see :data:`python:doctest.REPORT_UDIFF`, :data:`python:doctest.REPORT_CDIFF`, :data:`python:doctest.REPORT_NDIFF`, :data:`python:doctest.REPORT_ONLY_FIRST_FAILURE`):"
 msgstr ""
 
 #: ../../../doc/en/how-to/doctest.rst:176
@@ -310,8 +309,8 @@ msgstr ""
 
 #: ../../../doc/en/how-to/doctest.rst:208
 msgid ""
-"Also, the :ref:`usefixtures <usefixtures>` mark and fixtures marked as :ref:"
-"`autouse <autouse>` are supported when executing text doctest files."
+"Also, the :ref:`usefixtures <usefixtures>` mark and fixtures marked "
+"as :ref:`autouse <autouse>` are supported when executing text doctest files."
 msgstr ""
 
 #: ../../../doc/en/how-to/doctest.rst:215
@@ -378,8 +377,8 @@ msgstr ""
 
 #: ../../../doc/en/how-to/doctest.rst:257
 msgid ""
-"To skip a single check inside a doctest you can use the standard :data:"
-"`doctest.SKIP` directive:"
+"To skip a single check inside a doctest you can use the "
+"standard :data:`doctest.SKIP` directive:"
 msgstr ""
 
 #: ../../../doc/en/how-to/doctest.rst:260

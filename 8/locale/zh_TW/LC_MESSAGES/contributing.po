@@ -177,8 +177,8 @@ msgid ""
 "Pytest has an API reference which in large part is `generated automatically "
 "<https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html>`_ from "
 "the docstrings of the documented items. Pytest uses the `Sphinx docstring "
-"format <https://sphinx-rtd-tutorial.readthedocs.io/en/latest/docstrings."
-"html>`_. For example:"
+"format <https://sphinx-rtd-tutorial.readthedocs.io/en/latest/"
+"docstrings.html>`_. For example:"
 msgstr ""
 
 #: ../../../CONTRIBUTING.rst:96
@@ -279,9 +279,9 @@ msgstr ""
 
 #: ../../../CONTRIBUTING.rst:149
 msgid ""
-"a  `tox configuration <https://tox.readthedocs.io/en/latest/config."
-"html#configuration-discovery>`_ for running tests using `tox <https://tox."
-"readthedocs.io>`_."
+"a  `tox configuration <https://tox.readthedocs.io/en/latest/"
+"config.html#configuration-discovery>`_ for running tests using `tox <https://"
+"tox.readthedocs.io>`_."
 msgstr ""
 
 #: ../../../CONTRIBUTING.rst:152
@@ -478,8 +478,8 @@ msgstr ""
 
 #: ../../../CONTRIBUTING.rst:249
 msgid ""
-"If you need some help with Git, follow this quick start guide: https://git."
-"wiki.kernel.org/index.php/QuickStart"
+"If you need some help with Git, follow this quick start guide: https://"
+"git.wiki.kernel.org/index.php/QuickStart"
 msgstr ""
 
 #: ../../../CONTRIBUTING.rst:252
@@ -640,8 +640,8 @@ msgstr ""
 #: ../../../CONTRIBUTING.rst:331
 msgid ""
 "Writing tests for plugins or for pytest itself is often done using the "
-"`pytester fixture <https://docs.pytest.org/en/stable/reference/reference."
-"html#pytester>`_, as a \"black-box\" test."
+"`pytester fixture <https://docs.pytest.org/en/stable/reference/"
+"reference.html#pytester>`_, as a \"black-box\" test."
 msgstr ""
 
 #: ../../../CONTRIBUTING.rst:333
