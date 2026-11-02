@@ -219,8 +219,8 @@ msgstr ""
 
 #: ../../../RELEASING.rst:46
 msgid ""
-"Open a PR for the ``release-MAJOR.MINOR.PATCH`` branch targeting ``MAJOR."
-"MINOR.x``."
+"Open a PR for the ``release-MAJOR.MINOR.PATCH`` branch targeting "
+"``MAJOR.MINOR.x``."
 msgstr ""
 
 #: ../../../RELEASING.rst:50

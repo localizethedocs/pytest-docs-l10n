@@ -26,8 +26,8 @@ msgid ""
 "Sometimes tests need to invoke functionality which depends on global "
 "settings or which invokes code which cannot be easily tested such as network "
 "access.  The ``monkeypatch`` fixture helps you to safely set/delete an "
-"attribute, dictionary item or environment variable, or to modify ``sys."
-"path`` for importing."
+"attribute, dictionary item or environment variable, or to modify "
+"``sys.path`` for importing."
 msgstr ""
 
 #: ../../../doc/en/monkeypatch.rst:13
@@ -64,18 +64,19 @@ msgstr ""
 msgid ""
 "1. Modifying the behavior of a function or the property of a class for a "
 "test e.g. there is an API call or database connection you will not make for "
-"a test but you know what the expected output should be. Use :py:meth:"
-"`monkeypatch.setattr` to patch the function or property with your desired "
-"testing behavior. This can include your own functions. Use :py:meth:"
-"`monkeypatch.delattr` to remove the function or property for the test."
+"a test but you know what the expected output should be. "
+"Use :py:meth:`monkeypatch.setattr` to patch the function or property with "
+"your desired testing behavior. This can include your own functions. "
+"Use :py:meth:`monkeypatch.delattr` to remove the function or property for "
+"the test."
 msgstr ""
 
 #: ../../../doc/en/monkeypatch.rst:40
 msgid ""
 "2. Modifying the values of dictionaries e.g. you have a global configuration "
-"that you want to modify for certain test cases. Use :py:meth:`monkeypatch."
-"setitem` to patch the dictionary for the test. :py:meth:`monkeypatch."
-"delitem` can be used to remove items."
+"that you want to modify for certain test cases. "
+"Use :py:meth:`monkeypatch.setitem` to patch the dictionary for the "
+"test. :py:meth:`monkeypatch.delitem` can be used to remove items."
 msgstr ""
 
 #: ../../../doc/en/monkeypatch.rst:44
@@ -96,8 +97,8 @@ msgstr ""
 #: ../../../doc/en/monkeypatch.rst:53
 msgid ""
 "5. Use :py:meth:`monkeypatch.syspath_prepend` to modify ``sys.path`` which "
-"will also call :py:meth:`pkg_resources.fixup_namespace_packages` and :py:"
-"meth:`importlib.invalidate_caches`."
+"will also call :py:meth:`pkg_resources.fixup_namespace_packages` "
+"and :py:meth:`importlib.invalidate_caches`."
 msgstr ""
 
 #: ../../../doc/en/monkeypatch.rst:56
@@ -120,12 +121,12 @@ msgstr ""
 
 #: ../../../doc/en/monkeypatch.rst:69
 msgid ""
-"In this example, :py:meth:`monkeypatch.setattr` is used to patch ``Path."
-"home`` so that the known testing path ``Path(\"/abc\")`` is always used when "
-"the test is run. This removes any dependency on the running user for testing "
-"purposes. :py:meth:`monkeypatch.setattr` must be called before the function "
-"which will use the patched function is called. After the test function "
-"finishes the ``Path.home`` modification will be undone."
+"In this example, :py:meth:`monkeypatch.setattr` is used to patch "
+"``Path.home`` so that the known testing path ``Path(\"/abc\")`` is always "
+"used when the test is run. This removes any dependency on the running user "
+"for testing purposes. :py:meth:`monkeypatch.setattr` must be called before "
+"the function which will use the patched function is called. After the test "
+"function finishes the ``Path.home`` modification will be undone."
 msgstr ""
 
 #: ../../../doc/en/monkeypatch.rst:76

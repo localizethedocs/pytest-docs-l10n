@@ -191,8 +191,8 @@ msgstr ""
 
 #: ../../../doc/en/writing_plugins.rst:115
 msgid ""
-"All of these plugins implement :ref:`hooks <hook-reference>` and/or :ref:"
-"`fixtures <fixture>` to extend and add functionality."
+"All of these plugins implement :ref:`hooks <hook-reference>` and/"
+"or :ref:`fixtures <fixture>` to extend and add functionality."
 msgstr ""
 
 #: ../../../doc/en/writing_plugins.rst:119
@@ -239,8 +239,8 @@ msgid ""
 "    name=\"myproject\",\n"
 "    packages=[\"myproject\"],\n"
 "    # the following makes a plugin available to pytest\n"
-"    entry_points={\"pytest11\": [\"name_of_plugin = myproject."
-"pluginmodule\"]},\n"
+"    entry_points={\"pytest11\": [\"name_of_plugin = "
+"myproject.pluginmodule\"]},\n"
 "    # custom PyPI classifier for pytest plugins\n"
 "    classifiers=[\"Framework :: Pytest\"],\n"
 ")"
@@ -248,8 +248,9 @@ msgstr ""
 
 #: ../../../doc/en/writing_plugins.rst:160
 msgid ""
-"If a package is installed this way, ``pytest`` will load ``myproject."
-"pluginmodule`` as a plugin which can define :ref:`hooks <hook-reference>`."
+"If a package is installed this way, ``pytest`` will load "
+"``myproject.pluginmodule`` as a plugin which can define :ref:`hooks <hook-"
+"reference>`."
 msgstr ""
 
 #: ../../../doc/en/writing_plugins.rst:166
@@ -385,8 +386,8 @@ msgstr ""
 
 #: ../../../doc/en/writing_plugins.rst:251
 msgid ""
-"Requiring plugins using a ``pytest_plugins`` variable in non-root ``conftest."
-"py`` files is deprecated."
+"Requiring plugins using a ``pytest_plugins`` variable in non-root "
+"``conftest.py`` files is deprecated."
 msgstr ""
 
 #: ../../../doc/en/writing_plugins.rst:254
@@ -412,9 +413,10 @@ msgid ""
 "for this to have any effect the module must not be imported already; if it "
 "was already imported at the time the ``pytest_plugins`` statement is "
 "processed, a warning will result and assertions inside the plugin will not "
-"be rewritten.  To fix this you can either call :func:`pytest."
-"register_assert_rewrite` yourself before the module is imported, or you can "
-"arrange the code to delay the importing until after the plugin is registered."
+"be rewritten.  To fix this you can either "
+"call :func:`pytest.register_assert_rewrite` yourself before the module is "
+"imported, or you can arrange the code to delay the importing until after the "
+"plugin is registered."
 msgstr ""
 
 #: ../../../doc/en/writing_plugins.rst:276
@@ -491,8 +493,8 @@ msgstr ""
 
 #: ../../../doc/en/writing_plugins.rst:328
 msgid ""
-"This will allow you to use the :py:class:`testdir <_pytest.pytester."
-"Testdir>` fixture for testing your plugin code."
+"This will allow you to use the :py:class:`testdir "
+"<_pytest.pytester.Testdir>` fixture for testing your plugin code."
 msgstr ""
 
 #: ../../../doc/en/writing_plugins.rst:331
@@ -619,8 +621,8 @@ msgid ""
 "============================= warnings summary "
 "=============================\n"
 "test_example.py::test_plugin\n"
-"  $REGENDOC_TMPDIR/test_example.py:4: PytestExperimentalApiWarning: testdir."
-"copy_example is an experimental api that may change over time\n"
+"  $REGENDOC_TMPDIR/test_example.py:4: PytestExperimentalApiWarning: "
+"testdir.copy_example is an experimental api that may change over time\n"
 "    testdir.copy_example(\"test_example.py\")\n"
 "\n"
 "test_example.py::test_plugin\n"
@@ -727,9 +729,9 @@ msgstr ""
 #: ../../../doc/en/writing_plugins.rst:529
 msgid ""
 "At the yield point of the hook wrapper pytest will execute the next hook "
-"implementations and return their result to the yield point in the form of a :"
-"py:class:`Result <pluggy._Result>` instance which encapsulates a result or "
-"exception info.  The yield point itself will thus typically not raise "
+"implementations and return their result to the yield point in the form of "
+"a :py:class:`Result <pluggy._Result>` instance which encapsulates a result "
+"or exception info.  The yield point itself will thus typically not raise "
 "exceptions (unless there are bugs)."
 msgstr ""
 
@@ -767,8 +769,8 @@ msgstr ""
 
 #: ../../../doc/en/writing_plugins.rst:560
 msgid ""
-"For more information, consult the `pluggy documentation <http://pluggy."
-"readthedocs.io/en/latest/#wrappers>`_."
+"For more information, consult the `pluggy documentation <http://"
+"pluggy.readthedocs.io/en/latest/#wrappers>`_."
 msgstr ""
 
 #: ../../../doc/en/writing_plugins.rst:564

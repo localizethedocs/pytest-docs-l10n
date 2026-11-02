@@ -112,8 +112,8 @@ msgstr ""
 
 #: ../../../doc/en/assert.rst:76
 msgid ""
-"In order to write assertions about raised exceptions, you can use ``pytest."
-"raises`` as a context manager like this:"
+"In order to write assertions about raised exceptions, you can use "
+"``pytest.raises`` as a context manager like this:"
 msgstr ""
 
 #: ../../../doc/en/assert.rst:79
@@ -146,8 +146,8 @@ msgstr ""
 #: ../../../doc/en/assert.rst:101
 msgid ""
 "``excinfo`` is a ``ExceptionInfo`` instance, which is a wrapper around the "
-"actual exception raised.  The main attributes of interest are ``.type``, ``."
-"value`` and ``.traceback``."
+"actual exception raised.  The main attributes of interest are ``.type``, "
+"``.value`` and ``.traceback``."
 msgstr ""
 
 #: ../../../doc/en/assert.rst:105
@@ -174,9 +174,9 @@ msgstr ""
 
 #: ../../../doc/en/assert.rst:122
 msgid ""
-"The regexp parameter of the ``match`` method is matched with the ``re."
-"search`` function, so in the above example ``match='123'`` would have worked "
-"as well."
+"The regexp parameter of the ``match`` method is matched with the "
+"``re.search`` function, so in the above example ``match='123'`` would have "
+"worked as well."
 msgstr ""
 
 #: ../../../doc/en/assert.rst:126
@@ -198,9 +198,9 @@ msgstr ""
 
 #: ../../../doc/en/assert.rst:137
 msgid ""
-"Note that it is also possible to specify a \"raises\" argument to ``pytest."
-"mark.xfail``, which checks that the test is failing in a more specific way "
-"than just having any exception raised:"
+"Note that it is also possible to specify a \"raises\" argument to "
+"``pytest.mark.xfail``, which checks that the test is failing in a more "
+"specific way than just having any exception raised:"
 msgstr ""
 
 #: ../../../doc/en/assert.rst:141
@@ -471,8 +471,8 @@ msgstr ""
 
 #: ../../../doc/en/assert.rst:327
 msgid ""
-"Additionally, rewriting will silently skip caching if it cannot write new ``."
-"pyc`` files, i.e. in a read-only filesystem or a zipfile."
+"Additionally, rewriting will silently skip caching if it cannot write new "
+"``.pyc`` files, i.e. in a read-only filesystem or a zipfile."
 msgstr ""
 
 #: ../../../doc/en/assert.rst:332

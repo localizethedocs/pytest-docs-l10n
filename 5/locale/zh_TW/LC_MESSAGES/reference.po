@@ -251,11 +251,11 @@ msgstr ""
 #: of _pytest.python_api.approx:108
 msgid ""
 "``numpy.isclose(a, b, rtol=1e-5, atol=1e-8)``: True if the difference "
-"between ``a`` and ``b`` is less that the sum of the relative tolerance w.r."
-"t. ``b`` and the absolute tolerance.  Because the relative tolerance is only "
-"calculated w.r.t. ``b``, this test is asymmetric and you can think of ``b`` "
-"as the reference value.  Support for comparing sequences is provided by "
-"``numpy.allclose``.  `More information...`__"
+"between ``a`` and ``b`` is less that the sum of the relative tolerance "
+"w.r.t. ``b`` and the absolute tolerance.  Because the relative tolerance is "
+"only calculated w.r.t. ``b``, this test is asymmetric and you can think of "
+"``b`` as the reference value.  Support for comparing sequences is provided "
+"by ``numpy.allclose``.  `More information...`__"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python_api.py:docstring
@@ -441,8 +441,8 @@ msgid ""
 "It is better to use the :ref:`pytest.mark.skipif ref` marker when possible "
 "to declare a test to be skipped under certain conditions like mismatching "
 "platforms or dependencies. Similarly, use the ``# doctest: +SKIP`` directive "
-"(see `doctest.SKIP <https://docs.python.org/3/library/doctest.html#doctest."
-"SKIP>`_) to skip a doctest statically."
+"(see `doctest.SKIP <https://docs.python.org/3/library/"
+"doctest.html#doctest.SKIP>`_) to skip a doctest statically."
 msgstr ""
 
 #: ../../../doc/en/reference.rst:35
@@ -585,8 +585,8 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/mark/__init__.py:docstring
 #: of _pytest.mark.param:1
 msgid ""
-"Specify a parameter in `pytest.mark.parametrize`_ calls or :ref:"
-"`parametrized fixtures <fixture-parametrize-marks>`."
+"Specify a parameter in `pytest.mark.parametrize`_ calls "
+"or :ref:`parametrized fixtures <fixture-parametrize-marks>`."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/mark/__init__.py:docstring
@@ -636,10 +636,10 @@ msgid ""
 "if specified, a string containing a regular expression, or a regular "
 "expression object, that is tested against the string representation of the "
 "exception using ``re.search``. To match a literal string that may contain "
-"`special characters`__, the pattern can first be escaped with ``re."
-"escape``.  (This is only used when ``pytest.raises`` is used as a context "
-"manager, and passed through to the function otherwise. When using ``pytest."
-"raises`` as a function, you can use: ``pytest.raises(Exc, func, "
+"`special characters`__, the pattern can first be escaped with "
+"``re.escape``.  (This is only used when ``pytest.raises`` is used as a "
+"context manager, and passed through to the function otherwise. When using "
+"``pytest.raises`` as a function, you can use: ``pytest.raises(Exc, func, "
 "match=\"passed on\").match(\"my pattern\")``.)  __ https://docs.python.org/3/"
 "library/re.html#regular-expression-syntax"
 msgstr ""
@@ -658,8 +658,8 @@ msgstr ""
 msgid ""
 "(This is only used when ``pytest.raises`` is used as a context manager, and "
 "passed through to the function otherwise. When using ``pytest.raises`` as a "
-"function, you can use: ``pytest.raises(Exc, func, match=\"passed on\")."
-"match(\"my pattern\")``.)"
+"function, you can use: ``pytest.raises(Exc, func, match=\"passed "
+"on\").match(\"my pattern\")``.)"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python_api.py:docstring
@@ -827,8 +827,8 @@ msgid ""
 "stack --> local variables --> ``ExceptionInfo``) which makes Python keep all "
 "objects referenced from that cycle (including all local variables in the "
 "current frame) alive until the next cyclic garbage collection run. More "
-"detailed information can be found in the official Python documentation for :"
-"ref:`the try statement <python:try>`."
+"detailed information can be found in the official Python documentation "
+"for :ref:`the try statement <python:try>`."
 msgstr ""
 
 #: ../../../doc/en/reference.rst:68
@@ -1009,9 +1009,9 @@ msgid ""
 "Warnings filter <https://docs.python.org/3/library/warnings.html#warning-"
 "filter>`_ section of the Python documentation, separated by ``\":\"``. "
 "Optional fields can be omitted. Module names passed for filtering are not "
-"regex-escaped.  For example:  .. code-block:: python      @pytest.mark."
-"filterwarnings(\"ignore:.*usage will be deprecated.*:"
-"DeprecationWarning\")     def test_foo():         ..."
+"regex-escaped.  For example:  .. code-block:: python      "
+"@pytest.mark.filterwarnings(\"ignore:.*usage will be "
+"deprecated.*:DeprecationWarning\")     def test_foo():         ..."
 msgstr ""
 
 #: ../../../doc/en/reference.rst:120
@@ -1030,8 +1030,8 @@ msgstr ""
 
 #: ../../../doc/en/reference.rst:127
 msgid ""
-"@pytest.mark.filterwarnings(\"ignore:.*usage will be deprecated.*:"
-"DeprecationWarning\")\n"
+"@pytest.mark.filterwarnings(\"ignore:.*usage will be "
+"deprecated.*:DeprecationWarning\")\n"
 "def test_foo():\n"
 "    ..."
 msgstr ""
@@ -1074,10 +1074,10 @@ msgstr ""
 msgid ""
 "The list of argnames or boolean. A list of arguments' names (subset of "
 "argnames). If True the list contains all names from the argnames. Each "
-"argvalue corresponding to an argname in this list will be passed as request."
-"param to its respective argname fixture function so that it can perform more "
-"expensive setups during the setup phase of a test rather than at collection "
-"time."
+"argvalue corresponding to an argname in this list will be passed as "
+"request.param to its respective argname fixture function so that it can "
+"perform more expensive setups during the setup phase of a test rather than "
+"at collection time."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
@@ -1209,8 +1209,8 @@ msgstr ""
 
 #: ../../../doc/en/reference.rst:205
 msgid ""
-"Condition for marking the test function as xfail (``True/False`` or a :ref:"
-"`condition string <string conditions>`)."
+"Condition for marking the test function as xfail (``True/False`` or "
+"a :ref:`condition string <string conditions>`)."
 msgstr ""
 
 #: ../../../doc/en/reference.rst:208
@@ -1282,8 +1282,9 @@ msgstr ""
 msgid ""
 "Will create and attach a :class:`Mark <_pytest.mark.structures.Mark>` object "
 "to the collected :class:`Item <_pytest.nodes.Item>`, which can then be "
-"accessed by fixtures or hooks with :meth:`Node.iter_markers <_pytest.nodes."
-"Node.iter_markers>`. The ``mark`` object will have the following attributes:"
+"accessed by fixtures or hooks with :meth:`Node.iter_markers "
+"<_pytest.nodes.Node.iter_markers>`. The ``mark`` object will have the "
+"following attributes:"
 msgstr ""
 
 #: ../../../doc/en/reference.rst:240
@@ -1438,8 +1439,8 @@ msgid ""
 "function. If a fixture is used in the same module in which it is defined, "
 "the function name of the fixture will be shadowed by the function arg that "
 "requests the fixture; one way to resolve this is to name the decorated "
-"function ``fixture_<fixturename>`` and then use ``@pytest."
-"fixture(name='<fixturename>')``."
+"function ``fixture_<fixturename>`` and then use "
+"``@pytest.fixture(name='<fixturename>')``."
 msgstr ""
 
 #: ../../../doc/en/reference.rst:290
@@ -1553,8 +1554,9 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/capture.py:docstring
 #: of _pytest.capture.CaptureFixture:1
 msgid ""
-"Object returned by :py:func:`capsys`, :py:func:`capsysbinary`, :py:func:"
-"`capfd` and :py:func:`capfdbinary` fixtures."
+"Object returned "
+"by :py:func:`capsys`, :py:func:`capsysbinary`, :py:func:`capfd` "
+"and :py:func:`capfdbinary` fixtures."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/capture.py:docstring
@@ -2292,10 +2294,10 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
 #: of _pytest.pytester.Testdir:11
 msgid ""
-"A list of plugins to use with :py:meth:`parseconfig` and :py:meth:"
-"`runpytest`.  Initially this is an empty list but plugins can be added to "
-"the list.  The type of items to add to the list depends on the method using "
-"them so refer to them for details."
+"A list of plugins to use with :py:meth:`parseconfig` "
+"and :py:meth:`runpytest`.  Initially this is an empty list but plugins can "
+"be added to the list.  The type of items to add to the list depends on the "
+"method using them so refer to them for details."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
@@ -2459,8 +2461,8 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
 #: of _pytest.pytester.Testdir.getnode:3
 msgid ""
-":py:class:`_pytest.config.Config` instance, see :py:meth:`parseconfig` and :"
-"py:meth:`parseconfigure` to create the configuration"
+":py:class:`_pytest.config.Config` instance, see :py:meth:`parseconfig` "
+"and :py:meth:`parseconfigure` to create the configuration"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
@@ -2618,8 +2620,8 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
 #: of _pytest.pytester.Testdir.parseconfigure:3
 msgid ""
-"This returns a new :py:class:`_pytest.config.Config` instance like :py:meth:"
-"`parseconfig`, but also calls the pytest_configure hook."
+"This returns a new :py:class:`_pytest.config.Config` instance "
+"like :py:meth:`parseconfig`, but also calls the pytest_configure hook."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
@@ -2744,8 +2746,8 @@ msgstr ""
 #: of _pytest.pytester.Testdir.run:6
 #: _pytest.pytester.Testdir.runpytest_subprocess:10
 msgid ""
-"the period in seconds after which to timeout and raise :py:class:`Testdir."
-"TimeoutExpired`"
+"the period in seconds after which to timeout and "
+"raise :py:class:`Testdir.TimeoutExpired`"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
@@ -2886,8 +2888,8 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
 #: of _pytest.pytester.LineMatcher.fnmatch_lines_random:1
 msgid ""
-"Check lines exist in the output in any order (using :func:`python:fnmatch."
-"fnmatch`)."
+"Check lines exist in the output in any order "
+"(using :func:`python:fnmatch.fnmatch`)."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
@@ -2956,8 +2958,8 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
 #: of _pytest.pytester.LineMatcher.no_fnmatch_line:1
 msgid ""
-"Ensure captured lines do not match the given pattern, using ``fnmatch."
-"fnmatch``."
+"Ensure captured lines do not match the given pattern, using "
+"``fnmatch.fnmatch``."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/pytester.py:docstring
@@ -3290,9 +3292,9 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
 #: of _pytest.hookspec.pytest_addoption:10
 msgid ""
-"To add command line options, call :py:func:`parser.addoption(...) <_pytest."
-"config.argparsing.Parser.addoption>`. To add ini-file values call :py:func:"
-"`parser.addini(...) <_pytest.config.argparsing.Parser.addini>`."
+"To add command line options, call :py:func:`parser.addoption(...) "
+"<_pytest.config.argparsing.Parser.addoption>`. To add ini-file values "
+"call :py:func:`parser.addini(...) <_pytest.config.argparsing.Parser.addini>`."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
@@ -3306,8 +3308,8 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
 #: of _pytest.hookspec.pytest_addoption:20
 msgid ""
-"Options can later be accessed through the :py:class:`config <_pytest.config."
-"Config>` object, respectively:"
+"Options can later be accessed through the :py:class:`config "
+"<_pytest.config.Config>` object, respectively:"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
@@ -3327,8 +3329,8 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
 #: of _pytest.hookspec.pytest_addoption:29
 msgid ""
-"The config object is passed around on many internal objects via the ``."
-"config`` attribute or can be retrieved as the ``pytestconfig`` fixture."
+"The config object is passed around on many internal objects via the "
+"``.config`` attribute or can be retrieved as the ``pytestconfig`` fixture."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
@@ -3412,8 +3414,8 @@ msgstr ""
 
 #: ../../../doc/en/reference.rst:649
 msgid ""
-"All runtest related hooks receive a :py:class:`pytest.Item <_pytest.main."
-"Item>` object."
+"All runtest related hooks receive a :py:class:`pytest.Item "
+"<_pytest.main.Item>` object."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
@@ -3459,8 +3461,9 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
 #: of _pytest.hookspec.pytest_runtest_logstart:3
 msgid ""
-"This hook will be called **before** :func:`pytest_runtest_setup`, :func:"
-"`pytest_runtest_call` and :func:`pytest_runtest_teardown` hooks."
+"This hook will be called "
+"**before** :func:`pytest_runtest_setup`, :func:`pytest_runtest_call` "
+"and :func:`pytest_runtest_teardown` hooks."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
@@ -3483,8 +3486,9 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
 #: of _pytest.hookspec.pytest_runtest_logfinish:3
 msgid ""
-"This hook will be called **after** :func:`pytest_runtest_setup`, :func:"
-"`pytest_runtest_call` and :func:`pytest_runtest_teardown` hooks."
+"This hook will be called "
+"**after** :func:`pytest_runtest_setup`, :func:`pytest_runtest_call` "
+"and :func:`pytest_runtest_teardown` hooks."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
@@ -3514,9 +3518,9 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
 #: of _pytest.hookspec.pytest_runtest_makereport:1
 msgid ""
-"return a :py:class:`_pytest.runner.TestReport` object for the given :py:"
-"class:`pytest.Item <_pytest.main.Item>` and :py:class:`_pytest.runner."
-"CallInfo`."
+"return a :py:class:`_pytest.runner.TestReport` object for the "
+"given :py:class:`pytest.Item <_pytest.main.Item>` "
+"and :py:class:`_pytest.runner.CallInfo`."
 msgstr ""
 
 #: ../../../doc/en/reference.rst:660
@@ -3766,8 +3770,8 @@ msgstr ""
 #: of _pytest.hookspec.pytest_fixture_setup:8
 msgid ""
 "If the fixture function returns None, other implementations of this hook "
-"function will continue to be called, according to the behavior of the :ref:"
-"`firstresult` option."
+"function will continue to be called, according to the behavior of "
+"the :ref:`firstresult` option."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
@@ -3786,9 +3790,9 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
 #: of _pytest.hookspec.pytest_warning_captured:3
 msgid ""
-"The captured warning. This is the same object produced by :py:func:`warnings."
-"catch_warnings`, and contains the same attributes as the parameters of :py:"
-"func:`warnings.showwarning`."
+"The captured warning. This is the same object produced "
+"by :py:func:`warnings.catch_warnings`, and contains the same attributes as "
+"the parameters of :py:func:`warnings.showwarning`."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/hookspec.py:docstring
@@ -4002,8 +4006,8 @@ msgstr ""
 
 #: ../../../doc/en/reference.rst:739
 msgid ""
-"Full reference to objects accessible from :ref:`fixtures <fixture>` or :ref:"
-"`hooks <hook-reference>`."
+"Full reference to objects accessible from :ref:`fixtures <fixture>` "
+"or :ref:`hooks <hook-reference>`."
 msgstr ""
 
 #: ../../../doc/en/reference.rst:743
@@ -4172,9 +4176,9 @@ msgstr ""
 #: of _pytest.config.Config.getini:1
 msgid ""
 "return configuration value from an :ref:`ini file <inifiles>`. If the "
-"specified name hasn't been registered through a prior :py:func:`parser."
-"addini <_pytest.config.argparsing.Parser.addini>` call (usually from a "
-"plugin), a ValueError is raised."
+"specified name hasn't been registered through a "
+"prior :py:func:`parser.addini <_pytest.config.argparsing.Parser.addini>` "
+"call (usually from a plugin), a ValueError is raised."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config/__init__.py:docstring
@@ -4287,10 +4291,10 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/_code/code.py:docstring
 #: of _pytest._code.code.ExceptionInfo.exconly:3
 msgid ""
-"when 'tryshort' resolves to True, and the exception is a _pytest._code."
-"_AssertionError, only the actual exception part of the exception "
-"representation is returned (so 'AssertionError: ' is removed from the "
-"beginning)"
+"when 'tryshort' resolves to True, and the exception is a "
+"_pytest._code._AssertionError, only the actual exception part of the "
+"exception representation is returned (so 'AssertionError: ' is removed from "
+"the beginning)"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/_code/code.py:docstring
@@ -4659,10 +4663,10 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/python.py:docstring
 #: of _pytest.python.Metafunc:1
 msgid ""
-"Metafunc objects are passed to the :func:`pytest_generate_tests <_pytest."
-"hookspec.pytest_generate_tests>` hook. They help to inspect a test function "
-"and to generate tests according to test configuration or values specified in "
-"the class or module where a test function is defined."
+"Metafunc objects are passed to the :func:`pytest_generate_tests "
+"<_pytest.hookspec.pytest_generate_tests>` hook. They help to inspect a test "
+"function and to generate tests according to test configuration or values "
+"specified in the class or module where a test function is defined."
 msgstr ""
 
 #: ../../../doc/docstring of _pytest.python.Metafunc.config:1
@@ -4934,9 +4938,9 @@ msgstr ""
 #: of _pytest.config.argparsing.Parser.getgroup:7
 msgid ""
 "The returned group object has an ``addoption`` method with the same "
-"signature as :py:func:`parser.addoption <_pytest.config.argparsing.Parser."
-"addoption>` but will be shown in the respective group in the output of "
-"``pytest. --help``."
+"signature as :py:func:`parser.addoption "
+"<_pytest.config.argparsing.Parser.addoption>` but will be shown in the "
+"respective group in the output of ``pytest. --help``."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config/argparsing.py:docstring
@@ -5023,8 +5027,8 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.8/site-packages/_pytest/config/argparsing.py:docstring
 #: of _pytest.config.argparsing.Parser.addini:8
 msgid ""
-"The value of ini-variables can be retrieved via a call to :py:func:`config."
-"getini(name) <_pytest.config.Config.getini>`."
+"The value of ini-variables can be retrieved via a call "
+"to :py:func:`config.getini(name) <_pytest.config.Config.getini>`."
 msgstr ""
 
 #: ../../../doc/en/reference.rst:858
@@ -5041,12 +5045,13 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.8/site-packages/pluggy/manager.py:docstring
 #: of pluggy.manager.PluginManager:4
 msgid ""
-"You can register new hooks by calling :py:meth:"
-"`add_hookspecs(module_or_class) <.PluginManager.add_hookspecs>`. You can "
-"register plugin objects (which contain hooks) by calling :py:meth:"
-"`register(plugin) <.PluginManager.register>`.  The :py:class:`."
-"PluginManager` is initialized with a prefix that is searched for in the "
-"names of the dict of registered plugin objects."
+"You can register new hooks by "
+"calling :py:meth:`add_hookspecs(module_or_class) "
+"<.PluginManager.add_hookspecs>`. You can register plugin objects (which "
+"contain hooks) by calling :py:meth:`register(plugin) "
+"<.PluginManager.register>`.  The :py:class:`.PluginManager` is initialized "
+"with a prefix that is searched for in the names of the dict of registered "
+"plugin objects."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.8/site-packages/pluggy/manager.py:docstring
@@ -5105,10 +5110,10 @@ msgstr ""
 #: of pluggy.manager.PluginManager.get_canonical_name:1
 msgid ""
 "Return canonical name for a plugin object. Note that a plugin may be "
-"registered under a different name which was specified by the caller of :py:"
-"meth:`register(plugin, name) <.PluginManager.register>`. To obtain the name "
-"of an registered plugin use :py:meth:`get_name(plugin) <.PluginManager."
-"get_name>` instead."
+"registered under a different name which was specified by the caller "
+"of :py:meth:`register(plugin, name) <.PluginManager.register>`. To obtain "
+"the name of an registered plugin use :py:meth:`get_name(plugin) "
+"<.PluginManager.get_name>` instead."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.8/site-packages/pluggy/manager.py:docstring
@@ -5130,8 +5135,8 @@ msgstr ""
 #: of pluggy.manager.PluginManager.check_pending:1
 msgid ""
 "Verify that all hooks which have not been verified against a hook "
-"specification are optional, otherwise raise :py:class:`."
-"PluginValidationError`."
+"specification are optional, otherwise "
+"raise :py:class:`.PluginValidationError`."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.8/site-packages/pluggy/manager.py:docstring
@@ -5484,8 +5489,8 @@ msgstr ""
 
 #: ../../../doc/en/reference.rst:937
 msgid ""
-"pytest_plugins = (\"myapp.testsupport.tools\", \"myapp.testsupport."
-"regression\")"
+"pytest_plugins = (\"myapp.testsupport.tools\", "
+"\"myapp.testsupport.regression\")"
 msgstr ""
 
 #: ../../../doc/en/reference.rst:943
@@ -5584,8 +5589,8 @@ msgstr "PYTEST_CURRENT_TEST"
 #: ../../../doc/en/reference.rst:1004
 msgid ""
 "This is not meant to be set by users, but is set by pytest internally with "
-"the name of the current test so other processes can inspect it, see :ref:"
-"`pytest current test env` for more information."
+"the name of the current test so other processes can inspect it, "
+"see :ref:`pytest current test env` for more information."
 msgstr ""
 
 #: ../../../doc/en/reference.rst:1008
@@ -5715,8 +5720,8 @@ msgstr ""
 
 #: ../../../doc/en/reference.rst:1107
 msgid ""
-"One or more doctest flag names from the standard ``doctest`` module. :doc:"
-"`See how pytest handles doctests <doctest>`."
+"One or more doctest flag names from the standard ``doctest`` "
+"module. :doc:`See how pytest handles doctests <doctest>`."
 msgstr ""
 
 #: ../../../doc/en/reference.rst:1115
@@ -5747,8 +5752,8 @@ msgstr ""
 #: ../../../doc/en/reference.rst:1129
 msgid ""
 "The default value of this option is planned to change to ``xfail`` in future "
-"releases as this is considered less error prone, see `#3155 <https://github."
-"com/pytest-dev/pytest/issues/3155>`_ for more details."
+"releases as this is considered less error prone, see `#3155 <https://"
+"github.com/pytest-dev/pytest/issues/3155>`_ for more details."
 msgstr ""
 
 #: ../../../doc/en/reference.rst:1136
@@ -6160,9 +6165,9 @@ msgstr ""
 
 #: ../../../doc/en/reference.rst:1473
 msgid ""
-"Default patterns are ``'.*', 'build', 'dist', 'CVS', '_darcs', '{arch}', '*."
-"egg', 'venv'``. Setting a ``norecursedirs`` replaces the default.  Here is "
-"an example of how to avoid certain directories:"
+"Default patterns are ``'.*', 'build', 'dist', 'CVS', '_darcs', '{arch}', "
+"'*.egg', 'venv'``. Setting a ``norecursedirs`` replaces the default.  Here "
+"is an example of how to avoid certain directories:"
 msgstr ""
 
 #: ../../../doc/en/reference.rst:1477
@@ -6260,9 +6265,9 @@ msgstr ""
 
 #: ../../../doc/en/reference.rst:1551
 msgid ""
-"Note that this has no effect on methods that live on a ``unittest ."
-"TestCase`` derived class, as ``unittest``'s own collection framework is used "
-"to collect those tests."
+"Note that this has no effect on methods that live on a "
+"``unittest .TestCase`` derived class, as ``unittest``'s own collection "
+"framework is used to collect those tests."
 msgstr ""
 
 #: ../../../doc/en/reference.rst:1555
@@ -6310,8 +6315,8 @@ msgstr ""
 #: ../../../doc/en/reference.rst:1592
 msgid ""
 "If set to ``True``, tests marked with ``@pytest.mark.xfail`` that actually "
-"succeed will by default fail the test suite. For more information, see :ref:"
-"`xfail strict tutorial`."
+"succeed will by default fail the test suite. For more information, "
+"see :ref:`xfail strict tutorial`."
 msgstr ""
 
 #: ../../../doc/en/reference.rst:1597

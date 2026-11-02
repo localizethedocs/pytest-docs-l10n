@@ -178,8 +178,8 @@ msgid ""
 "This will run tests which contain names that match the given *string "
 "expression* (case-insensitive), which can include Python operators that use "
 "filenames, class names and function names as variables. The example above "
-"will run ``TestMyClass.test_something``  but not ``TestMyClass."
-"test_method_simple``."
+"will run ``TestMyClass.test_something``  but not "
+"``TestMyClass.test_method_simple``."
 msgstr ""
 
 #: ../../../doc/en/usage.rst:103
@@ -555,10 +555,11 @@ msgstr ""
 
 #: ../../../doc/en/usage.rst:368
 msgid ""
-"Note that on any failure the exception information is stored on ``sys."
-"last_value``, ``sys.last_type`` and ``sys.last_traceback``. In interactive "
-"use, this allows one to drop into postmortem debugging with any debug tool. "
-"One can also manually access the exception information, for example::"
+"Note that on any failure the exception information is stored on "
+"``sys.last_value``, ``sys.last_type`` and ``sys.last_traceback``. In "
+"interactive use, this allows one to drop into postmortem debugging with any "
+"debug tool. One can also manually access the exception information, for "
+"example::"
 msgstr ""
 
 #: ../../../doc/en/usage.rst:374
@@ -594,9 +595,9 @@ msgstr ""
 
 #: ../../../doc/en/usage.rst:401
 msgid ""
-"To set a breakpoint in your code use the native Python ``import pdb;pdb."
-"set_trace()`` call in your code and pytest automatically disables its output "
-"capture for that test:"
+"To set a breakpoint in your code use the native Python ``import "
+"pdb;pdb.set_trace()`` call in your code and pytest automatically disables "
+"its output capture for that test:"
 msgstr ""
 
 #: ../../../doc/en/usage.rst:404
@@ -679,8 +680,8 @@ msgstr ""
 
 #: ../../../doc/en/usage.rst:449
 msgid ""
-"The module is automatically enabled for pytest runs, unless the ``-p no:"
-"faulthandler`` is given on the command-line."
+"The module is automatically enabled for pytest runs, unless the ``-p "
+"no:faulthandler`` is given on the command-line."
 msgstr ""
 
 #: ../../../doc/en/usage.rst:452
@@ -705,9 +706,9 @@ msgstr ""
 
 #: ../../../doc/en/usage.rst:465
 msgid ""
-"The ``--faulthandler-timeout`` command-line option has become the :confval:"
-"`faulthandler_timeout` configuration option. It can still be configured from "
-"the command-line using ``-o faulthandler_timeout=X``."
+"The ``--faulthandler-timeout`` command-line option has become "
+"the :confval:`faulthandler_timeout` configuration option. It can still be "
+"configured from the command-line using ``-o faulthandler_timeout=X``."
 msgstr ""
 
 #: ../../../doc/en/usage.rst:471
@@ -745,10 +746,11 @@ msgid ""
 "JUnit XML specification seems to indicate that ``\"time\"`` attribute should "
 "report total test execution times, including setup and teardown (`1 <http://"
 "windyroad.com.au/dl/Open%20Source/JUnit.xsd>`_, `2 <https://www.ibm.com/"
-"support/knowledgecenter/en/SSQ2R2_14.1.0/com.ibm.rsar.analysis.codereview."
-"cobol.doc/topics/cac_useresults_junit.html>`_). It is the default pytest "
-"behavior. To report just call durations instead, configure the "
-"``junit_duration_report`` option like this:"
+"support/knowledgecenter/en/SSQ2R2_14.1.0/"
+"com.ibm.rsar.analysis.codereview.cobol.doc/topics/"
+"cac_useresults_junit.html>`_). It is the default pytest behavior. To report "
+"just call durations instead, configure the ``junit_duration_report`` option "
+"like this:"
 msgstr ""
 
 #: ../../../doc/en/usage.rst:500
@@ -1021,8 +1023,8 @@ msgstr ""
 
 #: ../../../doc/en/usage.rst:701
 msgid ""
-"See `the deprecation docs <https://docs.pytest.org/en/latest/deprecations."
-"html#result-log-result-log>`__ for more information."
+"See `the deprecation docs <https://docs.pytest.org/en/latest/"
+"deprecations.html#result-log-result-log>`__ for more information."
 msgstr ""
 
 #: ../../../doc/en/usage.rst:709

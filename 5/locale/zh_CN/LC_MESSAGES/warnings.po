@@ -379,8 +379,9 @@ msgstr ""
 
 #: ../../../doc/en/warnings.rst:289
 msgid ""
-"The function also returns a list of all raised warnings (as ``warnings."
-"WarningMessage`` objects), which you can query for additional information:"
+"The function also returns a list of all raised warnings (as "
+"``warnings.WarningMessage`` objects), which you can query for additional "
+"information:"
 msgstr ""
 
 #: ../../../doc/en/warnings.rst:293
@@ -396,8 +397,8 @@ msgstr ""
 
 #: ../../../doc/en/warnings.rst:303
 msgid ""
-"Alternatively, you can examine raised warnings in detail using the :ref:"
-"`recwarn <recwarn>` fixture (see below)."
+"Alternatively, you can examine raised warnings in detail using "
+"the :ref:`recwarn <recwarn>` fixture (see below)."
 msgstr ""
 
 #: ../../../doc/en/warnings.rst:307

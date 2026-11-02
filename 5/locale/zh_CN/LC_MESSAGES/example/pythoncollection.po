@@ -91,8 +91,9 @@ msgid ""
 "deselect=item`` option. For example, say ``tests/foobar/test_foobar_01.py`` "
 "contains ``test_a`` and ``test_b``. You can run all of the tests within "
 "``tests/`` *except* for ``tests/foobar/test_foobar_01.py::test_a`` by "
-"invoking ``pytest`` with ``--deselect tests/foobar/test_foobar_01.py::"
-"test_a``. ``pytest`` allows multiple ``--deselect`` options."
+"invoking ``pytest`` with ``--deselect tests/foobar/"
+"test_foobar_01.py::test_a``. ``pytest`` allows multiple ``--deselect`` "
+"options."
 msgstr ""
 
 #: ../../../doc/en/example/pythoncollection.rst:59
@@ -178,9 +179,9 @@ msgstr ""
 
 #: ../../../doc/en/example/pythoncollection.rst:116
 msgid ""
-"You can configure different naming conventions by setting the :confval:"
-"`python_files`, :confval:`python_classes` and :confval:`python_functions` "
-"configuration options. Here is an example:"
+"You can configure different naming conventions by setting "
+"the :confval:`python_files`, :confval:`python_classes` "
+"and :confval:`python_functions` configuration options. Here is an example:"
 msgstr ""
 
 #: ../../../doc/en/example/pythoncollection.rst:121
@@ -197,9 +198,9 @@ msgstr ""
 
 #: ../../../doc/en/example/pythoncollection.rst:132
 msgid ""
-"This would make ``pytest`` look for tests in files that match the ``check_* ."
-"py`` glob-pattern, ``Check`` prefixes in classes, and functions and methods "
-"that match ``*_check``. For example, if we have:"
+"This would make ``pytest`` look for tests in files that match the "
+"``check_* .py`` glob-pattern, ``Check`` prefixes in classes, and functions "
+"and methods that match ``*_check``. For example, if we have:"
 msgstr ""
 
 #: ../../../doc/en/example/pythoncollection.rst:136
@@ -397,8 +398,8 @@ msgstr ""
 
 #: ../../../doc/en/example/pythoncollection.rst:288
 msgid ""
-"If you run with a Python 3 interpreter both the one test and the ``setup."
-"py`` file will be left out:"
+"If you run with a Python 3 interpreter both the one test and the "
+"``setup.py`` file will be left out:"
 msgstr ""
 
 #: ../../../doc/en/example/pythoncollection.rst:291
