@@ -74,9 +74,9 @@ msgstr ""
 
 #: ../../../doc/en/parametrize.rst:51
 msgid ""
-"Here, the ``@parametrize`` decorator defines three different ``(test_input,"
-"expected)`` tuples so that the ``test_eval`` function will run three times "
-"using them in turn::"
+"Here, the ``@parametrize`` decorator defines three different "
+"``(test_input,expected)`` tuples so that the ``test_eval`` function will run "
+"three times using them in turn::"
 msgstr ""
 
 #: ../../../doc/en/parametrize.rst:55
@@ -291,8 +291,8 @@ msgstr ""
 
 #: ../../../doc/en/parametrize.rst:195
 msgid ""
-"If you don't specify a stringinput it will be skipped because ``metafunc."
-"parametrize()`` will be called with an empty parameter list::"
+"If you don't specify a stringinput it will be skipped because "
+"``metafunc.parametrize()`` will be called with an empty parameter list::"
 msgstr ""
 
 #: ../../../doc/en/parametrize.rst:199

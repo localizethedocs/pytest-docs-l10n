@@ -106,8 +106,8 @@ msgstr ""
 
 #: ../../../doc/en/tmpdir.rst:75
 msgid ""
-"It is intended to replace ``tmpdir_factory``, and returns :class:`pathlib."
-"Path` instances."
+"It is intended to replace ``tmpdir_factory``, and "
+"returns :class:`pathlib.Path` instances."
 msgstr ""
 
 #: ../../../doc/en/tmpdir.rst:79

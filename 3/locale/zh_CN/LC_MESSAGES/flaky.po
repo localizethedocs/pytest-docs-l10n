@@ -214,8 +214,9 @@ msgstr ""
 
 #: ../../../doc/en/flaky.rst:89
 msgid ""
-"Mark Lapierre discusses the `Pros and Cons of Quarantined Tests <https://dev."
-"to/mlapierre/pros-and-cons-of-quarantined-tests-2emj>`_ in a post from 2018."
+"Mark Lapierre discusses the `Pros and Cons of Quarantined Tests <https://"
+"dev.to/mlapierre/pros-and-cons-of-quarantined-tests-2emj>`_ in a post from "
+"2018."
 msgstr ""
 
 #: ../../../doc/en/flaky.rst:94
@@ -225,9 +226,9 @@ msgstr ""
 #: ../../../doc/en/flaky.rst:96
 msgid ""
 "Azure Pipelines (the Azure cloud CI/CD tool, formerly Visual Studio Team "
-"Services or VSTS) has a feature to `identify flaky tests <https://docs."
-"microsoft.com/en-us/azure/devops/release-notes/2017/dec-11-vsts#identify-"
-"flaky-tests>`_ and rerun failed tests."
+"Services or VSTS) has a feature to `identify flaky tests <https://"
+"docs.microsoft.com/en-us/azure/devops/release-notes/2017/dec-11-"
+"vsts#identify-flaky-tests>`_ and rerun failed tests."
 msgstr ""
 
 #: ../../../doc/en/flaky.rst:101
@@ -300,9 +301,9 @@ msgstr ""
 
 #: ../../../doc/en/flaky.rst:119
 msgid ""
-"`How we approach testing VSTS to enable continuous delivery <https://blogs."
-"msdn.microsoft.com/bharry/2017/06/28/testing-in-a-cloud-delivery-cadence/>`_ "
-"by Brian Harry MS, 2017"
+"`How we approach testing VSTS to enable continuous delivery <https://"
+"blogs.msdn.microsoft.com/bharry/2017/06/28/testing-in-a-cloud-delivery-"
+"cadence/>`_ by Brian Harry MS, 2017"
 msgstr ""
 
 #: ../../../doc/en/flaky.rst:120
@@ -318,13 +319,14 @@ msgstr ""
 
 #: ../../../doc/en/flaky.rst:124
 msgid ""
-"`Flaky Tests at Google and How We Mitigate Them <https://testing.googleblog."
-"com/2016/05/flaky-tests-at-google-and-how-we.html>`_ by John Micco, 2016"
+"`Flaky Tests at Google and How We Mitigate Them <https://"
+"testing.googleblog.com/2016/05/flaky-tests-at-google-and-how-we.html>`_ by "
+"John Micco, 2016"
 msgstr ""
 
 #: ../../../doc/en/flaky.rst:125
 msgid ""
 "`Where do Google's flaky tests come from? <https://docs.google.com/document/"
-"d/1mZ0-Kc97DI_F3tf_GBW_NB_aqka-P1jVOsFfufxqUUM/edit#heading=h."
-"ec0r4fypsleh>`_  by Jeff Listfield, 2017"
+"d/1mZ0-Kc97DI_F3tf_GBW_NB_aqka-P1jVOsFfufxqUUM/"
+"edit#heading=h.ec0r4fypsleh>`_  by Jeff Listfield, 2017"
 msgstr ""

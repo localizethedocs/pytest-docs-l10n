@@ -74,10 +74,10 @@ msgstr ""
 
 #: ../../../doc/en/goodpractices.rst:37
 msgid ""
-"If no arguments are specified then collection starts from :confval:"
-"`testpaths` (if configured) or the current directory. Alternatively, command "
-"line arguments can be used in any combination of directories, file names or "
-"node ids."
+"If no arguments are specified then collection starts "
+"from :confval:`testpaths` (if configured) or the current directory. "
+"Alternatively, command line arguments can be used in any combination of "
+"directories, file names or node ids."
 msgstr ""
 
 #: ../../../doc/en/goodpractices.rst:40
@@ -112,8 +112,8 @@ msgstr ""
 
 #: ../../../doc/en/goodpractices.rst:49
 msgid ""
-"Within Python modules, ``pytest`` also discovers tests using the standard :"
-"ref:`unittest.TestCase <unittest.TestCase>` subclassing technique."
+"Within Python modules, ``pytest`` also discovers tests using the "
+"standard :ref:`unittest.TestCase <unittest.TestCase>` subclassing technique."
 msgstr ""
 
 #: ../../../doc/en/goodpractices.rst:54
@@ -186,14 +186,14 @@ msgstr ""
 
 #: ../../../doc/en/goodpractices.rst:99
 msgid ""
-"Now pytest will load the modules as ``tests.foo.test_view`` and ``tests.bar."
-"test_view``, allowing you to have modules with the same name. But now this "
-"introduces a subtle problem: in order to load the test modules from the "
-"``tests`` directory, pytest prepends the root of the repository to ``sys."
-"path``, which adds the side-effect that now ``mypkg`` is also importable. "
-"This is problematic if you are using a tool like `tox`_ to test your package "
-"in a virtual environment, because you want to test the *installed* version "
-"of your package, not the local code from the repository."
+"Now pytest will load the modules as ``tests.foo.test_view`` and "
+"``tests.bar.test_view``, allowing you to have modules with the same name. "
+"But now this introduces a subtle problem: in order to load the test modules "
+"from the ``tests`` directory, pytest prepends the root of the repository to "
+"``sys.path``, which adds the side-effect that now ``mypkg`` is also "
+"importable. This is problematic if you are using a tool like `tox`_ to test "
+"your package in a virtual environment, because you want to test the "
+"*installed* version of your package, not the local code from the repository."
 msgstr ""
 
 #: ../../../doc/en/goodpractices.rst:106

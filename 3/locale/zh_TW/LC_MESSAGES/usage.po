@@ -370,10 +370,11 @@ msgstr ""
 
 #: ../../../doc/en/usage.rst:205
 msgid ""
-"Note that on any failure the exception information is stored on ``sys."
-"last_value``, ``sys.last_type`` and ``sys.last_traceback``. In interactive "
-"use, this allows one to drop into postmortem debugging with any debug tool. "
-"One can also manually access the exception information, for example::"
+"Note that on any failure the exception information is stored on "
+"``sys.last_value``, ``sys.last_type`` and ``sys.last_traceback``. In "
+"interactive use, this allows one to drop into postmortem debugging with any "
+"debug tool. One can also manually access the exception information, for "
+"example::"
 msgstr ""
 
 #: ../../../doc/en/usage.rst:211
@@ -409,9 +410,9 @@ msgstr ""
 
 #: ../../../doc/en/usage.rst:236
 msgid ""
-"To set a breakpoint in your code use the native Python ``import pdb;pdb."
-"set_trace()`` call in your code and pytest automatically disables its output "
-"capture for that test:"
+"To set a breakpoint in your code use the native Python ``import "
+"pdb;pdb.set_trace()`` call in your code and pytest automatically disables "
+"its output capture for that test:"
 msgstr ""
 
 #: ../../../doc/en/usage.rst:239
@@ -701,8 +702,8 @@ msgstr ""
 #: ../../../doc/en/usage.rst:432
 msgid ""
 "If you want to add a properties node in the testsuite level, which may "
-"contains properties that are relevant to all testcases you can use ``LogXML."
-"add_global_properties``"
+"contains properties that are relevant to all testcases you can use "
+"``LogXML.add_global_properties``"
 msgstr ""
 
 #: ../../../doc/en/usage.rst:435

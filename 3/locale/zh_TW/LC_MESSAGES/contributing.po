@@ -419,8 +419,8 @@ msgstr ""
 
 #: ../../../CONTRIBUTING.rst:217
 msgid ""
-"If you need some help with Git, follow this quick start guide: https://git."
-"wiki.kernel.org/index.php/QuickStart"
+"If you need some help with Git, follow this quick start guide: https://"
+"git.wiki.kernel.org/index.php/QuickStart"
 msgstr ""
 
 #: ../../../CONTRIBUTING.rst:220
@@ -556,8 +556,8 @@ msgstr ""
 #: ../../../CONTRIBUTING.rst:286
 msgid ""
 "Writing tests for plugins or for pytest itself is often done using the "
-"`testdir fixture <https://docs.pytest.org/en/latest/reference."
-"html#testdir>`_, as a \"black-box\" test."
+"`testdir fixture <https://docs.pytest.org/en/latest/"
+"reference.html#testdir>`_, as a \"black-box\" test."
 msgstr ""
 
 #: ../../../CONTRIBUTING.rst:288

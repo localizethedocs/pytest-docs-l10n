@@ -72,8 +72,8 @@ msgid ""
 "will then search upwards until it can find the last folder which still "
 "contains an ``__init__.py`` file in order to find the package *root* (in "
 "this case ``foo/``). To load the module, it will insert ``root/``  to the "
-"front of ``sys.path`` (if not there already) in order to load ``test_foo."
-"py`` as the *module* ``foo.bar.tests.test_foo``."
+"front of ``sys.path`` (if not there already) in order to load "
+"``test_foo.py`` as the *module* ``foo.bar.tests.test_foo``."
 msgstr ""
 
 #: ../../../doc/en/pythonpath.rst:38

@@ -185,9 +185,10 @@ msgstr ""
 
 #: ../../../doc/en/historical-notes.rst:131
 msgid ""
-"The evaluation of a condition string in ``pytest.mark."
-"skipif(conditionstring)`` or ``pytest.mark.xfail(conditionstring)`` takes "
-"place in a namespace dictionary which is constructed as follows:"
+"The evaluation of a condition string in "
+"``pytest.mark.skipif(conditionstring)`` or "
+"``pytest.mark.xfail(conditionstring)`` takes place in a namespace dictionary "
+"which is constructed as follows:"
 msgstr ""
 
 #: ../../../doc/en/historical-notes.rst:135
@@ -255,8 +256,8 @@ msgstr ""
 
 #: ../../../doc/en/historical-notes.rst:175
 msgid ""
-"This is no longer needed and one can use the native ``import pdb;pdb."
-"set_trace()`` call directly."
+"This is no longer needed and one can use the native ``import "
+"pdb;pdb.set_trace()`` call directly."
 msgstr ""
 
 #: ../../../doc/en/historical-notes.rst:177

@@ -180,8 +180,8 @@ msgid ""
 "introduce registration for \"pytest.mark.*\" helpers via ini-files or "
 "through plugin hooks.  Also introduce a \"--strict\" option which will treat "
 "unregistered markers as errors allowing to avoid typos and maintain a well "
-"described set of markers for your test suite.  See examples at http://pytest."
-"org/latest/mark.html and its links."
+"described set of markers for your test suite.  See examples at http://"
+"pytest.org/latest/mark.html and its links."
 msgstr ""
 
 #: ../../../doc/en/announce/release-2.2.0.rst:83
