@@ -180,8 +180,8 @@ msgstr ""
 
 #: ../../../doc/en/logging.rst:123
 msgid ""
-"For all the available attributes of the log records see the ``logging."
-"LogRecord`` class."
+"For all the available attributes of the log records see the "
+"``logging.LogRecord`` class."
 msgstr ""
 
 #: ../../../doc/en/logging.rst:126
@@ -241,8 +241,8 @@ msgid ""
 "        ]\n"
 "        if messages:\n"
 "            pytest.fail(\n"
-"                \"warning messages encountered during testing: {}\"."
-"format(messages)\n"
+"                \"warning messages encountered during testing: {}"
+"\".format(messages)\n"
 "            )"
 msgstr ""
 
@@ -377,12 +377,13 @@ msgstr ""
 
 #: ../../../doc/en/logging.rst:251
 msgid ""
-"Log levels are no longer changed unless explicitly requested by the :confval:"
-"`log_level` configuration or ``--log-level`` command-line options. This "
-"allows users to configure logger objects themselves. Setting :confval:"
-"`log_level` will set the level that is captured globally so if a specific "
-"test requires a lower level than this, use the ``caplog.set_level()`` "
-"functionality otherwise that test will be prone to failure."
+"Log levels are no longer changed unless explicitly requested by "
+"the :confval:`log_level` configuration or ``--log-level`` command-line "
+"options. This allows users to configure logger objects themselves. "
+"Setting :confval:`log_level` will set the level that is captured globally so "
+"if a specific test requires a lower level than this, use the "
+"``caplog.set_level()`` functionality otherwise that test will be prone to "
+"failure."
 msgstr ""
 
 #: ../../../doc/en/logging.rst:256

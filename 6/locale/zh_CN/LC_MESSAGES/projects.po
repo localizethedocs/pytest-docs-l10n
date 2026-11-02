@@ -23,8 +23,8 @@ msgstr ""
 
 #: ../../../doc/en/projects.rst:23
 msgid ""
-"Here are some examples of projects using ``pytest`` (please send notes via :"
-"ref:`contact`):"
+"Here are some examples of projects using ``pytest`` (please send notes "
+"via :ref:`contact`):"
 msgstr ""
 
 #: ../../../doc/en/projects.rst:25
@@ -45,8 +45,8 @@ msgstr ""
 
 #: ../../../doc/en/projects.rst:29
 msgid ""
-"`Astropy <http://www.astropy.org/>`_ and `affiliated packages <http://www."
-"astropy.org/affiliated/index.html>`_"
+"`Astropy <http://www.astropy.org/>`_ and `affiliated packages <http://"
+"www.astropy.org/affiliated/index.html>`_"
 msgstr ""
 
 #: ../../../doc/en/projects.rst:30
@@ -266,8 +266,8 @@ msgstr ""
 
 #: ../../../doc/en/projects.rst:77
 msgid ""
-"`Stups department of Heinrich Heine University Duesseldorf <http://www.stups."
-"uni-duesseldorf.de/projects.php>`_"
+"`Stups department of Heinrich Heine University Duesseldorf <http://"
+"www.stups.uni-duesseldorf.de/projects.php>`_"
 msgstr ""
 
 #: ../../../doc/en/projects.rst:78

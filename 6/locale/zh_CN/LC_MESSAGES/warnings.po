@@ -319,8 +319,9 @@ msgstr ""
 
 #: ../../../doc/en/warnings.rst:247
 msgid ""
-"You can check that code raises a particular warning using func:`pytest."
-"warns`, which works in a similar manner to :ref:`raises <assertraises>`:"
+"You can check that code raises a particular warning using "
+"func:`pytest.warns`, which works in a similar manner to :ref:`raises "
+"<assertraises>`:"
 msgstr ""
 
 #: ../../../doc/en/warnings.rst:250
@@ -367,8 +368,9 @@ msgstr ""
 
 #: ../../../doc/en/warnings.rst:282
 msgid ""
-"The function also returns a list of all raised warnings (as ``warnings."
-"WarningMessage`` objects), which you can query for additional information:"
+"The function also returns a list of all raised warnings (as "
+"``warnings.WarningMessage`` objects), which you can query for additional "
+"information:"
 msgstr ""
 
 #: ../../../doc/en/warnings.rst:286
@@ -384,8 +386,8 @@ msgstr ""
 
 #: ../../../doc/en/warnings.rst:296
 msgid ""
-"Alternatively, you can examine raised warnings in detail using the :ref:"
-"`recwarn <recwarn>` fixture (see below)."
+"Alternatively, you can examine raised warnings in detail using "
+"the :ref:`recwarn <recwarn>` fixture (see below)."
 msgstr ""
 
 #: ../../../doc/en/warnings.rst:300

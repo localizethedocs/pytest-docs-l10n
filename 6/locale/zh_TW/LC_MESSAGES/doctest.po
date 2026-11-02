@@ -148,8 +148,8 @@ msgstr ""
 
 #: ../../../doc/en/doctest.rst:97
 msgid ""
-"Python's standard ``doctest`` module provides some `options <https://docs."
-"python.org/3/library/doctest.html#option-flags>`__ to configure the "
+"Python's standard ``doctest`` module provides some `options <https://"
+"docs.python.org/3/library/doctest.html#option-flags>`__ to configure the "
 "strictness of doctest tests. In pytest, you can enable those flags using the "
 "configuration file."
 msgstr ""
@@ -258,9 +258,8 @@ msgstr ""
 #: ../../../doc/en/doctest.rst:167
 msgid ""
 "You can change the diff output format on failure for your doctests by using "
-"one of standard doctest modules format in options (see :data:`python:doctest."
-"REPORT_UDIFF`, :data:`python:doctest.REPORT_CDIFF`, :data:`python:doctest."
-"REPORT_NDIFF`, :data:`python:doctest.REPORT_ONLY_FIRST_FAILURE`):"
+"one of standard doctest modules format in options "
+"(see :data:`python:doctest.REPORT_UDIFF`, :data:`python:doctest.REPORT_CDIFF`, :data:`python:doctest.REPORT_NDIFF`, :data:`python:doctest.REPORT_ONLY_FIRST_FAILURE`):"
 msgstr ""
 
 #: ../../../doc/en/doctest.rst:172
@@ -310,8 +309,8 @@ msgstr ""
 
 #: ../../../doc/en/doctest.rst:204
 msgid ""
-"Also, the :ref:`usefixtures <usefixtures>` mark and fixtures marked as :ref:"
-"`autouse <autouse>` are supported when executing text doctest files."
+"Also, the :ref:`usefixtures <usefixtures>` mark and fixtures marked "
+"as :ref:`autouse <autouse>` are supported when executing text doctest files."
 msgstr ""
 
 #: ../../../doc/en/doctest.rst:211
@@ -378,9 +377,9 @@ msgstr ""
 
 #: ../../../doc/en/doctest.rst:253
 msgid ""
-"To skip a single check inside a doctest you can use the standard `doctest."
-"SKIP <https://docs.python.org/3/library/doctest.html#doctest.SKIP>`__ "
-"directive:"
+"To skip a single check inside a doctest you can use the standard "
+"`doctest.SKIP <https://docs.python.org/3/library/"
+"doctest.html#doctest.SKIP>`__ directive:"
 msgstr ""
 
 #: ../../../doc/en/doctest.rst:256

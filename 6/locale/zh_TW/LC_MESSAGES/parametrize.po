@@ -69,9 +69,9 @@ msgstr ""
 
 #: ../../../doc/en/parametrize.rst:51
 msgid ""
-"Here, the ``@parametrize`` decorator defines three different ``(test_input,"
-"expected)`` tuples so that the ``test_eval`` function will run three times "
-"using them in turn:"
+"Here, the ``@parametrize`` decorator defines three different "
+"``(test_input,expected)`` tuples so that the ``test_eval`` function will run "
+"three times using them in turn:"
 msgstr ""
 
 #: ../../../doc/en/parametrize.rst:55
@@ -168,8 +168,8 @@ msgid ""
 "\n"
 "@pytest.mark.parametrize(\n"
 "    \"test_input,expected\",\n"
-"    [(\"3+5\", 8), (\"2+4\", 6), pytest.param(\"6*9\", 42, marks=pytest.mark."
-"xfail)],\n"
+"    [(\"3+5\", 8), (\"2+4\", 6), pytest.param(\"6*9\", 42, "
+"marks=pytest.mark.xfail)],\n"
 ")\n"
 "def test_eval(test_input, expected):\n"
 "    assert eval(test_input) == expected"
@@ -283,8 +283,8 @@ msgid ""
 "\n"
 "def pytest_generate_tests(metafunc):\n"
 "    if \"stringinput\" in metafunc.fixturenames:\n"
-"        metafunc.parametrize(\"stringinput\", metafunc.config."
-"getoption(\"stringinput\"))"
+"        metafunc.parametrize(\"stringinput\", "
+"metafunc.config.getoption(\"stringinput\"))"
 msgstr ""
 
 #: ../../../doc/en/parametrize.rst:215
@@ -334,8 +334,8 @@ msgstr ""
 
 #: ../../../doc/en/parametrize.rst:247
 msgid ""
-"If you don't specify a stringinput it will be skipped because ``metafunc."
-"parametrize()`` will be called with an empty parameter list:"
+"If you don't specify a stringinput it will be skipped because "
+"``metafunc.parametrize()`` will be called with an empty parameter list:"
 msgstr ""
 
 #: ../../../doc/en/parametrize.rst:251

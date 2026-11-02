@@ -71,8 +71,8 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-2.8.2.rst:37
 msgid ""
-"fix #1087: handling SystemError when passing empty byte strings to pytest."
-"parametrize in Python 3. Thanks Paul Kehrer for the report and Bruno "
+"fix #1087: handling SystemError when passing empty byte strings to "
+"pytest.parametrize in Python 3. Thanks Paul Kehrer for the report and Bruno "
 "Oliveira for the PR."
 msgstr ""
 

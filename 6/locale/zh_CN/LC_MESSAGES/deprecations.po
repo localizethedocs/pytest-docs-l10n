@@ -173,9 +173,9 @@ msgstr ""
 #: ../../../doc/en/deprecations.rst:117
 msgid ""
 "The ``pytest_collect_directory`` has not worked properly for years (it was "
-"called but the results were ignored). Users may consider using :func:"
-"`pytest_collection_modifyitems <_pytest.hookspec."
-"pytest_collection_modifyitems>` instead."
+"called but the results were ignored). Users may consider "
+"using :func:`pytest_collection_modifyitems "
+"<_pytest.hookspec.pytest_collection_modifyitems>` instead."
 msgstr ""
 
 #: ../../../doc/en/deprecations.rst:121
@@ -254,8 +254,8 @@ msgstr ""
 
 #: ../../../doc/en/deprecations.rst:168
 msgid ""
-"`Jenkins <https://www.jenkins.io/>`__ with the `JUnit <https://plugins."
-"jenkins.io/junit>`__ plugin."
+"`Jenkins <https://www.jenkins.io/>`__ with the `JUnit <https://"
+"plugins.jenkins.io/junit>`__ plugin."
 msgstr ""
 
 #: ../../../doc/en/deprecations.rst:169
@@ -331,8 +331,8 @@ msgid ""
 "Prior to pytest 2.3, this attribute was named ``funcargnames``, and we have "
 "kept that as an alias since.  It is finally due for removal, as it is often "
 "confusing in places where we or plugin authors must distinguish between "
-"fixture names and names supplied by non-fixture things such as ``pytest.mark."
-"parametrize``."
+"fixture names and names supplied by non-fixture things such as "
+"``pytest.mark.parametrize``."
 msgstr ""
 
 #: ../../../doc/en/deprecations.rst:220
@@ -341,11 +341,11 @@ msgstr ""
 
 #: ../../../doc/en/deprecations.rst:224
 msgid ""
-"The ``pytest.config`` global object is deprecated.  Instead use ``request."
-"config`` (via the ``request`` fixture) or if you are a plugin author use the "
-"``pytest_configure(config)`` hook. Note that many hooks can also access the "
-"``config`` object indirectly, through ``session.config`` or ``item.config`` "
-"for example."
+"The ``pytest.config`` global object is deprecated.  Instead use "
+"``request.config`` (via the ``request`` fixture) or if you are a plugin "
+"author use the ``pytest_configure(config)`` hook. Note that many hooks can "
+"also access the ``config`` object indirectly, through ``session.config`` or "
+"``item.config`` for example."
 msgstr ""
 
 #: ../../../doc/en/deprecations.rst:233
@@ -394,8 +394,8 @@ msgstr ""
 #: ../../../doc/en/deprecations.rst:262
 msgid ""
 "If you still have concerns about this deprecation and future removal, please "
-"comment on `issue #3974 <https://github.com/pytest-dev/pytest/"
-"issues/3974>`__."
+"comment on `issue #3974 <https://github.com/pytest-dev/pytest/issues/"
+"3974>`__."
 msgstr ""
 
 #: ../../../doc/en/deprecations.rst:269
@@ -548,8 +548,8 @@ msgstr ""
 
 #: ../../../doc/en/deprecations.rst:391
 msgid ""
-"``[pytest]`` sections in ``setup.cfg`` files should now be named ``[tool:"
-"pytest]`` to avoid conflicts with other distutils commands."
+"``[pytest]`` sections in ``setup.cfg`` files should now be named "
+"``[tool:pytest]`` to avoid conflicts with other distutils commands."
 msgstr ""
 
 #: ../../../doc/en/deprecations.rst:396
@@ -559,8 +559,8 @@ msgstr ""
 #: ../../../doc/en/deprecations.rst:400
 msgid ""
 "``_pytest.python.Metafunc.addcall`` was a precursor to the current "
-"parametrized mechanism. Users should use :meth:`_pytest.python.Metafunc."
-"parametrize` instead."
+"parametrized mechanism. Users should "
+"use :meth:`_pytest.python.Metafunc.parametrize` instead."
 msgstr ""
 
 #: ../../../doc/en/deprecations.rst:405
@@ -611,8 +611,8 @@ msgstr ""
 
 #: ../../../doc/en/deprecations.rst:447
 msgid ""
-"You can consult `funcarg comparison section in the docs <https://docs.pytest."
-"org/en/stable/funcarg_compare.html>`_ for more information."
+"You can consult `funcarg comparison section in the docs <https://"
+"docs.pytest.org/en/stable/funcarg_compare.html>`_ for more information."
 msgstr ""
 
 #: ../../../doc/en/deprecations.rst:452
@@ -640,8 +640,8 @@ msgstr ""
 
 #: ../../../doc/en/deprecations.rst:469
 msgid ""
-"``Config.warn`` should be replaced by calls to the standard ``warnings."
-"warn``, example:"
+"``Config.warn`` should be replaced by calls to the standard "
+"``warnings.warn``, example:"
 msgstr ""
 
 #: ../../../doc/en/deprecations.rst:471
@@ -879,8 +879,8 @@ msgstr ""
 #: ../../../doc/en/deprecations.rst:644
 msgid ""
 "As part of a large :ref:`marker-revamp` we already deprecated using "
-"``MarkInfo`` the only correct way to get markers of an element is via ``node."
-"iter_markers(name)``."
+"``MarkInfo`` the only correct way to get markers of an element is via "
+"``node.iter_markers(name)``."
 msgstr ""
 
 #: ../../../doc/en/deprecations.rst:649

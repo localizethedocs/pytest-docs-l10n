@@ -23,10 +23,10 @@ msgstr ""
 
 #: ../../../doc/en/index.rst:5
 msgid ""
-"`pytest: Professionelles Testen (nicht nur) für Python <https://workshoptage."
-"ch/workshops/2021/pytest-test-driven-development-nicht-nur-fuer-python-2/>`_ "
-"(German), part of `CH-Open Workshoptage <https://workshoptage.ch/>`_, "
-"September 9th, ETH Zurich, Switzerland."
+"`pytest: Professionelles Testen (nicht nur) für Python <https://"
+"workshoptage.ch/workshops/2021/pytest-test-driven-development-nicht-nur-fuer-"
+"python-2/>`_ (German), part of `CH-Open Workshoptage <https://"
+"workshoptage.ch/>`_, September 9th, ETH Zurich, Switzerland."
 msgstr ""
 
 #: ../../../doc/en/index.rst:6
@@ -138,8 +138,9 @@ msgstr ""
 
 #: ../../../doc/en/index.rst:76
 msgid ""
-"Rich plugin architecture, with over 315+ `external plugins <https://docs."
-"pytest.org/en/latest/reference/plugin_list.html>`_ and thriving community"
+"Rich plugin architecture, with over 315+ `external plugins <https://"
+"docs.pytest.org/en/latest/reference/plugin_list.html>`_ and thriving "
+"community"
 msgstr ""
 
 #: ../../../doc/en/index.rst:80

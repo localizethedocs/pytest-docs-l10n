@@ -23,8 +23,8 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-2.1.1.rst:4
 msgid ""
-"pytest-2.1.1 is a backward compatible maintenance release of the popular py."
-"test testing tool.  See extensive docs with examples here:"
+"pytest-2.1.1 is a backward compatible maintenance release of the popular "
+"py.test testing tool.  See extensive docs with examples here:"
 msgstr ""
 
 #: ../../../doc/en/announce/release-2.1.1.rst:7

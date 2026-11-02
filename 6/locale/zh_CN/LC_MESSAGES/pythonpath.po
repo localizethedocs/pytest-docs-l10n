@@ -27,8 +27,8 @@ msgstr ""
 
 #: ../../../doc/en/pythonpath.rst:11
 msgid ""
-"pytest as a testing framework needs to import test modules and ``conftest."
-"py`` files for execution."
+"pytest as a testing framework needs to import test modules and "
+"``conftest.py`` files for execution."
 msgstr ""
 
 #: ../../../doc/en/pythonpath.rst:13
@@ -44,8 +44,8 @@ msgstr ""
 msgid ""
 "``prepend`` (default): the directory path containing each module will be "
 "inserted into the *beginning* of ``sys.path`` if not already there, and then "
-"imported with the `__import__ <https://docs.python.org/3/library/functions."
-"html#__import__>`__ builtin."
+"imported with the `__import__ <https://docs.python.org/3/library/"
+"functions.html#__import__>`__ builtin."
 msgstr ""
 
 #: ../../../doc/en/pythonpath.rst:21
@@ -84,8 +84,8 @@ msgstr ""
 msgid ""
 "the tests will run against the installed version of ``pkg_under_test`` when "
 "``--import-mode=append`` is used whereas with ``prepend`` they would pick up "
-"the local version. This kind of confusion is why we advocate for using :ref:"
-"`src <src-layout>` layouts."
+"the local version. This kind of confusion is why we advocate for "
+"using :ref:`src <src-layout>` layouts."
 msgstr ""
 
 #: ../../../doc/en/pythonpath.rst:43
@@ -97,10 +97,10 @@ msgstr ""
 
 #: ../../../doc/en/pythonpath.rst:46
 msgid ""
-"``importlib``: new in pytest-6.0, this mode uses `importlib <https://docs."
-"python.org/3/library/importlib.html>`__ to import test modules. This gives "
-"full control over the import process, and doesn't require changing ``sys."
-"path`` or ``sys.modules`` at all."
+"``importlib``: new in pytest-6.0, this mode uses `importlib <https://"
+"docs.python.org/3/library/importlib.html>`__ to import test modules. This "
+"gives full control over the import process, and doesn't require changing "
+"``sys.path`` or ``sys.modules`` at all."
 msgstr ""
 
 #: ../../../doc/en/pythonpath.rst:49
@@ -164,8 +164,8 @@ msgid ""
 "will then search upwards until it can find the last folder which still "
 "contains an ``__init__.py`` file in order to find the package *root* (in "
 "this case ``foo/``). To load the module, it will insert ``root/``  to the "
-"front of ``sys.path`` (if not there already) in order to load ``test_foo."
-"py`` as the *module* ``foo.bar.tests.test_foo``."
+"front of ``sys.path`` (if not there already) in order to load "
+"``test_foo.py`` as the *module* ``foo.bar.tests.test_foo``."
 msgstr ""
 
 #: ../../../doc/en/pythonpath.rst:92

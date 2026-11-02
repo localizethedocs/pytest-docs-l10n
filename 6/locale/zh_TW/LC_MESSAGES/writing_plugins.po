@@ -122,8 +122,8 @@ msgstr ""
 
 #: ../../../doc/en/writing_plugins.rst:62
 msgid ""
-"by recursively loading all plugins specified by the :globalvar:"
-"`pytest_plugins` variable in ``conftest.py`` files."
+"by recursively loading all plugins specified by "
+"the :globalvar:`pytest_plugins` variable in ``conftest.py`` files."
 msgstr ""
 
 #: ../../../doc/en/writing_plugins.rst:72
@@ -213,8 +213,8 @@ msgstr ""
 
 #: ../../../doc/en/writing_plugins.rst:127
 msgid ""
-"All of these plugins implement :ref:`hooks <hook-reference>` and/or :ref:"
-"`fixtures <fixture>` to extend and add functionality."
+"All of these plugins implement :ref:`hooks <hook-reference>` and/"
+"or :ref:`fixtures <fixture>` to extend and add functionality."
 msgstr ""
 
 #: ../../../doc/en/writing_plugins.rst:131
@@ -261,8 +261,8 @@ msgid ""
 "    name=\"myproject\",\n"
 "    packages=[\"myproject\"],\n"
 "    # the following makes a plugin available to pytest\n"
-"    entry_points={\"pytest11\": [\"name_of_plugin = myproject."
-"pluginmodule\"]},\n"
+"    entry_points={\"pytest11\": [\"name_of_plugin = "
+"myproject.pluginmodule\"]},\n"
 "    # custom PyPI classifier for pytest plugins\n"
 "    classifiers=[\"Framework :: Pytest\"],\n"
 ")"
@@ -270,8 +270,9 @@ msgstr ""
 
 #: ../../../doc/en/writing_plugins.rst:172
 msgid ""
-"If a package is installed this way, ``pytest`` will load ``myproject."
-"pluginmodule`` as a plugin which can define :ref:`hooks <hook-reference>`."
+"If a package is installed this way, ``pytest`` will load "
+"``myproject.pluginmodule`` as a plugin which can define :ref:`hooks <hook-"
+"reference>`."
 msgstr ""
 
 #: ../../../doc/en/writing_plugins.rst:178
@@ -379,8 +380,8 @@ msgstr ""
 
 #: ../../../doc/en/writing_plugins.rst:242
 msgid ""
-"You can require plugins in a test module or a ``conftest.py`` file using :"
-"globalvar:`pytest_plugins`:"
+"You can require plugins in a test module or a ``conftest.py`` file "
+"using :globalvar:`pytest_plugins`:"
 msgstr ""
 
 #: ../../../doc/en/writing_plugins.rst:244
@@ -401,9 +402,9 @@ msgstr ""
 #: ../../../doc/en/writing_plugins.rst:256
 msgid ""
 ":globalvar:`pytest_plugins` are processed recursively, so note that in the "
-"example above if ``myapp.testsupport.myplugin`` also declares :globalvar:"
-"`pytest_plugins`, the contents of the variable will also be loaded as "
-"plugins, and so on."
+"example above if ``myapp.testsupport.myplugin`` also "
+"declares :globalvar:`pytest_plugins`, the contents of the variable will also "
+"be loaded as plugins, and so on."
 msgstr ""
 
 #: ../../../doc/en/writing_plugins.rst:263
@@ -416,9 +417,10 @@ msgstr ""
 msgid ""
 "This is important because ``conftest.py`` files implement per-directory hook "
 "implementations, but once a plugin is imported, it will affect the entire "
-"directory tree. In order to avoid confusion, defining :globalvar:"
-"`pytest_plugins` in any ``conftest.py`` file which is not located in the "
-"tests root directory is deprecated, and will raise a warning."
+"directory tree. In order to avoid confusion, "
+"defining :globalvar:`pytest_plugins` in any ``conftest.py`` file which is "
+"not located in the tests root directory is deprecated, and will raise a "
+"warning."
 msgstr ""
 
 #: ../../../doc/en/writing_plugins.rst:272
@@ -435,9 +437,10 @@ msgid ""
 "However for this to have any effect the module must not be imported already; "
 "if it was already imported at the time the :globalvar:`pytest_plugins` "
 "statement is processed, a warning will result and assertions inside the "
-"plugin will not be rewritten.  To fix this you can either call :func:`pytest."
-"register_assert_rewrite` yourself before the module is imported, or you can "
-"arrange the code to delay the importing until after the plugin is registered."
+"plugin will not be rewritten.  To fix this you can either "
+"call :func:`pytest.register_assert_rewrite` yourself before the module is "
+"imported, or you can arrange the code to delay the importing until after the "
+"plugin is registered."
 msgstr ""
 
 #: ../../../doc/en/writing_plugins.rst:288
@@ -514,8 +517,8 @@ msgstr ""
 
 #: ../../../doc/en/writing_plugins.rst:340
 msgid ""
-"This will allow you to use the :py:class:`testdir <_pytest.pytester."
-"Testdir>` fixture for testing your plugin code."
+"This will allow you to use the :py:class:`testdir "
+"<_pytest.pytester.Testdir>` fixture for testing your plugin code."
 msgstr ""
 
 #: ../../../doc/en/writing_plugins.rst:343
@@ -734,9 +737,9 @@ msgstr ""
 #: ../../../doc/en/writing_plugins.rst:531
 msgid ""
 "At the yield point of the hook wrapper pytest will execute the next hook "
-"implementations and return their result to the yield point in the form of a :"
-"py:class:`Result <pluggy._Result>` instance which encapsulates a result or "
-"exception info.  The yield point itself will thus typically not raise "
+"implementations and return their result to the yield point in the form of "
+"a :py:class:`Result <pluggy._Result>` instance which encapsulates a result "
+"or exception info.  The yield point itself will thus typically not raise "
 "exceptions (unless there are bugs)."
 msgstr ""
 

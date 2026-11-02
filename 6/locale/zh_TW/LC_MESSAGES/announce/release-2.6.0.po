@@ -229,8 +229,8 @@ msgstr ""
 #: ../../../doc/en/announce/release-2.6.0.rst:124
 msgid ""
 "simplified internal capturing mechanism and made it more robust against "
-"tests or setups changing FD1/FD2, also better integrated now with pytest."
-"pdb() in single tests."
+"tests or setups changing FD1/FD2, also better integrated now with "
+"pytest.pdb() in single tests."
 msgstr ""
 
 #: ../../../doc/en/announce/release-2.6.0.rst:128

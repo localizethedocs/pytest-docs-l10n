@@ -314,9 +314,9 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:144
 msgid ""
-"`#7988 <https://github.com/pytest-dev/pytest/issues/7988>`_: The ``@pytest."
-"yield_fixture`` decorator/function is now deprecated. Use :func:`pytest."
-"fixture` instead."
+"`#7988 <https://github.com/pytest-dev/pytest/issues/7988>`_: The "
+"``@pytest.yield_fixture`` decorator/function is now deprecated. "
+"Use :func:`pytest.fixture` instead."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:146
@@ -351,9 +351,10 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:157
 msgid ""
-"`#7425 <https://github.com/pytest-dev/pytest/issues/7425>`_: New :fixture:"
-"`pytester` fixture, which is identical to :fixture:`testdir` but its methods "
-"return :class:`pathlib.Path` when appropriate instead of ``py.path.local``."
+"`#7425 <https://github.com/pytest-dev/pytest/issues/7425>`_: "
+"New :fixture:`pytester` fixture, which is identical to :fixture:`testdir` "
+"but its methods return :class:`pathlib.Path` when appropriate instead of "
+"``py.path.local``."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:159
@@ -407,17 +408,17 @@ msgid ""
 "`#8006 <https://github.com/pytest-dev/pytest/issues/8006>`_: It is now "
 "possible to construct a :class:`~pytest.MonkeyPatch` object directly as "
 "``pytest.MonkeyPatch()``, in cases when the :fixture:`monkeypatch` fixture "
-"cannot be used. Previously some users imported it from the private `_pytest."
-"monkeypatch.MonkeyPatch` namespace."
+"cannot be used. Previously some users imported it from the private "
+"`_pytest.monkeypatch.MonkeyPatch` namespace."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:189
 msgid ""
 "Additionally, :meth:`MonkeyPatch.context <pytest.MonkeyPatch.context>` is "
-"now a classmethod, and can be used as ``with MonkeyPatch.context() as mp: ..."
-"``. This is the recommended way to use ``MonkeyPatch`` directly, since "
-"unlike the ``monkeypatch`` fixture, an instance created directly is not "
-"``undo()``-ed automatically."
+"now a classmethod, and can be used as ``with MonkeyPatch.context() as "
+"mp: ...``. This is the recommended way to use ``MonkeyPatch`` directly, "
+"since unlike the ``monkeypatch`` fixture, an instance created directly is "
+"not ``undo()``-ed automatically."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:197 ../../../doc/en/changelog.rst:399
@@ -460,14 +461,14 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:210
 msgid ""
-"``pytest.CaptureFixture[str]`` for the :fixture:`capfd` and :fixture:"
-"`capsys` fixtures."
+"``pytest.CaptureFixture[str]`` for the :fixture:`capfd` "
+"and :fixture:`capsys` fixtures."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:211
 msgid ""
-"``pytest.CaptureFixture[bytes]`` for the :fixture:`capfdbinary` and :fixture:"
-"`capsysbinary` fixtures."
+"``pytest.CaptureFixture[bytes]`` for the :fixture:`capfdbinary` "
+"and :fixture:`capsysbinary` fixtures."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:212
@@ -521,9 +522,10 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:229
 msgid ""
-"`#7615 <https://github.com/pytest-dev/pytest/issues/7615>`_: :meth:`Node."
-"warn <_pytest.nodes.Node.warn>` now permits any subclass of :class:"
-"`Warning`, not just :class:`PytestWarning <pytest.PytestWarning>`."
+"`#7615 <https://github.com/pytest-dev/pytest/issues/"
+"7615>`_: :meth:`Node.warn <_pytest.nodes.Node.warn>` now permits any "
+"subclass of :class:`Warning`, not just :class:`PytestWarning "
+"<pytest.PytestWarning>`."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:232
@@ -560,9 +562,10 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:247
 msgid ""
-"`#8032 <https://github.com/pytest-dev/pytest/issues/8032>`_: :meth:"
-"`doClassCleanups <unittest.TestCase.doClassCleanups>` (introduced in :mod:"
-"`unittest` in Python and 3.8) is now called appropriately."
+"`#8032 <https://github.com/pytest-dev/pytest/issues/"
+"8032>`_: :meth:`doClassCleanups <unittest.TestCase.doClassCleanups>` "
+"(introduced in :mod:`unittest` in Python and 3.8) is now called "
+"appropriately."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:254
@@ -655,8 +658,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:285
 msgid ""
-"`#7872 <https://github.com/pytest-dev/pytest/issues/7872>`_: ``_pytest."
-"config.argparsing.Parser.addini()`` accepts explicit ``None`` and "
+"`#7872 <https://github.com/pytest-dev/pytest/issues/7872>`_: "
+"``_pytest.config.argparsing.Parser.addini()`` accepts explicit ``None`` and "
 "``\"string\"``."
 msgstr ""
 
@@ -768,22 +771,22 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:355 ../../../doc/en/changelog.rst:1797
 msgid ""
-"For more information consult `Deprecations and Removals <https://docs.pytest."
-"org/en/stable/deprecations.html>`__ in the docs."
+"For more information consult `Deprecations and Removals <https://"
+"docs.pytest.org/en/stable/deprecations.html>`__ in the docs."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:363
 msgid ""
-"`#6981 <https://github.com/pytest-dev/pytest/issues/6981>`_: The ``pytest."
-"collect`` module is deprecated: all its names can be imported from "
+"`#6981 <https://github.com/pytest-dev/pytest/issues/6981>`_: The "
+"``pytest.collect`` module is deprecated: all its names can be imported from "
 "``pytest`` directly."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:366
 msgid ""
-"`#7097 <https://github.com/pytest-dev/pytest/issues/7097>`_: The ``pytest."
-"_fillfuncargs`` function is deprecated. This function was kept for backward "
-"compatibility with an older plugin."
+"`#7097 <https://github.com/pytest-dev/pytest/issues/7097>`_: The "
+"``pytest._fillfuncargs`` function is deprecated. This function was kept for "
+"backward compatibility with an older plugin."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:369
@@ -807,18 +810,21 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:381
 msgid ""
-"`#7255 <https://github.com/pytest-dev/pytest/issues/7255>`_: The :func:"
-"`pytest_warning_captured <_pytest.hookspec.pytest_warning_captured>` hook is "
-"deprecated in favor of :func:`pytest_warning_recorded <_pytest.hookspec."
-"pytest_warning_recorded>`, and will be removed in a future version."
+"`#7255 <https://github.com/pytest-dev/pytest/issues/7255>`_: "
+"The :func:`pytest_warning_captured "
+"<_pytest.hookspec.pytest_warning_captured>` hook is deprecated in favor "
+"of :func:`pytest_warning_recorded "
+"<_pytest.hookspec.pytest_warning_recorded>`, and will be removed in a future "
+"version."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:385
 msgid ""
 "`#7648 <https://github.com/pytest-dev/pytest/issues/7648>`_: The "
 "``gethookproxy()`` and ``isinitpath()`` methods of ``FSCollector`` and "
-"``Package`` are deprecated; use ``self.session.gethookproxy()`` and ``self."
-"session.isinitpath()`` instead. This should work on all pytest versions."
+"``Package`` are deprecated; use ``self.session.gethookproxy()`` and "
+"``self.session.isinitpath()`` instead. This should work on all pytest "
+"versions."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:394
@@ -841,8 +847,8 @@ msgstr ""
 msgid ""
 "This also fixes a number of long standing issues: `#2891 <https://github.com/"
 "pytest-dev/pytest/issues/2891>`__, `#7620 <https://github.com/pytest-dev/"
-"pytest/issues/7620>`__, `#7426 <https://github.com/pytest-dev/pytest/"
-"issues/7426>`__."
+"pytest/issues/7620>`__, `#7426 <https://github.com/pytest-dev/pytest/issues/"
+"7426>`__."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:406
@@ -856,12 +862,12 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:409
 msgid ""
 "`#7685 <https://github.com/pytest-dev/pytest/issues/7685>`_: Added two new "
-"attributes :attr:`rootpath <_pytest.config.Config.rootpath>` and :attr:"
-"`inipath <_pytest.config.Config.inipath>` to :class:`Config <_pytest.config."
-"Config>`. These attributes are :class:`pathlib.Path` versions of the "
-"existing :attr:`rootdir <_pytest.config.Config.rootdir>` and :attr:`inifile "
-"<_pytest.config.Config.inifile>` attributes, and should be preferred over "
-"them when possible."
+"attributes :attr:`rootpath <_pytest.config.Config.rootpath>` "
+"and :attr:`inipath <_pytest.config.Config.inipath>` to :class:`Config "
+"<_pytest.config.Config>`. These attributes are :class:`pathlib.Path` "
+"versions of the existing :attr:`rootdir <_pytest.config.Config.rootdir>` "
+"and :attr:`inifile <_pytest.config.Config.inifile>` attributes, and should "
+"be preferred over them when possible."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:414
@@ -971,9 +977,10 @@ msgid ""
 "tests, pytest finds test classes and functions by examining the attributes "
 "of python objects (modules, classes and instances). To speed up this "
 "process, pytest now ignores builtin attributes (like ``__class__``, "
-"``__delattr__`` and ``__new__``) without consulting the :confval:"
-"`python_classes` and :confval:`python_functions` configuration options and "
-"without passing them to plugins using the :func:`pytest_pycollect_makeitem "
+"``__delattr__`` and ``__new__``) without consulting "
+"the :confval:`python_classes` and :confval:`python_functions` configuration "
+"options and without passing them to plugins using "
+"the :func:`pytest_pycollect_makeitem "
 "<_pytest.hookspec.pytest_pycollect_makeitem>` hook."
 msgstr ""
 
@@ -1037,8 +1044,8 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:529
 msgid ""
 "`#7569 <https://github.com/pytest-dev/pytest/issues/7569>`_: Fix logging "
-"capture handler's level not reset on teardown after a call to ``caplog."
-"set_level()``."
+"capture handler's level not reset on teardown after a call to "
+"``caplog.set_level()``."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:533
@@ -1117,10 +1124,10 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:582
 msgid ""
-"`#7489 <https://github.com/pytest-dev/pytest/issues/7489>`_: The :func:"
-"`pytest.raises` function has a clearer error message when ``match`` equals "
-"the obtained string but is not a regex match. In this case it is suggested "
-"to escape the regex."
+"`#7489 <https://github.com/pytest-dev/pytest/issues/7489>`_: "
+"The :func:`pytest.raises` function has a clearer error message when "
+"``match`` equals the obtained string but is not a regex match. In this case "
+"it is suggested to escape the regex."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:589
@@ -1132,9 +1139,9 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:592
 msgid ""
-"`#7491 <https://github.com/pytest-dev/pytest/issues/7491>`_: :fixture:"
-"`tmpdir` and :fixture:`tmp_path` no longer raise an error if the lock to "
-"check for stale temporary directories is not accessible."
+"`#7491 <https://github.com/pytest-dev/pytest/issues/"
+"7491>`_: :fixture:`tmpdir` and :fixture:`tmp_path` no longer raise an error "
+"if the lock to check for stale temporary directories is not accessible."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:596
@@ -1174,9 +1181,10 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:625
 msgid ""
-"`#1316 <https://github.com/pytest-dev/pytest/issues/1316>`_: ``TestReport."
-"longrepr`` is now always an instance of ``ReprExceptionInfo``. Previously it "
-"was a ``str`` when a test failed with ``pytest.fail(..., pytrace=False)``."
+"`#1316 <https://github.com/pytest-dev/pytest/issues/1316>`_: "
+"``TestReport.longrepr`` is now always an instance of ``ReprExceptionInfo``. "
+"Previously it was a ``str`` when a test failed with ``pytest.fail(..., "
+"pytrace=False)``."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:628
@@ -1210,8 +1218,9 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:639
 msgid ""
-"`#6505 <https://github.com/pytest-dev/pytest/issues/6505>`_: ``Testdir.run()."
-"parseoutcomes()`` now always returns the parsed nouns in plural form."
+"`#6505 <https://github.com/pytest-dev/pytest/issues/6505>`_: "
+"``Testdir.run().parseoutcomes()`` now always returns the parsed nouns in "
+"plural form."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:641
@@ -1245,9 +1254,9 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:661
 msgid ""
-"`#6903 <https://github.com/pytest-dev/pytest/issues/6903>`_: The ``os."
-"dup()`` function is now assumed to exist. We are not aware of any supported "
-"Python 3 implementations which do not provide it."
+"`#6903 <https://github.com/pytest-dev/pytest/issues/6903>`_: The "
+"``os.dup()`` function is now assumed to exist. We are not aware of any "
+"supported Python 3 implementations which do not provide it."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:665
@@ -1279,9 +1288,9 @@ msgstr ""
 msgid ""
 "`#7135 <https://github.com/pytest-dev/pytest/issues/7135>`_: Pytest now uses "
 "its own ``TerminalWriter`` class instead of using the one from the ``py`` "
-"library. Plugins generally access this class through ``TerminalReporter."
-"writer``, ``TerminalReporter.write()`` (and similar methods), or ``_pytest."
-"config.create_terminal_writer()``."
+"library. Plugins generally access this class through "
+"``TerminalReporter.writer``, ``TerminalReporter.write()`` (and similar "
+"methods), or ``_pytest.config.create_terminal_writer()``."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:682
@@ -1321,9 +1330,9 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:695
 msgid ""
-"`#7224 <https://github.com/pytest-dev/pytest/issues/7224>`_: The `item."
-"catch_log_handler` and `item.catch_log_handlers` attributes, set by the "
-"logging plugin and never meant to be public, are no longer available."
+"`#7224 <https://github.com/pytest-dev/pytest/issues/7224>`_: The "
+"`item.catch_log_handler` and `item.catch_log_handlers` attributes, set by "
+"the logging plugin and never meant to be public, are no longer available."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:698
@@ -1511,8 +1520,9 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:794
 msgid ""
 "``--import-mode=importlib`` uses more fine grained import mechanisms from "
-"``importlib`` which don't require pytest to change ``sys.path`` or ``sys."
-"modules`` at all, eliminating much of the drawbacks of the previous mode."
+"``importlib`` which don't require pytest to change ``sys.path`` or "
+"``sys.modules`` at all, eliminating much of the drawbacks of the previous "
+"mode."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:798
@@ -1525,8 +1535,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:801
 msgid ""
-"You can read more about this option in `the documentation <https://docs."
-"pytest.org/en/latest/pythonpath.html#import-modes>`__."
+"You can read more about this option in `the documentation <https://"
+"docs.pytest.org/en/latest/pythonpath.html#import-modes>`__."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:804
@@ -1552,8 +1562,8 @@ msgid ""
 "precision of test durations measurement. ``CallInfo`` items now have a new "
 "``<CallInfo>.duration`` attribute, created using ``time.perf_counter()``. "
 "This attribute is used to fill the ``<TestReport>.duration`` attribute, "
-"which is more accurate than the previous ``<CallInfo>.stop - <CallInfo>."
-"start`` (as these are based on ``time.time()``)."
+"which is more accurate than the previous ``<CallInfo>.stop - "
+"<CallInfo>.start`` (as these are based on ``time.time()``)."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:818
@@ -1565,9 +1575,9 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:821
 msgid ""
 "`#6285 <https://github.com/pytest-dev/pytest/issues/6285>`_: Exposed the "
-"`pytest.FixtureLookupError` exception which is raised by `request."
-"getfixturevalue()` (where `request` is a `FixtureRequest` fixture) when a "
-"fixture with the given name cannot be returned."
+"`pytest.FixtureLookupError` exception which is raised by "
+"`request.getfixturevalue()` (where `request` is a `FixtureRequest` fixture) "
+"when a fixture with the given name cannot be returned."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:825
@@ -1639,17 +1649,19 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:860
 msgid ""
-"`#7133 <https://github.com/pytest-dev/pytest/issues/7133>`_: :meth:`caplog."
-"set_level() <_pytest.logging.LogCaptureFixture.set_level>` will now override "
+"`#7133 <https://github.com/pytest-dev/pytest/issues/"
+"7133>`_: :meth:`caplog.set_level() "
+"<_pytest.logging.LogCaptureFixture.set_level>` will now override "
 "any :confval:`log_level` set via the CLI or configuration file."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:863
 msgid ""
-"`#7159 <https://github.com/pytest-dev/pytest/issues/7159>`_: :meth:`caplog."
-"set_level() <_pytest.logging.LogCaptureFixture.set_level>` and :meth:`caplog."
-"at_level() <_pytest.logging.LogCaptureFixture.at_level>` no longer affect "
-"the level of logs that are shown in the *Captured log report* report section."
+"`#7159 <https://github.com/pytest-dev/pytest/issues/"
+"7159>`_: :meth:`caplog.set_level() "
+"<_pytest.logging.LogCaptureFixture.set_level>` and :meth:`caplog.at_level() "
+"<_pytest.logging.LogCaptureFixture.at_level>` no longer affect the level of "
+"logs that are shown in the *Captured log report* report section."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:867
@@ -1728,8 +1740,8 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:910
 msgid ""
 "`#6755 <https://github.com/pytest-dev/pytest/issues/6755>`_: Support "
-"deleting paths longer than 260 characters on windows created inside :fixture:"
-"`tmpdir`."
+"deleting paths longer than 260 characters on windows created "
+"inside :fixture:`tmpdir`."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:913
@@ -1741,9 +1753,9 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:916 ../../../doc/en/changelog.rst:1086
 msgid ""
 "`#6909 <https://github.com/pytest-dev/pytest/issues/6909>`_: Revert the "
-"change introduced by `#6330 <https://github.com/pytest-dev/pytest/"
-"pull/6330>`_, which required all arguments to ``@pytest.mark.parametrize`` "
-"to be explicitly defined in the function signature."
+"change introduced by `#6330 <https://github.com/pytest-dev/pytest/pull/"
+"6330>`_, which required all arguments to ``@pytest.mark.parametrize`` to be "
+"explicitly defined in the function signature."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:918 ../../../doc/en/changelog.rst:1088
@@ -1832,9 +1844,9 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:958
 msgid ""
-"`#7143 <https://github.com/pytest-dev/pytest/issues/7143>`_: Fix :meth:"
-"`pytest.File.from_parent` so it forwards extra keyword arguments to the "
-"constructor."
+"`#7143 <https://github.com/pytest-dev/pytest/issues/7143>`_: "
+"Fix :meth:`pytest.File.from_parent` so it forwards extra keyword arguments "
+"to the constructor."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:961 ../../../doc/en/changelog.rst:1074
@@ -1920,8 +1932,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:1009
 msgid ""
-"`#7291 <https://github.com/pytest-dev/pytest/issues/7291>`_: Replaced ``py."
-"iniconfig`` with `iniconfig <https://pypi.org/project/iniconfig/>`__."
+"`#7291 <https://github.com/pytest-dev/pytest/issues/7291>`_: Replaced "
+"``py.iniconfig`` with `iniconfig <https://pypi.org/project/iniconfig/>`__."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:1012
@@ -1999,8 +2011,9 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:1071
 msgid ""
-"`#7143 <https://github.com/pytest-dev/pytest/issues/7143>`_: Fix ``File."
-"from_constructor`` so it forwards extra keyword arguments to the constructor."
+"`#7143 <https://github.com/pytest-dev/pytest/issues/7143>`_: Fix "
+"``File.from_constructor`` so it forwards extra keyword arguments to the "
+"constructor."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:1081
@@ -2163,8 +2176,9 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:1182
 msgid ""
-"`#1857 <https://github.com/pytest-dev/pytest/issues/1857>`_: ``pytest.mark."
-"parametrize`` accepts integers for ``ids`` again, converting it to strings."
+"`#1857 <https://github.com/pytest-dev/pytest/issues/1857>`_: "
+"``pytest.mark.parametrize`` accepts integers for ``ids`` again, converting "
+"it to strings."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:1185
@@ -2221,9 +2235,9 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:1209
 msgid ""
 "`#6653 <https://github.com/pytest-dev/pytest/issues/6653>`_: Add support for "
-"matching lines consecutively with :attr:`LineMatcher <_pytest.pytester."
-"LineMatcher>`'s :func:`~_pytest.pytester.LineMatcher.fnmatch_lines` and :"
-"func:`~_pytest.pytester.LineMatcher.re_match_lines`."
+"matching lines consecutively with :attr:`LineMatcher "
+"<_pytest.pytester.LineMatcher>`'s :func:`~_pytest.pytester.LineMatcher.fnmatch_lines` "
+"and :func:`~_pytest.pytester.LineMatcher.re_match_lines`."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:1212
@@ -2247,8 +2261,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:1221
 msgid ""
-"`#759 <https://github.com/pytest-dev/pytest/issues/759>`_: ``pytest.mark."
-"parametrize`` supports iterators and generators for ``ids``."
+"`#759 <https://github.com/pytest-dev/pytest/issues/759>`_: "
+"``pytest.mark.parametrize`` supports iterators and generators for ``ids``."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:1228
@@ -2361,24 +2375,25 @@ msgstr ""
 msgid ""
 "`#6646 <https://github.com/pytest-dev/pytest/issues/6646>`_: Assertion "
 "rewriting hooks are (re)stored for the current item, which fixes them being "
-"still used after e.g. pytester's :func:`testdir.runpytest <_pytest.pytester."
-"Testdir.runpytest>` etc."
+"still used after e.g. pytester's :func:`testdir.runpytest "
+"<_pytest.pytester.Testdir.runpytest>` etc."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:1280
 msgid ""
-"`#6660 <https://github.com/pytest-dev/pytest/issues/6660>`_: :py:func:"
-"`pytest.exit` is handled when emitted from the :func:`pytest_sessionfinish "
-"<_pytest.hookspec.pytest_sessionfinish>` hook.  This includes quitting from "
-"a debugger."
+"`#6660 <https://github.com/pytest-dev/pytest/issues/"
+"6660>`_: :py:func:`pytest.exit` is handled when emitted from "
+"the :func:`pytest_sessionfinish <_pytest.hookspec.pytest_sessionfinish>` "
+"hook.  This includes quitting from a debugger."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:1283
 msgid ""
-"`#6752 <https://github.com/pytest-dev/pytest/issues/6752>`_: When :py:func:"
-"`pytest.raises` is used as a function (as opposed to a context manager), a "
-"`match` keyword argument is now passed through to the tested function. "
-"Previously it was swallowed and ignored (regression in pytest 5.1.0)."
+"`#6752 <https://github.com/pytest-dev/pytest/issues/6752>`_: "
+"When :py:func:`pytest.raises` is used as a function (as opposed to a context "
+"manager), a `match` keyword argument is now passed through to the tested "
+"function. Previously it was swallowed and ignored (regression in pytest "
+"5.1.0)."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:1288
@@ -2389,8 +2404,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:1291
 msgid ""
-"`#6802 <https://github.com/pytest-dev/pytest/issues/6802>`_: The :fixture:"
-"`testdir fixture <testdir>` works within doctests now."
+"`#6802 <https://github.com/pytest-dev/pytest/issues/6802>`_: "
+"The :fixture:`testdir fixture <testdir>` works within doctests now."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:1298
@@ -2453,11 +2468,11 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:1343
 msgid ""
-"`#6436 <https://github.com/pytest-dev/pytest/issues/6436>`_: :class:"
-"`FixtureDef <_pytest.fixtures.FixtureDef>` objects now properly register "
-"their finalizers with autouse and parameterized fixtures that execute before "
-"them in the fixture stack so they are torn down at the right times, and in "
-"the right order."
+"`#6436 <https://github.com/pytest-dev/pytest/issues/"
+"6436>`_: :class:`FixtureDef <_pytest.fixtures.FixtureDef>` objects now "
+"properly register their finalizers with autouse and parameterized fixtures "
+"that execute before them in the fixture stack so they are torn down at the "
+"right times, and in the right order."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:1348
@@ -2510,15 +2525,16 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:1392
 msgid ""
-"`#6257 <https://github.com/pytest-dev/pytest/issues/6257>`_: Handle :py:func:"
-"`pytest.exit` being used via :py:func:`~_pytest.hookspec."
-"pytest_internalerror`, e.g. when quitting pdb from post mortem."
+"`#6257 <https://github.com/pytest-dev/pytest/issues/6257>`_: "
+"Handle :py:func:`pytest.exit` being used "
+"via :py:func:`~_pytest.hookspec.pytest_internalerror`, e.g. when quitting "
+"pdb from post mortem."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:1399
 msgid ""
-"`#5914 <https://github.com/pytest-dev/pytest/issues/5914>`_: pytester: fix :"
-"py:func:`~_pytest.pytester.LineMatcher.no_fnmatch_line` when used after "
+"`#5914 <https://github.com/pytest-dev/pytest/issues/5914>`_: pytester: "
+"fix :py:func:`~_pytest.pytester.LineMatcher.no_fnmatch_line` when used after "
 "positive matching."
 msgstr ""
 
@@ -2537,10 +2553,11 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:1408
 msgid ""
-"`#6255 <https://github.com/pytest-dev/pytest/issues/6255>`_: Clear the :py:"
-"data:`sys.last_traceback`, :py:data:`sys.last_type` and :py:data:`sys."
-"last_value` attributes by deleting them instead of setting them to ``None``. "
-"This better matches the behaviour of the Python standard library."
+"`#6255 <https://github.com/pytest-dev/pytest/issues/6255>`_: Clear "
+"the :py:data:`sys.last_traceback`, :py:data:`sys.last_type` "
+"and :py:data:`sys.last_value` attributes by deleting them instead of setting "
+"them to ``None``. This better matches the behaviour of the Python standard "
+"library."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:1415
@@ -2558,8 +2575,8 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:1423
 msgid ""
 "In order to smooth the transition, pytest will issue a warning in case the "
-"``--junitxml`` option is given in the command line but :confval:"
-"`junit_family` is not explicitly configured in ``pytest.ini``."
+"``--junitxml`` option is given in the command line "
+"but :confval:`junit_family` is not explicitly configured in ``pytest.ini``."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:1426
@@ -2593,9 +2610,9 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:1445
 msgid ""
-"`#4730 <https://github.com/pytest-dev/pytest/issues/4730>`_: When :py:data:"
-"`sys.pycache_prefix` (Python 3.8+) is set, it will be used by pytest to "
-"cache test files changed by the assertion rewriting mechanism."
+"`#4730 <https://github.com/pytest-dev/pytest/issues/4730>`_: "
+"When :py:data:`sys.pycache_prefix` (Python 3.8+) is set, it will be used by "
+"pytest to cache test files changed by the assertion rewriting mechanism."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:1447
@@ -2612,9 +2629,9 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:1452
 msgid ""
-"Adds command line option ``--log-auto-indent``, config option :confval:"
-"`log_auto_indent` and support for per-entry configuration of indentation "
-"behavior on calls to :py:func:`python:logging.log()`."
+"Adds command line option ``--log-auto-indent``, config "
+"option :confval:`log_auto_indent` and support for per-entry configuration of "
+"indentation behavior on calls to :py:func:`python:logging.log()`."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:1456
@@ -2627,10 +2644,10 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:1463
 msgid ""
-"`#5914 <https://github.com/pytest-dev/pytest/issues/5914>`_: :fixture:"
-"`testdir` learned two new functions, :py:func:`~_pytest.pytester.LineMatcher."
-"no_fnmatch_line` and :py:func:`~_pytest.pytester.LineMatcher."
-"no_re_match_line`."
+"`#5914 <https://github.com/pytest-dev/pytest/issues/"
+"5914>`_: :fixture:`testdir` learned two new "
+"functions, :py:func:`~_pytest.pytester.LineMatcher.no_fnmatch_line` "
+"and :py:func:`~_pytest.pytester.LineMatcher.no_re_match_line`."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:1466
@@ -2710,8 +2727,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:1513
 msgid ""
-"E   AssertionError: assert ['version', '...version_info'] == ['version', '..."
-"version', ...]\n"
+"E   AssertionError: assert ['version', '...version_info'] == ['version', "
+"'...version', ...]\n"
 "E     Right contains 3 more items, first extra item: ' '\n"
 "E     Full diff:\n"
 "E     - ['version', 'version_info', 'sys.version', 'sys.version_info']\n"
@@ -2730,8 +2747,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:1529
 msgid ""
-"E   AssertionError: assert ['version', '...version_info'] == ['version', '..."
-"version', ...]\n"
+"E   AssertionError: assert ['version', '...version_info'] == ['version', "
+"'...version', ...]\n"
 "E     Right contains 3 more items, first extra item: ' '\n"
 "E     Full diff:\n"
 "E       [\n"
@@ -2766,9 +2783,9 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:1551
 msgid ""
-"`#6008 <https://github.com/pytest-dev/pytest/issues/6008>`_: ``Config."
-"InvocationParams.args`` is now always a ``tuple`` to better convey that it "
-"should be immutable and avoid accidental modifications."
+"`#6008 <https://github.com/pytest-dev/pytest/issues/6008>`_: "
+"``Config.InvocationParams.args`` is now always a ``tuple`` to better convey "
+"that it should be immutable and avoid accidental modifications."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:1555
@@ -2793,8 +2810,9 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:1564
 msgid ""
-"`#6069 <https://github.com/pytest-dev/pytest/issues/6069>`_: ``pytester."
-"spawn`` does not skip/xfail tests on FreeBSD anymore unconditionally."
+"`#6069 <https://github.com/pytest-dev/pytest/issues/6069>`_: "
+"``pytester.spawn`` does not skip/xfail tests on FreeBSD anymore "
+"unconditionally."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:1567
@@ -3181,9 +3199,9 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:1816
 msgid ""
-"`#5615 <https://github.com/pytest-dev/pytest/issues/5615>`_: ``pytest."
-"fail``, ``pytest.xfail`` and ``pytest.skip`` no longer support bytes for the "
-"message argument."
+"`#5615 <https://github.com/pytest-dev/pytest/issues/5615>`_: "
+"``pytest.fail``, ``pytest.xfail`` and ``pytest.skip`` no longer support "
+"bytes for the message argument."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:1818
@@ -3200,9 +3218,9 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:1829
 msgid ""
-"`#5564 <https://github.com/pytest-dev/pytest/issues/5564>`_: New ``Config."
-"invocation_args`` attribute containing the unchanged arguments passed to "
-"``pytest.main()``."
+"`#5564 <https://github.com/pytest-dev/pytest/issues/5564>`_: New "
+"``Config.invocation_args`` attribute containing the unchanged arguments "
+"passed to ``pytest.main()``."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:1832
@@ -3234,8 +3252,8 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:1855 ../../../doc/en/changelog.rst:2263
 msgid ""
 "`#4344 <https://github.com/pytest-dev/pytest/issues/4344>`_: Fix "
-"RuntimeError/StopIteration when trying to collect package with \"__init__."
-"py\" only."
+"RuntimeError/StopIteration when trying to collect package with "
+"\"__init__.py\" only."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:1858
@@ -3270,9 +3288,10 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:1872
 msgid ""
 "`#5578 <https://github.com/pytest-dev/pytest/issues/5578>`_: Improve type "
-"checking for some exception-raising functions (``pytest.xfail``, ``pytest."
-"skip``, etc) so they provide better error messages when users meant to use "
-"marks (for example ``@pytest.xfail`` instead of ``@pytest.mark.xfail``)."
+"checking for some exception-raising functions (``pytest.xfail``, "
+"``pytest.skip``, etc) so they provide better error messages when users meant "
+"to use marks (for example ``@pytest.xfail`` instead of "
+"``@pytest.mark.xfail``)."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:1877
@@ -3391,8 +3410,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:1952 ../../../doc/en/changelog.rst:2349
 msgid ""
-"For more details, see our `Python 2.7 and 3.4 support plan <https://docs."
-"pytest.org/en/stable/py27-py34-deprecation.html>`__."
+"For more details, see our `Python 2.7 and 3.4 support plan <https://"
+"docs.pytest.org/en/stable/py27-py34-deprecation.html>`__."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:1957
@@ -3402,10 +3421,9 @@ msgid ""
 "``pytest --doctest-mod`` inplace of ``--doctest-modules``. This was "
 "previously allowed where the ``ArgumentParser`` thought it was unambiguous, "
 "but this could be incorrect due to delayed parsing of options for plugins. "
-"See for example issues `#1149 <https://github.com/pytest-dev/pytest/"
-"issues/1149>`__, `#3413 <https://github.com/pytest-dev/pytest/"
-"issues/3413>`__, and `#4009 <https://github.com/pytest-dev/pytest/"
-"issues/4009>`__."
+"See for example issues `#1149 <https://github.com/pytest-dev/pytest/issues/"
+"1149>`__, `#3413 <https://github.com/pytest-dev/pytest/issues/3413>`__, and "
+"`#4009 <https://github.com/pytest-dev/pytest/issues/4009>`__."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:1966
@@ -3487,9 +3505,9 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:2029
 msgid ""
 "`#3457 <https://github.com/pytest-dev/pytest/issues/3457>`_: New "
-"`pytest_assertion_pass <https://docs.pytest.org/en/stable/reference."
-"html#_pytest.hookspec.pytest_assertion_pass>`__ hook, called with context "
-"information when an assertion *passes*."
+"`pytest_assertion_pass <https://docs.pytest.org/en/stable/"
+"reference.html#_pytest.hookspec.pytest_assertion_pass>`__ hook, called with "
+"context information when an assertion *passes*."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:2032
@@ -3514,8 +3532,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:2042
 msgid ""
-"For more information see the docs: https://docs.pytest.org/en/stable/usage."
-"html#fault-handler"
+"For more information see the docs: https://docs.pytest.org/en/stable/"
+"usage.html#fault-handler"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:2045
@@ -3527,11 +3545,11 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:2048
 msgid ""
-"`#5125 <https://github.com/pytest-dev/pytest/issues/5125>`_: ``Session."
-"exitcode`` values are now coded in ``pytest.ExitCode``, an ``IntEnum``. This "
-"makes the exit code available for consumer code and are more explicit other "
-"than just documentation. User defined exit codes are still valid, but should "
-"be used with caution."
+"`#5125 <https://github.com/pytest-dev/pytest/issues/5125>`_: "
+"``Session.exitcode`` values are now coded in ``pytest.ExitCode``, an "
+"``IntEnum``. This makes the exit code available for consumer code and are "
+"more explicit other than just documentation. User defined exit codes are "
+"still valid, but should be used with caution."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:2050
@@ -3610,14 +3628,14 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:2091
 msgid ""
 "`#5335 <https://github.com/pytest-dev/pytest/issues/5335>`_: Colorize level "
-"names when the level in the logging format is formatted using '%(levelname)."
-"Xs' (truncated fixed width alignment), where X is an integer."
+"names when the level in the logging format is formatted using '%"
+"(levelname).Xs' (truncated fixed width alignment), where X is an integer."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:2095 ../../../doc/en/changelog.rst:2335
 msgid ""
-"`#5354 <https://github.com/pytest-dev/pytest/issues/5354>`_: Fix ``pytest."
-"mark.parametrize`` when the argvalues is an iterator."
+"`#5354 <https://github.com/pytest-dev/pytest/issues/5354>`_: Fix "
+"``pytest.mark.parametrize`` when the argvalues is an iterator."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:2098 ../../../doc/en/changelog.rst:2320
@@ -3743,9 +3761,9 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:2175
 msgid ""
-"`#6870 <https://github.com/pytest-dev/pytest/issues/6870>`_: New ``Config."
-"invocation_args`` attribute containing the unchanged arguments passed to "
-"``pytest.main()``."
+"`#6870 <https://github.com/pytest-dev/pytest/issues/6870>`_: New "
+"``Config.invocation_args`` attribute containing the unchanged arguments "
+"passed to ``pytest.main()``."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:2177
@@ -3872,8 +3890,9 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:2370
 msgid ""
-"`#5269 <https://github.com/pytest-dev/pytest/issues/5269>`_: ``pytest."
-"importorskip`` includes the ``ImportError`` now in the default ``reason``."
+"`#5269 <https://github.com/pytest-dev/pytest/issues/5269>`_: "
+"``pytest.importorskip`` includes the ``ImportError`` now in the default "
+"``reason``."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:2373
@@ -4110,8 +4129,9 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:2496
 msgid ""
-"The formatting can be changed through the `log_format <https://docs.pytest."
-"org/en/stable/reference.html#confval-log_format>`__ configuration option."
+"The formatting can be changed through the `log_format <https://"
+"docs.pytest.org/en/stable/reference.html#confval-log_format>`__ "
+"configuration option."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:2499
@@ -4136,9 +4156,9 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:2512
 msgid ""
-"`#5235 <https://github.com/pytest-dev/pytest/issues/5235>`_: ``outcome."
-"exit`` is not used with ``EOF`` in the pdb wrapper anymore, but only with "
-"``quit``."
+"`#5235 <https://github.com/pytest-dev/pytest/issues/5235>`_: "
+"``outcome.exit`` is not used with ``EOF`` in the pdb wrapper anymore, but "
+"only with ``quit``."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:2519
@@ -4149,8 +4169,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:2526
 msgid ""
-"`#4942 <https://github.com/pytest-dev/pytest/issues/4942>`_: ``logging."
-"raiseExceptions`` is not set to ``False`` anymore."
+"`#4942 <https://github.com/pytest-dev/pytest/issues/4942>`_: "
+"``logging.raiseExceptions`` is not set to ``False`` anymore."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:2529
@@ -4317,8 +4337,8 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:2626
 msgid ""
 "`#4855 <https://github.com/pytest-dev/pytest/issues/4855>`_: The ``--"
-"pdbcls`` option handles classes via module attributes now (e.g. ``pdb:pdb."
-"Pdb`` with `pdb++`_), and its validation was improved."
+"pdbcls`` option handles classes via module attributes now (e.g. "
+"``pdb:pdb.Pdb`` with `pdb++`_), and its validation was improved."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:2632
@@ -4348,8 +4368,8 @@ msgid ""
 "refactorings have been made in order to make the implementation of the "
 "`pytest-subtests <https://github.com/pytest-dev/pytest-subtests>`__ plugin "
 "possible, which adds unittest sub-test support and a new ``subtests`` "
-"fixture as discussed in `#1367 <https://github.com/pytest-dev/pytest/"
-"issues/1367>`__."
+"fixture as discussed in `#1367 <https://github.com/pytest-dev/pytest/issues/"
+"1367>`__."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:2647
@@ -4411,9 +4431,9 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:2673
 msgid ""
-"`#5008 <https://github.com/pytest-dev/pytest/issues/5008>`_: If a ``setup."
-"cfg`` file contains ``[tool:pytest]`` and also the no longer supported "
-"``[pytest]`` section, pytest will use ``[tool:pytest]`` ignoring "
+"`#5008 <https://github.com/pytest-dev/pytest/issues/5008>`_: If a "
+"``setup.cfg`` file contains ``[tool:pytest]`` and also the no longer "
+"supported ``[pytest]`` section, pytest will use ``[tool:pytest]`` ignoring "
 "``[pytest]``. Previously it would unconditionally error out."
 msgstr ""
 
@@ -4448,9 +4468,9 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:2695
 msgid ""
-"`#4957 <https://github.com/pytest-dev/pytest/issues/4957>`_: ``-p no:"
-"plugin`` is handled correctly for default (internal) plugins now, e.g. with "
-"``-p no:capture``."
+"`#4957 <https://github.com/pytest-dev/pytest/issues/4957>`_: ``-p "
+"no:plugin`` is handled correctly for default (internal) plugins now, e.g. "
+"with ``-p no:capture``."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:2697
@@ -4475,8 +4495,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:2708
 msgid ""
-"`#4978 <https://github.com/pytest-dev/pytest/issues/4978>`_: ``outcomes."
-"Exit`` is not swallowed in ``assertrepr_compare`` anymore."
+"`#4978 <https://github.com/pytest-dev/pytest/issues/4978>`_: "
+"``outcomes.Exit`` is not swallowed in ``assertrepr_compare`` anymore."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:2711
@@ -4559,9 +4579,9 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:2758
 msgid ""
-"`#4987 <https://github.com/pytest-dev/pytest/issues/4987>`_: ``Collector."
-"repr_failure`` respects the ``--tb`` option, but only defaults to ``short`` "
-"now (with ``auto``)."
+"`#4987 <https://github.com/pytest-dev/pytest/issues/4987>`_: "
+"``Collector.repr_failure`` respects the ``--tb`` option, but only defaults "
+"to ``short`` now (with ``auto``)."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:2762
@@ -4585,8 +4605,8 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:2773
 msgid ""
 "`#4898 <https://github.com/pytest-dev/pytest/issues/4898>`_: Fix "
-"``AttributeError: FixtureRequest has no 'confg' attribute`` bug in ``testdir."
-"copy_example``."
+"``AttributeError: FixtureRequest has no 'confg' attribute`` bug in "
+"``testdir.copy_example``."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:2780
@@ -4601,8 +4621,9 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:2789
 msgid ""
-"`#4724 <https://github.com/pytest-dev/pytest/issues/4724>`_: ``pytest."
-"warns()`` now emits a warning when it receives unknown keyword arguments."
+"`#4724 <https://github.com/pytest-dev/pytest/issues/4724>`_: "
+"``pytest.warns()`` now emits a warning when it receives unknown keyword "
+"arguments."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:2791
@@ -4825,8 +4846,9 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:2926
 msgid ""
-"`#4536 <https://github.com/pytest-dev/pytest/issues/4536>`_: ``monkeypatch."
-"delattr`` handles class descriptors like ``staticmethod``/``classmethod``."
+"`#4536 <https://github.com/pytest-dev/pytest/issues/4536>`_: "
+"``monkeypatch.delattr`` handles class descriptors like ``staticmethod``/"
+"``classmethod``."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:2929
@@ -4869,8 +4891,9 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:2951
 msgid ""
-"`#4643 <https://github.com/pytest-dev/pytest/issues/4643>`_: Use ``a."
-"item()`` instead of the deprecated ``np.asscalar(a)`` in ``pytest.approx``."
+"`#4643 <https://github.com/pytest-dev/pytest/issues/4643>`_: Use "
+"``a.item()`` instead of the deprecated ``np.asscalar(a)`` in "
+"``pytest.approx``."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:2953
@@ -4910,8 +4933,9 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:2974
 msgid ""
-"`#4617 <https://github.com/pytest-dev/pytest/issues/4617>`_: Fixed ``pytest."
-"warns`` bug when context manager is reused (e.g. multiple parametrization)."
+"`#4617 <https://github.com/pytest-dev/pytest/issues/4617>`_: Fixed "
+"``pytest.warns`` bug when context manager is reused (e.g. multiple "
+"parametrization)."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:2977
@@ -4924,8 +4948,8 @@ msgstr ""
 msgid ""
 "`#3375 <https://github.com/pytest-dev/pytest/issues/3375>`_: Document that "
 "using ``setup.cfg`` may crash other tools or cause hard to track down "
-"problems because it uses a different parser than ``pytest.ini`` or ``tox."
-"ini`` files."
+"problems because it uses a different parser than ``pytest.ini`` or "
+"``tox.ini`` files."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:2991
@@ -4940,11 +4964,11 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:3000
 msgid ""
-"`#2169 <https://github.com/pytest-dev/pytest/issues/2169>`_: ``pytest.mark."
-"parametrize``: in previous versions, errors raised by id functions were "
-"suppressed and changed into warnings. Now the exceptions are propagated, "
-"along with a pytest message informing the node, parameter value and index "
-"where the exception occurred."
+"`#2169 <https://github.com/pytest-dev/pytest/issues/2169>`_: "
+"``pytest.mark.parametrize``: in previous versions, errors raised by id "
+"functions were suppressed and changed into warnings. Now the exceptions are "
+"propagated, along with a pytest message informing the node, parameter value "
+"and index where the exception occurred."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:3003
@@ -4989,8 +5013,8 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:3018
 msgid ""
 "`#3083 <https://github.com/pytest-dev/pytest/issues/3083>`_: Removed "
-"``Metafunc.addcall``. This was the predecessor mechanism to ``@pytest.mark."
-"parametrize``."
+"``Metafunc.addcall``. This was the predecessor mechanism to "
+"``@pytest.mark.parametrize``."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:3020
@@ -5075,8 +5099,8 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:3052
 msgid ""
 "`#4543 <https://github.com/pytest-dev/pytest/issues/4543>`_: Removed support "
-"to define fixtures using the ``pytest_funcarg__`` prefix. Use the ``@pytest."
-"fixture`` decorator instead."
+"to define fixtures using the ``pytest_funcarg__`` prefix. Use the "
+"``@pytest.fixture`` decorator instead."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:3054
@@ -5099,9 +5123,9 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:3062
 msgid ""
-"`#4546 <https://github.com/pytest-dev/pytest/issues/4546>`_: Remove ``Node."
-"get_marker(name)`` the return value was not usable for more than a existence "
-"check."
+"`#4546 <https://github.com/pytest-dev/pytest/issues/4546>`_: Remove "
+"``Node.get_marker(name)`` the return value was not usable for more than a "
+"existence check."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:3064
@@ -5137,8 +5161,8 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:3077
 msgid ""
 "`#891 <https://github.com/pytest-dev/pytest/issues/891>`_: Remove "
-"``testfunction.markername`` attributes - use ``Node."
-"iter_markers(name=None)`` to iterate them."
+"``testfunction.markername`` attributes - use "
+"``Node.iter_markers(name=None)`` to iterate them."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:3084
@@ -5233,28 +5257,28 @@ msgstr ""
 msgid ""
 "`#3632 <https://github.com/pytest-dev/pytest/issues/3632>`_: Richer equality "
 "comparison introspection on ``AssertionError`` for objects created using "
-"`attrs <http://www.attrs.org/en/stable/>`__ or `dataclasses <https://docs."
-"python.org/3/library/dataclasses.html>`_ (Python 3.7+, `backported to 3.6 "
-"<https://pypi.org/project/dataclasses>`__)."
+"`attrs <http://www.attrs.org/en/stable/>`__ or `dataclasses <https://"
+"docs.python.org/3/library/dataclasses.html>`_ (Python 3.7+, `backported to "
+"3.6 <https://pypi.org/project/dataclasses>`__)."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:3136
 msgid ""
-"`#4278 <https://github.com/pytest-dev/pytest/issues/4278>`_: ``CACHEDIR."
-"TAG`` files are now created inside cache directories."
+"`#4278 <https://github.com/pytest-dev/pytest/issues/4278>`_: "
+"``CACHEDIR.TAG`` files are now created inside cache directories."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:3138
 msgid ""
-"Those files are part of the `Cache Directory Tagging Standard <http://www."
-"bford.info/cachedir/spec.html>`__, and can be used by backup or "
+"Those files are part of the `Cache Directory Tagging Standard <http://"
+"www.bford.info/cachedir/spec.html>`__, and can be used by backup or "
 "synchronization programs to identify pytest's cache directory as such."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:3142
 msgid ""
-"`#4292 <https://github.com/pytest-dev/pytest/issues/4292>`_: ``pytest."
-"outcomes.Exit`` is derived from ``SystemExit`` instead of "
+"`#4292 <https://github.com/pytest-dev/pytest/issues/4292>`_: "
+"``pytest.outcomes.Exit`` is derived from ``SystemExit`` instead of "
 "``KeyboardInterrupt``. This allows us to better handle ``pdb`` exiting."
 msgstr ""
 
@@ -5324,9 +5348,9 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:3175
 msgid ""
-"`#4599 <https://github.com/pytest-dev/pytest/issues/4599>`_: ``pytest."
-"importorskip`` now supports a ``reason`` parameter, which will be shown when "
-"the requested module cannot be imported."
+"`#4599 <https://github.com/pytest-dev/pytest/issues/4599>`_: "
+"``pytest.importorskip`` now supports a ``reason`` parameter, which will be "
+"shown when the requested module cannot be imported."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:3183
@@ -5572,8 +5596,8 @@ msgstr ""
 msgid ""
 "The extra ``::()`` might have been removed in some places internally "
 "already, which then led to confusion in places where it was expected, e.g. "
-"with ``--deselect`` (`#4127 <https://github.com/pytest-dev/pytest/"
-"issues/4127>`_)."
+"with ``--deselect`` (`#4127 <https://github.com/pytest-dev/pytest/issues/"
+"4127>`_)."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:3330
@@ -5594,8 +5618,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:3346
 msgid ""
-"`#3554 <https://github.com/pytest-dev/pytest/issues/3554>`_: Fix ``CallInfo."
-"__repr__`` for when the call is not finished yet."
+"`#3554 <https://github.com/pytest-dev/pytest/issues/3554>`_: Fix "
+"``CallInfo.__repr__`` for when the call is not finished yet."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:3350
@@ -5629,8 +5653,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:3367
 msgid ""
-"`#4321 <https://github.com/pytest-dev/pytest/issues/4321>`_: Fix ``item."
-"nodeid`` with resolved symlinks."
+"`#4321 <https://github.com/pytest-dev/pytest/issues/4321>`_: Fix "
+"``item.nodeid`` with resolved symlinks."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:3370
@@ -5798,8 +5822,8 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:3473
 msgid ""
 "`#3851 <https://github.com/pytest-dev/pytest/issues/3851>`_: Add reference "
-"to ``empty_parameter_set_mark`` ini option in documentation of ``@pytest."
-"mark.parametrize``"
+"to ``empty_parameter_set_mark`` ini option in documentation of "
+"``@pytest.mark.parametrize``"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:3480
@@ -5846,9 +5870,9 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:3504
 msgid ""
 "`#3691 <https://github.com/pytest-dev/pytest/issues/3691>`_: Python 2: "
-"safely format warning message about passing unicode strings to ``warnings."
-"warn``, which may cause surprising ``MemoryError`` exception when monkey "
-"patching ``warnings.warn`` itself."
+"safely format warning message about passing unicode strings to "
+"``warnings.warn``, which may cause surprising ``MemoryError`` exception when "
+"monkey patching ``warnings.warn`` itself."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:3508
@@ -6032,8 +6056,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:3603
 msgid ""
-"This has the side effect that ``pytest.deprecated_call`` now raises ``pytest."
-"fail.Exception`` instead of ``AssertionError``."
+"This has the side effect that ``pytest.deprecated_call`` now raises "
+"``pytest.fail.Exception`` instead of ``AssertionError``."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:3607
@@ -6051,9 +6075,9 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:3617
 msgid ""
-"`#3057 <https://github.com/pytest-dev/pytest/issues/3057>`_: ``request."
-"fixturenames`` now correctly returns the name of fixtures created by "
-"``request.getfixturevalue()``."
+"`#3057 <https://github.com/pytest-dev/pytest/issues/3057>`_: "
+"``request.fixturenames`` now correctly returns the name of fixtures created "
+"by ``request.getfixturevalue()``."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:3620
@@ -6085,8 +6109,8 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:3632
 msgid ""
 "This fixes running ``pytest tests/test_foo.py::test_bar``, where ``tests`` "
-"is a symlink to ``project/app/tests``: previously ``project/app/conftest."
-"py`` would be ignored for fixtures then."
+"is a symlink to ``project/app/tests``: previously ``project/app/"
+"conftest.py`` would be ignored for fixtures then."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:3637
@@ -6201,8 +6225,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:3702
 msgid ""
-"`#4034 <https://github.com/pytest-dev/pytest/issues/4034>`_: The ``."
-"user_properties`` attribute of ``TestReport`` objects is a list of (name, "
+"`#4034 <https://github.com/pytest-dev/pytest/issues/4034>`_: The "
+"``.user_properties`` attribute of ``TestReport`` objects is a list of (name, "
 "value) tuples, but could sometimes be instantiated as a tuple of tuples.  It "
 "is now always a list."
 msgstr ""
@@ -6229,9 +6253,9 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:3717
 msgid ""
-"`#4056 <https://github.com/pytest-dev/pytest/issues/4056>`_: ``MonkeyPatch."
-"setenv`` and ``MonkeyPatch.delenv`` issue a warning if the environment "
-"variable name is not ``str`` on Python 2."
+"`#4056 <https://github.com/pytest-dev/pytest/issues/4056>`_: "
+"``MonkeyPatch.setenv`` and ``MonkeyPatch.delenv`` issue a warning if the "
+"environment variable name is not ``str`` on Python 2."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:3719
@@ -6254,8 +6278,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:3736
 msgid ""
-"`#3286 <https://github.com/pytest-dev/pytest/issues/3286>`_: ``."
-"pytest_cache`` directory is now automatically ignored by Git. Users who "
+"`#3286 <https://github.com/pytest-dev/pytest/issues/3286>`_: "
+"``.pytest_cache`` directory is now automatically ignored by Git. Users who "
 "would like to contribute a solution for other SCMs please consult/comment on "
 "this issue."
 msgstr ""
@@ -6302,11 +6326,11 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:3760
 msgid ""
 "`#3996 <https://github.com/pytest-dev/pytest/issues/3996>`_: New "
-"`Deprecations and Removals <https://docs.pytest.org/en/stable/deprecations."
-"html>`_ page shows all currently deprecated features, the rationale to do "
-"so, and alternatives to update your code. It also list features removed from "
-"pytest in past major releases to help those with ancient pytest versions to "
-"upgrade."
+"`Deprecations and Removals <https://docs.pytest.org/en/stable/"
+"deprecations.html>`_ page shows all currently deprecated features, the "
+"rationale to do so, and alternatives to update your code. It also list "
+"features removed from pytest in past major releases to help those with "
+"ancient pytest versions to upgrade."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:3769
@@ -6335,9 +6359,10 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:3785
 msgid ""
-"`#3936 <https://github.com/pytest-dev/pytest/issues/3936>`_: ``@pytest.mark."
-"filterwarnings`` second parameter is no longer regex-escaped, making it "
-"possible to actually use regular expressions to check the warning message."
+"`#3936 <https://github.com/pytest-dev/pytest/issues/3936>`_: "
+"``@pytest.mark.filterwarnings`` second parameter is no longer regex-escaped, "
+"making it possible to actually use regular expressions to check the warning "
+"message."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:3788
@@ -6357,8 +6382,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:3800
 msgid ""
-"Consult `the documentation <https://docs.pytest.org/en/stable/warnings."
-"html#internal-pytest-warnings>`__ for more info."
+"Consult `the documentation <https://docs.pytest.org/en/stable/"
+"warnings.html#internal-pytest-warnings>`__ for more info."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:3803
@@ -6395,8 +6420,8 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:3819
 msgid ""
 "`#3837 <https://github.com/pytest-dev/pytest/issues/3837>`_: Added support "
-"for 'xfailed' and 'xpassed' outcomes to the ``pytester.RunResult."
-"assert_outcomes`` signature."
+"for 'xfailed' and 'xpassed' outcomes to the "
+"``pytester.RunResult.assert_outcomes`` signature."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:3826
@@ -6692,8 +6717,8 @@ msgid ""
 "`#3661 <https://github.com/pytest-dev/pytest/issues/3661>`_: Calling a "
 "fixture function directly, as opposed to request them in a test function, "
 "now issues a ``RemovedInPytest4Warning``. See `the documentation for "
-"rationale and examples <https://docs.pytest.org/en/stable/deprecations."
-"html#calling-fixtures-directly>`_."
+"rationale and examples <https://docs.pytest.org/en/stable/"
+"deprecations.html#calling-fixtures-directly>`_."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4010
@@ -6705,9 +6730,9 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:4013
 msgid ""
-"`#3576 <https://github.com/pytest-dev/pytest/issues/3576>`_: ``Node."
-"add_marker`` now supports an ``append=True/False`` parameter to determine "
-"whether the mark comes last (default) or first."
+"`#3576 <https://github.com/pytest-dev/pytest/issues/3576>`_: "
+"``Node.add_marker`` now supports an ``append=True/False`` parameter to "
+"determine whether the mark comes last (default) or first."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4016
@@ -6763,9 +6788,9 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:4050
 msgid ""
-"`#3519 <https://github.com/pytest-dev/pytest/issues/3519>`_: Now a ``README."
-"md`` file is created in ``.pytest_cache`` to make it clear why the directory "
-"exists."
+"`#3519 <https://github.com/pytest-dev/pytest/issues/3519>`_: Now a "
+"``README.md`` file is created in ``.pytest_cache`` to make it clear why the "
+"directory exists."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4054
@@ -6800,8 +6825,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:4075
 msgid ""
-"Replace broken type annotations with type comments. (`#3635 <https://github."
-"com/pytest-dev/pytest/issues/3635>`_)"
+"Replace broken type annotations with type comments. (`#3635 <https://"
+"github.com/pytest-dev/pytest/issues/3635>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4077
@@ -6836,8 +6861,8 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:4096
 msgid ""
 "Fix problem where log messages with non-ascii characters would not appear in "
-"the output log file. (`#3630 <https://github.com/pytest-dev/pytest/"
-"issues/3630>`_)"
+"the output log file. (`#3630 <https://github.com/pytest-dev/pytest/issues/"
+"3630>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4100
@@ -6849,8 +6874,8 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:4107
 msgid ""
 "The description above the example for ``@pytest.mark.skipif`` now better "
-"matches the code. (`#3611 <https://github.com/pytest-dev/pytest/"
-"issues/3611>`_)"
+"matches the code. (`#3611 <https://github.com/pytest-dev/pytest/issues/"
+"3611>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4115
@@ -6879,8 +6904,8 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:4132
 msgid ""
 "Fix regression in ``Node.add_marker`` by extracting the mark object of a "
-"``MarkDecorator``. (`#3555 <https://github.com/pytest-dev/pytest/"
-"issues/3555>`_)"
+"``MarkDecorator``. (`#3555 <https://github.com/pytest-dev/pytest/issues/"
+"3555>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4136
@@ -6893,8 +6918,8 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:4140
 msgid ""
 "Continue to call finalizers in the stack when a finalizer in a former scope "
-"raises an exception. (`#3569 <https://github.com/pytest-dev/pytest/"
-"issues/3569>`_)"
+"raises an exception. (`#3569 <https://github.com/pytest-dev/pytest/issues/"
+"3569>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4144
@@ -6941,8 +6966,8 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:4178
 msgid ""
 "Fixed a bug where stdout and stderr were logged twice by junitxml when a "
-"test was marked xfail. (`#3491 <https://github.com/pytest-dev/pytest/"
-"issues/3491>`_)"
+"test was marked xfail. (`#3491 <https://github.com/pytest-dev/pytest/issues/"
+"3491>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4182
@@ -6955,8 +6980,8 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:4186
 msgid ""
 "Fix assertion rewriter compatibility with libraries that monkey patch "
-"``file`` objects. (`#3503 <https://github.com/pytest-dev/pytest/"
-"issues/3503>`_)"
+"``file`` objects. (`#3503 <https://github.com/pytest-dev/pytest/issues/"
+"3503>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4194
@@ -6998,12 +7023,12 @@ msgstr ""
 msgid ""
 "Revamp the internals of the ``pytest.mark`` implementation with correct per "
 "node handling which fixes a number of long standing bugs caused by the old "
-"design. This introduces new ``Node.iter_markers(name)`` and ``Node."
-"get_closest_marker(name)`` APIs. Users are **strongly encouraged** to read "
-"the `reasons for the revamp in the docs <https://docs.pytest.org/en/stable/"
-"historical-notes.html#marker-revamp-and-iteration>`_, or jump over to "
-"details about `updating existing code to use the new APIs <https://docs."
-"pytest.org/en/stable/historical-notes.html#updating-code>`_. (`#3317 "
+"design. This introduces new ``Node.iter_markers(name)`` and "
+"``Node.get_closest_marker(name)`` APIs. Users are **strongly encouraged** to "
+"read the `reasons for the revamp in the docs <https://docs.pytest.org/en/"
+"stable/historical-notes.html#marker-revamp-and-iteration>`_, or jump over to "
+"details about `updating existing code to use the new APIs <https://"
+"docs.pytest.org/en/stable/historical-notes.html#updating-code>`_. (`#3317 "
 "<https://github.com/pytest-dev/pytest/issues/3317>`_)"
 msgstr ""
 
@@ -7018,9 +7043,9 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:4237
 msgid ""
 "Support for Python 3.7's builtin ``breakpoint()`` method, see `Using the "
-"builtin breakpoint function <https://docs.pytest.org/en/stable/usage."
-"html#breakpoint-builtin>`_ for details. (`#3180 <https://github.com/pytest-"
-"dev/pytest/issues/3180>`_)"
+"builtin breakpoint function <https://docs.pytest.org/en/stable/"
+"usage.html#breakpoint-builtin>`_ for details. (`#3180 <https://github.com/"
+"pytest-dev/pytest/issues/3180>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4242
@@ -7202,8 +7227,8 @@ msgstr ""
 msgid ""
 "New ``--rootdir`` command-line option to override the rules for discovering "
 "the root directory. See `customize <https://docs.pytest.org/en/stable/"
-"customize.html>`_ in the documentation for details. (`#1642 <https://github."
-"com/pytest-dev/pytest/issues/1642>`_)"
+"customize.html>`_ in the documentation for details. (`#1642 <https://"
+"github.com/pytest-dev/pytest/issues/1642>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4382
@@ -7251,8 +7276,8 @@ msgid ""
 "junit xml file if the ``junit_logging`` ini option is set to ``system-out``. "
 "If the value of this ini option is ``system-err``, the logs are written to "
 "``<system-err>``. The default value for ``junit_logging`` is ``no``, meaning "
-"captured logs are not written to the output file. (`#3156 <https://github."
-"com/pytest-dev/pytest/issues/3156>`_)"
+"captured logs are not written to the output file. (`#3156 <https://"
+"github.com/pytest-dev/pytest/issues/3156>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4413
@@ -7284,15 +7309,15 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:4427
 msgid ""
 "Deselected item count is now shown before tests are run, e.g. ``collected X "
-"items / Y deselected``. (`#3213 <https://github.com/pytest-dev/pytest/"
-"issues/3213>`_)"
+"items / Y deselected``. (`#3213 <https://github.com/pytest-dev/pytest/issues/"
+"3213>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4431
 msgid ""
 "The builtin module ``platform`` is now available for use in expressions in "
-"``pytest.mark``. (`#3236 <https://github.com/pytest-dev/pytest/"
-"issues/3236>`_)"
+"``pytest.mark``. (`#3236 <https://github.com/pytest-dev/pytest/issues/"
+"3236>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4435
@@ -7317,8 +7342,8 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:4449
 msgid ""
 "Suppress ``IOError`` when closing the temporary file used for capturing "
-"streams in Python 2.7. (`#2370 <https://github.com/pytest-dev/pytest/"
-"issues/2370>`_)"
+"streams in Python 2.7. (`#2370 <https://github.com/pytest-dev/pytest/issues/"
+"2370>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4453
@@ -7382,8 +7407,8 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:4492
 msgid ""
 "Internal refactoring of ``FormattedExcinfo`` to use ``attrs`` facilities and "
-"remove old support code for legacy Python versions. (`#3292 <https://github."
-"com/pytest-dev/pytest/issues/3292>`_)"
+"remove old support code for legacy Python versions. (`#3292 <https://"
+"github.com/pytest-dev/pytest/issues/3292>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4496
@@ -7486,8 +7511,8 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:4565
 msgid ""
 "Detect arguments injected by ``unittest.mock.patch`` decorator correctly "
-"when pypi ``mock.patch`` is installed and imported. (`#3206 <https://github."
-"com/pytest-dev/pytest/issues/3206>`_)"
+"when pypi ``mock.patch`` is installed and imported. (`#3206 <https://"
+"github.com/pytest-dev/pytest/issues/3206>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4569
@@ -7503,14 +7528,15 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:4577
 msgid ""
-"Fixed output capture handling in doctests on macOS. (`#985 <https://github."
-"com/pytest-dev/pytest/issues/985>`_)"
+"Fixed output capture handling in doctests on macOS. (`#985 <https://"
+"github.com/pytest-dev/pytest/issues/985>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4584
 msgid ""
-"Add Sphinx parameter docs for ``match`` and ``message`` args to ``pytest."
-"raises``. (`#3202 <https://github.com/pytest-dev/pytest/issues/3202>`_)"
+"Add Sphinx parameter docs for ``match`` and ``message`` args to "
+"``pytest.raises``. (`#3202 <https://github.com/pytest-dev/pytest/issues/"
+"3202>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4592
@@ -7550,14 +7576,14 @@ msgid ""
 "apply when ``@pytest.mark.parametrize`` is given an empty set of parameters. "
 "Valid options are ``skip`` (default) and ``xfail``. Note that it is planned "
 "to change the default to ``xfail`` in future releases as this is considered "
-"less error prone. (`#2527 <https://github.com/pytest-dev/pytest/"
-"issues/2527>`_)"
+"less error prone. (`#2527 <https://github.com/pytest-dev/pytest/issues/"
+"2527>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4625
 msgid ""
-"**Incompatible change**: after community feedback the `logging <https://docs."
-"pytest.org/en/stable/logging.html>`_ functionality has undergone some "
+"**Incompatible change**: after community feedback the `logging <https://"
+"docs.pytest.org/en/stable/logging.html>`_ functionality has undergone some "
 "changes. Please consult the `logging documentation <https://docs.pytest.org/"
 "en/stable/logging.html#incompatible-changes-in-pytest-3-4>`_ for details. "
 "(`#3013 <https://github.com/pytest-dev/pytest/issues/3013>`_)"
@@ -7572,12 +7598,12 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:4635
 msgid ""
-"New `pytest_runtest_logfinish <https://docs.pytest.org/en/stable/reference."
-"html#_pytest.hookspec.pytest_runtest_logfinish>`_ hook which is called when "
-"a test item has finished executing, analogous to `pytest_runtest_logstart "
-"<https://docs.pytest.org/en/stable/reference.html#_pytest.hookspec."
-"pytest_runtest_logstart>`_. (`#3101 <https://github.com/pytest-dev/pytest/"
-"issues/3101>`_)"
+"New `pytest_runtest_logfinish <https://docs.pytest.org/en/stable/"
+"reference.html#_pytest.hookspec.pytest_runtest_logfinish>`_ hook which is "
+"called when a test item has finished executing, analogous to "
+"`pytest_runtest_logstart <https://docs.pytest.org/en/stable/"
+"reference.html#_pytest.hookspec.pytest_runtest_logstart>`_. (`#3101 <https://"
+"github.com/pytest-dev/pytest/issues/3101>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4642
@@ -7602,8 +7628,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:4653
 msgid ""
-"The default cache directory has been renamed from ``.cache`` to ``."
-"pytest_cache`` after community feedback that the name ``.cache`` did not "
+"The default cache directory has been renamed from ``.cache`` to "
+"``.pytest_cache`` after community feedback that the name ``.cache`` did not "
 "make it clear that it was used by pytest. (`#3138 <https://github.com/pytest-"
 "dev/pytest/issues/3138>`_)"
 msgstr ""
@@ -7647,15 +7673,15 @@ msgid ""
 "``pytest -o foo=1 /path/to/test.py`` would fail because ``/path/to/test.py`` "
 "would be considered as part of the ``-o`` command-line argument. One "
 "consequence of this is that now multiple configuration overrides need "
-"multiple ``-o`` flags: ``pytest -o foo=1 -o bar=2``. (`#3103 <https://github."
-"com/pytest-dev/pytest/issues/3103>`_)"
+"multiple ``-o`` flags: ``pytest -o foo=1 -o bar=2``. (`#3103 <https://"
+"github.com/pytest-dev/pytest/issues/3103>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4691
 msgid ""
 "Document hooks (defined with ``historic=True``) which cannot be used with "
-"``hookwrapper=True``. (`#2423 <https://github.com/pytest-dev/pytest/"
-"issues/2423>`_)"
+"``hookwrapper=True``. (`#2423 <https://github.com/pytest-dev/pytest/issues/"
+"2423>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4695
@@ -7680,8 +7706,8 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:4705
 msgid ""
 "Prefer ``https://*.readthedocs.io`` over ``http://*.rtfd.org`` for links in "
-"the documentation. (`#3092 <https://github.com/pytest-dev/pytest/"
-"issues/3092>`_)"
+"the documentation. (`#3092 <https://github.com/pytest-dev/pytest/issues/"
+"3092>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4709
@@ -7777,8 +7803,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:4779
 msgid ""
-"Fix issue about ``-p no:<plugin>`` having no effect. (`#2920 <https://github."
-"com/pytest-dev/pytest/issues/2920>`_)"
+"Fix issue about ``-p no:<plugin>`` having no effect. (`#2920 <https://"
+"github.com/pytest-dev/pytest/issues/2920>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4782
@@ -7802,9 +7828,10 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:4792
 msgid ""
-"Bring back ``TerminalReporter.writer`` as an alias to ``TerminalReporter."
-"_tw``. This alias was removed by accident in the ``3.3.0`` release. (`#2984 "
-"<https://github.com/pytest-dev/pytest/issues/2984>`_)"
+"Bring back ``TerminalReporter.writer`` as an alias to "
+"``TerminalReporter._tw``. This alias was removed by accident in the "
+"``3.3.0`` release. (`#2984 <https://github.com/pytest-dev/pytest/issues/"
+"2984>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4796
@@ -7816,14 +7843,14 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:4804
 msgid ""
-"Fix broken link to plugin ``pytest-localserver``. (`#2963 <https://github."
-"com/pytest-dev/pytest/issues/2963>`_)"
+"Fix broken link to plugin ``pytest-localserver``. (`#2963 <https://"
+"github.com/pytest-dev/pytest/issues/2963>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4811
 msgid ""
-"Update github \"bugs\" link in ``CONTRIBUTING.rst`` (`#2949 <https://github."
-"com/pytest-dev/pytest/issues/2949>`_)"
+"Update github \"bugs\" link in ``CONTRIBUTING.rst`` (`#2949 <https://"
+"github.com/pytest-dev/pytest/issues/2949>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4816
@@ -7851,8 +7878,8 @@ msgstr ""
 msgid ""
 "Internally change ``CallSpec2`` to have a list of marks instead of a broken "
 "mapping of keywords. This removes the keywords attribute of the internal "
-"``CallSpec2`` class. (`#2672 <https://github.com/pytest-dev/pytest/"
-"issues/2672>`_)"
+"``CallSpec2`` class. (`#2672 <https://github.com/pytest-dev/pytest/issues/"
+"2672>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4837
@@ -7906,8 +7933,8 @@ msgstr ""
 msgid ""
 "Now pytest displays the total progress percentage while running tests. The "
 "previous output style can be set by configuring the ``console_output_style`` "
-"setting to ``classic``. (`#2657 <https://github.com/pytest-dev/pytest/"
-"issues/2657>`_)"
+"setting to ``classic``. (`#2657 <https://github.com/pytest-dev/pytest/issues/"
+"2657>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4872
@@ -7923,13 +7950,13 @@ msgid ""
 "options in ``pytest.ini``, the command line and also during individual tests "
 "using markers. Also, a ``caplog`` fixture is available that enables users to "
 "test the captured log during specific tests (similar to ``capsys`` for "
-"example). For more information, please see the `logging docs <https://docs."
-"pytest.org/en/stable/logging.html>`_. This feature was introduced by merging "
-"the popular `pytest-catchlog <https://pypi.org/project/pytest-catchlog/>`_ "
-"plugin, thanks to `Thomas Hisch <https://github.com/thisch>`_. Be advised "
-"that during the merging the backward compatibility interface with the "
-"defunct ``pytest-capturelog`` has been dropped. (`#2794 <https://github.com/"
-"pytest-dev/pytest/issues/2794>`_)"
+"example). For more information, please see the `logging docs <https://"
+"docs.pytest.org/en/stable/logging.html>`_. This feature was introduced by "
+"merging the popular `pytest-catchlog <https://pypi.org/project/pytest-"
+"catchlog/>`_ plugin, thanks to `Thomas Hisch <https://github.com/thisch>`_. "
+"Be advised that during the merging the backward compatibility interface with "
+"the defunct ``pytest-capturelog`` has been dropped. (`#2794 <https://"
+"github.com/pytest-dev/pytest/issues/2794>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4888
@@ -7954,15 +7981,15 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:4898
 msgid ""
 "Add ``capfdbinary``, a version of ``capfd`` which returns bytes from "
-"``readouterr()``. (`#2923 <https://github.com/pytest-dev/pytest/"
-"issues/2923>`_)"
+"``readouterr()``. (`#2923 <https://github.com/pytest-dev/pytest/issues/"
+"2923>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4902
 msgid ""
 "Add ``capsysbinary`` a version of ``capsys`` which returns bytes from "
-"``readouterr()``. (`#2934 <https://github.com/pytest-dev/pytest/"
-"issues/2934>`_)"
+"``readouterr()``. (`#2934 <https://github.com/pytest-dev/pytest/issues/"
+"2934>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4906
@@ -8040,15 +8067,15 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:4953
 msgid ""
-"Handle marks without description in ``pytest.ini``. (`#2942 <https://github."
-"com/pytest-dev/pytest/issues/2942>`_)"
+"Handle marks without description in ``pytest.ini``. (`#2942 <https://"
+"github.com/pytest-dev/pytest/issues/2942>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4960
 msgid ""
 "pytest now depends on `attrs <https://pypi.org/project/attrs/>`__ for "
-"internal structures to ease code maintainability. (`#2641 <https://github."
-"com/pytest-dev/pytest/issues/2641>`_)"
+"internal structures to ease code maintainability. (`#2641 <https://"
+"github.com/pytest-dev/pytest/issues/2641>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4964
@@ -8072,8 +8099,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:4974
 msgid ""
-"Remove unnecessary mark evaluator in unittest plugin (`#2767 <https://github."
-"com/pytest-dev/pytest/issues/2767>`_)"
+"Remove unnecessary mark evaluator in unittest plugin (`#2767 <https://"
+"github.com/pytest-dev/pytest/issues/2767>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4977
@@ -8091,15 +8118,15 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:4984
 msgid ""
-"Internal refactoring to simplify scope node lookup. (`#2910 <https://github."
-"com/pytest-dev/pytest/issues/2910>`_)"
+"Internal refactoring to simplify scope node lookup. (`#2910 <https://"
+"github.com/pytest-dev/pytest/issues/2910>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4987
 msgid ""
 "Configure ``pytest`` to prevent pip from installing pytest in unsupported "
-"Python versions. (`#2922 <https://github.com/pytest-dev/pytest/"
-"issues/2922>`_)"
+"Python versions. (`#2922 <https://github.com/pytest-dev/pytest/issues/"
+"2922>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:4993
@@ -8170,8 +8197,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:5038
 msgid ""
-"Clarify language of proposal for fixtures parameters (`#2893 <https://github."
-"com/pytest-dev/pytest/issues/2893>`_)"
+"Clarify language of proposal for fixtures parameters (`#2893 <https://"
+"github.com/pytest-dev/pytest/issues/2893>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:5041
@@ -8199,8 +8226,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:5058
 msgid ""
-"Fix crash in tab completion when no prefix is given. (`#2748 <https://github."
-"com/pytest-dev/pytest/issues/2748>`_)"
+"Fix crash in tab completion when no prefix is given. (`#2748 <https://"
+"github.com/pytest-dev/pytest/issues/2748>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:5061
@@ -8239,8 +8266,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:5088
 msgid ""
-"Fix typo in example of passing a callable to markers (in example/markers."
-"rst) (`#2765 <https://github.com/pytest-dev/pytest/issues/2765>`_)"
+"Fix typo in example of passing a callable to markers (in example/"
+"markers.rst) (`#2765 <https://github.com/pytest-dev/pytest/issues/2765>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:5093
@@ -8275,9 +8302,9 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:5115
 msgid ""
 "In examples on working with custom markers, add examples demonstrating the "
-"usage of ``pytest.mark.MARKER_NAME.with_args`` in comparison with ``pytest."
-"mark.MARKER_NAME.__call__`` (`#2604 <https://github.com/pytest-dev/pytest/"
-"issues/2604>`_)"
+"usage of ``pytest.mark.MARKER_NAME.with_args`` in comparison with "
+"``pytest.mark.MARKER_NAME.__call__`` (`#2604 <https://github.com/pytest-dev/"
+"pytest/issues/2604>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:5120
@@ -8368,14 +8395,14 @@ msgstr ""
 msgid ""
 "A deprecation warning is now raised when using marks for parameters in "
 "``pytest.mark.parametrize``. Use ``pytest.param`` to apply marks to "
-"parameters instead. (`#2427 <https://github.com/pytest-dev/pytest/"
-"issues/2427>`_)"
+"parameters instead. (`#2427 <https://github.com/pytest-dev/pytest/issues/"
+"2427>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:5193
 msgid ""
-"Add support for numpy arrays (and dicts) to approx. (`#1994 <https://github."
-"com/pytest-dev/pytest/issues/1994>`_)"
+"Add support for numpy arrays (and dicts) to approx. (`#1994 <https://"
+"github.com/pytest-dev/pytest/issues/1994>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:5196
@@ -8432,8 +8459,8 @@ msgid ""
 "Introduced ``@pytest.mark.filterwarnings`` mark which allows overwriting the "
 "warnings filter on a per test, class or module level. See the `docs <https://"
 "docs.pytest.org/en/stable/warnings.html#pytest-mark- filterwarnings>`_ for "
-"more information. (`#2598 <https://github.com/pytest- dev/pytest/"
-"issues/2598>`_)"
+"more information. (`#2598 <https://github.com/pytest- dev/pytest/issues/"
+"2598>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:5233
@@ -8496,8 +8523,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:5271
 msgid ""
-"capture: ensure that EncodedFile.name is a string. (`#2555 <https://github."
-"com/pytest-dev/pytest/issues/2555>`_)"
+"capture: ensure that EncodedFile.name is a string. (`#2555 <https://"
+"github.com/pytest-dev/pytest/issues/2555>`_)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:5274
@@ -8922,8 +8949,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:5549
 msgid ""
-"Change capture.py's ``DontReadFromInput`` class to throw ``io."
-"UnsupportedOperation`` errors rather than ValueErrors in the ``fileno`` "
+"Change capture.py's ``DontReadFromInput`` class to throw "
+"``io.UnsupportedOperation`` errors rather than ValueErrors in the ``fileno`` "
 "method (`#2276`_). Thanks `@metasyn`_ and `@vlad-dragos`_ for the PR."
 msgstr ""
 
@@ -9194,18 +9221,18 @@ msgstr ""
 msgid ""
 "Fixed cyclic reference when ``pytest.raises`` is used in context-manager "
 "form (`#1965`_). Also as a result of this fix, ``sys.exc_info()`` is left "
-"empty in both context-manager and function call usages. Previously, ``sys."
-"exc_info`` would contain the exception caught by the context manager, even "
-"when the expected exception occurred. Thanks `@MSeifert04`_ for the report "
-"and the PR."
+"empty in both context-manager and function call usages. Previously, "
+"``sys.exc_info`` would contain the exception caught by the context manager, "
+"even when the expected exception occurred. Thanks `@MSeifert04`_ for the "
+"report and the PR."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:5800
 msgid ""
 "Fixed false-positives warnings from assertion rewrite hook for modules that "
-"were rewritten but were later marked explicitly by ``pytest."
-"register_assert_rewrite`` or implicitly as a plugin (`#2005`_). Thanks "
-"`@RonnyPfannschmidt`_ for the report and `@nicoddemus`_ for the PR."
+"were rewritten but were later marked explicitly by "
+"``pytest.register_assert_rewrite`` or implicitly as a plugin (`#2005`_). "
+"Thanks `@RonnyPfannschmidt`_ for the report and `@nicoddemus`_ for the PR."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:5805
@@ -9280,15 +9307,15 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:5879
 msgid ""
-"Improve error message when passing non-string ids to ``pytest.mark."
-"parametrize`` (`#1857`_). Thanks `@okken`_ for the report and `@nicoddemus`_ "
-"for the PR."
+"Improve error message when passing non-string ids to "
+"``pytest.mark.parametrize`` (`#1857`_). Thanks `@okken`_ for the report and "
+"`@nicoddemus`_ for the PR."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:5882
 msgid ""
-"Add ``buffer`` attribute to stdin stub class ``pytest.capture."
-"DontReadFromInput`` Thanks `@joguSD`_ for the PR."
+"Add ``buffer`` attribute to stdin stub class "
+"``pytest.capture.DontReadFromInput`` Thanks `@joguSD`_ for the PR."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:5885
@@ -9309,10 +9336,10 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:5894
 msgid ""
-"Do not call tearDown and cleanups when running tests from ``unittest."
-"TestCase`` subclasses with ``--pdb`` enabled. This allows proper post mortem "
-"debugging for all applications which have significant logic in their "
-"tearDown machinery (`#1890`_). Thanks `@mbyt`_ for the PR."
+"Do not call tearDown and cleanups when running tests from "
+"``unittest.TestCase`` subclasses with ``--pdb`` enabled. This allows proper "
+"post mortem debugging for all applications which have significant logic in "
+"their tearDown machinery (`#1890`_). Thanks `@mbyt`_ for the PR."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:5900
@@ -9447,16 +9474,17 @@ msgstr ""
 msgid ""
 "Raise a helpful failure message when requesting a parametrized fixture at "
 "runtime, e.g. with ``request.getfixturevalue``. Previously these parameters "
-"were simply never defined, so a fixture decorated like ``@pytest."
-"fixture(params=[0, 1, 2])`` only ran once (`#460`_). Thanks to `@nikratio`_ "
-"for the bug report, `@RedBeardCode`_ and `@tomviner`_ for the PR."
+"were simply never defined, so a fixture decorated like "
+"``@pytest.fixture(params=[0, 1, 2])`` only ran once (`#460`_). Thanks to "
+"`@nikratio`_ for the bug report, `@RedBeardCode`_ and `@tomviner`_ for the "
+"PR."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:5997
 msgid ""
-"``_pytest.monkeypatch.monkeypatch`` class has been renamed to ``_pytest."
-"monkeypatch.MonkeyPatch`` so it doesn't conflict with the ``monkeypatch`` "
-"fixture."
+"``_pytest.monkeypatch.monkeypatch`` class has been renamed to "
+"``_pytest.monkeypatch.MonkeyPatch`` so it doesn't conflict with the "
+"``monkeypatch`` fixture."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:6000
@@ -9546,8 +9574,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:6051
 msgid ""
-"Introduce ``pytest`` command as recommended entry point. Note that ``py."
-"test`` still works and is not scheduled for removal. Closes proposal "
+"Introduce ``pytest`` command as recommended entry point. Note that "
+"``py.test`` still works and is not scheduled for removal. Closes proposal "
 "`#1629`_. Thanks `@obestwalter`_ and `@davehunt`_ for the complete PR "
 "(`#1633`_)."
 msgstr ""
@@ -9622,8 +9650,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:6087
 msgid ""
-"Allow passing a custom debugger class (e.g. ``--pdbcls=IPython.core.debugger:"
-"Pdb``). Thanks to `@anntzer`_ for the PR."
+"Allow passing a custom debugger class (e.g. ``--"
+"pdbcls=IPython.core.debugger:Pdb``). Thanks to `@anntzer`_ for the PR."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:6091 ../../../doc/en/changelog.rst:6476
@@ -9660,10 +9688,10 @@ msgstr ""
 msgid ""
 "Fixtures marked with ``@pytest.fixture`` can now use ``yield`` statements "
 "exactly like those marked with the ``@pytest.yield_fixture`` decorator. This "
-"change renders ``@pytest.yield_fixture`` deprecated and makes ``@pytest."
-"fixture`` with ``yield`` statements the preferred way to write teardown code "
-"(`#1461`_). Thanks `@csaftoiu`_ for bringing this to attention and "
-"`@nicoddemus`_ for the PR."
+"change renders ``@pytest.yield_fixture`` deprecated and makes "
+"``@pytest.fixture`` with ``yield`` statements the preferred way to write "
+"teardown code (`#1461`_). Thanks `@csaftoiu`_ for bringing this to attention "
+"and `@nicoddemus`_ for the PR."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:6113
@@ -9775,10 +9803,10 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:6173
 msgid ""
-"``[pytest]`` sections in ``setup.cfg`` files should now be named ``[tool:"
-"pytest]`` to avoid conflicts with other distutils commands (see `#567`_). "
-"``[pytest]`` sections in ``pytest.ini`` or ``tox.ini`` files are supported "
-"and unchanged. Thanks `@nicoddemus`_ for the PR."
+"``[pytest]`` sections in ``setup.cfg`` files should now be named "
+"``[tool:pytest]`` to avoid conflicts with other distutils commands (see "
+"`#567`_). ``[pytest]`` sections in ``pytest.ini`` or ``tox.ini`` files are "
+"supported and unchanged. Thanks `@nicoddemus`_ for the PR."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:6178
@@ -9990,9 +10018,9 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:6414
 msgid ""
-"Fix (`#1178 <https://github.com/pytest-dev/pytest/issues/1178>`_): ``pytest."
-"fail`` with non-ascii characters raises an internal pytest error. Thanks "
-"`@nicoddemus`_ for the PR."
+"Fix (`#1178 <https://github.com/pytest-dev/pytest/issues/1178>`_): "
+"``pytest.fail`` with non-ascii characters raises an internal pytest error. "
+"Thanks `@nicoddemus`_ for the PR."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:6418
@@ -10145,9 +10173,9 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:6516
 msgid ""
-"The ``-s`` and ``-c`` options should now work under ``xdist``; ``Config."
-"fromdictargs`` now represents its input much more faithfully. Thanks to "
-"`@bukzor`_ for the complete PR (`#680`_)."
+"The ``-s`` and ``-c`` options should now work under ``xdist``; "
+"``Config.fromdictargs`` now represents its input much more faithfully. "
+"Thanks to `@bukzor`_ for the complete PR (`#680`_)."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:6520
@@ -10375,8 +10403,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:6673
 msgid ""
-"fix #1087: handling SystemError when passing empty byte strings to pytest."
-"parametrize in Python 3. Thanks Paul Kehrer for the report and Bruno "
+"fix #1087: handling SystemError when passing empty byte strings to "
+"pytest.parametrize in Python 3. Thanks Paul Kehrer for the report and Bruno "
 "Oliveira for the PR."
 msgstr ""
 
@@ -10589,8 +10617,8 @@ msgid ""
 "added ``tmpdir_factory``, a session-scoped fixture that can be used to "
 "create directories under the base temporary directory. Previously this "
 "object was installed as a ``_tmpdirhandler`` attribute of the ``config`` "
-"object, but now it is part of the official API and using ``config."
-"_tmpdirhandler`` is deprecated. Thanks Bruno Oliveira for the PR."
+"object, but now it is part of the official API and using "
+"``config._tmpdirhandler`` is deprecated. Thanks Bruno Oliveira for the PR."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:6798
@@ -10840,9 +10868,9 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:6948
 msgid ""
-"fix issue854: autouse yield_fixtures defined as class members of unittest."
-"TestCase subclasses now work as expected. Thannks xmo-odoo for the report "
-"and Bruno Oliveira for the PR."
+"fix issue854: autouse yield_fixtures defined as class members of "
+"unittest.TestCase subclasses now work as expected. Thannks xmo-odoo for the "
+"report and Bruno Oliveira for the PR."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:6952
@@ -11024,8 +11052,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:7058
 msgid ""
-"fix issue655: work around different ways that cause python2/3 to leak sys."
-"exc_info into fixtures/tests causing failures in 3rd party code"
+"fix issue655: work around different ways that cause python2/3 to leak "
+"sys.exc_info into fixtures/tests causing failures in 3rd party code"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:7061
@@ -11092,8 +11120,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:7094
 msgid ""
-"On failure, the ``sys.last_value``, ``sys.last_type`` and ``sys."
-"last_traceback`` are set, so that a user can inspect the error via "
+"On failure, the ``sys.last_value``, ``sys.last_type`` and "
+"``sys.last_traceback`` are set, so that a user can inspect the error via "
 "postmortem debugging (almarklein)."
 msgstr ""
 
@@ -11441,8 +11469,8 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:7290
 msgid ""
 "simplified internal capturing mechanism and made it more robust against "
-"tests or setups changing FD1/FD2, also better integrated now with pytest."
-"pdb() in single tests."
+"tests or setups changing FD1/FD2, also better integrated now with "
+"pytest.pdb() in single tests."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:7294
@@ -11821,9 +11849,9 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:7508
 msgid ""
-"on Windows require colorama and a newer py lib so that py.io."
-"TerminalWriter() now uses colorama instead of its own ctypes hacks. (fixes "
-"issue365) thanks Paul Moore for bringing it up."
+"on Windows require colorama and a newer py lib so that "
+"py.io.TerminalWriter() now uses colorama instead of its own ctypes hacks. "
+"(fixes issue365) thanks Paul Moore for bringing it up."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:7512
@@ -11927,8 +11955,8 @@ msgid ""
 "anymore.  This change might be reversed in 2.4.1 if it causes unforeseen "
 "real-life issues.  However, you can always write and return an inner "
 "function/generator and change the fixture consumer to iterate over the "
-"returned generator.  This change was done in lieu of the new ``pytest."
-"yield_fixture`` decorator, see below."
+"returned generator.  This change was done in lieu of the new "
+"``pytest.yield_fixture`` decorator, see below."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:7575
@@ -12008,9 +12036,10 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:7621
 msgid ""
 "simplify pytest.mark.parametrize() signature: allow to pass a CSV-separated "
-"string to specify argnames.  For example: ``pytest.mark.parametrize(\"input,"
-"expected\",  [(1,2), (2,3)])`` works as well as the previous: ``pytest.mark."
-"parametrize((\"input\", \"expected\"), ...)``."
+"string to specify argnames.  For example: "
+"``pytest.mark.parametrize(\"input,expected\",  [(1,2), (2,3)])`` works as "
+"well as the previous: ``pytest.mark.parametrize((\"input\", "
+"\"expected\"), ...)``."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:7627
@@ -12093,8 +12122,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:7669
 msgid ""
-"fix issue335: document py.code.ExceptionInfo() object returned from pytest."
-"raises(), thanks Mathieu Agopian."
+"fix issue335: document py.code.ExceptionInfo() object returned from "
+"pytest.raises(), thanks Mathieu Agopian."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:7672
@@ -12159,8 +12188,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:7704
 msgid ""
-"fix issue245 by depending on the released py-1.4.14 which fixes py.io."
-"dupfile to work with files with no mode. Thanks Jason R. Coombs."
+"fix issue245 by depending on the released py-1.4.14 which fixes "
+"py.io.dupfile to work with files with no mode. Thanks Jason R. Coombs."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:7708
@@ -12185,9 +12214,9 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:7717
 msgid ""
-"pytest_terminal_summary(terminalreporter) hooks can now use \"."
-"section(title)\" and \".line(msg)\" methods to print extra information at "
-"the end of a test run."
+"pytest_terminal_summary(terminalreporter) hooks can now use \".section(title)"
+"\" and \".line(msg)\" methods to print extra information at the end of a "
+"test run."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:7722
@@ -12506,8 +12535,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:7881
 msgid ""
-"link to web pages from --markers output which provides help for pytest.mark."
-"* usage."
+"link to web pages from --markers output which provides help for "
+"pytest.mark.* usage."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:7885
@@ -12584,9 +12613,9 @@ msgstr ""
 msgid ""
 "fix xfail/skip confusion: a skip-mark or an imperative pytest.skip will now "
 "take precedence before xfail-markers because we can't determine xfail/xpass "
-"status in case of a skip. see also: http://stackoverflow.com/"
-"questions/11105828/in-py-test-when-i-explicitly-skip-a-test-that-is-marked-"
-"as-xfail-how-can-i-get"
+"status in case of a skip. see also: http://stackoverflow.com/questions/"
+"11105828/in-py-test-when-i-explicitly-skip-a-test-that-is-marked-as-xfail-"
+"how-can-i-get"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:7913
@@ -12869,8 +12898,8 @@ msgid ""
 "introduce registration for \"pytest.mark.*\" helpers via ini-files or "
 "through plugin hooks.  Also introduce a \"--strict\" option which will treat "
 "unregistered markers as errors allowing to avoid typos and maintain a well "
-"described set of markers for your test suite.  See exaples at http://pytest."
-"org/en/stable/mark.html and its links."
+"described set of markers for your test suite.  See exaples at http://"
+"pytest.org/en/stable/mark.html and its links."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:8040
@@ -13273,9 +13302,9 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:8204
 msgid ""
 "introduce a pytest_cmdline_processargs(args) hook to allow dynamic "
-"computation of command line arguments. This fixes a regression because py."
-"test prior to 2.0 allowed to set command line options from conftest.py files "
-"which so far pytest-2.0 only allowed from ini-files now."
+"computation of command line arguments. This fixes a regression because "
+"py.test prior to 2.0 allowed to set command line options from conftest.py "
+"files which so far pytest-2.0 only allowed from ini-files now."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:8209
@@ -13659,8 +13688,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:8361
 msgid ""
-"make path.bestrelpath(path) return \".\", note that when calling X."
-"bestrelpath the assumption is that X is a directory."
+"make path.bestrelpath(path) return \".\", note that when calling "
+"X.bestrelpath the assumption is that X is a directory."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:8363
@@ -13696,8 +13725,9 @@ msgid ""
 "issue91: introduce new py.test.xfail(reason) helper to imperatively mark a "
 "test as expected to fail. Can be used from within setup and test functions. "
 "This is useful especially for parametrized tests when certain configurations "
-"are expected-to-fail.  In this case the declarative approach with the @py."
-"test.mark.xfail cannot be used as it would mark all configurations as xfail."
+"are expected-to-fail.  In this case the declarative approach with the "
+"@py.test.mark.xfail cannot be used as it would mark all configurations as "
+"xfail."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:8385
@@ -13786,12 +13816,13 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:8445
 msgid ""
-"deprecate --report option in favour of a new shorter and easier to remember -"
-"r option: it takes a string argument consisting of any combination of 'xfsX' "
-"characters.  They relate to the single chars you see during the dotted "
-"progress printing and will print an extra line per test at the end of the "
-"test run.  This extra line indicates the exact position or test ID that you "
-"directly paste to the py.test cmdline in order to re-run a particular test."
+"deprecate --report option in favour of a new shorter and easier to remember "
+"-r option: it takes a string argument consisting of any combination of "
+"'xfsX' characters.  They relate to the single chars you see during the "
+"dotted progress printing and will print an extra line per test at the end of "
+"the test run.  This extra line indicates the exact position or test ID that "
+"you directly paste to the py.test cmdline in order to re-run a particular "
+"test."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:8453
@@ -13834,17 +13865,17 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:8476
 msgid ""
-"expose (previously internal) commonly useful methods: py.io."
-"get_terminal_with() -> return terminal width py.io.ansi_print(...) -> print "
-"colored/bold text on linux/win32 py.io.saferepr(obj) -> return limited "
+"expose (previously internal) commonly useful methods: "
+"py.io.get_terminal_with() -> return terminal width py.io.ansi_print(...) -> "
+"print colored/bold text on linux/win32 py.io.saferepr(obj) -> return limited "
 "representation string"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:8481
 msgid ""
-"expose test outcome related exceptions as py.test.skip.Exception, py.test."
-"raises.Exception etc., useful mostly for plugins doing special outcome "
-"interpretation/tweaking"
+"expose test outcome related exceptions as py.test.skip.Exception, "
+"py.test.raises.Exception etc., useful mostly for plugins doing special "
+"outcome interpretation/tweaking"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:8485
@@ -13858,8 +13889,8 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:8489
 msgid ""
 "fixes for making the jython/win32 combination work, note however: "
-"jython2.5.1/win32 does not provide a command line launcher, see http://bugs."
-"jython.org/issue1491 . See pylib install documentation for how to work "
+"jython2.5.1/win32 does not provide a command line launcher, see http://"
+"bugs.jython.org/issue1491 . See pylib install documentation for how to work "
 "around."
 msgstr ""
 
@@ -14282,8 +14313,8 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:8712
 msgid ""
 "move pytest assertion handling to py/code and a pytest_assertion plugin, add "
-"\"--no-assert\" option, deprecate py.magic namespaces in favour of (less) py."
-"code ones."
+"\"--no-assert\" option, deprecate py.magic namespaces in favour of (less) "
+"py.code ones."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:8716
@@ -14311,9 +14342,9 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:8728
 msgid ""
-"make py.unittest_convert helper script available which converts \"unittest."
-"py\" style files into the simpler assert/direct-test-classes py.test/"
-"nosetests style.  The script was written by Laura Creighton."
+"make py.unittest_convert helper script available which converts "
+"\"unittest.py\" style files into the simpler assert/direct-test-classes "
+"py.test/nosetests style.  The script was written by Laura Creighton."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:8732
@@ -14535,8 +14566,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:8854
 msgid ""
-"remove scope-argument from request.addfinalizer() because request."
-"cached_setup has the scope arg. TOOWTDI."
+"remove scope-argument from request.addfinalizer() because "
+"request.cached_setup has the scope arg. TOOWTDI."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:8857
@@ -14660,8 +14691,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:8932
 msgid ""
-"py.test's traceback is better parseable from editors (follows the filenames:"
-"LINENO: MSG convention) (thanks to Osmo Salomaa)"
+"py.test's traceback is better parseable from editors (follows the "
+"filenames:LINENO: MSG convention) (thanks to Osmo Salomaa)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:8936
@@ -14672,8 +14703,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:8939
 msgid ""
-"removed previously accidentally added py.test.broken and py.test."
-"notimplemented helpers."
+"removed previously accidentally added py.test.broken and "
+"py.test.notimplemented helpers."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:8942
@@ -14715,8 +14746,8 @@ msgstr ""
 
 #: ../../../doc/en/changelog.rst:8956
 msgid ""
-"fixed problem with calling .remove() on wcpaths of non-versioned files in py."
-"path [44248]"
+"fixed problem with calling .remove() on wcpaths of non-versioned files in "
+"py.path [44248]"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:8958
