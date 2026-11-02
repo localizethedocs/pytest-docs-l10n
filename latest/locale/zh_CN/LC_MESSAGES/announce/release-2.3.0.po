@@ -180,9 +180,9 @@ msgstr ""
 msgid ""
 "fix xfail/skip confusion: a skip-mark or an imperative pytest.skip will now "
 "take precedence before xfail-markers because we can't determine xfail/xpass "
-"status in case of a skip. see also: http://stackoverflow.com/"
-"questions/11105828/in-py-test-when-i-explicitly-skip-a-test-that-is-marked-"
-"as-xfail-how-can-i-get"
+"status in case of a skip. see also: http://stackoverflow.com/questions/"
+"11105828/in-py-test-when-i-explicitly-skip-a-test-that-is-marked-as-xfail-"
+"how-can-i-get"
 msgstr ""
 
 #: ../../../doc/en/announce/release-2.3.0.rst:85

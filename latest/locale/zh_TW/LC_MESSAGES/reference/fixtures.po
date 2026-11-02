@@ -231,8 +231,8 @@ msgstr ""
 #: ../../../doc/en/reference/fixtures.rst:106
 msgid ""
 "Similarly, a test can also only be affected by an autouse fixture if that "
-"test is in the same scope that autouse fixture is defined in (see :ref:"
-"`autouse order`)."
+"test is in the same scope that autouse fixture is defined in "
+"(see :ref:`autouse order`)."
 msgstr ""
 
 #: ../../../doc/en/reference/fixtures.rst:110
@@ -393,17 +393,17 @@ msgid ""
 "Tests are allowed to search upward (stepping outside a circle) for fixtures, "
 "but can never go down (stepping inside a circle) to continue their search. "
 "So ``tests/subpackage/test_subpackage.py::test_order`` would be able to find "
-"the ``innermost`` fixture defined in ``tests/subpackage/test_subpackage."
-"py``, but the one defined in ``tests/test_top.py`` would be unavailable to "
-"it because it would have to step down a level (step inside a circle) to find "
-"it."
+"the ``innermost`` fixture defined in ``tests/subpackage/"
+"test_subpackage.py``, but the one defined in ``tests/test_top.py`` would be "
+"unavailable to it because it would have to step down a level (step inside a "
+"circle) to find it."
 msgstr ""
 
 #: ../../../doc/en/reference/fixtures.rst:212
 msgid ""
-"The first fixture the test finds is the one that will be used, so :ref:"
-"`fixtures can be overridden <override fixtures>` if you need to change or "
-"extend what one does for a particular scope."
+"The first fixture the test finds is the one that will be used, "
+"so :ref:`fixtures can be overridden <override fixtures>` if you need to "
+"change or extend what one does for a particular scope."
 msgstr ""
 
 #: ../../../doc/en/reference/fixtures.rst:216

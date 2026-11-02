@@ -117,8 +117,8 @@ msgstr ""
 
 #: ../../../doc/en/how-to/mark.rst:60
 msgid ""
-"Alternatively, you can register new markers programmatically in a :ref:"
-"`pytest_configure <initialization-hooks>` hook:"
+"Alternatively, you can register new markers programmatically in "
+"a :ref:`pytest_configure <initialization-hooks>` hook:"
 msgstr ""
 
 #: ../../../doc/en/how-to/mark.rst:63
@@ -133,8 +133,8 @@ msgstr ""
 #: ../../../doc/en/how-to/mark.rst:71
 msgid ""
 "Registered marks appear in pytest's help text and do not emit warnings (see "
-"the next section). It is recommended that third-party plugins always :ref:"
-"`register their markers <registering-markers>`."
+"the next section). It is recommended that third-party plugins "
+"always :ref:`register their markers <registering-markers>`."
 msgstr ""
 
 #: ../../../doc/en/how-to/mark.rst:77

@@ -37,9 +37,9 @@ msgstr ""
 #: ../../../doc/en/announce/release-2.0.0.rst:12
 msgid ""
 "A note on packaging: pytest used to part of the \"py\" distribution up until "
-"version py-1.3.4 but this has changed now:  pytest-2.0.0 only contains py."
-"test related code and is expected to be backward-compatible to existing test "
-"code. If you want to install pytest, just type one of::"
+"version py-1.3.4 but this has changed now:  pytest-2.0.0 only contains "
+"py.test related code and is expected to be backward-compatible to existing "
+"test code. If you want to install pytest, just type one of::"
 msgstr ""
 
 #: ../../../doc/en/announce/release-2.0.0.rst:17
@@ -212,8 +212,8 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-2.0.0.rst:108
 msgid ""
-"removed support for Module/Class/... collection node definitions in conftest."
-"py files.  They will cause nothing special."
+"removed support for Module/Class/... collection node definitions in "
+"conftest.py files.  They will cause nothing special."
 msgstr ""
 
 #: ../../../doc/en/announce/release-2.0.0.rst:110

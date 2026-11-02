@@ -50,10 +50,10 @@ msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:30
 msgid ""
-"Can be passed to ``ids`` of :py:func:`Metafunc.parametrize <pytest.Metafunc."
-"parametrize>` or to ``id`` of :func:`pytest.param` to hide a parameter set "
-"from the test name. Can only be used at most 1 time, as test names need to "
-"be unique."
+"Can be passed to ``ids`` of :py:func:`Metafunc.parametrize "
+"<pytest.Metafunc.parametrize>` or to ``id`` of :func:`pytest.param` to hide "
+"a parameter set from the test name. Can only be used at most 1 time, as test "
+"names need to be unique."
 msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:37
@@ -317,9 +317,9 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/approx.py:docstring
 #: of _pytest.approx.approx:116
 msgid ""
-"You can also use ``approx`` to compare :class:`~datetime.datetime` and :"
-"class:`~datetime.timedelta` objects by specifying an absolute tolerance as "
-"a :class:`~datetime.timedelta`::"
+"You can also use ``approx`` to compare :class:`~datetime.datetime` "
+"and :class:`~datetime.timedelta` objects by specifying an absolute tolerance "
+"as a :class:`~datetime.timedelta`::"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/approx.py:docstring
@@ -366,11 +366,11 @@ msgstr ""
 #: of _pytest.approx.approx:146
 msgid ""
 "``numpy.isclose(a, b, rtol=1e-5, atol=1e-8)``: True if the difference "
-"between ``a`` and ``b`` is less that the sum of the relative tolerance w.r."
-"t. ``b`` and the absolute tolerance.  Because the relative tolerance is only "
-"calculated w.r.t. ``b``, this test is asymmetric and you can think of ``b`` "
-"as the reference value.  Support for comparing sequences is provided by :py:"
-"func:`numpy.allclose`.  More information: :std:doc:`numpy:reference/"
+"between ``a`` and ``b`` is less that the sum of the relative tolerance "
+"w.r.t. ``b`` and the absolute tolerance.  Because the relative tolerance is "
+"only calculated w.r.t. ``b``, this test is asymmetric and you can think of "
+"``b`` as the reference value.  Support for comparing sequences is provided "
+"by :py:func:`numpy.allclose`.  More information: :std:doc:`numpy:reference/"
 "generated/numpy.isclose`."
 msgstr ""
 
@@ -380,9 +380,9 @@ msgid ""
 "``unittest.TestCase.assertAlmostEqual(a, b)``: True if ``a`` and ``b`` are "
 "within an absolute tolerance of ``1e-7``.  No relative tolerance is "
 "considered , so this function is not appropriate for very large or very "
-"small numbers.  Also, it's only available in subclasses of ``unittest."
-"TestCase`` and it's ugly because it doesn't follow PEP8.  More information: :"
-"py:meth:`unittest.TestCase.assertAlmostEqual`."
+"small numbers.  Also, it's only available in subclasses of "
+"``unittest.TestCase`` and it's ugly because it doesn't follow PEP8.  More "
+"information: :py:meth:`unittest.TestCase.assertAlmostEqual`."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/approx.py:docstring
@@ -653,19 +653,19 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/outcomes.py:docstring
 #: of _pytest.outcomes.importorskip:12
 msgid ""
-"The exception that should be captured in order to skip modules. Must be :py:"
-"class:`ImportError` or a subclass.  Defaults to :class:`ModuleNotFoundError` "
-"when not given, which means the module must be missing for the test to be "
-"skipped. Pass ``exc_type=ImportError`` to also skip modules that raise :"
-"class:`ImportError` during import.  See :ref:`import-or-skip-import-error` "
-"for details."
+"The exception that should be captured in order to skip modules. Must "
+"be :py:class:`ImportError` or a subclass.  Defaults "
+"to :class:`ModuleNotFoundError` when not given, which means the module must "
+"be missing for the test to be skipped. Pass ``exc_type=ImportError`` to also "
+"skip modules that raise :class:`ImportError` during import.  "
+"See :ref:`import-or-skip-import-error` for details."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/outcomes.py:docstring
 #: of _pytest.outcomes.importorskip:13
 msgid ""
-"The exception that should be captured in order to skip modules. Must be :py:"
-"class:`ImportError` or a subclass."
+"The exception that should be captured in order to skip modules. Must "
+"be :py:class:`ImportError` or a subclass."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/outcomes.py:docstring
@@ -673,8 +673,8 @@ msgstr ""
 msgid ""
 "Defaults to :class:`ModuleNotFoundError` when not given, which means the "
 "module must be missing for the test to be skipped. Pass "
-"``exc_type=ImportError`` to also skip modules that raise :class:"
-"`ImportError` during import."
+"``exc_type=ImportError`` to also skip modules that "
+"raise :class:`ImportError` during import."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/outcomes.py:docstring
@@ -841,8 +841,8 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/mark/__init__.py:docstring
 #: of _pytest.mark.param:1
 msgid ""
-"Specify a parameter in `pytest.mark.parametrize`_ calls or :ref:"
-"`parametrized fixtures <fixture-parametrize-marks>`."
+"Specify a parameter in `pytest.mark.parametrize`_ calls "
+"or :ref:`parametrized fixtures <fixture-parametrize-marks>`."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/mark/__init__.py:docstring
@@ -867,9 +867,9 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/mark/__init__.py:docstring
 #: of _pytest.mark.param:18
 msgid ""
-"A single mark or a list of marks to be applied to this parameter set.  :ref:"
-"`pytest.mark.usefixtures <pytest.mark.usefixtures ref>` cannot be added via "
-"this parameter."
+"A single mark or a list of marks to be applied to this parameter "
+"set.  :ref:`pytest.mark.usefixtures <pytest.mark.usefixtures ref>` cannot be "
+"added via this parameter."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/mark/__init__.py:docstring
@@ -887,9 +887,10 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/mark/__init__.py:docstring
 #: of _pytest.mark.param:24
 msgid ""
-"The id to attribute to this parameter set.  .. versionadded:: 8.4     :ref:"
-"`hidden-param` means to hide the parameter set     from the test name. Can "
-"only be used at most 1 time, as     test names need to be unique."
+"The id to attribute to this parameter set.  .. versionadded:: "
+"8.4     :ref:`hidden-param` means to hide the parameter set     from the "
+"test name. Can only be used at most 1 time, as     test names need to be "
+"unique."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/mark/__init__.py:docstring
@@ -981,8 +982,8 @@ msgstr ""
 msgid ""
 "(This is only used when ``pytest.raises`` is used as a context manager, and "
 "passed through to the function otherwise. When using ``pytest.raises`` as a "
-"function, you can use: ``pytest.raises(Exc, func, match=\"passed on\")."
-"match(\"my pattern\")``.)"
+"function, you can use: ``pytest.raises(Exc, func, match=\"passed "
+"on\").match(\"my pattern\")``.)"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/raises.py:docstring
@@ -1021,9 +1022,9 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/raises.py:docstring
 #: of _pytest.raises.raises:42
 msgid ""
-"If the code block does not raise the expected exception (:class:"
-"`ZeroDivisionError` in the example above), or no exception at all, the check "
-"will fail instead."
+"If the code block does not raise the expected exception "
+"(:class:`ZeroDivisionError` in the example above), or no exception at all, "
+"the check will fail instead."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/raises.py:docstring
@@ -1150,8 +1151,8 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/raises.py:docstring
 #: of _pytest.raises.raises:117
 msgid ""
-"When expecting exceptions wrapped in :exc:`BaseExceptionGroup` or :exc:"
-"`ExceptionGroup`, you should instead use :class:`pytest.RaisesGroup`."
+"When expecting exceptions wrapped in :exc:`BaseExceptionGroup` "
+"or :exc:`ExceptionGroup`, you should instead use :class:`pytest.RaisesGroup`."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/raises.py:docstring
@@ -1194,8 +1195,8 @@ msgid ""
 "stack --> local variables --> ``ExceptionInfo``) which makes Python keep all "
 "objects referenced from that cycle (including all local variables in the "
 "current frame) alive until the next cyclic garbage collection run. More "
-"detailed information can be found in the official Python documentation for :"
-"ref:`the try statement <python:try>`."
+"detailed information can be found in the official Python documentation "
+"for :ref:`the try statement <python:try>`."
 msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:128
@@ -1293,11 +1294,11 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/fixtures.py:docstring
 #: of _pytest.fixtures.register_fixture:5
 msgid ""
-"Normally, fixtures should be registered declaratively using the :func:"
-"`@pytest.fixture <pytest.fixture>` decorator. Pytest looks for these fixture "
-"definitions during the collection phase and registers them automatically. "
-"For some plugin usecases the declarative interface can be cumbersome or "
-"nonviable, in which case the imperative interface can be used."
+"Normally, fixtures should be registered declaratively using "
+"the :func:`@pytest.fixture <pytest.fixture>` decorator. Pytest looks for "
+"these fixture definitions during the collection phase and registers them "
+"automatically. For some plugin usecases the declarative interface can be "
+"cumbersome or nonviable, in which case the imperative interface can be used."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/fixtures.py:docstring
@@ -1447,8 +1448,8 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/recwarn.py:docstring
 #: of _pytest.recwarn.warns:40
 msgid ""
-"This could be achieved in the same way as with exceptions, see :ref:"
-"`parametrizing_conditional_raising` for an example."
+"This could be achieved in the same way as with exceptions, "
+"see :ref:`parametrizing_conditional_raising` for an example."
 msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:156
@@ -1491,21 +1492,21 @@ msgstr ""
 #: ../../../doc/en/reference/reference.rst:184
 msgid ""
 "A *warning specification string*, which is composed of contents of the tuple "
-"``(action, message, category, module, lineno)`` as specified in :ref:`python:"
-"warning-filter` section of the Python documentation, separated by ``\":\"``. "
-"Optional fields can be omitted. Module names passed for filtering are not "
-"regex-escaped.  For example:  .. code-block:: python      @pytest.mark."
-"filterwarnings(r\"ignore:.*usage will be deprecated.*:"
-"DeprecationWarning\")     def test_foo(): ..."
+"``(action, message, category, module, lineno)`` as specified "
+"in :ref:`python:warning-filter` section of the Python documentation, "
+"separated by ``\":\"``. Optional fields can be omitted. Module names passed "
+"for filtering are not regex-escaped.  For example:  .. code-block:: "
+"python      @pytest.mark.filterwarnings(r\"ignore:.*usage will be "
+"deprecated.*:DeprecationWarning\")     def test_foo(): ..."
 msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:185
 msgid ""
 "A *warning specification string*, which is composed of contents of the tuple "
-"``(action, message, category, module, lineno)`` as specified in :ref:`python:"
-"warning-filter` section of the Python documentation, separated by ``\":\"``. "
-"Optional fields can be omitted. Module names passed for filtering are not "
-"regex-escaped."
+"``(action, message, category, module, lineno)`` as specified "
+"in :ref:`python:warning-filter` section of the Python documentation, "
+"separated by ``\":\"``. Optional fields can be omitted. Module names passed "
+"for filtering are not regex-escaped."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/monkeypatch.py:docstring
@@ -1518,8 +1519,8 @@ msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:192
 msgid ""
-"@pytest.mark.filterwarnings(r\"ignore:.*usage will be deprecated.*:"
-"DeprecationWarning\")\n"
+"@pytest.mark.filterwarnings(r\"ignore:.*usage will be "
+"deprecated.*:DeprecationWarning\")\n"
 "def test_foo(): ..."
 msgstr ""
 
@@ -1613,9 +1614,9 @@ msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:271
 msgid ""
-"Condition for marking the test function as xfail (``True/False`` or a :ref:"
-"`condition string <string conditions>`). If a ``bool``, you also have to "
-"specify ``reason`` (see :ref:`condition string <string conditions>`)."
+"Condition for marking the test function as xfail (``True/False`` or "
+"a :ref:`condition string <string conditions>`). If a ``bool``, you also have "
+"to specify ``reason`` (see :ref:`condition string <string conditions>`)."
 msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:275
@@ -1693,8 +1694,9 @@ msgstr ""
 msgid ""
 "Will create and attach a :class:`Mark <pytest.Mark>` object to the "
 "collected :class:`Item <pytest.Item>`, which can then be accessed by "
-"fixtures or hooks with :meth:`Node.iter_markers <_pytest.nodes.Node."
-"iter_markers>`. The ``mark`` object will have the following attributes:"
+"fixtures or hooks with :meth:`Node.iter_markers "
+"<_pytest.nodes.Node.iter_markers>`. The ``mark`` object will have the "
+"following attributes:"
 msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:313
@@ -1716,11 +1718,12 @@ msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:326
 msgid ""
-"When :meth:`Node.iter_markers <_pytest.nodes.Node.iter_markers>` or :meth:"
-"`Node.iter_markers_with_node <_pytest.nodes.Node.iter_markers_with_node>` is "
-"used with multiple markers, the marker closest to the function will be "
-"iterated over first. The above example will result in ``@pytest.mark.slow`` "
-"followed by ``@pytest.mark.timeout(...)``."
+"When :meth:`Node.iter_markers <_pytest.nodes.Node.iter_markers>` "
+"or :meth:`Node.iter_markers_with_node "
+"<_pytest.nodes.Node.iter_markers_with_node>` is used with multiple markers, "
+"the marker closest to the function will be iterated over first. The above "
+"example will result in ``@pytest.mark.slow`` followed by "
+"``@pytest.mark.timeout(...)``."
 msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:331
@@ -1868,8 +1871,8 @@ msgid ""
 "function. If a fixture is used in the same module in which it is defined, "
 "the function name of the fixture will be shadowed by the function arg that "
 "requests the fixture; one way to resolve this is to name the decorated "
-"function ``fixture_<fixturename>`` and then use ``@pytest."
-"fixture(name='<fixturename>')``."
+"function ``fixture_<fixturename>`` and then use "
+"``@pytest.fixture(name='<fixturename>')``."
 msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:372
@@ -1944,8 +1947,8 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/capture.py:docstring
 #: of _pytest.capture.capfdbinary:7 _pytest.capture.capsysbinary:7
 msgid ""
-"Returns an instance of :class:`CaptureFixture[bytes] <pytest."
-"CaptureFixture>`."
+"Returns an instance of :class:`CaptureFixture[bytes] "
+"<pytest.CaptureFixture>`."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/capture.py:docstring
@@ -2107,8 +2110,8 @@ msgstr ""
 #: of _pytest.logging.LogCaptureFixture.at_level:5
 #: _pytest.logging.LogCaptureFixture.set_level:9
 msgid ""
-"Will enable the requested logging level if it was disabled via :func:"
-"`logging.disable`."
+"Will enable the requested logging level if it was disabled "
+"via :func:`logging.disable`."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/logging.py:docstring
@@ -2133,9 +2136,9 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/logging.py:docstring
 #: of _pytest.logging.LogCaptureFixture.filtering:1
 msgid ""
-"Context manager that temporarily adds the given filter to the caplog's :meth:"
-"`handler` for the 'with' statement block, and removes that filter at the end "
-"of the block."
+"Context manager that temporarily adds the given filter to the "
+"caplog's :meth:`handler` for the 'with' statement block, and removes that "
+"filter at the end of the block."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/logging.py:docstring
@@ -2172,8 +2175,9 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/capture.py:docstring
 #: of _pytest.capture.CaptureFixture:1
 msgid ""
-"Object returned by the :fixture:`capsys`, :fixture:`capsysbinary`, :fixture:"
-"`capfd` and :fixture:`capfdbinary` fixtures."
+"Object returned by "
+"the :fixture:`capsys`, :fixture:`capsysbinary`, :fixture:`capfd` "
+"and :fixture:`capfdbinary` fixtures."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/capture.py:docstring
@@ -2201,8 +2205,8 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/capture.py:docstring
 #: of _pytest.capture.capteesys:1
 msgid ""
-"Enable simultaneous text capturing and pass-through of writes to ``sys."
-"stdout`` and ``sys.stderr`` as defined by ``--capture=``."
+"Enable simultaneous text capturing and pass-through of writes to "
+"``sys.stdout`` and ``sys.stderr`` as defined by ``--capture=``."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/capture.py:docstring
@@ -2391,43 +2395,43 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/monkeypatch.py:docstring
 #: of _pytest.monkeypatch.monkeypatch:3
 msgid ""
-"The fixture provides these methods to modify objects, dictionaries, or :data:"
-"`os.environ`:"
+"The fixture provides these methods to modify objects, dictionaries, "
+"or :data:`os.environ`:"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/monkeypatch.py:docstring
 #: of _pytest.monkeypatch.monkeypatch:6
 msgid ""
-":meth:`monkeypatch.setattr(obj, name, value, raising=True) <pytest."
-"MonkeyPatch.setattr>`"
+":meth:`monkeypatch.setattr(obj, name, value, raising=True) "
+"<pytest.MonkeyPatch.setattr>`"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/monkeypatch.py:docstring
 #: of _pytest.monkeypatch.monkeypatch:7
 msgid ""
-":meth:`monkeypatch.delattr(obj, name, raising=True) <pytest.MonkeyPatch."
-"delattr>`"
+":meth:`monkeypatch.delattr(obj, name, raising=True) "
+"<pytest.MonkeyPatch.delattr>`"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/monkeypatch.py:docstring
 #: of _pytest.monkeypatch.monkeypatch:8
 msgid ""
-":meth:`monkeypatch.setitem(mapping, name, value) <pytest.MonkeyPatch."
-"setitem>`"
+":meth:`monkeypatch.setitem(mapping, name, value) "
+"<pytest.MonkeyPatch.setitem>`"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/monkeypatch.py:docstring
 #: of _pytest.monkeypatch.monkeypatch:9
 msgid ""
-":meth:`monkeypatch.delitem(obj, name, raising=True) <pytest.MonkeyPatch."
-"delitem>`"
+":meth:`monkeypatch.delitem(obj, name, raising=True) "
+"<pytest.MonkeyPatch.delitem>`"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/monkeypatch.py:docstring
 #: of _pytest.monkeypatch.monkeypatch:10
 msgid ""
-":meth:`monkeypatch.setenv(name, value, prepend=None) <pytest.MonkeyPatch."
-"setenv>`"
+":meth:`monkeypatch.setenv(name, value, prepend=None) "
+"<pytest.MonkeyPatch.setenv>`"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/monkeypatch.py:docstring
@@ -2439,8 +2443,8 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/monkeypatch.py:docstring
 #: of _pytest.monkeypatch.monkeypatch:12
 msgid ""
-":meth:`monkeypatch.syspath_prepend(path) <pytest.MonkeyPatch."
-"syspath_prepend>`"
+":meth:`monkeypatch.syspath_prepend(path) "
+"<pytest.MonkeyPatch.syspath_prepend>`"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/monkeypatch.py:docstring
@@ -2457,16 +2461,16 @@ msgstr ""
 #: of _pytest.monkeypatch.monkeypatch:16
 msgid ""
 "All modifications will be undone after the requesting test function or "
-"fixture has finished. The ``raising`` parameter determines if a :class:"
-"`KeyError` or :class:`AttributeError` will be raised if the set/deletion "
-"operation does not have the specified target."
+"fixture has finished. The ``raising`` parameter determines if "
+"a :class:`KeyError` or :class:`AttributeError` will be raised if the set/"
+"deletion operation does not have the specified target."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/monkeypatch.py:docstring
 #: of _pytest.monkeypatch.monkeypatch:21
 msgid ""
-"To undo modifications done by the fixture in a contained scope, use :meth:"
-"`context() <pytest.MonkeyPatch.context>`."
+"To undo modifications done by the fixture in a contained scope, "
+"use :meth:`context() <pytest.MonkeyPatch.context>`."
 msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:481
@@ -2489,8 +2493,9 @@ msgstr ""
 #: of _pytest.monkeypatch.MonkeyPatch:6
 msgid ""
 "Can now also be used directly as `pytest.MonkeyPatch()`, for when the "
-"fixture is not available. In this case, use :meth:`with MonkeyPatch."
-"context() as mp: <context>` or remember to call :meth:`undo` explicitly."
+"fixture is not available. In this case, use :meth:`with "
+"MonkeyPatch.context() as mp: <context>` or remember to call :meth:`undo` "
+"explicitly."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/monkeypatch.py:docstring
@@ -2576,9 +2581,10 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/monkeypatch.py:docstring
 #: of _pytest.monkeypatch.MonkeyPatch.setattr:31
 msgid ""
-"See the section :ref:`Where to patch <python:where-to-patch>` in the :mod:"
-"`unittest.mock` docs for a complete explanation, which is meant for :func:"
-"`unittest.mock.patch` but applies to ``monkeypatch.setattr`` as well."
+"See the section :ref:`Where to patch <python:where-to-patch>` in "
+"the :mod:`unittest.mock` docs for a complete explanation, which is meant "
+"for :func:`unittest.mock.patch` but applies to ``monkeypatch.setattr`` as "
+"well."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/monkeypatch.py:docstring
@@ -2751,9 +2757,9 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/pytester.py:docstring
 #: of pytest.Pytester.plugins:1
 msgid ""
-"A list of plugins to use with :py:meth:`parseconfig` and :py:meth:"
-"`runpytest`. Initially this is an empty list but plugins can be added to the "
-"list."
+"A list of plugins to use with :py:meth:`parseconfig` "
+"and :py:meth:`runpytest`. Initially this is an empty list but plugins can be "
+"added to the list."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/pytester.py:docstring
@@ -3161,8 +3167,9 @@ msgstr ""
 #: of _pytest.pytester.Pytester.parseconfig:4
 msgid ""
 "This invokes the pytest bootstrapping code in _pytest.config to create a "
-"new :py:class:`pytest.PytestPluginManager` and call the :hook:"
-"`pytest_cmdline_parse` hook to create a new :class:`pytest.Config` instance."
+"new :py:class:`pytest.PytestPluginManager` and call "
+"the :hook:`pytest_cmdline_parse` hook to create a new :class:`pytest.Config` "
+"instance."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/pytester.py:docstring
@@ -3180,8 +3187,9 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/pytester.py:docstring
 #: of _pytest.pytester.Pytester.parseconfigure:3
 msgid ""
-"Returns a new :py:class:`pytest.Config` instance like :py:meth:"
-"`parseconfig`, but also calls the :hook:`pytest_configure` hook."
+"Returns a new :py:class:`pytest.Config` instance "
+"like :py:meth:`parseconfig`, but also calls the :hook:`pytest_configure` "
+"hook."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/pytester.py:docstring
@@ -3314,8 +3322,8 @@ msgstr ""
 #: of _pytest.pytester.Pytester.run:10
 #: _pytest.pytester.Pytester.runpytest_subprocess:11
 msgid ""
-"The period in seconds after which to timeout and raise :py:class:`Pytester."
-"TimeoutExpired`."
+"The period in seconds after which to timeout and "
+"raise :py:class:`Pytester.TimeoutExpired`."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/pytester.py:docstring
@@ -3325,9 +3333,10 @@ msgid ""
 "method calls   :py:class:`subprocess.Popen` with ``stdin=subprocess.PIPE``, "
 "and   the standard input is closed immediately after the new command is   "
 "started.  - If it is of type :py:class:`bytes`, these bytes are sent to "
-"the   standard input of the command.  - Otherwise, it is passed through to :"
-"py:class:`subprocess.Popen`.   For further information in this case, consult "
-"the document of the   ``stdin`` parameter in :py:class:`subprocess.Popen`."
+"the   standard input of the command.  - Otherwise, it is passed through "
+"to :py:class:`subprocess.Popen`.   For further information in this case, "
+"consult the document of the   ``stdin`` parameter "
+"in :py:class:`subprocess.Popen`."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/pytester.py:docstring
@@ -3338,9 +3347,9 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/pytester.py:docstring
 #: of _pytest.pytester.Pytester.run:16
 msgid ""
-"If it is ``CLOSE_STDIN`` (Default), then this method calls :py:class:"
-"`subprocess.Popen` with ``stdin=subprocess.PIPE``, and the standard input is "
-"closed immediately after the new command is started."
+"If it is ``CLOSE_STDIN`` (Default), then this method "
+"calls :py:class:`subprocess.Popen` with ``stdin=subprocess.PIPE``, and the "
+"standard input is closed immediately after the new command is started."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/pytester.py:docstring
@@ -3446,8 +3455,8 @@ msgstr ""
 #: of pytest.RunResult.stdout:3
 msgid ""
 "Use e.g. :func:`str(stdout) <pytest.LineMatcher.__str__()>` to reconstruct "
-"stdout, or the commonly used :func:`stdout.fnmatch_lines() <pytest."
-"LineMatcher.fnmatch_lines()>` method."
+"stdout, or the commonly used :func:`stdout.fnmatch_lines() "
+"<pytest.LineMatcher.fnmatch_lines()>` method."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/pytester.py:docstring
@@ -3539,8 +3548,8 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/pytester.py:docstring
 #: of _pytest.pytester.LineMatcher.fnmatch_lines_random:1
 msgid ""
-"Check lines exist in the output in any order (using :func:`python:fnmatch."
-"fnmatch`)."
+"Check lines exist in the output in any order "
+"(using :func:`python:fnmatch.fnmatch`)."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/pytester.py:docstring
@@ -3613,8 +3622,8 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/pytester.py:docstring
 #: of _pytest.pytester.LineMatcher.no_fnmatch_line:1
 msgid ""
-"Ensure captured lines do not match the given pattern, using ``fnmatch."
-"fnmatch``."
+"Ensure captured lines do not match the given pattern, using "
+"``fnmatch.fnmatch``."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/pytester.py:docstring
@@ -4017,8 +4026,8 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/subtests.py:docstring
 #: of _pytest.subtests.Subtests:1
 msgid ""
-"Subtests fixture, enables declaring subtests inside test functions via the :"
-"meth:`test` method."
+"Subtests fixture, enables declaring subtests inside test functions via "
+"the :meth:`test` method."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/subtests.py:docstring
@@ -4076,8 +4085,8 @@ msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:601
 msgid ""
-"New code should avoid using :fixture:`testdir` in favor of :fixture:"
-"`pytester`."
+"New code should avoid using :fixture:`testdir` in favor "
+"of :fixture:`pytester`."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/legacypath.py:docstring
@@ -4387,8 +4396,8 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/legacypath.py:docstring
 #: of _pytest.legacypath.TempdirFactory:1
 msgid ""
-"Backward compatibility wrapper that implements ``py.path.local`` for :class:"
-"`TempPathFactory`."
+"Backward compatibility wrapper that implements ``py.path.local`` "
+"for :class:`TempPathFactory`."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/legacypath.py:docstring
@@ -4617,8 +4626,8 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
 #: of _pytest.hookspec.pytest_cmdline_main:3
 msgid ""
-"The default implementation will invoke the configure hooks and :hook:"
-"`pytest_runtestloop`."
+"The default implementation will invoke the configure hooks "
+"and :hook:`pytest_runtestloop`."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
@@ -4653,17 +4662,18 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
 #: of _pytest.hookspec.pytest_addoption:4
 msgid ""
-"To add command line options, call :py:func:`parser.addoption(...) <pytest."
-"Parser.addoption>`. To add config-file values call :py:func:`parser."
-"addini(...) <pytest.Parser.addini>`."
+"To add command line options, call :py:func:`parser.addoption(...) "
+"<pytest.Parser.addoption>`. To add config-file values "
+"call :py:func:`parser.addini(...) <pytest.Parser.addini>`."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
 #: of _pytest.hookspec.pytest_addoption:10
 msgid ""
-"The pytest plugin manager, which can be used to install :py:func:`~pytest."
-"hookspec`'s or :py:func:`~pytest.hookimpl`'s and allow one plugin to call "
-"another plugin's hooks to change how command line options are added."
+"The pytest plugin manager, which can be used to "
+"install :py:func:`~pytest.hookspec`'s or :py:func:`~pytest.hookimpl`'s and "
+"allow one plugin to call another plugin's hooks to change how command line "
+"options are added."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
@@ -4690,8 +4700,8 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
 #: of _pytest.hookspec.pytest_addoption:24
 msgid ""
-"The config object is passed around on many internal objects via the ``."
-"config`` attribute or can be retrieved as the ``pytestconfig`` fixture."
+"The config object is passed around on many internal objects via the "
+"``.config`` attribute or can be retrieved as the ``pytestconfig`` fixture."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
@@ -4711,9 +4721,9 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
 #: of _pytest.hookspec.pytest_addhooks:1
 msgid ""
-"Called at plugin registration time to allow adding new hooks via a call to :"
-"func:`pluginmanager.add_hookspecs(module_or_class, prefix) <pytest."
-"PytestPluginManager.add_hookspecs>`."
+"Called at plugin registration time to allow adding new hooks via a call "
+"to :func:`pluginmanager.add_hookspecs(module_or_class, prefix) "
+"<pytest.PytestPluginManager.add_hookspecs>`."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
@@ -4960,8 +4970,8 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
 #: of _pytest.hookspec.pytest_collect_directory:6
 msgid ""
-"For best results, the returned collector should be a subclass of :class:"
-"`~pytest.Directory`, but this is not required."
+"For best results, the returned collector should be a subclass "
+"of :class:`~pytest.Directory`, but this is not required."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
@@ -4996,8 +5006,8 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
 #: of _pytest.hookspec.pytest_collect_file:3
 msgid ""
-"For best results, the returned collector should be a subclass of :class:"
-"`~pytest.File`, but this is not required."
+"For best results, the returned collector should be a subclass "
+"of :class:`~pytest.File`, but this is not required."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
@@ -5023,9 +5033,9 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
 #: of _pytest.hookspec.pytest_pycollect_makemodule:3
 msgid ""
-"This hook will be called for each matching test module path. The :hook:"
-"`pytest_collect_file` hook needs to be used if you want to create test "
-"modules for files that do not match as a test module."
+"This hook will be called for each matching test module path. "
+"The :hook:`pytest_collect_file` hook needs to be used if you want to create "
+"test modules for files that do not match as a test module."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
@@ -5180,10 +5190,10 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
 #: of _pytest.hookspec.pytest_collection_modifyitems:4
 msgid ""
-"When items are deselected (filtered out from ``items``), the hook :hook:"
-"`pytest_deselected` must be called explicitly with the deselected items to "
-"properly notify other plugins, e.g. with ``config.hook."
-"pytest_deselected(items=deselected_items)``."
+"When items are deselected (filtered out from ``items``), the "
+"hook :hook:`pytest_deselected` must be called explicitly with the deselected "
+"items to properly notify other plugins, e.g. with "
+"``config.hook.pytest_deselected(items=deselected_items)``."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
@@ -5505,8 +5515,8 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
 #: of _pytest.hookspec.pytest_make_collect_report:1
 msgid ""
-"Perform :func:`collector.collect() <pytest.Collector.collect>` and return a :"
-"class:`~pytest.CollectReport`."
+"Perform :func:`collector.collect() <pytest.Collector.collect>` and return "
+"a :class:`~pytest.CollectReport`."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
@@ -5574,8 +5584,8 @@ msgstr ""
 #: _pytest.hookspec.pytest_report_header:9
 msgid ""
 "Lines returned by a plugin are displayed before those of plugins which ran "
-"before it. If you want to have your line(s) displayed first, use :ref:"
-"`trylast=True <plugin-hookorder>`."
+"before it. If you want to have your line(s) displayed first, "
+"use :ref:`trylast=True <plugin-hookorder>`."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
@@ -5676,8 +5686,8 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
 #: of _pytest.hookspec.pytest_report_from_serializable:1
 msgid ""
-"Restore a report object previously serialized with :hook:"
-"`pytest_report_to_serializable`."
+"Restore a report object previously serialized "
+"with :hook:`pytest_report_to_serializable`."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
@@ -5726,8 +5736,8 @@ msgstr ""
 #: of _pytest.hookspec.pytest_fixture_setup:13
 msgid ""
 "If the fixture function returns None, other implementations of this hook "
-"function will continue to be called, according to the behavior of the :ref:"
-"`firstresult` option."
+"function will continue to be called, according to the behavior of "
+"the :ref:`firstresult` option."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
@@ -5755,9 +5765,9 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
 #: of _pytest.hookspec.pytest_warning_recorded:3
 msgid ""
-"The captured warning. This is the same object produced by :class:`warnings."
-"catch_warnings`, and contains the same attributes as the parameters of :py:"
-"func:`warnings.showwarning`."
+"The captured warning. This is the same object produced "
+"by :class:`warnings.catch_warnings`, and contains the same attributes as the "
+"parameters of :py:func:`warnings.showwarning`."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
@@ -5871,8 +5881,8 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
 #: of _pytest.hookspec.pytest_assertion_pass:10
 msgid ""
-"This hook must be explicitly enabled by the :confval:"
-"`enable_assertion_pass_hook` configuration option:"
+"This hook must be explicitly enabled by "
+"the :confval:`enable_assertion_pass_hook` configuration option:"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
@@ -5968,9 +5978,9 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
 #: of _pytest.hookspec.pytest_exception_interact:7
 msgid ""
-"May be called during runtest of an item (see :hook:"
-"`pytest_runtest_protocol`), in which case ``report`` is a :class:`~pytest."
-"TestReport`."
+"May be called during runtest of an item "
+"(see :hook:`pytest_runtest_protocol`), in which case ``report`` is "
+"a :class:`~pytest.TestReport`."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
@@ -6203,8 +6213,8 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
 #: of _pytest.nodes.Node.warn:17
 msgid ""
-"Any subclass of :class:`Warning` is now accepted, rather than only :class:"
-"`PytestWarning <pytest.PytestWarning>` subclasses."
+"Any subclass of :class:`Warning` is now accepted, rather than "
+"only :class:`PytestWarning <pytest.PytestWarning>` subclasses."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
@@ -6590,8 +6600,9 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
 #: of _pytest.python.Package:6
 msgid ""
-"Directories without an `__init__.py` file are instead collected by :class:"
-"`~pytest.Dir` by default. Both are :class:`~pytest.Directory` collectors."
+"Directories without an `__init__.py` file are instead collected "
+"by :class:`~pytest.Dir` by default. Both are :class:`~pytest.Directory` "
+"collectors."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
@@ -7158,17 +7169,17 @@ msgstr ""
 #: of _pytest.config.Config.getini:21
 msgid ""
 "If neither the ``default`` nor the ``type`` parameter is passed while "
-"registering the configuration through :func:`parser.addini <pytest.Parser."
-"addini>`, then the configuration is treated as a string and a default empty "
-"string '' is returned."
+"registering the configuration through :func:`parser.addini "
+"<pytest.Parser.addini>`, then the configuration is treated as a string and a "
+"default empty string '' is returned."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
 #: of _pytest.config.Config.getini:26
 msgid ""
-"If the specified name hasn't been registered through a prior :func:`parser."
-"addini <pytest.Parser.addini>` call (usually from a plugin), a ValueError is "
-"raised."
+"If the specified name hasn't been registered through a "
+"prior :func:`parser.addini <pytest.Parser.addini>` call (usually from a "
+"plugin), a ValueError is raised."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
@@ -7186,9 +7197,9 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
 #: of _pytest.config.Config.getoption:5
 msgid ""
-"Fallback value if no option of that name is **declared** via :hook:"
-"`pytest_addoption`. Note this parameter will be ignored when the option is "
-"**declared** even if the option's value is ``None``."
+"Fallback value if no option of that name is **declared** "
+"via :hook:`pytest_addoption`. Note this parameter will be ignored when the "
+"option is **declared** even if the option's value is ``None``."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
@@ -7288,8 +7299,8 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/main.py:docstring
 #: of _pytest.main.Dir:7
 msgid ""
-"Python directories with an `__init__.py` file are instead collected by :"
-"class:`~pytest.Package` by default. Both are :class:`~pytest.Directory` "
+"Python directories with an `__init__.py` file are instead collected "
+"by :class:`~pytest.Package` by default. Both are :class:`~pytest.Directory` "
 "collectors."
 msgstr ""
 
@@ -7324,8 +7335,8 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
 #: of _pytest.nodes.Directory:9
 msgid ""
-"The default directory collectors are :class:`~pytest.Dir` and :class:"
-"`~pytest.Package`."
+"The default directory collectors are :class:`~pytest.Dir` "
+"and :class:`~pytest.Package`."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
@@ -7353,8 +7364,8 @@ msgstr ""
 msgid ""
 "The exception must have a non-``None`` ``__traceback__`` attribute, "
 "otherwise this function fails with an assertion error. This means that the "
-"exception must have been raised, or added a traceback with the :py:meth:"
-"`~BaseException.with_traceback()` method."
+"exception must have been raised, or added a traceback with "
+"the :py:meth:`~BaseException.with_traceback()` method."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/_code/code.py:docstring
@@ -7562,9 +7573,9 @@ msgid ""
 "If specified, a string containing a regular expression, or a regular "
 "expression object, that is tested against the string representation of the "
 "exception and its `PEP-678 <https://peps.python.org/pep-0678/>` `__notes__` "
-"using :func:`re.search`.  To match a literal string that may contain :ref:"
-"`special characters <re-syntax>`, the pattern can first be escaped with :"
-"func:`re.escape`."
+"using :func:`re.search`.  To match a literal string that may "
+"contain :ref:`special characters <re-syntax>`, the pattern can first be "
+"escaped with :func:`re.escape`."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/_code/code.py:docstring
@@ -7880,8 +7891,8 @@ msgid ""
 "values. If N argnames were specified, argvalues must be a list of N-tuples, "
 "where each tuple-element specifies a value for its respective argname.  .. "
 "versionchanged:: 9.1      Passing a non-:class:`~collections.abc.Collection` "
-"iterable     (such as a generator or iterator) is deprecated. See     :ref:"
-"`parametrize-iterators` for details."
+"iterable     (such as a generator or iterator) is deprecated. "
+"See     :ref:`parametrize-iterators` for details."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/python.py:docstring
@@ -8044,8 +8055,8 @@ msgstr ""
 #: of _pytest.config.argparsing.OptionGroup.addoption:11
 #: _pytest.config.argparsing.Parser.addoption:5
 msgid ""
-"Same attributes as the argparse library's :meth:`add_argument() <argparse."
-"ArgumentParser.add_argument>` function accepts."
+"Same attributes as the argparse library's :meth:`add_argument() "
+"<argparse.ArgumentParser.add_argument>` function accepts."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/argparsing.py:docstring
@@ -8213,8 +8224,8 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/argparsing.py:docstring
 #: of _pytest.config.argparsing.Parser.addini:41
 msgid ""
-"The value of configuration keys can be retrieved via a call to :py:func:"
-"`config.getini(name) <pytest.Config.getini>`."
+"The value of configuration keys can be retrieved via a call "
+"to :py:func:`config.getini(name) <pytest.Config.getini>`."
 msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:1047
@@ -8494,8 +8505,8 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
 #: of pytest.PytestPluginManager.hook:1
 msgid ""
-"The \"hook relay\", used to call a hook on all registered plugins. See :ref:"
-"`calling`."
+"The \"hook relay\", used to call a hook on all registered plugins. "
+"See :ref:`calling`."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/config/__init__.py:docstring
@@ -8518,8 +8529,8 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/raises.py:docstring
 #: of _pytest.raises.RaisesExc:8
 msgid ""
-"You don't need this if you only want to specify the type, since :class:"
-"`RaisesGroup` accepts ``type[BaseException]``."
+"You don't need this if you only want to specify the type, "
+"since :class:`RaisesGroup` accepts ``type[BaseException]``."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/raises.py:docstring
@@ -8601,8 +8612,8 @@ msgid ""
 "# this can be useful when checking e.g. the ``__cause__`` of an exception.\n"
 "with pytest.raises(ValueError) as excinfo:\n"
 "    ...\n"
-"assert RaisesExc(SyntaxError, match=\"foo\").matches(excinfo.value."
-"__cause__)\n"
+"assert RaisesExc(SyntaxError, "
+"match=\"foo\").matches(excinfo.value.__cause__)\n"
 "# above line is equivalent to\n"
 "assert isinstance(excinfo.value.__cause__, SyntaxError)\n"
 "assert re.search(\"foo\", str(excinfo.value.__cause__)"
@@ -8641,11 +8652,12 @@ msgid ""
 "Any number of exception types, :class:`RaisesGroup` or :class:`RaisesExc` to "
 "specify the exceptions contained in this exception. All specified exceptions "
 "must be present in the raised group, *and no others*.  If you expect a "
-"variable number of exceptions you need to use :func:`pytest."
-"raises(ExceptionGroup) <pytest.raises>` and manually check the contained "
-"exceptions. Consider making use of :meth:`RaisesExc.matches`.  It does not "
-"care about the order of the exceptions, so ``RaisesGroup(ValueError, "
-"TypeError)`` is equivalent to ``RaisesGroup(TypeError, ValueError)``."
+"variable number of exceptions you need to "
+"use :func:`pytest.raises(ExceptionGroup) <pytest.raises>` and manually check "
+"the contained exceptions. Consider making use of :meth:`RaisesExc.matches`.  "
+"It does not care about the order of the exceptions, so "
+"``RaisesGroup(ValueError, TypeError)`` is equivalent to "
+"``RaisesGroup(TypeError, ValueError)``."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/raises.py:docstring
@@ -8659,9 +8671,9 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/raises.py:docstring
 #: of _pytest.raises.RaisesGroup:18
 msgid ""
-"If you expect a variable number of exceptions you need to use :func:`pytest."
-"raises(ExceptionGroup) <pytest.raises>` and manually check the contained "
-"exceptions. Consider making use of :meth:`RaisesExc.matches`."
+"If you expect a variable number of exceptions you need to "
+"use :func:`pytest.raises(ExceptionGroup) <pytest.raises>` and manually check "
+"the contained exceptions. Consider making use of :meth:`RaisesExc.matches`."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/raises.py:docstring
@@ -8733,8 +8745,8 @@ msgstr ""
 msgid ""
 "\"flatten\" any groups inside the raised exception group, extracting all "
 "exceptions inside any nested groups, before matching. Without this it "
-"expects you to fully specify the nesting structure by passing :class:"
-"`RaisesGroup` as expected parameter."
+"expects you to fully specify the nesting structure by "
+"passing :class:`RaisesGroup` as expected parameter."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/raises.py:docstring
@@ -9018,8 +9030,9 @@ msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:1102
 msgid ""
-"Result object used within :ref:`hook wrappers <hookwrapper>`, see :py:class:"
-"`Result in the pluggy documentation <pluggy.Result>` for more information."
+"Result object used within :ref:`hook wrappers <hookwrapper>`, "
+"see :py:class:`Result in the pluggy documentation <pluggy.Result>` for more "
+"information."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/stash.py:docstring
@@ -9033,8 +9046,8 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/stash.py:docstring
 #: of _pytest.stash.Stash:5
 msgid ""
-"Usually you will be given an object which has a ``Stash``, for example :"
-"class:`~pytest.Config` or a :class:`~_pytest.nodes.Node`:"
+"Usually you will be given an object which has a ``Stash``, for "
+"example :class:`~pytest.Config` or a :class:`~_pytest.nodes.Node`:"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/stash.py:docstring
@@ -9045,8 +9058,8 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/stash.py:docstring
 #: of _pytest.stash.Stash:12
 msgid ""
-"If a module or plugin wants to store data in this ``Stash``, it creates :"
-"class:`StashKey`\\s for its keys (at the module level):"
+"If a module or plugin wants to store data in this ``Stash``, it "
+"creates :class:`StashKey`\\s for its keys (at the module level):"
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/stash.py:docstring
@@ -9160,8 +9173,8 @@ msgstr ""
 #: ../../../doc/en/reference/reference.rst:1127
 msgid ""
 "Can be declared in *conftest.py files* to exclude test directories or "
-"modules. Needs to be a list of paths (``str``, :class:`pathlib.Path` or any :"
-"class:`os.PathLike`)."
+"modules. Needs to be a list of paths (``str``, :class:`pathlib.Path` or "
+"any :class:`os.PathLike`)."
 msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:1130
@@ -9196,8 +9209,8 @@ msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:1159
 msgid ""
-"pytest_plugins = (\"myapp.testsupport.tools\", \"myapp.testsupport."
-"regression\")"
+"pytest_plugins = (\"myapp.testsupport.tools\", "
+"\"myapp.testsupport.regression\")"
 msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:1166
@@ -9263,8 +9276,8 @@ msgstr ""
 #: ../../../doc/en/reference/reference.rst:1210
 msgid ""
 "This is not meant to be set by users, but is set by pytest internally with "
-"the name of the current test so other processes can inspect it, see :ref:"
-"`pytest current test env` for more information."
+"the name of the current test so other processes can inspect it, "
+"see :ref:`pytest current test env` for more information."
 msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:1215
@@ -9281,8 +9294,8 @@ msgstr ""
 msgid ""
 "When set, disables plugin auto-loading through :std:doc:`entry point "
 "packaging metadata <packaging:guides/creating-and-discovering-plugins>`. "
-"Only plugins explicitly specified in :envvar:`PYTEST_PLUGINS` or with :"
-"option:`-p` will be loaded. See also :ref:`--disable-plugin-autoload "
+"Only plugins explicitly specified in :envvar:`PYTEST_PLUGINS` or "
+"with :option:`-p` will be loaded. See also :ref:`--disable-plugin-autoload "
 "<disable_plugin_autoload>`."
 msgstr ""
 
@@ -9434,9 +9447,9 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/pytest/__init__.py:docstring
 #: of pytest.PytestUnraisableExceptionWarning:3
 msgid ""
-"Unraisable exceptions are exceptions raised in :meth:`__del__ <object."
-"__del__>` implementations and similar situations when the exception cannot "
-"be raised as normal."
+"Unraisable exceptions are exceptions raised in :meth:`__del__ "
+"<object.__del__>` implementations and similar situations when the exception "
+"cannot be raised as normal."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/pytest/__init__.py:docstring
@@ -9475,8 +9488,8 @@ msgid ""
 "Usage of ``setup.cfg`` is not recommended except for very simple use cases. "
 "``.cfg`` files use a different parser than ``pytest.ini`` and ``tox.ini`` "
 "which might cause hard to track down problems. When possible, it is "
-"recommended to use the latter files, or ``pytest.toml`` or ``pyproject."
-"toml``, to hold your pytest configuration."
+"recommended to use the latter files, or ``pytest.toml`` or "
+"``pyproject.toml``, to hold your pytest configuration."
 msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:1336
@@ -9690,8 +9703,8 @@ msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:1508
 msgid ""
-"One or more doctest flag names from the standard ``doctest`` module. :ref:"
-"`See how pytest handles doctests <doctest>`."
+"One or more doctest flag names from the standard ``doctest`` "
+"module. :ref:`See how pytest handles doctests <doctest>`."
 msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:1516
@@ -10451,11 +10464,11 @@ msgstr ""
 #: ../../../doc/en/reference/reference.rst:2313
 msgid ""
 "Sets list of directories that should be added to the python search path. "
-"Directories will be added to the head of :data:`sys.path`. Similar to the :"
-"envvar:`PYTHONPATH` environment variable, the directories will be included "
-"in where Python will look for imported modules. Paths are relative to the :"
-"ref:`rootdir <rootdir>` directory. Directories remain in path for the "
-"duration of the test session."
+"Directories will be added to the head of :data:`sys.path`. Similar to "
+"the :envvar:`PYTHONPATH` environment variable, the directories will be "
+"included in where Python will look for imported modules. Paths are relative "
+"to the :ref:`rootdir <rootdir>` directory. Directories remain in path for "
+"the duration of the test session."
 msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:2322
@@ -10629,15 +10642,15 @@ msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:2490
 msgid ""
-"See :func:`parametrize <pytest.Metafunc.parametrize>` and :func:`pytest."
-"param` for other ways to set IDs."
+"See :func:`parametrize <pytest.Metafunc.parametrize>` "
+"and :func:`pytest.param` for other ways to set IDs."
 msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:2497
 msgid ""
 "If set to ``true``, tests marked with ``@pytest.mark.xfail`` that actually "
-"succeed will by default fail the test suite. For more information, see :ref:"
-"`xfail strict tutorial`."
+"succeed will by default fail the test suite. For more information, "
+"see :ref:`xfail strict tutorial`."
 msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:2503
@@ -10995,8 +11008,8 @@ msgstr ""
 #: ../../../doc/en/reference/reference.rst:2852
 msgid ""
 "Rerun only the tests that failed at the last run. If no tests failed (or no "
-"cached data exists), all tests are run. See also :confval:`cache_dir` and :"
-"ref:`cache`."
+"cached data exists), all tests are run. See also :confval:`cache_dir` "
+"and :ref:`cache`."
 msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:2858
@@ -11029,8 +11042,8 @@ msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:2879
 msgid ""
-"Resets stepwise state, restarting the stepwise workflow. Implicitly enables :"
-"option:`--stepwise`."
+"Resets stepwise state, restarting the stepwise workflow. Implicitly "
+"enables :option:`--stepwise`."
 msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:2884
@@ -11163,8 +11176,8 @@ msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:2985
 msgid ""
-"Start the interactive Python debugger on errors or KeyboardInterrupt. See :"
-"ref:`pdb-option`."
+"Start the interactive Python debugger on errors or KeyboardInterrupt. "
+"See :ref:`pdb-option`."
 msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:2990
@@ -11485,8 +11498,8 @@ msgstr ""
 msgid ""
 "Exit with :class:`pytest.ExitCode` ``MAX_WARNINGS_ERROR`` (code ``6``) if "
 "all the tests pass, but the number of warnings exceeds the given threshold. "
-"By default there is no limit. Can also be set via the :confval:"
-"`max_warnings` configuration option."
+"By default there is no limit. Can also be set via "
+"the :confval:`max_warnings` configuration option."
 msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:3201
@@ -11682,15 +11695,15 @@ msgstr ""
 #: ../../../doc/en/reference/reference.rst:3346
 msgid ""
 "Early-load given plugin module name or entry point (multi-allowed). To avoid "
-"loading of plugins, use the ``no:`` prefix, e.g. ``no:doctest``. See also :"
-"option:`--disable-plugin-autoload`."
+"loading of plugins, use the ``no:`` prefix, e.g. ``no:doctest``. See "
+"also :option:`--disable-plugin-autoload`."
 msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:3352
 msgid ""
 "Disable plugin auto-loading through entry point packaging metadata. Only "
-"plugins explicitly specified in :option:`-p` or env var :envvar:"
-"`PYTEST_PLUGINS` will be loaded."
+"plugins explicitly specified in :option:`-p` or env "
+"var :envvar:`PYTEST_PLUGINS` will be loaded."
 msgstr ""
 
 #: ../../../doc/en/reference/reference.rst:3356
@@ -12010,8 +12023,8 @@ msgid ""
 "  console_output_style (string):\n"
 "                        Console output: \"classic\", or with additional\n"
 "                        progress information (\"progress\" (percentage) |\n"
-"                        \"count\" | \"progress-even-when-capture-"
-"no\" (forces\n"
+"                        \"count\" | \"progress-even-when-capture-no\" "
+"(forces\n"
 "                        progress even when capture=no)\n"
 "  verbosity_test_cases (string):\n"
 "                        Specify a verbosity level for test case execution,\n"

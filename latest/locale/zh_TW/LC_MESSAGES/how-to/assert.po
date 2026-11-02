@@ -110,8 +110,8 @@ msgstr ""
 #: ../../../doc/en/how-to/assert.rst:70
 msgid ""
 "When comparing floating point values (or arrays of floats), small rounding "
-"errors are common. Instead of using ``assert abs(a - b) < tol`` or ``numpy."
-"isclose``, you can use :func:`pytest.approx`:"
+"errors are common. Instead of using ``assert abs(a - b) < tol`` or "
+"``numpy.isclose``, you can use :func:`pytest.approx`:"
 msgstr ""
 
 #: ../../../doc/en/how-to/assert.rst:74
@@ -146,8 +146,8 @@ msgstr ""
 
 #: ../../../doc/en/how-to/assert.rst:99
 msgid ""
-"In order to write assertions about raised exceptions, you can use :func:"
-"`pytest.raises` as a context manager like this:"
+"In order to write assertions about raised exceptions, you can "
+"use :func:`pytest.raises` as a context manager like this:"
 msgstr ""
 
 #: ../../../doc/en/how-to/assert.rst:102
@@ -248,8 +248,8 @@ msgstr ""
 
 #: ../../../doc/en/how-to/assert.rst:170
 msgid ""
-"The ``match`` parameter also matches against `PEP-678 <https://peps.python."
-"org/pep-0678/>`__ ``__notes__``."
+"The ``match`` parameter also matches against `PEP-678 <https://"
+"peps.python.org/pep-0678/>`__ ``__notes__``."
 msgstr ""
 
 #: ../../../doc/en/how-to/assert.rst:176
@@ -312,8 +312,8 @@ msgstr ""
 
 #: ../../../doc/en/how-to/assert.rst:213
 msgid ""
-"To specify more details about the contained exception you can use :class:"
-"`pytest.RaisesExc`"
+"To specify more details about the contained exception you can "
+"use :class:`pytest.RaisesExc`"
 msgstr ""
 
 #: ../../../doc/en/how-to/assert.rst:215
@@ -325,9 +325,10 @@ msgstr ""
 
 #: ../../../doc/en/how-to/assert.rst:221
 msgid ""
-"They both supply a method :meth:`pytest.RaisesGroup.matches` :meth:`pytest."
-"RaisesExc.matches` if you want to do matching outside of using it as a :"
-"external+python:std:ref:`context manager <context-managers>`. This can be "
+"They both supply a "
+"method :meth:`pytest.RaisesGroup.matches` :meth:`pytest.RaisesExc.matches` "
+"if you want to do matching outside of using it as "
+"a :external+python:std:ref:`context manager <context-managers>`. This can be "
 "helpful when checking ``.__context__`` or ``.__cause__``."
 msgstr ""
 
@@ -345,8 +346,8 @@ msgstr ""
 
 #: ../../../doc/en/how-to/assert.rst:234
 msgid ""
-"Check the documentation on :class:`pytest.RaisesGroup` and :class:`pytest."
-"RaisesExc` for more details and examples."
+"Check the documentation on :class:`pytest.RaisesGroup` "
+"and :class:`pytest.RaisesExc` for more details and examples."
 msgstr ""
 
 #: ../../../doc/en/how-to/assert.rst:237
@@ -379,17 +380,17 @@ msgstr ""
 
 #: ../../../doc/en/how-to/assert.rst:260
 msgid ""
-"There is no good way of using :func:`excinfo.group_contains() <pytest."
-"ExceptionInfo.group_contains>` to ensure you're not getting *any* other "
-"exceptions than the one you expected. You should instead use :class:`pytest."
-"RaisesGroup`, see :ref:`assert-matching-exception-groups`."
+"There is no good way of using :func:`excinfo.group_contains() "
+"<pytest.ExceptionInfo.group_contains>` to ensure you're not getting *any* "
+"other exceptions than the one you expected. You should instead "
+"use :class:`pytest.RaisesGroup`, see :ref:`assert-matching-exception-groups`."
 msgstr ""
 
 #: ../../../doc/en/how-to/assert.rst:263
 msgid ""
-"You can also use the :func:`excinfo.group_contains() <pytest.ExceptionInfo."
-"group_contains>` method to test for exceptions returned as part of an :class:"
-"`ExceptionGroup`:"
+"You can also use the :func:`excinfo.group_contains() "
+"<pytest.ExceptionInfo.group_contains>` method to test for exceptions "
+"returned as part of an :class:`ExceptionGroup`:"
 msgstr ""
 
 #: ../../../doc/en/how-to/assert.rst:266
@@ -408,8 +409,8 @@ msgstr ""
 
 #: ../../../doc/en/how-to/assert.rst:279
 msgid ""
-"The optional ``match`` keyword parameter works the same way as for :func:"
-"`pytest.raises`."
+"The optional ``match`` keyword parameter works the same way as "
+"for :func:`pytest.raises`."
 msgstr ""
 
 #: ../../../doc/en/how-to/assert.rst:282
@@ -450,9 +451,9 @@ msgstr ""
 #: ../../../doc/en/how-to/assert.rst:312
 msgid ""
 "There is an alternate form of :func:`pytest.raises` where you pass a "
-"function that will be executed, along with ``*args`` and ``**kwargs``. :func:"
-"`pytest.raises` will then execute the function with those arguments and "
-"assert that the given exception is raised:"
+"function that will be executed, along with ``*args`` and "
+"``**kwargs``. :func:`pytest.raises` will then execute the function with "
+"those arguments and assert that the given exception is raised:"
 msgstr ""
 
 #: ../../../doc/en/how-to/assert.rst:316
@@ -479,9 +480,9 @@ msgstr ""
 
 #: ../../../doc/en/how-to/assert.rst:332
 msgid ""
-"It is also possible to specify a ``raises`` argument to :ref:`pytest.mark."
-"xfail <pytest.mark.xfail ref>`, which checks that the test is failing in a "
-"more specific way than just having any exception raised:"
+"It is also possible to specify a ``raises`` argument "
+"to :ref:`pytest.mark.xfail <pytest.mark.xfail ref>`, which checks that the "
+"test is failing in a more specific way than just having any exception raised:"
 msgstr ""
 
 #: ../../../doc/en/how-to/assert.rst:336
@@ -873,8 +874,8 @@ msgstr ""
 
 #: ../../../doc/en/how-to/assert.rst:585
 msgid ""
-"Additionally, rewriting will silently skip caching if it cannot write new ``."
-"pyc`` files, e.g. in a read-only filesystem or a zipfile."
+"Additionally, rewriting will silently skip caching if it cannot write new "
+"``.pyc`` files, e.g. in a read-only filesystem or a zipfile."
 msgstr ""
 
 #: ../../../doc/en/how-to/assert.rst:590

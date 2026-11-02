@@ -26,8 +26,8 @@ msgid ""
 "By default, pytest collects directories using :class:`pytest.Package`, for "
 "directories with ``__init__.py`` files, and :class:`pytest.Dir` for other "
 "directories. If you want to customize how a directory is collected, you can "
-"write your own :class:`pytest.Directory` collector, and use :hook:"
-"`pytest_collect_directory` to hook it up."
+"write your own :class:`pytest.Directory` collector, and "
+"use :hook:`pytest_collect_directory` to hook it up."
 msgstr ""
 
 #: ../../../doc/en/example/customdirectory.rst:14

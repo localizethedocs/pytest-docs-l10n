@@ -72,8 +72,8 @@ msgstr ""
 #: ../../../doc/en/backwards-compatibility.rst:23
 msgid ""
 "A deprecated feature scheduled to be removed in major version X will use the "
-"warning class `PytestRemovedInXWarning` (a subclass of :class:`~pytest."
-"PytestDeprecationWarning`)."
+"warning class `PytestRemovedInXWarning` (a subclass "
+"of :class:`~pytest.PytestDeprecationWarning`)."
 msgstr ""
 
 #: ../../../doc/en/backwards-compatibility.rst:25
@@ -194,9 +194,10 @@ msgstr ""
 msgid ""
 "To communicate changes, we issue deprecation warnings using a custom warning "
 "hierarchy (see :ref:`internal-warnings`). These warnings may be suppressed "
-"using the standard means: :option:`-W` command-line flag or :confval:"
-"`filterwarnings` configuration option (see :ref:`warnings`), but we suggest "
-"to use these sparingly and temporarily, and heed the warnings when possible."
+"using the standard means: :option:`-W` command-line flag "
+"or :confval:`filterwarnings` configuration option (see :ref:`warnings`), but "
+"we suggest to use these sparingly and temporarily, and heed the warnings "
+"when possible."
 msgstr ""
 
 #: ../../../doc/en/backwards-compatibility.rst:66

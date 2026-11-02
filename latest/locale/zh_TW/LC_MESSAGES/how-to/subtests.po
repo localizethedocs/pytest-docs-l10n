@@ -121,8 +121,8 @@ msgstr ""
 #: ../../../doc/en/how-to/subtests.rst:71
 msgid ""
 "Note that it is possible to use ``subtests`` multiple times in the same "
-"test, or even mix and match with normal assertions outside the ``subtests."
-"test`` block:"
+"test, or even mix and match with normal assertions outside the "
+"``subtests.test`` block:"
 msgstr ""
 
 #: ../../../doc/en/how-to/subtests.rst:74
@@ -149,14 +149,14 @@ msgstr ""
 
 #: ../../../doc/en/how-to/subtests.rst:95
 msgid ""
-"By default, only **subtest failures** are shown. Higher verbosity levels (:"
-"option:`-v`) will also show progress output for **passed** subtests."
+"By default, only **subtest failures** are shown. Higher verbosity levels "
+"(:option:`-v`) will also show progress output for **passed** subtests."
 msgstr ""
 
 #: ../../../doc/en/how-to/subtests.rst:97
 msgid ""
-"It is possible to control the verbosity of subtests by setting :confval:"
-"`verbosity_subtests`."
+"It is possible to control the verbosity of subtests by "
+"setting :confval:`verbosity_subtests`."
 msgstr ""
 
 #: ../../../doc/en/how-to/subtests.rst:101
