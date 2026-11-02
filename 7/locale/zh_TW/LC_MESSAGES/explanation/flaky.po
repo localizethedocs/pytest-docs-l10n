@@ -213,8 +213,9 @@ msgstr ""
 
 #: ../../../doc/en/explanation/flaky.rst:90
 msgid ""
-"Mark Lapierre discusses the `Pros and Cons of Quarantined Tests <https://dev."
-"to/mlapierre/pros-and-cons-of-quarantined-tests-2emj>`_ in a post from 2018."
+"Mark Lapierre discusses the `Pros and Cons of Quarantined Tests <https://"
+"dev.to/mlapierre/pros-and-cons-of-quarantined-tests-2emj>`_ in a post from "
+"2018."
 msgstr ""
 
 #: ../../../doc/en/explanation/flaky.rst:95
@@ -224,8 +225,8 @@ msgstr ""
 #: ../../../doc/en/explanation/flaky.rst:97
 msgid ""
 "Azure Pipelines (the Azure cloud CI/CD tool, formerly Visual Studio Team "
-"Services or VSTS) has a feature to `identify flaky tests <https://docs."
-"microsoft.com/en-us/previous-versions/azure/devops/2017/dec-11-vsts?"
+"Services or VSTS) has a feature to `identify flaky tests <https://"
+"docs.microsoft.com/en-us/previous-versions/azure/devops/2017/dec-11-vsts?"
 "view=tfs-2017#identify-flaky-tests>`_ and rerun failed tests."
 msgstr ""
 
@@ -299,9 +300,9 @@ msgstr "Microsoft："
 
 #: ../../../doc/en/explanation/flaky.rst:120
 msgid ""
-"`How we approach testing VSTS to enable continuous delivery <https://blogs."
-"msdn.microsoft.com/bharry/2017/06/28/testing-in-a-cloud-delivery-cadence/>`_ "
-"by Brian Harry MS, 2017"
+"`How we approach testing VSTS to enable continuous delivery <https://"
+"blogs.msdn.microsoft.com/bharry/2017/06/28/testing-in-a-cloud-delivery-"
+"cadence/>`_ by Brian Harry MS, 2017"
 msgstr ""
 
 #: ../../../doc/en/explanation/flaky.rst:121
@@ -317,13 +318,13 @@ msgstr "Google："
 
 #: ../../../doc/en/explanation/flaky.rst:125
 msgid ""
-"`Flaky Tests at Google and How We Mitigate Them <https://testing.googleblog."
-"com/2016/05/flaky-tests-at-google-and-how-we.html>`_ by John Micco, 2016"
+"`Flaky Tests at Google and How We Mitigate Them <https://"
+"testing.googleblog.com/2016/05/flaky-tests-at-google-and-how-we.html>`_ by "
+"John Micco, 2016"
 msgstr ""
 
 #: ../../../doc/en/explanation/flaky.rst:126
 msgid ""
-"`Where do Google's flaky tests come from? <https://testing.googleblog."
-"com/2017/04/where-do-our-flaky-tests-come-from.html>`_  by Jeff Listfield, "
-"2017"
+"`Where do Google's flaky tests come from? <https://testing.googleblog.com/"
+"2017/04/where-do-our-flaky-tests-come-from.html>`_  by Jeff Listfield, 2017"
 msgstr ""

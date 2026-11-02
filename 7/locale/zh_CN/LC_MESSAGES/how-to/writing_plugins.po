@@ -122,8 +122,8 @@ msgstr ""
 
 #: ../../../doc/en/how-to/writing_plugins.rst:62
 msgid ""
-"by recursively loading all plugins specified by the :globalvar:"
-"`pytest_plugins` variable in ``conftest.py`` files."
+"by recursively loading all plugins specified by "
+"the :globalvar:`pytest_plugins` variable in ``conftest.py`` files."
 msgstr ""
 
 #: ../../../doc/en/how-to/writing_plugins.rst:72
@@ -212,8 +212,8 @@ msgstr ""
 
 #: ../../../doc/en/how-to/writing_plugins.rst:125
 msgid ""
-"All of these plugins implement :ref:`hooks <hook-reference>` and/or :ref:"
-"`fixtures <fixture>` to extend and add functionality."
+"All of these plugins implement :ref:`hooks <hook-reference>` and/"
+"or :ref:`fixtures <fixture>` to extend and add functionality."
 msgstr ""
 
 #: ../../../doc/en/how-to/writing_plugins.rst:129
@@ -245,8 +245,8 @@ msgstr ""
 msgid ""
 "If you want to make your plugin externally available, you may define a so-"
 "called entry point for your distribution so that ``pytest`` finds your "
-"plugin module. Entry points are a feature that is provided by :std:doc:"
-"`setuptools <setuptools:index>`."
+"plugin module. Entry points are a feature that is provided "
+"by :std:doc:`setuptools <setuptools:index>`."
 msgstr ""
 
 #: ../../../doc/en/how-to/writing_plugins.rst:153
@@ -275,9 +275,9 @@ msgstr ""
 
 #: ../../../doc/en/how-to/writing_plugins.rst:173
 msgid ""
-"If a package is installed this way, ``pytest`` will load ``myproject."
-"pluginmodule`` as a plugin which can define :ref:`hooks <hook-reference>`. "
-"Confirm registration with ``pytest --trace-config``"
+"If a package is installed this way, ``pytest`` will load "
+"``myproject.pluginmodule`` as a plugin which can define :ref:`hooks <hook-"
+"reference>`. Confirm registration with ``pytest --trace-config``"
 msgstr ""
 
 #: ../../../doc/en/how-to/writing_plugins.rst:179
@@ -385,8 +385,8 @@ msgstr ""
 
 #: ../../../doc/en/how-to/writing_plugins.rst:243
 msgid ""
-"You can require plugins in a test module or a ``conftest.py`` file using :"
-"globalvar:`pytest_plugins`:"
+"You can require plugins in a test module or a ``conftest.py`` file "
+"using :globalvar:`pytest_plugins`:"
 msgstr ""
 
 #: ../../../doc/en/how-to/writing_plugins.rst:245
@@ -407,9 +407,9 @@ msgstr ""
 #: ../../../doc/en/how-to/writing_plugins.rst:257
 msgid ""
 ":globalvar:`pytest_plugins` are processed recursively, so note that in the "
-"example above if ``myapp.testsupport.myplugin`` also declares :globalvar:"
-"`pytest_plugins`, the contents of the variable will also be loaded as "
-"plugins, and so on."
+"example above if ``myapp.testsupport.myplugin`` also "
+"declares :globalvar:`pytest_plugins`, the contents of the variable will also "
+"be loaded as plugins, and so on."
 msgstr ""
 
 #: ../../../doc/en/how-to/writing_plugins.rst:264
@@ -422,9 +422,10 @@ msgstr ""
 msgid ""
 "This is important because ``conftest.py`` files implement per-directory hook "
 "implementations, but once a plugin is imported, it will affect the entire "
-"directory tree. In order to avoid confusion, defining :globalvar:"
-"`pytest_plugins` in any ``conftest.py`` file which is not located in the "
-"tests root directory is deprecated, and will raise a warning."
+"directory tree. In order to avoid confusion, "
+"defining :globalvar:`pytest_plugins` in any ``conftest.py`` file which is "
+"not located in the tests root directory is deprecated, and will raise a "
+"warning."
 msgstr ""
 
 #: ../../../doc/en/how-to/writing_plugins.rst:273
@@ -441,9 +442,10 @@ msgid ""
 "However for this to have any effect the module must not be imported already; "
 "if it was already imported at the time the :globalvar:`pytest_plugins` "
 "statement is processed, a warning will result and assertions inside the "
-"plugin will not be rewritten.  To fix this you can either call :func:`pytest."
-"register_assert_rewrite` yourself before the module is imported, or you can "
-"arrange the code to delay the importing until after the plugin is registered."
+"plugin will not be rewritten.  To fix this you can either "
+"call :func:`pytest.register_assert_rewrite` yourself before the module is "
+"imported, or you can arrange the code to delay the importing until after the "
+"plugin is registered."
 msgstr ""
 
 #: ../../../doc/en/how-to/writing_plugins.rst:289

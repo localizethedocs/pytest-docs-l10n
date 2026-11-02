@@ -74,9 +74,9 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-2.9.2.rst:45
 msgid ""
-"Fix Xfail does not work with condition keyword argument. Thanks :user:"
-"`astraw38` for reporting the issue (:issue:`1496`) and :user:`tomviner` for "
-"PR the (:pull:`1524`)."
+"Fix Xfail does not work with condition keyword argument. "
+"Thanks :user:`astraw38` for reporting the issue (:issue:`1496`) "
+"and :user:`tomviner` for PR the (:pull:`1524`)."
 msgstr ""
 
 #: ../../../doc/en/announce/release-2.9.2.rst:49
@@ -88,15 +88,15 @@ msgstr ""
 #: ../../../doc/en/announce/release-2.9.2.rst:52
 msgid ""
 "Fix maximum recursion depth detection when raised error class is not aware "
-"of unicode/encoded bytes. Thanks :user:`prusse-martin` for the PR (:pull:"
-"`1506`)."
+"of unicode/encoded bytes. Thanks :user:`prusse-martin` for the PR "
+"(:pull:`1506`)."
 msgstr ""
 
 #: ../../../doc/en/announce/release-2.9.2.rst:56
 msgid ""
-"Fix ``pytest.mark.skip`` mark when used in strict mode. Thanks :user:"
-"`pquentin` for the PR and :user:`RonnyPfannschmidt` for showing how to fix "
-"the bug."
+"Fix ``pytest.mark.skip`` mark when used in strict mode. "
+"Thanks :user:`pquentin` for the PR and :user:`RonnyPfannschmidt` for showing "
+"how to fix the bug."
 msgstr ""
 
 #: ../../../doc/en/announce/release-2.9.2.rst:60

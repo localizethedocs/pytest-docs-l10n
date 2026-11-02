@@ -27,8 +27,8 @@ msgstr ""
 
 #: ../../../doc/en/explanation/pythonpath.rst:11
 msgid ""
-"pytest as a testing framework needs to import test modules and ``conftest."
-"py`` files for execution."
+"pytest as a testing framework needs to import test modules and "
+"``conftest.py`` files for execution."
 msgstr ""
 
 #: ../../../doc/en/explanation/pythonpath.rst:13
@@ -43,15 +43,15 @@ msgstr ""
 msgid ""
 "``prepend`` (default): the directory path containing each module will be "
 "inserted into the *beginning* of :py:data:`sys.path` if not already there, "
-"and then imported with the :func:`importlib.import_module <importlib."
-"import_module>` function."
+"and then imported with the :func:`importlib.import_module "
+"<importlib.import_module>` function."
 msgstr ""
 
 #: ../../../doc/en/explanation/pythonpath.rst:21
 msgid ""
 "This requires test module names to be unique when the test directory tree is "
-"not arranged in packages, because the modules will put in :py:data:`sys."
-"modules` after importing."
+"not arranged in packages, because the modules will put "
+"in :py:data:`sys.modules` after importing."
 msgstr ""
 
 #: ../../../doc/en/explanation/pythonpath.rst:24
@@ -62,9 +62,9 @@ msgstr ""
 
 #: ../../../doc/en/explanation/pythonpath.rst:26
 msgid ""
-"``append``: the directory containing each module is appended to the end of :"
-"py:data:`sys.path` if not already there, and imported with :func:`importlib."
-"import_module <importlib.import_module>`."
+"``append``: the directory containing each module is appended to the end "
+"of :py:data:`sys.path` if not already there, and imported "
+"with :func:`importlib.import_module <importlib.import_module>`."
 msgstr ""
 
 #: ../../../doc/en/explanation/pythonpath.rst:29
@@ -84,23 +84,23 @@ msgstr ""
 msgid ""
 "the tests will run against the installed version of ``pkg_under_test`` when "
 "``--import-mode=append`` is used whereas with ``prepend`` they would pick up "
-"the local version. This kind of confusion is why we advocate for using :ref:"
-"`src <src-layout>` layouts."
+"the local version. This kind of confusion is why we advocate for "
+"using :ref:`src <src-layout>` layouts."
 msgstr ""
 
 #: ../../../doc/en/explanation/pythonpath.rst:43
 msgid ""
 "Same as ``prepend``, requires test module names to be unique when the test "
-"directory tree is not arranged in packages, because the modules will put in :"
-"py:data:`sys.modules` after importing."
+"directory tree is not arranged in packages, because the modules will put "
+"in :py:data:`sys.modules` after importing."
 msgstr ""
 
 #: ../../../doc/en/explanation/pythonpath.rst:46
 msgid ""
 "``importlib``: new in pytest-6.0, this mode uses more fine control "
 "mechanisms provided by :mod:`importlib` to import test modules. This gives "
-"full control over the import process, and doesn't require changing :py:data:"
-"`sys.path`."
+"full control over the import process, and doesn't require "
+"changing :py:data:`sys.path`."
 msgstr ""
 
 #: ../../../doc/en/explanation/pythonpath.rst:48
@@ -111,8 +111,8 @@ msgstr ""
 msgid ""
 "One drawback however is that test modules are non-importable by each other. "
 "Also,  utility modules in the tests directories are not automatically "
-"importable because the tests directory is no longer added to :py:data:`sys."
-"path`."
+"importable because the tests directory is no longer added "
+"to :py:data:`sys.path`."
 msgstr ""
 
 #: ../../../doc/en/explanation/pythonpath.rst:54
@@ -185,8 +185,8 @@ msgid ""
 "will then search upwards until it can find the last folder which still "
 "contains an ``__init__.py`` file in order to find the package *root* (in "
 "this case ``foo/``). To load the module, it will insert ``root/``  to the "
-"front of ``sys.path`` (if not there already) in order to load ``test_foo."
-"py`` as the *module* ``foo.bar.tests.test_foo``."
+"front of ``sys.path`` (if not there already) in order to load "
+"``test_foo.py`` as the *module* ``foo.bar.tests.test_foo``."
 msgstr ""
 
 #: ../../../doc/en/explanation/pythonpath.rst:98

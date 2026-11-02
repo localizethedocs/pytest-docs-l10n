@@ -95,13 +95,13 @@ msgstr ""
 
 #: ../../../doc/en/how-to/nose.rst:47
 msgid ""
-"nose imports test modules with the same import path (e.g. ``tests."
-"test_mode``) but different file system paths (e.g. ``tests/test_mode.py`` "
-"and ``other/tests/test_mode.py``) by extending sys.path/import semantics.   "
-"pytest does not do that but there is discussion in :issue:`268` for adding "
-"some support.  Note that `nose2 choose to avoid this sys.path/import hackery "
-"<https://nose2.readthedocs.io/en/latest/differences.html#test-discovery-and-"
-"loading>`_."
+"nose imports test modules with the same import path (e.g. "
+"``tests.test_mode``) but different file system paths (e.g. ``tests/"
+"test_mode.py`` and ``other/tests/test_mode.py``) by extending sys.path/"
+"import semantics.   pytest does not do that but there is discussion "
+"in :issue:`268` for adding some support.  Note that `nose2 choose to avoid "
+"this sys.path/import hackery <https://nose2.readthedocs.io/en/latest/"
+"differences.html#test-discovery-and-loading>`_."
 msgstr ""
 
 #: ../../../doc/en/how-to/nose.rst:54

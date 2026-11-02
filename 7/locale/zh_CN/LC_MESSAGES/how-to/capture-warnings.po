@@ -294,15 +294,15 @@ msgstr ""
 
 #: ../../../doc/en/how-to/capture-warnings.rst:217
 msgid ""
-"See :ref:`@pytest.mark.filterwarnings <filterwarnings>` and :ref:"
-"`Controlling warnings <controlling-warnings>` for more examples."
+"See :ref:`@pytest.mark.filterwarnings <filterwarnings>` "
+"and :ref:`Controlling warnings <controlling-warnings>` for more examples."
 msgstr ""
 
 #: ../../../doc/en/how-to/capture-warnings.rst:222
 msgid ""
-"If warnings are configured at the interpreter level, using the :envvar:"
-"`python:PYTHONWARNINGS` environment variable or the ``-W`` command-line "
-"option, pytest will not configure any filters by default."
+"If warnings are configured at the interpreter level, using "
+"the :envvar:`python:PYTHONWARNINGS` environment variable or the ``-W`` "
+"command-line option, pytest will not configure any filters by default."
 msgstr ""
 
 #: ../../../doc/en/how-to/capture-warnings.rst:226
@@ -346,10 +346,10 @@ msgstr ""
 
 #: ../../../doc/en/how-to/capture-warnings.rst:268
 msgid ""
-"You can check that code raises a particular warning using :func:`pytest."
-"warns`, which works in a similar manner to :ref:`raises <assertraises>` "
-"(except that :ref:`raises <assertraises>` does not capture all exceptions, "
-"only the ``expected_exception``):"
+"You can check that code raises a particular warning "
+"using :func:`pytest.warns`, which works in a similar manner to :ref:`raises "
+"<assertraises>` (except that :ref:`raises <assertraises>` does not capture "
+"all exceptions, only the ``expected_exception``):"
 msgstr ""
 
 #: ../../../doc/en/how-to/capture-warnings.rst:273
@@ -410,8 +410,9 @@ msgstr ""
 
 #: ../../../doc/en/how-to/capture-warnings.rst:320
 msgid ""
-"The function also returns a list of all raised warnings (as ``warnings."
-"WarningMessage`` objects), which you can query for additional information:"
+"The function also returns a list of all raised warnings (as "
+"``warnings.WarningMessage`` objects), which you can query for additional "
+"information:"
 msgstr ""
 
 #: ../../../doc/en/how-to/capture-warnings.rst:324
@@ -427,8 +428,8 @@ msgstr ""
 
 #: ../../../doc/en/how-to/capture-warnings.rst:334
 msgid ""
-"Alternatively, you can examine raised warnings in detail using the :ref:"
-"`recwarn <recwarn>` fixture (see below)."
+"Alternatively, you can examine raised warnings in detail using "
+"the :ref:`recwarn <recwarn>` fixture (see below)."
 msgstr ""
 
 #: ../../../doc/en/how-to/capture-warnings.rst:338
@@ -662,6 +663,7 @@ msgstr ""
 
 #: ../../../doc/en/how-to/capture-warnings.rst:504
 msgid ""
-"For more information, consult the `Python Development Mode <https://docs."
-"python.org/3/library/devmode.html>`__ section in the Python documentation."
+"For more information, consult the `Python Development Mode <https://"
+"docs.python.org/3/library/devmode.html>`__ section in the Python "
+"documentation."
 msgstr ""

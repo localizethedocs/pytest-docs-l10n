@@ -188,8 +188,8 @@ msgstr ""
 
 #: ../../../doc/en/how-to/logging.rst:125
 msgid ""
-"For all the available attributes of the log records see the ``logging."
-"LogRecord`` class."
+"For all the available attributes of the log records see the "
+"``logging.LogRecord`` class."
 msgstr ""
 
 #: ../../../doc/en/how-to/logging.rst:128
@@ -270,8 +270,8 @@ msgstr ""
 msgid ""
 "You can specify the logging level for which log records with equal or higher "
 "level are printed to the console by passing ``--log-cli-level``. This "
-"setting accepts the logging level names or numeric values as seen in :ref:"
-"`logging's documentation <python:levels>`."
+"setting accepts the logging level names or numeric values as seen "
+"in :ref:`logging's documentation <python:levels>`."
 msgstr ""
 
 #: ../../../doc/en/how-to/logging.rst:189
@@ -395,8 +395,8 @@ msgid ""
 "catchlog` plugin and they conflict with each other. The backward "
 "compatibility API with ``pytest-capturelog`` has been dropped when this "
 "feature was introduced, so if for that reason you still need ``pytest-"
-"catchlog`` you can disable the internal feature by adding to your ``pytest."
-"ini``:"
+"catchlog`` you can disable the internal feature by adding to your "
+"``pytest.ini``:"
 msgstr ""
 
 #: ../../../doc/en/how-to/logging.rst:262
@@ -417,12 +417,13 @@ msgstr ""
 
 #: ../../../doc/en/how-to/logging.rst:276
 msgid ""
-"Log levels are no longer changed unless explicitly requested by the :confval:"
-"`log_level` configuration or ``--log-level`` command-line options. This "
-"allows users to configure logger objects themselves. Setting :confval:"
-"`log_level` will set the level that is captured globally so if a specific "
-"test requires a lower level than this, use the ``caplog.set_level()`` "
-"functionality otherwise that test will be prone to failure."
+"Log levels are no longer changed unless explicitly requested by "
+"the :confval:`log_level` configuration or ``--log-level`` command-line "
+"options. This allows users to configure logger objects themselves. "
+"Setting :confval:`log_level` will set the level that is captured globally so "
+"if a specific test requires a lower level than this, use the "
+"``caplog.set_level()`` functionality otherwise that test will be prone to "
+"failure."
 msgstr ""
 
 #: ../../../doc/en/how-to/logging.rst:281
@@ -453,6 +454,6 @@ msgstr ""
 
 #: ../../../doc/en/how-to/logging.rst:296
 msgid ""
-"More details about the discussion that lead to this changes can be read in :"
-"issue:`3013`."
+"More details about the discussion that lead to this changes can be read "
+"in :issue:`3013`."
 msgstr ""

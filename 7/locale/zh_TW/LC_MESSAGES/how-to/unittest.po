@@ -313,9 +313,9 @@ msgid ""
 "define the fixture function in the context where you want it used. Let's "
 "look at an ``initdir`` fixture which makes all test methods of a "
 "``TestCase`` class execute in a temporary directory with a pre-initialized "
-"``samplefile.ini``.  Our ``initdir`` fixture itself uses the pytest builtin :"
-"fixture:`tmp_path` fixture to delegate the creation of a per-test temporary "
-"directory:"
+"``samplefile.ini``.  Our ``initdir`` fixture itself uses the pytest "
+"builtin :fixture:`tmp_path` fixture to delegate the creation of a per-test "
+"temporary directory:"
 msgstr ""
 
 #: ../../../doc/en/how-to/unittest.rst:198

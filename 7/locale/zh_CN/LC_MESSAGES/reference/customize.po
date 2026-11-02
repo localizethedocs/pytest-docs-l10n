@@ -102,8 +102,8 @@ msgstr ""
 
 #: ../../../doc/en/reference/customize.rst:65
 msgid ""
-"One might wonder why ``[tool.pytest.ini_options]`` instead of ``[tool."
-"pytest]`` as is the case with other tools."
+"One might wonder why ``[tool.pytest.ini_options]`` instead of "
+"``[tool.pytest]`` as is the case with other tools."
 msgstr ""
 
 #: ../../../doc/en/reference/customize.rst:68
@@ -121,8 +121,8 @@ msgstr ""
 
 #: ../../../doc/en/reference/customize.rst:76
 msgid ""
-"``tox.ini`` files are the configuration files of the `tox <https://tox."
-"readthedocs.io>`__ project, and can also be used to hold pytest "
+"``tox.ini`` files are the configuration files of the `tox <https://"
+"tox.readthedocs.io>`__ project, and can also be used to hold pytest "
 "configuration if they have a ``[pytest]`` section."
 msgstr ""
 
@@ -144,9 +144,10 @@ msgstr ""
 #: ../../../doc/en/reference/customize.rst:93
 msgid ""
 "``setup.cfg`` files are general purpose configuration files, used originally "
-"by ``distutils`` (now deprecated) and `setuptools <https://setuptools.pypa."
-"io/en/latest/userguide/declarative_config.html>`__, and can also be used to "
-"hold pytest configuration if they have a ``[tool:pytest]`` section."
+"by ``distutils`` (now deprecated) and `setuptools <https://"
+"setuptools.pypa.io/en/latest/userguide/declarative_config.html>`__, and can "
+"also be used to hold pytest configuration if they have a ``[tool:pytest]`` "
+"section."
 msgstr ""
 
 #: ../../../doc/en/reference/customize.rst:96
@@ -318,10 +319,10 @@ msgstr ""
 
 #: ../../../doc/en/reference/customize.rst:191
 msgid ""
-"The ``config.rootpath`` and ``config.inipath`` properties. They are :class:"
-"`pathlib.Path` versions of the older ``config.rootdir`` and ``config."
-"inifile``, which have type ``py.path.local``, and still exist for backward "
-"compatibility."
+"The ``config.rootpath`` and ``config.inipath`` properties. They "
+"are :class:`pathlib.Path` versions of the older ``config.rootdir`` and "
+"``config.inifile``, which have type ``py.path.local``, and still exist for "
+"backward compatibility."
 msgstr ""
 
 #: ../../../doc/en/reference/customize.rst:196

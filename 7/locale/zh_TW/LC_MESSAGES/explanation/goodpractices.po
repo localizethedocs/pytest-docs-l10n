@@ -90,10 +90,10 @@ msgstr ""
 
 #: ../../../doc/en/explanation/goodpractices.rst:47
 msgid ""
-"If no arguments are specified then collection starts from :confval:"
-"`testpaths` (if configured) or the current directory. Alternatively, command "
-"line arguments can be used in any combination of directories, file names or "
-"node ids."
+"If no arguments are specified then collection starts "
+"from :confval:`testpaths` (if configured) or the current directory. "
+"Alternatively, command line arguments can be used in any combination of "
+"directories, file names or node ids."
 msgstr ""
 
 #: ../../../doc/en/explanation/goodpractices.rst:50
@@ -129,8 +129,8 @@ msgstr ""
 
 #: ../../../doc/en/explanation/goodpractices.rst:59
 msgid ""
-"Within Python modules, ``pytest`` also discovers tests using the standard :"
-"ref:`unittest.TestCase <unittest.TestCase>` subclassing technique."
+"Within Python modules, ``pytest`` also discovers tests using the "
+"standard :ref:`unittest.TestCase <unittest.TestCase>` subclassing technique."
 msgstr ""
 
 #: ../../../doc/en/explanation/goodpractices.rst:64
@@ -411,11 +411,12 @@ msgstr ""
 
 #: ../../../doc/en/explanation/goodpractices.rst:250
 msgid ""
-"Now pytest will load the modules as ``tests.foo.test_view`` and ``tests.bar."
-"test_view``, allowing you to have modules with the same name. But now this "
-"introduces a subtle problem: in order to load the test modules from the "
-"``tests`` directory, pytest prepends the root of the repository to ``sys."
-"path``, which adds the side-effect that now ``mypkg`` is also importable."
+"Now pytest will load the modules as ``tests.foo.test_view`` and "
+"``tests.bar.test_view``, allowing you to have modules with the same name. "
+"But now this introduces a subtle problem: in order to load the test modules "
+"from the ``tests`` directory, pytest prepends the root of the repository to "
+"``sys.path``, which adds the side-effect that now ``mypkg`` is also "
+"importable."
 msgstr ""
 
 #: ../../../doc/en/explanation/goodpractices.rst:257

@@ -27,9 +27,9 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-2.4.2.rst:6
 msgid ""
-"on Windows require colorama and a newer py lib so that py.io."
-"TerminalWriter() now uses colorama instead of its own ctypes hacks. (fixes "
-"issue365) thanks Paul Moore for bringing it up."
+"on Windows require colorama and a newer py lib so that "
+"py.io.TerminalWriter() now uses colorama instead of its own ctypes hacks. "
+"(fixes issue365) thanks Paul Moore for bringing it up."
 msgstr ""
 
 #: ../../../doc/en/announce/release-2.4.2.rst:10

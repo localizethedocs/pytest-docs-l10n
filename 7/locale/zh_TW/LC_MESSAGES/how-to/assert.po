@@ -109,8 +109,8 @@ msgstr ""
 
 #: ../../../doc/en/how-to/assert.rst:72
 msgid ""
-"In order to write assertions about raised exceptions, you can use :func:"
-"`pytest.raises` as a context manager like this:"
+"In order to write assertions about raised exceptions, you can "
+"use :func:`pytest.raises` as a context manager like this:"
 msgstr ""
 
 #: ../../../doc/en/how-to/assert.rst:75
@@ -171,9 +171,9 @@ msgstr ""
 
 #: ../../../doc/en/how-to/assert.rst:118
 msgid ""
-"The regexp parameter of the ``match`` method is matched with the ``re."
-"search`` function, so in the above example ``match='123'`` would have worked "
-"as well."
+"The regexp parameter of the ``match`` method is matched with the "
+"``re.search`` function, so in the above example ``match='123'`` would have "
+"worked as well."
 msgstr ""
 
 #: ../../../doc/en/how-to/assert.rst:122
@@ -195,9 +195,9 @@ msgstr ""
 
 #: ../../../doc/en/how-to/assert.rst:133
 msgid ""
-"Note that it is also possible to specify a \"raises\" argument to ``pytest."
-"mark.xfail``, which checks that the test is failing in a more specific way "
-"than just having any exception raised:"
+"Note that it is also possible to specify a \"raises\" argument to "
+"``pytest.mark.xfail``, which checks that the test is failing in a more "
+"specific way than just having any exception raised:"
 msgstr ""
 
 #: ../../../doc/en/how-to/assert.rst:137
@@ -479,8 +479,8 @@ msgstr ""
 
 #: ../../../doc/en/how-to/assert.rst:318
 msgid ""
-"Additionally, rewriting will silently skip caching if it cannot write new ``."
-"pyc`` files, i.e. in a read-only filesystem or a zipfile."
+"Additionally, rewriting will silently skip caching if it cannot write new "
+"``.pyc`` files, i.e. in a read-only filesystem or a zipfile."
 msgstr ""
 
 #: ../../../doc/en/how-to/assert.rst:323
