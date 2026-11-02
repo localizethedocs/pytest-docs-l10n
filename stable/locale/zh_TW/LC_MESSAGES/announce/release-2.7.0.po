@@ -109,8 +109,8 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-2.7.0.rst:62
 msgid ""
-"fix issue655: work around different ways that cause python2/3 to leak sys."
-"exc_info into fixtures/tests causing failures in 3rd party code"
+"fix issue655: work around different ways that cause python2/3 to leak "
+"sys.exc_info into fixtures/tests causing failures in 3rd party code"
 msgstr ""
 
 #: ../../../doc/en/announce/release-2.7.0.rst:65
@@ -177,7 +177,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-2.7.0.rst:98
 msgid ""
-"On failure, the ``sys.last_value``, ``sys.last_type`` and ``sys."
-"last_traceback`` are set, so that a user can inspect the error via "
+"On failure, the ``sys.last_value``, ``sys.last_type`` and "
+"``sys.last_traceback`` are set, so that a user can inspect the error via "
 "postmortem debugging (almarklein)."
 msgstr ""

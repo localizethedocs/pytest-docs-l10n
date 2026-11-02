@@ -90,14 +90,14 @@ msgid ""
 "``pytest.mark.xfail`` now has a ``strict`` option which makes ``XPASS`` "
 "tests to fail the test suite, defaulting to ``False``. There's also a "
 "``xfail_strict`` ini option that can be used to configure it project-wise. "
-"Thanks :user:`rabbbit` for the request and :user:`nicoddemus` for the PR (:"
-"issue:`1355`)."
+"Thanks :user:`rabbbit` for the request and :user:`nicoddemus` for the PR "
+"(:issue:`1355`)."
 msgstr ""
 
 #: ../../../doc/en/announce/release-2.9.0.rst:61
 msgid ""
-"``Parser.addini`` now supports options of type ``bool``. Thanks :user:"
-"`nicoddemus` for the PR."
+"``Parser.addini`` now supports options of type ``bool``. "
+"Thanks :user:`nicoddemus` for the PR."
 msgstr ""
 
 #: ../../../doc/en/announce/release-2.9.0.rst:64
@@ -158,8 +158,8 @@ msgstr ""
 #: ../../../doc/en/announce/release-2.9.0.rst:96
 msgid ""
 "Removed code and documentation for Python 2.5 or lower versions, including "
-"removal of the obsolete ``_pytest.assertion.oldinterpret`` module. Thanks :"
-"user:`nicoddemus` for the PR (:issue:`1226`)."
+"removal of the obsolete ``_pytest.assertion.oldinterpret`` module. "
+"Thanks :user:`nicoddemus` for the PR (:issue:`1226`)."
 msgstr ""
 
 #: ../../../doc/en/announce/release-2.9.0.rst:100
@@ -192,22 +192,22 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-2.9.0.rst:116
 msgid ""
-"The ``-s`` and ``-c`` options should now work under ``xdist``; ``Config."
-"fromdictargs`` now represents its input much more faithfully. Thanks to :"
-"user:`bukzor` for the complete PR (:issue:`680`)."
+"The ``-s`` and ``-c`` options should now work under ``xdist``; "
+"``Config.fromdictargs`` now represents its input much more faithfully. "
+"Thanks to :user:`bukzor` for the complete PR (:issue:`680`)."
 msgstr ""
 
 #: ../../../doc/en/announce/release-2.9.0.rst:120
 msgid ""
 "Fix (:issue:`1290`): support Python 3.5's ``@`` operator in assertion "
-"rewriting. Thanks :user:`Shinkenjoe` for report with test case and :user:"
-"`tomviner` for the PR."
+"rewriting. Thanks :user:`Shinkenjoe` for report with test case "
+"and :user:`tomviner` for the PR."
 msgstr ""
 
 #: ../../../doc/en/announce/release-2.9.0.rst:123
 msgid ""
-"Fix formatting utf-8 explanation messages (:issue:`1379`). Thanks :user:"
-"`biern` for the PR."
+"Fix formatting utf-8 explanation messages (:issue:`1379`). "
+"Thanks :user:`biern` for the PR."
 msgstr ""
 
 #: ../../../doc/en/announce/release-2.9.0.rst:126

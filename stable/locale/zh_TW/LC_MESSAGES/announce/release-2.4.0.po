@@ -59,8 +59,8 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-2.4.0.rst:25
 msgid ""
-"integrate tab-completion on command line options if you have :pypi:"
-"`argcomplete` configured."
+"integrate tab-completion on command line options if you "
+"have :pypi:`argcomplete` configured."
 msgstr ""
 
 #: ../../../doc/en/announce/release-2.4.0.rst:28
@@ -71,9 +71,9 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-2.4.0.rst:31
 msgid ""
-"a new hook ``pytest_load_initial_conftests`` allows plugins like :pypi:"
-"`pytest-django` to influence the environment before conftest files import "
-"``django``."
+"a new hook ``pytest_load_initial_conftests`` allows plugins "
+"like :pypi:`pytest-django` to influence the environment before conftest "
+"files import ``django``."
 msgstr ""
 
 #: ../../../doc/en/announce/release-2.4.0.rst:35
@@ -148,8 +148,8 @@ msgid ""
 "anymore.  This change might be reversed in 2.4.1 if it causes unforeseen "
 "real-life issues.  However, you can always write and return an inner "
 "function/generator and change the fixture consumer to iterate over the "
-"returned generator.  This change was done in lieu of the new ``pytest."
-"yield_fixture`` decorator, see below."
+"returned generator.  This change was done in lieu of the new "
+"``pytest.yield_fixture`` decorator, see below."
 msgstr ""
 
 #: ../../../doc/en/announce/release-2.4.0.rst:79
@@ -229,9 +229,10 @@ msgstr ""
 #: ../../../doc/en/announce/release-2.4.0.rst:125
 msgid ""
 "simplify pytest.mark.parametrize() signature: allow to pass a CSV-separated "
-"string to specify argnames.  For example: ``pytest.mark.parametrize(\"input,"
-"expected\",  [(1,2), (2,3)])`` works as well as the previous: ``pytest.mark."
-"parametrize((\"input\", \"expected\"), ...)``."
+"string to specify argnames.  For example: "
+"``pytest.mark.parametrize(\"input,expected\",  [(1,2), (2,3)])`` works as "
+"well as the previous: ``pytest.mark.parametrize((\"input\", "
+"\"expected\"), ...)``."
 msgstr ""
 
 #: ../../../doc/en/announce/release-2.4.0.rst:131
@@ -314,8 +315,8 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-2.4.0.rst:173
 msgid ""
-"fix issue335: document py.code.ExceptionInfo() object returned from pytest."
-"raises(), thanks Mathieu Agopian."
+"fix issue335: document py.code.ExceptionInfo() object returned from "
+"pytest.raises(), thanks Mathieu Agopian."
 msgstr ""
 
 #: ../../../doc/en/announce/release-2.4.0.rst:176
@@ -380,8 +381,8 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-2.4.0.rst:208
 msgid ""
-"fix issue245 by depending on the released py-1.4.14 which fixes py.io."
-"dupfile to work with files with no mode. Thanks Jason R. Coombs."
+"fix issue245 by depending on the released py-1.4.14 which fixes "
+"py.io.dupfile to work with files with no mode. Thanks Jason R. Coombs."
 msgstr ""
 
 #: ../../../doc/en/announce/release-2.4.0.rst:212
@@ -406,7 +407,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-2.4.0.rst:221
 msgid ""
-"pytest_terminal_summary(terminalreporter) hooks can now use \"."
-"section(title)\" and \".line(msg)\" methods to print extra information at "
-"the end of a test run."
+"pytest_terminal_summary(terminalreporter) hooks can now use \".section(title)"
+"\" and \".line(msg)\" methods to print extra information at the end of a "
+"test run."
 msgstr ""

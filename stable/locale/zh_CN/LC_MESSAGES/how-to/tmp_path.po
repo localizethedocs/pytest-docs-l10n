@@ -213,9 +213,9 @@ msgstr ""
 
 #: ../../../doc/en/how-to/tmp_path.rst:150
 msgid ""
-"``{temproot}`` is the system temporary directory as determined by :py:func:"
-"`tempfile.gettempdir`. It can be overridden by the :envvar:"
-"`PYTEST_DEBUG_TEMPROOT` environment variable."
+"``{temproot}`` is the system temporary directory as determined "
+"by :py:func:`tempfile.gettempdir`. It can be overridden by "
+"the :envvar:`PYTEST_DEBUG_TEMPROOT` environment variable."
 msgstr ""
 
 #: ../../../doc/en/how-to/tmp_path.rst:153
@@ -237,8 +237,8 @@ msgid ""
 "The auto-incrementing ``{num}`` placeholder provides a basic retention "
 "feature and avoids that existing results of previous test runs are blindly "
 "removed. By default, the last 3 temporary directories are kept, but this "
-"behavior can be configured with :confval:`tmp_path_retention_count` and :"
-"confval:`tmp_path_retention_policy`."
+"behavior can be configured with :confval:`tmp_path_retention_count` "
+"and :confval:`tmp_path_retention_policy`."
 msgstr ""
 
 #: ../../../doc/en/how-to/tmp_path.rst:163

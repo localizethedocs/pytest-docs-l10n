@@ -69,10 +69,11 @@ msgstr ""
 
 #: ../../../doc/en/how-to/failures.rst:43
 msgid ""
-"Note that on any failure the exception information is stored on ``sys."
-"last_value``, ``sys.last_type`` and ``sys.last_traceback``. In interactive "
-"use, this allows one to drop into postmortem debugging with any debug tool. "
-"One can also manually access the exception information, for example::"
+"Note that on any failure the exception information is stored on "
+"``sys.last_value``, ``sys.last_type`` and ``sys.last_traceback``. In "
+"interactive use, this allows one to drop into postmortem debugging with any "
+"debug tool. One can also manually access the exception information, for "
+"example::"
 msgstr ""
 
 #: ../../../doc/en/how-to/failures.rst:49
@@ -108,9 +109,9 @@ msgstr ""
 
 #: ../../../doc/en/how-to/failures.rst:76
 msgid ""
-"To set a breakpoint in your code use the native Python ``import pdb;pdb."
-"set_trace()`` call in your code and pytest automatically disables its output "
-"capture for that test:"
+"To set a breakpoint in your code use the native Python ``import "
+"pdb;pdb.set_trace()`` call in your code and pytest automatically disables "
+"its output capture for that test:"
 msgstr ""
 
 #: ../../../doc/en/how-to/failures.rst:79
@@ -174,8 +175,8 @@ msgstr ""
 
 #: ../../../doc/en/how-to/failures.rst:110
 msgid ""
-"The module is automatically enabled for pytest runs, unless the ``-p no:"
-"faulthandler`` is given on the command-line."
+"The module is automatically enabled for pytest runs, unless the ``-p "
+"no:faulthandler`` is given on the command-line."
 msgstr ""
 
 #: ../../../doc/en/how-to/failures.rst:113
@@ -200,9 +201,9 @@ msgstr ""
 
 #: ../../../doc/en/how-to/failures.rst:126
 msgid ""
-"The ``--faulthandler-timeout`` command-line option has become the :confval:"
-"`faulthandler_timeout` configuration option. It can still be configured from "
-"the command-line using ``-o faulthandler_timeout=X``."
+"The ``--faulthandler-timeout`` command-line option has become "
+"the :confval:`faulthandler_timeout` configuration option. It can still be "
+"configured from the command-line using ``-o faulthandler_timeout=X``."
 msgstr ""
 
 #: ../../../doc/en/how-to/failures.rst:134
@@ -218,8 +219,9 @@ msgstr ""
 
 #: ../../../doc/en/how-to/failures.rst:142
 msgid ""
-"Unhandled thread exceptions are exceptions raised in a :class:`~threading."
-"Thread` but not handled, causing the thread to terminate uncleanly."
+"Unhandled thread exceptions are exceptions raised in "
+"a :class:`~threading.Thread` but not handled, causing the thread to "
+"terminate uncleanly."
 msgstr ""
 
 #: ../../../doc/en/how-to/failures.rst:145
@@ -231,16 +233,16 @@ msgstr ""
 
 #: ../../../doc/en/how-to/failures.rst:149
 msgid ""
-"The plugins are automatically enabled for pytest runs, unless the ``-p no:"
-"unraisableexception`` (for unraisable exceptions) and ``-p no:"
-"threadexception`` (for thread exceptions) options are given on the command-"
-"line."
+"The plugins are automatically enabled for pytest runs, unless the ``-p "
+"no:unraisableexception`` (for unraisable exceptions) and ``-p "
+"no:threadexception`` (for thread exceptions) options are given on the "
+"command-line."
 msgstr ""
 
 #: ../../../doc/en/how-to/failures.rst:154
 msgid ""
-"The warnings may be silenced selectively using the :ref:`pytest.mark."
-"filterwarnings ref` mark. The warning categories are :class:`pytest."
-"PytestUnraisableExceptionWarning` and :class:`pytest."
-"PytestUnhandledThreadExceptionWarning`."
+"The warnings may be silenced selectively using "
+"the :ref:`pytest.mark.filterwarnings ref` mark. The warning categories "
+"are :class:`pytest.PytestUnraisableExceptionWarning` "
+"and :class:`pytest.PytestUnhandledThreadExceptionWarning`."
 msgstr ""

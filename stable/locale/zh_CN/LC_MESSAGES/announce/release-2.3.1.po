@@ -81,6 +81,6 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-2.3.1.rst:38
 msgid ""
-"link to web pages from --markers output which provides help for pytest.mark."
-"* usage."
+"link to web pages from --markers output which provides help for "
+"pytest.mark.* usage."
 msgstr ""

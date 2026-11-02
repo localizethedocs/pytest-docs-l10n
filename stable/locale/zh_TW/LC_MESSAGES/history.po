@@ -23,12 +23,13 @@ msgstr ""
 
 #: ../../../doc/en/history.rst:4
 msgid ""
-"pytest has a long and interesting history. The `first commit <https://github."
-"com/pytest-dev/pytest/commit/5992a8ef21424d7571305a8d7e2a3431ee7e1e23>`__ in "
-"this repository is from January 2007, and even that commit alone already "
-"tells a lot: The repository originally was from the :pypi:`py` library "
-"(later split off to pytest), and it originally was a SVN revision, migrated "
-"to Mercurial, and finally migrated to git."
+"pytest has a long and interesting history. The `first commit <https://"
+"github.com/pytest-dev/pytest/commit/"
+"5992a8ef21424d7571305a8d7e2a3431ee7e1e23>`__ in this repository is from "
+"January 2007, and even that commit alone already tells a lot: The repository "
+"originally was from the :pypi:`py` library (later split off to pytest), and "
+"it originally was a SVN revision, migrated to Mercurial, and finally "
+"migrated to git."
 msgstr ""
 
 #: ../../../doc/en/history.rst:12
@@ -42,8 +43,8 @@ msgstr ""
 
 #: ../../../doc/en/history.rst:19
 msgid ""
-"Late 2002 / early 2003, `PyPy was born <https://morepypy.blogspot."
-"com/2018/09/the-first-15-years-of-pypy.html>`__."
+"Late 2002 / early 2003, `PyPy was born <https://morepypy.blogspot.com/"
+"2018/09/the-first-15-years-of-pypy.html>`__."
 msgstr ""
 
 #: ../../../doc/en/history.rst:21
@@ -69,13 +70,13 @@ msgid ""
 "efforts started on a thing called ``utest``, offering plain assertions. This "
 "seems like the start of something pytest-like, but unfortunately, it's "
 "unclear where the test runner's code was at the time. The closest thing "
-"still around is `this file <https://foss.heptapod.net/pypy/pypy/-/"
-"commit/0735f9ed287ec20950a7dd0a16fc10810d4f6847>`__, but that doesn’t seem "
-"like a complete test runner at all. What can be seen is that there were "
-"`various efforts <https://foss.heptapod.net/pypy/pypy/-/commits/branch/"
-"default?utf8=%E2%9C%93&search=utest>`__ by Laura Creighton and Samuele "
-"Pedroni (:user:`pedronis`) at automatically converting existing tests to the "
-"new ``utest`` framework."
+"still around is `this file <https://foss.heptapod.net/pypy/pypy/-/commit/"
+"0735f9ed287ec20950a7dd0a16fc10810d4f6847>`__, but that doesn’t seem like a "
+"complete test runner at all. What can be seen is that there were `various "
+"efforts <https://foss.heptapod.net/pypy/pypy/-/commits/branch/default?"
+"utf8=%E2%9C%93&search=utest>`__ by Laura Creighton and Samuele Pedroni "
+"(:user:`pedronis`) at automatically converting existing tests to the new "
+"``utest`` framework."
 msgstr ""
 
 #: ../../../doc/en/history.rst:42
@@ -150,9 +151,9 @@ msgid ""
 "Around September/October 2004, the ``std`` project `was renamed <https://"
 "mail.python.org/pipermail/pypy-dev/2004-September/001565.html>`__ to ``py`` "
 "and ``std.utest`` became ``py.test``. This is also the first time the "
-"`entire source code <https://foss.heptapod.net/pypy/pypy/-/"
-"commit/42cf50c412026028e20acd23d518bd92e623ac11>`__, seems to be available, "
-"with much of the API still being around today:"
+"`entire source code <https://foss.heptapod.net/pypy/pypy/-/commit/"
+"42cf50c412026028e20acd23d518bd92e623ac11>`__, seems to be available, with "
+"much of the API still being around today:"
 msgstr ""
 
 #: ../../../doc/en/history.rst:85
@@ -176,9 +177,9 @@ msgstr ""
 
 #: ../../../doc/en/history.rst:95
 msgid ""
-"In the same month, the ``py`` library `gets split off <https://foss.heptapod."
-"net/pypy/pypy/-/commit/6bdafe9203ad92eb259270b267189141c53bce33>`__ from "
-"``PyPy``"
+"In the same month, the ``py`` library `gets split off <https://"
+"foss.heptapod.net/pypy/pypy/-/commit/"
+"6bdafe9203ad92eb259270b267189141c53bce33>`__ from ``PyPy``"
 msgstr ""
 
 #: ../../../doc/en/history.rst:99
@@ -201,8 +202,8 @@ msgstr ""
 #: ../../../doc/en/history.rst:108
 msgid ""
 "March 2008: py 0.9.1 (first release to be found `in the pytest changelog "
-"<https://github.com/pytest-dev/pytest/blob/main/doc/en/changelog."
-"rst#091>`__!)"
+"<https://github.com/pytest-dev/pytest/blob/main/doc/en/"
+"changelog.rst#091>`__!)"
 msgstr ""
 
 #: ../../../doc/en/history.rst:110

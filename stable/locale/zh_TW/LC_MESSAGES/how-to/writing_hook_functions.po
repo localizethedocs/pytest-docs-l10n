@@ -270,9 +270,9 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
 #: of _pytest.hookspec.pytest_addhooks:1
 msgid ""
-"Called at plugin registration time to allow adding new hooks via a call to :"
-"func:`pluginmanager.add_hookspecs(module_or_class, prefix) <pytest."
-"PytestPluginManager.add_hookspecs>`."
+"Called at plugin registration time to allow adding new hooks via a call "
+"to :func:`pluginmanager.add_hookspecs(module_or_class, prefix) "
+"<pytest.PytestPluginManager.add_hookspecs>`."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/hookspec.py:docstring
@@ -394,8 +394,8 @@ msgstr ""
 msgid ""
 "Unlike other hooks, the :hook:`pytest_generate_tests` hook is also "
 "discovered when defined inside a test module or test class. Other hooks must "
-"live in :ref:`conftest.py plugins <localplugin>` or external plugins. See :"
-"ref:`parametrize-basics` and the :ref:`hook-reference`."
+"live in :ref:`conftest.py plugins <localplugin>` or external plugins. "
+"See :ref:`parametrize-basics` and the :ref:`hook-reference`."
 msgstr ""
 
 #: ../../../doc/en/how-to/writing_hook_functions.rst:259
@@ -556,8 +556,8 @@ msgid ""
 "implementation, and access it in another. One common solution is to just "
 "assign some private attribute directly on the item, but type-checkers like "
 "mypy frown upon this, and it may also cause conflicts with other plugins. So "
-"pytest offers a better way to do this, :attr:`item.stash <_pytest.nodes.Node."
-"stash>`."
+"pytest offers a better way to do this, :attr:`item.stash "
+"<_pytest.nodes.Node.stash>`."
 msgstr ""
 
 #: ../../../doc/en/how-to/writing_hook_functions.rst:373
@@ -597,6 +597,7 @@ msgstr ""
 
 #: ../../../doc/en/how-to/writing_hook_functions.rst:398
 msgid ""
-"Stashes are available on all node types (like :class:`~pytest.Class`, :class:"
-"`~pytest.Session`) and also on :class:`~pytest.Config`, if needed."
+"Stashes are available on all node types "
+"(like :class:`~pytest.Class`, :class:`~pytest.Session`) and also "
+"on :class:`~pytest.Config`, if needed."
 msgstr ""

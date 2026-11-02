@@ -143,8 +143,8 @@ msgstr ""
 msgid ""
 "In addition, pytest continues to support :ref:`xunitsetup`.  You can mix "
 "both styles, moving incrementally from classic to new style, as you prefer.  "
-"You can also start out from existing :ref:`unittest.TestCase style <unittest."
-"TestCase>`."
+"You can also start out from existing :ref:`unittest.TestCase style "
+"<unittest.TestCase>`."
 msgstr ""
 
 #: ../../../doc/en/explanation/fixtures.rst:93
@@ -242,11 +242,12 @@ msgstr ""
 
 #: ../../../doc/en/explanation/fixtures.rst:164
 msgid ""
-"pytest does not do any special processing for :data:`SIGTERM <signal."
-"SIGTERM>` and ``SIGQUIT`` signals (:data:`SIGINT <signal.SIGINT>` is handled "
-"naturally by the Python runtime via :class:`KeyboardInterrupt`), so fixtures "
-"that manage external resources which are important to be cleared when the "
-"Python process is terminated (by those signals) might leak resources."
+"pytest does not do any special processing for :data:`SIGTERM "
+"<signal.SIGTERM>` and ``SIGQUIT`` signals (:data:`SIGINT <signal.SIGINT>` is "
+"handled naturally by the Python runtime via :class:`KeyboardInterrupt`), so "
+"fixtures that manage external resources which are important to be cleared "
+"when the Python process is terminated (by those signals) might leak "
+"resources."
 msgstr ""
 
 #: ../../../doc/en/explanation/fixtures.rst:169

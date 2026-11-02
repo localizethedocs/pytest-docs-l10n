@@ -27,8 +27,8 @@ msgstr ""
 
 #: ../../../doc/en/talks.rst:8
 msgid ""
-"`pytest Quick Start Guide, by Bruno Oliveira (2018) <https://www.packtpub."
-"com/web-development/pytest-quick-start-guide>`_."
+"`pytest Quick Start Guide, by Bruno Oliveira (2018) <https://"
+"www.packtpub.com/web-development/pytest-quick-start-guide>`_."
 msgstr ""
 
 #: ../../../doc/en/talks.rst:11
@@ -49,8 +49,8 @@ msgstr ""
 
 #: ../../../doc/en/talks.rst:20
 msgid ""
-"Training: `pytest - simple, rapid and fun testing with Python <https://www."
-"youtube.com/watch?v=ofPHJrAOaTE>`_, Freya Bruhin, PyConDE 2022"
+"Training: `pytest - simple, rapid and fun testing with Python <https://"
+"www.youtube.com/watch?v=ofPHJrAOaTE>`_, Freya Bruhin, PyConDE 2022"
 msgstr ""
 
 #: ../../../doc/en/talks.rst:22
@@ -113,8 +113,8 @@ msgstr ""
 
 #: ../../../doc/en/talks.rst:38
 msgid ""
-"`pytest advanced, Andrew Svetlov (Russian, PyCon Russia, 2016) <https://www."
-"youtube.com/watch?v=7KgihdKTWY4>`_."
+"`pytest advanced, Andrew Svetlov (Russian, PyCon Russia, 2016) <https://"
+"www.youtube.com/watch?v=7KgihdKTWY4>`_."
 msgstr ""
 
 #: ../../../doc/en/talks.rst:41
@@ -137,8 +137,8 @@ msgstr ""
 
 #: ../../../doc/en/talks.rst:50
 msgid ""
-"`Introduction to pytest, Andreas Pelme, EuroPython 2014 <https://www.youtube."
-"com/watch?v=LdVJj65ikRY>`_."
+"`Introduction to pytest, Andreas Pelme, EuroPython 2014 <https://"
+"www.youtube.com/watch?v=LdVJj65ikRY>`_."
 msgstr ""
 
 #: ../../../doc/en/talks.rst:53
@@ -192,16 +192,16 @@ msgstr ""
 
 #: ../../../doc/en/talks.rst:77
 msgid ""
-"`pytest introduction from Brian Okken (January 2013) <http://pythontesting."
-"net/framework/pytest-introduction/>`_"
+"`pytest introduction from Brian Okken (January 2013) <http://"
+"pythontesting.net/framework/pytest-introduction/>`_"
 msgstr ""
 
 #: ../../../doc/en/talks.rst:80
 msgid ""
-"pycon australia 2012 pytest talk from Brianna Laugher (`video <https://www."
-"youtube.com/watch?v=DTNejE9EraI>`_, `slides <https://www.slideshare.net/"
-"pfctdayelise/funcargs-other-fun-with-pytest>`_, `code <https://gist.github."
-"com/3386951>`_)"
+"pycon australia 2012 pytest talk from Brianna Laugher (`video <https://"
+"www.youtube.com/watch?v=DTNejE9EraI>`_, `slides <https://www.slideshare.net/"
+"pfctdayelise/funcargs-other-fun-with-pytest>`_, `code <https://"
+"gist.github.com/3386951>`_)"
 msgstr ""
 
 #: ../../../doc/en/talks.rst:81
