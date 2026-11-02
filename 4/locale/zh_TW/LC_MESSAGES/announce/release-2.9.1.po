@@ -74,9 +74,9 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-2.9.1.rst:42
 msgid ""
-"Fix (`#1178 <https://github.com/pytest-dev/pytest/issues/1178>`_): ``pytest."
-"fail`` with non-ascii characters raises an internal pytest error. Thanks "
-"`@nicoddemus`_ for the PR."
+"Fix (`#1178 <https://github.com/pytest-dev/pytest/issues/1178>`_): "
+"``pytest.fail`` with non-ascii characters raises an internal pytest error. "
+"Thanks `@nicoddemus`_ for the PR."
 msgstr ""
 
 #: ../../../doc/en/announce/release-2.9.1.rst:46

@@ -27,8 +27,8 @@ msgstr ""
 
 #: ../../../doc/en/talks.rst:17
 msgid ""
-"`pytest Quick Start Guide, by Bruno Oliveira (2018) <https://www.packtpub."
-"com/web-development/pytest-quick-start-guide>`_."
+"`pytest Quick Start Guide, by Bruno Oliveira (2018) <https://"
+"www.packtpub.com/web-development/pytest-quick-start-guide>`_."
 msgstr ""
 
 #: ../../../doc/en/talks.rst:20
@@ -51,8 +51,8 @@ msgstr ""
 
 #: ../../../doc/en/talks.rst:28
 msgid ""
-"`pytest advanced, Andrew Svetlov (Russian, PyCon Russia, 2016) <https://www."
-"youtube.com/watch?v=7KgihdKTWY4>`_."
+"`pytest advanced, Andrew Svetlov (Russian, PyCon Russia, 2016) <https://"
+"www.youtube.com/watch?v=7KgihdKTWY4>`_."
 msgstr ""
 
 #: ../../../doc/en/talks.rst:31
@@ -75,8 +75,8 @@ msgstr ""
 
 #: ../../../doc/en/talks.rst:40
 msgid ""
-"`Introduction to pytest, Andreas Pelme, EuroPython 2014 <https://www.youtube."
-"com/watch?v=LdVJj65ikRY>`_."
+"`Introduction to pytest, Andreas Pelme, EuroPython 2014 <https://"
+"www.youtube.com/watch?v=LdVJj65ikRY>`_."
 msgstr ""
 
 #: ../../../doc/en/talks.rst:43
@@ -133,16 +133,16 @@ msgstr ""
 
 #: ../../../doc/en/talks.rst:69
 msgid ""
-"`pytest introduction from Brian Okken (January 2013) <http://pythontesting."
-"net/framework/pytest-introduction/>`_"
+"`pytest introduction from Brian Okken (January 2013) <http://"
+"pythontesting.net/framework/pytest-introduction/>`_"
 msgstr ""
 
 #: ../../../doc/en/talks.rst:72
 msgid ""
-"pycon australia 2012 pytest talk from Brianna Laugher (`video <http://www."
-"youtube.com/watch?v=DTNejE9EraI>`_, `slides <http://www.slideshare.net/"
-"pfctdayelise/funcargs-other-fun-with-pytest>`_, `code <https://gist.github."
-"com/3386951>`_)"
+"pycon australia 2012 pytest talk from Brianna Laugher (`video <http://"
+"www.youtube.com/watch?v=DTNejE9EraI>`_, `slides <http://www.slideshare.net/"
+"pfctdayelise/funcargs-other-fun-with-pytest>`_, `code <https://"
+"gist.github.com/3386951>`_)"
 msgstr ""
 
 #: ../../../doc/en/talks.rst:73

@@ -74,9 +74,9 @@ msgstr ""
 
 #: ../../../doc/en/customize.rst:40
 msgid ""
-"Important to emphasize that ``rootdir`` is **NOT** used to modify ``sys."
-"path``/``PYTHONPATH`` or influence how modules are imported. See :ref:"
-"`pythonpath` for more details."
+"Important to emphasize that ``rootdir`` is **NOT** used to modify "
+"``sys.path``/``PYTHONPATH`` or influence how modules are imported. "
+"See :ref:`pythonpath` for more details."
 msgstr ""
 
 #: ../../../doc/en/customize.rst:43

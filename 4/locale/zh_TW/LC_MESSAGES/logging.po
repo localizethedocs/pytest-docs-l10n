@@ -180,8 +180,8 @@ msgstr ""
 
 #: ../../../doc/en/logging.rst:113
 msgid ""
-"For all the available attributes of the log records see the ``logging."
-"LogRecord`` class."
+"For all the available attributes of the log records see the "
+"``logging.LogRecord`` class."
 msgstr ""
 
 #: ../../../doc/en/logging.rst:116
@@ -243,8 +243,8 @@ msgid ""
 "        ]\n"
 "        if messages:\n"
 "            pytest.fail(\n"
-"                \"warning messages encountered during testing: {}\"."
-"format(messages)\n"
+"                \"warning messages encountered during testing: {}"
+"\".format(messages)\n"
 "            )"
 msgstr ""
 
@@ -379,9 +379,9 @@ msgstr ""
 
 #: ../../../doc/en/logging.rst:239
 msgid ""
-"Log levels are no longer changed unless explicitly requested by the :confval:"
-"`log_level` configuration or ``--log-level`` command-line options. This "
-"allows users to configure logger objects themselves."
+"Log levels are no longer changed unless explicitly requested by "
+"the :confval:`log_level` configuration or ``--log-level`` command-line "
+"options. This allows users to configure logger objects themselves."
 msgstr ""
 
 #: ../../../doc/en/logging.rst:241

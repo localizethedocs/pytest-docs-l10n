@@ -35,8 +35,8 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-3.2.2.rst:10
 msgid ""
-"The full changelog is available at http://doc.pytest.org/en/latest/changelog."
-"html."
+"The full changelog is available at http://doc.pytest.org/en/latest/"
+"changelog.html."
 msgstr ""
 
 #: ../../../doc/en/announce/release-3.2.2.rst:12

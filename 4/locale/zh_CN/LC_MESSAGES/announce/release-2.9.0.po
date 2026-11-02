@@ -191,9 +191,9 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-2.9.0.rst:116
 msgid ""
-"The ``-s`` and ``-c`` options should now work under ``xdist``; ``Config."
-"fromdictargs`` now represents its input much more faithfully. Thanks to "
-"`@bukzor`_ for the complete PR (`#680`_)."
+"The ``-s`` and ``-c`` options should now work under ``xdist``; "
+"``Config.fromdictargs`` now represents its input much more faithfully. "
+"Thanks to `@bukzor`_ for the complete PR (`#680`_)."
 msgstr ""
 
 #: ../../../doc/en/announce/release-2.9.0.rst:120

@@ -140,8 +140,8 @@ msgstr ""
 #: ../../../doc/en/getting-started.rst:80
 msgid ""
 "``pytest`` will run all files of the form test_*.py or \\*_test.py in the "
-"current directory and its subdirectories. More generally, it follows :ref:"
-"`standard test discovery rules <test discovery>`."
+"current directory and its subdirectories. More generally, it "
+"follows :ref:`standard test discovery rules <test discovery>`."
 msgstr ""
 
 #: ../../../doc/en/getting-started.rst:84
@@ -242,9 +242,9 @@ msgstr ""
 
 #: ../../../doc/en/getting-started.rst:145
 msgid ""
-"``pytest`` provides `Builtin fixtures/function arguments <https://docs."
-"pytest.org/en/latest/builtin.html#builtinfixtures>`_ to request arbitrary "
-"resources, like a unique temporary directory::"
+"``pytest`` provides `Builtin fixtures/function arguments <https://"
+"docs.pytest.org/en/latest/builtin.html#builtinfixtures>`_ to request "
+"arbitrary resources, like a unique temporary directory::"
 msgstr ""
 
 #: ../../../doc/en/getting-started.rst:147

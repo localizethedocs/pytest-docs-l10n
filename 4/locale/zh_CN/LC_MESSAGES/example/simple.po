@@ -449,8 +449,9 @@ msgstr ""
 #: ../../../doc/en/example/simple.rst:361
 msgid ""
 "It is also possible to return a list of strings which will be considered as "
-"several lines of information. You may consider ``config."
-"getoption('verbose')`` in order to display more information if applicable:"
+"several lines of information. You may consider "
+"``config.getoption('verbose')`` in order to display more information if "
+"applicable:"
 msgstr ""
 
 #: ../../../doc/en/example/simple.rst:365
