@@ -1,0 +1,115 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015–2018 , holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/announce/release-2.2.2.rst:2
+msgid "pytest-2.2.2: bug fixes"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.2.2.rst:4
+msgid ""
+"pytest-2.2.2 (updated to 2.2.3 to fix packaging issues) is a minor backward-"
+"compatible release of the versatile py.test testing tool.   It contains bug "
+"fixes and a few refinements particularly to reporting with \"--"
+"collectonly\", see below for betails."
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.2.2.rst:9
+msgid "For general information see here:"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.2.2.rst:11
+msgid "http://pytest.org/"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.2.2.rst:13
+msgid "To install or upgrade pytest:"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.2.2.rst:15
+msgid "pip install -U pytest # or easy_install -U pytest"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.2.2.rst:18
+msgid ""
+"Special thanks for helping on this release to Ronny Pfannschmidt and Ralf "
+"Schmitt and the contributors of issues."
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.2.2.rst:21
+msgid "best, holger krekel"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.2.2.rst:26
+msgid "Changes between 2.2.1 and 2.2.2"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.2.2.rst:28
+msgid ""
+"fix issue101: wrong args to unittest.TestCase test function now produce "
+"better output"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.2.2.rst:30
+msgid ""
+"fix issue102: report more useful errors and hints for when a test directory "
+"was renamed and some pyc/__pycache__ remain"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.2.2.rst:32
+msgid ""
+"fix issue106: allow parametrize to be applied multiple times e.g. from "
+"module, class and at function level."
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.2.2.rst:34
+msgid "fix issue107: actually perform session scope finalization"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.2.2.rst:35
+msgid "don't check in parametrize if indirect parameters are funcarg names"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.2.2.rst:36
+msgid "add chdir method to monkeypatch funcarg"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.2.2.rst:37
+msgid "fix crash resulting from calling monkeypatch undo a second time"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.2.2.rst:38
+msgid ""
+"fix issue115: make --collectonly robust against early failure (missing files/"
+"directories)"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.2.2.rst:40
+msgid ""
+"\"-qq --collectonly\" now shows only files and the number of tests in them"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.2.2.rst:41
+msgid "\"-q --collectonly\" now shows test ids"
+msgstr ""
+
+#: ../../../doc/en/announce/release-2.2.2.rst:42
+msgid ""
+"allow adding of attributes to test reports such that it also works with "
+"distributed testing (no upgrade of pytest-xdist needed)"
+msgstr ""
