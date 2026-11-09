@@ -1,0 +1,243 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015–2020, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/proposals/parametrize_with_fixtures.rst:5
+msgid "PROPOSAL: Parametrize with fixtures"
+msgstr ""
+
+#: ../../../doc/en/proposals/parametrize_with_fixtures.rst:9
+msgid ""
+"This document outlines a proposal around using fixtures as input of "
+"parametrized tests or fixtures."
+msgstr ""
+
+#: ../../../doc/en/proposals/parametrize_with_fixtures.rst:13
+msgid "Problem"
+msgstr ""
+
+#: ../../../doc/en/proposals/parametrize_with_fixtures.rst:15
+msgid ""
+"As a user I have functional tests that I would like to run against various "
+"scenarios."
+msgstr ""
+
+#: ../../../doc/en/proposals/parametrize_with_fixtures.rst:18
+msgid ""
+"In this particular example we want to generate a new project based on a "
+"cookiecutter template. We want to test default values but also data that "
+"emulates user input."
+msgstr ""
+
+#: ../../../doc/en/proposals/parametrize_with_fixtures.rst:22
+msgid "use default values"
+msgstr ""
+
+#: ../../../doc/en/proposals/parametrize_with_fixtures.rst:24
+msgid "emulate user input"
+msgstr ""
+
+#: ../../../doc/en/proposals/parametrize_with_fixtures.rst:26
+msgid "specify 'author'"
+msgstr ""
+
+#: ../../../doc/en/proposals/parametrize_with_fixtures.rst:28
+msgid "specify 'project_slug'"
+msgstr ""
+
+#: ../../../doc/en/proposals/parametrize_with_fixtures.rst:30
+msgid "specify 'author' and 'project_slug'"
+msgstr ""
+
+#: ../../../doc/en/proposals/parametrize_with_fixtures.rst:32
+msgid "This is how a functional test could look like:"
+msgstr ""
+
+#: ../../../doc/en/proposals/parametrize_with_fixtures.rst:34
+msgid ""
+"import pytest\n"
+"\n"
+"\n"
+"@pytest.fixture\n"
+"def default_context():\n"
+"    return {\"extra_context\": {}}\n"
+"\n"
+"\n"
+"@pytest.fixture(\n"
+"    params=[\n"
+"        {\"author\": \"alice\"},\n"
+"        {\"project_slug\": \"helloworld\"},\n"
+"        {\"author\": \"bob\", \"project_slug\": \"foobar\"},\n"
+"    ]\n"
+")\n"
+"def extra_context(request):\n"
+"    return {\"extra_context\": request.param}\n"
+"\n"
+"\n"
+"@pytest.fixture(params=[\"default\", \"extra\"])\n"
+"def context(request):\n"
+"    if request.param == \"default\":\n"
+"        return request.getfuncargvalue(\"default_context\")\n"
+"    else:\n"
+"        return request.getfuncargvalue(\"extra_context\")\n"
+"\n"
+"\n"
+"def test_generate_project(cookies, context):\n"
+"    \"\"\"Call the cookiecutter API to generate a new project from a\n"
+"    template.\n"
+"    \"\"\"\n"
+"    result = cookies.bake(extra_context=context)\n"
+"\n"
+"    assert result.exit_code == 0\n"
+"    assert result.exception is None\n"
+"    assert result.project.isdir()"
+msgstr ""
+
+#: ../../../doc/en/proposals/parametrize_with_fixtures.rst:75
+msgid "Issues"
+msgstr ""
+
+#: ../../../doc/en/proposals/parametrize_with_fixtures.rst:77
+msgid ""
+"By using ``request.getfuncargvalue()`` we rely on actual fixture function "
+"execution to know what fixtures are involved, due to its dynamic nature"
+msgstr ""
+
+#: ../../../doc/en/proposals/parametrize_with_fixtures.rst:79
+msgid ""
+"More importantly, ``request.getfuncargvalue()`` cannot be combined with "
+"parametrized fixtures, such as ``extra_context``"
+msgstr ""
+
+#: ../../../doc/en/proposals/parametrize_with_fixtures.rst:81
+msgid ""
+"This is very inconvenient if you wish to extend an existing test suite by "
+"certain parameters for fixtures that are already used by tests"
+msgstr ""
+
+#: ../../../doc/en/proposals/parametrize_with_fixtures.rst:84
+msgid "pytest version 3.0 reports an error if you try to run above code::"
+msgstr ""
+
+#: ../../../doc/en/proposals/parametrize_with_fixtures.rst:86
+msgid ""
+"Failed: The requested fixture has no parameter defined for the current\n"
+"test.\n"
+"\n"
+"Requested fixture 'extra_context'"
+msgstr ""
+
+#: ../../../doc/en/proposals/parametrize_with_fixtures.rst:93
+msgid "Proposed solution"
+msgstr ""
+
+#: ../../../doc/en/proposals/parametrize_with_fixtures.rst:95
+msgid ""
+"A new function that can be used in modules can be used to dynamically define "
+"fixtures from existing ones."
+msgstr ""
+
+#: ../../../doc/en/proposals/parametrize_with_fixtures.rst:98
+msgid ""
+"pytest.define_combined_fixture(\n"
+"    name=\"context\", fixtures=[\"default_context\", \"extra_context\"]\n"
+")"
+msgstr ""
+
+#: ../../../doc/en/proposals/parametrize_with_fixtures.rst:104
+msgid ""
+"The new fixture ``context`` inherits the scope from the used fixtures and "
+"yield the following values."
+msgstr ""
+
+#: ../../../doc/en/proposals/parametrize_with_fixtures.rst:107
+msgid "``{}``"
+msgstr ""
+
+#: ../../../doc/en/proposals/parametrize_with_fixtures.rst:109
+msgid "``{'author': 'alice'}``"
+msgstr ""
+
+#: ../../../doc/en/proposals/parametrize_with_fixtures.rst:111
+msgid "``{'project_slug': 'helloworld'}``"
+msgstr ""
+
+#: ../../../doc/en/proposals/parametrize_with_fixtures.rst:113
+msgid "``{'author': 'bob', 'project_slug': 'foobar'}``"
+msgstr ""
+
+#: ../../../doc/en/proposals/parametrize_with_fixtures.rst:116
+msgid "Alternative approach"
+msgstr ""
+
+#: ../../../doc/en/proposals/parametrize_with_fixtures.rst:118
+msgid ""
+"A new helper function named ``fixture_request`` would tell pytest to yield "
+"all parameters marked as a fixture."
+msgstr ""
+
+#: ../../../doc/en/proposals/parametrize_with_fixtures.rst:123
+msgid ""
+"The `pytest-lazy-fixture <https://pypi.org/project/pytest-lazy-fixture/>`_ "
+"plugin implements a very similar solution to the proposal below, make sure "
+"to check it out."
+msgstr ""
+
+#: ../../../doc/en/proposals/parametrize_with_fixtures.rst:126
+msgid ""
+"@pytest.fixture(\n"
+"    params=[\n"
+"        pytest.fixture_request(\"default_context\"),\n"
+"        pytest.fixture_request(\"extra_context\"),\n"
+"    ]\n"
+")\n"
+"def context(request):\n"
+"    \"\"\"Returns all values for ``default_context``, one-by-one before it\n"
+"    does the same for ``extra_context``.\n"
+"\n"
+"    request.param:\n"
+"        - {}\n"
+"        - {'author': 'alice'}\n"
+"        - {'project_slug': 'helloworld'}\n"
+"        - {'author': 'bob', 'project_slug': 'foobar'}\n"
+"    \"\"\"\n"
+"    return request.param"
+msgstr ""
+
+#: ../../../doc/en/proposals/parametrize_with_fixtures.rst:146
+msgid ""
+"The same helper can be used in combination with ``pytest.mark.parametrize``."
+msgstr ""
+
+#: ../../../doc/en/proposals/parametrize_with_fixtures.rst:148
+msgid ""
+"@pytest.mark.parametrize(\n"
+"    \"context, expected_response_code\",\n"
+"    [\n"
+"        (pytest.fixture_request(\"default_context\"), 0),\n"
+"        (pytest.fixture_request(\"extra_context\"), 0),\n"
+"    ],\n"
+")\n"
+"def test_generate_project(cookies, context, exit_code):\n"
+"    \"\"\"Call the cookiecutter API to generate a new project from a\n"
+"    template.\n"
+"    \"\"\"\n"
+"    result = cookies.bake(extra_context=context)\n"
+"\n"
+"    assert result.exit_code == exit_code"
+msgstr ""
