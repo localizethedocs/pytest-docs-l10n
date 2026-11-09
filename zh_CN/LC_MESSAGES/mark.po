@@ -1,0 +1,173 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/mark.rst:5
+msgid "Marking test functions with attributes"
+msgstr ""
+
+#: ../../../doc/en/mark.rst:9
+msgid ""
+"By using the ``pytest.mark`` helper you can easily set metadata on your test "
+"functions. There are some builtin markers, for example:"
+msgstr ""
+
+#: ../../../doc/en/mark.rst:13
+msgid ""
+":ref:`skipif <skipif>` - skip a test function if a certain condition is met"
+msgstr ""
+
+#: ../../../doc/en/mark.rst:14
+msgid ""
+":ref:`xfail <xfail>` - produce an \"expected failure\" outcome if a certain "
+"condition is met"
+msgstr ""
+
+#: ../../../doc/en/mark.rst:16
+msgid ""
+":ref:`parametrize <parametrizemark>` to perform multiple calls to the same "
+"test function."
+msgstr ""
+
+#: ../../../doc/en/mark.rst:19
+msgid ""
+"It's easy to create custom markers or to apply markers to whole test classes "
+"or modules. See :ref:`mark examples` for examples which also serve as "
+"documentation."
+msgstr ""
+
+#: ../../../doc/en/mark.rst:25
+msgid ""
+"Marks can only be applied to tests, having no effect on :ref:`fixtures "
+"<fixtures>`."
+msgstr ""
+
+#: ../../../doc/en/mark.rst:30
+msgid "API reference for mark related objects"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/mark.py:docstring
+#: of _pytest.mark.MarkGenerator:1
+msgid ""
+"Factory for :class:`MarkDecorator` objects - exposed as a ``pytest.mark`` "
+"singleton instance.  Example::"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/mark.py:docstring
+#: of _pytest.mark.MarkGenerator:4
+msgid ""
+"import pytest\n"
+"@pytest.mark.slowtest\n"
+"def test_function():\n"
+"   pass"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/mark.py:docstring
+#: of _pytest.mark.MarkGenerator:9
+msgid ""
+"will set a 'slowtest' :class:`MarkInfo` object on the ``test_function`` "
+"object."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/mark.py:docstring
+#: of _pytest.mark.MarkDecorator:1
+msgid ""
+"A decorator for test functions and test classes.  When applied it will "
+"create :class:`MarkInfo` objects which may be :ref:`retrieved by hooks as "
+"item keywords <excontrolskip>`. MarkDecorator instances are often created "
+"like this::"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/mark.py:docstring
+#: of _pytest.mark.MarkDecorator:6
+msgid ""
+"mark1 = pytest.mark.NAME              # simple MarkDecorator\n"
+"mark2 = pytest.mark.NAME(name1=value) # parametrized MarkDecorator"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/mark.py:docstring
+#: of _pytest.mark.MarkDecorator:9
+msgid "and can then be applied as decorators to test functions::"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/mark.py:docstring
+#: of _pytest.mark.MarkDecorator:11
+msgid ""
+"@mark2\n"
+"def test_function():\n"
+"    pass"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/mark.py:docstring
+#: of _pytest.mark.MarkDecorator:26
+msgid "When a MarkDecorator instance is called it does the following:"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/mark.py:docstring
+#: of _pytest.mark.MarkDecorator:16
+msgid ""
+"If called with a single class as its only positional argument and no "
+"additional keyword arguments, it attaches itself to the class so it gets "
+"applied automatically to all test cases found in that class."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/mark.py:docstring
+#: of _pytest.mark.MarkDecorator:19
+msgid ""
+"If called with a single function as its only positional argument and no "
+"additional keyword arguments, it attaches a MarkInfo object to the function, "
+"containing all the arguments already stored internally in the MarkDecorator."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/mark.py:docstring
+#: of _pytest.mark.MarkDecorator:23
+msgid ""
+"When called in any other case, it performs a 'fake construction' call, i.e. "
+"it returns a new MarkDecorator instance with the original MarkDecorator's "
+"content updated with the arguments passed to this call."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/mark.py:docstring
+#: of _pytest.mark.MarkDecorator:28
+msgid ""
+"Note: The rules above prevent MarkDecorator objects from storing only a "
+"single function or class reference as their positional argument with no "
+"additional keyword or positional arguments."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/mark.py:docstring
+#: of _pytest.mark.MarkInfo:1
+msgid "Marking object created by :class:`MarkDecorator` instances."
+msgstr ""
+
+#: ../../../doc/docstring of _pytest.mark.MarkInfo.name:1
+msgid "name of attribute"
+msgstr ""
+
+#: ../../../doc/docstring of _pytest.mark.MarkInfo.args:1
+msgid "positional argument list, empty if none specified"
+msgstr ""
+
+#: ../../../doc/docstring of _pytest.mark.MarkInfo.kwargs:1
+msgid "keyword argument dictionary, empty if nothing specified"
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.8/site-packages/_pytest/mark.py:docstring
+#: of _pytest.mark.MarkInfo.add:1
+msgid "add a MarkInfo with the given args and kwargs."
+msgstr ""
