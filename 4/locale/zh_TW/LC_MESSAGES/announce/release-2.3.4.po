@@ -85,7 +85,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-2.3.4.rst:31
 msgid "http://pytest.org/"
-msgstr ""
+msgstr "http://pytest.org/"
 
 #: ../../../doc/en/announce/release-2.3.4.rst:33
 msgid "for general information.  To install or upgrade pytest:"
