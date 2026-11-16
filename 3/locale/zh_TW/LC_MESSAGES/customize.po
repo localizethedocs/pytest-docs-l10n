@@ -88,7 +88,7 @@ msgstr ""
 
 #: ../../../doc/en/customize.rst:46
 msgid "Finding the ``rootdir``"
-msgstr ""
+msgstr "尋找 ``rootdir``"
 
 #: ../../../doc/en/customize.rst:48
 msgid "Here is the algorithm which finds the rootdir from ``args``:"

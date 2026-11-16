@@ -65,7 +65,7 @@ msgstr "Vincent Barbaresi"
 
 #: ../../../doc/en/announce/release-3.9.2.rst:19
 msgid "ykantor"
-msgstr ""
+msgstr "ykantor"
 
 #: ../../../doc/en/announce/release-3.9.2.rst:22
 msgid "Happy testing, The pytest Development Team"
