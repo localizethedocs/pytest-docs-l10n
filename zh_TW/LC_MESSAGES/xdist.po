@@ -1,0 +1,307 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 06:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/xdist.rst:5
+msgid "xdist: pytest distributed testing plugin"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:7
+msgid ""
+"The `pytest-xdist`_ plugin extends ``pytest`` with some unique test "
+"execution modes:"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:10
+msgid ""
+"Looponfail: run your tests repeatedly in a subprocess.  After each run, "
+"``pytest`` waits until a file in your project changes and then re-runs the "
+"previously failing tests.  This is repeated until all tests pass.  At this "
+"point a full run is again performed."
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:15
+msgid ""
+"multiprocess Load-balancing: if you have multiple CPUs or hosts you can use "
+"them for a combined test run.  This allows to speed up development or to use "
+"special resources of remote machines."
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:19
+msgid ""
+"Multi-Platform coverage: you can specify different Python interpreters or "
+"different platforms and run tests in parallel on all of them."
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:22
+msgid ""
+"Before running tests remotely, ``pytest`` efficiently \"rsyncs\" your "
+"program source code to the remote place.  All test results are reported back "
+"and displayed to your local terminal. You may specify different Python "
+"versions and interpreters."
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:29
+msgid "Installation of xdist plugin"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:31
+msgid "Install the plugin with::"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:33
+msgid ""
+"easy_install pytest-xdist\n"
+"\n"
+"# or\n"
+"\n"
+"pip install pytest-xdist"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:39
+msgid ""
+"or use the package in develop/in-place mode with a checkout of the `pytest-"
+"xdist repository`_ ::"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:42
+msgid "python setup.py develop"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:46
+msgid "Usage examples"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:51
+msgid "Speed up test runs by sending tests to multiple CPUs"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:53
+msgid "To send tests to multiple CPUs, type::"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:55
+msgid "py.test -n NUM"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:57
+msgid ""
+"Especially for longer running tests or tests requiring a lot of I/O this can "
+"lead to considerable speed ups."
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:62
+msgid "Running tests in a Python subprocess"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:64
+msgid ""
+"To instantiate a Python-2.7 subprocess and send tests to it, you may type::"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:66
+msgid "py.test -d --tx popen//python=python2.7"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:68
+msgid ""
+"This will start a subprocess which is run with the \"python2.7\" Python "
+"interpreter, found in your system binary lookup path."
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:71
+msgid "If you prefix the --tx option value like this::"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:73
+msgid "py.test -d --tx 3*popen//python=python2.7"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:75
+msgid ""
+"then three subprocesses would be created and the tests will be distributed "
+"to three subprocesses and run simultanously."
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:82
+msgid "Running tests in looponfailing mode"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:84
+msgid ""
+"For refactoring a project with a medium or large test suite you can use the "
+"looponfailing mode. Simply add the ``--f`` option::"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:87
+msgid "py.test -f"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:89
+msgid ""
+"and ``pytest`` will run your tests. Assuming you have failures it will then "
+"wait for file changes and re-run the failing test set.  File changes are "
+"detected by looking at ``looponfailingroots`` root directories and all of "
+"their contents (recursively).  If the default for this value does not work "
+"for you you can change it in your project by setting a configuration option::"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:93
+msgid ""
+"# content of a pytest.ini, setup.cfg or tox.ini file\n"
+"[pytest]\n"
+"looponfailroots = mypkg testdir"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:97
+msgid ""
+"This would lead to only looking for file changes in the respective "
+"directories, specified relatively to the ini-file's directory."
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:100
+msgid "Sending tests to remote SSH accounts"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:102
+msgid ""
+"Suppose you have a package ``mypkg`` which contains some tests that you can "
+"successfully run locally. And you also have a ssh-reachable machine "
+"``myhost``.  Then you can ad-hoc distribute your tests by typing::"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:107
+msgid "py.test -d --tx ssh=myhostpopen --rsyncdir mypkg mypkg"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:109
+msgid ""
+"This will synchronize your ``mypkg`` package directory with a remote ssh "
+"account and then collect and run your tests at the remote side."
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:113
+msgid ""
+"You can specify multiple ``--rsyncdir`` directories to be sent to the remote "
+"side."
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:127
+msgid "Sending tests to remote Socket Servers"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:129
+msgid ""
+"Download the single-module `socketserver.py`_ Python program and run it like "
+"this::"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:132
+msgid "python socketserver.py"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:134
+msgid ""
+"It will tell you that it starts listening on the default port.  You can now "
+"on your home machine specify this new socket host with something like this::"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:138
+msgid "py.test -d --tx socket=192.168.1.102:8888 --rsyncdir mypkg mypkg"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:144
+msgid "Running tests on many platforms at once"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:146
+msgid "The basic command to run tests on multiple platforms is::"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:148
+msgid "py.test --dist=each --tx=spec1 --tx=spec2"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:150
+msgid ""
+"If you specify a windows host, an OSX host and a Linux environment this "
+"command will send each tests to all platforms - and report back failures "
+"from all platforms at once.   The specifications strings use the `xspec "
+"syntax`_."
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:162
+msgid "Specifying test exec environments in an ini file"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:164
+msgid ""
+"pytest (since version 2.0) supports ini-style configuration. For example, "
+"you could make running with three subprocesses your default::"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:167
+msgid ""
+"[pytest]\n"
+"addopts = -n3"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:170
+msgid "You can also add default environments like this::"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:172
+msgid ""
+"[pytest]\n"
+"addopts = --tx ssh=myhost//python=python2.7 --tx ssh=myhost//python=python2.6"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:175
+msgid "and then just type::"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:177
+msgid "py.test --dist=each"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:179
+msgid "to run tests in each of the environments."
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:182
+msgid "Specifying \"rsync\" dirs in an ini-file"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:184
+msgid ""
+"In a ``tox.ini`` or ``setup.cfg`` file in your root project directory you "
+"may specify directories to include or to exclude in synchronisation::"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:187
+msgid ""
+"[pytest]\n"
+"rsyncdirs = . mypkg helperpkg\n"
+"rsyncignore = .hg"
+msgstr ""
+
+#: ../../../doc/en/xdist.rst:191
+msgid ""
+"These directory specifications are relative to the directory where the "
+"configuration file was found."
+msgstr ""
