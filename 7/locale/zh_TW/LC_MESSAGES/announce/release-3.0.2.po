@@ -50,7 +50,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-3.0.2.rst:16
 msgid "Bruno Oliveira"
-msgstr ""
+msgstr "Bruno Oliveira"
 
 #: ../../../doc/en/announce/release-3.0.2.rst:17
 msgid "Florian Bruhin"

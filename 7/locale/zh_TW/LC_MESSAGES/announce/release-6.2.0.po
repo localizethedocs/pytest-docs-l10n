@@ -77,7 +77,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-6.2.0.rst:26
 msgid "Bruno Oliveira"
-msgstr ""
+msgstr "Bruno Oliveira"
 
 #: ../../../doc/en/announce/release-6.2.0.rst:27
 msgid "Charles Aracil"
@@ -121,7 +121,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-6.2.0.rst:37
 msgid "Hugo van Kemenade"
-msgstr ""
+msgstr "Hugo van Kemenade"
 
 #: ../../../doc/en/announce/release-6.2.0.rst:38
 msgid "Jakob van Santen"

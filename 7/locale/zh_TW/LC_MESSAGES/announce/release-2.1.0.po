@@ -30,7 +30,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-2.1.0.rst:8
 msgid "http://pytest.org/"
-msgstr ""
+msgstr "http://pytest.org/"
 
 #: ../../../doc/en/announce/release-2.1.0.rst:10
 msgid ""
@@ -56,6 +56,8 @@ msgid ""
 "pip install -U pytest # or\n"
 "easy_install -U pytest"
 msgstr ""
+"pip install -U pytest # 或\n"
+"easy_install -U pytest"
 
 #: ../../../doc/en/announce/release-2.1.0.rst:26
 msgid "best, holger krekel / https://merlinux.eu/"
@@ -63,7 +65,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-2.1.0.rst:30
 msgid "Changes between 2.0.3 and 2.1.0"
-msgstr ""
+msgstr "2.0.3 與 2.1.0 之間的變更"
 
 #: ../../../doc/en/announce/release-2.1.0.rst:32
 msgid "fix issue53 call nosestyle setup functions with correct ordering"

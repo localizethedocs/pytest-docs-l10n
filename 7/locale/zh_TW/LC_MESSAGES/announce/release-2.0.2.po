@@ -30,7 +30,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-2.0.2.rst:8
 msgid "http://pytest.org/"
-msgstr ""
+msgstr "http://pytest.org/"
 
 #: ../../../doc/en/announce/release-2.0.2.rst:10
 msgid "If you want to install or upgrade pytest, just type one of::"
@@ -41,6 +41,8 @@ msgid ""
 "pip install -U pytest # or\n"
 "easy_install -U pytest"
 msgstr ""
+"pip install -U pytest # 或\n"
+"easy_install -U pytest"
 
 #: ../../../doc/en/announce/release-2.0.2.rst:15
 msgid ""
@@ -55,7 +57,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-2.0.2.rst:24
 msgid "Changes between 2.0.1 and 2.0.2"
-msgstr ""
+msgstr "2.0.1 與 2.0.2 之間的變更"
 
 #: ../../../doc/en/announce/release-2.0.2.rst:26
 msgid ""

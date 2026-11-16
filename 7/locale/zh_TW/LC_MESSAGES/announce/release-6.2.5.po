@@ -19,11 +19,11 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-6.2.5.rst:2
 msgid "pytest-6.2.5"
-msgstr ""
+msgstr "pytest-6.2.5"
 
 #: ../../../doc/en/announce/release-6.2.5.rst:4
 msgid "pytest 6.2.5 has just been released to PyPI."
-msgstr ""
+msgstr "pytest 6.2.5 已經發行到 PyPI。"
 
 #: ../../../doc/en/announce/release-6.2.5.rst:6
 msgid "This is a bug-fix release, being a drop-in replacement. To upgrade::"

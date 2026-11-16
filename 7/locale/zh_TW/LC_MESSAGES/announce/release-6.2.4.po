@@ -49,7 +49,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-6.2.4.rst:15
 msgid "Bruno Oliveira"
-msgstr ""
+msgstr "Bruno Oliveira"
 
 #: ../../../doc/en/announce/release-6.2.4.rst:16
 msgid "Christian Maurer"
