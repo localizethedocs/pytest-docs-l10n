@@ -45,7 +45,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-7.2.2.rst:14
 msgid "Bruno Oliveira"
-msgstr ""
+msgstr "Bruno Oliveira"
 
 #: ../../../doc/en/announce/release-7.2.2.rst:15
 msgid "Garvit Shubham"

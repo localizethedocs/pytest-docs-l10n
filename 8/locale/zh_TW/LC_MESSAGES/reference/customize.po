@@ -57,7 +57,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/customize.rst:28
 msgid "pytest.ini"
-msgstr ""
+msgstr "pytest.ini"
 
 #: ../../../doc/en/reference/customize.rst:30
 msgid "``pytest.ini`` files take precedence over other files, even when empty."
@@ -136,10 +136,17 @@ msgid ""
 "    tests\n"
 "    integration"
 msgstr ""
+"# tox.ini\n"
+"[pytest]\n"
+"minversion = 6.0\n"
+"addopts = -ra -q\n"
+"testpaths =\n"
+"    tests\n"
+"    integration"
 
 #: ../../../doc/en/reference/customize.rst:91
 msgid "setup.cfg"
-msgstr ""
+msgstr "setup.cfg"
 
 #: ../../../doc/en/reference/customize.rst:93
 msgid ""
@@ -216,7 +223,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/customize.rst:145
 msgid "Finding the ``rootdir``"
-msgstr ""
+msgstr "尋找 ``rootdir``"
 
 #: ../../../doc/en/reference/customize.rst:147
 msgid "Here is the algorithm which finds the rootdir from ``args``:"
@@ -284,11 +291,11 @@ msgstr ""
 
 #: ../../../doc/en/reference/customize.rst:177
 msgid "``tox.ini``: contains a ``[pytest]`` section."
-msgstr ""
+msgstr "``tox.ini``：包含 ``[pytest]`` 區段。"
 
 #: ../../../doc/en/reference/customize.rst:178
 msgid "``setup.cfg``: contains a ``[tool:pytest]`` section."
-msgstr ""
+msgstr "``setup.cfg``：包含 ``[tool:pytest]`` 區段。"
 
 #: ../../../doc/en/reference/customize.rst:180
 msgid ""
@@ -402,7 +409,9 @@ msgid ""
 ":envvar:`PYTEST_THEME` sets a `pygment style <https://pygments.org/docs/"
 "styles/>`_ to use."
 msgstr ""
+":envvar:`PYTEST_THEME` 設定要使用的 `pygment 風格 <https://pygments.org/docs/"
+"styles/>`_\\ 。"
 
 #: ../../../doc/en/reference/customize.rst:255
 msgid ":envvar:`PYTEST_THEME_MODE` sets this style to *light* or *dark*."
-msgstr ""
+msgstr ":envvar:`PYTEST_THEME_MODE` 設定風格為 *light* 或 *dark*\\ 。"

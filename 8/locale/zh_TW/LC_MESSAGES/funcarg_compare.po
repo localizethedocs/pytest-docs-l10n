@@ -208,6 +208,8 @@ msgid ""
 "@pytest.fixture()\n"
 "def db(request): ..."
 msgstr ""
+"@pytest.fixture()\n"
+"def db(request): ..."
 
 #: ../../../doc/en/funcarg_compare.rst:145
 msgid "The name under which the funcarg resource can be requested is ``db``."
@@ -221,7 +223,7 @@ msgstr ""
 
 #: ../../../doc/en/funcarg_compare.rst:150
 msgid "def pytest_funcarg__db(request): ..."
-msgstr ""
+msgstr "def pytest_funcarg__db(request): ..."
 
 #: ../../../doc/en/funcarg_compare.rst:155
 msgid ""

@@ -49,7 +49,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-5.3.1.rst:15
 msgid "Bruno Oliveira"
-msgstr ""
+msgstr "Bruno Oliveira"
 
 #: ../../../doc/en/announce/release-5.3.1.rst:16
 msgid "Daniel Hahler"
@@ -57,7 +57,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-5.3.1.rst:17
 msgid "Felix Yan"
-msgstr ""
+msgstr "Felix Yan"
 
 #: ../../../doc/en/announce/release-5.3.1.rst:18
 msgid "Florian Bruhin"

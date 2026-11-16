@@ -81,7 +81,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-8.0.0rc1.rst:27
 msgid "Bruno Oliveira"
-msgstr ""
+msgstr "Bruno Oliveira"
 
 #: ../../../doc/en/announce/release-8.0.0rc1.rst:28
 msgid "Carsten Grohmann"
@@ -121,7 +121,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-8.0.0rc1.rst:37
 msgid "Hugo van Kemenade"
-msgstr ""
+msgstr "Hugo van Kemenade"
 
 #: ../../../doc/en/announce/release-8.0.0rc1.rst:38
 msgid "Isaac Virshup"

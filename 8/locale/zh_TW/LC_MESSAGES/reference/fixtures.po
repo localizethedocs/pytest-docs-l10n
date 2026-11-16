@@ -41,7 +41,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/fixtures.rst:23
 msgid ":fixture:`capfd`"
-msgstr ""
+msgstr ":fixture:`capfd`"
 
 #: ../../../doc/en/reference/fixtures.rst:24
 msgid "Capture, as text, output to file descriptors ``1`` and ``2``."
@@ -49,7 +49,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/fixtures.rst:26
 msgid ":fixture:`capfdbinary`"
-msgstr ""
+msgstr ":fixture:`capfdbinary`"
 
 #: ../../../doc/en/reference/fixtures.rst:27
 msgid "Capture, as bytes, output to file descriptors ``1`` and ``2``."
@@ -57,7 +57,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/fixtures.rst:29
 msgid ":fixture:`caplog`"
-msgstr ""
+msgstr ":fixture:`caplog`"
 
 #: ../../../doc/en/reference/fixtures.rst:30
 msgid "Control logging and access log entries."
@@ -65,7 +65,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/fixtures.rst:32
 msgid ":fixture:`capsys`"
-msgstr ""
+msgstr ":fixture:`capsys`"
 
 #: ../../../doc/en/reference/fixtures.rst:33
 msgid "Capture, as text, output to ``sys.stdout`` and ``sys.stderr``."
@@ -73,7 +73,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/fixtures.rst:35
 msgid ":fixture:`capteesys`"
-msgstr ""
+msgstr ":fixture:`capteesys`"
 
 #: ../../../doc/en/reference/fixtures.rst:36
 msgid ""
@@ -83,7 +83,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/fixtures.rst:39
 msgid ":fixture:`capsysbinary`"
-msgstr ""
+msgstr ":fixture:`capsysbinary`"
 
 #: ../../../doc/en/reference/fixtures.rst:40
 msgid "Capture, as bytes, output to ``sys.stdout`` and ``sys.stderr``."
@@ -91,7 +91,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/fixtures.rst:42
 msgid ":fixture:`cache`"
-msgstr ""
+msgstr ":fixture:`cache`"
 
 #: ../../../doc/en/reference/fixtures.rst:43
 msgid "Store and retrieve values across pytest runs."
@@ -99,7 +99,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/fixtures.rst:45
 msgid ":fixture:`doctest_namespace`"
-msgstr ""
+msgstr ":fixture:`doctest_namespace`"
 
 #: ../../../doc/en/reference/fixtures.rst:46
 msgid "Provide a dict injected into the doctests namespace."
@@ -107,7 +107,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/fixtures.rst:48
 msgid ":fixture:`monkeypatch`"
-msgstr ""
+msgstr ":fixture:`monkeypatch`"
 
 #: ../../../doc/en/reference/fixtures.rst:49
 msgid ""
@@ -117,7 +117,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/fixtures.rst:52
 msgid ":fixture:`pytestconfig`"
-msgstr ""
+msgstr ":fixture:`pytestconfig`"
 
 #: ../../../doc/en/reference/fixtures.rst:53
 msgid "Access to configuration values, pluginmanager and plugin hooks."
@@ -125,7 +125,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/fixtures.rst:55
 msgid ":fixture:`record_property`"
-msgstr ""
+msgstr ":fixture:`record_property`"
 
 #: ../../../doc/en/reference/fixtures.rst:56
 msgid "Add extra properties to the test."
@@ -133,7 +133,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/fixtures.rst:58
 msgid ":fixture:`record_testsuite_property`"
-msgstr ""
+msgstr ":fixture:`record_testsuite_property`"
 
 #: ../../../doc/en/reference/fixtures.rst:59
 msgid "Add extra properties to the test suite."
@@ -141,7 +141,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/fixtures.rst:61
 msgid ":fixture:`recwarn`"
-msgstr ""
+msgstr ":fixture:`recwarn`"
 
 #: ../../../doc/en/reference/fixtures.rst:62
 msgid "Record warnings emitted by test functions."
@@ -149,7 +149,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/fixtures.rst:64
 msgid ":fixture:`request`"
-msgstr ""
+msgstr ":fixture:`request`"
 
 #: ../../../doc/en/reference/fixtures.rst:65
 msgid "Provide information on the executing test function."
@@ -157,7 +157,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/fixtures.rst:67
 msgid ":fixture:`testdir`"
-msgstr ""
+msgstr ":fixture:`testdir`"
 
 #: ../../../doc/en/reference/fixtures.rst:68
 msgid ""
@@ -167,7 +167,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/fixtures.rst:71
 msgid ":fixture:`tmp_path`"
-msgstr ""
+msgstr ":fixture:`tmp_path`"
 
 #: ../../../doc/en/reference/fixtures.rst:72
 msgid ""
@@ -177,7 +177,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/fixtures.rst:75
 msgid ":fixture:`tmp_path_factory`"
-msgstr ""
+msgstr ":fixture:`tmp_path_factory`"
 
 #: ../../../doc/en/reference/fixtures.rst:76
 msgid ""
@@ -187,7 +187,7 @@ msgstr ""
 
 #: ../../../doc/en/reference/fixtures.rst:79
 msgid ":fixture:`tmpdir`"
-msgstr ""
+msgstr ":fixture:`tmpdir`"
 
 #: ../../../doc/en/reference/fixtures.rst:80
 msgid ""

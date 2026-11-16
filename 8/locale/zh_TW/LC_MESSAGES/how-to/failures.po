@@ -52,7 +52,7 @@ msgstr ""
 
 #: ../../../doc/en/how-to/failures.rst:30
 msgid "pytest --pdb"
-msgstr ""
+msgstr "pytest --pdb"
 
 #: ../../../doc/en/how-to/failures.rst:34
 msgid ""
@@ -84,6 +84,11 @@ msgid ""
 ">>> sys.last_value\n"
 "AssertionError('assert result == \"ok\"',)"
 msgstr ""
+">>> import sys\n"
+">>> sys.last_traceback.tb_lineno\n"
+"42\n"
+">>> sys.last_value\n"
+"AssertionError('assert result == \"ok\"',)"
 
 #: ../../../doc/en/how-to/failures.rst:59
 msgid "Dropping to :doc:`pdb <python:library/pdb>` at the start of a test"

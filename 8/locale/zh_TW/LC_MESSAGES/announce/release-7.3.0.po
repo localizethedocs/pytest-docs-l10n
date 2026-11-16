@@ -105,7 +105,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-7.3.0.rst:33
 msgid "Bruno Oliveira"
-msgstr ""
+msgstr "Bruno Oliveira"
 
 #: ../../../doc/en/announce/release-7.3.0.rst:34
 msgid "Cal Jacobson"
@@ -177,7 +177,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-7.3.0.rst:51
 msgid "Hugo van Kemenade"
-msgstr ""
+msgstr "Hugo van Kemenade"
 
 #: ../../../doc/en/announce/release-7.3.0.rst:52
 msgid "Ilya Konstantinov"

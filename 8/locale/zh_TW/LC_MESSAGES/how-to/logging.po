@@ -50,6 +50,13 @@ msgid ""
 "text going to stderr\n"
 "==================== 2 failed in 0.02 seconds ====================="
 msgstr ""
+"----------------------- Captured stdlog call ----------------------\n"
+"test_reporting.py    26 WARNING  text going to logger\n"
+"----------------------- Captured stdout call ----------------------\n"
+"text going to stdout\n"
+"----------------------- Captured stderr call ----------------------\n"
+"text going to stderr\n"
+"==================== 2 failed in 0.02 seconds ====================="
 
 #: ../../../doc/en/how-to/logging.rst:27
 msgid ""
@@ -68,6 +75,8 @@ msgid ""
 "pytest --log-format=\"%(asctime)s %(levelname)s %(message)s\" \\\n"
 "        --log-date-format=\"%Y-%m-%d %H:%M:%S\""
 msgstr ""
+"pytest --log-format=\"%(asctime)s %(levelname)s %(message)s\" \\\n"
+"        --log-date-format=\"%Y-%m-%d %H:%M:%S\""
 
 #: ../../../doc/en/how-to/logging.rst:40
 msgid ""
@@ -79,6 +88,13 @@ msgid ""
 "text going to stderr\n"
 "==================== 2 failed in 0.02 seconds ====================="
 msgstr ""
+"----------------------- Captured stdlog call ----------------------\n"
+"2010-04-10 14:48:44 WARNING text going to logger\n"
+"----------------------- Captured stdout call ----------------------\n"
+"text going to stdout\n"
+"----------------------- Captured stderr call ----------------------\n"
+"text going to stderr\n"
+"==================== 2 failed in 0.02 seconds ====================="
 
 #: ../../../doc/en/how-to/logging.rst:50
 msgid "These options can also be customized through ``pytest.ini`` file:"
@@ -90,6 +106,9 @@ msgid ""
 "log_format = %(asctime)s %(levelname)s %(message)s\n"
 "log_date_format = %Y-%m-%d %H:%M:%S"
 msgstr ""
+"[pytest]\n"
+"log_format = %(asctime)s %(levelname)s %(message)s\n"
+"log_date_format = %Y-%m-%d %H:%M:%S"
 
 #: ../../../doc/en/how-to/logging.rst:58
 msgid ""
@@ -99,7 +118,7 @@ msgstr ""
 
 #: ../../../doc/en/how-to/logging.rst:61
 msgid "pytest --log-disable=main --log-disable=testing"
-msgstr ""
+msgstr "pytest --log-disable=main --log-disable=testing"
 
 #: ../../../doc/en/how-to/logging.rst:65
 msgid ""
@@ -109,7 +128,7 @@ msgstr ""
 
 #: ../../../doc/en/how-to/logging.rst:68
 msgid "pytest --show-capture=no"
-msgstr ""
+msgstr "pytest --show-capture=no"
 
 #: ../../../doc/en/how-to/logging.rst:74
 msgid "caplog fixture"

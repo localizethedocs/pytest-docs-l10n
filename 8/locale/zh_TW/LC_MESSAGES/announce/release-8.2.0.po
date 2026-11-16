@@ -57,7 +57,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-8.2.0.rst:21
 msgid "Bruno Oliveira"
-msgstr ""
+msgstr "Bruno Oliveira"
 
 #: ../../../doc/en/announce/release-8.2.0.rst:22
 msgid "Daniel Miller"
