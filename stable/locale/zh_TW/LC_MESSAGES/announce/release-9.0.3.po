@@ -81,7 +81,7 @@ msgstr "Freya Bruhin"
 
 #: ../../../doc/en/announce/release-9.0.3.rst:22
 msgid "Hugo van Kemenade"
-msgstr ""
+msgstr "Hugo van Kemenade"
 
 #: ../../../doc/en/announce/release-9.0.3.rst:23
 msgid "John Litborn"

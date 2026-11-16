@@ -49,7 +49,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-5.1.3.rst:15
 msgid "Bruno Oliveira"
-msgstr ""
+msgstr "Bruno Oliveira"
 
 #: ../../../doc/en/announce/release-5.1.3.rst:16
 msgid "Christian Neumüller"
@@ -65,7 +65,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-5.1.3.rst:19
 msgid "Hugo"
-msgstr ""
+msgstr "Hugo"
 
 #: ../../../doc/en/announce/release-5.1.3.rst:22
 msgid "Happy testing, The pytest Development Team"

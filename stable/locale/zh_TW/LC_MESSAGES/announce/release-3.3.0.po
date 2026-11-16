@@ -63,39 +63,39 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-3.3.0.rst:24
 msgid "Anthony Sottile"
-msgstr ""
+msgstr "Anthony Sottile"
 
 #: ../../../doc/en/announce/release-3.3.0.rst:25
 msgid "Bruno Oliveira"
-msgstr ""
+msgstr "Bruno Oliveira"
 
 #: ../../../doc/en/announce/release-3.3.0.rst:26
 msgid "Ceridwen"
-msgstr ""
+msgstr "Ceridwen"
 
 #: ../../../doc/en/announce/release-3.3.0.rst:27
 msgid "Daniel Hahler"
-msgstr ""
+msgstr "Daniel Hahler"
 
 #: ../../../doc/en/announce/release-3.3.0.rst:28
 msgid "Dirk Thomas"
-msgstr ""
+msgstr "Dirk Thomas"
 
 #: ../../../doc/en/announce/release-3.3.0.rst:29
 msgid "Dmitry Malinovsky"
-msgstr ""
+msgstr "Dmitry Malinovsky"
 
 #: ../../../doc/en/announce/release-3.3.0.rst:30
 msgid "Freya Bruhin"
-msgstr ""
+msgstr "Freya Bruhin"
 
 #: ../../../doc/en/announce/release-3.3.0.rst:31
 msgid "George Y. Kussumoto"
-msgstr ""
+msgstr "George Y. Kussumoto"
 
 #: ../../../doc/en/announce/release-3.3.0.rst:32
 msgid "Hugo"
-msgstr ""
+msgstr "Hugo"
 
 #: ../../../doc/en/announce/release-3.3.0.rst:33
 msgid "Jesús Espino"

@@ -49,11 +49,11 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-7.1.2.rst:15
 msgid "Bruno Oliveira"
-msgstr ""
+msgstr "Bruno Oliveira"
 
 #: ../../../doc/en/announce/release-7.1.2.rst:16
 msgid "Hugo van Kemenade"
-msgstr ""
+msgstr "Hugo van Kemenade"
 
 #: ../../../doc/en/announce/release-7.1.2.rst:17
 msgid "Kian Eliasi"
