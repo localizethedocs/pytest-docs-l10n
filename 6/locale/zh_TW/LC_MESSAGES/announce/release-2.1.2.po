@@ -30,7 +30,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-2.1.2.rst:9
 msgid "http://pytest.org/"
-msgstr ""
+msgstr "http://pytest.org/"
 
 #: ../../../doc/en/announce/release-2.1.2.rst:11
 msgid ""
@@ -49,6 +49,8 @@ msgid ""
 "pip install -U pytest # or\n"
 "easy_install -U pytest"
 msgstr ""
+"pip install -U pytest # 或\n"
+"easy_install -U pytest"
 
 #: ../../../doc/en/announce/release-2.1.2.rst:21
 msgid "best, holger krekel / http://merlinux.eu"
@@ -56,7 +58,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-2.1.2.rst:25
 msgid "Changes between 2.1.1 and 2.1.2"
-msgstr ""
+msgstr "2.1.1 與 2.1.2 之間的變更"
 
 #: ../../../doc/en/announce/release-2.1.2.rst:27
 msgid ""

@@ -58,7 +58,7 @@ msgstr ""
 
 #: ../../../doc/en/customize.rst:29
 msgid "pytest.ini"
-msgstr ""
+msgstr "pytest.ini"
 
 #: ../../../doc/en/customize.rst:31
 msgid "``pytest.ini`` files take precedence over other files, even when empty."
@@ -133,10 +133,17 @@ msgid ""
 "    tests\n"
 "    integration"
 msgstr ""
+"# tox.ini\n"
+"[pytest]\n"
+"minversion = 6.0\n"
+"addopts = -ra -q\n"
+"testpaths =\n"
+"    tests\n"
+"    integration"
 
 #: ../../../doc/en/customize.rst:90
 msgid "setup.cfg"
-msgstr ""
+msgstr "setup.cfg"
 
 #: ../../../doc/en/customize.rst:92
 msgid ""
@@ -213,7 +220,7 @@ msgstr ""
 
 #: ../../../doc/en/customize.rst:144
 msgid "Finding the ``rootdir``"
-msgstr ""
+msgstr "尋找 ``rootdir``"
 
 #: ../../../doc/en/customize.rst:146
 msgid "Here is the algorithm which finds the rootdir from ``args``:"
@@ -274,11 +281,11 @@ msgstr ""
 
 #: ../../../doc/en/customize.rst:174
 msgid "``tox.ini``: contains a ``[pytest]`` section."
-msgstr ""
+msgstr "``tox.ini``：包含 ``[pytest]`` 區段。"
 
 #: ../../../doc/en/customize.rst:175
 msgid "``setup.cfg``: contains a ``[tool:pytest]`` section."
-msgstr ""
+msgstr "``setup.cfg``：包含 ``[tool:pytest]`` 區段。"
 
 #: ../../../doc/en/customize.rst:177
 msgid ""

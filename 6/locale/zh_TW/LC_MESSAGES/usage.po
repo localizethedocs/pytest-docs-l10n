@@ -543,7 +543,7 @@ msgstr ""
 
 #: ../../../doc/en/usage.rst:357
 msgid "pytest --pdb"
-msgstr ""
+msgstr "pytest --pdb"
 
 #: ../../../doc/en/usage.rst:361
 msgid ""
@@ -575,6 +575,11 @@ msgid ""
 ">>> sys.last_value\n"
 "AssertionError('assert result == \"ok\"',)"
 msgstr ""
+">>> import sys\n"
+">>> sys.last_traceback.tb_lineno\n"
+"42\n"
+">>> sys.last_value\n"
+"AssertionError('assert result == \"ok\"',)"
 
 #: ../../../doc/en/usage.rst:385
 msgid "Dropping to PDB_ (Python Debugger) at the start of a test"

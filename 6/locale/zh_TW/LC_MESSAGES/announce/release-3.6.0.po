@@ -75,7 +75,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-3.6.0.rst:27
 msgid "Bruno Oliveira"
-msgstr ""
+msgstr "Bruno Oliveira"
 
 #: ../../../doc/en/announce/release-3.6.0.rst:28
 msgid "Jon Dufresne"
