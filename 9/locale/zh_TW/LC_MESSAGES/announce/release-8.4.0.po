@@ -101,7 +101,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-8.4.0.rst:32
 msgid "Bruno Oliveira"
-msgstr ""
+msgstr "Bruno Oliveira"
 
 #: ../../../doc/en/announce/release-8.4.0.rst:33
 msgid "Callum Scott"

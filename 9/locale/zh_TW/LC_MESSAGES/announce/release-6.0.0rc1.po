@@ -65,7 +65,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-6.0.0rc1.rst:19
 msgid "Bruno Oliveira"
-msgstr ""
+msgstr "Bruno Oliveira"
 
 #: ../../../doc/en/announce/release-6.0.0rc1.rst:20
 msgid "Claire Cecil"
@@ -113,7 +113,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-6.0.0rc1.rst:31
 msgid "Hugo van Kemenade"
-msgstr ""
+msgstr "Hugo van Kemenade"
 
 #: ../../../doc/en/announce/release-6.0.0rc1.rst:32
 msgid "Hunter Richards"

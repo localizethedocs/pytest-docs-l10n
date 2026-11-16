@@ -48,31 +48,31 @@ msgstr "Ana Vojnovic"
 
 #: ../../../doc/en/announce/release-3.0.5.rst:15
 msgid "Bruno Oliveira"
-msgstr ""
+msgstr "Bruno Oliveira"
 
 #: ../../../doc/en/announce/release-3.0.5.rst:16
 msgid "Daniel Hahler"
-msgstr ""
+msgstr "Daniel Hahler"
 
 #: ../../../doc/en/announce/release-3.0.5.rst:17
 msgid "Duncan Betts"
-msgstr ""
+msgstr "Duncan Betts"
 
 #: ../../../doc/en/announce/release-3.0.5.rst:18
 msgid "Igor Starikov"
-msgstr ""
+msgstr "Igor Starikov"
 
 #: ../../../doc/en/announce/release-3.0.5.rst:19
 msgid "Ismail"
-msgstr ""
+msgstr "Ismail"
 
 #: ../../../doc/en/announce/release-3.0.5.rst:20
 msgid "Luke Murphy"
-msgstr ""
+msgstr "Luke Murphy"
 
 #: ../../../doc/en/announce/release-3.0.5.rst:21
 msgid "Ned Batchelder"
-msgstr ""
+msgstr "Ned Batchelder"
 
 #: ../../../doc/en/announce/release-3.0.5.rst:22
 msgid "Ronny Pfannschmidt"
@@ -80,7 +80,7 @@ msgstr "Ronny Pfannschmidt"
 
 #: ../../../doc/en/announce/release-3.0.5.rst:23
 msgid "Sebastian Ramacher"
-msgstr ""
+msgstr "Sebastian Ramacher"
 
 #: ../../../doc/en/announce/release-3.0.5.rst:24
 msgid "nmundar"

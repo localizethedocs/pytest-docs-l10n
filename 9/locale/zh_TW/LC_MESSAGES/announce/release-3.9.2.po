@@ -38,6 +38,7 @@ msgid ""
 "The full changelog is available at https://docs.pytest.org/en/stable/"
 "changelog.html."
 msgstr ""
+"完整的變更日誌請參見 https://docs.pytest.org/en/stable/changelog.html。"
 
 #: ../../../doc/en/announce/release-3.9.2.rst:12
 msgid "Thanks to all who contributed to this release, among them:"
@@ -65,7 +66,7 @@ msgstr "Vincent Barbaresi"
 
 #: ../../../doc/en/announce/release-3.9.2.rst:19
 msgid "ykantor"
-msgstr ""
+msgstr "ykantor"
 
 #: ../../../doc/en/announce/release-3.9.2.rst:22
 msgid "Happy testing, The pytest Development Team"

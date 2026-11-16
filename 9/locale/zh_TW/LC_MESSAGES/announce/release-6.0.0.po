@@ -71,7 +71,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-6.0.0.rst:26
 msgid "Bruno Oliveira"
-msgstr ""
+msgstr "Bruno Oliveira"
 
 #: ../../../doc/en/announce/release-6.0.0.rst:27
 msgid "Debi Mishra"
@@ -83,7 +83,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-6.0.0.rst:29
 msgid "Hugo van Kemenade"
-msgstr ""
+msgstr "Hugo van Kemenade"
 
 #: ../../../doc/en/announce/release-6.0.0.rst:30
 msgid "Kelton Bassingthwaite"

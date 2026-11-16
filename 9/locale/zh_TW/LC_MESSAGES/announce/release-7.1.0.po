@@ -73,7 +73,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-7.1.0.rst:25
 msgid "Bruno Oliveira"
-msgstr ""
+msgstr "Bruno Oliveira"
 
 #: ../../../doc/en/announce/release-7.1.0.rst:26
 msgid "Chris NeJame"
@@ -109,7 +109,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-7.1.0.rst:34
 msgid "Hugo van Kemenade"
-msgstr ""
+msgstr "Hugo van Kemenade"
 
 #: ../../../doc/en/announce/release-7.1.0.rst:35
 msgid "Kian Meng, Ang"

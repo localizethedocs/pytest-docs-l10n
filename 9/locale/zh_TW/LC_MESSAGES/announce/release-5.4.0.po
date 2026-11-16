@@ -67,7 +67,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-5.4.0.rst:25
 msgid "Bruno Oliveira"
-msgstr ""
+msgstr "Bruno Oliveira"
 
 #: ../../../doc/en/announce/release-5.4.0.rst:26
 msgid "Christoph Buelter"
@@ -91,11 +91,11 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-5.4.0.rst:31
 msgid "Hugo"
-msgstr ""
+msgstr "Hugo"
 
 #: ../../../doc/en/announce/release-5.4.0.rst:32
 msgid "Hugo van Kemenade"
-msgstr ""
+msgstr "Hugo van Kemenade"
 
 #: ../../../doc/en/announce/release-5.4.0.rst:33
 msgid "Jakub Mitoraj"

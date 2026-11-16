@@ -49,7 +49,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-5.2.4.rst:15
 msgid "Bruno Oliveira"
-msgstr ""
+msgstr "Bruno Oliveira"
 
 #: ../../../doc/en/announce/release-5.2.4.rst:16
 msgid "Daniel Hahler"
@@ -57,7 +57,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-5.2.4.rst:17
 msgid "Hugo"
-msgstr ""
+msgstr "Hugo"
 
 #: ../../../doc/en/announce/release-5.2.4.rst:18
 msgid "Michael Shields"
