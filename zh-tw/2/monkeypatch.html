@@ -1,0 +1,305 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_TW">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monkeypatching/mocking modules and environments &#8212; pytest documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/flasky.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/translations.js"></script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/pytest-docs-l10n/monkeypatch.html" />
+    <link rel="shortcut icon" href="_static/pytest1favi.ico"/>
+    <link rel="search" title="搜尋" href="search.html" />
+    <link rel="next" title="Temporary directories and files" href="tmpdir.html" />
+    <link rel="prev" title="Working with non-python tests" href="example/nonpython.html" />
+
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+<script type="text/javascript" src="ltd-provenance.js"></script>
+<script type="text/javascript" src="ltd-current.js"></script>
+<script type="text/javascript" src="../../ltd-config.js"></script>
+<script type="text/javascript" src="../../ltd-flyout.js"></script>
+
+  </head><body>
+  
+  
+  
+
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>瀏覽</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="tmpdir.html" title="Temporary directories and files"
+             accesskey="N">下一頁</a></li>
+        <li class="right" >
+          <a href="example/nonpython.html" title="Working with non-python tests"
+             accesskey="P">上一頁</a> |</li>
+        <li class="nav-item nav-item-0"><a href="contents.html">pytest-2.9.2</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Monkeypatching/mocking modules and environments</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="monkeypatching-mocking-modules-and-environments">
+<h1>Monkeypatching/mocking modules and environments<a class="headerlink" href="#monkeypatching-mocking-modules-and-environments" title="本標題的永久連結">¶</a></h1>
+<p>Sometimes tests need to invoke functionality which depends
+on global settings or which invokes code which cannot be easily
+tested such as network access.  The <code class="docutils literal notranslate"><span class="pre">monkeypatch</span></code> function argument
+helps you to safely set/delete an attribute, dictionary item or
+environment variable or to modify <code class="docutils literal notranslate"><span class="pre">sys.path</span></code> for importing.
+See the <a class="reference external" href="http://tetamap.wordpress.com/2009/03/03/monkeypatching-in-unit-tests-done-right/">monkeypatch blog post</a> for some introduction material
+and a discussion of its motivation.</p>
+<div class="section" id="simple-example-monkeypatching-functions">
+<h2>Simple example: monkeypatching functions<a class="headerlink" href="#simple-example-monkeypatching-functions" title="本標題的永久連結">¶</a></h2>
+<p>If you want to pretend that <code class="docutils literal notranslate"><span class="pre">os.expanduser</span></code> returns a certain
+directory, you can use the <a class="reference internal" href="#pytest.monkeypatch.monkeypatch.setattr" title="_pytest.monkeypatch.monkeypatch.setattr"><code class="xref py py-meth docutils literal notranslate"><span class="pre">monkeypatch.setattr()</span></code></a> method to
+patch this function before calling into a function which uses it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># content of test_module.py</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os.path</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">getssh</span><span class="p">():</span> <span class="c1"># pseudo application code</span>
+    <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s2">&quot;~admin&quot;</span><span class="p">),</span> <span class="s1">&#39;.ssh&#39;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">test_mytest</span><span class="p">(</span><span class="n">monkeypatch</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">mockreturn</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;/abc&#39;</span>
+    <span class="n">monkeypatch</span><span class="o">.</span><span class="n">setattr</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;expanduser&#39;</span><span class="p">,</span> <span class="n">mockreturn</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">getssh</span><span class="p">()</span>
+    <span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="s1">&#39;/abc/.ssh&#39;</span>
+</pre></div>
+</div>
+<p>Here our test function monkeypatches <code class="docutils literal notranslate"><span class="pre">os.path.expanduser</span></code> and
+then calls into an function that calls it.  After the test function
+finishes the <code class="docutils literal notranslate"><span class="pre">os.path.expanduser</span></code> modification will be undone.</p>
+</div>
+<div class="section" id="example-preventing-requests-from-remote-operations">
+<h2>example: preventing 「requests」 from remote operations<a class="headerlink" href="#example-preventing-requests-from-remote-operations" title="本標題的永久連結">¶</a></h2>
+<p>If you want to prevent the 「requests」 library from performing http
+requests in all your tests, you can do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># content of conftest.py</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span>
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">autouse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">no_requests</span><span class="p">(</span><span class="n">monkeypatch</span><span class="p">):</span>
+    <span class="n">monkeypatch</span><span class="o">.</span><span class="n">delattr</span><span class="p">(</span><span class="s2">&quot;requests.sessions.Session.request&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This autouse fixture will be executed for each test function and it
+will delete the method <code class="docutils literal notranslate"><span class="pre">request.session.Session.request</span></code>
+so that any attempts within tests to create http requests will fail.</p>
+</div>
+<div class="section" id="example-setting-an-attribute-on-some-class">
+<h2>example: setting an attribute on some class<a class="headerlink" href="#example-setting-an-attribute-on-some-class" title="本標題的永久連結">¶</a></h2>
+<p>If you need to patch out <code class="docutils literal notranslate"><span class="pre">os.getcwd()</span></code> to return an artificial
+value:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">test_some_interaction</span><span class="p">(</span><span class="n">monkeypatch</span><span class="p">):</span>
+    <span class="n">monkeypatch</span><span class="o">.</span><span class="n">setattr</span><span class="p">(</span><span class="s2">&quot;os.getcwd&quot;</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="s2">&quot;/&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>which is equivalent to the long form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">test_some_interaction</span><span class="p">(</span><span class="n">monkeypatch</span><span class="p">):</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+    <span class="n">monkeypatch</span><span class="o">.</span><span class="n">setattr</span><span class="p">(</span><span class="n">os</span><span class="p">,</span> <span class="s2">&quot;getcwd&quot;</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="s2">&quot;/&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="method-reference-of-the-monkeypatch-function-argument">
+<h2>Method reference of the monkeypatch function argument<a class="headerlink" href="#method-reference-of-the-monkeypatch-function-argument" title="本標題的永久連結">¶</a></h2>
+<dl class="py class">
+<dt id="pytest.monkeypatch.monkeypatch">
+<span id="_pytest.monkeypatch.monkeypatch"></span><em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">monkeypatch</span></code><a class="reference internal" href="_modules/_pytest/monkeypatch.html#monkeypatch"><span class="viewcode-link"><span class="pre">[原始碼]</span></span></a><a class="headerlink" href="#pytest.monkeypatch.monkeypatch" title="本定義的永久連結">¶</a></dt>
+<dd><p>Object keeping a record of setattr/item/env/syspath changes.</p>
+<dl class="py method">
+<dt id="pytest.monkeypatch.monkeypatch.setattr">
+<span id="_pytest.monkeypatch.monkeypatch.setattr"></span><code class="sig-name descname"><span class="pre">setattr</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">target</span></em>, <em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">value=&lt;notset&gt;</span></em>, <em class="sig-param"><span class="pre">raising=True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/monkeypatch.html#monkeypatch.setattr"><span class="viewcode-link"><span class="pre">[原始碼]</span></span></a><a class="headerlink" href="#pytest.monkeypatch.monkeypatch.setattr" title="本定義的永久連結">¶</a></dt>
+<dd><p>Set attribute value on target, memorizing the old value.
+By default raise AttributeError if the attribute did not exist.</p>
+<p>For convenience you can specify a string as <code class="docutils literal notranslate"><span class="pre">target</span></code> which
+will be interpreted as a dotted import path, with the last part
+being the attribute name.  Example:
+<code class="docutils literal notranslate"><span class="pre">monkeypatch.setattr(&quot;os.getcwd&quot;,</span> <span class="pre">lambda</span> <span class="pre">x:</span> <span class="pre">&quot;/&quot;)</span></code>
+would set the <code class="docutils literal notranslate"><span class="pre">getcwd</span></code> function of the <code class="docutils literal notranslate"><span class="pre">os</span></code> module.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">raising</span></code> value determines if the setattr should fail
+if the attribute is not already present (defaults to True
+which means it will raise).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.monkeypatch.monkeypatch.delattr">
+<span id="_pytest.monkeypatch.monkeypatch.delattr"></span><code class="sig-name descname"><span class="pre">delattr</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">target</span></em>, <em class="sig-param"><span class="pre">name=&lt;notset&gt;</span></em>, <em class="sig-param"><span class="pre">raising=True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/monkeypatch.html#monkeypatch.delattr"><span class="viewcode-link"><span class="pre">[原始碼]</span></span></a><a class="headerlink" href="#pytest.monkeypatch.monkeypatch.delattr" title="本定義的永久連結">¶</a></dt>
+<dd><p>Delete attribute <code class="docutils literal notranslate"><span class="pre">name</span></code> from <code class="docutils literal notranslate"><span class="pre">target</span></code>, by default raise
+AttributeError it the attribute did not previously exist.</p>
+<p>If no <code class="docutils literal notranslate"><span class="pre">name</span></code> is specified and <code class="docutils literal notranslate"><span class="pre">target</span></code> is a string
+it will be interpreted as a dotted import path with the
+last part being the attribute name.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">raising</span></code> is set to False, no exception will be raised if the
+attribute is missing.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.monkeypatch.monkeypatch.setitem">
+<span id="_pytest.monkeypatch.monkeypatch.setitem"></span><code class="sig-name descname"><span class="pre">setitem</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/monkeypatch.html#monkeypatch.setitem"><span class="viewcode-link"><span class="pre">[原始碼]</span></span></a><a class="headerlink" href="#pytest.monkeypatch.monkeypatch.setitem" title="本定義的永久連結">¶</a></dt>
+<dd><p>Set dictionary entry <code class="docutils literal notranslate"><span class="pre">name</span></code> to value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.monkeypatch.monkeypatch.delitem">
+<span id="_pytest.monkeypatch.monkeypatch.delitem"></span><code class="sig-name descname"><span class="pre">delitem</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raising</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/monkeypatch.html#monkeypatch.delitem"><span class="viewcode-link"><span class="pre">[原始碼]</span></span></a><a class="headerlink" href="#pytest.monkeypatch.monkeypatch.delitem" title="本定義的永久連結">¶</a></dt>
+<dd><p>Delete <code class="docutils literal notranslate"><span class="pre">name</span></code> from dict. Raise KeyError if it doesn’t exist.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">raising</span></code> is set to False, no exception will be raised if the
+key is missing.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.monkeypatch.monkeypatch.setenv">
+<span id="_pytest.monkeypatch.monkeypatch.setenv"></span><code class="sig-name descname"><span class="pre">setenv</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prepend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/monkeypatch.html#monkeypatch.setenv"><span class="viewcode-link"><span class="pre">[原始碼]</span></span></a><a class="headerlink" href="#pytest.monkeypatch.monkeypatch.setenv" title="本定義的永久連結">¶</a></dt>
+<dd><p>Set environment variable <code class="docutils literal notranslate"><span class="pre">name</span></code> to <code class="docutils literal notranslate"><span class="pre">value</span></code>.  If <code class="docutils literal notranslate"><span class="pre">prepend</span></code>
+is a character, read the current environment variable value
+and prepend the <code class="docutils literal notranslate"><span class="pre">value</span></code> adjoined with the <code class="docutils literal notranslate"><span class="pre">prepend</span></code> character.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.monkeypatch.monkeypatch.delenv">
+<span id="_pytest.monkeypatch.monkeypatch.delenv"></span><code class="sig-name descname"><span class="pre">delenv</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raising</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/monkeypatch.html#monkeypatch.delenv"><span class="viewcode-link"><span class="pre">[原始碼]</span></span></a><a class="headerlink" href="#pytest.monkeypatch.monkeypatch.delenv" title="本定義的永久連結">¶</a></dt>
+<dd><p>Delete <code class="docutils literal notranslate"><span class="pre">name</span></code> from the environment. Raise KeyError it does not
+exist.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">raising</span></code> is set to False, no exception will be raised if the
+environment variable is missing.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.monkeypatch.monkeypatch.syspath_prepend">
+<span id="_pytest.monkeypatch.monkeypatch.syspath_prepend"></span><code class="sig-name descname"><span class="pre">syspath_prepend</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/monkeypatch.html#monkeypatch.syspath_prepend"><span class="viewcode-link"><span class="pre">[原始碼]</span></span></a><a class="headerlink" href="#pytest.monkeypatch.monkeypatch.syspath_prepend" title="本定義的永久連結">¶</a></dt>
+<dd><p>Prepend <code class="docutils literal notranslate"><span class="pre">path</span></code> to <code class="docutils literal notranslate"><span class="pre">sys.path</span></code> list of import locations.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.monkeypatch.monkeypatch.chdir">
+<span id="_pytest.monkeypatch.monkeypatch.chdir"></span><code class="sig-name descname"><span class="pre">chdir</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/monkeypatch.html#monkeypatch.chdir"><span class="viewcode-link"><span class="pre">[原始碼]</span></span></a><a class="headerlink" href="#pytest.monkeypatch.monkeypatch.chdir" title="本定義的永久連結">¶</a></dt>
+<dd><p>Change the current working directory to the specified path.
+Path can be a string or a py.path.local object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.monkeypatch.monkeypatch.undo">
+<span id="_pytest.monkeypatch.monkeypatch.undo"></span><code class="sig-name descname"><span class="pre">undo</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/monkeypatch.html#monkeypatch.undo"><span class="viewcode-link"><span class="pre">[原始碼]</span></span></a><a class="headerlink" href="#pytest.monkeypatch.monkeypatch.undo" title="本定義的永久連結">¶</a></dt>
+<dd><p>Undo previous changes.  This call consumes the
+undo stack. Calling it a second time has no effect unless
+you do more monkeypatching after the undo call.</p>
+<p>There is generally no need to call <cite>undo()</cite>, since it is
+called automatically during tear-down.</p>
+<p>Note that the same <cite>monkeypatch</cite> fixture is used across a
+single test function invocation. If <cite>monkeypatch</cite> is used both by
+the test function itself and one of the test fixtures,
+calling <cite>undo()</cite> will undo all of the changes made in
+both functions.</p>
+</dd></dl>
+
+</dd></dl>
+
+<p><code class="docutils literal notranslate"><span class="pre">monkeypatch.setattr/delattr/delitem/delenv()</span></code> all
+by default raise an Exception if the target does not exist.
+Pass <code class="docutils literal notranslate"><span class="pre">raising=False</span></code> if you want to skip this check.</p>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="contents.html">
+              <img class="logo" src="_static/pytest1.png" alt="Logo"/>
+            </a></p><h3><a href="contents.html">Table Of Contents</a></h3>
+
+<ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="contents.html">內容</a></li>
+  <li><a href="getting-started.html">Install</a></li>
+  <li><a href="example/index.html">实际案例</a></li>
+  <li><a href="customize.html">Customize</a></li>
+  <li><a href="contact.html">Contact</a></li>
+  <li><a href="talks.html">Talks/Posts</a></li>
+  <li><a href="changelog.html">Changelog</a></li>
+  <li><a href="license.html">License</a></li>
+</ul>
+  <hr>
+  <ul>
+<li><a class="reference internal" href="#">Monkeypatching/mocking modules and environments</a><ul>
+<li><a class="reference internal" href="#simple-example-monkeypatching-functions">Simple example: monkeypatching functions</a></li>
+<li><a class="reference internal" href="#example-preventing-requests-from-remote-operations">example: preventing 「requests」 from remote operations</a></li>
+<li><a class="reference internal" href="#example-setting-an-attribute-on-some-class">example: setting an attribute on some class</a></li>
+<li><a class="reference internal" href="#method-reference-of-the-monkeypatch-function-argument">Method reference of the monkeypatch function argument</a></li>
+</ul>
+</li>
+</ul>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="contents.html">Documentation overview</a><ul>
+      <li>Previous: <a href="example/nonpython.html" title="上一章">Working with non-python tests</a></li>
+      <li>Next: <a href="tmpdir.html" title="下一章">Temporary directories and files</a></li>
+  </ul></li>
+</ul><h3>Useful Links</h3>
+<ul>
+  <li>
+    <a href="https://www.indiegogo.com/projects/python-testing-sprint-mid-2016#/">
+      <b>Sprint funding campaign</b>
+    </a>
+  </li>
+  <li><a href="index.html">The pytest Website</a></li>
+  <li><a href="contributing.html">Contribution Guide</a></li>
+  <li><a href="https://pypi.python.org/pypi/pytest">pytest @ PyPI</a></li>
+  <li><a href="https://github.com/pytest-dev/pytest/">pytest @ GitHub</a></li>
+  <li><a href="http://plugincompat.herokuapp.com/">3rd party plugins</a></li>
+  <li><a href="https://github.com/pytest-dev/pytest/issues">議題追蹤器</a></li>
+  <li><a href="http://pytest.org/latest/pytest.pdf">PDF 文件</a>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">快速搜尋</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="搜" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+  <div class="footer">
+    &copy; Copyright 2015, holger krekel and pytest-dev team.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-7597274-13']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+  </body>
+</html>

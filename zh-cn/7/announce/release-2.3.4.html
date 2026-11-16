@@ -1,0 +1,175 @@
+
+
+
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>pytest-2.3.4: stabilization, more flexible selection via “-k expr” &#8212; pytest documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/flask.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments_pytest.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script data-project="pytest" data-version="7" src="../_static/describe_version.js"></script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/pytest-docs-l10n/announce/release-2.3.4.html" />
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="pytest-2.3.3: integration fixes, py24 support, */** shown in traceback" href="release-2.3.3.html" />
+    <link rel="prev" title="pytest-2.3.5: bug fixes and little improvements" href="release-2.3.5.html" />
+
+  <script>DOCUMENTATION_OPTIONS.URL_ROOT = '';</script>
+   
+<script type="text/javascript" src="../ltd-provenance.js"></script>
+<script type="text/javascript" src="../ltd-current.js"></script>
+<script type="text/javascript" src="../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../ltd-flyout.js"></script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../py-modindex.html" title="Python 模块索引"
+             >模块</a></li>
+        <li class="right" >
+          <a href="release-2.3.3.html" title="pytest-2.3.3: integration fixes, py24 support, */** shown in traceback"
+             accesskey="N">下一页</a> |</li>
+        <li class="right" >
+          <a href="release-2.3.5.html" title="pytest-2.3.5: bug fixes and little improvements"
+             accesskey="P">上一页</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">pytest-7.4</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Release announcements</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pytest-2.3.4: stabilization, more flexible selection via “-k expr”</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="pytest-2-3-4-stabilization-more-flexible-selection-via-k-expr">
+<h1>pytest-2.3.4: stabilization, more flexible selection via “-k expr”<a class="headerlink" href="#pytest-2-3-4-stabilization-more-flexible-selection-via-k-expr" title="此标题的永久链接">¶</a></h1>
+<p>pytest-2.3.4 is a small stabilization release of the py.test tool
+which offers uebersimple assertions, scalable fixture mechanisms
+and deep customization for testing with Python.  This release
+comes with the following fixes and features:</p>
+<ul class="simple">
+<li><p>make “-k” option accept an expressions the same as with “-m” so that one
+can write: -k “name1 or name2” etc.  This is a slight usage incompatibility
+if you used special syntax like “TestClass.test_method” which you now
+need to write as -k “TestClass and test_method” to match a certain
+method in a certain test class.</p></li>
+<li><p>allow to dynamically define markers via
+item.keywords[…]=assignment integrating with “-m” option</p></li>
+<li><p>yielded test functions will now have autouse-fixtures active but
+cannot accept fixtures as funcargs - it’s anyway recommended to
+rather use the post-2.0 parametrize features instead of yield, see:
+<a class="reference external" href="http://pytest.org/en/stable/example/how-to/parametrize.html">http://pytest.org/en/stable/example/how-to/parametrize.html</a></p></li>
+<li><p>fix autouse-issue where autouse-fixtures would not be discovered
+if defined in an a/conftest.py file and tests in a/tests/test_some.py</p></li>
+<li><p>fix issue226 - LIFO ordering for fixture teardowns</p></li>
+<li><p>fix issue224 - invocations with &gt;256 char arguments now work</p></li>
+<li><p>fix issue91 - add/discuss package/directory level setups in example</p></li>
+<li><p>fixes related to autouse discovery and calling</p></li>
+</ul>
+<p>Thanks in particular to Thomas Waldmann for spotting and reporting issues.</p>
+<p>See</p>
+<blockquote>
+<div><p><a class="reference external" href="http://pytest.org/">http://pytest.org/</a></p>
+</div></blockquote>
+<p>for general information.  To install or upgrade pytest:</p>
+<blockquote>
+<div><p>pip install -U pytest # or
+easy_install -U pytest</p>
+</div></blockquote>
+<p>best,
+holger krekel</p>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+  <span id="sidebar-top"></span>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  
+    
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/pytest_logo_curves.svg" alt="Logo"/>
+            </a></p>
+  
+
+<div id="searchbox" style="display: none" role="search">
+  <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel"
+        placeholder="Search"/>
+      <input type="submit" value="提交" />
+    </form>
+  </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><h3>目录</h3>
+
+<ul>
+  <li><a href="../index.html">Home</a></li>
+
+  <li><a href="../getting-started.html">Get started</a></li>
+  <li><a href="../how-to/index.html">How-to guides</a></li>
+  <li><a href="../reference/index.html">Reference guides</a></li>
+  <li><a href="../explanation/index.html">Explanation</a></li>
+  <li><a href="../contents.html">Complete table of contents</a></li>
+  <li><a href="../example/index.html">Library of examples</a></li>
+</ul>
+
+<h3>About the project</h3>
+
+<ul>
+  <li><a href="../changelog.html">Changelog</a></li>
+  <li><a href="../contributing.html">Contributing</a></li>
+  <li><a href="../backwards-compatibility.html">Backwards Compatibility</a></li>
+  <li><a href="../sponsor.html">Sponsor</a></li>
+  <li><a href="../tidelift.html">pytest for Enterprise</a></li>
+  <li><a href="../license.html">License</a></li>
+  <li><a href="../contact.html">Contact Channels</a></li>
+</ul>
+
+<hr><h3>Related Topics</h3>
+<ul>
+  <li><a href="../contents.html">Documentation overview</a><ul>
+  <li><a href="index.html">Release announcements</a><ul>
+      <li>Previous: <a href="release-2.3.5.html" title="上一章">pytest-2.3.5: bug fixes and little improvements</a></li>
+      <li>Next: <a href="release-2.3.3.html" title="下一章">pytest-2.3.3: integration fixes, py24 support, <code class="docutils literal notranslate"><span class="pre">*/**</span></code> shown in traceback</a></li>
+  </ul></li>
+  </ul></li>
+</ul><h3>Useful Links</h3>
+<ul>
+  <li><a href="https://pypi.org/project/pytest/">pytest @ PyPI</a></li>
+  <li><a href="https://github.com/pytest-dev/pytest/">pytest @ GitHub</a></li>
+  <li><a href="https://github.com/pytest-dev/pytest/issues">Issue Tracker</a></li>
+  <li><a href="https://media.readthedocs.org/pdf/pytest/latest/pytest.pdf">PDF Documentation</a></li>
+</ul>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  
+    <div class="footer" role="contentinfo">
+        &#169; 版权所有 2015, holger krekel and pytest-dev team.
+      由 <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0创建。
+    </div>
+  <script src="../_static/version_warning_offset.js"></script>
+
+  </body>
+</html>
