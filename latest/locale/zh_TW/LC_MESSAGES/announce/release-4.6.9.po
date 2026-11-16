@@ -45,19 +45,19 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-4.6.9.rst:14
 msgid "Anthony Sottile"
-msgstr ""
+msgstr "Anthony Sottile"
 
 #: ../../../doc/en/announce/release-4.6.9.rst:15
 msgid "Bruno Oliveira"
-msgstr ""
+msgstr "Bruno Oliveira"
 
 #: ../../../doc/en/announce/release-4.6.9.rst:16
 msgid "Felix Yan"
-msgstr ""
+msgstr "Felix Yan"
 
 #: ../../../doc/en/announce/release-4.6.9.rst:17
 msgid "Hugo"
-msgstr ""
+msgstr "Hugo"
 
 #: ../../../doc/en/announce/release-4.6.9.rst:20
 msgid "Happy testing, The pytest Development Team"

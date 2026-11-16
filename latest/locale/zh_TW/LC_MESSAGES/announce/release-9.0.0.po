@@ -69,7 +69,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-9.0.0.rst:24
 msgid "Bruno Oliveira"
-msgstr ""
+msgstr "Bruno Oliveira"
 
 #: ../../../doc/en/announce/release-9.0.0.rst:25
 msgid "Charles-Meldhine Madi Mnemoi"

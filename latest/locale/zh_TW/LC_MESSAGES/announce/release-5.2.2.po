@@ -38,6 +38,7 @@ msgid ""
 "The full changelog is available at https://docs.pytest.org/en/stable/"
 "changelog.html."
 msgstr ""
+"完整的變更日誌請參見 https://docs.pytest.org/en/stable/changelog.html。"
 
 #: ../../../doc/en/announce/release-5.2.2.rst:12
 msgid "Thanks to all who contributed to this release, among them:"

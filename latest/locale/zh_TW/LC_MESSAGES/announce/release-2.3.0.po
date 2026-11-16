@@ -107,7 +107,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-2.3.0.rst:56
 msgid "Changes between 2.2.4 and 2.3.0"
-msgstr ""
+msgstr "2.2.4 與 2.3.0 之間的變更"
 
 #: ../../../doc/en/announce/release-2.3.0.rst:58
 msgid "fix issue202 - better automatic names for parametrized test functions"

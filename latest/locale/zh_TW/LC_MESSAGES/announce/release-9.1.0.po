@@ -141,7 +141,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-9.1.0.rst:42
 msgid "Hugo van Kemenade"
-msgstr ""
+msgstr "Hugo van Kemenade"
 
 #: ../../../doc/en/announce/release-9.1.0.rst:43
 msgid "Ilya Manafi"

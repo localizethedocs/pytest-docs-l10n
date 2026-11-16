@@ -97,6 +97,8 @@ msgid ""
 "pip install -U pytest # or\n"
 "easy_install -U pytest"
 msgstr ""
+"pip install -U pytest # 或\n"
+"easy_install -U pytest"
 
 #: ../../../doc/en/announce/release-2.4.0.rst:47
 msgid ""
@@ -116,7 +118,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-2.4.0.rst:57
 msgid "Changes between 2.3.5 and 2.4"
-msgstr ""
+msgstr "2.3.5 與 2.4 之間的變更"
 
 #: ../../../doc/en/announce/release-2.4.0.rst:59
 msgid "known incompatibilities:"

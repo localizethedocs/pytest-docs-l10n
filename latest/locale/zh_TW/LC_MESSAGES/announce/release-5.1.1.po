@@ -45,27 +45,27 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-5.1.1.rst:14
 msgid "Anthony Sottile"
-msgstr ""
+msgstr "Anthony Sottile"
 
 #: ../../../doc/en/announce/release-5.1.1.rst:15
 msgid "Bruno Oliveira"
-msgstr ""
+msgstr "Bruno Oliveira"
 
 #: ../../../doc/en/announce/release-5.1.1.rst:16
 msgid "Daniel Hahler"
-msgstr ""
+msgstr "Daniel Hahler"
 
 #: ../../../doc/en/announce/release-5.1.1.rst:17
 msgid "Freya Bruhin"
-msgstr ""
+msgstr "Freya Bruhin"
 
 #: ../../../doc/en/announce/release-5.1.1.rst:18
 msgid "Hugo van Kemenade"
-msgstr ""
+msgstr "Hugo van Kemenade"
 
 #: ../../../doc/en/announce/release-5.1.1.rst:19
 msgid "Ran Benita"
-msgstr ""
+msgstr "Ran Benita"
 
 #: ../../../doc/en/announce/release-5.1.1.rst:20
 msgid "Ronny Pfannschmidt"

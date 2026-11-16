@@ -41,7 +41,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-8.3.5.rst:12
 msgid "Bruno Oliveira"
-msgstr ""
+msgstr "Bruno Oliveira"
 
 #: ../../../doc/en/announce/release-8.3.5.rst:13
 msgid "Freya Bruhin"

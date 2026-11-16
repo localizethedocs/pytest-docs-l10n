@@ -61,7 +61,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-6.1.0.rst:22
 msgid "Bruno Oliveira"
-msgstr ""
+msgstr "Bruno Oliveira"
 
 #: ../../../doc/en/announce/release-6.1.0.rst:23
 msgid "Titus Brown"
@@ -81,7 +81,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-6.1.0.rst:27
 msgid "Hugo van Kemenade"
-msgstr ""
+msgstr "Hugo van Kemenade"
 
 #: ../../../doc/en/announce/release-6.1.0.rst:28
 msgid "Hynek Schlawack"

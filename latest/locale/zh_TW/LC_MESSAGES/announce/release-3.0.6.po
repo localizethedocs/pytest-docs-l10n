@@ -49,11 +49,11 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-3.0.6.rst:16
 msgid "Bruno Oliveira"
-msgstr ""
+msgstr "Bruno Oliveira"
 
 #: ../../../doc/en/announce/release-3.0.6.rst:17
 msgid "Dmitry Malinovsky"
-msgstr ""
+msgstr "Dmitry Malinovsky"
 
 #: ../../../doc/en/announce/release-3.0.6.rst:18
 msgid "Eli Boyarski"
@@ -73,7 +73,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-3.0.6.rst:22
 msgid "Luke Murphy"
-msgstr ""
+msgstr "Luke Murphy"
 
 #: ../../../doc/en/announce/release-3.0.6.rst:23
 msgid "Miro Hrončok"

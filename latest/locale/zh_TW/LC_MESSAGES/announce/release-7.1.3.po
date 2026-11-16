@@ -49,7 +49,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-7.1.3.rst:15
 msgid "Bruno Oliveira"
-msgstr ""
+msgstr "Bruno Oliveira"
 
 #: ../../../doc/en/announce/release-7.1.3.rst:16
 msgid "Gergely Kalmár"
