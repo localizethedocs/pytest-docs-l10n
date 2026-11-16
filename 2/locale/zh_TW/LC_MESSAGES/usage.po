@@ -175,6 +175,11 @@ msgid ""
 ">>> sys.last_value\n"
 "AssertionError('assert result == \"ok\"',)"
 msgstr ""
+">>> import sys\n"
+">>> sys.last_traceback.tb_lineno\n"
+"42\n"
+">>> sys.last_value\n"
+"AssertionError('assert result == \"ok\"',)"
 
 #: ../../../doc/en/usage.rst:115
 msgid "Setting a breakpoint / aka ``set_trace()``"
