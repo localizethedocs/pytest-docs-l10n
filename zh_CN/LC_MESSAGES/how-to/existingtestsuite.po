@@ -1,0 +1,70 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, holger krekel and pytest-dev team
+# This file is distributed under the same license as the pytest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pytest stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-13 09:26+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../doc/en/how-to/existingtestsuite.rst:4
+msgid "How to use pytest with an existing test suite"
+msgstr ""
+
+#: ../../../doc/en/how-to/existingtestsuite.rst:6
+msgid ""
+"Pytest can be used with most existing test suites, but its behavior differs "
+"from other test runners such as Python's default unittest framework."
+msgstr ""
+
+#: ../../../doc/en/how-to/existingtestsuite.rst:10
+msgid ""
+"Before using this section you will want to :ref:`install pytest "
+"<getstarted>`."
+msgstr ""
+
+#: ../../../doc/en/how-to/existingtestsuite.rst:13
+msgid "Running an existing test suite with pytest"
+msgstr ""
+
+#: ../../../doc/en/how-to/existingtestsuite.rst:15
+msgid ""
+"Say you want to contribute to an existing repository somewhere. After "
+"pulling the code into your development space using some flavor of version "
+"control and (optionally) setting up a virtualenv you will want to run:"
+msgstr ""
+
+#: ../../../doc/en/how-to/existingtestsuite.rst:20
+msgid ""
+"cd <repository>\n"
+"pip install -e .  # Environment dependent alternatives include\n"
+"                  # 'python setup.py develop' and 'conda develop'"
+msgstr ""
+
+#: ../../../doc/en/how-to/existingtestsuite.rst:26
+msgid ""
+"in your project root.  This will set up a symlink to your code in site-"
+"packages, allowing you to edit your code while your tests run against it as "
+"if it were installed."
+msgstr ""
+
+#: ../../../doc/en/how-to/existingtestsuite.rst:30
+msgid ""
+"Setting up your project in development mode lets you avoid having to "
+"reinstall every time you want to run your tests, and is less brittle than "
+"mucking about with sys.path to point your tests at local code."
+msgstr ""
+
+#: ../../../doc/en/how-to/existingtestsuite.rst:34
+msgid "Also consider using :ref:`tox <use tox>`."
+msgstr ""
