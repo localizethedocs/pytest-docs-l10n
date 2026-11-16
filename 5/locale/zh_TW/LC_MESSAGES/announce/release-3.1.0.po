@@ -71,7 +71,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-3.1.0.rst:26
 msgid "Bruno Oliveira"
-msgstr ""
+msgstr "Bruno Oliveira"
 
 #: ../../../doc/en/announce/release-3.1.0.rst:27
 msgid "David Giese"
@@ -127,7 +127,7 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-3.1.0.rst:40
 msgid "Luke Murphy"
-msgstr ""
+msgstr "Luke Murphy"
 
 #: ../../../doc/en/announce/release-3.1.0.rst:41
 msgid "Manuel Krebber"

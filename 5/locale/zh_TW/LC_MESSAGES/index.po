@@ -192,6 +192,9 @@ msgid ""
 "utm_source=pypi-"
 "pytest&utm_medium=referral&utm_campaign=enterprise&utm_term=repo>`_"
 msgstr ""
+"`了解更多。 <https://tidelift.com/subscription/pkg/pypi-pytest?"
+"utm_source=pypi-"
+"pytest&utm_medium=referral&utm_campaign=enterprise&utm_term=repo>`_"
 
 #: ../../../doc/en/index.rst:115
 msgid "Security"

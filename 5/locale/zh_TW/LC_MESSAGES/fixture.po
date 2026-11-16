@@ -74,7 +74,7 @@ msgstr ""
 
 #: ../../../doc/en/fixture.rst:49
 msgid ":fixture:`capfd`"
-msgstr ""
+msgstr ":fixture:`capfd`"
 
 #: ../../../doc/en/fixture.rst:49
 msgid "Capture, as text, output to file descriptors ``1`` and ``2``."
@@ -82,7 +82,7 @@ msgstr ""
 
 #: ../../../doc/en/fixture.rst:52
 msgid ":fixture:`capfdbinary`"
-msgstr ""
+msgstr ":fixture:`capfdbinary`"
 
 #: ../../../doc/en/fixture.rst:52
 msgid "Capture, as bytes, output to file descriptors ``1`` and ``2``."
@@ -90,7 +90,7 @@ msgstr ""
 
 #: ../../../doc/en/fixture.rst:55
 msgid ":fixture:`caplog`"
-msgstr ""
+msgstr ":fixture:`caplog`"
 
 #: ../../../doc/en/fixture.rst:55
 msgid "Control logging and access log entries."
@@ -98,7 +98,7 @@ msgstr ""
 
 #: ../../../doc/en/fixture.rst:58
 msgid ":fixture:`capsys`"
-msgstr ""
+msgstr ":fixture:`capsys`"
 
 #: ../../../doc/en/fixture.rst:58
 msgid "Capture, as text, output to ``sys.stdout`` and ``sys.stderr``."
@@ -106,7 +106,7 @@ msgstr ""
 
 #: ../../../doc/en/fixture.rst:61
 msgid ":fixture:`capsysbinary`"
-msgstr ""
+msgstr ":fixture:`capsysbinary`"
 
 #: ../../../doc/en/fixture.rst:61
 msgid "Capture, as bytes, output to ``sys.stdout`` and ``sys.stderr``."
@@ -114,7 +114,7 @@ msgstr ""
 
 #: ../../../doc/en/fixture.rst:64
 msgid ":fixture:`cache`"
-msgstr ""
+msgstr ":fixture:`cache`"
 
 #: ../../../doc/en/fixture.rst:64
 msgid "Store and retrieve values across pytest runs."
@@ -122,7 +122,7 @@ msgstr ""
 
 #: ../../../doc/en/fixture.rst:67
 msgid ":fixture:`doctest_namespace`"
-msgstr ""
+msgstr ":fixture:`doctest_namespace`"
 
 #: ../../../doc/en/fixture.rst:67
 msgid "Provide a dict injected into the docstests namespace."
@@ -130,7 +130,7 @@ msgstr ""
 
 #: ../../../doc/en/fixture.rst:71
 msgid ":fixture:`monkeypatch`"
-msgstr ""
+msgstr ":fixture:`monkeypatch`"
 
 #: ../../../doc/en/fixture.rst:70
 msgid ""
@@ -140,7 +140,7 @@ msgstr ""
 
 #: ../../../doc/en/fixture.rst:74
 msgid ":fixture:`pytestconfig`"
-msgstr ""
+msgstr ":fixture:`pytestconfig`"
 
 #: ../../../doc/en/fixture.rst:74
 msgid "Access to configuration values, pluginmanager and plugin hooks."
@@ -148,7 +148,7 @@ msgstr ""
 
 #: ../../../doc/en/fixture.rst:77
 msgid ":fixture:`record_property`"
-msgstr ""
+msgstr ":fixture:`record_property`"
 
 #: ../../../doc/en/fixture.rst:77
 msgid "Add extra properties to the test."
@@ -156,7 +156,7 @@ msgstr ""
 
 #: ../../../doc/en/fixture.rst:80
 msgid ":fixture:`record_testsuite_property`"
-msgstr ""
+msgstr ":fixture:`record_testsuite_property`"
 
 #: ../../../doc/en/fixture.rst:80
 msgid "Add extra properties to the test suite."
@@ -164,7 +164,7 @@ msgstr ""
 
 #: ../../../doc/en/fixture.rst:83
 msgid ":fixture:`recwarn`"
-msgstr ""
+msgstr ":fixture:`recwarn`"
 
 #: ../../../doc/en/fixture.rst:83
 msgid "Record warnings emitted by test functions."
@@ -172,7 +172,7 @@ msgstr ""
 
 #: ../../../doc/en/fixture.rst:86
 msgid ":fixture:`request`"
-msgstr ""
+msgstr ":fixture:`request`"
 
 #: ../../../doc/en/fixture.rst:86
 msgid "Provide information on the executing test function."
@@ -180,7 +180,7 @@ msgstr ""
 
 #: ../../../doc/en/fixture.rst:90
 msgid ":fixture:`testdir`"
-msgstr ""
+msgstr ":fixture:`testdir`"
 
 #: ../../../doc/en/fixture.rst:89
 msgid ""
@@ -190,7 +190,7 @@ msgstr ""
 
 #: ../../../doc/en/fixture.rst:94
 msgid ":fixture:`tmp_path`"
-msgstr ""
+msgstr ":fixture:`tmp_path`"
 
 #: ../../../doc/en/fixture.rst:93
 msgid ""
@@ -200,7 +200,7 @@ msgstr ""
 
 #: ../../../doc/en/fixture.rst:98
 msgid ":fixture:`tmp_path_factory`"
-msgstr ""
+msgstr ":fixture:`tmp_path_factory`"
 
 #: ../../../doc/en/fixture.rst:97
 msgid ""
@@ -210,7 +210,7 @@ msgstr ""
 
 #: ../../../doc/en/fixture.rst:105
 msgid ":fixture:`tmpdir`"
-msgstr ""
+msgstr ":fixture:`tmpdir`"
 
 #: ../../../doc/en/fixture.rst:101
 msgid ""
