@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 11:54+0000\n"
+"POT-Creation-Date: 2026-11-23 19:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -117,10 +117,10 @@ msgstr ""
 
 #: ../../../doc/en/how-to/capture-warnings.rst:83
 msgid ""
-"The same option can be set in the configuration file using the :confval:"
-"`filterwarnings` configuration option. For example, the configuration below "
-"will ignore all user warnings and specific deprecation warnings matching a "
-"regex, but will transform all other warnings into errors."
+"The same option can be set in the configuration file using "
+"the :confval:`filterwarnings` configuration option. For example, the "
+"configuration below will ignore all user warnings and specific deprecation "
+"warnings matching a regex, but will transform all other warnings into errors."
 msgstr ""
 
 #: ../../../doc/en/how-to/capture-warnings.rst:90
@@ -167,10 +167,10 @@ msgstr ""
 
 #: ../../../doc/en/how-to/capture-warnings.rst:134
 msgid ""
-"You can use the :ref:`@pytest.mark.filterwarnings <pytest.mark."
-"filterwarnings ref>` mark to add warning filters to specific test items, "
-"allowing you to have finer control of which warnings should be captured at "
-"test, class or even module level:"
+"You can use the :ref:`@pytest.mark.filterwarnings "
+"<pytest.mark.filterwarnings ref>` mark to add warning filters to specific "
+"test items, allowing you to have finer control of which warnings should be "
+"captured at test, class or even module level:"
 msgstr ""
 
 #: ../../../doc/en/how-to/capture-warnings.rst:138
@@ -220,63 +220,74 @@ msgstr ""
 msgid ""
 "Regarding decorator order and filter precedence: it's important to remember "
 "that decorators are evaluated in reverse order, so you have to list the "
-"warning filters in the reverse order compared to traditional :py:func:"
-"`warnings.filterwarnings` and :option:`-W option <python:-W>` usage. This "
-"means in practice that filters from earlier :ref:`@pytest.mark."
-"filterwarnings <pytest.mark.filterwarnings ref>` decorators take precedence "
-"over filters from later decorators, as illustrated in the example above."
+"warning filters in the reverse order compared to "
+"traditional :py:func:`warnings.filterwarnings` and :option:`-W option "
+"<python:-W>` usage. This means in practice that filters from "
+"earlier :ref:`@pytest.mark.filterwarnings <pytest.mark.filterwarnings ref>` "
+"decorators take precedence over filters from later decorators, as "
+"illustrated in the example above."
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:182
+#: ../../../doc/en/how-to/capture-warnings.rst:181
+msgid ""
+"Across levels, the closest mark takes precedence: a mark "
+"from :ref:`parametrization <pytest.mark.parametrize ref>` over one on the "
+"test function, the function over its class, a class over its base classes, "
+"and a class over the module."
+msgstr ""
+
+#: ../../../doc/en/how-to/capture-warnings.rst:186
 msgid ""
 "Filters applied using a mark take precedence over filters passed on the "
 "command line or configured by the :confval:`filterwarnings` configuration "
 "option."
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:185
+#: ../../../doc/en/how-to/capture-warnings.rst:189
 msgid ""
-"You may apply a filter to all tests of a class by using the :ref:"
-"`filterwarnings <pytest.mark.filterwarnings ref>` mark as a class decorator "
-"or to all tests in a module by setting the :globalvar:`pytestmark` variable:"
+"You may apply a filter to all tests of a class by using "
+"the :ref:`filterwarnings <pytest.mark.filterwarnings ref>` mark as a class "
+"decorator or to all tests in a module by setting the :globalvar:`pytestmark` "
+"variable:"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:188
+#: ../../../doc/en/how-to/capture-warnings.rst:192
 msgid ""
 "# turns all warnings into errors for this module\n"
 "pytestmark = pytest.mark.filterwarnings(\"error\")"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:196
+#: ../../../doc/en/how-to/capture-warnings.rst:200
 msgid ""
-"If you want to apply multiple filters (by assigning a list of :ref:"
-"`filterwarnings <pytest.mark.filterwarnings ref>` mark to :globalvar:"
-"`pytestmark`), you must use the traditional :py:func:`warnings."
-"filterwarnings` ordering approach (later filters take precedence), which is "
-"the reverse of the decorator approach mentioned above."
+"If you want to apply multiple filters (by assigning a list "
+"of :ref:`filterwarnings <pytest.mark.filterwarnings ref>` mark "
+"to :globalvar:`pytestmark`), you must use the "
+"traditional :py:func:`warnings.filterwarnings` ordering approach (later "
+"filters take precedence), which is the reverse of the decorator approach "
+"mentioned above."
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:202
+#: ../../../doc/en/how-to/capture-warnings.rst:206
 msgid ""
 "*Credits go to Florian Schulze for the reference implementation in the* "
 "`pytest-warnings`_ *plugin.*"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:208
+#: ../../../doc/en/how-to/capture-warnings.rst:212
 msgid "Setting a maximum number of warnings"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:212
+#: ../../../doc/en/how-to/capture-warnings.rst:216
 msgid ""
 "You can use the :option:`--max-warnings` command-line option to fail the "
 "test run if the total number of warnings exceeds a given threshold:"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:215
+#: ../../../doc/en/how-to/capture-warnings.rst:219
 msgid "pytest --max-warnings=10"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:219
+#: ../../../doc/en/how-to/capture-warnings.rst:223
 msgid ""
 "If all tests pass but the number of warnings exceeds the threshold, pytest "
 "will exit with code ``6`` (:class:`~pytest.ExitCode` "
@@ -284,76 +295,76 @@ msgid ""
 "warnings in a codebase."
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:223
+#: ../../../doc/en/how-to/capture-warnings.rst:227
 msgid ""
 "Note that :confval:`filtered warnings <filterwarnings>` do not count toward "
 "this maximum total."
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:225
+#: ../../../doc/en/how-to/capture-warnings.rst:229
 msgid ""
-"The threshold can also be set in the configuration file using :confval:"
-"`max_warnings`:"
+"The threshold can also be set in the configuration file "
+"using :confval:`max_warnings`:"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:229
-#: ../../../doc/en/how-to/capture-warnings.rst:236
+#: ../../../doc/en/how-to/capture-warnings.rst:233
+#: ../../../doc/en/how-to/capture-warnings.rst:240
 msgid ""
 "[pytest]\n"
 "max_warnings = 10"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:243
+#: ../../../doc/en/how-to/capture-warnings.rst:247
 msgid ""
 "If tests fail, the exit code will be ``1`` (:class:`~pytest.ExitCode` "
 "``TESTS_FAILED``) regardless of the warning count. ``MAX_WARNINGS_ERROR`` is "
 "only reported when all tests pass but the warning threshold is exceeded."
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:248
+#: ../../../doc/en/how-to/capture-warnings.rst:252
 msgid "Disabling warnings summary"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:250
+#: ../../../doc/en/how-to/capture-warnings.rst:254
 msgid ""
 "Although not recommended, you can use the :option:`--disable-warnings` "
 "command-line option to suppress the warning summary entirely from the test "
 "run output."
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:254
+#: ../../../doc/en/how-to/capture-warnings.rst:258
 msgid "Disabling warning capture entirely"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:256
+#: ../../../doc/en/how-to/capture-warnings.rst:260
 msgid ""
 "This plugin is enabled by default but can be disabled entirely in your "
 "configuration file with:"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:260
+#: ../../../doc/en/how-to/capture-warnings.rst:264
 msgid ""
 "[pytest]\n"
 "addopts = [\"-p\", \"no:warnings\"]"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:267
+#: ../../../doc/en/how-to/capture-warnings.rst:271
 msgid ""
 "[pytest]\n"
 "addopts = -p no:warnings"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:272
+#: ../../../doc/en/how-to/capture-warnings.rst:276
 msgid ""
 "Or passing ``-p no:warnings`` in the command-line. This might be useful if "
 "your test suite handles warnings using an external system."
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:279
+#: ../../../doc/en/how-to/capture-warnings.rst:283
 msgid "DeprecationWarning and PendingDeprecationWarning"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:281
+#: ../../../doc/en/how-to/capture-warnings.rst:285
 msgid ""
 "By default pytest will display ``DeprecationWarning`` and "
 "``PendingDeprecationWarning`` warnings from user code and third-party "
@@ -361,14 +372,14 @@ msgid ""
 "modern and avoid breakages when deprecated warnings are effectively removed."
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:285
+#: ../../../doc/en/how-to/capture-warnings.rst:289
 msgid ""
 "However, in the specific case where users capture any type of warnings in "
 "their test, either with :func:`pytest.warns`, :func:`pytest.deprecated_call` "
 "or using the :fixture:`recwarn` fixture, no warning will be displayed at all."
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:289
+#: ../../../doc/en/how-to/capture-warnings.rst:293
 msgid ""
 "Sometimes it is useful to hide some specific deprecation warnings that "
 "happen in code that you have no control over (such as third-party "
@@ -376,11 +387,11 @@ msgid ""
 "(configuration or marks) to ignore those warnings."
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:293
+#: ../../../doc/en/how-to/capture-warnings.rst:297
 msgid "For example:"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:297
+#: ../../../doc/en/how-to/capture-warnings.rst:301
 msgid ""
 "[pytest]\n"
 "filterwarnings = [\n"
@@ -388,34 +399,34 @@ msgid ""
 "]"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:306
+#: ../../../doc/en/how-to/capture-warnings.rst:310
 msgid ""
 "[pytest]\n"
 "filterwarnings =\n"
 "    ignore:.*U.*mode is deprecated:DeprecationWarning"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:313
+#: ../../../doc/en/how-to/capture-warnings.rst:317
 msgid ""
 "This will ignore all warnings of type ``DeprecationWarning`` where the start "
 "of the message matches the regular expression ``\".*U.*mode is "
 "deprecated\"``."
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:316
+#: ../../../doc/en/how-to/capture-warnings.rst:320
 msgid ""
-"See :ref:`@pytest.mark.filterwarnings <filterwarnings>` and :ref:"
-"`Controlling warnings <controlling-warnings>` for more examples."
-msgstr ""
-
-#: ../../../doc/en/how-to/capture-warnings.rst:321
-msgid ""
-"If warnings are configured at the interpreter level, using the :envvar:"
-"`python:PYTHONWARNINGS` environment variable or the ``-W`` command-line "
-"option, pytest will not configure any filters by default."
+"See :ref:`@pytest.mark.filterwarnings <filterwarnings>` "
+"and :ref:`Controlling warnings <controlling-warnings>` for more examples."
 msgstr ""
 
 #: ../../../doc/en/how-to/capture-warnings.rst:325
+msgid ""
+"If warnings are configured at the interpreter level, using "
+"the :envvar:`python:PYTHONWARNINGS` environment variable or the ``-W`` "
+"command-line option, pytest will not configure any filters by default."
+msgstr ""
+
+#: ../../../doc/en/how-to/capture-warnings.rst:329
 msgid ""
 "Also pytest doesn't follow :pep:`565` suggestion of resetting all warning "
 "filters because it might break test suites that configure warning filters "
@@ -423,18 +434,18 @@ msgid ""
 "an example of that)."
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:335
+#: ../../../doc/en/how-to/capture-warnings.rst:339
 msgid "Ensuring code triggers a deprecation warning"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:337
+#: ../../../doc/en/how-to/capture-warnings.rst:341
 msgid ""
 "You can also use :func:`pytest.deprecated_call` for checking that a certain "
 "function call triggers a ``DeprecationWarning``, "
 "``PendingDeprecationWarning`` or ``FutureWarning``:"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:341
+#: ../../../doc/en/how-to/capture-warnings.rst:345
 msgid ""
 "import pytest\n"
 "\n"
@@ -444,25 +455,25 @@ msgid ""
 "        myfunction(17)"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:350
+#: ../../../doc/en/how-to/capture-warnings.rst:354
 msgid ""
 "This test will fail if ``myfunction`` does not issue a deprecation warning "
 "when called with a ``17`` argument."
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:365
+#: ../../../doc/en/how-to/capture-warnings.rst:369
 msgid "Asserting warnings with the warns function"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:367
+#: ../../../doc/en/how-to/capture-warnings.rst:371
 msgid ""
-"You can check that code raises a particular warning using :func:`pytest."
-"warns`, which works in a similar manner to :ref:`raises <assertraises>` "
-"(except that :ref:`raises <assertraises>` does not capture all exceptions, "
-"only the ``expected_exception``):"
+"You can check that code raises a particular warning "
+"using :func:`pytest.warns`, which works in a similar manner to :ref:`raises "
+"<assertraises>` (except that :ref:`raises <assertraises>` does not capture "
+"all exceptions, only the ``expected_exception``):"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:372
+#: ../../../doc/en/how-to/capture-warnings.rst:376
 msgid ""
 "import warnings\n"
 "\n"
@@ -474,7 +485,7 @@ msgid ""
 "        warnings.warn(\"my warning\", UserWarning)"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:383
+#: ../../../doc/en/how-to/capture-warnings.rst:387
 msgid ""
 "The test will fail if the warning in question is not raised. Use the keyword "
 "argument ``match`` to assert that the warning matches a text or regex. To "
@@ -482,11 +493,11 @@ msgid ""
 "like ``(`` or ``.``, the pattern can first be escaped with ``re.escape``."
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:388
+#: ../../../doc/en/how-to/capture-warnings.rst:392
 msgid "Some examples:"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:390
+#: ../../../doc/en/how-to/capture-warnings.rst:394
 msgid ""
 ">>> with warns(UserWarning, match=\"must be 0 or None\"):\n"
 "...     warnings.warn(\"value must be 0 or None\", UserWarning)\n"
@@ -510,13 +521,14 @@ msgid ""
 "..."
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:414
+#: ../../../doc/en/how-to/capture-warnings.rst:418
 msgid ""
-"The function also returns a list of all raised warnings (as ``warnings."
-"WarningMessage`` objects), which you can query for additional information:"
+"The function also returns a list of all raised warnings (as "
+"``warnings.WarningMessage`` objects), which you can query for additional "
+"information:"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:418
+#: ../../../doc/en/how-to/capture-warnings.rst:422
 msgid ""
 "with pytest.warns(RuntimeWarning) as record:\n"
 "    warnings.warn(\"another warning\", RuntimeWarning)\n"
@@ -527,36 +539,36 @@ msgid ""
 "assert record[0].message.args[0] == \"another warning\""
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:428
+#: ../../../doc/en/how-to/capture-warnings.rst:432
 msgid ""
-"Alternatively, you can examine raised warnings in detail using the :fixture:"
-"`recwarn` fixture (see :ref:`below <recwarn>`)."
+"Alternatively, you can examine raised warnings in detail using "
+"the :fixture:`recwarn` fixture (see :ref:`below <recwarn>`)."
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:432
+#: ../../../doc/en/how-to/capture-warnings.rst:436
 msgid ""
 "The :fixture:`recwarn` fixture automatically resets the warnings filter at "
 "the end of the test, so no global state is leaked."
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:439
+#: ../../../doc/en/how-to/capture-warnings.rst:443
 msgid "Recording warnings"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:441
+#: ../../../doc/en/how-to/capture-warnings.rst:445
 msgid ""
 "You can record raised warnings either using the :func:`pytest.warns` context "
 "manager or with the :fixture:`recwarn` fixture."
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:444
+#: ../../../doc/en/how-to/capture-warnings.rst:448
 msgid ""
 "To record with :func:`pytest.warns` without asserting anything about the "
 "warnings, pass no arguments as the expected warning type and it will default "
 "to a generic Warning:"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:447
+#: ../../../doc/en/how-to/capture-warnings.rst:451
 msgid ""
 "with pytest.warns() as record:\n"
 "    warnings.warn(\"user\", UserWarning)\n"
@@ -567,12 +579,12 @@ msgid ""
 "assert str(record[1].message) == \"runtime\""
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:457
+#: ../../../doc/en/how-to/capture-warnings.rst:461
 msgid ""
 "The :fixture:`recwarn` fixture will record warnings for the whole function:"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:459
+#: ../../../doc/en/how-to/capture-warnings.rst:463
 msgid ""
 "import warnings\n"
 "\n"
@@ -587,42 +599,43 @@ msgid ""
 "    assert w.lineno"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:473
+#: ../../../doc/en/how-to/capture-warnings.rst:477
 msgid ""
 "Both the :fixture:`recwarn` fixture and the :func:`pytest.warns` context "
-"manager return the same interface for recorded warnings: a :class:`~_pytest."
-"recwarn.WarningsRecorder` instance. To view the recorded warnings, you can "
-"iterate over this instance, call ``len`` on it to get the number of recorded "
-"warnings, or index into it to get a particular recorded warning."
+"manager return the same interface for recorded warnings: "
+"a :class:`~_pytest.recwarn.WarningsRecorder` instance. To view the recorded "
+"warnings, you can iterate over this instance, call ``len`` on it to get the "
+"number of recorded warnings, or index into it to get a particular recorded "
+"warning."
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:482
+#: ../../../doc/en/how-to/capture-warnings.rst:486
 msgid "Additional use cases of warnings in tests"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:484
+#: ../../../doc/en/how-to/capture-warnings.rst:488
 msgid ""
 "Here are some use cases involving warnings that often come up in tests, and "
 "suggestions on how to deal with them:"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:486
+#: ../../../doc/en/how-to/capture-warnings.rst:490
 msgid ""
 "To ensure that **at least one** of the indicated warnings is issued, use:"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:488
+#: ../../../doc/en/how-to/capture-warnings.rst:492
 msgid ""
 "def test_warning():\n"
 "    with pytest.warns((RuntimeWarning, UserWarning)):\n"
 "        ..."
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:494
+#: ../../../doc/en/how-to/capture-warnings.rst:498
 msgid "To ensure that **only** certain warnings are issued, use:"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:496
+#: ../../../doc/en/how-to/capture-warnings.rst:500
 msgid ""
 "def test_warning(recwarn):\n"
 "    ...\n"
@@ -631,11 +644,11 @@ msgid ""
 "    assert issubclass(user_warning.category, UserWarning)"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:504
+#: ../../../doc/en/how-to/capture-warnings.rst:508
 msgid "To ensure that **no** warnings are emitted, use:"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:506
+#: ../../../doc/en/how-to/capture-warnings.rst:510
 msgid ""
 "def test_warning():\n"
 "    with warnings.catch_warnings():\n"
@@ -643,28 +656,28 @@ msgid ""
 "        ..."
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:513
+#: ../../../doc/en/how-to/capture-warnings.rst:517
 msgid "To suppress warnings, use:"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:515
+#: ../../../doc/en/how-to/capture-warnings.rst:519
 msgid ""
 "with warnings.catch_warnings():\n"
 "    warnings.simplefilter(\"ignore\")\n"
 "    ..."
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:525
+#: ../../../doc/en/how-to/capture-warnings.rst:529
 msgid "Custom failure messages"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:527
+#: ../../../doc/en/how-to/capture-warnings.rst:531
 msgid ""
 "Recording warnings provides an opportunity to produce custom test failure "
 "messages for when no warnings are issued or other conditions are met."
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:531
+#: ../../../doc/en/how-to/capture-warnings.rst:535
 msgid ""
 "def test():\n"
 "    with pytest.warns(Warning) as record:\n"
@@ -673,31 +686,31 @@ msgid ""
 "            pytest.fail(\"Expected a warning!\")"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:539
+#: ../../../doc/en/how-to/capture-warnings.rst:543
 msgid ""
 "If no warnings are issued when calling ``f``, then ``not record`` will "
 "evaluate to ``True``.  You can then call :func:`pytest.fail` with a custom "
 "error message."
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:546
+#: ../../../doc/en/how-to/capture-warnings.rst:550
 msgid "Internal pytest warnings"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:548
+#: ../../../doc/en/how-to/capture-warnings.rst:552
 msgid ""
 "pytest may generate its own warnings in some situations, such as improper "
 "usage or deprecated features."
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:550
+#: ../../../doc/en/how-to/capture-warnings.rst:554
 msgid ""
 "For example, pytest will emit a warning if it encounters a class that "
 "matches :confval:`python_classes` but also defines an ``__init__`` "
 "constructor, as this prevents the class from being instantiated:"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:553
+#: ../../../doc/en/how-to/capture-warnings.rst:557
 msgid ""
 "# content of test_pytest_warnings.py\n"
 "class Test:\n"
@@ -708,7 +721,7 @@ msgid ""
 "        assert 1 == 1"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:563
+#: ../../../doc/en/how-to/capture-warnings.rst:567
 msgid ""
 "$ pytest test_pytest_warnings.py -q\n"
 "\n"
@@ -724,43 +737,44 @@ msgid ""
 "1 warning in 0.12s"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:575
+#: ../../../doc/en/how-to/capture-warnings.rst:579
 msgid ""
 "These warnings might be filtered using the same builtin mechanisms used to "
 "filter other types of warnings."
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:577
+#: ../../../doc/en/how-to/capture-warnings.rst:581
 msgid ""
 "Please read our :ref:`backwards-compatibility` to learn how we proceed about "
 "deprecating and eventually removing features."
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:580
+#: ../../../doc/en/how-to/capture-warnings.rst:584
 msgid ""
 "The full list of warnings is listed in :ref:`the reference documentation "
 "<warnings ref>`."
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:586
+#: ../../../doc/en/how-to/capture-warnings.rst:590
 msgid "Resource Warnings"
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:588
+#: ../../../doc/en/how-to/capture-warnings.rst:592
 msgid ""
 "Additional information of the source of a :class:`ResourceWarning` can be "
 "obtained when captured by pytest if :mod:`tracemalloc` module is enabled."
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:591
+#: ../../../doc/en/how-to/capture-warnings.rst:595
 msgid ""
 "One convenient way to enable :mod:`tracemalloc` when running tests is to set "
 "the :envvar:`PYTHONTRACEMALLOC` to a large enough number of frames (say "
 "``20``, but that number is application dependent)."
 msgstr ""
 
-#: ../../../doc/en/how-to/capture-warnings.rst:594
+#: ../../../doc/en/how-to/capture-warnings.rst:598
 msgid ""
-"For more information, consult the `Python Development Mode <https://docs."
-"python.org/3/library/devmode.html>`__ section in the Python documentation."
+"For more information, consult the `Python Development Mode <https://"
+"docs.python.org/3/library/devmode.html>`__ section in the Python "
+"documentation."
 msgstr ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-16 17:34+0000\n"
+"POT-Creation-Date: 2026-11-23 19:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,7 +38,7 @@ msgid "To be included in v\\ |release| (if present)"
 msgstr ""
 
 #: ../../../doc/[towncrier-fragments]:2
-msgid "pytest \\ |release| [UNRELEASED DRAFT] (2026-11-16)"
+msgid "pytest \\ |release| [UNRELEASED DRAFT] (2026-11-23)"
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:58 ../../../doc/en/changelog.rst:505
@@ -70,6 +70,22 @@ msgid ""
 "was probably intended."
 msgstr ""
 
+#: ../../../doc/[towncrier-fragments]:17
+msgid ""
+"`#14630 <https://github.com/pytest-dev/pytest/issues/14630>`_: "
+"``pytestmark`` may now be any sequence of marks, for example a tuple, "
+"instead of only a ``list`` or a single mark. This applies consistently to "
+"modules, classes and functions."
+msgstr ""
+
+#: ../../../doc/[towncrier-fragments]:21
+msgid ""
+"`#4871 <https://github.com/pytest-dev/pytest/issues/4871>`_: Function-scoped "
+"fixtures no longer register their finalizer with the higher-scoped fixtures "
+"they request, so finalizers no longer accumulate in fixtures such as "
+"``tmp_path_factory`` for every test that uses ``tmp_path``."
+msgstr ""
+
 #: ../../../doc/en/changelog.rst:209 ../../../doc/en/changelog.rst:472
 #: ../../../doc/en/changelog.rst:646 ../../../doc/en/changelog.rst:801
 #: ../../../doc/en/changelog.rst:853 ../../../doc/en/changelog.rst:884
@@ -77,11 +93,46 @@ msgstr ""
 #: ../../../doc/en/changelog.rst:1278 ../../../doc/en/changelog.rst:1569
 #: ../../../doc/en/changelog.rst:1727 ../../../doc/en/changelog.rst:1768
 #: ../../../doc/en/changelog.rst:1809 ../../../doc/en/changelog.rst:1855
-#: ../../../doc/en/changelog.rst:1971 ../../../doc/[towncrier-fragments]:19
+#: ../../../doc/en/changelog.rst:1971 ../../../doc/[towncrier-fragments]:26
 msgid "Bug fixes"
 msgstr ""
 
-#: ../../../doc/[towncrier-fragments]:21
+#: ../../../doc/[towncrier-fragments]:28
+msgid ""
+"`#10406 <https://github.com/pytest-dev/pytest/issues/"
+"10406>`_: :ref:`filterwarnings <pytest.mark.filterwarnings ref>` marks on a "
+"closer level now take precedence over marks on a farther one: a mark from "
+"parametrization over one on the test function, the function over its class, "
+"and a class over the module. Previously the farthest mark won, so for "
+"example a module or class level ``filterwarnings(\"error\")`` overrode a "
+"test's own ``filterwarnings(\"ignore\")``."
+msgstr ""
+
+#: ../../../doc/[towncrier-fragments]:34
+msgid ""
+"`#14329 <https://github.com/pytest-dev/pytest/issues/"
+"14329>`_: :meth:`~_pytest.nodes.Node.iter_markers` "
+"and :meth:`~_pytest.nodes.Node.get_closest_marker` now walk the class MRO "
+"closest-first, so a marker on a subclass takes precedence over the same "
+"marker on one of its base classes. This includes :ref:`skipif "
+"<pytest.mark.skipif ref>` and :ref:`xfail <pytest.mark.xfail ref>`: a "
+"subclass' mark now decides, where previously the base class' did, for "
+"example a base class' ``strict=True`` no longer applies when the subclass "
+"has its own ``xfail``."
+msgstr ""
+
+#: ../../../doc/[towncrier-fragments]:41
+msgid ""
+"``own_markers`` keeps its previous (base class first) order, and so do the "
+"consumers that compose markers rather than look one up: :ref:`usefixtures "
+"<usefixtures>` fixtures are still requested in the same order as before, "
+"inherited class level :ref:`parametrize <pytest.mark.parametrize ref>` "
+"markers still compose their test IDs the same way, and a "
+"subclass' :ref:`filterwarnings <pytest.mark.filterwarnings ref>` still takes "
+"precedence over its base class'."
+msgstr ""
+
+#: ../../../doc/[towncrier-fragments]:49
 msgid ""
 "`#15201 <https://github.com/pytest-dev/pytest/issues/15201>`_: Subtest "
 "timing (start, stop and duration) no longer breaks when the test under "
@@ -89,14 +140,14 @@ msgid ""
 "now uses pytest's internal timing like regular test phases do."
 msgstr ""
 
-#: ../../../doc/[towncrier-fragments]:24
+#: ../../../doc/[towncrier-fragments]:52
 msgid ""
 "`#15284 <https://github.com/pytest-dev/pytest/issues/15284>`_: Fixed a "
 "regression in :func:`pytest.approx` with JAX arrays when an inexact float "
 "tolerance is supplied."
 msgstr ""
 
-#: ../../../doc/[towncrier-fragments]:27
+#: ../../../doc/[towncrier-fragments]:55
 msgid ""
 "`#15290 <https://github.com/pytest-dev/pytest/issues/15290>`_: Native TOML "
 "configuration again accepts numeric strings such as ``\"2\"`` "
@@ -105,7 +156,7 @@ msgid ""
 "regressed by :pr:`15153`."
 msgstr ""
 
-#: ../../../doc/[towncrier-fragments]:30
+#: ../../../doc/[towncrier-fragments]:58
 msgid ""
 "`#15337 <https://github.com/pytest-dev/pytest/issues/15337>`_: Fixed an "
 "``INTERNALERROR`` crash when running pytest on Python 3.10.0 exactly: a "
@@ -113,20 +164,43 @@ msgid ""
 "(:issue:`15337`)."
 msgstr ""
 
-#: ../../../doc/[towncrier-fragments]:33
+#: ../../../doc/[towncrier-fragments]:61
 msgid ""
 "`#15361 <https://github.com/pytest-dev/pytest/issues/15361>`_: Fixed an "
 "``IndexError`` in ``Collector.repr_failure`` when ``CollectError`` is raised "
 "without arguments."
 msgstr ""
 
-#: ../../../doc/[towncrier-fragments]:36
+#: ../../../doc/[towncrier-fragments]:64
 msgid ""
 "`#15370 <https://github.com/pytest-dev/pytest/issues/15370>`_: "
 "Fixed :ref:`@pytest.mark.parametrize <pytest.mark.parametrize ref>` ``ids`` "
 "being escaped again for every further test sharing the mark (for example on "
 "a class, or across repeated :func:`pytest.main` calls): the mark now stores "
 "the raw ids instead of the resolved ones."
+msgstr ""
+
+#: ../../../doc/[towncrier-fragments]:67
+msgid ""
+"`#15406 <https://github.com/pytest-dev/pytest/issues/15406>`_: Fixed "
+"quadratic slowdown of the ``-rP``/``-rX`` and failure summaries in large "
+"test suites, caused by rescanning all teardown reports for every test."
+msgstr ""
+
+#: ../../../doc/[towncrier-fragments]:70
+msgid ""
+"`#2353 <https://github.com/pytest-dev/pytest/issues/2353>`_: "
+"``pytest_plugins`` entries imported as a side effect of another plugin now "
+"also get assertion rewriting."
+msgstr ""
+
+#: ../../../doc/[towncrier-fragments]:73
+msgid ""
+"`#7623 <https://github.com/pytest-dev/pytest/issues/"
+"7623>`_: :meth:`pytester.run <pytest.Pytester.run>` no longer raises "
+"``UnicodeDecodeError`` when a command writes output which is not valid "
+"UTF-8, such as a Python subprocess on a host whose locale encoding is not "
+"UTF-8; the undecodable bytes are now escaped instead."
 msgstr ""
 
 #: ../../../doc/en/changelog.rst:30
