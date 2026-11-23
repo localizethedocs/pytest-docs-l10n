@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pytest latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-16 17:34+0000\n"
+"POT-Creation-Date: 2026-11-23 19:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3316,7 +3316,7 @@ msgstr ""
 #: of _pytest.pytester.Pytester.run:3
 msgid ""
 "Run a process using :py:class:`subprocess.Popen` saving the stdout and "
-"stderr."
+"stderr. The output is decoded as UTF-8, with undecodable bytes escaped."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/pytester.py:docstring
@@ -6308,16 +6308,22 @@ msgstr ""
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
 #: of _pytest.nodes.Node.iter_markers:3
 #: _pytest.nodes.Node.iter_markers_with_node:3
+msgid "The markers are returned from closest to farthest."
+msgstr ""
+
+#: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
+#: of _pytest.nodes.Node.iter_markers:5
+#: _pytest.nodes.Node.iter_markers_with_node:5
 msgid "If given, filter the results by the name attribute."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
-#: of _pytest.nodes.Node.iter_markers:4
+#: of _pytest.nodes.Node.iter_markers:6
 msgid "An iterator of the markers of the node."
 msgstr ""
 
 #: ../../../../../.conda/lib/python3.12/site-packages/_pytest/nodes.py:docstring
-#: of _pytest.nodes.Node.iter_markers_with_node:4
+#: of _pytest.nodes.Node.iter_markers_with_node:6
 msgid "An iterator of (node, mark) tuples."
 msgstr ""
 

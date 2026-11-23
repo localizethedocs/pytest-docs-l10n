@@ -37,9 +37,9 @@
     "branch" : "main",
     "commit" : 
     {
-      "date" : "2026-11-15 11:11:52 -0300",
-      "hash" : "50234b4e670064c42a4c29cb6258115a2079ba4c",
-      "title" : "Fix startup crash on Python 3.10.0 caused by missing NodeId cache (#15342)"
+      "date" : "2026-11-22 08:04:23 +0000",
+      "hash" : "718929265449ca33040264152ba5e7022e766a52",
+      "title" : "[automated] Update plugin list (#15428)"
     }
   },
   "type" : "branch",
