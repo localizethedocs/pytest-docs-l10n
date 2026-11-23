@@ -535,6 +535,3 @@ msgstr ""
 #: ../../../doc/en/getting-started.rst:316
 msgid "\":ref:`goodpractices`\" for virtualenv and test layouts"
 msgstr ""
-
-#~ msgid "pip install -U pytest"
-#~ msgstr "pip install -U pytest"
