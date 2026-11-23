@@ -41,11 +41,11 @@ msgstr ""
 
 #: ../../../doc/en/announce/release-9.1.1.rst:12
 msgid "Bruno Oliveira"
-msgstr ""
+msgstr "Bruno Oliveira"
 
 #: ../../../doc/en/announce/release-9.1.1.rst:13
 msgid "Ran Benita"
-msgstr ""
+msgstr "Ran Benita"
 
 #: ../../../doc/en/announce/release-9.1.1.rst:16
 msgid "Happy testing, The pytest Development Team"
