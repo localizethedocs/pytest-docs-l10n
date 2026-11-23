@@ -1,0 +1,373 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>_pytest.cacheprovider &#8212; pytest documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/flasky.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/pytest-docs-l10n/_modules/_pytest/cacheprovider.html" />
+    <link rel="shortcut icon" href="../../_static/pytest1favi.ico"/>
+    <link rel="search" title="搜索" href="../../search.html" />
+
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+<script type="text/javascript" src="../../ltd-provenance.js"></script>
+<script type="text/javascript" src="../../ltd-current.js"></script>
+<script type="text/javascript" src="../../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../../ltd-flyout.js"></script>
+
+  </head><body>
+  
+  
+  
+
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="nav-item nav-item-0"><a href="../../contents.html">pytest-2.9.2</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">模块代码</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">_pytest.cacheprovider</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>_pytest.cacheprovider 源代码</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">merged implementation of the cache provider</span>
+
+<span class="sd">the name cache was not choosen to ensure pluggy automatically</span>
+<span class="sd">ignores the external pytest-cache</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">py</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">os.path</span><span class="w"> </span><span class="kn">import</span> <span class="n">sep</span> <span class="k">as</span> <span class="n">_sep</span><span class="p">,</span> <span class="n">altsep</span> <span class="k">as</span> <span class="n">_altsep</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Cache</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">config</span> <span class="o">=</span> <span class="n">config</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cachedir</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">rootdir</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;.cache&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">trace</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">trace</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;cache&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">config</span><span class="o">.</span><span class="n">getvalue</span><span class="p">(</span><span class="s2">&quot;cacheclear&quot;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">trace</span><span class="p">(</span><span class="s2">&quot;clearing cachedir&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cachedir</span><span class="o">.</span><span class="n">check</span><span class="p">():</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_cachedir</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_cachedir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">()</span>
+
+<div class="viewcode-block" id="Cache.makedir"><a class="viewcode-back" href="../../cache.html#_pytest.cacheprovider.Cache.makedir">[文档]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">makedir</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; return a directory path object with the given name.  If the</span>
+<span class="sd">        directory does not yet exist, it will be created.  You can use it</span>
+<span class="sd">        to manage files likes e. g. store/retrieve database</span>
+<span class="sd">        dumps across test sessions.</span>
+
+<span class="sd">        :param name: must be a string not containing a ``/`` separator.</span>
+<span class="sd">             Make sure the name contains your plugin or application</span>
+<span class="sd">             identifiers to prevent clashes with other cache users.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">_sep</span> <span class="ow">in</span> <span class="n">name</span> <span class="ow">or</span> <span class="n">_altsep</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">_altsep</span> <span class="ow">in</span> <span class="n">name</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;name is not allowed to contain path separators&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cachedir</span><span class="o">.</span><span class="n">ensure_dir</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span></div>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_getvaluepath</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cachedir</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">key</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">))</span>
+
+<div class="viewcode-block" id="Cache.get"><a class="viewcode-back" href="../../cache.html#_pytest.cacheprovider.Cache.get">[文档]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">default</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; return cached value for the given key.  If no value</span>
+<span class="sd">        was yet cached or the value cannot be read, the specified</span>
+<span class="sd">        default is returned.</span>
+
+<span class="sd">        :param key: must be a ``/`` separated value. Usually the first</span>
+<span class="sd">             name is the name of your plugin or your application.</span>
+<span class="sd">        :param default: must be provided in case of a cache-miss or</span>
+<span class="sd">             invalid cache values.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getvaluepath</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">path</span><span class="o">.</span><span class="n">check</span><span class="p">():</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">with</span> <span class="n">path</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">trace</span><span class="p">(</span><span class="s2">&quot;cache-invalid at </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">path</span><span class="p">,))</span>
+        <span class="k">return</span> <span class="n">default</span></div>
+
+<div class="viewcode-block" id="Cache.set"><a class="viewcode-back" href="../../cache.html#_pytest.cacheprovider.Cache.set">[文档]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; save value for the given key.</span>
+
+<span class="sd">        :param key: must be a ``/`` separated value. Usually the first</span>
+<span class="sd">             name is the name of your plugin or your application.</span>
+<span class="sd">        :param value: must be of any combination of basic</span>
+<span class="sd">               python types, including nested types</span>
+<span class="sd">               like e. g. lists of dictionaries.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getvaluepath</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">path</span><span class="o">.</span><span class="n">dirpath</span><span class="p">()</span><span class="o">.</span><span class="n">ensure_dir</span><span class="p">()</span>
+        <span class="k">except</span> <span class="p">(</span><span class="n">py</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">EEXIST</span><span class="p">,</span> <span class="n">py</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">EACCES</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+                <span class="n">code</span><span class="o">=</span><span class="s1">&#39;I9&#39;</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s1">&#39;could not create cache path </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">path</span><span class="p">,)</span>
+            <span class="p">)</span>
+            <span class="k">return</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">py</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">ENOTDIR</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+                <span class="n">code</span><span class="o">=</span><span class="s1">&#39;I9&#39;</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s1">&#39;cache could not write path </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">path</span><span class="p">,))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">with</span> <span class="n">f</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">trace</span><span class="p">(</span><span class="s2">&quot;cache-write </span><span class="si">%s</span><span class="s2">: </span><span class="si">%r</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">,))</span>
+                <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">LFPlugin</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Plugin which implements the --lf (run last-failing) option &quot;&quot;&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">config</span> <span class="o">=</span> <span class="n">config</span>
+        <span class="n">active_keys</span> <span class="o">=</span> <span class="s1">&#39;lf&#39;</span><span class="p">,</span> <span class="s1">&#39;failedfirst&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">active</span> <span class="o">=</span> <span class="nb">any</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">getvalue</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">active_keys</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">active</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">lastfailed</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;cache/lastfailed&quot;</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">lastfailed</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">pytest_report_header</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">active</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">lastfailed</span><span class="p">:</span>
+                <span class="n">mode</span> <span class="o">=</span> <span class="s2">&quot;run all (no recorded failures)&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">mode</span> <span class="o">=</span> <span class="s2">&quot;rerun last </span><span class="si">%d</span><span class="s2"> failures</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span>
+                    <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lastfailed</span><span class="p">),</span>
+                    <span class="s2">&quot; first&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">getvalue</span><span class="p">(</span><span class="s2">&quot;failedfirst&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="s2">&quot;run-last-failure: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">mode</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">pytest_runtest_logreport</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">report</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">report</span><span class="o">.</span><span class="n">failed</span> <span class="ow">and</span> <span class="s2">&quot;xfail&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">report</span><span class="o">.</span><span class="n">keywords</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">lastfailed</span><span class="p">[</span><span class="n">report</span><span class="o">.</span><span class="n">nodeid</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="n">report</span><span class="o">.</span><span class="n">failed</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">report</span><span class="o">.</span><span class="n">when</span> <span class="o">==</span> <span class="s2">&quot;call&quot;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">lastfailed</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">report</span><span class="o">.</span><span class="n">nodeid</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">pytest_collectreport</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">report</span><span class="p">):</span>
+        <span class="n">passed</span> <span class="o">=</span> <span class="n">report</span><span class="o">.</span><span class="n">outcome</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;passed&#39;</span><span class="p">,</span> <span class="s1">&#39;skipped&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">passed</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">report</span><span class="o">.</span><span class="n">nodeid</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">lastfailed</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">lastfailed</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">report</span><span class="o">.</span><span class="n">nodeid</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">lastfailed</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+                    <span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">nodeid</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">report</span><span class="o">.</span><span class="n">result</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">lastfailed</span><span class="p">[</span><span class="n">report</span><span class="o">.</span><span class="n">nodeid</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">pytest_collection_modifyitems</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">session</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">items</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">active</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">lastfailed</span><span class="p">:</span>
+            <span class="n">previously_failed</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">previously_passed</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">nodeid</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">lastfailed</span><span class="p">:</span>
+                    <span class="n">previously_failed</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">previously_passed</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">previously_failed</span> <span class="ow">and</span> <span class="n">previously_passed</span><span class="p">:</span>
+                <span class="c1"># running a subset of all tests with recorded failures outside</span>
+                <span class="c1"># of the set of tests currently executing</span>
+                <span class="k">pass</span>
+            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">getvalue</span><span class="p">(</span><span class="s2">&quot;failedfirst&quot;</span><span class="p">):</span>
+                <span class="n">items</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">previously_failed</span> <span class="o">+</span> <span class="n">previously_passed</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">items</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">previously_failed</span>
+                <span class="n">config</span><span class="o">.</span><span class="n">hook</span><span class="o">.</span><span class="n">pytest_deselected</span><span class="p">(</span><span class="n">items</span><span class="o">=</span><span class="n">previously_passed</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">pytest_sessionfinish</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">session</span><span class="p">):</span>
+        <span class="n">config</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span>
+        <span class="k">if</span> <span class="n">config</span><span class="o">.</span><span class="n">getvalue</span><span class="p">(</span><span class="s2">&quot;cacheshow&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="s2">&quot;slaveinput&quot;</span><span class="p">):</span>
+            <span class="k">return</span>
+        <span class="n">prev_failed</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;cache/lastfailed&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">session</span><span class="o">.</span><span class="n">testscollected</span> <span class="ow">and</span> <span class="n">prev_failed</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">lastfailed</span><span class="p">:</span>
+            <span class="n">config</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;cache/lastfailed&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">lastfailed</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">pytest_addoption</span><span class="p">(</span><span class="n">parser</span><span class="p">):</span>
+    <span class="n">group</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">getgroup</span><span class="p">(</span><span class="s2">&quot;general&quot;</span><span class="p">)</span>
+    <span class="n">group</span><span class="o">.</span><span class="n">addoption</span><span class="p">(</span>
+        <span class="s1">&#39;--lf&#39;</span><span class="p">,</span> <span class="s1">&#39;--last-failed&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;lf&quot;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;rerun only the tests that failed &quot;</span>
+             <span class="s2">&quot;at the last run (or all if none failed)&quot;</span><span class="p">)</span>
+    <span class="n">group</span><span class="o">.</span><span class="n">addoption</span><span class="p">(</span>
+        <span class="s1">&#39;--ff&#39;</span><span class="p">,</span> <span class="s1">&#39;--failed-first&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;failedfirst&quot;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;run all tests but run the last failures first.  &quot;</span>
+             <span class="s2">&quot;This may re-order tests and thus lead to &quot;</span>
+             <span class="s2">&quot;repeated fixture setup/teardown&quot;</span><span class="p">)</span>
+    <span class="n">group</span><span class="o">.</span><span class="n">addoption</span><span class="p">(</span>
+        <span class="s1">&#39;--cache-show&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;cacheshow&quot;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;show cache contents, don&#39;t perform collection or tests&quot;</span><span class="p">)</span>
+    <span class="n">group</span><span class="o">.</span><span class="n">addoption</span><span class="p">(</span>
+        <span class="s1">&#39;--cache-clear&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;cacheclear&quot;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;remove all cache contents at start of test run.&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">pytest_cmdline_main</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">config</span><span class="o">.</span><span class="n">option</span><span class="o">.</span><span class="n">cacheshow</span><span class="p">:</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">_pytest.main</span><span class="w"> </span><span class="kn">import</span> <span class="n">wrap_session</span>
+        <span class="k">return</span> <span class="n">wrap_session</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">cacheshow</span><span class="p">)</span>
+
+
+
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">hookimpl</span><span class="p">(</span><span class="n">tryfirst</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">pytest_configure</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">cache</span> <span class="o">=</span> <span class="n">Cache</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">pluginmanager</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">LFPlugin</span><span class="p">(</span><span class="n">config</span><span class="p">),</span> <span class="s2">&quot;lfplugin&quot;</span><span class="p">)</span>
+
+
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">cache</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return a cache object that can persist state between testing sessions.</span>
+
+<span class="sd">    cache.get(key, default)</span>
+<span class="sd">    cache.set(key, value)</span>
+
+<span class="sd">    Keys must be a ``/`` separated value, where the first part is usually the</span>
+<span class="sd">    name of your plugin or application to avoid clashes with other cache users.</span>
+
+<span class="sd">    Values can be any object handled by the json stdlib module.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">request</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">cache</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">pytest_report_header</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">config</span><span class="o">.</span><span class="n">option</span><span class="o">.</span><span class="n">verbose</span><span class="p">:</span>
+        <span class="n">relpath</span> <span class="o">=</span> <span class="n">py</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">local</span><span class="p">()</span><span class="o">.</span><span class="n">bestrelpath</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">_cachedir</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s2">&quot;cachedir: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">relpath</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">cacheshow</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">session</span><span class="p">):</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
+    <span class="n">tw</span> <span class="o">=</span> <span class="n">py</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">TerminalWriter</span><span class="p">()</span>
+    <span class="n">tw</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="s2">&quot;cachedir: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">_cachedir</span><span class="p">))</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">config</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">_cachedir</span><span class="o">.</span><span class="n">check</span><span class="p">():</span>
+        <span class="n">tw</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="s2">&quot;cache is empty&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="n">dummy</span> <span class="o">=</span> <span class="nb">object</span><span class="p">()</span>
+    <span class="n">basedir</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">_cachedir</span>
+    <span class="n">vdir</span> <span class="o">=</span> <span class="n">basedir</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;v&quot;</span><span class="p">)</span>
+    <span class="n">tw</span><span class="o">.</span><span class="n">sep</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;cache values&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">valpath</span> <span class="ow">in</span> <span class="n">vdir</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">isfile</span><span class="p">()):</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="n">valpath</span><span class="o">.</span><span class="n">relto</span><span class="p">(</span><span class="n">vdir</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">valpath</span><span class="o">.</span><span class="n">sep</span><span class="p">,</span> <span class="s2">&quot;/&quot;</span><span class="p">)</span>
+        <span class="n">val</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">dummy</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">val</span> <span class="ow">is</span> <span class="n">dummy</span><span class="p">:</span>
+            <span class="n">tw</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> contains unreadable content, &quot;</span>
+                  <span class="s2">&quot;will be ignored&quot;</span> <span class="o">%</span> <span class="n">key</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">tw</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> contains:&quot;</span> <span class="o">%</span> <span class="n">key</span><span class="p">)</span>
+            <span class="n">stream</span> <span class="o">=</span> <span class="n">py</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">TextIO</span><span class="p">()</span>
+            <span class="n">pprint</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="n">stream</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">stream</span><span class="o">.</span><span class="n">getvalue</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">():</span>
+                <span class="n">tw</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="s2">&quot;  &quot;</span> <span class="o">+</span> <span class="n">line</span><span class="p">)</span>
+
+    <span class="n">ddir</span> <span class="o">=</span> <span class="n">basedir</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">ddir</span><span class="o">.</span><span class="n">isdir</span><span class="p">()</span> <span class="ow">and</span> <span class="n">ddir</span><span class="o">.</span><span class="n">listdir</span><span class="p">():</span>
+        <span class="n">tw</span><span class="o">.</span><span class="n">sep</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;cache directories&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">basedir</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">visit</span><span class="p">():</span>
+            <span class="c1">#if p.check(dir=1):</span>
+            <span class="c1">#    print(&quot;%s/&quot; % p.relto(basedir))</span>
+            <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">isfile</span><span class="p">():</span>
+                <span class="n">key</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">relto</span><span class="p">(</span><span class="n">basedir</span><span class="p">)</span>
+                <span class="n">tw</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> is a file of length </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span>
+                        <span class="n">key</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">size</span><span class="p">()))</span>
+    <span class="k">return</span> <span class="mi">0</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../contents.html">
+              <img class="logo" src="../../_static/pytest1.png" alt="Logo"/>
+            </a></p><h3><a href="../../contents.html">Table Of Contents</a></h3>
+
+<ul>
+  <li><a href="../../index.html">Home</a></li>
+  <li><a href="../../contents.html">目录</a></li>
+  <li><a href="../../getting-started.html">Install</a></li>
+  <li><a href="../../example/index.html">实际案例</a></li>
+  <li><a href="../../customize.html">Customize</a></li>
+  <li><a href="../../contact.html">Contact</a></li>
+  <li><a href="../../talks.html">Talks/Posts</a></li>
+  <li><a href="../../changelog.html">Changelog</a></li>
+  <li><a href="../../license.html">License</a></li>
+</ul><h3>Related Topics</h3>
+<ul>
+  <li><a href="../../contents.html">Documentation overview</a><ul>
+  <li><a href="../index.html">模块代码</a><ul>
+  </ul></li>
+  </ul></li>
+</ul><h3>Useful Links</h3>
+<ul>
+  <li>
+    <a href="https://www.indiegogo.com/projects/python-testing-sprint-mid-2016#/">
+      <b>Sprint funding campaign</b>
+    </a>
+  </li>
+  <li><a href="../../index.html">The pytest Website</a></li>
+  <li><a href="../../contributing.html">Contribution Guide</a></li>
+  <li><a href="https://pypi.python.org/pypi/pytest">pytest @ PyPI</a></li>
+  <li><a href="https://github.com/pytest-dev/pytest/">pytest @ GitHub</a></li>
+  <li><a href="http://plugincompat.herokuapp.com/">3rd party plugins</a></li>
+  <li><a href="https://github.com/pytest-dev/pytest/issues">Issue Tracker</a></li>
+  <li><a href="http://pytest.org/latest/pytest.pdf">PDF Documentation</a>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">快速搜索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="转向" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+  <div class="footer">
+    &copy; Copyright 2015, holger krekel and pytest-dev team.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-7597274-13']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+  </body>
+</html>

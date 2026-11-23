@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_TW">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>py.test 2.0.0：a斷言++、單元測試++、報告++、設定++、文件++ &#8212; pytest documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/flasky.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/pytest-docs-l10n/announce/release-2.0.0.html" />
+    <link rel="shortcut icon" href="../_static/pytest1favi.ico"/>
+    <link rel="search" title="搜尋" href="../search.html" />
+    <link rel="next" title="Changelog history" href="../changelog.html" />
+    <link rel="prev" title="py.test 2.0.1: bug fixes" href="release-2.0.1.html" />
+
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+<script type="text/javascript" src="../ltd-provenance.js"></script>
+<script type="text/javascript" src="../ltd-current.js"></script>
+<script type="text/javascript" src="../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../ltd-flyout.js"></script>
+
+  </head><body>
+  
+  
+  
+
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>瀏覽</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../changelog.html" title="Changelog history"
+             accesskey="N">下一頁</a></li>
+        <li class="right" >
+          <a href="release-2.0.1.html" title="py.test 2.0.1: bug fixes"
+             accesskey="P">上一頁</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">pytest-3.10</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">版本發布公告</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">py.test 2.0.0：a斷言++、單元測試++、報告++、設定++、文件++</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="py-test-2-0-0-asserts-unittest-reporting-config-docs">
+<h1>py.test 2.0.0：a斷言++、單元測試++、報告++、設定++、文件++<a class="headerlink" href="#py-test-2-0-0-asserts-unittest-reporting-config-docs" title="本標題的永久連結">¶</a></h1>
+<p>歡迎使用 pytest-2.0.0，這是快速且方便的 Python 測試工具「py.test」的重大新版本。新版本包含許多新功能和改進，請參閱以下摘要和詳細清單。大量長期棄用的程式碼已被移除，使得新版本更加精簡簡潔。請在此處查看包含範例的新文件：</p>
+<blockquote>
+<div><p><a class="reference external" href="http://pytest.org/2.0.0/index.html">http://pytest.org/2.0.0/index.html</a></p>
+</div></blockquote>
+<p>關於打包的說明：pytest 曾經是 py 發行版的一部分，直到 py-1.3.4 版本才被包含在內，但現在情況已經改變：pytest-2.0.0 只包含與 py.test 相關的程式碼，並且預計會向後相容現有的測試程式碼。如果您想安裝 pytest，只需輸入以下命令之一:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">pytest</span>
+<span class="n">easy_install</span> <span class="o">-</span><span class="n">U</span> <span class="n">pytest</span>
+</pre></div>
+</div>
+<p>非常感謝所有報告問題、提出疑問或投訴的人。特別感謝 Floris Bruynooghe 和 Ronny Pfannschmidt 出色的代碼貢獻，以及其他許多人的回饋和幫助。</p>
+<p>此致，霍爾格·克雷克爾</p>
+<div class="section" id="new-features">
+<h2>新功能<a class="headerlink" href="#new-features" title="本標題的永久連結">¶</a></h2>
+<ul>
+<li><p>透過 Python 解釋器和從 Python 發起的新呼叫:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pytest</span> <span class="c1"># 適用於所有 Python 版本 &gt;= 2.5</span>
+</pre></div>
+</div>
+<p>或從 Python 程式:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>導入 pytest ； pytest.main（參數列表，外掛程式列表）
+</pre></div>
+</div>
+<p>see <a class="reference external" href="http://pytest.org/2.0.0/usage.html">http://pytest.org/2.0.0/usage.html</a> for details.</p>
+</li>
+<li><p>在比較列表、序列或字串時，斷言表達式中會提供新的、更好的報告資訊。</p>
+<p>see <a class="reference external" href="http://pytest.org/2.0.0/assert.html#newreport">http://pytest.org/2.0.0/assert.html#newreport</a></p>
+</li>
+<li><p>例如，透過 ini 檔案（可識別 setup.cfg 或 tox.ini）進行新配置，例如:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">pytest</span><span class="p">]</span>
+
+<span class="n">norecursedirs</span> <span class="o">=</span> <span class="o">.</span><span class="n">hg</span> <span class="n">data</span><span class="o">*</span> <span class="c1"># 永遠不要在這樣的目錄中遞歸</span>
+
+<span class="n">addopts</span> <span class="o">=</span> <span class="o">-</span><span class="n">x</span> <span class="o">--</span><span class="n">pyargs</span> <span class="c1"># 預設新增這些命令列選項</span>
+</pre></div>
+</div>
+<p>see <a class="reference external" href="http://pytest.org/2.0.0/customize.html">http://pytest.org/2.0.0/customize.html</a></p>
+</li>
+<li><p>改進了對標準單元測試的支援。一般來說，py.test 現在應該能夠更好地運行自訂的 unittest.TestCases，例如 Twisted Trial 或基於 Django 的 TestCases。此外，您現在可以使用 py.test:: 執行已安裝的 『unittest』 套件的測試:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">py</span><span class="o">.</span><span class="n">test</span> <span class="o">--</span><span class="n">pyargs</span> <span class="n">unittest</span>
+</pre></div>
+</div>
+</li>
+<li><p>新增“-q”選項，可減少輸出詳細信息，並列印更像 nose/unittest 風格的“點”輸出。</p></li>
+<li><p>many many more detailed improvements details</p></li>
+</ul>
+</div>
+<div class="section" id="fixes">
+<h2>修復<a class="headerlink" href="#fixes" title="本標題的永久連結">¶</a></h2>
+<ul class="simple">
+<li><p>修復問題 - 引入 py.test.set_trace()，以便在測試運行時透過 PDB 追蹤執行情況，即使捕獲正在進行中。</p></li>
+<li><p>修復問題 - 使報告對測試開啟檔案描述符 1（stdout）上的檔案更具彈性。</p></li>
+<li><p>修復問題 - 同級 conftest.py 檔案將無法載入。 （且目錄收集器無法再從目錄的 conftest.py 中進行自訂 - 這需要在至少上一層目錄中進行）。</p></li>
+<li><p>修復問題 （從命令列參數尋找自訂測試節點）</p></li>
+<li><p>修復問題：匯入 conftest.py 時捕捉 stdout/stderr</p></li>
+<li><p>修復錯誤：unittest 收集的函數現在也可以在類別/模組層級應用“pytestmark”</p></li>
+</ul>
+</div>
+<div class="section" id="important-notes">
+<h2>重要提示<a class="headerlink" href="#important-notes" title="本標題的永久連結">¶</a></h2>
+<ul class="simple">
+<li><p>在 Python 2.0 版本之前，在 Python 程式碼中使用 <cite>py.test</cite> 的常用方法是先匯入 <cite>py</cite>，然後使用例如 <cite>py.test.raises</cite> 來呼叫輔助方法。這種方法仍然有效，目前沒有棄用的計劃。但是，在大多數範例和內部程式碼中，你會發現建議的預設方法是直接匯入 <cite>pytest</cite> 並呼叫 <cite>pytest.raises</cite>。</p></li>
+<li><p>pytest 現在會在執行任何測試之前先收集完整的測試套件。這改變了例如 pytest_collectstart/pytest_collectreport 的呼叫語意。某些插件可能需要升級。</p></li>
+<li><p>這個pytest 套件包含一個 400 行程式碼的 core.py 檔案和大約 20 個內建插件，總計約 5000 行程式碼包括文件字串。公平地說，它還使用了來自“pylib”的通用程式碼以及新的“py”包，以輔助檔案系統和程式碼自省/操作。</p></li>
+</ul>
+</div>
+<div class="section" id="incompatible-removals">
+<h2>（不相容的）移除<a class="headerlink" href="#incompatible-removals" title="本標題的永久連結">¶</a></h2>
+<ul>
+<li><p>現在只有在測試執行階段才能使用 py.test.config。</p></li>
+<li><p>以下功能（大部分已棄用）已移除：</p>
+<ul class="simple">
+<li><p>已移除 conftest.py 檔案中 Module/Class/… 集合節點定義的支援。這不會造成任何特殊影響。</p></li>
+<li><p>移除了對呼叫 1.0 版本之前的集合 API 中的「run()」和「join」函數的支援</p></li>
+<li><p>removed reading option values from conftest.py files or env variables.
+This can now be done much much better and easier through the ini-file
+mechanism and the 「addopts」 entry in particular.</p></li>
+<li><p>已移除測試類別中的“abled”屬性。請使用 skipping 和 pytestmark 機制跳過或使測試類別失敗。</p></li>
+</ul>
+</li>
+<li><p>py.test.collect.Directory 已不再存在，也無法提供自訂的「Directory」物件。如果您之前使用過此功能但現在不知​​道該如何處理，請與我們聯絡。我們會想辦法解決。</p>
+<p>請注意，<cite>pytest_collect_directory()</cite> 函數仍然會被調用，但任何返回值都會被忽略。這樣可以保持舊程式碼的正常運行，例如，如果缺少某些依賴項或命令列選項，舊程式碼會在 <cite>collect()</cite> 函數中使用 <cite>py.test.skip()</cite> 來防止遞歸遍歷目錄樹。</p>
+</li>
+</ul>
+<p>請參閱 <a class="reference internal" href="../changelog.html#changelog"><span class="std std-ref">Changelog history</span></a> 以了解更多詳情。</p>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/pytest1.png" alt="Logo"/>
+            </a></p><h3><a href="../contents.html">Table Of Contents</a></h3>
+
+<ul>
+  <li><a href="../index.html">Home</a></li>
+  <li><a href="../getting-started.html">Install</a></li>
+  <li><a href="../contents.html">內容</a></li>
+  <li><a href="../reference.html">Reference</a></li>
+  <li><a href="../example/index.html">实际案例</a></li>
+  <li><a href="../customize.html">Customize</a></li>
+  <li><a href="../changelog.html">Changelog</a></li>
+  <li><a href="../contributing.html">Contributing</a></li>
+  <li><a href="../backwards-compatibility.html">Backwards Compatibility</a></li>
+  <li><a href="../license.html">License</a></li>
+  <li><a href="../contact.html">Contact Channels</a></li>
+</ul>
+  <hr>
+  <ul>
+<li><a class="reference internal" href="#">py.test 2.0.0：a斷言++、單元測試++、報告++、設定++、文件++</a><ul>
+<li><a class="reference internal" href="#new-features">新功能</a></li>
+<li><a class="reference internal" href="#fixes">修復</a></li>
+<li><a class="reference internal" href="#important-notes">重要提示</a></li>
+<li><a class="reference internal" href="#incompatible-removals">（不相容的）移除</a></li>
+</ul>
+</li>
+</ul>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../contents.html">Documentation overview</a><ul>
+  <li><a href="index.html">版本發布公告</a><ul>
+      <li>Previous: <a href="release-2.0.1.html" title="上一章">py.test 2.0.1: bug fixes</a></li>
+      <li>Next: <a href="../changelog.html" title="下一章">Changelog history</a></li>
+  </ul></li>
+  </ul></li>
+</ul><h3>Useful Links</h3>
+<ul>
+  <li><a href="https://pypi.org/project/pytest/">pytest @ PyPI</a></li>
+  <li><a href="https://github.com/pytest-dev/pytest/">pytest @ GitHub</a></li>
+  <li><a href="http://plugincompat.herokuapp.com/">3rd party plugins</a></li>
+  <li><a href="https://github.com/pytest-dev/pytest/issues">議題追蹤器</a></li>
+  <li><a href="https://media.readthedocs.org/pdf/pytest/latest/pytest.pdf">PDF 文件</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">快速搜尋</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="搜" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+  <div class="footer">
+    &copy; Copyright 2015–2018 , holger krekel and pytest-dev team.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-7597274-13']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,460 @@
+<!doctype html>
+<html class="no-js" lang="zh-TW" data-content_root="../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="search" title="搜尋" href="../search.html">
+        <link rel="canonical" href="https://projects.localizethedocs.org/pytest-docs-l10n/announce/release-2.0.0.html">
+        <link rel="prefetch" href="../_static/pytest1.png" as="image">
+
+    <link rel="shortcut icon" href="../_static/favicon.png"><!-- Generated with Sphinx 9.1.1 and Furo 2025.12.19 -->
+        <title>py.test 2.0.0：a斷言++、單元測試++、報告++、設定++、文件++ - pytest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments_pytest.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../_static/pytest-custom.css?v=eb7c59a4" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style>
+
+<script type="text/javascript" src="../ltd-provenance.js"></script>
+<script type="text/javascript" src="../ltd-current.js"></script>
+<script type="text/javascript" src="../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../ltd-flyout.js"></script>
+</head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">pytest documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/pytest1.png" alt="Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="搜尋" name="q" aria-label="搜尋">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html">開始使用</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../how-to/index.html">操作指南</a><input aria-label="Toggle navigation of 操作指南" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/usage.html">How to invoke pytest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/assert.html">How to write and report assertions in tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/fixtures.html">How to use fixtures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/mark.html">How to mark test functions with attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/parametrize.html">How to parametrize fixtures and test functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/tmp_path.html">How to use temporary directories and files in tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/monkeypatch.html">How to monkeypatch/mock modules and environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/doctest.html">How to run doctests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/cache.html">How to re-run failed tests and maintain state between test runs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/failures.html">How to handle test failures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/output.html">Managing pytest's output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/logging.html">How to manage logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/capture-stdout-stderr.html">How to capture stdout/stderr output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/capture-warnings.html">How to capture warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/skipping.html">How to use skip and xfail to deal with tests that cannot succeed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/plugins.html">How to install and use plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/writing_plugins.html">Writing plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/writing_hook_functions.html">Writing hook functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/existingtestsuite.html">How to use pytest with an existing test suite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/unittest.html">How to use <code class="docutils literal notranslate"><span class="pre">unittest</span></code>-based tests with pytest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/xunit_setup.html">How to implement xunit-style set-up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/bash-completion.html">How to set up bash completion</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../reference/index.html">參考指南</a><input aria-label="Toggle navigation of 參考指南" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../reference/reference.html">API 參考</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/fixtures.html">夾具參考</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/customize.html">組態</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/exit-codes.html">退出碼</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/plugin_list.html">Pytest Plugin List</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../explanation/index.html">Explanation</a><input aria-label="Toggle navigation of Explanation" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../explanation/anatomy.html">Anatomy of a test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../explanation/fixtures.html">About fixtures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../explanation/goodpractices.html">Good Integration Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../explanation/pythonpath.html">pytest import mechanisms and <code class="docutils literal notranslate"><span class="pre">sys.path</span></code>/<code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../explanation/types.html">Typing in pytest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../explanation/ci.html">CI Pipelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../explanation/flaky.html">Flaky tests</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../example/index.html">範例與客製化技巧</a><input aria-label="Toggle navigation of 範例與客製化技巧" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../example/reportingdemo.html">使用 pytest 示範 Python 失敗報告</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../example/simple.html">基本模式與範例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../example/parametrize.html">參數化測試</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../example/markers.html">Working with custom markers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../example/special.html">A session-fixture which can look at all collected tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../example/pythoncollection.html">Changing standard (Python) test discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../example/nonpython.html">Working with non-python tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../example/customdirectory.html">Using a custom directory collector</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">關於此專案</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">變更日誌</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">參與貢獻</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backwards-compatibility.html">向後相容性方針</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backwards-compatibility.html#history">History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backwards-compatibility.html#python-version-support">Python 版本支援</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sponsor.html">贊助者</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tidelift.html">pytest for enterprise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">授權條款</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">聯絡通道</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Useful links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://pypi.org/project/pytest/">pytest @ PyPI</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pytest-dev/pytest/">pytest @ GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pytest-dev/pytest/issues">議題追蹤器</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://media.readthedocs.org/pdf/pytest/latest/pytest.pdf">PDF 文件</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="py-test-2-0-0-asserts-unittest-reporting-config-docs">
+<h1>py.test 2.0.0：a斷言++、單元測試++、報告++、設定++、文件++<a class="headerlink" href="#py-test-2-0-0-asserts-unittest-reporting-config-docs" title="連結到這個標頭">¶</a></h1>
+<p>歡迎使用 pytest-2.0.0，這是快速且方便的 Python 測試工具「py.test」的重大新版本。新版本包含許多新功能和改進，請參閱以下摘要和詳細清單。大量長期棄用的程式碼已被移除，使得新版本更加精簡簡潔。請在此處查看包含範例的新文件：</p>
+<blockquote>
+<div><p><a class="reference external" href="http://pytest.org/en/stable/index.html">http://pytest.org/en/stable/index.html</a></p>
+</div></blockquote>
+<p>關於打包的說明：pytest 曾經是 py 發行版的一部分，直到 py-1.3.4 版本才被包含在內，但現在情況已經改變：pytest-2.0.0 只包含與 py.test 相關的程式碼，並且預計會向後相容現有的測試程式碼。如果您想安裝 pytest，只需輸入以下命令之一:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">pytest</span>
+<span class="n">easy_install</span> <span class="o">-</span><span class="n">U</span> <span class="n">pytest</span>
+</pre></div>
+</div>
+<p>非常感謝所有報告問題、提出疑問或投訴的人。特別感謝 Floris Bruynooghe 和 Ronny Pfannschmidt 出色的代碼貢獻，以及其他許多人的回饋和幫助。</p>
+<p>此致，霍爾格·克雷克爾</p>
+<section id="new-features">
+<h2>新功能<a class="headerlink" href="#new-features" title="連結到這個標頭">¶</a></h2>
+<ul>
+<li><p>透過 Python 解釋器和從 Python 發起的新呼叫:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pytest</span> <span class="c1"># 適用於所有 Python 版本 &gt;= 2.5</span>
+</pre></div>
+</div>
+<p>或從 Python 程式:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>導入 pytest ； pytest.main（參數列表，外掛程式列表）
+</pre></div>
+</div>
+<p>詳情請參閱 <a class="reference external" href="http://pytest.org/en/stable/how-to/usage.html">http://pytest.org/en/stable/how-to/usage.html</a>。</p>
+</li>
+<li><p>在比較列表、序列或字串時，斷言表達式中會提供新的、更好的報告資訊。</p>
+<p>請參閱 <a class="reference external" href="http://pytest.org/en/stable/how-to/assert.html#newreport">http://pytest.org/en/stable/how-to/assert.html#newreport</a></p>
+</li>
+<li><p>例如，透過 ini 檔案（可識別 setup.cfg 或 tox.ini）進行新配置，例如:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">pytest</span><span class="p">]</span>
+
+<span class="n">norecursedirs</span> <span class="o">=</span> <span class="o">.</span><span class="n">hg</span> <span class="n">data</span><span class="o">*</span> <span class="c1"># 永遠不要在這樣的目錄中遞歸</span>
+
+<span class="n">addopts</span> <span class="o">=</span> <span class="o">-</span><span class="n">x</span> <span class="o">--</span><span class="n">pyargs</span> <span class="c1"># 預設新增這些命令列選項</span>
+</pre></div>
+</div>
+<p>請參閱 <a class="reference external" href="http://pytest.org/en/stable/reference/customize.html">http://pytest.org/en/stable/reference/customize.html</a></p>
+</li>
+<li><p>改進了對標準單元測試的支援。一般來說，py.test 現在應該能夠更好地運行自訂的 unittest.TestCases，例如 Twisted Trial 或基於 Django 的 TestCases。此外，您現在可以使用 py.test:: 執行已安裝的 'unittest' 套件的測試:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">py</span><span class="o">.</span><span class="n">test</span> <span class="o">--</span><span class="n">pyargs</span> <span class="n">unittest</span>
+</pre></div>
+</div>
+</li>
+<li><p>新增“-q”選項，可減少輸出詳細信息，並列印更像 nose/unittest 風格的“點”輸出。</p></li>
+<li><p>許多更詳細的改進細節</p></li>
+</ul>
+</section>
+<section id="fixes">
+<h2>修復<a class="headerlink" href="#fixes" title="連結到這個標頭">¶</a></h2>
+<ul class="simple">
+<li><p>修復問題 - 引入 py.test.set_trace()，以便在測試運行時透過 PDB 追蹤執行情況，即使捕獲正在進行中。</p></li>
+<li><p>修復問題 - 使報告對測試開啟檔案描述符 1（stdout）上的檔案更具彈性。</p></li>
+<li><p>修復問題 - 同級 conftest.py 檔案將無法載入。 （且目錄收集器無法再從目錄的 conftest.py 中進行自訂 - 這需要在至少上一層目錄中進行）。</p></li>
+<li><p>修復問題 （從命令列參數尋找自訂測試節點）</p></li>
+<li><p>修復問題：匯入 conftest.py 時捕捉 stdout/stderr</p></li>
+<li><p>修復錯誤：unittest 收集的函數現在也可以在類別/模組層級應用“pytestmark”</p></li>
+</ul>
+</section>
+<section id="important-notes">
+<h2>重要提示<a class="headerlink" href="#important-notes" title="連結到這個標頭">¶</a></h2>
+<ul class="simple">
+<li><p>在 Python 2.0 版本之前，在 Python 程式碼中使用 <code class="docutils literal notranslate"><span class="pre">py.test</span></code> 的常用方法是先匯入 <code class="docutils literal notranslate"><span class="pre">py</span></code>，然後使用例如 <code class="docutils literal notranslate"><span class="pre">py.test.raises</span></code> 來呼叫輔助方法。這種方法仍然有效，目前沒有棄用的計劃。但是，在大多數範例和內部程式碼中，你會發現建議的預設方法是直接匯入 <code class="docutils literal notranslate"><span class="pre">pytest</span></code> 並呼叫 <code class="docutils literal notranslate"><span class="pre">pytest.raises</span></code>。</p></li>
+<li><p>pytest 現在會在執行任何測試之前先收集完整的測試套件。這改變了例如 pytest_collectstart/pytest_collectreport 的呼叫語意。某些插件可能需要升級。</p></li>
+<li><p>這個pytest 套件包含一個 400 行程式碼的 core.py 檔案和大約 20 個內建插件，總計約 5000 行程式碼包括文件字串。公平地說，它還使用了來自“pylib”的通用程式碼以及新的“py”包，以輔助檔案系統和程式碼自省/操作。</p></li>
+</ul>
+</section>
+<section id="incompatible-removals">
+<h2>（不相容的）移除<a class="headerlink" href="#incompatible-removals" title="連結到這個標頭">¶</a></h2>
+<ul>
+<li><p>現在只有在測試執行階段才能使用 py.test.config。</p></li>
+<li><p>以下功能（大部分已棄用）已移除：</p>
+<ul class="simple">
+<li><p>已移除 conftest.py 檔案中 Module/Class/... 集合節點定義的支援。這不會造成任何特殊影響。</p></li>
+<li><p>移除了對呼叫 1.0 版本之前的集合 API 中的「run()」和「join」函數的支援</p></li>
+<li><p>已移除從 conftest.py 檔案或環境變數中讀取選項值的功能。現在可以透過 ini 檔案機制，特別是「addopts」條目，更有效率、更便捷地完成此操作。</p></li>
+<li><p>已移除測試類別中的“abled”屬性。請使用 skipping 和 pytestmark 機制跳過或使測試類別失敗。</p></li>
+</ul>
+</li>
+<li><p>py.test.collect.Directory 已不再存在，也無法提供自訂的「Directory」物件。如果您之前使用過此功能但現在不知​​道該如何處理，請與我們聯絡。我們會想辦法解決。</p>
+<p>請注意，<code class="docutils literal notranslate"><span class="pre">pytest_collect_directory()</span></code> 函數仍然會被調用，但任何返回值都會被忽略。這樣可以保持舊程式碼的正常運行，例如，如果缺少某些依賴項或命令列選項，舊程式碼會在 <code class="docutils literal notranslate"><span class="pre">collect()</span></code> 函數中使用 <code class="docutils literal notranslate"><span class="pre">py.test.skip()</span></code> 來防止遞歸遍歷目錄樹。</p>
+</li>
+</ul>
+<p>請參閱 <a class="reference internal" href="../changelog.html#changelog"><span class="std std-ref">變更日誌</span></a> 以了解更多詳情。</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2015, holger krekel and pytest-dev team
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">py.test 2.0.0：a斷言++、單元測試++、報告++、設定++、文件++</a><ul>
+<li><a class="reference internal" href="#new-features">新功能</a></li>
+<li><a class="reference internal" href="#fixes">修復</a></li>
+<li><a class="reference internal" href="#important-notes">重要提示</a></li>
+<li><a class="reference internal" href="#incompatible-removals">（不相容的）移除</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=7462a52e"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../_static/translations.js?v=cbf116e0"></script>
+    </body>
+</html>

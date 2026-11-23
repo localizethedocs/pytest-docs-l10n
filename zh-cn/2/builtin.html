@@ -1,0 +1,606 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pytest API and builtin fixtures &#8212; pytest documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/flasky.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/translations.js"></script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/pytest-docs-l10n/builtin.html" />
+    <link rel="shortcut icon" href="_static/pytest1favi.ico"/>
+    <link rel="search" title="搜索" href="search.html" />
+
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+<script type="text/javascript" src="ltd-provenance.js"></script>
+<script type="text/javascript" src="ltd-current.js"></script>
+<script type="text/javascript" src="../../ltd-config.js"></script>
+<script type="text/javascript" src="../../ltd-flyout.js"></script>
+
+  </head><body>
+  
+  
+  
+
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="nav-item nav-item-0"><a href="contents.html">pytest-2.9.2</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Pytest API and builtin fixtures</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="pytest-api-and-builtin-fixtures">
+<span id="pytest-helpers"></span><h1>Pytest API and builtin fixtures<a class="headerlink" href="#pytest-api-and-builtin-fixtures" title="永久链接至标题">¶</a></h1>
+<p>This is a list of <code class="docutils literal notranslate"><span class="pre">pytest.*</span></code> API functions and fixtures.</p>
+<p>For information on plugin hooks and objects, see <a class="reference internal" href="writing_plugins.html#plugins"><span class="std std-ref">Writing plugins</span></a>.</p>
+<p>For information on the <code class="docutils literal notranslate"><span class="pre">pytest.mark</span></code> mechanism, see <a class="reference internal" href="mark.html#mark"><span class="std std-ref">Marking test functions with attributes</span></a>.</p>
+<p>For the below objects, you can also interactively ask for help, e.g. by
+typing on the Python interactive prompt something like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span>
+<span class="n">help</span><span class="p">(</span><span class="n">pytest</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="invoking-pytest-interactively">
+<h2>Invoking pytest interactively<a class="headerlink" href="#invoking-pytest-interactively" title="永久链接至标题">¶</a></h2>
+<dl class="py function">
+<dt id="pytest.main">
+<code class="sig-name descname"><span class="pre">main</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plugins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/config.html#main"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.main" title="永久链接至目标">¶</a></dt>
+<dd><p>return exit code, after performing an in-process test run.</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> – list of command line arguments.</p></li>
+<li><p><strong>plugins</strong> – list of plugin objects to be auto-registered during
+initialization.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<p>More examples at <a class="reference internal" href="usage.html#pytest-main-usage"><span class="std std-ref">Calling pytest from Python code</span></a></p>
+</div>
+<div class="section" id="helpers-for-assertions-about-exceptions-warnings">
+<h2>Helpers for assertions about Exceptions/Warnings<a class="headerlink" href="#helpers-for-assertions-about-exceptions-warnings" title="永久链接至标题">¶</a></h2>
+<dl class="py function">
+<dt id="pytest.raises">
+<code class="sig-name descname"><span class="pre">raises</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expected_exception</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/python.html#raises"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.raises" title="永久链接至目标">¶</a></dt>
+<dd><p>assert that a code block/function call raises <code class="docutils literal notranslate"><span class="pre">expected_exception</span></code>
+and raise a failure exception otherwise.</p>
+<p>This helper produces a <code class="docutils literal notranslate"><span class="pre">ExceptionInfo()</span></code> object (see below).</p>
+<p>If using Python 2.5 or above, you may use this function as a
+context manager:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">raises</span><span class="p">(</span><span class="ne">ZeroDivisionError</span><span class="p">):</span>
+<span class="gp">... </span>   <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>When using <code class="docutils literal notranslate"><span class="pre">pytest.raises</span></code> as a context manager, it’s worthwhile to
+note that normal context manager rules apply and that the exception
+raised <em>must</em> be the final line in the scope of the context manager.
+Lines of code after that, within the scope of the context manager will
+not be executed. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">raises</span><span class="p">(</span><span class="ne">OSError</span><span class="p">)</span> <span class="k">as</span> <span class="n">exc_info</span><span class="p">:</span>
+<span class="go">        assert 1 == 1  # this will execute as expected</span>
+<span class="go">        raise OSError(errno.EEXISTS, &#39;directory exists&#39;)</span>
+<span class="go">        assert exc_info.value.errno == errno.EEXISTS  # this will not execute</span>
+</pre></div>
+</div>
+<p>Instead, the following approach must be taken (note the difference in
+scope):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">raises</span><span class="p">(</span><span class="ne">OSError</span><span class="p">)</span> <span class="k">as</span> <span class="n">exc_info</span><span class="p">:</span>
+<span class="go">        assert 1 == 1  # this will execute as expected</span>
+<span class="go">        raise OSError(errno.EEXISTS, &#39;directory exists&#39;)</span>
+
+<span class="go">    assert exc_info.value.errno == errno.EEXISTS  # this will now execute</span>
+</pre></div>
+</div>
+</div>
+<p>Or you can specify a callable by passing a to-be-called lambda:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">raises</span><span class="p">(</span><span class="ne">ZeroDivisionError</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span>
+<span class="go">&lt;ExceptionInfo ...&gt;</span>
+</pre></div>
+</div>
+<p>or you can specify an arbitrary callable with arguments:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="n">x</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">raises</span><span class="p">(</span><span class="ne">ZeroDivisionError</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">&lt;ExceptionInfo ...&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">raises</span><span class="p">(</span><span class="ne">ZeroDivisionError</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="go">&lt;ExceptionInfo ...&gt;</span>
+</pre></div>
+</div>
+<p>A third possibility is to use a string to be executed:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">raises</span><span class="p">(</span><span class="ne">ZeroDivisionError</span><span class="p">,</span> <span class="s2">&quot;f(0)&quot;</span><span class="p">)</span>
+<span class="go">&lt;ExceptionInfo ...&gt;</span>
+</pre></div>
+</div>
+<dl class="py class">
+<dt id="pytest._code.ExceptionInfo">
+<span id="_pytest._code.ExceptionInfo"></span><em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">ExceptionInfo</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exprinfo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/_code/code.html#ExceptionInfo"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest._code.ExceptionInfo" title="永久链接至目标">¶</a></dt>
+<dd><p>wraps sys.exc_info() objects and offers
+help for navigating the traceback.</p>
+<dl class="py attribute">
+<dt id="pytest._code.ExceptionInfo.type">
+<span id="_pytest._code.ExceptionInfo.type"></span><code class="sig-name descname"><span class="pre">type</span></code><a class="headerlink" href="#pytest._code.ExceptionInfo.type" title="永久链接至目标">¶</a></dt>
+<dd><p>the exception class</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pytest._code.ExceptionInfo.value">
+<span id="_pytest._code.ExceptionInfo.value"></span><code class="sig-name descname"><span class="pre">value</span></code><a class="headerlink" href="#pytest._code.ExceptionInfo.value" title="永久链接至目标">¶</a></dt>
+<dd><p>the exception instance</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pytest._code.ExceptionInfo.tb">
+<span id="_pytest._code.ExceptionInfo.tb"></span><code class="sig-name descname"><span class="pre">tb</span></code><a class="headerlink" href="#pytest._code.ExceptionInfo.tb" title="永久链接至目标">¶</a></dt>
+<dd><p>the exception raw traceback</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pytest._code.ExceptionInfo.typename">
+<span id="_pytest._code.ExceptionInfo.typename"></span><code class="sig-name descname"><span class="pre">typename</span></code><a class="headerlink" href="#pytest._code.ExceptionInfo.typename" title="永久链接至目标">¶</a></dt>
+<dd><p>the exception type name</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pytest._code.ExceptionInfo.traceback">
+<span id="_pytest._code.ExceptionInfo.traceback"></span><code class="sig-name descname"><span class="pre">traceback</span></code><a class="headerlink" href="#pytest._code.ExceptionInfo.traceback" title="永久链接至目标">¶</a></dt>
+<dd><p>the exception traceback (_pytest._code.Traceback instance)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest._code.ExceptionInfo.exconly">
+<span id="_pytest._code.ExceptionInfo.exconly"></span><code class="sig-name descname"><span class="pre">exconly</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tryshort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/_code/code.html#ExceptionInfo.exconly"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest._code.ExceptionInfo.exconly" title="永久链接至目标">¶</a></dt>
+<dd><p>return the exception as a string</p>
+<p>when ‘tryshort’ resolves to True, and the exception is a
+_pytest._code._AssertionError, only the actual exception part of
+the exception representation is returned (so ‘AssertionError: ‘ is
+removed from the beginning)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest._code.ExceptionInfo.errisinstance">
+<span id="_pytest._code.ExceptionInfo.errisinstance"></span><code class="sig-name descname"><span class="pre">errisinstance</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exc</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/_code/code.html#ExceptionInfo.errisinstance"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest._code.ExceptionInfo.errisinstance" title="永久链接至目标">¶</a></dt>
+<dd><p>return True if the exception is an instance of exc</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest._code.ExceptionInfo.getrepr">
+<span id="_pytest._code.ExceptionInfo.getrepr"></span><code class="sig-name descname"><span class="pre">getrepr</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">showlocals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">style</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'long'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">abspath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tbfilter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">funcargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/_code/code.html#ExceptionInfo.getrepr"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest._code.ExceptionInfo.getrepr" title="永久链接至目标">¶</a></dt>
+<dd><p>return str()able representation of this exception info.
+showlocals: show locals per traceback entry
+style: long|short|no|native traceback style
+tbfilter: hide entries (where __tracebackhide__ is true)</p>
+<p>in case of style==native, tbfilter and showlocals is ignored.</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>Similar to caught exception objects in Python, explicitly clearing
+local references to returned <code class="docutils literal notranslate"><span class="pre">ExceptionInfo</span></code> objects can
+help the Python interpreter speed up its garbage collection.</p>
+<p>Clearing those references breaks a reference cycle
+(<code class="docutils literal notranslate"><span class="pre">ExceptionInfo</span></code> –&gt; caught exception –&gt; frame stack raising
+the exception –&gt; current frame stack –&gt; local variables –&gt;
+<code class="docutils literal notranslate"><span class="pre">ExceptionInfo</span></code>) which makes Python keep all objects referenced
+from that cycle (including all local variables in the current
+frame) alive until the next cyclic garbage collection run. See the
+official Python <code class="docutils literal notranslate"><span class="pre">try</span></code> statement documentation for more detailed
+information.</p>
+</div>
+</dd></dl>
+
+<p>Examples at <a class="reference internal" href="assert.html#assertraises"><span class="std std-ref">Assertions about expected exceptions</span></a>.</p>
+<dl class="py function">
+<dt id="pytest.deprecated_call">
+<code class="sig-name descname"><span class="pre">deprecated_call</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/recwarn.html#deprecated_call"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.deprecated_call" title="永久链接至目标">¶</a></dt>
+<dd><p>assert that calling <code class="docutils literal notranslate"><span class="pre">func(*args,</span> <span class="pre">**kwargs)</span></code> triggers a
+<code class="docutils literal notranslate"><span class="pre">DeprecationWarning</span></code> or <code class="docutils literal notranslate"><span class="pre">PendingDeprecationWarning</span></code>.</p>
+<p>This function can be used as a context manager:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">deprecated_call</span><span class="p">():</span>
+<span class="gp">... </span>   <span class="n">myobject</span><span class="o">.</span><span class="n">deprecated_method</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Note: we cannot use WarningsRecorder here because it is still subject
+to the mechanism that prevents warnings of the same type from being
+triggered twice for the same module. See #1190.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="raising-a-specific-test-outcome">
+<h2>Raising a specific test outcome<a class="headerlink" href="#raising-a-specific-test-outcome" title="永久链接至标题">¶</a></h2>
+<p>You can use the following functions in your test, fixture or setup
+functions to force a certain test outcome.  Note that most often
+you can rather use declarative marks, see <a class="reference internal" href="skipping.html#skipping"><span class="std std-ref">Skip and xfail: dealing with tests that can not succeed</span></a>.</p>
+<dl class="py function">
+<dt id="pytest.runner.fail">
+<span id="_pytest.runner.fail"></span><code class="sig-name descname"><span class="pre">fail</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pytrace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/runner.html#fail"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.runner.fail" title="永久链接至目标">¶</a></dt>
+<dd><p>explicitly fail an currently-executing test with the given Message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>pytrace</strong> – if false the msg represents the full failure information
+and no python traceback will be reported.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pytest.runner.skip">
+<span id="_pytest.runner.skip"></span><code class="sig-name descname"><span class="pre">skip</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/runner.html#skip"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.runner.skip" title="永久链接至目标">¶</a></dt>
+<dd><p>skip an executing test with the given message.  Note: it’s usually
+better to use the pytest.mark.skipif marker to declare a test to be
+skipped under certain conditions like mismatching platforms or
+dependencies.  See the pytest_skipping plugin for details.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pytest.runner.importorskip">
+<span id="_pytest.runner.importorskip"></span><code class="sig-name descname"><span class="pre">importorskip</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">modname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minversion</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/runner.html#importorskip"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.runner.importorskip" title="永久链接至目标">¶</a></dt>
+<dd><p>return imported module if it has at least “minversion” as its
+__version__ attribute.  If no minversion is specified the a skip
+is only triggered if the module can not be imported.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pytest.skipping.xfail">
+<span id="_pytest.skipping.xfail"></span><code class="sig-name descname"><span class="pre">xfail</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reason</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/skipping.html#xfail"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.skipping.xfail" title="永久链接至目标">¶</a></dt>
+<dd><p>xfail an executing test or setup functions with the given reason.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pytest.runner.exit">
+<span id="_pytest.runner.exit"></span><code class="sig-name descname"><span class="pre">exit</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/runner.html#exit"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.runner.exit" title="永久链接至目标">¶</a></dt>
+<dd><p>exit testing process as if KeyboardInterrupt was triggered.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="fixtures-and-requests">
+<h2>fixtures and requests<a class="headerlink" href="#fixtures-and-requests" title="永久链接至标题">¶</a></h2>
+<p>To mark a fixture function:</p>
+<dl class="py function">
+<dt id="pytest.python.fixture">
+<span id="_pytest.python.fixture"></span><code class="sig-name descname"><span class="pre">fixture</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scope</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'function'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autouse</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/python.html#fixture"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.python.fixture" title="永久链接至目标">¶</a></dt>
+<dd><p>(return a) decorator to mark a fixture factory function.</p>
+<p>This decorator can be used (with or or without parameters) to define
+a fixture function.  The name of the fixture function can later be
+referenced to cause its invocation ahead of running tests: test
+modules or classes can use the pytest.mark.usefixtures(fixturename)
+marker.  Test functions can directly use fixture names as input
+arguments in which case the fixture instance returned from the fixture
+function will be injected.</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>scope</strong> – the scope for which this fixture is shared, one of
+“function” (default), “class”, “module”, “session”.</p></li>
+<li><p><strong>params</strong> – an optional list of parameters which will cause multiple
+invocations of the fixture function and all of the tests
+using it.</p></li>
+<li><p><strong>autouse</strong> – if True, the fixture func is activated for all tests that
+can see it.  If False (the default) then an explicit
+reference is needed to activate the fixture.</p></li>
+<li><p><strong>ids</strong> – list of string ids each corresponding to the params
+so that they are part of the test id. If no ids are provided
+they will be generated automatically from the params.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Tutorial at <a class="reference internal" href="fixture.html#fixtures"><span class="std std-ref">pytest fixtures: explicit, modular, scalable</span></a>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">request</span></code> object that can be used from fixture functions.</p>
+<dl class="py class">
+<dt id="pytest.python.FixtureRequest">
+<span id="_pytest.python.FixtureRequest"></span><em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">FixtureRequest</span></code><a class="reference internal" href="_modules/_pytest/python.html#FixtureRequest"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.python.FixtureRequest" title="永久链接至目标">¶</a></dt>
+<dd><p>A request for a fixture from a test or fixture function.</p>
+<p>A request object gives access to the requesting test context
+and has an optional <code class="docutils literal notranslate"><span class="pre">param</span></code> attribute in case
+the fixture is parametrized indirectly.</p>
+<dl class="py attribute">
+<dt id="pytest.python.FixtureRequest.fixturename">
+<span id="_pytest.python.FixtureRequest.fixturename"></span><code class="sig-name descname"><span class="pre">fixturename</span></code><a class="headerlink" href="#pytest.python.FixtureRequest.fixturename" title="永久链接至目标">¶</a></dt>
+<dd><p>fixture for which this request is being performed</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pytest.python.FixtureRequest.scope">
+<span id="_pytest.python.FixtureRequest.scope"></span><code class="sig-name descname"><span class="pre">scope</span></code><a class="headerlink" href="#pytest.python.FixtureRequest.scope" title="永久链接至目标">¶</a></dt>
+<dd><p>Scope string, one of “function”, “class”, “module”, “session”</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.python.FixtureRequest.node">
+<span id="_pytest.python.FixtureRequest.node"></span><em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">node</span></code><a class="headerlink" href="#pytest.python.FixtureRequest.node" title="永久链接至目标">¶</a></dt>
+<dd><p>underlying collection node (depends on current request scope)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.python.FixtureRequest.config">
+<span id="_pytest.python.FixtureRequest.config"></span><em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">config</span></code><a class="headerlink" href="#pytest.python.FixtureRequest.config" title="永久链接至目标">¶</a></dt>
+<dd><p>the pytest config object associated with this request.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.python.FixtureRequest.function">
+<span id="_pytest.python.FixtureRequest.function"></span><em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">function</span></code><a class="headerlink" href="#pytest.python.FixtureRequest.function" title="永久链接至目标">¶</a></dt>
+<dd><p>test function object if the request has a per-function scope.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.python.FixtureRequest.cls">
+<span id="_pytest.python.FixtureRequest.cls"></span><em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">cls</span></code><a class="headerlink" href="#pytest.python.FixtureRequest.cls" title="永久链接至目标">¶</a></dt>
+<dd><p>class (can be None) where the test function was collected.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.python.FixtureRequest.instance">
+<span id="_pytest.python.FixtureRequest.instance"></span><em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">instance</span></code><a class="headerlink" href="#pytest.python.FixtureRequest.instance" title="永久链接至目标">¶</a></dt>
+<dd><p>instance (can be None) on which test function was collected.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.python.FixtureRequest.module">
+<span id="_pytest.python.FixtureRequest.module"></span><em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">module</span></code><a class="headerlink" href="#pytest.python.FixtureRequest.module" title="永久链接至目标">¶</a></dt>
+<dd><p>python module object where the test function was collected.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.python.FixtureRequest.fspath">
+<span id="_pytest.python.FixtureRequest.fspath"></span><em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">fspath</span></code><a class="headerlink" href="#pytest.python.FixtureRequest.fspath" title="永久链接至目标">¶</a></dt>
+<dd><p>the file system path of the test module which collected this test.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.python.FixtureRequest.keywords">
+<span id="_pytest.python.FixtureRequest.keywords"></span><em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">keywords</span></code><a class="headerlink" href="#pytest.python.FixtureRequest.keywords" title="永久链接至目标">¶</a></dt>
+<dd><p>keywords/markers dictionary for the underlying node.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.python.FixtureRequest.session">
+<span id="_pytest.python.FixtureRequest.session"></span><em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">session</span></code><a class="headerlink" href="#pytest.python.FixtureRequest.session" title="永久链接至目标">¶</a></dt>
+<dd><p>pytest session object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.python.FixtureRequest.addfinalizer">
+<span id="_pytest.python.FixtureRequest.addfinalizer"></span><code class="sig-name descname"><span class="pre">addfinalizer</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">finalizer</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/python.html#FixtureRequest.addfinalizer"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.python.FixtureRequest.addfinalizer" title="永久链接至目标">¶</a></dt>
+<dd><p>add finalizer/teardown function to be called after the
+last test within the requesting test context finished
+execution.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.python.FixtureRequest.applymarker">
+<span id="_pytest.python.FixtureRequest.applymarker"></span><code class="sig-name descname"><span class="pre">applymarker</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">marker</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/python.html#FixtureRequest.applymarker"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.python.FixtureRequest.applymarker" title="永久链接至目标">¶</a></dt>
+<dd><p>Apply a marker to a single test function invocation.
+This method is useful if you don’t want to have a keyword/marker
+on all function invocations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>marker</strong> – a <a class="reference internal" href="mark.html#pytest.mark.MarkDecorator" title="_pytest.mark.MarkDecorator"><code class="xref py py-class docutils literal notranslate"><span class="pre">_pytest.mark.MarkDecorator</span></code></a> object
+created by a call to <code class="docutils literal notranslate"><span class="pre">pytest.mark.NAME(...)</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.python.FixtureRequest.raiseerror">
+<span id="_pytest.python.FixtureRequest.raiseerror"></span><code class="sig-name descname"><span class="pre">raiseerror</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/python.html#FixtureRequest.raiseerror"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.python.FixtureRequest.raiseerror" title="永久链接至目标">¶</a></dt>
+<dd><p>raise a FixtureLookupError with the given message.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.python.FixtureRequest.cached_setup">
+<span id="_pytest.python.FixtureRequest.cached_setup"></span><code class="sig-name descname"><span class="pre">cached_setup</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">setup</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">teardown</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scope</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'module'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extrakey</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/python.html#FixtureRequest.cached_setup"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.python.FixtureRequest.cached_setup" title="永久链接至目标">¶</a></dt>
+<dd><p>(deprecated) Return a testing resource managed by <code class="docutils literal notranslate"><span class="pre">setup</span></code> &amp;
+<code class="docutils literal notranslate"><span class="pre">teardown</span></code> calls.  <code class="docutils literal notranslate"><span class="pre">scope</span></code> and <code class="docutils literal notranslate"><span class="pre">extrakey</span></code> determine when the
+<code class="docutils literal notranslate"><span class="pre">teardown</span></code> function will be called so that subsequent calls to
+<code class="docutils literal notranslate"><span class="pre">setup</span></code> would recreate the resource.  With pytest-2.3 you often
+do not need <code class="docutils literal notranslate"><span class="pre">cached_setup()</span></code> as you can directly declare a scope
+on a fixture function and register a finalizer through
+<code class="docutils literal notranslate"><span class="pre">request.addfinalizer()</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>teardown</strong> – function receiving a previously setup resource.</p></li>
+<li><p><strong>setup</strong> – a no-argument function creating a resource.</p></li>
+<li><p><strong>scope</strong> – a string value out of <code class="docutils literal notranslate"><span class="pre">function</span></code>, <code class="docutils literal notranslate"><span class="pre">class</span></code>, <code class="docutils literal notranslate"><span class="pre">module</span></code>
+or <code class="docutils literal notranslate"><span class="pre">session</span></code> indicating the caching lifecycle of the resource.</p></li>
+<li><p><strong>extrakey</strong> – added to internal caching key of (funcargname, scope).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pytest.python.FixtureRequest.getfuncargvalue">
+<span id="_pytest.python.FixtureRequest.getfuncargvalue"></span><code class="sig-name descname"><span class="pre">getfuncargvalue</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">argname</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/_pytest/python.html#FixtureRequest.getfuncargvalue"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#pytest.python.FixtureRequest.getfuncargvalue" title="永久链接至目标">¶</a></dt>
+<dd><p>Dynamically retrieve a named fixture function argument.</p>
+<p>As of pytest-2.3, it is easier and usually better to access other
+fixture values by stating it as an input argument in the fixture
+function.  If you only can decide about using another fixture at test
+setup time, you may use this function to retrieve it inside a fixture
+function body.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="builtin-fixtures-function-arguments">
+<span id="builtinfuncargs"></span><span id="builtinfixtures"></span><h2>Builtin fixtures/function arguments<a class="headerlink" href="#builtin-fixtures-function-arguments" title="永久链接至标题">¶</a></h2>
+<p>You can ask for available builtin or project-custom
+<a class="reference internal" href="fixture.html#fixtures"><span class="std std-ref">fixtures</span></a> by typing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ py.test -q --fixtures
+cache
+    Return a cache object that can persist state between testing sessions.
+
+    cache.get(key, default)
+    cache.set(key, value)
+
+    Keys must be a ``/`` separated value, where the first part is usually the
+    name of your plugin or application to avoid clashes with other cache users.
+
+    Values can be any object handled by the json stdlib module.
+capsys
+    enables capturing of writes to sys.stdout/sys.stderr and makes
+    captured output available via ``capsys.readouterr()`` method calls
+    which return a ``(out, err)`` tuple.
+capfd
+    enables capturing of writes to file descriptors 1 and 2 and makes
+    captured output available via ``capfd.readouterr()`` method calls
+    which return a ``(out, err)`` tuple.
+record_xml_property
+    Fixture that adds extra xml properties to the tag for the calling test.
+    The fixture is callable with (name, value), with value being automatically
+    xml-encoded.
+monkeypatch
+    The returned ``monkeypatch`` funcarg provides these
+    helper methods to modify objects, dictionaries or os.environ::
+
+    monkeypatch.setattr(obj, name, value, raising=True)
+    monkeypatch.delattr(obj, name, raising=True)
+    monkeypatch.setitem(mapping, name, value)
+    monkeypatch.delitem(obj, name, raising=True)
+    monkeypatch.setenv(name, value, prepend=False)
+    monkeypatch.delenv(name, value, raising=True)
+    monkeypatch.syspath_prepend(path)
+    monkeypatch.chdir(path)
+
+    All modifications will be undone after the requesting
+    test function has finished. The ``raising``
+    parameter determines if a KeyError or AttributeError
+    will be raised if the set/deletion operation has no target.
+pytestconfig
+    the pytest config object with access to command line opts.
+recwarn
+    Return a WarningsRecorder instance that provides these methods:
+
+    * ``pop(category=None)``: return last warning matching the category.
+    * ``clear()``: clear list of warnings
+
+    See http://docs.python.org/library/warnings.html for information
+    on warning categories.
+tmpdir_factory
+    Return a TempdirFactory instance for the test session.
+tmpdir
+    return a temporary directory path object
+    which is unique to each test function invocation,
+    created as a sub directory of the base temporary
+    directory.  The returned object is a `py.path.local`_
+    path object.
+
+no tests ran in 0.12 seconds
+</pre></div>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="contents.html">
+              <img class="logo" src="_static/pytest1.png" alt="Logo"/>
+            </a></p><h3><a href="contents.html">Table Of Contents</a></h3>
+
+<ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="contents.html">目录</a></li>
+  <li><a href="getting-started.html">Install</a></li>
+  <li><a href="example/index.html">实际案例</a></li>
+  <li><a href="customize.html">Customize</a></li>
+  <li><a href="contact.html">Contact</a></li>
+  <li><a href="talks.html">Talks/Posts</a></li>
+  <li><a href="changelog.html">Changelog</a></li>
+  <li><a href="license.html">License</a></li>
+</ul>
+  <hr>
+  <ul>
+<li><a class="reference internal" href="#">Pytest API and builtin fixtures</a><ul>
+<li><a class="reference internal" href="#invoking-pytest-interactively">Invoking pytest interactively</a></li>
+<li><a class="reference internal" href="#helpers-for-assertions-about-exceptions-warnings">Helpers for assertions about Exceptions/Warnings</a></li>
+<li><a class="reference internal" href="#raising-a-specific-test-outcome">Raising a specific test outcome</a></li>
+<li><a class="reference internal" href="#fixtures-and-requests">fixtures and requests</a></li>
+<li><a class="reference internal" href="#builtin-fixtures-function-arguments">Builtin fixtures/function arguments</a></li>
+</ul>
+</li>
+</ul>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="contents.html">Documentation overview</a><ul>
+  </ul></li>
+</ul><h3>Useful Links</h3>
+<ul>
+  <li>
+    <a href="https://www.indiegogo.com/projects/python-testing-sprint-mid-2016#/">
+      <b>Sprint funding campaign</b>
+    </a>
+  </li>
+  <li><a href="index.html">The pytest Website</a></li>
+  <li><a href="contributing.html">Contribution Guide</a></li>
+  <li><a href="https://pypi.python.org/pypi/pytest">pytest @ PyPI</a></li>
+  <li><a href="https://github.com/pytest-dev/pytest/">pytest @ GitHub</a></li>
+  <li><a href="http://plugincompat.herokuapp.com/">3rd party plugins</a></li>
+  <li><a href="https://github.com/pytest-dev/pytest/issues">Issue Tracker</a></li>
+  <li><a href="http://pytest.org/latest/pytest.pdf">PDF Documentation</a>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">快速搜索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="转向" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+  <div class="footer">
+    &copy; Copyright 2015, holger krekel and pytest-dev team.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-7597274-13']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+  </body>
+</html>
